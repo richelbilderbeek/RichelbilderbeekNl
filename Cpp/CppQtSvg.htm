@@ -20,7 +20,9 @@
 <!-- Page header -->
 <h1>(<a href="Cpp.htm">C++</a>) <img src="PicQt.png" alt="Qt"/> <a href="CppQtSvg.htm">QtSvg</a></h1>
 <p>&nbsp;</p>
-<p><a href="CppQtSvg.htm">QtSvg</a> is a <a href="CppQt.htm">QT</a> module for scalable vector graphics.</p>
+<p>
+  <a href="CppQtSvg.htm">QtSvg</a> is a <a href="CppQt.htm">QT</a> <a href="CppQtModule.htm">module</a> for <a href="CppSvg.htm">scalable vector graphics</a>.
+</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
@@ -39,10 +41,10 @@
 <h2><img src="PicQtCreator.png" alt="Qt Creator"/> Note for <a href="CppQtCreator.htm">Qt Creator</a> users</h2>
 <p>&nbsp;</p>
 <p>Add the following line to your <a href="CppQtProjectFile.htm">project file</a> (to prevent <a href="CppLinkError.htm">link errors</a>):</p>
-<p>&nbsp;</p>
 <!-- start of code -->
 <table border = "1"><tr><td><code>
-LIBS += -lQtSvg<br/>
+equals(QT_MAJOR_VERSION, 4): LIBS += -lQtSvg<br/>
+greaterThan(QT_MAJOR_VERSION, 4): QT +=  svg<br/>
 </code></td></tr></table>
 <!-- end of the code -->
 <p>&nbsp;</p>
