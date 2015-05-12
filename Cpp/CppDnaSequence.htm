@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <title>DnaSequence</title>
+  <meta name="description" content="C++ DnaSequence"/>
+  <meta name="keywords" content="C++ DnaSequence "/>
+  <link rel="stylesheet" href="Richelbilderbeek.css" type="text/css"/>
+</head>
+<!-- End of head, start of body -->
+<body>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<!-- Page header -->
+<h1>(<a href="Cpp.htm">C++</a>) <a href="CppDnaSequence.htm">DnaSequence</a></h1>
+<p>&nbsp;</p>
+<!-- No CodeToHtmlInfo about this class with page name CppDnaSequence-->
+<h2>Technical facts</h2>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppDnaSequence/CppDnaSequence.pri</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppDnaSequence/CppDnaSequence.pri" border = "1"><tr><td><code>
+<a href="CppQmakeIncludepath.htm">INCLUDEPATH</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppDnaSequence<br/>
+<br/>
+<a href="CppQmakeSources.htm">SOURCES</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppDnaSequence/dnasequence.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppDnaSequence/dnasequence_test.cpp<br/>
+<br/>
+<a href="CppQmakeHeaders.htm">HEADERS</a>&nbsp;&nbsp;+= \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppDnaSequence/dnasequence.h<br/>
+<br/>
+<a href="CppQmakeOther_files.htm">OTHER_FILES</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppDnaSequence/Licence.txt<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppDnaSequence/dnasequence.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppDnaSequence/dnasequence.h" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> RIBI_DNASEQUENCE_H<br/>
+<a href="CppDefine.htm">#define</a> RIBI_DNASEQUENCE_H<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppStringH.htm">string</a>&gt;<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a> {<br/>
+<br/>
+<b><a href="CppStruct.htm">struct</a></b> DnaSequence<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppExplicit.htm">explicit</a></b> DnaSequence(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; description, <b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; sequence);<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; GetDescription() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> { <b><a href="CppReturn.htm">return</a></b> m_description; }<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; GetSequence() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> { <b><a href="CppReturn.htm">return</a></b> m_sequence; }<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppPrivate.htm">private</a></b>:<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> m_description;<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> m_sequence;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppVoid.htm">void</a></b> Test() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+};<br/>
+<br/>
+<b><a href="CppBool.htm">bool</a></b> <b><a href="CppOperatorEqual.htm">operator==</a></b>(<b><a href="CppConst.htm">const</a></b> DnaSequence&amp; lhs, <b><a href="CppConst.htm">const</a></b> DnaSequence&amp; rhs) <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<b><a href="CppBool.htm">bool</a></b> <b><a href="CppOperatorNotEqual.htm">operator!=</a></b>(<b><a href="CppConst.htm">const</a></b> DnaSequence&amp; lhs, <b><a href="CppConst.htm">const</a></b> DnaSequence&amp; rhs) <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a><br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> RIBI_DNASEQUENCE_H<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppDnaSequence/dnasequence.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppDnaSequence/dnasequence.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "dnasequence.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppAlgorithmH.htm">algorithm</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppSstreamH.htm">sstream</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppStdexceptH.htm">stdexcept</a>&gt;<br/>
+<br/>
+<a href="CppRibi.htm">ribi</a>::DnaSequence::DnaSequence(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; description, <b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; sequence)<br/>
+&nbsp;&nbsp;: m_description{description},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_sequence{sequence}<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;Test();<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> iter <a href="CppOperatorAssign.htm">=</a> <a href="CppStdFind_if_not.htm">std::find_if_not</a>(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdBegin.htm">std::begin</a>(m_sequence),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdEnd.htm">std::end</a>(m_sequence),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;[](<b><a href="CppConst.htm">const</a></b> <b><a href="CppChar.htm">char</a></b> c) { <b><a href="CppReturn.htm">return</a></b> c <a href="CppOperatorEqual.htm">==</a> 'A' <a href="CppOperatorLogicalOr.htm">||</a> c <a href="CppOperatorEqual.htm">==</a> 'C' <a href="CppOperatorLogicalOr.htm">||</a>&nbsp;&nbsp;c <a href="CppOperatorEqual.htm">==</a> 'G' <a href="CppOperatorLogicalOr.htm">||</a>&nbsp;&nbsp;c <a href="CppOperatorEqual.htm">==</a> 'T'; }<br/>
+&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (iter <a href="CppOperatorNotEqual.htm">!=</a> <a href="CppStdEnd.htm">std::end</a>(m_sequence))<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdStringstream.htm">std::stringstream</a> s;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;s <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "Sequence::Sequence: sequence can only contain the <a href="CppChar.htm">character</a>s 'A','C','G','T'";<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppThrow.htm">throw</a></b> <a href="CppStdLogic_error.htm">std::logic_error</a>(s.str().c_str());<br/>
+&nbsp;&nbsp;}<br/>
+}<br/>
+<br/>
+<br/>
+<b><a href="CppBool.htm">bool</a></b> <a href="CppRibi.htm">ribi</a>::<b><a href="CppOperatorEqual.htm">operator==</a></b>(<b><a href="CppConst.htm">const</a></b> DnaSequence&amp; lhs, <b><a href="CppConst.htm">const</a></b> DnaSequence&amp; rhs) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;lhs.GetDescription() <a href="CppOperatorEqual.htm">==</a> rhs.GetDescription()<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorLogicalAnd.htm">&amp;&amp;</a> lhs.GetSequence() <a href="CppOperatorEqual.htm">==</a> rhs.GetSequence()<br/>
+&nbsp;&nbsp;;<br/>
+}<br/>
+<br/>
+<b><a href="CppBool.htm">bool</a></b> <a href="CppRibi.htm">ribi</a>::<b><a href="CppOperatorNotEqual.htm">operator!=</a></b>(<b><a href="CppConst.htm">const</a></b> DnaSequence&amp; lhs, <b><a href="CppConst.htm">const</a></b> DnaSequence&amp; rhs) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> !(lhs <a href="CppOperatorEqual.htm">==</a> rhs);<br/>
+}<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppDnaSequence/dnasequence_test.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppDnaSequence/dnasequence_test.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "dnasequence.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppStdexceptH.htm">stdexcept</a>&gt;<br/>
+<br/>
+<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::DnaSequence::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppBool.htm">bool</a></b> is_tested {<b><a href="CppFalse.htm">false</a></b>};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (is_tested) <b><a href="CppReturn.htm">return</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;is_tested <a href="CppOperatorAssign.htm">=</a> <b><a href="CppTrue.htm">true</a></b>;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Recovery of parameters<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> description{"description"};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> sequence{"ACGT"};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> DnaSequence s(description,sequence);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(s.GetDescription() <a href="CppOperatorEqual.htm">==</a> description);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(s.GetSequence() <a href="CppOperatorEqual.htm">==</a> sequence);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a><b><a href="CppOperatorEqual.htm">operator==</a></b><br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> description{"description"};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> sequence{"ACGT"};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> DnaSequence s(description,sequence);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> DnaSequence t(description,sequence);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(s <a href="CppOperatorEqual.htm">==</a> t);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a><b><a href="CppOperatorNotEqual.htm">operator!=</a></b> on different description<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> sequence{"ACGT"};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> DnaSequence s("description1",sequence);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> DnaSequence t("description2",sequence);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(s <a href="CppOperatorNotEqual.htm">!=</a> t);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a><b><a href="CppOperatorNotEqual.htm">operator!=</a></b> on different sequence<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> description{"description"};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> DnaSequence s(description,"ACGT");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> DnaSequence t(description,"ACGTT");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(s <a href="CppOperatorNotEqual.htm">!=</a> t);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppTry.htm">try</a></b><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DnaSequence s("description","incorrect_sequence");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!"Should not get here");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppCatch.htm">catch</a></b> (<a href="CppStdLogic_error.htm">std::logic_error</a>&amp;)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Well detected!<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;}<br/>
+}<br/>
+<a href="CppEndif.htm">#endif</a><br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p>&nbsp;</p>
+<p><a href="http://validator.w3.org/check?uri=referer"><img src="valid-xhtml10.png" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a></p>
+<p>This page has been created by the <a href="Tools.htm">tool</a> <a href="ToolCodeToHtml.htm">CodeToHtml</a></p>
+</body>
+</html>

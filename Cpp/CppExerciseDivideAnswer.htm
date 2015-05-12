@@ -3,9 +3,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-  <title>Answer of exercise #0: a correct Divide function</title>
-  <meta name="description" content="C++ Answer of exercise #0: a correct Divide function"/>
-  <meta name="keywords" content="C++ Answer of exercise #0: a correct Divide function code snippet"/>
+  <title>ExerciseDivideAnswer</title>
+  <meta name="description" content="C++ ExerciseDivideAnswer"/>
+  <meta name="keywords" content="C++ ExerciseDivideAnswer "/>
   <link rel="stylesheet" href="Richelbilderbeek.css" type="text/css"/>
 </head>
 <!-- End of head, start of body -->
@@ -18,80 +18,164 @@
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <!-- Page header -->
-<h1>(<a href="Cpp.htm">C++</a>) <a href="CppExerciseDivideAnswer.htm">Answer of exercise #0: a correct Divide function</a></h1>
+<h1>(<a href="Cpp.htm">C++</a>) <a href="CppExerciseDivideAnswer.htm">ExerciseDivideAnswer</a></h1>
 <p>&nbsp;</p>
-<p>This is the answer of <a href="CppExerciseDivide.htm">exercise #0: a correct Divide function</a>.</p>
+<!-- No CodeToHtmlInfo about this class with page name CppExerciseDivideAnswer-->
+<h2>Technical facts</h2>
 <p>&nbsp;</p>
-<p>The lowest mark would go to the following code:</p>
+<p><a href="CppOs.htm">Operating system(s) or programming environment(s)</a></p>
+<ul>
+  <li><img src="PicLubuntu.png" alt="Lubuntu"/> <a href="CppLubuntu.htm">Lubuntu</a> 15.04 (vivid)</li>
+</ul>
+<p><a href="CppIde.htm">IDE(s)</a>:</p>
+<ul>
+  <li><img src="PicQtCreator.png" alt="Qt Creator"/> <a href="CppQtCreator.htm">Qt Creator</a> 3.1.1</li>
+</ul>
+<p><a href="CppQtProjectType.htm">Project type</a>:</p>
+<ul>
+  <li><img src="PicConsole.png" alt="console"/> <a href="CppConsoleApplication.htm">Console application</a></li>
+</ul>
+<p><a href="CppStandard.htm">C++ standard</a>:</p>
+<ul>
+  <li><img src="PicCpp98.png" alt="C++98"/> <a href="Cpp98.htm">C++98</a></li>
+</ul>
+<p><a href="CppCompiler.htm">Compiler(s)</a>:</p>
+<ul>
+  <li><a href="CppGpp.htm">G++</a> 4.9.2</li>
+</ul>
+<p><a href="CppLibrary.htm">Libraries</a> used:</p>
+<ul>
+  <li><img src="PicStl.png" alt="STL"/> <a href="CppStl.htm">STL</a>: GNU ISO C++ Library, version 4.9.2</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2><a href="CppQtProjectFile.htm">Qt project file</a>: ./CppExerciseDivideAnswer/CppExerciseDivideAnswer.pro</h2>
 <p>&nbsp;</p>
 <!-- start of code -->
-<table summary="Answer of exercise #0: a correct Divide function do not do this" border = "1"><tr><td><code>
-<b><a href="CppDouble.htm">double</a></b> Divide(<b><a href="CppDouble.htm">double</a></b> numerator, <b><a href="CppDouble.htm">double</a></b> denominator)<br/>
-{<br/>
-&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> numerator <a href="CppOperatorDivide.htm">/</a> denominator;<br/>
-}<br/>
-</code></td></tr></table>
-<!-- end of the code -->
-<p>&nbsp;</p>
-<p>There are three reasons why this <a href="CppFunction.htm">function</a> could be improved:</p>
-<p>1) the <a href="CppFunction.htm">function</a> is not <a href="CppConstCorrect.htm">const-correct</a> [1-4]</p>
-<p>2) the <a href="CppFunction.htm">function</a> does not document its internal assumptions using <a href="CppAssert.htm">assert</a> [5-9]</p>
-<p>3) the <a href="CppFunction.htm">function</a> is not exception-safe</p>
-<p>&nbsp;</p>
-<p>This <a href="CppFunction.htm">function</a> assumes that the denominator is unequal to zero.</p>
-<p>&nbsp;</p>
-<p>It does not impact speed in the release version if improvements (1) and (2) are satisfied.</p>
-<p>The function below, satisfies the following improvements:</p>
-<p>1) the <a href="CppFunction.htm">function</a> is <a href="CppConstCorrect.htm">const-correct</a> [1-4]</p>
-<p>2) the <a href="CppFunction.htm">function</a> does document its internal assumptions using <a href="CppAssert.htm">assert</a> [5-9]</p>
-<p>&nbsp;</p>
-<!-- start of code -->
-<table summary="Answer of exercise #0: a correct Divide function okay" border = "1"><tr><td><code>
-<a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
+<table summary="./CppExerciseDivideAnswer/CppExerciseDivideAnswer.pro" border = "1"><tr><td><code>
+include(../../<a href="CppConsoleApplication.htm">ConsoleApplication</a>.pri)<br/>
 <br/>
-<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> Divide(<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> numerator, <b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> denominator)<br/>
-{<br/>
-&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(denominator <a href="CppOperatorNotEqual.htm">!=</a> 0.0);<br/>
-&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> numerator <a href="CppOperatorDivide.htm">/</a> denominator;<br/>
-}<br/>
+<a href="CppQmakeSources.htm">SOURCES</a> += <a href="CppMain.htm">main</a>.cpp<br/>
 </code></td></tr></table>
 <!-- end of the code -->
 <p>&nbsp;</p>
-<p><a href="CppScottMeyers.htm">Scott Meyers</a> argues that in release code, one should 
-still <a href="CppThrow.htm">throw</a> an <a href="CppException.htm">exception</a> [?]. This makes the 
-Divide <a href="CppFunction.htm">function</a> as below:</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppExerciseDivideAnswer/main.cpp</h2>
 <p>&nbsp;</p>
 <!-- start of code -->
-<table summary="Answer of exercise #0: a correct Divide function best" border = "1"><tr><td><code>
+<table summary="./CppExerciseDivideAnswer/main.cpp" border = "1"><tr><td><code>
 <a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
 <a href="CppInclude.htm">#include</a> &lt;<a href="CppStdexceptH.htm">stdexcept</a>&gt;<br/>
- <br/>
-<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> Divide(<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> numerator, <b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> denominator)<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppMemoryH.htm">memory</a>&gt;<br/>
+<br/>
+<a href="CppComment.htm">//</a>Features:<br/>
+<a href="CppComment.htm">//</a> <a href="CppOperatorMinus.htm">-</a> client has to check the four outputs of <b><a href="CppThis.htm">this</a></b> <a href="CppFunction.htm">function</a>:<br/>
+<a href="CppComment.htm">//</a>&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a> <a href="CppReturn.htm">returns</a> <a href="CppStdNumeric_limits.htm">std::numeric_limits</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;::infinity() <b><a href="CppIf.htm">if</a></b> numerator less than zero and denominator equals zero<br/>
+<a href="CppComment.htm">//</a>&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a> <a href="CppReturn.htm">returns</a> NaN <b><a href="CppIf.htm">if</a></b> numerator and denominator are zero<br/>
+<a href="CppComment.htm">//</a>&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a> <a href="CppReturn.htm">returns</a> <a href="CppOperatorMinus.htm">-</a><a href="CppStdNumeric_limits.htm">std::numeric_limits</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;::infinity() <b><a href="CppIf.htm">if</a></b> numerator above zero and denominator equals zero<br/>
+<a href="CppComment.htm">//</a>&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a> <a href="CppReturn.htm">returns</a> correct value <b><a href="CppIf.htm">if</a></b> denominator is unequal to zero<br/>
+<a href="CppComment.htm">//</a> <a href="CppOperatorMinus.htm">-</a> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+<b><a href="CppDouble.htm">double</a></b> DivideNaive(<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> numerator, <b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> denominator) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> numerator <a href="CppOperatorDivide.htm">/</a> denominator;<br/>
+}<br/>
+<br/>
+<a href="CppComment.htm">//</a>Features:<br/>
+<a href="CppComment.htm">//</a> <a href="CppOperatorMinus.htm">-</a> clear <a href="CppInterface.htm">interface</a> <b><a href="CppFor.htm">for</a></b> client to use <b><a href="CppThis.htm">this</a></b> <a href="CppFunction.htm">function</a><br/>
+<a href="CppComment.htm">//</a> <a href="CppOperatorMinus.htm">-</a> no decrease in <a href="CppRunTime.htm">run-time</a> speed during release, as denominator is not checked then<br/>
+<a href="CppComment.htm">//</a> <a href="CppOperatorMinus.htm">-</a> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+<b><a href="CppDouble.htm">double</a></b> DivideBilderbeek(<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> numerator, <b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> denominator) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
 &nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(denominator <a href="CppOperatorNotEqual.htm">!=</a> 0.0);<br/>
-&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (denominator <a href="CppOperatorAssign.htm">=</a><a href="CppOperatorAssign.htm">=</a> 0.0) <b><a href="CppThrow.htm">throw</a></b> <a href="CppLogic_error.htm">std::logic_error</a>("Cannot divide by 0.0");<br/>
 &nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> numerator <a href="CppOperatorDivide.htm">/</a> denominator;<br/>
+}<br/>
+<br/>
+<a href="CppComment.htm">//</a>Features:<br/>
+<a href="CppComment.htm">//</a> <a href="CppOperatorMinus.htm">-</a> clear <a href="CppInterface.htm">interface</a> <b><a href="CppFor.htm">for</a></b> client to use <b><a href="CppThis.htm">this</a></b> <a href="CppFunction.htm">function</a><br/>
+<a href="CppComment.htm">//</a> <a href="CppOperatorMinus.htm">-</a> decrease in <a href="CppRunTime.htm">run-time</a> speed during release, as denominator is still checked then<br/>
+<b><a href="CppDouble.htm">double</a></b> DivideMeyers(<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> numerator, <b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> denominator)<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(denominator <a href="CppOperatorNotEqual.htm">!=</a> 0.0);<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (denominator <a href="CppOperatorEqual.htm">==</a> 0.0) <b><a href="CppThrow.htm">throw</a></b> <a href="CppStdLogic_error.htm">std::logic_error</a>("Cannot divide by 0.0");<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> numerator <a href="CppOperatorDivide.htm">/</a> denominator;<br/>
+}<br/>
+<br/>
+<a href="CppComment.htm">//</a>Features:<br/>
+<a href="CppComment.htm">//</a> <a href="CppOperatorMinus.htm">-</a> client has to check the outputs of <b><a href="CppThis.htm">this</a></b> <a href="CppFunction.htm">function</a>:<br/>
+<a href="CppComment.htm">//</a>&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a> <a href="CppReturn.htm">returns</a> <b><a href="CppNullptr.htm">nullptr</a></b> <b><a href="CppIf.htm">if</a></b> denominator is equal to zero<br/>
+<a href="CppComment.htm">//</a>&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a> <a href="CppReturn.htm">returns</a> correct value <b><a href="CppIf.htm">if</a></b> denominator is unequal to zero<br/>
+<a href="CppComment.htm">//</a> <a href="CppOperatorMinus.htm">-</a> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+<a href="CppComment.htm">//</a> <a href="CppOperatorMinus.htm">-</a> client has to <b><a href="CppDelete.htm">delete</a></b> the <a href="CppPointer.htm">pointer</a><br/>
+<b><a href="CppDouble.htm">double</a></b> * DivideRaw<a href="CppPointer.htm">Pointer</a>(<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> numerator, <b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> denominator) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (denominator <a href="CppOperatorEqual.htm">==</a> 0.0) <b><a href="CppReturn.htm">return</a></b> <b><a href="CppNullptr.htm">nullptr</a></b>;<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <b><a href="CppNew.htm">new</a></b> <b><a href="CppDouble.htm">double</a></b>(numerator <a href="CppOperatorDivide.htm">/</a> denominator);<br/>
+}<br/>
+<br/>
+<a href="CppComment.htm">//</a>Features:<br/>
+<a href="CppComment.htm">//</a> <a href="CppOperatorMinus.htm">-</a> client has to check the outputs of <b><a href="CppThis.htm">this</a></b> <a href="CppFunction.htm">function</a>:<br/>
+<a href="CppComment.htm">//</a>&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a> <a href="CppReturn.htm">returns</a> empty <a href="CppStdUnique_ptr.htm">std::unique_ptr</a> <b><a href="CppIf.htm">if</a></b> denominator is equal to zero<br/>
+<a href="CppComment.htm">//</a>&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a> <a href="CppReturn.htm">returns</a> correct value <b><a href="CppIf.htm">if</a></b> denominator is unequal to zero<br/>
+<a href="CppComment.htm">//</a> <a href="CppOperatorMinus.htm">-</a> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+<a href="CppComment.htm">//</a> <a href="CppOperatorMinus.htm">-</a> <a href="CppStdUnique_ptr.htm">std::unique_ptr</a> takes care of its own deletion<br/>
+<a href="CppStdUnique_ptr.htm">std::unique_ptr</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; DivideUnique_ptr(<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> numerator, <b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> denominator) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (denominator <a href="CppOperatorEqual.htm">==</a> 0.0) <b><a href="CppReturn.htm">return</a></b> <b><a href="CppNullptr.htm">nullptr</a></b>;<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <a href="CppStd.htm">std</a>::make_unique&lt;<b><a href="CppDouble.htm">double</a></b>&gt;(numerator <a href="CppOperatorDivide.htm">/</a> denominator);<br/>
+}<br/>
+<br/>
+<a href="CppComment.htm">//</a>Features:<br/>
+<a href="CppComment.htm">//</a> <a href="CppOperatorMinus.htm">-</a> client has to check the outputs of <b><a href="CppThis.htm">this</a></b> <a href="CppFunction.htm">function</a>:<br/>
+<a href="CppComment.htm">//</a>&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a> first is <b><a href="CppFalse.htm">false</a></b>, <b><a href="CppIf.htm">if</a></b> denominator is equal to zero<br/>
+<a href="CppComment.htm">//</a>&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a> <b><a href="CppIf.htm">if</a></b> first is <b><a href="CppTrue.htm">true</a></b>, the correct value is in second<br/>
+<a href="CppComment.htm">//</a> <a href="CppOperatorMinus.htm">-</a> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+<a href="CppStdPair.htm">std::pair</a>&lt;<b><a href="CppBool.htm">bool</a></b>,<b><a href="CppDouble.htm">double</a></b>&gt; DividePair(<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> numerator, <b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> denominator) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (denominator <a href="CppOperatorEqual.htm">==</a> 0.0) <b><a href="CppReturn.htm">return</a></b> <a href="CppStdMake_pair.htm">std::make_pair</a>(<b><a href="CppFalse.htm">false</a></b>,0.0);<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <a href="CppStdMake_pair.htm">std::make_pair</a>(<b><a href="CppTrue.htm">true</a></b>,numerator <a href="CppOperatorDivide.htm">/</a> denominator);<br/>
+}<br/>
+<br/>
+<a href="CppComment.htm">//</a>Features:<br/>
+<a href="CppComment.htm">//</a> <a href="CppOperatorMinus.htm">-</a> client has to supply both arguments<br/>
+<a href="CppComment.htm">//</a> <a href="CppOperatorMinus.htm">-</a> client has to check the outputs of <b><a href="CppThis.htm">this</a></b> <a href="CppFunction.htm">function</a>:<br/>
+<a href="CppComment.htm">//</a>&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a> sets success to <b><a href="CppFalse.htm">false</a></b> <b><a href="CppIf.htm">if</a></b> denominator is equal to zero<br/>
+<a href="CppComment.htm">//</a>&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a> sets success to <b><a href="CppTrue.htm">true</a></b> and result to the correct value <b><a href="CppIf.htm">if</a></b> denominator is unequal to zero<br/>
+<a href="CppComment.htm">//</a> <a href="CppOperatorMinus.htm">-</a> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+<b><a href="CppVoid.htm">void</a></b> DivideReference(<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> numerator, <b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> denominator, <b><a href="CppBool.htm">bool</a></b>&amp; success, <b><a href="CppDouble.htm">double</a></b>&amp; result) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (denominator <a href="CppOperatorEqual.htm">==</a> 0.0)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;success <a href="CppOperatorAssign.htm">=</a> <b><a href="CppFalse.htm">false</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;result <a href="CppOperatorAssign.htm">=</a> 0.0;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppElse.htm">else</a></b><br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;success <a href="CppOperatorAssign.htm">=</a> <b><a href="CppTrue.htm">true</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;result <a href="CppOperatorAssign.htm">=</a> numerator <a href="CppOperatorDivide.htm">/</a> denominator;<br/>
+&nbsp;&nbsp;}<br/>
+}<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppIostreamH.htm">iostream</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppLimitsH.htm">limits</a>&gt;<br/>
+<b><a href="CppInt.htm">int</a></b> <a href="CppMain.htm">main</a>()<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppInt.htm">int</a></b> i=-1; i<a href="CppOperatorNotEqual.htm">!=</a>2; <a href="CppOperatorIncrement.htm">++</a>i)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> result{DivideNaive(<b><a href="CppStatic_cast.htm">static_cast</a></b>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;(i),0.0)};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (result <a href="CppOperatorNotEqual.htm">!=</a> result) {<a href="CppStdCout.htm">std::cout</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "NaN detected" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n';}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (result <a href="CppOperatorEqual.htm">==</a> <a href="CppStdNumeric_limits.htm">std::numeric_limits</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;::infinity()) {<a href="CppStdCout.htm">std::cout</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "Infinity detected" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n';}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (result <a href="CppOperatorEqual.htm">==</a> <a href="CppOperatorMinus.htm">-</a><a href="CppStdNumeric_limits.htm">std::numeric_limits</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;::infinity()) {<a href="CppStdCout.htm">std::cout</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "-Infinity detected" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n';}<br/>
+<br/>
+&nbsp;&nbsp;}<br/>
 }<br/>
 </code></td></tr></table>
 <!-- end of the code -->
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<h2><a href="CppReferences.htm">References</a></h2>
-<p>&nbsp;</p>
-<ol>
-  <li><a href="CppBjarneStroustrup.htm">Bjarne Stroustrup</a>. The C++ Programming Language (3rd edition). ISBN: 0-201-88954-4 7.9.3: 'Use const extensively and consistently'</li>
-  <li><a href="CppScottMeyers.htm">Scott Meyers</a>. Effective C++ (3rd edition).ISBN: 0-321-33487-6. Item 3: 'Use const whenever possible'</li>
-  <li><a href="CppJarrodHollingworth.htm">Jarrod Hollingworth</a>, <a href="CppBobSwart.htm">Bob Swart</a>, <a href="CppMarkCashman.htm">Mark Cashman</a>, <a href="CppPaulGustavson.htm">Paul Gustavson</a>. Sams C++ Builder 6 Developer's Guide. ISBN:0-672-32480-6. Chapter 3: 'Understand and use const in your code'</li>
-  <li><a href="CppJesseLiberty.htm">Jesse Liberty</a>. Sams teach yourself C++ in 24 hours. ISBN: 0-672-32224-2. Hour 8, chapter 'Const member functions': 'Use const whenever possible.'</li>
-  <li><a href="CppHerbSutter.htm">Herb Sutter</a>, <a href="CppAndreiAlexandrescu.htm">Andrei Alexandrescu</a>. C++ coding standards: 101 rules, guidelines, and best practices. ISBN: 0-32-111358-6. Chapter 68: 'Assert liberally to document internal assumptions and invariants'.</li>
-  <li><a href="CppBjarneStroustrup.htm">Bjarne Stroustrup</a>. The C++ Programming Language (3rd edition). 1997. ISBN: 0-201-88954-4. Advice 24.5.18: 'Explicitly express preconditions, postconditions, and other assertions as assertions'.</li>
-  <li>Steve McConnell. Code Complete (2nd edition). 2004. ISBN: -735619670. Chapter 8.2 'Assertions', paragraph 'Guidelines for using asserts': 'Use assertions to document and verify preconditions and postconditions'.</li>
-  <li>Steve McConnell. Code Complete (2nd edition). 2004. ISBN: -735619670. Chapter 8.2 'Assertions', paragraph 'Guidelines for using asserts': 'Use assertions for conditions that should never occur'.</li>
-  <li>Jesse Liberty. Sams teach yourself C++ in 24 hours. ISBN: 0-672-32224-2. Hour 24, chapter 'assert()': 'Use assert freely'.</li>
-</ol>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
@@ -104,11 +188,3 @@ Divide <a href="CppFunction.htm">function</a> as below:</p>
 <p>This page has been created by the <a href="Tools.htm">tool</a> <a href="ToolCodeToHtml.htm">CodeToHtml</a></p>
 </body>
 </html>
-
-
-
-
-
-
-
-

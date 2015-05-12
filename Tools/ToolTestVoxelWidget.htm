@@ -1,0 +1,1523 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <title>TestVoxelWidget</title>
+  <meta name="description" content="C++ TestVoxelWidget"/>
+  <meta name="keywords" content="C++ TestVoxelWidget "/>
+  <link rel="stylesheet" href="Richelbilderbeek.css" type="text/css"/>
+</head>
+<!-- End of head, start of body -->
+<body>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<!-- Page header -->
+<h1>(<a href="Cpp.htm">C++</a>) <a href="ToolTestVoxelWidget.htm">TestVoxelWidget</a></h1>
+<p>&nbsp;</p>
+<!-- No CodeToHtmlInfo about this class with page name ToolTestVoxelWidget-->
+<h2>Technical facts</h2>
+<p>&nbsp;</p>
+<p><a href="CppOs.htm">Operating system(s) or programming environment(s)</a></p>
+<ul>
+  <li><img src="PicLubuntu.png" alt="Lubuntu"/> <a href="CppLubuntu.htm">Lubuntu</a> 15.04 (vivid)</li>
+</ul>
+<p><a href="CppIde.htm">IDE(s)</a>:</p>
+<ul>
+  <li><img src="PicQtCreator.png" alt="Qt Creator"/> <a href="CppQtCreator.htm">Qt Creator</a> 3.1.1</li>
+</ul>
+<p><a href="CppQtProjectType.htm">Project type</a>:</p>
+<ul>
+  <li><img src="PicConsole.png" alt="console"/> <a href="CppConsoleApplication.htm">Console application</a></li>
+</ul>
+<p><a href="CppStandard.htm">C++ standard</a>:</p>
+<ul>
+  <li><img src="PicCpp98.png" alt="C++98"/> <a href="Cpp98.htm">C++98</a></li>
+</ul>
+<p><a href="CppCompiler.htm">Compiler(s)</a>:</p>
+<ul>
+  <li><a href="CppGpp.htm">G++</a> 4.9.2</li>
+</ul>
+<p><a href="CppLibrary.htm">Libraries</a> used:</p>
+<ul>
+  <li><img src="PicStl.png" alt="STL"/> <a href="CppStl.htm">STL</a>: GNU ISO C++ Library, version 4.9.2</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2><a href="CppQtProjectFile.htm">Qt project file</a>: ./ToolTestVoxelWidget/ToolTestVoxelWidget.pro</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolTestVoxelWidget/ToolTestVoxelWidget.pro" border = "1"><tr><td><code>
+include(../../<a href="CppConsoleApplication.htm">ConsoleApplication</a>NoWeffcpp.pri)<br/>
+<br/>
+include(../../<a href="CppLibrary.htm">Libraries</a>/Urho3d.pri)<br/>
+<br/>
+<a href="CppQmakeLibs.htm">LIBS</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;-lpthread \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;-lSDL2 \ #Otherwise use -lSDL<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;-ldl \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;-lGL<br/>
+<br/>
+# <a href="CppQmakeDefines.htm">DEFINES</a> += URHO3D_COMPILE_QT<br/>
+<br/>
+#<a href="CppQmakeTemplate.htm">TEMPLATE</a> = app<br/>
+#<a href="CppQmakeConfig.htm">CONFIG</a> += console<br/>
+#<a href="CppQmakeConfig.htm">CONFIG</a> -= app_bundle<br/>
+#<a href="CppQmakeConfig.htm">CONFIG</a> -= qt<br/>
+<br/>
+<a href="CppQmakeSources.htm">SOURCES</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;mastercontrol.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;inputmaster.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;cameramaster.cpp<br/>
+<br/>
+<a href="CppQmakeHeaders.htm">HEADERS</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;mastercontrol.h \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;inputmaster.h \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;cameramaster.h<br/>
+<br/>
+<a href="CppQmakeResources.htm">RESOURCES</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ToolTestVoxel<a href="CppWidget.htm">Widget</a>.qrc<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolTestVoxelWidget/cameramaster.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolTestVoxelWidget/cameramaster.h" border = "1"><tr><td><code>
+<a href="CppPragma.htm">#pragma</a> once<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "mastercontrol.h"<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> Urho3D {<br/>
+&nbsp;&nbsp;<b><a href="CppClass.htm">class</a></b> Drawable;<br/>
+&nbsp;&nbsp;<b><a href="CppClass.htm">class</a></b> Node;<br/>
+&nbsp;&nbsp;<b><a href="CppClass.htm">class</a></b> Scene;<br/>
+&nbsp;&nbsp;<b><a href="CppClass.htm">class</a></b> Sprite;<br/>
+&nbsp;&nbsp;<b><a href="CppClass.htm">class</a></b> Viewport;<br/>
+&nbsp;&nbsp;<b><a href="CppClass.htm">class</a></b> RenderPath;<br/>
+&nbsp;&nbsp;<b><a href="CppClass.htm">class</a></b> RigidBody;<br/>
+&nbsp;&nbsp;<b><a href="CppClass.htm">class</a></b> Camera;<br/>
+}<br/>
+<br/>
+<b><a href="CppUsing.htm">using</a></b> <b><a href="CppNamespace.htm">namespace</a></b> Urho3D;<br/>
+<br/>
+<b><a href="CppClass.htm">class</a></b> CameraMaster : <b><a href="CppPublic.htm">public</a></b> Object<br/>
+{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;OBJECT(CameraMaster);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppFriend.htm">friend</a></b> <b><a href="CppClass.htm">class</a></b> MasterControl;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppFriend.htm">friend</a></b> <b><a href="CppClass.htm">class</a></b> InputMaster;<br/>
+<b><a href="CppPublic.htm">public</a></b>:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;CameraMaster(Context *context, MasterControl* masterControl);<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVirtual.htm">virtual</a></b> <b><a href="CppVoid.htm">void</a></b> Start();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVirtual.htm">virtual</a></b> <b><a href="CppVoid.htm">void</a></b> Stop();<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;SharedPtr&lt;Camera&gt; camera_;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;SharedPtr&lt;Viewport&gt; viewport_;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;SharedPtr&lt;RenderPath&gt; effectRenderPath;<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Vector3 GetWorldPosition();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Quaternion GetRotation();<br/>
+<b><a href="CppPrivate.htm">private</a></b>:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;MasterControl * <b><a href="CppConst.htm">const</a></b> masterControl_;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> HandleSceneUpdate(StringHash eventType, VariantMap &amp;eventData);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;SharedPtr&lt;Node&gt; translationNode_;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;SharedPtr&lt;Node&gt; rotationNode_;<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;SharedPtr&lt;RigidBody&gt; rigidBody_;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> yaw_ <a href="CppOperatorAssign.htm">=</a> 0.0;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> pitch_ <a href="CppOperatorAssign.htm">=</a> 0.0;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><b><a href="CppDouble.htm">double</a></b> roll_ <a href="CppOperatorAssign.htm">=</a> 0.0;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> yawDelta_ <a href="CppOperatorAssign.htm">=</a> 0.0;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> pitchDelta_ <a href="CppOperatorAssign.htm">=</a> 0.0;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> forceMultiplier <a href="CppOperatorAssign.htm">=</a> 1.0;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> SetupViewport();<br/>
+};<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolTestVoxelWidget/cameramaster.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolTestVoxelWidget/cameramaster.cpp" border = "1"><tr><td><code>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic push<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "<a href="CppWeffcpp.htm">-Weffc++</a>"<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "-Wunused-parameter"<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "-Wunused-variable"<br/>
+<a href="CppDefine.htm">#define</a> BT_INFINITY<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Urho3D.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Core/CoreEvents.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Scene/SceneEvents.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Graphics/Camera.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Graphics/Viewport.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Graphics/RenderPath.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Graphics/Light.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Physics/Collision<a href="CppShape.htm">Shape</a>.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Physics/RigidBody.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Scene/Scene.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Resource/ResourceCache.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Resource/<a href="CppXml.htm">XML</a>File.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Math/MathDefs.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Input/Input.h&gt;<br/>
+<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic pop<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "cameramaster.h"<br/>
+<br/>
+<br/>
+Vector3 Scale(<b><a href="CppConst.htm">const</a></b> Vector3&amp; lhs, <b><a href="CppConst.htm">const</a></b> Vector3&amp; rhs)<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> Vector3(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;lhs.x_ * rhs.x_,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;lhs.y_ * rhs.y_,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;lhs.z_ * rhs.z_<br/>
+&nbsp;&nbsp;);<br/>
+}<br/>
+<br/>
+CameraMaster::CameraMaster(<br/>
+&nbsp;&nbsp;Context *context,<br/>
+&nbsp;&nbsp;MasterControl *masterControl<br/>
+) :<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Object(context),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;masterControl_{masterControl}<br/>
+{<br/>
+&nbsp;&nbsp;SubscribeToEvent(E_SCENEUPDATE, HANDLER(CameraMaster, HandleSceneUpdate));<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Create the camera. Limit far clip distance to match the fog<br/>
+&nbsp;&nbsp;translationNode_ <a href="CppOperatorAssign.htm">=</a> masterControl_-&gt;world_.scene-&gt;CreateChild("CamTrans");<br/>
+&nbsp;&nbsp;rotationNode_ <a href="CppOperatorAssign.htm">=</a> translationNode_-&gt;CreateChild("CamRot");<br/>
+&nbsp;&nbsp;camera_ <a href="CppOperatorAssign.htm">=</a> rotationNode_-&gt;Create<a href="CppComponent.htm">Component</a>&lt;Camera&gt;();<br/>
+&nbsp;&nbsp;camera_-&gt;SetFarClip(1024.0f);<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Set an initial position <b><a href="CppFor.htm">for</a></b> the camera scene node above the origin<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>translationNode_-&gt;SetPosition(Vector3(0.0f, 3.0f, 0.0f));<br/>
+&nbsp;&nbsp;translationNode_-&gt;SetPosition(Vector3(0.0, 3.0,-20.0));<br/>
+<br/>
+&nbsp;&nbsp;rotationNode_-&gt;SetRotation(Quaternion(0.0f, 90.0f, 0.0f));<br/>
+&nbsp;&nbsp;rigidBody_ <a href="CppOperatorAssign.htm">=</a> translationNode_-&gt;Create<a href="CppComponent.htm">Component</a>&lt;RigidBody&gt;();<br/>
+&nbsp;&nbsp;rigidBody_-&gt;SetAngularDamping(10.0f);<br/>
+&nbsp;&nbsp;Collision<a href="CppShape.htm">Shape</a>* collision<a href="CppShape.htm">Shape</a> <a href="CppOperatorAssign.htm">=</a> translationNode_-&gt;Create<a href="CppComponent.htm">Component</a>&lt;Collision<a href="CppShape.htm">Shape</a>&gt;();<br/>
+&nbsp;&nbsp;collision<a href="CppShape.htm">Shape</a>-&gt;SetSphere(0.1f);<br/>
+&nbsp;&nbsp;rigidBody_-&gt;SetMass(1.0f);<br/>
+<br/>
+&nbsp;&nbsp;Node* lightNode <a href="CppOperatorAssign.htm">=</a> translationNode_-&gt;CreateChild("DirectionalLight");<br/>
+&nbsp;&nbsp;lightNode-&gt;SetDirection(Vector3(0.0f, <a href="CppOperatorMinus.htm">-</a>1.0f, 0.0f));<br/>
+&nbsp;&nbsp;Light* light <a href="CppOperatorAssign.htm">=</a> lightNode-&gt;Create<a href="CppComponent.htm">Component</a>&lt;Light&gt;();<br/>
+&nbsp;&nbsp;light-&gt;SetLightType(LIGHT_POINT);<br/>
+&nbsp;&nbsp;light-&gt;SetBrightness(0.5f);<br/>
+&nbsp;&nbsp;light-&gt;SetColor(Color(0.7f, 0.9f, 0.6f));<br/>
+&nbsp;&nbsp;light-&gt;SetCastShadows(<b><a href="CppFalse.htm">false</a></b>);<br/>
+<br/>
+&nbsp;&nbsp;SetupViewport();<br/>
+}<br/>
+<br/>
+<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> CameraMaster::Start()<br/>
+{<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> CameraMaster::Stop()<br/>
+{<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> CameraMaster::SetupViewport()<br/>
+{<br/>
+&nbsp;&nbsp;Renderer * <b><a href="CppConst.htm">const</a></b> renderer <a href="CppOperatorAssign.htm">=</a> GetSubsystem&lt;Renderer&gt;();<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Set up a viewport to the Renderer subsystem so that the 3D scene can be seen<br/>
+&nbsp;&nbsp;SharedPtr&lt;Viewport&gt; viewport(<b><a href="CppNew.htm">new</a></b> Viewport(context_, masterControl_-&gt;world_.scene, camera_));<br/>
+&nbsp;&nbsp;viewport_ <a href="CppOperatorAssign.htm">=</a> viewport;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppAdd.htm">Add</a> anti-aliasing<br/>
+&nbsp;&nbsp;viewport_-&gt;SetRenderPath(effectRenderPath);<br/>
+&nbsp;&nbsp;renderer-&gt;SetViewport(0, viewport);<br/>
+}<br/>
+<br/>
+Vector3 CameraMaster::GetWorldPosition()<br/>
+{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> translationNode_-&gt;GetWorldPosition();<br/>
+}<br/>
+<br/>
+Quaternion CameraMaster::GetRotation()<br/>
+{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> rotationNode_-&gt;GetRotation();<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> CameraMaster::HandleSceneUpdate(StringHash <a href="CppComment.htm">/*</a> eventType <a href="CppComment.htm">*/</a>, VariantMap &amp;eventData)<br/>
+{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> <b><a href="CppNamespace.htm">namespace</a></b> Update;<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Take the frame <a href="CppTime.htm">time</a> step, which is stored as a <b><a href="CppDouble.htm">double</a></b><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> <a href="CppTime.htm">time</a>Step <a href="CppOperatorAssign.htm">=</a> eventData[P_TIMESTEP].GetFloat();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Movement speed as world units per second<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> MOVE_SPEED <a href="CppOperatorAssign.htm">=</a> 2000.0;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Mouse sensitivity as degrees per pixel<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> MOUSE_SENSITIVITY <a href="CppOperatorAssign.htm">=</a> 0.1;<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Use <b><a href="CppThis.htm">this</a></b> frame's mouse motion to adjust camera node yaw and pitch. Clamp the pitch between <a href="CppOperatorMinus.htm">-</a>90 and 90 degrees. Only move the camera when the cursor is hidden.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Input* input <a href="CppOperatorAssign.htm">=</a> GetSubsystem&lt;Input&gt;();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;IntVector2 mouseMove <a href="CppOperatorAssign.htm">=</a> input-&gt;GetMouseMove();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;yawDelta_ <a href="CppOperatorAssign.htm">=</a> 0.5*(yawDelta_ <a href="CppOperatorPlus.htm">+</a> MOUSE_SENSITIVITY * mouseMove.x_);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;pitchDelta_ <a href="CppOperatorAssign.htm">=</a> 0.5*(pitchDelta_ <a href="CppOperatorPlus.htm">+</a> MOUSE_SENSITIVITY * mouseMove.y_);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;yaw_ <a href="CppOperatorPlusAssign.htm">+=</a> yawDelta_;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;pitch_ <a href="CppOperatorPlusAssign.htm">+=</a> pitchDelta_;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;pitch_ <a href="CppOperatorAssign.htm">=</a> Clamp(pitch_, <a href="CppOperatorMinus.htm">-</a>89.0, 89.0);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppConstructor.htm">Construct</a> <b><a href="CppNew.htm">new</a></b> orientation <b><a href="CppFor.htm">for</a></b> the camera scene node from yaw and pitch. Roll is fixed to zero<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;translationNode_-&gt;SetRotation(Quaternion(0.0f, 0.0f, 0.0f));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;rotationNode_-&gt;SetRotation(Quaternion(pitch_, yaw_, 0.0f));<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Read WASD keys and move the camera scene node to the corresponding direction <b><a href="CppIf.htm">if</a></b> they are pressed<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Vector3 camForce <a href="CppOperatorAssign.htm">=</a> Vector3::ZERO;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (input-&gt;GetKeyDown('W')) camForce <a href="CppOperatorPlusAssign.htm">+=</a> Scale(rotationNode_-&gt;GetDirection(), Vector3(1.0f,0.0f,1.0f) ).Normalized();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (input-&gt;GetKeyDown('S')) camForce <a href="CppOperatorPlusAssign.htm">+=</a> Scale(rotationNode_-&gt;GetDirection(), Vector3(-1.0f,0.0f,-1.0f) ).Normalized();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (input-&gt;GetKeyDown('D')) camForce <a href="CppOperatorPlusAssign.htm">+=</a> Scale(rotationNode_-&gt;GetRight(), Vector3(1.0f,0.0f,1.0f) ).Normalized();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (input-&gt;GetKeyDown('A')) camForce <a href="CppOperatorPlusAssign.htm">+=</a> Scale(rotationNode_-&gt;GetRight(), Vector3(-1.0f,0.0f,-1.0f) ).Normalized();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (input-&gt;GetKeyDown('E')) camForce <a href="CppOperatorPlusAssign.htm">+=</a> Vector3::UP;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (input-&gt;GetKeyDown('Q') <a href="CppOperatorLogicalAnd.htm">&amp;&amp;</a> translationNode_-&gt;GetPosition().y_ &gt; 1.0f) camForce <a href="CppOperatorPlusAssign.htm">+=</a> Vector3::DOWN;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;camForce <a href="CppOperatorAssign.htm">=</a> camForce.Normalized() * MOVE_SPEED * <a href="CppTime.htm">time</a>Step;<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> ( forceMultiplier &lt; 8.0 <a href="CppOperatorLogicalAnd.htm">&amp;&amp;</a> (input-&gt;GetKeyDown(KEY_LSHIFT)<a href="CppOperatorLogicalOr.htm">||</a>input-&gt;GetKeyDown(KEY_RSHIFT)) ){<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;forceMultiplier <a href="CppOperatorPlusAssign.htm">+=</a> 0.23;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;} <b><a href="CppElse.htm">else</a></b> forceMultiplier <a href="CppOperatorAssign.htm">=</a> pow(forceMultiplier, 0.75);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;rigidBody_-&gt;ApplyForce( (forceMultiplier * camForce) <a href="CppOperatorMinus.htm">-</a> (2.3f * rigidBody_-&gt;GetLinearVelocity()) );<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (translationNode_-&gt;GetPosition().y_ &lt; 1.0f)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;translationNode_-&gt;SetPosition(Vector3(translationNode_-&gt;GetPosition().x_, 1.0f, translationNode_-&gt;GetPosition().z_));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rigidBody_-&gt;SetLinearVelocity(Vector3(rigidBody_-&gt;GetLinearVelocity().x_, 0.0f, rigidBody_-&gt;GetLinearVelocity().z_));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+}<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolTestVoxelWidget/inputmaster.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolTestVoxelWidget/inputmaster.h" border = "1"><tr><td><code>
+<a href="CppPragma.htm">#pragma</a> once<br/>
+<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic push<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "<a href="CppWeffcpp.htm">-Weffc++</a>"<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "-Wunused-parameter"<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "-Wunused-variable"<br/>
+<a href="CppDefine.htm">#define</a> BT_INFINITY<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Input/Input.h&gt;<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic pop<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "mastercontrol.h"<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> Urho3D {<br/>
+<b><a href="CppClass.htm">class</a></b> Drawable;<br/>
+<b><a href="CppClass.htm">class</a></b> Node;<br/>
+<b><a href="CppClass.htm">class</a></b> Scene;<br/>
+<b><a href="CppClass.htm">class</a></b> Sprite;<br/>
+}<br/>
+<br/>
+<b><a href="CppUsing.htm">using</a></b> <b><a href="CppNamespace.htm">namespace</a></b> Urho3D;<br/>
+<br/>
+<b><a href="CppClass.htm">class</a></b> InputMaster : <b><a href="CppPublic.htm">public</a></b> Object<br/>
+{<br/>
+&nbsp;&nbsp;OBJECT(InputMaster);<br/>
+<b><a href="CppPublic.htm">public</a></b>:<br/>
+&nbsp;&nbsp;InputMaster(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Context * <b><a href="CppConst.htm">const</a></b> context,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;MasterControl * <b><a href="CppConst.htm">const</a></b> masterControl<br/>
+&nbsp;&nbsp;);<br/>
+<br/>
+<b><a href="CppPrivate.htm">private</a></b>:<br/>
+&nbsp;&nbsp;MasterControl * <b><a href="CppConst.htm">const</a></b> masterControl_;<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> HandleMouseDown(StringHash eventType, VariantMap &amp;eventData);<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> HandleKeyDown(StringHash eventType, VariantMap &amp;eventData);<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> HandleMouseUp(StringHash eventType, VariantMap &amp;eventData);<br/>
+};<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolTestVoxelWidget/inputmaster.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolTestVoxelWidget/inputmaster.cpp" border = "1"><tr><td><code>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic push<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "<a href="CppWeffcpp.htm">-Weffc++</a>"<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "-Wunused-parameter"<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "-Wunused-variable"<br/>
+<a href="CppDefine.htm">#define</a> BT_INFINITY<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Urho3D.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Scene/Node.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Graphics/Graphics.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Graphics/OctreeQuery.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/IO/FileSystem.h&gt;<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic pop<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "inputmaster.h"<br/>
+<a href="CppInclude.htm">#include</a> "cameramaster.h"<br/>
+<br/>
+InputMaster::InputMaster(<br/>
+&nbsp;&nbsp;Context * <b><a href="CppConst.htm">const</a></b> context,<br/>
+&nbsp;&nbsp;MasterControl * <b><a href="CppConst.htm">const</a></b> masterControl<br/>
+)<br/>
+&nbsp;&nbsp;: Object(context),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;masterControl_{masterControl}<br/>
+{<br/>
+&nbsp;&nbsp;SubscribeToEvent(E_MOUSEBUTTONDOWN, HANDLER(InputMaster, HandleMouseDown));<br/>
+&nbsp;&nbsp;SubscribeToEvent(E_KEYDOWN, HANDLER(InputMaster, HandleKeyDown));<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> InputMaster::HandleMouseDown(<br/>
+&nbsp;&nbsp;StringHash <a href="CppComment.htm">/*</a> eventType <a href="CppComment.htm">*/</a>, VariantMap &amp; <a href="CppComment.htm">/*</a> eventData <a href="CppComment.htm">*/</a>)<br/>
+{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> <b><a href="CppNamespace.htm">namespace</a></b> MouseButtonDown;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><b><a href="CppInt.htm">int</a></b> button <a href="CppOperatorAssign.htm">=</a> eventData[P_BUTTON].GetInt();<br/>
+}<br/>
+<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> InputMaster::HandleMouseUp(<br/>
+&nbsp;&nbsp;StringHash <a href="CppComment.htm">/*</a> eventType <a href="CppComment.htm">*/</a>, VariantMap &amp;eventData)<br/>
+{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> <b><a href="CppNamespace.htm">namespace</a></b> MouseButtonUp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppInt.htm">int</a></b> button <a href="CppOperatorAssign.htm">=</a> eventData[P_BUTTON].GetInt();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (button <a href="CppOperatorEqual.htm">==</a> MOUSEB_LEFT) {}<a href="CppComment.htm">//</a>Deselect when mouse did not move during click on N_VOID<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> InputMaster::HandleKeyDown(<br/>
+&nbsp;&nbsp;StringHash <a href="CppComment.htm">/*</a> eventType <a href="CppComment.htm">*/</a>, VariantMap &amp;eventData)<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> <b><a href="CppNamespace.htm">namespace</a></b> KeyDown;<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> key <a href="CppOperatorAssign.htm">=</a> eventData[P_KEY].GetInt();<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Exit when ESC is pressed<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (key <a href="CppOperatorEqual.htm">==</a> KEY_ESC)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;masterControl_-&gt;Exit();<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Take screenshot<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (key <a href="CppOperatorEqual.htm">==</a> KEY_9)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Graphics * <b><a href="CppConst.htm">const</a></b> graphics{GetSubsystem&lt;Graphics&gt;()};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Image screenshot(context_);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;graphics-&gt;TakeScreenShot(screenshot);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Here we save in the Data folder with date and <a href="CppTime.htm">time</a> appended<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> String fileName{"screenshot.png"};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Log::Write(1, fileName);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;screenshot.SavePNG(fileName);<br/>
+&nbsp;&nbsp;}<br/>
+}<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolTestVoxelWidget/mastercontrol.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolTestVoxelWidget/mastercontrol.h" border = "1"><tr><td><code>
+<a href="CppPragma.htm">#pragma</a> once<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Urho3D.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/<a href="CppContainer.htm">Container</a>/HashMap.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Engine/<a href="CppApplication.htm">Application</a>.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Graphics/Viewport.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Graphics/Renderer.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/UI/UI.h&gt;<br/>
+<a href="CppComment.htm">//</a><a href="CppInclude.htm">#include</a> &lt;Urho3D/Physics/RigidBody.h&gt;<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> Urho3D {<br/>
+<b><a href="CppClass.htm">class</a></b> Drawable;<br/>
+<b><a href="CppClass.htm">class</a></b> Node;<br/>
+<b><a href="CppClass.htm">class</a></b> Scene;<br/>
+<b><a href="CppClass.htm">class</a></b> Sprite;<br/>
+}<br/>
+<br/>
+<b><a href="CppUsing.htm">using</a></b> <b><a href="CppNamespace.htm">namespace</a></b> Urho3D;<br/>
+<br/>
+<b><a href="CppClass.htm">class</a></b> CameraMaster;<br/>
+<b><a href="CppClass.htm">class</a></b> InputMaster;<br/>
+<br/>
+<b><a href="CppTypedef.htm">typedef</a></b> <b><a href="CppStruct.htm">struct</a></b> GameWorld<br/>
+{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;SharedPtr&lt;CameraMaster&gt; camera;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;SharedPtr&lt;Scene&gt; scene;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;SharedPtr&lt;Node&gt; backgroundNode;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;SharedPtr&lt;Node&gt; <b><a href="CppVoid.htm">void</a></b>Node;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStruct.htm">struct</a></b> {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SharedPtr&lt;Node&gt; sceneCursor;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SharedPtr&lt;Cursor&gt; uiCursor;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppPod.htm">POD</a>Vector&lt;RayQueryResult&gt; hitResults;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;} cursor;<br/>
+} GameWorld;<br/>
+<br/>
+<b><a href="CppTypedef.htm">typedef</a></b> <b><a href="CppStruct.htm">struct</a></b> HitInfo<br/>
+{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Vector3 position_;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Vector3 hitNormal_;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Node* hitNode_;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Drawable* drawable_;<br/>
+} HitInfo;<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> {<br/>
+&nbsp;&nbsp;StringHash <b><a href="CppConst.htm">const</a></b> N_VOID <a href="CppOperatorAssign.htm">=</a> StringHash("Void");<br/>
+&nbsp;&nbsp;StringHash <b><a href="CppConst.htm">const</a></b> N_CURSOR <a href="CppOperatorAssign.htm">=</a> StringHash("Cursor");<br/>
+&nbsp;&nbsp;StringHash <b><a href="CppConst.htm">const</a></b> N_TILEPART <a href="CppOperatorAssign.htm">=</a> StringHash("TilePart");<br/>
+&nbsp;&nbsp;StringHash <b><a href="CppConst.htm">const</a></b> N_<a href="CppSLOT.htm">SLOT</a> <a href="CppOperatorAssign.htm">=</a> StringHash("Slot");<br/>
+}<br/>
+<br/>
+<b><a href="CppClass.htm">class</a></b> MasterControl : <b><a href="CppPublic.htm">public</a></b> <a href="CppApplication.htm">Application</a><br/>
+{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;OBJECT(MasterControl);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppFriend.htm">friend</a></b> <b><a href="CppClass.htm">class</a></b> InputMaster;<br/>
+<br/>
+<b><a href="CppPublic.htm">public</a></b>:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppExplicit.htm">explicit</a></b> MasterControl(Context* context);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;GameWorld world_;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;SharedPtr&lt;ResourceCache&gt; cache_;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;SharedPtr&lt;Graphics&gt; graphics_;<br/>
+<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Setup before engine <a href="CppInitialize.htm">initialization</a>. Modifies the engine paramaters.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVirtual.htm">virtual</a></b> <b><a href="CppVoid.htm">void</a></b> Setup();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Setup after engine <a href="CppInitialize.htm">initialization</a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVirtual.htm">virtual</a></b> <b><a href="CppVoid.htm">void</a></b> Start();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Cleanup after the <a href="CppMain.htm">main</a> loop. Called by <a href="CppApplication.htm">Application</a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVirtual.htm">virtual</a></b> <b><a href="CppVoid.htm">void</a></b> Stop();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> Exit();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> CreateBackground();<br/>
+<b><a href="CppPrivate.htm">private</a></b>:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;SharedPtr&lt;UI&gt; ui_;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;SharedPtr&lt;Renderer&gt; renderer_;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;SharedPtr&lt;<a href="CppXml.htm">XML</a>File&gt; <b><a href="CppDefault.htm">default</a></b>Style_;<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Set custom window title and icon<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> SetWindowTitleAndIcon();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Create console and <a href="CppDebug.htm">debug</a> HUD<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> CreateConsoleAnd<a href="CppDebug.htm">Debug</a>Hud();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> <a href="CppConstructor.htm">Construct</a> the scene content.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> CreateScene();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> <a href="CppConstructor.htm">Construct</a> user <a href="CppInterface.htm">interface</a> elements.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> CreateUI();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Subscribe to <a href="CppApplication.htm">application</a>-wide logic update and post-render update events.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> SubscribeToEvents();<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Handle scene update event to control camera's pitch and yaw.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> HandleSceneUpdate(StringHash eventType, VariantMap&amp; eventData);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Handle the logic update event.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> HandleUpdate(StringHash eventType, VariantMap&amp; eventData);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Handle the post-render update event.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> HandlePostRenderUpdate(StringHash eventType, VariantMap&amp; eventData);<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> UpdateCursor(<b><a href="CppDouble.htm">double</a></b> <a href="CppTime.htm">time</a>Step);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Utility <a href="CppFunction.htm">function</a> to raycast to the cursor position. Return <b><a href="CppTrue.htm">true</a></b> <b><a href="CppIf.htm">if</a></b> hit.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppBool.htm">bool</a></b> CursorRayCast(<b><a href="CppDouble.htm">double</a></b> maxDistance, <a href="CppPod.htm">POD</a>Vector&lt;RayQueryResult&gt; &amp;hitResults);<br/>
+};<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolTestVoxelWidget/mastercontrol.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolTestVoxelWidget/mastercontrol.cpp" border = "1"><tr><td><code>
+<a href="CppComment.htm">//</a><a href="CppMusic.htm">Music</a> from https:<a href="CppComment.htm">//</a>www.jamendo.com/en/list/a142918/meditations<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppVectorH.htm">vector</a>&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQFile.htm">QFile</a>&gt;<br/>
+<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic push<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "<a href="CppWeffcpp.htm">-Weffc++</a>"<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "-Wunused-parameter"<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "-Wunused-variable"<br/>
+<a href="CppDefine.htm">#define</a> BT_INFINITY<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Urho3D.h&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Audio/Sound.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Audio/SoundSource.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Core/CoreEvents.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/<a href="CppDebug.htm">Debug</a>New.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Engine/Console.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Engine/<a href="CppDebug.htm">Debug</a>Hud.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Engine/Engine.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Graphics/Camera.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Graphics/<a href="CppDebug.htm">Debug</a>Renderer.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Graphics/Geometry.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Graphics/Graphics.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Graphics/IndexBuffer.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Graphics/Light.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Graphics/Material.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Graphics/Model.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Graphics/Octree.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Graphics/OctreeQuery.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Graphics/RenderPath.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Graphics/Skybox.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Graphics/StaticModel.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Graphics/VertexBuffer.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/IO/FileSystem.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/IO/Log.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Physics/Collision<a href="CppShape.htm">Shape</a>.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Physics/PhysicsWorld.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Resource/ResourceCache.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Resource/Resource.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Resource/<a href="CppXml.htm">XML</a>File.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Scene/SceneEvents.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Scene/Scene.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/UI/Font.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/UI/Text.h&gt;<br/>
+<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic pop<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "mastercontrol.h"<br/>
+<a href="CppInclude.htm">#include</a> "cameramaster.h"<br/>
+<a href="CppInclude.htm">#include</a> "inputmaster.h"<br/>
+<br/>
+DEFINE_APPLICATION_MAIN(MasterControl);<br/>
+<br/>
+MasterControl::MasterControl(Context *context):<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppApplication.htm">Application</a>(context)<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppStdSystem.htm">std::system</a>("ln <a href="CppOperatorMinus.htm">-</a>s ../../<a href="CppLibrary.htm">Libraries</a>/Urho3D/bin/Data");<br/>
+&nbsp;&nbsp;<a href="CppStdSystem.htm">std::system</a>("ln <a href="CppOperatorMinus.htm">-</a>s ../../<a href="CppLibrary.htm">Libraries</a>/Urho3D/bin/CoreData");<br/>
+}<br/>
+<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> MasterControl::Setup()<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a> Modify engine startup parameters.<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Set custom window title and icon.<br/>
+&nbsp;&nbsp;engineParameters_["WindowTitle"] <a href="CppOperatorAssign.htm">=</a> "TestVoxel<a href="CppWidget.htm">Widget</a>";<br/>
+&nbsp;&nbsp;engineParameters_["LogName"] <a href="CppOperatorAssign.htm">=</a> GetSubsystem&lt;FileSystem&gt;()-&gt;GetAppPreferencesDir("urho3d", "logs")+"TestVoxel<a href="CppWidget.htm">Widget</a>.log";<br/>
+&nbsp;&nbsp;engineParameters_["FullScreen"] <a href="CppOperatorAssign.htm">=</a> <b><a href="CppFalse.htm">false</a></b>;<br/>
+&nbsp;&nbsp;engineParameters_["Headless"] <a href="CppOperatorAssign.htm">=</a> <b><a href="CppFalse.htm">false</a></b>;<br/>
+&nbsp;&nbsp;engineParameters_["WindowWidth"] <a href="CppOperatorAssign.htm">=</a> 1024;<br/>
+&nbsp;&nbsp;engineParameters_["WindowHeight"] <a href="CppOperatorAssign.htm">=</a> 600;<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> MasterControl::Start()<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppNew.htm">new</a></b> InputMaster(context_, <b><a href="CppThis.htm">this</a></b>);<br/>
+&nbsp;&nbsp;cache_ <a href="CppOperatorAssign.htm">=</a> GetSubsystem&lt;ResourceCache&gt;();<br/>
+&nbsp;&nbsp;graphics_ <a href="CppOperatorAssign.htm">=</a> GetSubsystem&lt;Graphics&gt;();<br/>
+&nbsp;&nbsp;renderer_ <a href="CppOperatorAssign.htm">=</a> GetSubsystem&lt;Renderer&gt;();<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a> Get <b><a href="CppDefault.htm">default</a></b> style<br/>
+&nbsp;&nbsp;<b><a href="CppDefault.htm">default</a></b>Style_ <a href="CppOperatorAssign.htm">=</a> cache_-&gt;GetResource&lt;<a href="CppXml.htm">XML</a>File&gt;("UI/DefaultStyle.xml");<br/>
+&nbsp;&nbsp;SetWindowTitleAndIcon();<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Create console and <a href="CppDebug.htm">debug</a> HUD.<br/>
+&nbsp;&nbsp;CreateConsoleAnd<a href="CppDebug.htm">Debug</a>Hud();<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Create the scene content<br/>
+&nbsp;&nbsp;CreateScene();<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Create the UI content<br/>
+&nbsp;&nbsp;CreateUI();<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Hook up to the frame update and render post-update events<br/>
+&nbsp;&nbsp;SubscribeToEvents();<br/>
+<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; resource:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"MacroformDreaming.ogg"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!<a href="CppQFile.htm">QFile</a>::exists(resource.c_str()))<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQFile.htm">QFile</a> f( (":/files/"+resource).c_str());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f.copy(resource.c_str());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppQFile.htm">QFile</a>::exists(resource.c_str()));<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Sound * <b><a href="CppConst.htm">const</a></b> <a href="CppMusic.htm">music</a> <a href="CppOperatorAssign.htm">=</a> cache_-&gt;GetResource&lt;Sound&gt;("MacroformDreaming.ogg");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppMusic.htm">music</a>-&gt;SetLooped(<b><a href="CppTrue.htm">true</a></b>);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Node * <b><a href="CppConst.htm">const</a></b> <a href="CppMusic.htm">music</a>Node <a href="CppOperatorAssign.htm">=</a> world_.scene-&gt;CreateChild("<a href="CppMusic.htm">Music</a>");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;SoundSource * <b><a href="CppConst.htm">const</a></b> <a href="CppMusic.htm">music</a>Source <a href="CppOperatorAssign.htm">=</a> <a href="CppMusic.htm">music</a>Node-&gt;Create<a href="CppComponent.htm">Component</a>&lt;SoundSource&gt;();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppMusic.htm">music</a>Source-&gt;SetSoundType(SOUND_MUSIC);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppMusic.htm">music</a>Source-&gt;Play(<a href="CppMusic.htm">music</a>);<br/>
+&nbsp;&nbsp;}<br/>
+}<br/>
+<b><a href="CppVoid.htm">void</a></b> MasterControl::Stop()<br/>
+{<br/>
+&nbsp;&nbsp;engine_-&gt;DumpResources(<b><a href="CppTrue.htm">true</a></b>);<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> MasterControl::SubscribeToEvents()<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Subscribe scene update event.<br/>
+&nbsp;&nbsp;SubscribeToEvent(E_SCENEUPDATE, HANDLER(MasterControl, HandleSceneUpdate));<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Subscribe HandleUpdate() <a href="CppFunction.htm">function</a> <b><a href="CppFor.htm">for</a></b> processing update events<br/>
+&nbsp;&nbsp;SubscribeToEvent(E_UPDATE, HANDLER(MasterControl, HandleUpdate));<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Subscribe scene update event.<br/>
+&nbsp;&nbsp;SubscribeToEvent(E_SCENEUPDATE, HANDLER(MasterControl, HandleSceneUpdate));<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> MasterControl::SetWindowTitleAndIcon()<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Create console<br/>
+&nbsp;&nbsp;Console* console <a href="CppOperatorAssign.htm">=</a> engine_-&gt;CreateConsole();<br/>
+&nbsp;&nbsp;console-&gt;SetDefaultStyle(<b><a href="CppDefault.htm">default</a></b>Style_);<br/>
+&nbsp;&nbsp;console-&gt;GetBackground()-&gt;SetOpacity(0.0f);<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Create <a href="CppDebug.htm">debug</a> HUD<br/>
+&nbsp;&nbsp;<a href="CppDebug.htm">Debug</a>Hud* <a href="CppDebug.htm">debug</a>Hud <a href="CppOperatorAssign.htm">=</a> engine_-&gt;Create<a href="CppDebug.htm">Debug</a>Hud();<br/>
+&nbsp;&nbsp;<a href="CppDebug.htm">debug</a>Hud-&gt;SetDefaultStyle(<b><a href="CppDefault.htm">default</a></b>Style_);<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> MasterControl::CreateConsoleAnd<a href="CppDebug.htm">Debug</a>Hud()<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a> Create console<br/>
+&nbsp;&nbsp;Console* console <a href="CppOperatorAssign.htm">=</a> engine_-&gt;CreateConsole();<br/>
+&nbsp;&nbsp;console-&gt;SetDefaultStyle(<b><a href="CppDefault.htm">default</a></b>Style_);<br/>
+&nbsp;&nbsp;console-&gt;GetBackground()-&gt;SetOpacity(0.8f);<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a> Create <a href="CppDebug.htm">debug</a> HUD.<br/>
+&nbsp;&nbsp;<a href="CppDebug.htm">Debug</a>Hud* <a href="CppDebug.htm">debug</a>Hud <a href="CppOperatorAssign.htm">=</a> engine_-&gt;Create<a href="CppDebug.htm">Debug</a>Hud();<br/>
+&nbsp;&nbsp;<a href="CppDebug.htm">debug</a>Hud-&gt;SetDefaultStyle(<b><a href="CppDefault.htm">default</a></b>Style_);<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> MasterControl::CreateUI()<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>ResourceCache* cache <a href="CppOperatorAssign.htm">=</a> GetSubsystem&lt;ResourceCache&gt;();<br/>
+&nbsp;&nbsp;UI* <b><a href="CppConst.htm">const</a></b> ui <a href="CppOperatorAssign.htm">=</a> GetSubsystem&lt;UI&gt;();<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Create a Cursor UI element because we want to be able to hide and show it at will. When hidden, the mouse cursor will control the camera<br/>
+&nbsp;&nbsp;world_.cursor.uiCursor <a href="CppOperatorAssign.htm">=</a> <b><a href="CppNew.htm">new</a></b> Cursor(context_);<br/>
+&nbsp;&nbsp;world_.cursor.uiCursor-&gt;SetVisible(<b><a href="CppFalse.htm">false</a></b>);<br/>
+&nbsp;&nbsp;ui-&gt;SetCursor(world_.cursor.uiCursor);<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Set starting position of the cursor at the rendering window center<br/>
+&nbsp;&nbsp;world_.cursor.uiCursor-&gt;SetPosition(graphics_-&gt;GetWidth()/2, graphics_-&gt;GetHeight()/2);<br/>
+<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppConstructor.htm">Construct</a> <b><a href="CppNew.htm">new</a></b> Text object, set string to display and font to use<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Text* <b><a href="CppConst.htm">const</a></b> instructionText <a href="CppOperatorAssign.htm">=</a> ui-&gt;GetRoot()-&gt;CreateChild&lt;Text&gt;();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;instructionText-&gt;SetText("TestVoxel<a href="CppWidget.htm">Widget</a>");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;instructionText-&gt;SetFont(cache_-&gt;GetResource&lt;Font&gt;("Fonts/Anonymous Pro.ttf"), 32);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;instructionText-&gt;SetColor(Color(1.0,0.5,0.0));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>The text has multiple rows. Center them in relation to each other<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;instructionText-&gt;SetHorizontalAlignment(HA_CENTER);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;instructionText-&gt;SetVerticalAlignment(VA_CENTER);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;instructionText-&gt;SetPosition(0,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;GetRoot()-&gt;GetHeight() <a href="CppOperatorDivide.htm">/</a> 8<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;}<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> MasterControl::CreateBackground()<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppInt.htm">int</a></b> i <a href="CppOperatorAssign.htm">=</a> <a href="CppOperatorMinus.htm">-</a>2; i <a href="CppOperatorLessEqual.htm">&lt;=</a> 2; i<a href="CppOperatorIncrement.htm">++</a>)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppInt.htm">int</a></b> j <a href="CppOperatorAssign.htm">=</a> <a href="CppOperatorMinus.htm">-</a>2; j <a href="CppOperatorLessEqual.htm">&lt;=</a> 2; j<a href="CppOperatorIncrement.htm">++</a>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;world_.backgroundNode <a href="CppOperatorAssign.htm">=</a> world_.scene-&gt;CreateChild("BackPlane");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;world_.backgroundNode-&gt;SetScale(Vector3(512.0f, 1.0f, 512.0f));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;world_.backgroundNode-&gt;SetPosition(Vector3(512.0f*i, <a href="CppOperatorMinus.htm">-</a>200.0f, 512.0f*j));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StaticModel* backgroundObject <a href="CppOperatorAssign.htm">=</a> world_.backgroundNode-&gt;Create<a href="CppComponent.htm">Component</a>&lt;StaticModel&gt;();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;backgroundObject-&gt;SetModel(cache_-&gt;GetResource&lt;Model&gt;("Models/Plane.mdl"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>backgroundObject-&gt;SetMaterial(cache_-&gt;GetResource&lt;Material&gt;("Materials/LitSmoke.xml"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;backgroundObject-&gt;SetMaterial(cache_-&gt;GetResource&lt;Material&gt;("Materials/JackEnvMap.xml"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;}<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> MasterControl::CreateScene()<br/>
+{<br/>
+&nbsp;&nbsp;world_.scene <a href="CppOperatorAssign.htm">=</a> <b><a href="CppNew.htm">new</a></b> Scene(context_);<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Create octree, use <b><a href="CppDefault.htm">default</a></b> volume (-1000, <a href="CppOperatorMinus.htm">-</a>1000, <a href="CppOperatorMinus.htm">-</a>1000) to (1000,1000,1000)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;world_.scene-&gt;Create<a href="CppComponent.htm">Component</a>&lt;Octree&gt;();<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Create the physics<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;PhysicsWorld * <b><a href="CppConst.htm">const</a></b> physicsWorld <a href="CppOperatorAssign.htm">=</a> world_.scene-&gt;Create<a href="CppComponent.htm">Component</a>&lt;PhysicsWorld&gt;();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;physicsWorld-&gt;SetGravity(Vector3::ZERO);<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;world_.scene-&gt;Create<a href="CppComponent.htm">Component</a>&lt;<a href="CppDebug.htm">Debug</a>Renderer&gt;();<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Create cursor<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;world_.cursor.sceneCursor <a href="CppOperatorAssign.htm">=</a> world_.scene-&gt;CreateChild("Cursor");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;world_.cursor.sceneCursor-&gt;SetPosition(Vector3(0.0f,0.0f,0.0f));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;StaticModel * <b><a href="CppConst.htm">const</a></b> cursorModel <a href="CppOperatorAssign.htm">=</a> world_.cursor.sceneCursor-&gt;Create<a href="CppComponent.htm">Component</a>&lt;StaticModel&gt;();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;cursorModel-&gt;SetModel(cache_-&gt;GetResource&lt;Model&gt;("Models/Box.mdl"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;cursorModel-&gt;SetMaterial(cache_-&gt;GetResource&lt;Material&gt;("Materials/Water.xml"));<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Create an invisible plane for mouse raycasting<br/>
+&nbsp;&nbsp;world_.<b><a href="CppVoid.htm">void</a></b>Node <a href="CppOperatorAssign.htm">=</a> world_.scene-&gt;CreateChild("Void");<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Location is set in update since the plane moves with the camera.<br/>
+&nbsp;&nbsp;world_.<b><a href="CppVoid.htm">void</a></b>Node-&gt;SetScale(Vector3(1000.0f, 1.0f, 1000.0f));<br/>
+&nbsp;&nbsp;StaticModel* planeModel <a href="CppOperatorAssign.htm">=</a> world_.<b><a href="CppVoid.htm">void</a></b>Node-&gt;Create<a href="CppComponent.htm">Component</a>&lt;StaticModel&gt;();<br/>
+&nbsp;&nbsp;planeModel-&gt;SetModel(cache_-&gt;GetResource&lt;Model&gt;("Models/Plane.mdl"));<br/>
+&nbsp;&nbsp;planeModel-&gt;SetMaterial(cache_-&gt;GetResource&lt;Material&gt;("Materials/Terrain.xml"));<br/>
+<br/>
+&nbsp;&nbsp;CreateBackground();<br/>
+<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a> Create skybox. The Skybox <a href="CppComponent.htm">component</a> is used like StaticModel, but it will be always located at the camera, giving the<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a> illusion of the box planes being far away. Use just the ordinary Box model and a suitable material, whose shader will<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a> generate the necessary 3D texture coordinates <b><a href="CppFor.htm">for</a></b> cube mapping<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Node* skyNode <a href="CppOperatorAssign.htm">=</a> world_.scene-&gt;CreateChild("Sky");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;skyNode-&gt;SetScale(500.0f); <a href="CppComment.htm">//</a> The scale actually does not matter<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Skybox* skybox <a href="CppOperatorAssign.htm">=</a> skyNode-&gt;Create<a href="CppComponent.htm">Component</a>&lt;Skybox&gt;();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;skybox-&gt;SetModel(cache_-&gt;GetResource&lt;Model&gt;("Models/Box.mdl"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;skybox-&gt;SetMaterial(cache_-&gt;GetResource&lt;Material&gt;("Materials/Skybox.xml"));<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Create a directional light to the world. Enable cascaded shadows on it<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Node* lightNode <a href="CppOperatorAssign.htm">=</a> world_.scene-&gt;CreateChild("DirectionalLight");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;lightNode-&gt;SetDirection(Vector3(0.0f, <a href="CppOperatorMinus.htm">-</a>1.0f, 0.0f));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Light* light <a href="CppOperatorAssign.htm">=</a> lightNode-&gt;Create<a href="CppComponent.htm">Component</a>&lt;Light&gt;();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;light-&gt;SetLightType(LIGHT_DIRECTIONAL);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;light-&gt;SetBrightness(1.0f);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;light-&gt;SetColor(Color(1.0f, 0.8f, 0.7f));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;light-&gt;SetCastShadows(<b><a href="CppTrue.htm">true</a></b>);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;light-&gt;SetShadowBias(BiasParameters(0.00025f, 0.5f));<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Set cascade splits at 10, 50, 200 world unitys, fade shadows at 80<a href="CppOperatorModulus.htm">%</a> of maximum shadow distance<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;light-&gt;SetShadowCascade(CascadeParameters(7.0f, 23.0f, 42.0f, 500.0f, 0.8f));<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Create a second directional light without shadows<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Node * <b><a href="CppConst.htm">const</a></b> lightNode <a href="CppOperatorAssign.htm">=</a> world_.scene-&gt;CreateChild("DirectionalLight");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;lightNode-&gt;SetDirection(Vector3(0.0, 1.0, 0.0));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Light * <b><a href="CppConst.htm">const</a></b> light <a href="CppOperatorAssign.htm">=</a> lightNode-&gt;Create<a href="CppComponent.htm">Component</a>&lt;Light&gt;();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;light-&gt;SetLightType(LIGHT_DIRECTIONAL);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;light-&gt;SetBrightness(0.25);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;light-&gt;SetColor(Color(1.0, 1.0, 1.0));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;light-&gt;SetCastShadows(<b><a href="CppTrue.htm">true</a></b>);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;light-&gt;SetShadowBias(BiasParameters(0.00025f, 0.5f));<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Create boxes<br/>
+&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppInt.htm">int</a></b> z=-4; z<a href="CppOperatorNotEqual.htm">!=</a>5; <a href="CppOperatorIncrement.htm">++</a>z)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppInt.htm">int</a></b> y=0; y<a href="CppOperatorNotEqual.htm">!=</a>8; <a href="CppOperatorIncrement.htm">++</a>y)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppInt.htm">int</a></b> x=-4; x<a href="CppOperatorNotEqual.htm">!=</a>5; <a href="CppOperatorIncrement.htm">++</a>x)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (<a href="CppStdRand.htm">std::rand</a>() <a href="CppOperatorModulus.htm">%</a> 2) <b><a href="CppContinue.htm">continue</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Node * <b><a href="CppConst.htm">const</a></b> node{world_.scene-&gt;CreateChild()};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;node-&gt;SetPosition(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vector3(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.5 <a href="CppOperatorPlus.htm">+</a> (<b><a href="CppStatic_cast.htm">static_cast</a></b>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;(x) * 1.0),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.5 <a href="CppOperatorPlus.htm">+</a> (<b><a href="CppStatic_cast.htm">static_cast</a></b>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;(y) * 1.0),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.5 <a href="CppOperatorPlus.htm">+</a> (<b><a href="CppStatic_cast.htm">static_cast</a></b>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;(z) * 1.0)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StaticModel * <b><a href="CppConst.htm">const</a></b> model <a href="CppOperatorAssign.htm">=</a> node-&gt;Create<a href="CppComponent.htm">Component</a>&lt;StaticModel&gt;();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;model-&gt;SetModel(cache_-&gt;GetResource&lt;Model&gt;("Models/Box.mdl"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;model-&gt;SetCastShadows(<b><a href="CppTrue.htm">true</a></b>);<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Material * <b><a href="CppConst.htm">const</a></b> material <a href="CppOperatorAssign.htm">=</a> cache_-&gt;GetResource&lt;Material&gt;("Materials/Stone.xml");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;material-&gt;SetShaderParameter("DiffColor", "1.0 0.0 0.0");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;model-&gt;SetMaterial(material);<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Create camera<br/>
+&nbsp;&nbsp;world_.camera <a href="CppOperatorAssign.htm">=</a> <b><a href="CppNew.htm">new</a></b> CameraMaster(context_, <b><a href="CppThis.htm">this</a></b>);<br/>
+}<br/>
+<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> MasterControl::HandleUpdate(StringHash <a href="CppComment.htm">/*</a> eventType <a href="CppComment.htm">*/</a>, VariantMap &amp; <a href="CppComment.htm">/*</a> eventData <a href="CppComment.htm">*/</a>)<br/>
+{<br/>
+<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> MasterControl::HandleSceneUpdate(StringHash <a href="CppComment.htm">/*</a> eventType <a href="CppComment.htm">*/</a>, VariantMap &amp;eventData)<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> <b><a href="CppNamespace.htm">namespace</a></b> Update;<br/>
+&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> <a href="CppTime.htm">time</a>Step <a href="CppOperatorAssign.htm">=</a> eventData[P_TIMESTEP].GetFloat();<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Let world move along<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>world_.<b><a href="CppVoid.htm">void</a></b>Node-&gt;SetPosition((2.0f*Vector3::DOWN) <a href="CppOperatorPlus.htm">+</a> (world_.camera-&gt;GetWorldPosition()*Vector3(1.0f,0.0f,1.0f)));<br/>
+&nbsp;&nbsp;UpdateCursor(<a href="CppTime.htm">time</a>Step);<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> MasterControl::UpdateCursor(<b><a href="CppDouble.htm">double</a></b> <a href="CppTime.htm">time</a>Step)<br/>
+{<br/>
+&nbsp;&nbsp;world_.cursor.sceneCursor-&gt;<a href="CppRotate.htm">Rotate</a>(Quaternion(0.0f,100.0f*<a href="CppTime.htm">time</a>Step,0.0f));<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Keep the raycasted cursor a constant size<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>world_.cursor.sceneCursor-&gt;SetScale((world_.cursor.sceneCursor-&gt;GetWorldPosition() <a href="CppOperatorMinus.htm">-</a> world_.camera-&gt;GetWorldPosition()).Length()*0.05f);<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (CursorRayCast(250.0f, world_.cursor.hitResults))<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> n_hits{<b><a href="CppStatic_cast.htm">static_cast</a></b>&lt;<b><a href="CppInt.htm">int</a></b>&gt;(world_.cursor.hitResults.Size())};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppInt.htm">int</a></b> i <a href="CppOperatorAssign.htm">=</a> 0; i<a href="CppOperatorNotEqual.htm">!=</a>n_hits; <a href="CppOperatorIncrement.htm">++</a>i)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (world_.cursor.hitResults[i].node_-&gt;GetNameHash() <a href="CppOperatorEqual.htm">==</a> N_VOID)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vector3 camHitDifference <a href="CppOperatorAssign.htm">=</a> world_.camera-&gt;translationNode_-&gt;GetWorldPosition() <a href="CppOperatorMinus.htm">-</a> world_.cursor.hitResults[i].position_;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;camHitDifference <a href="CppOperatorDivideAssign.htm">/=</a> world_.camera-&gt;translationNode_-&gt;GetWorldPosition().y_ <a href="CppOperatorMinus.htm">-</a> world_.<b><a href="CppVoid.htm">void</a></b>Node-&gt;GetPosition().y_;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;camHitDifference <a href="CppOperatorMultiplyAssign.htm">*=</a> world_.camera-&gt;translationNode_-&gt;GetWorldPosition().y_;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;world_.cursor.sceneCursor-&gt;SetWorldPosition(world_.camera-&gt;translationNode_-&gt;GetWorldPosition()-camHitDifference);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;}<br/>
+}<br/>
+<br/>
+<b><a href="CppBool.htm">bool</a></b> MasterControl::CursorRayCast(<b><a href="CppDouble.htm">double</a></b> maxDistance, <a href="CppPod.htm">POD</a>Vector&lt;RayQueryResult&gt; &amp;hitResults)<br/>
+{<br/>
+&nbsp;&nbsp;Ray cameraRay <a href="CppOperatorAssign.htm">=</a> world_.camera-&gt;camera_-&gt;GetScreenRay(0.5f,0.5f);<br/>
+&nbsp;&nbsp;RayOctreeQuery query(hitResults, cameraRay, RAY_TRIANGLE, maxDistance, DRAWABLE_GEOMETRY);<br/>
+&nbsp;&nbsp;world_.scene-&gt;Get<a href="CppComponent.htm">Component</a>&lt;Octree&gt;()-&gt;Raycast(query);<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> hitResults.Size();<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> MasterControl::Exit()<br/>
+{<br/>
+&nbsp;&nbsp;engine_-&gt;Exit();<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> MasterControl::HandlePostRenderUpdate(StringHash <a href="CppComment.htm">/*</a> eventType <a href="CppComment.htm">*/</a>, VariantMap &amp; <a href="CppComment.htm">/*</a> eventData <a href="CppComment.htm">*/</a>)<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>world.scene-&gt;Get<a href="CppComponent.htm">Component</a>&lt;PhysicsWorld&gt;()-&gt;Draw<a href="CppDebug.htm">Debug</a>Geometry(<b><a href="CppTrue.htm">true</a></b>);<br/>
+}<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolTestVoxelWidget/qtvoxelwidget.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolTestVoxelWidget/qtvoxelwidget.h" border = "1"><tr><td><code>
+<a href="CppComment.htm">//</a><br/>
+<a href="CppComment.htm">//</a> Copyright (c) 2008-2015 the Urho3D project.<br/>
+<a href="CppComment.htm">//</a><br/>
+<a href="CppComment.htm">//</a> Permission is hereby granted, free of <b><a href="CppChar.htm">char</a></b>ge, to <a href="CppAny.htm">any</a> person obtaining a copy<br/>
+<a href="CppComment.htm">//</a> of <b><a href="CppThis.htm">this</a></b> software and associated <a href="CppDocumentation.htm">documentation</a> files (the "Software"), to deal<br/>
+<a href="CppComment.htm">//</a> in the Software without restriction, including without limitation the rights<br/>
+<a href="CppComment.htm">//</a> to use, copy, modify, merge, publish, distribute, sublicense, and/or sell<br/>
+<a href="CppComment.htm">//</a> copies of the Software, and to permit persons to whom the Software is<br/>
+<a href="CppComment.htm">//</a> furnished to <b><a href="CppDo.htm">do</a></b> so, subject to the following conditions:<br/>
+<a href="CppComment.htm">//</a><br/>
+<a href="CppComment.htm">//</a> The above copyright notice and <b><a href="CppThis.htm">this</a></b> permission notice shall be included in<br/>
+<a href="CppComment.htm">//</a> all copies or substantial portions of the Software.<br/>
+<a href="CppComment.htm">//</a><br/>
+<a href="CppComment.htm">//</a> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR<br/>
+<a href="CppComment.htm">//</a> IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,<br/>
+<a href="CppComment.htm">//</a> FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE<br/>
+<a href="CppComment.htm">//</a> AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER<br/>
+<a href="CppComment.htm">//</a> LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,<br/>
+<a href="CppComment.htm">//</a> OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN<br/>
+<a href="CppComment.htm">//</a> THE SOFTWARE.<br/>
+<a href="CppComment.htm">//</a><br/>
+<br/>
+<a href="CppIfndef.htm">#ifndef</a> URHO3D<a href="CppQmakeTemplate.htm">TEMPLATE</a>_H<br/>
+<a href="CppDefine.htm">#define</a> URHO3D<a href="CppQmakeTemplate.htm">TEMPLATE</a>_H<br/>
+<br/>
+<a href="CppPragma.htm">#pragma</a> once<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Engine/<a href="CppApplication.htm">Application</a>.h&gt;<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> Urho3D {<br/>
+<b><a href="CppClass.htm">class</a></b> Drawable;<br/>
+<b><a href="CppClass.htm">class</a></b> Node;<br/>
+<b><a href="CppClass.htm">class</a></b> Scene;<br/>
+<b><a href="CppClass.htm">class</a></b> Sprite;<br/>
+}<br/>
+<br/>
+<b><a href="CppUsing.htm">using</a></b> <b><a href="CppNamespace.htm">namespace</a></b> Urho3D;<br/>
+<br/>
+<b><a href="CppClass.htm">class</a></b> Urho3DTemplate : <b><a href="CppPublic.htm">public</a></b> <a href="CppApplication.htm">Application</a><br/>
+{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Enable type information.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;OBJECT(Urho3DTemplate)<br/>
+<br/>
+<b><a href="CppPublic.htm">public</a></b>:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> <a href="CppConstructor.htm">Constructor</a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Urho3DTemplate(Context* context);<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Setup before engine <a href="CppInitialize.htm">initialization</a>. Modifies the engine paramaters.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVirtual.htm">virtual</a></b> <b><a href="CppVoid.htm">void</a></b> Setup();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Setup after engine <a href="CppInitialize.htm">initialization</a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVirtual.htm">virtual</a></b> <b><a href="CppVoid.htm">void</a></b> Start();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Cleanup after the <a href="CppMain.htm">main</a> loop. Called by <a href="CppApplication.htm">Application</a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVirtual.htm">virtual</a></b> <b><a href="CppVoid.htm">void</a></b> Stop();<br/>
+<br/>
+<b><a href="CppProtected.htm">protected</a></b>:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Scene.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;SharedPtr&lt;Scene&gt; scene_;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Camera scene node.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;SharedPtr&lt;Node&gt; cameraNode_;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Camera yaw angle.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppFloat.htm">float</a></b> cameraYaw_;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Camera pitch angle.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppFloat.htm">float</a></b> cameraPitch_;<br/>
+<br/>
+<b><a href="CppPrivate.htm">private</a></b>:<br/>
+<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Set custom window title and icon.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> SetWindowTitleAndIcon();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Create console and <a href="CppDebug.htm">debug</a> HUD<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> CreateConsoleAnd<a href="CppDebug.htm">Debug</a>Hud();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Handle key down event to provess key controls.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> HandleKeyDown(String eventType, VariantMap&amp; eventData);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Handle scene update event to control camera's pitch and yaw.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><b><a href="CppVoid.htm">void</a></b> HandleSceneUpdate(StringHash eventType, VariantMap&amp; eventData);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> <a href="ToolPause.htm">Pause</a> flag<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppBool.htm">bool</a></b> <a href="ToolPause.htm">pause</a>d_;<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> <a href="CppConstructor.htm">Construct</a> the scene content.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> CreateScene();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> <a href="CppConstructor.htm">Construct</a> user <a href="CppInterface.htm">interface</a> elements.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> CreateUI();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Set up a viewport <b><a href="CppFor.htm">for</a></b> displaying the scene.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> SetupViewport();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Subscribe to <a href="CppApplication.htm">application</a>-wide logic update and post-render update events.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> SubscribeToEvents();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Read input and moves the camera.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> MoveCamera(<b><a href="CppFloat.htm">float</a></b> <a href="CppTime.htm">time</a>Step);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> <a href="CppAdd.htm">Add</a> or remove object.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> <a href="CppAdd.htm">Add</a>OrRemoveObject();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Create a mushroom object at position.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Node* CreateMushroom(<b><a href="CppConst.htm">const</a></b> Vector3&amp; pos);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Utility <a href="CppFunction.htm">function</a> to raycast to the cursor position. Return <b><a href="CppTrue.htm">true</a></b> <b><a href="CppIf.htm">if</a></b> hit.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppBool.htm">bool</a></b> RayCast(<b><a href="CppFloat.htm">float</a></b> maxDistance, Vector3&amp; hitPos, Drawable*&amp; hitDrawable);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Handle the logic update event.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> HandleUpdate(StringHash eventType, VariantMap&amp; eventData);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Handle the post-render update event.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><b><a href="CppVoid.htm">void</a></b> HandlePostRenderUpdate(StringHash eventType, VariantMap&amp; eventData);<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Jack scene node.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;SharedPtr&lt;Node&gt; jackNode_;<br/>
+};<br/>
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> URHO3D<a href="CppQmakeTemplate.htm">TEMPLATE</a>_H<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolTestVoxelWidget/qtvoxelwidget.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolTestVoxelWidget/qtvoxelwidget.cpp" border = "1"><tr><td><code>
+<a href="CppComment.htm">//</a><br/>
+<a href="CppComment.htm">//</a> Copyright (c) 2008-2015 the Urho3D project.<br/>
+<a href="CppComment.htm">//</a><br/>
+<a href="CppComment.htm">//</a> Permission is hereby granted, free of <b><a href="CppChar.htm">char</a></b>ge, to <a href="CppAny.htm">any</a> person obtaining a copy<br/>
+<a href="CppComment.htm">//</a> of <b><a href="CppThis.htm">this</a></b> software and associated <a href="CppDocumentation.htm">documentation</a> files (the "Software"), to deal<br/>
+<a href="CppComment.htm">//</a> in the Software without restriction, including without limitation the rights<br/>
+<a href="CppComment.htm">//</a> to use, copy, modify, merge, publish, distribute, sublicense, and/or sell<br/>
+<a href="CppComment.htm">//</a> copies of the Software, and to permit persons to whom the Software is<br/>
+<a href="CppComment.htm">//</a> furnished to <b><a href="CppDo.htm">do</a></b> so, subject to the following conditions:<br/>
+<a href="CppComment.htm">//</a><br/>
+<a href="CppComment.htm">//</a> The above copyright notice and <b><a href="CppThis.htm">this</a></b> permission notice shall be included in<br/>
+<a href="CppComment.htm">//</a> all copies or substantial portions of the Software.<br/>
+<a href="CppComment.htm">//</a><br/>
+<a href="CppComment.htm">//</a> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR<br/>
+<a href="CppComment.htm">//</a> IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,<br/>
+<a href="CppComment.htm">//</a> FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE<br/>
+<a href="CppComment.htm">//</a> AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER<br/>
+<a href="CppComment.htm">//</a> LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,<br/>
+<a href="CppComment.htm">//</a> OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN<br/>
+<a href="CppComment.htm">//</a> THE SOFTWARE.<br/>
+<a href="CppComment.htm">//</a><br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Urho3D.h&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Graphics/AnimatedModel.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Engine/<a href="CppApplication.htm">Application</a>.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Graphics/Camera.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Engine/Console.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Core/CoreEvents.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/UI/Cursor.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Engine/<a href="CppDebug.htm">Debug</a>Hud.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Graphics/<a href="CppDebug.htm">Debug</a>Renderer.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Engine/Engine.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/IO/FileSystem.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/UI/Font.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Graphics/Graphics.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Input/Input.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Input/InputEvents.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Graphics/Light.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Graphics/Material.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Graphics/Model.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Graphics/Octree.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Graphics/Renderer.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Resource/ResourceCache.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Scene/Scene.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Scene/SceneEvents.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/UI/Sprite.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Graphics/StaticModel.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/UI/Text.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Graphics/Texture2D.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Core/<a href="CppTime.htm">Time</a>r.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/UI/UI.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Resource/<a href="CppXml.htm">XML</a>File.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Graphics/Zone.h&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/<a href="CppDebug.htm">Debug</a>New.h&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "urho3d<b><a href="CppTemplate.htm">template</a></b>.h"<br/>
+<br/>
+DEFINE_APPLICATION_MAIN(Urho3DTemplate);<br/>
+<br/>
+Urho3DTemplate::Urho3DTemplate(Context *context):<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppApplication.htm">Application</a>(context),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;cameraYaw_(0.0f),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;cameraPitch_(0.0f),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="ToolPause.htm">pause</a>d_(<b><a href="CppFalse.htm">false</a></b>)<br/>
+{<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> Urho3DTemplate::Setup()<br/>
+{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a> Modify engine startup parameters.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;engineParameters_["WindowTitle"] <a href="CppOperatorAssign.htm">=</a> GetTypeName();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;engineParameters_["LogName"] <a href="CppOperatorAssign.htm">=</a> GetSubsystem&lt;FileSystem&gt;()-&gt;GetAppPreferencesDir("urho3d", "logs")+GetTypeName()+".log";<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;engineParameters_["FullScreen"] <a href="CppOperatorAssign.htm">=</a> <b><a href="CppTrue.htm">true</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;engineParameters_["Headless"] <a href="CppOperatorAssign.htm">=</a> <b><a href="CppTrue.htm">true</a></b>;<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> Urho3DTemplate::Start()<br/>
+{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Set custom window title and icon.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;SetWindowTitleAndIcon();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Create console and <a href="CppDebug.htm">debug</a> HUD.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;CreateConsoleAnd<a href="CppDebug.htm">Debug</a>Hud();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Subscribe key down event.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;SubscribeToEvent(E_KEYDOWN, HANDLER(Urho3DTemplate, HandleKeyDown));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Subscribe scene update event.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>SubscribeToEvent(E_SCENEUPDATE, HANDLER(Urho3DTemplate, HandleSceneUpdate));<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Create the scene content<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;CreateScene();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Create the UI content<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;CreateUI();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Setup the viewport <b><a href="CppFor.htm">for</a></b> displaying the scene<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;SetupViewport();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Hook up to the frame update and render post-update events<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;SubscribeToEvents();<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> Urho3DTemplate::Stop()<br/>
+{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;engine_-&gt;DumpResources(<b><a href="CppTrue.htm">true</a></b>);<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> Urho3DTemplate::SetWindowTitleAndIcon()<br/>
+{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Get <b><a href="CppDefault.htm">default</a></b> style<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ResourceCache* cache <a href="CppOperatorAssign.htm">=</a> GetSubsystem&lt;ResourceCache&gt;();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppXml.htm">XML</a>File* xmlfile <a href="CppOperatorAssign.htm">=</a> cache-&gt;GetResource&lt;<a href="CppXml.htm">XML</a>File&gt;("UI/DefaulStyle.xml");<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Create console<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Console* console <a href="CppOperatorAssign.htm">=</a> engine_-&gt;CreateConsole();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;console-&gt;SetDefaultStyle(xmlfile);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;console-&gt;GetBackground()-&gt;SetOpacity(0.0f);<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Create <a href="CppDebug.htm">debug</a> HUD<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppDebug.htm">Debug</a>Hud* <a href="CppDebug.htm">debug</a>Hud <a href="CppOperatorAssign.htm">=</a> engine_-&gt;Create<a href="CppDebug.htm">Debug</a>Hud();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppDebug.htm">debug</a>Hud-&gt;SetDefaultStyle(xmlfile);<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> Urho3DTemplate::HandleKeyDown(String eventType, VariantMap &amp;eventData)<br/>
+{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> <b><a href="CppNamespace.htm">namespace</a></b> KeyDown;<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppInt.htm">int</a></b> key <a href="CppOperatorAssign.htm">=</a> eventData[P_KEY].GetInt();<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Close console (<b><a href="CppIf.htm">if</a></b> open) or exit when ESC is pressed<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (key <a href="CppOperatorEqual.htm">==</a> KEY_ESC)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console* console <a href="CppOperatorAssign.htm">=</a> GetSubsystem&lt;Console&gt;();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (console-&gt;IsVisible())<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console-&gt;SetVisible(<b><a href="CppFalse.htm">false</a></b>);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppElse.htm">else</a></b><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;engine_-&gt;Exit();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Toggle console with F1<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppElse.htm">else</a></b> <b><a href="CppIf.htm">if</a></b> (key <a href="CppOperatorEqual.htm">==</a> KEY_F1)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GetSubsystem&lt;Console&gt;()-&gt;Toggle();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Toggle <a href="CppDebug.htm">debug</a> HUD with F2<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppElse.htm">else</a></b> <b><a href="CppIf.htm">if</a></b> (key <a href="CppOperatorEqual.htm">==</a> KEY_F2)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GetSubsystem&lt;<a href="CppDebug.htm">Debug</a>Hud&gt;()-&gt;ToggleAll();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Rendering quality controls, only when UI has no focused element<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppElse.htm">else</a></b> <b><a href="CppIf.htm">if</a></b> (!GetSubsystem&lt;UI&gt;()-&gt;GetFocusElement())<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Renderer* renderer <a href="CppOperatorAssign.htm">=</a> GetSubsystem&lt;Renderer&gt;();<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">/*</a><a href="CppComment.htm">//</a> Preferences <a href="CppOperatorDivide.htm">/</a> <a href="ToolPause.htm">Pause</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (key <a href="CppOperatorEqual.htm">==</a> KEY_SELECT <a href="CppOperatorLogicalAnd.htm">&amp;&amp;</a> touchEnabled_)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ToolPause.htm">pause</a>d_ <a href="CppOperatorAssign.htm">=</a> !<a href="ToolPause.htm">pause</a>d_;<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Input* input <a href="CppOperatorAssign.htm">=</a> GetSubsystem&lt;Input&gt;();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (screenJoystickSettingsIndex_ <a href="CppOperatorEqual.htm">==</a> M_MAX_UNSIGNED)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a> Lazy <a href="CppInitialize.htm">initialization</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ResourceCache* cache <a href="CppOperatorAssign.htm">=</a> GetSubsystem&lt;ResourceCache&gt;();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;screenJoystickSettingsIndex_ <a href="CppOperatorAssign.htm">=</a> input-&gt;<a href="CppAdd.htm">Add</a>ScreenJoystick(cache-&gt;GetResource&lt;<a href="CppXml.htm">XML</a>File&gt;("UI/ScreenJoystickSettings_Samples.xml"), cache-&gt;GetResource&lt;<a href="CppXml.htm">XML</a>File&gt;("UI/DefaultStyle.xml"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppElse.htm">else</a></b><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;input-&gt;SetScreenJoystickVisible(screenJoystickSettingsIndex_, <a href="ToolPause.htm">pause</a>d_);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<a href="CppComment.htm">*/</a><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Texture quality<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">/*</a><b><a href="CppElse.htm">else</a></b><a href="CppComment.htm">*/</a> <b><a href="CppIf.htm">if</a></b> (key <a href="CppOperatorEqual.htm">==</a> '1')<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppInt.htm">int</a></b> quality <a href="CppOperatorAssign.htm">=</a> renderer-&gt;GetTextureQuality();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorIncrement.htm">++</a>quality;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (quality&gt;QUALITY_HIGH)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;quality <a href="CppOperatorAssign.htm">=</a> QUALITY_LOW;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;renderer-&gt;SetTextureQuality(quality);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Material quality<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppElse.htm">else</a></b> <b><a href="CppIf.htm">if</a></b> (key <a href="CppOperatorEqual.htm">==</a> '2')<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppInt.htm">int</a></b> quality <a href="CppOperatorAssign.htm">=</a> renderer-&gt;GetMaterialQuality();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorIncrement.htm">++</a>quality;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (quality&gt;QUALITY_HIGH)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;quality <a href="CppOperatorAssign.htm">=</a> QUALITY_LOW;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;renderer-&gt;SetMaterialQuality(quality);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Specular lighting<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppElse.htm">else</a></b> <b><a href="CppIf.htm">if</a></b> (key <a href="CppOperatorEqual.htm">==</a> '3')<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;renderer-&gt;SetSpecularLighting(!renderer-&gt;GetSpecularLighting());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Shadow rendering<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppElse.htm">else</a></b> <b><a href="CppIf.htm">if</a></b> (key <a href="CppOperatorEqual.htm">==</a> '4')<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;renderer-&gt;SetDrawShadows(!renderer-&gt;GetDrawShadows());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Shadow map resolution<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppElse.htm">else</a></b> <b><a href="CppIf.htm">if</a></b> (key <a href="CppOperatorEqual.htm">==</a> '5')<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppInt.htm">int</a></b> shadowMapSize <a href="CppOperatorAssign.htm">=</a> renderer-&gt;GetShadowMapSize();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shadowMapSize <a href="CppOperatorMultiplyAssign.htm">*=</a> 2;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (shadowMapSize &gt; 4096)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shadowMapSize <a href="CppOperatorAssign.htm">=</a> 512;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;renderer-&gt;SetShadowMapSize(shadowMapSize);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Shadow depth and filtering quality<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppElse.htm">else</a></b> <b><a href="CppIf.htm">if</a></b> (key <a href="CppOperatorEqual.htm">==</a> '6')<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppInt.htm">int</a></b> quality <a href="CppOperatorAssign.htm">=</a> renderer-&gt;GetShadowQuality();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorIncrement.htm">++</a>quality;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (quality &gt; SHADOWQUALITY_HIGH_24BIT)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;quality <a href="CppOperatorAssign.htm">=</a> SHADOWQUALITY_LOW_16BIT;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;renderer-&gt;SetShadowQuality(quality);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Occlusion culling<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppElse.htm">else</a></b> <b><a href="CppIf.htm">if</a></b> (key <a href="CppOperatorEqual.htm">==</a> '7')<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppBool.htm">bool</a></b> occlusion <a href="CppOperatorAssign.htm">=</a> renderer-&gt;GetMaxOccluderTriangles() &gt; 0;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;occlusion <a href="CppOperatorAssign.htm">=</a> !occlusion;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;renderer-&gt;SetMaxOccluderTriangles(occlusion ? 5000 : 0);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Instancing<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppElse.htm">else</a></b> <b><a href="CppIf.htm">if</a></b> (key <a href="CppOperatorEqual.htm">==</a> '8')<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;renderer-&gt;SetDynamicInstancing(!renderer-&gt;GetDynamicInstancing());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Take screenshot<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppElse.htm">else</a></b> <b><a href="CppIf.htm">if</a></b> (key <a href="CppOperatorEqual.htm">==</a> '9')<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Graphics* graphics <a href="CppOperatorAssign.htm">=</a> GetSubsystem&lt;Graphics&gt;();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Image screenshot(context_);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;graphics-&gt;TakeScreenShot(screenshot);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Here we save in the Data folder with date and <a href="CppTime.htm">time</a> appended<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;screenshot.SavePNG(GetSubsystem&lt;FileSystem&gt;()-&gt;GetProgramDir() <a href="CppOperatorPlus.htm">+</a> "Screenshots/Screenshot_" <a href="CppOperatorPlus.htm">+</a> <a href="CppTime.htm">Time</a>::<a href="CppGetTime.htm">GetTime</a>Stamp().Replaced(':', '_').Replaced('.', '_').Replaced(' ', '_')+".png");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+}<br/>
+<br/>
+<a href="CppComment.htm">/*</a><b><a href="CppVoid.htm">void</a></b> Urho3DTemplate::HandleSceneUpdate(StringHash eventType, VariantMap &amp;eventData)<br/>
+{<br/>
+}<a href="CppComment.htm">*/</a><br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> Urho3DTemplate::CreateScene()<br/>
+{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ResourceCache* cache <a href="CppOperatorAssign.htm">=</a> GetSubsystem&lt;ResourceCache&gt;();<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;scene_ <a href="CppOperatorAssign.htm">=</a> <b><a href="CppNew.htm">new</a></b> Scene(context_);<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Create octree, use <b><a href="CppDefault.htm">default</a></b> volume (-1000, <a href="CppOperatorMinus.htm">-</a>1000, <a href="CppOperatorMinus.htm">-</a>1000) to (1000,1000,1000)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Also create a <a href="CppDebug.htm">Debug</a>Renderer <a href="CppComponent.htm">component</a> so that we can draw <a href="CppDebug.htm">debug</a> <a href="CppGeometry.htm">geometry</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;scene_-&gt;Create<a href="CppComponent.htm">Component</a>&lt;Octree&gt;();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;scene_-&gt;Create<a href="CppComponent.htm">Component</a>&lt;<a href="CppDebug.htm">Debug</a>Renderer&gt;();<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Create scene node &amp; StaticModel <a href="CppComponent.htm">component</a> <b><a href="CppFor.htm">for</a></b> showing a <b><a href="CppStatic.htm">static</a></b> plane<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Node* planeNode <a href="CppOperatorAssign.htm">=</a> scene_-&gt;CreateChild("Plane");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;planeNode-&gt;SetScale(Vector3(100.0f, 1.0f, 100.0f));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;StaticModel* planeObject <a href="CppOperatorAssign.htm">=</a> planeNode-&gt;Create<a href="CppComponent.htm">Component</a>&lt;StaticModel&gt;();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;planeObject-&gt;SetModel(cache-&gt;GetResource&lt;Model&gt;("Models/Plane.mdl"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;planeObject-&gt;SetMaterial(cache-&gt;GetResource&lt;Material&gt;("Materials/StoneTiled.xml"));<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Create a Zone <a href="CppComponent.htm">component</a> <b><a href="CppFor.htm">for</a></b> ambient lighting &amp; fog control<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Node* zoneNode <a href="CppOperatorAssign.htm">=</a> scene_-&gt;CreateChild("Zone");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Zone* zone <a href="CppOperatorAssign.htm">=</a> zoneNode-&gt;Create<a href="CppComponent.htm">Component</a>&lt;Zone&gt;();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;zone-&gt;SetBoundingBox(BoundingBox(-1000.0f, 1000.0f));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;zone-&gt;SetAmbientColor(Color(0.15f, 0.15f, 0.15f));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;zone-&gt;SetFogColor(Color(0.5f, 0.5f, 0.7f));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;zone-&gt;SetFogStart(100.0f);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;zone-&gt;SetFogEnd(300.0f);<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Create a directional light to the world. Enable cascaded shadows on it<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Node* lightNode <a href="CppOperatorAssign.htm">=</a> scene_-&gt;CreateChild("DirectionalLight");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;lightNode-&gt;SetDirection(Vector3(0.6f, <a href="CppOperatorMinus.htm">-</a>1.0f, 0.8f));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Light* light <a href="CppOperatorAssign.htm">=</a> lightNode-&gt;Create<a href="CppComponent.htm">Component</a>&lt;Light&gt;();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;light-&gt;SetLightType(LIGHT_DIRECTIONAL);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;light-&gt;SetCastShadows(<b><a href="CppTrue.htm">true</a></b>);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;light-&gt;SetShadowBias(BiasParameters(0.00025f, 0.5f));<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Set cascade splits at 10, 50, 200 world unitys, fade shadows at 80<a href="CppOperatorModulus.htm">%</a> of maximum shadow distance<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;light-&gt;SetShadowCascade(CascadeParameters(10.0f, 50.0f, 200.0f, 0.0f, 0.8f));<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Create some mushrooms<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppUnsigned.htm">unsigned</a></b> NUM_MUSHROOMS <a href="CppOperatorAssign.htm">=</a> 100;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppUnsigned.htm">unsigned</a></b> i <a href="CppOperatorAssign.htm">=</a> 0; i &lt; NUM_MUSHROOMS; <a href="CppOperatorIncrement.htm">++</a>i)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CreateMushroom(Vector3(Random(90.0f) <a href="CppOperatorMinus.htm">-</a> 45.0f, 0.0f, Random(90.0f) <a href="CppOperatorMinus.htm">-</a> 45.0f));<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Create randomly sized boxes. If boxes are big enough <a href="CppMake.htm">make</a> them occluders<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppUnsigned.htm">unsigned</a></b> NUM_BOXES <a href="CppOperatorAssign.htm">=</a> 20;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppUnsigned.htm">unsigned</a></b> i <a href="CppOperatorAssign.htm">=</a> 0; i &lt;NUM_BOXES; <a href="CppOperatorIncrement.htm">++</a>i)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Node* boxNode <a href="CppOperatorAssign.htm">=</a> scene_-&gt;CreateChild("Box");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppFloat.htm">float</a></b> size <a href="CppOperatorAssign.htm">=</a> 1.0f <a href="CppOperatorPlus.htm">+</a> Random(10.0f);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boxNode-&gt;SetPosition(Vector3(Random(80.0f) <a href="CppOperatorMinus.htm">-</a> 40.0f, size * 0.5f, Random(80.0f) <a href="CppOperatorMinus.htm">-</a> 40.0f));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boxNode-&gt;SetScale(size);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StaticModel* boxObject <a href="CppOperatorAssign.htm">=</a> boxNode-&gt;Create<a href="CppComponent.htm">Component</a>&lt;StaticModel&gt;();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boxObject-&gt;SetModel(cache-&gt;GetResource&lt;Model&gt;("Models/Box.mdl"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boxObject-&gt;SetMaterial(cache-&gt;GetResource&lt;Material&gt;("Materials/Stone.xml"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boxObject-&gt;SetCastShadows(<b><a href="CppTrue.htm">true</a></b>);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (size <a href="CppOperatorGreaterEqual.htm">&gt;=</a> 3.0f)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boxObject-&gt;SetOccluder(<b><a href="CppTrue.htm">true</a></b>);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Create Jack node that will follow the path<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;jackNode_ <a href="CppOperatorAssign.htm">=</a> scene_-&gt;CreateChild("Jack");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;jackNode_-&gt;SetPosition(Vector3(-5.0f, 0.0f, 20.0f));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;AnimatedModel* modelObject <a href="CppOperatorAssign.htm">=</a> jackNode_-&gt;Create<a href="CppComponent.htm">Component</a>&lt;AnimatedModel&gt;();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;modelObject-&gt;SetModel(cache-&gt;GetResource&lt;Model&gt;("Model/Jack.mdl"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;modelObject-&gt;SetMaterial(cache-&gt;GetResource&lt;Material&gt;("Materials/Jack.xml"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;modelObject-&gt;SetCastShadows(<b><a href="CppTrue.htm">true</a></b>);<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Create the camera. Limit far clip distance to match the fog<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;cameraNode_ <a href="CppOperatorAssign.htm">=</a> scene_-&gt;CreateChild("Camera");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Camera* camera <a href="CppOperatorAssign.htm">=</a> cameraNode_-&gt;Create<a href="CppComponent.htm">Component</a>&lt;Camera&gt;();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;camera-&gt;SetFarClip(300.0f);<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Set an initial position <b><a href="CppFor.htm">for</a></b> the camera scene node above the plane<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;cameraNode_-&gt;SetPosition(Vector3(0.0f, 5.0f, 0.0f));<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> Urho3DTemplate::CreateUI()<br/>
+{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ResourceCache* cache <a href="CppOperatorAssign.htm">=</a> GetSubsystem&lt;ResourceCache&gt;();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;UI* ui <a href="CppOperatorAssign.htm">=</a> GetSubsystem&lt;UI&gt;();<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Create a Cursor UI element because we want to be able to hide and show it at will. When hidden, the mouse cursor will control the camera, and when visible it will <a href="CppPointer.htm">point</a> the raycast target<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppXml.htm">XML</a>File* style <a href="CppOperatorAssign.htm">=</a> cache-&gt;GetResource&lt;<a href="CppXml.htm">XML</a>File&gt;("UI/Defaultstyle.xml");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;SharedPtr&lt;Cursor&gt; cursor(<b><a href="CppNew.htm">new</a></b> Cursor(context_));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;cursor-&gt;SetStyleAuto(style);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;SetCursor(cursor);<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Set starting position of the cursor at the rendering window center<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Graphics* graphics <a href="CppOperatorAssign.htm">=</a> GetSubsystem&lt;Graphics&gt;();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;cursor-&gt;SetPosition(graphics-&gt;GetWidth()/2, graphics-&gt;GetHeight()/2);<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppConstructor.htm">Construct</a> <b><a href="CppNew.htm">new</a></b> Text object, set string to display and font to use<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Text* instructionText <a href="CppOperatorAssign.htm">=</a> ui-&gt;GetRoot()-&gt;CreateChild&lt;Text&gt;();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;instructionText-&gt;SetText(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Lorum ipsum, dolor set amet"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;instructionText-&gt;SetFont(cache-&gt;GetResource&lt;Font&gt;("Fonts/Anonymous Pro.ttf"), 15);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>The text has multiple rows. Center them in relation to each other<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;instructionText-&gt;SetHorizontalAlignment(HA_CENTER);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;instructionText-&gt;SetVerticalAlignment(VA_CENTER);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;instructionText-&gt;SetPosition(0, ui-&gt;GetRoot()-&gt;GetHeight()/4);<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> Urho3DTemplate::SetupViewport()<br/>
+{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Renderer* renderer <a href="CppOperatorAssign.htm">=</a> GetSubsystem&lt;Renderer&gt;();<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Set up a viewport to the Renderer subsystem so that the 3D scene can be seen<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;SharedPtr&lt;Viewport&gt; viewport(<b><a href="CppNew.htm">new</a></b> Viewport(context_, scene_, cameraNode_-&gt;Get<a href="CppComponent.htm">Component</a>&lt;Camera&gt;()));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;renderer-&gt;SetViewport(0, viewport);<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> Urho3DTemplate::SubscribeToEvents()<br/>
+{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Subscribe HandleUpdate() <a href="CppFunction.htm">function</a> <b><a href="CppFor.htm">for</a></b> processing update events<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;SubscribeToEvent(E_UPDATE, HANDLER(Urho3DTemplate, HandleUpdate));<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Subscribe HandlePostRenderUpdate() <a href="CppFunction.htm">function</a> <b><a href="CppFor.htm">for</a></b> processing the post-render update event, during which we request <a href="CppDebug.htm">debug</a> <a href="CppGeometry.htm">geometry</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>SubscribeToEvent(E_POSTRENDERUPDATE, HANDLER(Urho3DTemplate, HandlePostRenderUpdate));<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> Urho3DTemplate::MoveCamera(<b><a href="CppFloat.htm">float</a></b> <a href="CppTime.htm">time</a>Step)<br/>
+{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Right mouse button controls mouse cursor visibility: hide when pressed<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;UI* ui <a href="CppOperatorAssign.htm">=</a> GetSubsystem&lt;UI&gt;();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Input* input <a href="CppOperatorAssign.htm">=</a> GetSubsystem&lt;Input&gt;();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;GetCursor()-&gt;SetVisible(!input-&gt;GetMouseButtonDown(MOUSEB_RIGHT));<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Do not move <b><a href="CppIf.htm">if</a></b> the UI has a focused element (the console)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (ui-&gt;GetFocusElement())<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Movement speed as world units per second<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppFloat.htm">float</a></b> MOVE_SPEED <a href="CppOperatorAssign.htm">=</a> 20.0f;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Mouse sensitivity as degrees per pixel<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppFloat.htm">float</a></b> MOUSE_SENSITIVITY <a href="CppOperatorAssign.htm">=</a> 0.1f;<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Use <b><a href="CppThis.htm">this</a></b> frame's mouse motion to adjust camera node yaw and pitch. Clamp the pitch between <a href="CppOperatorMinus.htm">-</a>90 and 90 degrees. Only move the camera when the cursor is hidden.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!ui-&gt;GetCursor()-&gt;IsVisible())<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IntVector2 mouseMove <a href="CppOperatorAssign.htm">=</a> input-&gt;GetMouseMove();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cameraYaw_ <a href="CppOperatorPlusAssign.htm">+=</a> MOUSE_SENSITIVITY * mouseMove.x_;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cameraPitch_ <a href="CppOperatorPlusAssign.htm">+=</a> MOUSE_SENSITIVITY * mouseMove.y_;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cameraPitch_ <a href="CppOperatorAssign.htm">=</a> Clamp(cameraPitch_, <a href="CppOperatorMinus.htm">-</a>90.0f, 90.0f);<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppConstructor.htm">Construct</a> <b><a href="CppNew.htm">new</a></b> orientation <b><a href="CppFor.htm">for</a></b> the camera scene node from yaw and pitch. Roll is fixed to zero<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cameraNode_-&gt;SetRotation(Quaternion(cameraPitch_, cameraYaw_, 0.0f));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Read WASD keys and move the camera scene node to the corresponding direction <b><a href="CppIf.htm">if</a></b> they are pressed<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (input-&gt;GetKeyDown('W'))<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cameraNode_-&gt;Translate(Vector3::FORWARD * MOVE_SPEED * <a href="CppTime.htm">time</a>Step);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (input-&gt;GetKeyDown('S'))<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cameraNode_-&gt;Translate(Vector3::BACK * MOVE_SPEED * <a href="CppTime.htm">time</a>Step);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (input-&gt;GetKeyDown('A'))<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cameraNode_-&gt;Translate(Vector3::LEFT * MOVE_SPEED * <a href="CppTime.htm">time</a>Step);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (input-&gt;GetKeyDown('D'))<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cameraNode_-&gt;Translate(Vector3::RIGHT * MOVE_SPEED * <a href="CppTime.htm">time</a>Step);<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppAdd.htm">Add</a> or remove objects with left mouse button<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (input-&gt;GetMouseButtonPress(MOUSEB_LEFT))<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAdd.htm">Add</a>OrRemoveObject();<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> Urho3DTemplate::<a href="CppAdd.htm">Add</a>OrRemoveObject()<br/>
+{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Raycast and check <b><a href="CppIf.htm">if</a></b> we hit a mushroom node. If yes, remove it, <b><a href="CppIf.htm">if</a></b> no create a <b><a href="CppNew.htm">new</a></b> one<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Vector3 hitPos;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Drawable* hitDrawable;<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (RayCast(250.0f, hitPos, hitDrawable))<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Node* hitNode <a href="CppOperatorAssign.htm">=</a> hitDrawable-&gt;GetNode();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (hitNode-&gt;GetName() <a href="CppOperatorEqual.htm">==</a> "Mushroom")<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hitNode-&gt;Remove();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppElse.htm">else</a></b><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CreateMushroom(hitPos);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+}<br/>
+<br/>
+Node* Urho3DTemplate::CreateMushroom(<b><a href="CppConst.htm">const</a></b> Vector3 &amp;pos)<br/>
+{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ResourceCache* cache <a href="CppOperatorAssign.htm">=</a> GetSubsystem&lt;ResourceCache&gt;();<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Node* mushroomNode <a href="CppOperatorAssign.htm">=</a> scene_-&gt;CreateChild("Mushroom");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;mushroomNode-&gt;SetPosition(pos);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;mushroomNode-&gt;SetRotation(Quaternion(0.0f, Random(360.0f), 0.0f));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;mushroomNode-&gt;SetScale(2.0f <a href="CppOperatorPlus.htm">+</a> Random(0.5f));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;StaticModel* mushroomObject <a href="CppOperatorAssign.htm">=</a> mushroomNode-&gt;Create<a href="CppComponent.htm">Component</a>&lt;StaticModel&gt;();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;mushroomObject-&gt;SetModel(cache-&gt;GetResource&lt;Model&gt;("Models/Mushroom.mdl"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;mushroomObject-&gt;SetMaterial(cache-&gt;GetResource&lt;Material&gt;("Materials/Mushroom.xml"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;mushroomObject-&gt;SetCastShadows(<b><a href="CppTrue.htm">true</a></b>);<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> mushroomNode;<br/>
+}<br/>
+<br/>
+<b><a href="CppBool.htm">bool</a></b> Urho3DTemplate::RayCast(<b><a href="CppFloat.htm">float</a></b> maxDistance, Vector3 &amp;hitPos, Drawable *&amp;hitDrawable)<br/>
+{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;hitDrawable <a href="CppOperatorAssign.htm">=</a> 0;<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;UI* ui <a href="CppOperatorAssign.htm">=</a> GetSubsystem&lt;UI&gt;();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;IntVector2 pos <a href="CppOperatorAssign.htm">=</a> ui-&gt;GetCursorPosition();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Check the cursor is visible and there is no UI element in front of the cursor<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!ui-&gt;GetCursor()-&gt;IsVisible() <a href="CppOperatorLogicalOr.htm">||</a> ui-&gt;GetElementAt(pos, <b><a href="CppTrue.htm">true</a></b>))<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <b><a href="CppFalse.htm">false</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Graphics* graphics <a href="CppOperatorAssign.htm">=</a> GetSubsystem&lt;Graphics&gt;();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Camera* camera <a href="CppOperatorAssign.htm">=</a> cameraNode_-&gt;Get<a href="CppComponent.htm">Component</a>&lt;Camera&gt;();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Ray cameraRay <a href="CppOperatorAssign.htm">=</a> camera-&gt;GetScreenRay((<b><a href="CppFloat.htm">float</a></b>)pos.x_/graphics-&gt;GetWidth(), (<b><a href="CppFloat.htm">float</a></b>)pos.y_/graphics-&gt;GetHeight());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Pick only <a href="CppGeometry.htm">geometry</a> objects, not eg zones or lights, only get the first (closest) hit<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppPod.htm">POD</a>Vector&lt;RayQueryResult&gt; results;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;RayOctreeQuery query(results, cameraRay, RAY_TRIANGLE, maxDistance, DRAWABLE_GEOMETRY);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;scene_-&gt;Get<a href="CppComponent.htm">Component</a>&lt;Octree&gt;()-&gt;RaycastSingle(query);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (results.Size())<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RayQueryResult&amp; result <a href="CppOperatorAssign.htm">=</a> results[0];<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hitPos <a href="CppOperatorAssign.htm">=</a> result.position_;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hitDrawable <a href="CppOperatorAssign.htm">=</a> result.drawable_;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <b><a href="CppTrue.htm">true</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <b><a href="CppFalse.htm">false</a></b>;<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> Urho3DTemplate::HandleUpdate(StringHash eventType, VariantMap &amp;eventData)<br/>
+{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> <b><a href="CppNamespace.htm">namespace</a></b> Update;<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Take the frame <a href="CppTime.htm">time</a> step, which is stored as a <b><a href="CppFloat.htm">float</a></b><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppFloat.htm">float</a></b> <a href="CppTime.htm">time</a>Step <a href="CppOperatorAssign.htm">=</a> eventData[P_TIMESTEP].GetFloat();<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Move the camera, scale movement with <a href="CppTime.htm">time</a> step<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;MoveCamera(<a href="CppTime.htm">time</a>Step);<br/>
+}<br/>
+<br/>
+<a href="CppComment.htm">/*</a><b><a href="CppVoid.htm">void</a></b> Urho3DTemplate::HandlePostRenderUpdate(StringHash eventType, VariantMap &amp;eventData)<br/>
+{<br/>
+}<a href="CppComment.htm">*/</a><br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p>&nbsp;</p>
+<p><a href="http://validator.w3.org/check?uri=referer"><img src="valid-xhtml10.png" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a></p>
+<p>This page has been created by the <a href="Tools.htm">tool</a> <a href="ToolCodeToHtml.htm">CodeToHtml</a></p>
+</body>
+</html>

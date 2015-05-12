@@ -149,7 +149,7 @@
 &nbsp;&nbsp;<a href="CppComment.htm">//</a>TriangleMeshBuilder&amp; <b><a href="CppOperator.htm">operator</a></b>=(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TriangleMeshBuilder<a href="CppOperatorLogicalAnd.htm">&amp;&amp;</a>) <a href="CppOperatorAssign.htm">=</a> <b><a href="CppDelete.htm">delete</a></b>;<br/>
 &nbsp;&nbsp;~TriangleMeshBuilder() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
 <br/>
-&nbsp;&nbsp;<a href="CppBoostShared_ptr.htm">boost::shared_ptr</a>&lt;TriangleMeshBuilderImpl&gt; m_impl;<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdUnique_ptr.htm">std::unique_ptr</a>&lt;TriangleMeshBuilderImpl&gt; m_impl;<br/>
 <br/>
 &nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
 &nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppVoid.htm">void</a></b> Test() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
@@ -197,27 +197,23 @@
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdFunction.htm">std::function</a>&lt;<a href="CppRibi.htm">ribi</a>::foam::PatchFieldType(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp;)&gt; boundary_to_patch_field_type_function,<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> CreateVerticalFacesStrategy strategy,<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppBool.htm">bool</a></b> verbose<br/>
-) : m_impl{}<br/>
+) : m_impl{<a href="CppStd.htm">std</a>::make_unique&lt;TriangleMeshBuilderImpl&gt;(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cells,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mesh_filename,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boundary_to_patch_field_type_function,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strategy,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;verbose<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br/>
+&nbsp;&nbsp; }<br/>
 {<br/>
 &nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
 &nbsp;&nbsp;Test();<br/>
 &nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
-&nbsp;&nbsp;<a href="CppBoostShared_ptr.htm">boost::shared_ptr</a>&lt;TriangleMeshBuilderImpl&gt; impl{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppNew.htm">new</a></b> TriangleMeshBuilderImpl(<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cells,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mesh_filename,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boundary_to_patch_field_type_function,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strategy,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;verbose<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;)<br/>
-&nbsp;&nbsp;};<br/>
-&nbsp;&nbsp;m_impl <a href="CppOperatorAssign.htm">=</a> impl;<br/>
-&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(m_impl);<br/>
 }<br/>
 <br/>
 <a href="CppRibi.htm">ribi</a>::trim::TriangleMeshBuilder::~TriangleMeshBuilder() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
-&nbsp;&nbsp;<a href="CppComment.htm">//</a>OK<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>To prevent in<b><a href="CppCompl.htm">compl</a></b>ete TriangleMeshBuilderImpl errors<br/>
 }<br/>
 <br/>
 <b><a href="CppInt.htm">int</a></b> <a href="CppRibi.htm">ribi</a>::trim::TriangleMeshBuilder::CountCells() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
@@ -275,10 +271,8 @@
 <b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a> {<br/>
 <b><a href="CppNamespace.htm">namespace</a></b> trim {<br/>
 <br/>
-<b><a href="CppClass.htm">class</a></b> TriangleMeshBuilderImpl<br/>
+<b><a href="CppStruct.htm">struct</a></b> TriangleMeshBuilderImpl<br/>
 {<br/>
-&nbsp;&nbsp;<b><a href="CppFriend.htm">friend</a></b> <b><a href="CppClass.htm">class</a></b> TriangleMeshBuilder;<br/>
-<br/>
 &nbsp;&nbsp;<b><a href="CppExplicit.htm">explicit</a></b> TriangleMeshBuilderImpl(<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppBoostShared_ptr.htm">boost::shared_ptr</a>&lt;<a href="CppRibi.htm">ribi</a>::trim::Cell<a href="CppOperatorStreamIn.htm">&gt;&gt;</a>&amp; cells,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; mesh_filename,<br/>
@@ -286,12 +280,11 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> CreateVerticalFacesStrategy strategy,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppBool.htm">bool</a></b> verbose<br/>
 &nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;~TriangleMeshBuilderImpl();<br/>
 &nbsp;&nbsp;<b><a href="CppInt.htm">int</a></b> CountCells() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
 &nbsp;&nbsp;<b><a href="CppInt.htm">int</a></b> CountFaces() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
 <br/>
 &nbsp;&nbsp;<b><a href="CppPrivate.htm">private</a></b>:<br/>
-&nbsp;&nbsp;~TriangleMeshBuilderImpl() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
-<br/>
 &nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppBoostShared_ptr.htm">boost::shared_ptr</a>&lt;Cell<a href="CppOperatorStreamIn.htm">&gt;&gt;</a> m_cells;<br/>
 &nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppBoostShared_ptr.htm">boost::shared_ptr</a>&lt;Face<a href="CppOperatorStreamIn.htm">&gt;&gt;</a> m_faces;<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppBoostShared_ptr.htm">boost::shared_ptr</a>&lt;<a href="CppPoint.htm">Point</a><a href="CppOperatorStreamIn.htm">&gt;&gt;</a> m_<a href="CppPointer.htm">point</a>s;<br/>
@@ -351,11 +344,6 @@
 &nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
 &nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppVoid.htm">void</a></b> Test() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
 &nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppFriend.htm">friend</a></b> <b><a href="CppVoid.htm">void</a></b> <a href="CppBoostChecked_delete.htm">boost::checked_delete</a>&lt;&gt;(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TriangleMeshBuilderImpl*);<br/>
-&nbsp;&nbsp;<b><a href="CppFriend.htm">friend</a></b> <b><a href="CppVoid.htm">void</a></b> <a href="CppBoostChecked_delete.htm">boost::checked_delete</a>&lt;&gt;(<b><a href="CppConst.htm">const</a></b> TriangleMeshBuilderImpl*);<br/>
-&nbsp;&nbsp;<b><a href="CppFriend.htm">friend</a></b> <b><a href="CppClass.htm">class</a></b> <a href="CppBoost.htm">boost</a>::detail::sp_ms_deleter&lt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TriangleMeshBuilderImpl&gt;;<br/>
-&nbsp;&nbsp;<b><a href="CppFriend.htm">friend</a></b> <b><a href="CppClass.htm">class</a></b> <a href="CppBoost.htm">boost</a>::detail::sp_ms_deleter&lt;<b><a href="CppConst.htm">const</a></b> TriangleMeshBuilderImpl&gt;;<br/>
 };<br/>
 <br/>
 } <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> trim<br/>
@@ -1196,7 +1184,7 @@
 &nbsp;&nbsp;}<br/>
 }<br/>
 <br/>
-<a href="CppRibi.htm">ribi</a>::trim::TriangleMeshBuilderImpl::~TriangleMeshBuilderImpl() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+<a href="CppRibi.htm">ribi</a>::trim::TriangleMeshBuilderImpl::~TriangleMeshBuilderImpl()<br/>
 {<br/>
 &nbsp;&nbsp;<a href="CppComment.htm">//</a>OK<br/>
 }<br/>
@@ -1469,7 +1457,7 @@
 &nbsp;&nbsp;}<br/>
 <br/>
 &nbsp;&nbsp;<a href="CppStdSort.htm">std::sort</a>(v.begin(),v.end(),Helper().OrderByIndex());<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> new_end <a href="CppOperatorAssign.htm">=</a> <a href="CppStdUnique.htm">std::unique</a>(v.begin(),v.end());<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> new_end <a href="CppOperatorAssign.htm">=</a> <a href="CppStdUnique.htm">std::unique</a>(<a href="CppStdBegin.htm">std::begin</a>(v),<a href="CppStdEnd.htm">std::end</a>(v));<br/>
 &nbsp;&nbsp;v.erase(new_end,v.end());<br/>
 &nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppStdCount.htm">std::count</a>(v.begin(),v.end(),<b><a href="CppNullptr.htm">nullptr</a></b>) <a href="CppOperatorEqual.htm">==</a> 0);<br/>
 <br/>
@@ -1498,7 +1486,7 @@
 &nbsp;&nbsp;}<br/>
 <br/>
 &nbsp;&nbsp;<a href="CppStdSort.htm">std::sort</a>(v.begin(),v.end(),Helper().OrderByX());<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> new_end <a href="CppOperatorAssign.htm">=</a> <a href="CppStdUnique.htm">std::unique</a>(v.begin(),v.end());<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> new_end <a href="CppOperatorAssign.htm">=</a> <a href="CppStdUnique.htm">std::unique</a>(<a href="CppStdBegin.htm">std::begin</a>(v),<a href="CppStdEnd.htm">std::end</a>(v));<br/>
 &nbsp;&nbsp;v.erase(new_end,v.end());<br/>
 &nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppStdCount.htm">std::count</a>(v.begin(),v.end(),<b><a href="CppNullptr.htm">nullptr</a></b>) <a href="CppOperatorEqual.htm">==</a> 0);<br/>
 <br/>
@@ -3488,7 +3476,7 @@
 &nbsp;&nbsp;<a href="CppStdSort.htm">std::sort</a>(w.begin(),w.end(),Helper().OrderByX());<br/>
 &nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppStdIs_sorted.htm">std::is_sorted</a>(v.begin(),v.end(),Helper().OrderByX()));<br/>
 &nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppStdIs_sorted.htm">std::is_sorted</a>(w.begin(),w.end(),Helper().OrderByX()));<br/>
-&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppStdUnique.htm">std::unique</a>(v.begin(),v.end()) <a href="CppOperatorEqual.htm">==</a> v.end());<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppStdUnique.htm">std::unique</a>(<a href="CppStdBegin.htm">std::begin</a>(v),<a href="CppStdEnd.htm">std::end</a>(v)) <a href="CppOperatorEqual.htm">==</a> v.end());<br/>
 &nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppStdUnique.htm">std::unique</a>(w.begin(),w.end()) <a href="CppOperatorEqual.htm">==</a> w.end());<br/>
 &nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppStdCount.htm">std::count</a>(v.begin(),v.end(),<b><a href="CppNullptr.htm">nullptr</a></b>) <a href="CppOperatorEqual.htm">==</a> 0);<br/>
 &nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppStdCount.htm">std::count</a>(w.begin(),w.end(),<b><a href="CppNullptr.htm">nullptr</a></b>) <a href="CppOperatorEqual.htm">==</a> 0);<br/>
@@ -4132,7 +4120,7 @@
 <a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
 <a href="CppComment.htm">/*</a><br/>
 TriangleMeshCreator, creates a 3D mesh <b><a href="CppUsing.htm">using</a></b> Triangle,<br/>
-Copyright (C) 2014-2014 Richel Bilderbeek<br/>
+Copyright (C) 2014-2015 Richel Bilderbeek<br/>
 <br/>
 This program is free software: you can redistribute it and/or modify<br/>
 it under the terms of the GNU General Public License as published by<br/>
@@ -4354,7 +4342,7 @@ along with this program. If not, see &lt;http://www.gnu.org/licenses/&gt;.<br/>
 <a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
 <a href="CppComment.htm">/*</a><br/>
 TriangleMeshCreator, creates a 3D mesh <b><a href="CppUsing.htm">using</a></b> Triangle,<br/>
-Copyright (C) 2014-2014 Richel Bilderbeek<br/>
+Copyright (C) 2014-2015 Richel Bilderbeek<br/>
 <br/>
 This program is free software: you can redistribute it and/or modify<br/>
 it under the terms of the GNU General Public License as published by<br/>
@@ -6631,7 +6619,7 @@ along with this program. If not, see &lt;http://www.gnu.org/licenses/&gt;.<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppBoostShared_ptr.htm">boost::shared_ptr</a>&lt;T<a href="CppOperatorStreamIn.htm">&gt;&gt;</a> v) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
 &nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppStdCount.htm">std::count</a>(v.begin(),v.end(),<b><a href="CppNullptr.htm">nullptr</a></b>) <a href="CppOperatorEqual.htm">==</a> 0);<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppBoostShared_ptr.htm">boost::shared_ptr</a>&lt;<b><a href="CppConst.htm">const</a></b> T<a href="CppOperatorStreamIn.htm">&gt;&gt;</a> w(v.begin(),v.end());<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppBoostShared_ptr.htm">boost::shared_ptr</a>&lt;<b><a href="CppConst.htm">const</a></b> T<a href="CppOperatorStreamIn.htm">&gt;&gt;</a> w(<a href="CppStdBegin.htm">std::begin</a>(v),<a href="CppStdEnd.htm">std::end</a>(v));<br/>
 &nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppStdCount.htm">std::count</a>(w.begin(),w.end(),<b><a href="CppNullptr.htm">nullptr</a></b>) <a href="CppOperatorEqual.htm">==</a> 0);<br/>
 &nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> w;<br/>
 }<br/>

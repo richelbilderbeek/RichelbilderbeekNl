@@ -211,7 +211,14 @@ along with this program.If not, see &lt;http://www.gnu.org/licenses/&gt;.<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppFunction.htm">function</a>_name,<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; file_name,<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> max_<a href="CppTime.htm">time</a>_sec<br/>
-) : m_impl(<a href="CppStd.htm">std</a>::make_unique&lt;Test<a href="CppTime.htm">Time</a>rImpl&gt;(<a href="CppFunction.htm">function</a>_name,file_name,max_<a href="CppTime.htm">time</a>_sec))<br/>
+)<br/>
+<br/>
+<a href="CppPreIf.htm">#if</a> __cplusplus <a href="CppOperatorGreaterEqual.htm">&gt;=</a> 201402L<br/>
+&nbsp;&nbsp;: m_impl(<a href="CppStd.htm">std</a>::make_unique&lt;Test<a href="CppTime.htm">Time</a>rImpl&gt;(<a href="CppFunction.htm">function</a>_name,file_name,max_<a href="CppTime.htm">time</a>_sec))<br/>
+<a href="CppEndif.htm">#endif</a><br/>
+<a href="CppPreIf.htm">#if</a> __cplusplus &lt; 201402L<br/>
+&nbsp;&nbsp;: m_impl(<b><a href="CppNew.htm">new</a></b> Test<a href="CppTime.htm">Time</a>rImpl(<a href="CppFunction.htm">function</a>_name,file_name,max_<a href="CppTime.htm">time</a>_sec))<br/>
+<a href="CppEndif.htm">#endif</a><br/>
 {<br/>
 &nbsp;&nbsp;<a href="CppStdClog.htm">std::clog</a><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="CppStdString.htm">std::string</a>(m_impl-&gt;m_cnt <a href="CppOperatorMinus.htm">-</a> 1,' ')<br/>

@@ -1,0 +1,375 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <title>GameZero</title>
+  <meta name="description" content="C++ GameZero"/>
+  <meta name="keywords" content="C++ GameZero "/>
+  <link rel="stylesheet" href="Richelbilderbeek.css" type="text/css"/>
+</head>
+<!-- End of head, start of body -->
+<body>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<!-- Page header -->
+<h1>(<a href="Cpp.htm">C++</a>) <a href="GameZero.htm">GameZero</a></h1>
+<p>&nbsp;</p>
+<!-- No CodeToHtmlInfo about this class with page name GameZero-->
+<h2>Technical facts</h2>
+<p>&nbsp;</p>
+<p><a href="CppOs.htm">Operating system(s) or programming environment(s)</a></p>
+<ul>
+  <li><img src="PicLubuntu.png" alt="Lubuntu"/> <a href="CppLubuntu.htm">Lubuntu</a> 15.04 (vivid)</li>
+</ul>
+<p><a href="CppIde.htm">IDE(s)</a>:</p>
+<ul>
+  <li><img src="PicQtCreator.png" alt="Qt Creator"/> <a href="CppQtCreator.htm">Qt Creator</a> 3.1.1</li>
+</ul>
+<p><a href="CppQtProjectType.htm">Project type</a>:</p>
+<ul>
+  <li><img src="PicConsole.png" alt="console"/> <a href="CppConsoleApplication.htm">Console application</a></li>
+</ul>
+<p><a href="CppStandard.htm">C++ standard</a>:</p>
+<ul>
+  <li><img src="PicCpp98.png" alt="C++98"/> <a href="Cpp98.htm">C++98</a></li>
+</ul>
+<p><a href="CppCompiler.htm">Compiler(s)</a>:</p>
+<ul>
+  <li><a href="CppGpp.htm">G++</a> 4.9.2</li>
+</ul>
+<p><a href="CppLibrary.htm">Libraries</a> used:</p>
+<ul>
+  <li><img src="PicStl.png" alt="STL"/> <a href="CppStl.htm">STL</a>: GNU ISO C++ Library, version 4.9.2</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2><a href="CppQtProjectFile.htm">Qt project file</a>: ./GameZero/GameZeroDesktop.pro</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./GameZero/GameZeroDesktop.pro" border = "1"><tr><td><code>
+include(../../<a href="CppDesktopApplication.htm">DesktopApplication</a>.pri)<br/>
+include(../../<a href="CppLibrary.htm">Libraries</a>/<a href="CppApfloat.htm">Apfloat</a>.pri)<br/>
+include(../../<a href="CppLibrary.htm">Libraries</a>/<a href="CppBoost.htm">Boost</a>.pri)<br/>
+include(../../<a href="CppLibrary.htm">Libraries</a>/GeneralConsole.pri)<br/>
+include(../../<a href="CppLibrary.htm">Libraries</a>/GeneralDesktop.pri)<br/>
+<br/>
+<a href="CppQmakeSources.htm">SOURCES</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;qt<a href="CppMain.htm">main</a>.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;qtzero<a href="CppMain.htm">main</a>dialog.cpp<br/>
+<br/>
+<a href="CppQmakeResources.htm">RESOURCES</a> += GameZero.qrc<br/>
+<br/>
+<a href="CppFORMS.htm">FORMS</a> += qtzero<a href="CppMain.htm">main</a>dialog.ui<br/>
+<br/>
+<a href="CppQmakeHeaders.htm">HEADERS</a> += qtzero<a href="CppMain.htm">main</a>dialog.h<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./GameZero/qtmain.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./GameZero/qtmain.cpp" border = "1"><tr><td><code>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic push<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "<a href="CppWeffcpp.htm">-Weffc++</a>"<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "-Wunused-local-typedefs"<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "-Wunused-but-set-parameter"<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQApplication.htm">QApplication</a>&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "qtzeromaindialog.h"<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic pop<br/>
+<br/>
+<b><a href="CppInt.htm">int</a></b> <a href="CppMain.htm">main</a>(<b><a href="CppInt.htm">int</a></b> <a href="CppArgc.htm">argc</a>, <b><a href="CppChar.htm">char</a></b> *<a href="CppArgc.htm">argv</a>[])<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Start the <a href="CppApplication.htm">application</a><br/>
+&nbsp;&nbsp;<a href="CppQApplication.htm">QApplication</a> a(<a href="CppArgc.htm">argc</a>, <a href="CppArgc.htm">argv</a>);<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Load the dialog<br/>
+&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::<a href="CppQt.htm">Qt</a>ZeroMainDialog w;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Show the dialog<br/>
+&nbsp;&nbsp;w.show();<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Execute the <a href="CppApplication.htm">application</a><br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> a.exec();<br/>
+}<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./GameZero/qtzeromaindialog.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./GameZero/qtzeromaindialog.h" border = "1"><tr><td><code>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
+<a href="CppComment.htm">/*</a><br/>
+GameZero, a bare bone game<br/>
+Copyright (C) 2015-2015 Richel Bilderbeek<br/>
+<br/>
+This program is free software: you can redistribute it and/or modify<br/>
+it under the terms of the GNU General Public License as published by<br/>
+the Free Software Foundation, either version 3 of the License, or<br/>
+(at your option) any later version.<br/>
+<br/>
+This program is distributed in the hope that it will be useful,<br/>
+but WITHOUT ANY WARRANTY; without even the implied warranty of<br/>
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the<br/>
+GNU General Public License for more details.<br/>
+You should have received a copy of the GNU General Public License<br/>
+along with this program. If not, see &lt;http://www.gnu.org/licenses/&gt;.<br/>
+<a href="CppComment.htm">*/</a><br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
+<a href="CppComment.htm">//</a>From http://www.richelbilderbeek.nl/GameZero.htm<br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
+<a href="CppIfndef.htm">#ifndef</a> QTGAMEZEROMAINDIALOG_H<br/>
+<a href="CppDefine.htm">#define</a> QTGAMEZEROMAINDIALOG_H<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppSetH.htm">set</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppMemoryH.htm">memory</a>&gt;<br/>
+<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic push<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "<a href="CppWeffcpp.htm">-Weffc++</a>"<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppQtHideAndShowDialog.htm">qthideandshowdialog</a>.h"<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic pop<br/>
+<br/>
+<b><a href="CppStruct.htm">struct</a></b> <a href="CppQPixmap.htm">QPixmap</a>;<br/>
+<b><a href="CppStruct.htm">struct</a></b> <a href="CppQTimer.htm">QTimer</a>;<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> Ui {<br/>
+&nbsp;&nbsp;<b><a href="CppClass.htm">class</a></b> <a href="CppQt.htm">Qt</a>ZeroMainDialog;<br/>
+}<br/>
+<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a> {<br/>
+<br/>
+<b><a href="CppClass.htm">class</a></b> <a href="CppQt.htm">Qt</a>ZeroMainDialog : <b><a href="CppPublic.htm">public</a></b> <a href="CppQtHideAndShowDialog.htm">QtHideAndShowDialog</a><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppQ_OBJECT.htm">Q_OBJECT</a><br/>
+<br/>
+<b><a href="CppPublic.htm">public</a></b>:<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppExplicit.htm">explicit</a></b> <a href="CppQt.htm">Qt</a>ZeroMainDialog(<a href="CppQWidget.htm">QWidget</a> *parent <a href="CppOperatorAssign.htm">=</a> 0);<br/>
+&nbsp;&nbsp;<a href="CppQt.htm">Qt</a>ZeroMainDialog(<b><a href="CppConst.htm">const</a></b> <a href="CppQt.htm">Qt</a>ZeroMainDialog&amp;) <a href="CppOperatorAssign.htm">=</a> <b><a href="CppDelete.htm">delete</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppQt.htm">Qt</a>ZeroMainDialog&amp; <b><a href="CppOperator.htm">operator</a></b>=(<b><a href="CppConst.htm">const</a></b> <a href="CppQt.htm">Qt</a>ZeroMainDialog&amp;) <a href="CppOperatorAssign.htm">=</a> <b><a href="CppDelete.htm">delete</a></b>;<br/>
+&nbsp;&nbsp;~<a href="CppQt.htm">Qt</a>ZeroMainDialog() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+<b><a href="CppPrivate.htm">private</a></b>:<br/>
+&nbsp;&nbsp;<a href="CppUi.htm">Ui</a>::<a href="CppQt.htm">Qt</a>ZeroMainDialog *ui;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/The keys that are currently pressed<br/>
+&nbsp;&nbsp;<a href="CppStdSet.htm">std::set</a>&lt;<b><a href="CppInt.htm">int</a></b>&gt; m_keys_pressed;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/The sprite of the player<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdUnique_ptr.htm">std::unique_ptr</a>&lt;<a href="CppQPixmap.htm">QPixmap</a>&gt; m_player_sprite;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/The player its coordinats<br/>
+&nbsp;&nbsp;<b><a href="CppInt.htm">int</a></b> m_player_x;<br/>
+&nbsp;&nbsp;<b><a href="CppInt.htm">int</a></b> m_player_y;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/The <a href="CppTime.htm">time</a>r that presses the pressed keys<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdUnique_ptr.htm">std::unique_ptr</a>&lt;<a href="CppQTimer.htm">QTimer</a>&gt; m_<a href="CppTime.htm">time</a>r_press_key;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/This event is called when a key is pressed down<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> keyPressEvent(<a href="CppQKeyEvent.htm">QKeyEvent</a> * e);<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/This event is called when a key is released<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> keyReleaseEvent(<a href="CppQKeyEvent.htm">QKeyEvent</a> * e);<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/This event is called when the screen needs to be (re)draw<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> paintEvent(<a href="CppQPaintEvent.htm">QPaintEvent</a> * event);<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/This event is called when the dialog is resized<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> resizeEvent(<a href="CppQResizeEvent.htm">QResizeEvent</a>*);<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppVoid.htm">void</a></b> Test() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+<br/>
+<b><a href="CppPrivate.htm">private</a></b> <b><a href="CppSlots.htm">slots</a></b>:<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> On<a href="CppTime.htm">Time</a>rPressKey();<br/>
+<br/>
+};<br/>
+<br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a><br/>
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> QTGAMEZEROMAINDIALOG_H<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./GameZero/qtzeromaindialog.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./GameZero/qtzeromaindialog.cpp" border = "1"><tr><td><code>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
+<a href="CppComment.htm">/*</a><br/>
+GameZero, a bare bone game<br/>
+Copyright (C) 2015-2015 Richel Bilderbeek<br/>
+<br/>
+This program is free software: you can redistribute it and/or modify<br/>
+it under the terms of the GNU General Public License as published by<br/>
+the Free Software Foundation, either version 3 of the License, or<br/>
+(at your option) any later version.<br/>
+<br/>
+This program is distributed in the hope that it will be useful,<br/>
+but WITHOUT ANY WARRANTY; without even the implied warranty of<br/>
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the<br/>
+GNU General Public License for more details.<br/>
+You should have received a copy of the GNU General Public License<br/>
+along with this program. If not, see &lt;http://www.gnu.org/licenses/&gt;.<br/>
+<a href="CppComment.htm">*/</a><br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
+<a href="CppComment.htm">//</a>From http://www.richelbilderbeek.nl/GameZero.htm<br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic push<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "<a href="CppWeffcpp.htm">-Weffc++</a>"<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "-Wunused-local-typedefs"<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "-Wunused-but-set-parameter"<br/>
+<a href="CppInclude.htm">#include</a> "qtzeromaindialog.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppAlgorithmH.htm">algorithm</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCmathH.htm">cmath</a>&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppIostreamH.htm">iostream</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppStdexceptH.htm">stdexcept</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppVectorH.htm">vector</a>&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppBoost.htm">boost</a>/<a href="CppScoped_ptr.htm">scoped_ptr</a>.hpp&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQDesktopWidget.htm">QDesktopWidget</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQKeyEvent.htm">QKeyEvent</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQPainter.htm">QPainter</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQPixmap.htm">QPixmap</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQTimer.htm">QTimer</a>&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "test<a href="CppTime.htm">time</a>r.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "ui_qtzeromaindialog.h"<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppTrace.htm">trace</a>.h"<br/>
+<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic pop<br/>
+<br/>
+<a href="CppRibi.htm">ribi</a>::<a href="CppQt.htm">Qt</a>ZeroMainDialog::<a href="CppQt.htm">Qt</a>ZeroMainDialog(<a href="CppQWidget.htm">QWidget</a> *parent)<br/>
+&nbsp;&nbsp;: <a href="CppQtHideAndShowDialog.htm">QtHideAndShowDialog</a>(parent),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ui(<b><a href="CppNew.htm">new</a></b> <a href="CppUi.htm">Ui</a>::<a href="CppQt.htm">Qt</a>ZeroMainDialog),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_keys_pressed{},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_player_sprite{<a href="CppStd.htm">std</a>::make_unique&lt;<a href="CppQPixmap.htm">QPixmap</a>&gt;()},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_player_x{0},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_player_y{0},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_<a href="CppTime.htm">time</a>r_press_key{<a href="CppStd.htm">std</a>::make_unique&lt;<a href="CppQTimer.htm">QTimer</a>&gt;()}<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;Test();<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+&nbsp;&nbsp;ui-&gt;setupUi(<b><a href="CppThis.htm">this</a></b>);<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Keys are <b><a href="CppVirtual.htm">virtual</a></b>ly pressed every 10 milliseconds<br/>
+&nbsp;&nbsp;m_<a href="CppTime.htm">time</a>r_press_key-&gt;setInterval(10);<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Connect the key-press-<a href="CppTime.htm">time</a>r to the On<a href="CppTime.htm">Time</a>rPressKey event<br/>
+&nbsp;&nbsp;<a href="CppQObject.htm">QObject</a>::connect(m_<a href="CppTime.htm">time</a>r_press_key.get(),&amp;<a href="CppQTimer.htm">QTimer</a>::<a href="CppTime.htm">time</a>out,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppThis.htm">this</a></b>,&amp;<a href="CppRibi.htm">ribi</a>::<a href="CppQt.htm">Qt</a>ZeroMainDialog::On<a href="CppTime.htm">Time</a>rPressKey);<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Start the key-press-<a href="CppTime.htm">time</a>r<br/>
+&nbsp;&nbsp;m_<a href="CppTime.htm">time</a>r_press_key-&gt;start();<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Put the dialog in the screen center at 75<a href="CppOperatorModulus.htm">%</a> of fullscreen size<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppQRect.htm">QRect</a> screen <a href="CppOperatorAssign.htm">=</a> <a href="CppQApplication.htm">QApplication</a>::desktop()-&gt;screenGeometry();<br/>
+&nbsp;&nbsp;<b><a href="CppThis.htm">this</a></b>-&gt;setGeometry(0,0,screen.width() * 75 <a href="CppOperatorDivide.htm">/</a> 100,screen.height() * 75 <a href="CppOperatorDivide.htm">/</a> 100);<br/>
+&nbsp;&nbsp;<b><a href="CppThis.htm">this</a></b>-&gt;move( screen.center() <a href="CppOperatorMinus.htm">-</a> <b><a href="CppThis.htm">this</a></b>-&gt;rect().center() );<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Set the player in the middle<br/>
+&nbsp;&nbsp;m_player_x <a href="CppOperatorAssign.htm">=</a> ((screen.center().x() * 75) <a href="CppOperatorDivide.htm">/</a> 100) <a href="CppOperatorMinus.htm">-</a> (m_player_sprite-&gt;width() <a href="CppOperatorDivide.htm">/</a> 2);<br/>
+&nbsp;&nbsp;m_player_y <a href="CppOperatorAssign.htm">=</a> ((screen.center().y() * 75) <a href="CppOperatorDivide.htm">/</a> 100) <a href="CppOperatorMinus.htm">-</a> (m_player_sprite-&gt;height() <a href="CppOperatorDivide.htm">/</a> 2);<br/>
+}<br/>
+<br/>
+<a href="CppRibi.htm">ribi</a>::<a href="CppQt.htm">Qt</a>ZeroMainDialog::~<a href="CppQt.htm">Qt</a>ZeroMainDialog() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppDelete.htm">delete</a></b> ui;<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::<a href="CppQt.htm">Qt</a>ZeroMainDialog::resizeEvent(<a href="CppQResizeEvent.htm">QResizeEvent</a>*)<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppThis.htm">this</a></b>-&gt;repaint();<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::<a href="CppQt.htm">Qt</a>ZeroMainDialog::keyPressEvent(<a href="CppQKeyEvent.htm">QKeyEvent</a>* e)<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Store the key pressed down<br/>
+&nbsp;&nbsp;m_keys_pressed.insert(e-&gt;key());<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::<a href="CppQt.htm">Qt</a>ZeroMainDialog::keyReleaseEvent(<a href="CppQKeyEvent.htm">QKeyEvent</a> * e)<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Remove the key released<br/>
+&nbsp;&nbsp;m_keys_pressed.erase(e-&gt;key());<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::<a href="CppQt.htm">Qt</a>ZeroMainDialog::On<a href="CppTime.htm">Time</a>rPressKey()<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Respond to the keys that are pressed<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b>(m_keys_pressed.count(<a href="CppQt.htm">Qt</a>::Key_Up&nbsp;&nbsp; )) { <a href="CppOperatorDecrement.htm">--</a>m_player_y; }<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b>(m_keys_pressed.count(<a href="CppQt.htm">Qt</a>::Key_Right)) { <a href="CppOperatorIncrement.htm">++</a>m_player_x; }<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b>(m_keys_pressed.count(<a href="CppQt.htm">Qt</a>::Key_Down )) { <a href="CppOperatorIncrement.htm">++</a>m_player_y; }<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b>(m_keys_pressed.count(<a href="CppQt.htm">Qt</a>::Key_Left )) { <a href="CppOperatorDecrement.htm">--</a>m_player_x; }<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Start the paintEvent<br/>
+&nbsp;&nbsp;repaint();<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::<a href="CppQt.htm">Qt</a>ZeroMainDialog::paintEvent(<a href="CppQPaintEvent.htm">QPaintEvent</a> *)<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Obtain the painter (<b><a href="CppDo.htm">do</a></b> not touch)<br/>
+&nbsp;&nbsp;<a href="CppQPainter.htm">QPainter</a> painter(<b><a href="CppThis.htm">this</a></b>);<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppPaint.htm">Paint</a> the background<br/>
+&nbsp;&nbsp;painter.drawPixmap(<b><a href="CppThis.htm">this</a></b>-&gt;rect(),<a href="CppQPixmap.htm">QPixmap</a>(":/GameZero/images/GameZeroBackground.png"));<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppPaint.htm">Paint</a> the player<br/>
+&nbsp;&nbsp;painter.drawPixmap(m_player_x,m_player_y,<a href="CppQPixmap.htm">QPixmap</a>(":/GameZero/images/GameZeroBeer.png"));<br/>
+}<br/>
+<br/>
+<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::<a href="CppQt.htm">Qt</a>ZeroMainDialog::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppBool.htm">bool</a></b> is_tested{<b><a href="CppFalse.htm">false</a></b>};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (is_tested) <b><a href="CppReturn.htm">return</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;is_tested <a href="CppOperatorAssign.htm">=</a> <b><a href="CppTrue.htm">true</a></b>;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppQt.htm">Qt</a>ZeroMainDialog();<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Test<a href="CppTime.htm">Time</a>r test_<a href="CppTime.htm">time</a>r(<a href="Cpp__func__.htm">__func__</a>,__<a href="CppCfile.htm">FILE</a>__,1.0);<br/>
+}<br/>
+<a href="CppEndif.htm">#endif</a><br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p>&nbsp;</p>
+<p><a href="http://validator.w3.org/check?uri=referer"><img src="valid-xhtml10.png" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a></p>
+<p>This page has been created by the <a href="Tools.htm">tool</a> <a href="ToolCodeToHtml.htm">CodeToHtml</a></p>
+</body>
+</html>

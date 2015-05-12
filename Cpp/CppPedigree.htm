@@ -1,0 +1,741 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <title>Pedigree</title>
+  <meta name="description" content="C++ Pedigree"/>
+  <meta name="keywords" content="C++ Pedigree "/>
+  <link rel="stylesheet" href="Richelbilderbeek.css" type="text/css"/>
+</head>
+<!-- End of head, start of body -->
+<body>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<!-- Page header -->
+<h1>(<a href="Cpp.htm">C++</a>) <a href="CppPedigree.htm">Pedigree</a></h1>
+<p>&nbsp;</p>
+<!-- No CodeToHtmlInfo about this class with page name CppPedigree-->
+<h2>Technical facts</h2>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppPedigree/CppPedigree.pri</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppPedigree/CppPedigree.pri" border = "1"><tr><td><code>
+<a href="CppQmakeIncludepath.htm">INCLUDEPATH</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppPedigree<br/>
+<br/>
+<a href="CppQmakeSources.htm">SOURCES</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppPedigree/pedigree.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppPedigree/pedigree_test.cpp<br/>
+<br/>
+<a href="CppQmakeHeaders.htm">HEADERS</a>&nbsp;&nbsp;+= \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppPedigree/pedigree.h<br/>
+<br/>
+<a href="CppQmakeOther_files.htm">OTHER_FILES</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppPedigree/Licence.txt<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppPedigree/pedigree.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppPedigree/pedigree.h" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> PEDIGREE_H<br/>
+<a href="CppDefine.htm">#define</a> PEDIGREE_H<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppMemoryH.htm">memory</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppVectorH.htm">vector</a>&gt;<br/>
+<b><a href="CppStruct.htm">struct</a></b> Pedigree : <b><a href="CppPublic.htm">public</a></b> <a href="CppStd.htm">std</a>::enable_shared_from_this&lt;Pedigree&gt;<br/>
+{<br/>
+<br/>
+&nbsp;&nbsp;Pedigree(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; name <a href="CppOperatorAssign.htm">=</a> "",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdWeak_ptr.htm">std::weak_ptr</a>&lt;Pedigree&gt; parent <a href="CppOperatorAssign.htm">=</a> <a href="CppStdWeak_ptr.htm">std::weak_ptr</a>&lt;Pedigree&gt;()<br/>
+&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;~Pedigree();<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Make an individual clean its deleted offspring<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> CheckOffspring() <b><a href="CppConst.htm">const</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Start a Pedigree its ancestor<br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <a href="CppStdShared_ptr.htm">std::shared_ptr</a>&lt;Pedigree&gt; Create(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; name <a href="CppOperatorAssign.htm">=</a> "") <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Create an offspring from <b><a href="CppThis.htm">this</a></b> Pedigree member<br/>
+&nbsp;&nbsp;<a href="CppStdShared_ptr.htm">std::shared_ptr</a>&lt;Pedigree&gt; CreateOffspring(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; name <a href="CppOperatorAssign.htm">=</a> "") <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Get the name of <b><a href="CppThis.htm">this</a></b> Pedigree member<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; GetName() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> { <b><a href="CppReturn.htm">return</a></b> m_name; }<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Get all current offspring of <b><a href="CppThis.htm">this</a></b> Pedigree member<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/May contain weak_ptrs that are <b><a href="CppNullptr.htm">nullptr</a></b>, call CheckOffspring to let these be removed<br/>
+&nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdWeak_ptr.htm">std::weak_ptr</a>&lt;Pedigree<a href="CppOperatorStreamIn.htm">&gt;&gt;</a>&amp; GetOffspring() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> { <b><a href="CppReturn.htm">return</a></b> m_offspring; }<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Get the ancestor of <b><a href="CppThis.htm">this</a></b> Pedigree member, might be <b><a href="CppNullptr.htm">nullptr</a></b><br/>
+&nbsp;&nbsp;<a href="CppStdWeak_ptr.htm">std::weak_ptr</a>&lt;Pedigree&gt; GetParent() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> { <b><a href="CppReturn.htm">return</a></b> m_parent; }<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Set the name of <b><a href="CppThis.htm">this</a></b> Pedigree member<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> SetName(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; name) <b><a href="CppNoexcept.htm">noexcept</a></b> { m_name <a href="CppOperatorAssign.htm">=</a> name; }<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Create the pedigree of <b><a href="CppThis.htm">this</a></b> member in <a href="CppNewick.htm">Newick</a> format<br/>
+&nbsp;&nbsp;<a href="CppStdString.htm">std::string</a> To<a href="CppNewick.htm">Newick</a>() <b><a href="CppConst.htm">const</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Set the ancestor of <b><a href="CppThis.htm">this</a></b> Pedigree member<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> SetParent(<b><a href="CppConst.htm">const</a></b> <a href="CppStdWeak_ptr.htm">std::weak_ptr</a>&lt;Pedigree&gt; parent) { m_parent <a href="CppOperatorAssign.htm">=</a> parent; }<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Set verbosity of <b><a href="CppThis.htm">this</a></b> <b><a href="CppClass.htm">class</a></b><br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> SetVerbose(<b><a href="CppConst.htm">const</a></b> <b><a href="CppBool.htm">bool</a></b> verbose) { m_verbose <a href="CppOperatorAssign.htm">=</a> verbose; }<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppPrivate.htm">private</a></b>:<br/>
+&nbsp;&nbsp;<a href="CppStdString.htm">std::string</a> m_name;<br/>
+&nbsp;&nbsp;<b><a href="CppMutable.htm">mutable</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdWeak_ptr.htm">std::weak_ptr</a>&lt;Pedigree<a href="CppOperatorStreamIn.htm">&gt;&gt;</a> m_offspring;<br/>
+&nbsp;&nbsp;<a href="CppStdWeak_ptr.htm">std::weak_ptr</a>&lt;Pedigree&gt; m_parent;<br/>
+&nbsp;&nbsp;<b><a href="CppBool.htm">bool</a></b> m_verbose;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Collect the <a href="CppStdString.htm">std::string</a> and depth of the offspring combined<br/>
+&nbsp;&nbsp;<a href="CppStdPair.htm">std::pair</a>&lt;<a href="CppStdString.htm">std::string</a>,<b><a href="CppInt.htm">int</a></b>&gt; CollectNameDepthPair() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppVoid.htm">void</a></b> Test() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+};<br/>
+<br/>
+<b><a href="CppBool.htm">bool</a></b> <b><a href="CppOperatorEqual.htm">operator==</a></b>(<b><a href="CppConst.htm">const</a></b> Pedigree&amp; lhs, <b><a href="CppConst.htm">const</a></b> Pedigree&amp; rhs) <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<b><a href="CppBool.htm">bool</a></b> <b><a href="CppOperatorNotEqual.htm">operator!=</a></b>(<b><a href="CppConst.htm">const</a></b> Pedigree&amp; lhs, <b><a href="CppConst.htm">const</a></b> Pedigree&amp; rhs) <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+<a href="CppComment.htm">/*</a><br/>
+<a href="CppNewick.htm">newick</a> &lt;<a href="CppOperatorMinus.htm">-</a> "(A):0;" # OK, but not plottable<br/>
+<a href="CppNewick.htm">newick</a> &lt;<a href="CppOperatorMinus.htm">-</a> "(A:0);" # OK, but not plottable<br/>
+<a href="CppNewick.htm">newick</a> &lt;<a href="CppOperatorMinus.htm">-</a> "(A:1);" # OK, but not plottable<br/>
+<a href="CppNewick.htm">newick</a> &lt;<a href="CppOperatorMinus.htm">-</a> "(A:1,B:1);" # OK<br/>
+<a href="CppNewick.htm">newick</a> &lt;<a href="CppOperatorMinus.htm">-</a> "(A:1,B:1):0;" # OK<br/>
+<a href="CppNewick.htm">newick</a> &lt;<a href="CppOperatorMinus.htm">-</a> "(A:1,B:1):1;" # OK<br/>
+<a href="CppNewick.htm">newick</a> &lt;<a href="CppOperatorMinus.htm">-</a> "(A:1,B:1):1,C:1;" # FAILS<br/>
+<a href="CppNewick.htm">newick</a> &lt;<a href="CppOperatorMinus.htm">-</a> "(A:1,B:1):1,C;" # FAILS<br/>
+<a href="CppNewick.htm">newick</a> &lt;<a href="CppOperatorMinus.htm">-</a> "(A:1,B:1):1,C:1;" # FAILS<br/>
+<a href="CppNewick.htm">newick</a> &lt;<a href="CppOperatorMinus.htm">-</a> "(C:2,(A:1,B:1):1);" # OK<br/>
+<a href="CppNewick.htm">newick</a> &lt;<a href="CppOperatorMinus.htm">-</a> "((A:1,B:1):1,C:1);" # OK<br/>
+<a href="CppComment.htm">*/</a><br/>
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> PEDIGREE_H<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppPedigree/pedigree.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppPedigree/pedigree.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "pedigree.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppAlgorithmH.htm">algorithm</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppIostreamH.htm">iostream</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppSstreamH.htm">sstream</a>&gt;<br/>
+<br/>
+Pedigree::Pedigree(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; name,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdWeak_ptr.htm">std::weak_ptr</a>&lt;Pedigree&gt; parent<br/>
+) : m_name{name}, m_offspring{}, m_parent{parent}, m_verbose{<b><a href="CppFalse.htm">false</a></b>}<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;Test();<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+}<br/>
+<br/>
+Pedigree::~Pedigree()<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (m_verbose) { <a href="CppStdClog.htm">std::clog</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "<a href="CppDestructor.htm">Destructor</a>: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> m_name <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="CppStdEndl.htm">std::endl</a>; }<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> Pedigree::CheckOffspring() <b><a href="CppConst.htm">const</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Erase-remove idiom to remove all <b><a href="CppNullptr.htm">nullptr</a></b> kids<br/>
+&nbsp;&nbsp;m_offspring.erase(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdRemove_if.htm">std::remove_if</a>(<a href="CppStdBegin.htm">std::begin</a>(m_offspring),<a href="CppStdEnd.htm">std::end</a>(m_offspring),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[](<b><a href="CppAuto.htm">auto</a></b> kid) { <b><a href="CppReturn.htm">return</a></b> !kid.lock(); }<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdEnd.htm">std::end</a>(m_offspring)<br/>
+&nbsp;&nbsp;);<br/>
+}<br/>
+<br/>
+<a href="CppStdShared_ptr.htm">std::shared_ptr</a>&lt;Pedigree&gt; Pedigree::Create(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; name) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppStdShared_ptr.htm">std::shared_ptr</a>&lt;Pedigree&gt; i <a href="CppOperatorAssign.htm">=</a> <a href="CppStdMake_shared.htm">std::make_shared</a>&lt;Pedigree&gt;(name);<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> i;<br/>
+}<br/>
+<br/>
+<a href="CppStdShared_ptr.htm">std::shared_ptr</a>&lt;Pedigree&gt; Pedigree::CreateOffspring(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; name) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppStdShared_ptr.htm">std::shared_ptr</a>&lt;Pedigree&gt; kid <a href="CppOperatorAssign.htm">=</a> Create(name);<br/>
+&nbsp;&nbsp;m_offspring.push_back(kid);<br/>
+&nbsp;&nbsp;kid-&gt;SetParent(<b><a href="CppThis.htm">this</a></b>-&gt;shared_from_this());<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> kid;<br/>
+}<br/>
+<br/>
+<a href="CppStdString.htm">std::string</a> Pedigree::To<a href="CppNewick.htm">Newick</a>() <b><a href="CppConst.htm">const</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdPair.htm">std::pair</a>&lt;<a href="CppStdString.htm">std::string</a>,<b><a href="CppInt.htm">int</a></b>&gt; p{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;CollectNameDepthPair()<br/>
+&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;<a href="CppStdStringstream.htm">std::stringstream</a> s;<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (p.second <a href="CppOperatorEqual.htm">==</a> 0)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (p.first.front() <a href="CppOperatorEqual.htm">==</a> '(' <a href="CppOperatorLogicalAnd.htm">&amp;&amp;</a> p.first.back() <a href="CppOperatorEqual.htm">==</a> ')')<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> p.first <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> ";";<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppElse.htm">else</a></b><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "(" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> p.first <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> ");";<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppElse.htm">else</a></b><br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;s <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "(" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> p.first <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> ":" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> p.second <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> ");";<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Replace trailing comma by a trailing semicolon<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> s.str();<br/>
+}<br/>
+<br/>
+<a href="CppStdPair.htm">std::pair</a>&lt;<a href="CppStdString.htm">std::string</a>,<b><a href="CppInt.htm">int</a></b>&gt; Pedigree::CollectNameDepthPair() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppBool.htm">bool</a></b> verbose{<b><a href="CppFalse.htm">false</a></b>};<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (m_offspring.empty())<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (verbose) { <a href="CppStdClog.htm">std::clog</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "No offspring\n"; }<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <a href="CppStdMake_pair.htm">std::make_pair</a>(GetName(),0);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppElse.htm">else</a></b> <b><a href="CppIf.htm">if</a></b> (m_offspring.size() <a href="CppOperatorEqual.htm">==</a> 1)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (verbose) { <a href="CppStdClog.htm">std::clog</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "One offspring\n"; }<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdStringstream.htm">std::stringstream</a> s;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdWeak_ptr.htm">std::weak_ptr</a>&lt;Pedigree&gt; kid_or_not{m_offspring[0]};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdShared_ptr.htm">std::shared_ptr</a>&lt;Pedigree&gt; kid{kid_or_not.lock()};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!kid)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_offspring.pop_back();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> CollectNameDepthPair();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(kid);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdPair.htm">std::pair</a>&lt;<a href="CppStdString.htm">std::string</a>,<b><a href="CppInt.htm">int</a></b>&gt; p{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kid-&gt;CollectNameDepthPair()<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <a href="CppStdMake_pair.htm">std::make_pair</a>(p.first,p.second <a href="CppOperatorPlus.htm">+</a> 1);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppElse.htm">else</a></b><br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (verbose) { <a href="CppStdClog.htm">std::clog</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "More offspring\n"; }<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdStringstream.htm">std::stringstream</a> s;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> end <a href="CppOperatorAssign.htm">=</a> <a href="CppStdEnd.htm">std::end</a>(m_offspring);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppAuto.htm">auto</a></b> i <a href="CppOperatorAssign.htm">=</a> <a href="CppStdBegin.htm">std::begin</a>(m_offspring); i<a href="CppOperatorNotEqual.htm">!=</a>end; <a href="CppOperatorIncrement.htm">++</a>i)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><b><a href="CppFor.htm">for</a></b> (<b><a href="CppConst.htm">const</a></b> <a href="CppStdWeak_ptr.htm">std::weak_ptr</a>&lt;Pedigree&gt;&amp; kid_or_not: m_offspring)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdShared_ptr.htm">std::shared_ptr</a>&lt;Pedigree&gt; kid{(*i).lock()};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!kid)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdSwap.htm">std::swap</a>(*i,m_offspring.back());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!m_offspring.back().lock()); <a href="CppComment.htm">//</a>Must remove <b><a href="CppNullptr.htm">nullptr</a></b> kid<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_offspring.pop_back();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> CollectNameDepthPair();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(kid);<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdPair.htm">std::pair</a>&lt;<a href="CppStdString.htm">std::string</a>,<b><a href="CppInt.htm">int</a></b>&gt; p{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kid-&gt;CollectNameDepthPair()<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> p.first <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> ":" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> (p.second <a href="CppOperatorPlus.htm">+</a> 1) <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> ",";<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdString.htm">std::string</a> t{s.str()};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!t.empty());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;t.pop_back();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;t <a href="CppOperatorAssign.htm">=</a> "(" <a href="CppOperatorPlus.htm">+</a> t <a href="CppOperatorPlus.htm">+</a> ")";<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <a href="CppStdMake_pair.htm">std::make_pair</a>(t,0);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <a href="CppStdMake_pair.htm">std::make_pair</a>("",0);<br/>
+}<br/>
+<br/>
+<b><a href="CppBool.htm">bool</a></b> <b><a href="CppOperatorEqual.htm">operator==</a></b>(<b><a href="CppConst.htm">const</a></b> Pedigree&amp; lhs, <b><a href="CppConst.htm">const</a></b> Pedigree&amp; rhs) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> lhs.To<a href="CppNewick.htm">Newick</a>() <a href="CppOperatorEqual.htm">==</a> rhs.To<a href="CppNewick.htm">Newick</a>();<br/>
+}<br/>
+<br/>
+<b><a href="CppBool.htm">bool</a></b> <b><a href="CppOperatorNotEqual.htm">operator!=</a></b>(<b><a href="CppConst.htm">const</a></b> Pedigree&amp; lhs, <b><a href="CppConst.htm">const</a></b> Pedigree&amp; rhs) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> !(lhs <a href="CppOperatorEqual.htm">==</a> rhs);<br/>
+}<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppPedigree/pedigree_test.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppPedigree/pedigree_test.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "pedigree.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppAlgorithmH.htm">algorithm</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppIostreamH.htm">iostream</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppSstreamH.htm">sstream</a>&gt;<br/>
+<br/>
+<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+<b><a href="CppVoid.htm">void</a></b> Pedigree::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppBool.htm">bool</a></b> is_tested{<b><a href="CppFalse.htm">false</a></b>};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (is_tested) <b><a href="CppReturn.htm">return</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;is_tested <a href="CppOperatorAssign.htm">=</a> <b><a href="CppTrue.htm">true</a></b>;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a><b><a href="CppOperatorEqual.htm">operator==</a></b><br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> name <a href="CppOperatorAssign.htm">=</a> "Eve";<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> pedigree1 <a href="CppOperatorAssign.htm">=</a> Pedigree::Create(name);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> pedigree2 <a href="CppOperatorAssign.htm">=</a> Pedigree::Create(name);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(*pedigree1 <a href="CppOperatorEqual.htm">==</a> *pedigree2);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a><b><a href="CppOperatorNotEqual.htm">operator!=</a></b><br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> pedigree1 <a href="CppOperatorAssign.htm">=</a> Pedigree::Create("Adam");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> pedigree2 <a href="CppOperatorAssign.htm">=</a> Pedigree::Create("Eve");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(*pedigree1 <a href="CppOperatorNotEqual.htm">!=</a> *pedigree2);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Single parent <a href="CppConstructor.htm">construct</a>ion<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> name <a href="CppOperatorAssign.htm">=</a> "Eve";<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> parent <a href="CppOperatorAssign.htm">=</a> Pedigree::Create(name);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(parent-&gt;GetName() <a href="CppOperatorEqual.htm">==</a> name);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!parent-&gt;GetParent().lock());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(parent-&gt;GetOffspring().empty());<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Parent and offspring <a href="CppConstructor.htm">construct</a>ion<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> parent <a href="CppOperatorAssign.htm">=</a> Pedigree::Create();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> kid <a href="CppOperatorAssign.htm">=</a> parent-&gt;CreateOffspring();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(parent-&gt;GetOffspring().size() <a href="CppOperatorEqual.htm">==</a> 1);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(parent-&gt;GetOffspring()[0].lock());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(parent-&gt;GetOffspring()[0].lock() <a href="CppOperatorEqual.htm">==</a> kid);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(kid-&gt;GetParent().lock());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(kid-&gt;GetParent().lock() <a href="CppOperatorEqual.htm">==</a> parent);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Parent and two offspring <a href="CppConstructor.htm">construct</a>ion<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> parent <a href="CppOperatorAssign.htm">=</a> Pedigree::Create();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> kid1 <a href="CppOperatorAssign.htm">=</a> parent-&gt;CreateOffspring();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> kid2 <a href="CppOperatorAssign.htm">=</a> parent-&gt;CreateOffspring();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(parent-&gt;GetOffspring().size() <a href="CppOperatorEqual.htm">==</a> 2);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(parent-&gt;GetOffspring()[0].lock());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(parent-&gt;GetOffspring()[0].lock() <a href="CppOperatorEqual.htm">==</a> kid1);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(parent-&gt;GetOffspring()[1].lock());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(parent-&gt;GetOffspring()[1].lock() <a href="CppOperatorEqual.htm">==</a> kid2);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(kid1-&gt;GetParent().lock());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(kid1-&gt;GetParent().lock() <a href="CppOperatorEqual.htm">==</a> parent);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(kid2-&gt;GetParent().lock());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(kid2-&gt;GetParent().lock() <a href="CppOperatorEqual.htm">==</a> parent);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Parent and one offspring <a href="CppConstructor.htm">construct</a>ion, kid goes out of <a href="CppScope.htm">scope</a><br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> parent <a href="CppOperatorAssign.htm">=</a> Pedigree::Create();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> kid1 <a href="CppOperatorAssign.htm">=</a> parent-&gt;CreateOffspring();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> kid2 <a href="CppOperatorAssign.htm">=</a> parent-&gt;CreateOffspring();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(parent-&gt;GetOffspring().size() <a href="CppOperatorEqual.htm">==</a> 2);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;parent-&gt;CheckOffspring();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(parent-&gt;GetOffspring().size() <a href="CppOperatorEqual.htm">==</a> 0);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Create offspring from offspring<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> parent <a href="CppOperatorAssign.htm">=</a> Pedigree::Create();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> a <a href="CppOperatorAssign.htm">=</a> parent-&gt;CreateOffspring();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> b <a href="CppOperatorAssign.htm">=</a> parent-&gt;CreateOffspring();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> c <a href="CppOperatorAssign.htm">=</a> a-&gt;CreateOffspring();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> d <a href="CppOperatorAssign.htm">=</a> a-&gt;CreateOffspring();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> e <a href="CppOperatorAssign.htm">=</a> b-&gt;CreateOffspring();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> f <a href="CppOperatorAssign.htm">=</a> b-&gt;CreateOffspring();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(c-&gt;GetParent().lock()-&gt;GetParent().lock() <a href="CppOperatorEqual.htm">==</a> parent);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(d-&gt;GetParent().lock()-&gt;GetParent().lock() <a href="CppOperatorEqual.htm">==</a> parent);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(e-&gt;GetParent().lock()-&gt;GetParent().lock() <a href="CppOperatorEqual.htm">==</a> parent);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(f-&gt;GetParent().lock()-&gt;GetParent().lock() <a href="CppOperatorEqual.htm">==</a> parent);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Create offspring from offspring, kill second generation<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;decltype(Pedigree::Create())&gt; population;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> parent <a href="CppOperatorAssign.htm">=</a> Pedigree::Create();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> a <a href="CppOperatorAssign.htm">=</a> parent-&gt;CreateOffspring();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> b <a href="CppOperatorAssign.htm">=</a> a-&gt;CreateOffspring();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;population.push_back(parent);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;population.push_back(b);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;population[0]-&gt;CheckOffspring();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(population[0]-&gt;GetOffspring().empty() <a href="CppOperatorLogicalAnd.htm">&amp;&amp;</a> "Second generation died");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!population[1]-&gt;GetParent().lock() <a href="CppOperatorLogicalAnd.htm">&amp;&amp;</a> "Second generation died");<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> root <a href="CppOperatorAssign.htm">=</a> Pedigree::Create("X");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> expected{"(X);"};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (root-&gt;To<a href="CppNewick.htm">Newick</a>() <a href="CppOperatorNotEqual.htm">!=</a> expected) { <a href="CppStdCerr.htm">std::cerr</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> root-&gt;To<a href="CppNewick.htm">Newick</a>() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'; }<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(root-&gt;To<a href="CppNewick.htm">Newick</a>() <a href="CppOperatorEqual.htm">==</a> expected);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Single lineage, one generation<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> root <a href="CppOperatorAssign.htm">=</a> Pedigree::Create("X");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> a <a href="CppOperatorAssign.htm">=</a> root-&gt;CreateOffspring("A");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> expected{"(A:1);"};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b>(root-&gt;To<a href="CppNewick.htm">Newick</a>() <a href="CppOperatorNotEqual.htm">!=</a> expected) { <a href="CppStdCerr.htm">std::cerr</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> root-&gt;To<a href="CppNewick.htm">Newick</a>() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n';}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(root-&gt;To<a href="CppNewick.htm">Newick</a>() <a href="CppOperatorEqual.htm">==</a> expected);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Single lineage, two generations<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> root <a href="CppOperatorAssign.htm">=</a> Pedigree::Create("X");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> a <a href="CppOperatorAssign.htm">=</a> root-&gt;CreateOffspring("A");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> b <a href="CppOperatorAssign.htm">=</a> a-&gt;CreateOffspring("B");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(b-&gt;To<a href="CppNewick.htm">Newick</a>() <a href="CppOperatorEqual.htm">==</a> "(B);");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(a-&gt;To<a href="CppNewick.htm">Newick</a>() <a href="CppOperatorEqual.htm">==</a> "(B:1);");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(root-&gt;To<a href="CppNewick.htm">Newick</a>() <a href="CppOperatorEqual.htm">==</a> "(B:2);");<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">/*</a><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-A<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; |<br/>
+&nbsp;&nbsp; <a href="CppOperatorDecrement.htm">--</a>X<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; |<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-B<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">*/</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> root <a href="CppOperatorAssign.htm">=</a> Pedigree::Create("X");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> a <a href="CppOperatorAssign.htm">=</a> root-&gt;CreateOffspring("A");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> b <a href="CppOperatorAssign.htm">=</a> root-&gt;CreateOffspring("B");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> expected{"(A:1,B:1);"};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> found{root-&gt;To<a href="CppNewick.htm">Newick</a>()};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (found <a href="CppOperatorNotEqual.htm">!=</a> expected) { <a href="CppStdCerr.htm">std::cerr</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> found <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'; }<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(found <a href="CppOperatorEqual.htm">==</a> expected);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Three branches of <b><a href="CppShort.htm">short</a></b> length<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">/*</a><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-C<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-A<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; | |<br/>
+&nbsp;&nbsp; <a href="CppOperatorDecrement.htm">--</a>X <a href="CppOperatorPlus.htm">+</a>-D<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; |<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-B-E<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">*/</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> root <a href="CppOperatorAssign.htm">=</a> Pedigree::Create("X");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> a <a href="CppOperatorAssign.htm">=</a> root-&gt;CreateOffspring("A");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> b <a href="CppOperatorAssign.htm">=</a> root-&gt;CreateOffspring("B");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> c <a href="CppOperatorAssign.htm">=</a> a-&gt;CreateOffspring("C");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> d <a href="CppOperatorAssign.htm">=</a> a-&gt;CreateOffspring("D");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> e <a href="CppOperatorAssign.htm">=</a> b-&gt;CreateOffspring("E");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> expected{"((C:1,D:1):1,E:2);"};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> found{root-&gt;To<a href="CppNewick.htm">Newick</a>()};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (found <a href="CppOperatorNotEqual.htm">!=</a> expected) { <a href="CppStdCerr.htm">std::cerr</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> found <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'; }<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(found <a href="CppOperatorEqual.htm">==</a> expected);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Three branches of one longer length<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">/*</a><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-C-F<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-A<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; | |<br/>
+&nbsp;&nbsp; <a href="CppOperatorDecrement.htm">--</a>X <a href="CppOperatorPlus.htm">+</a>-D-G<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; |<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-B-E-H<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">*/</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> root <a href="CppOperatorAssign.htm">=</a> Pedigree::Create("X");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> a <a href="CppOperatorAssign.htm">=</a> root-&gt;CreateOffspring("A");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> b <a href="CppOperatorAssign.htm">=</a> root-&gt;CreateOffspring("B");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> c <a href="CppOperatorAssign.htm">=</a> a-&gt;CreateOffspring("C");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> d <a href="CppOperatorAssign.htm">=</a> a-&gt;CreateOffspring("D");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> e <a href="CppOperatorAssign.htm">=</a> b-&gt;CreateOffspring("E");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> f <a href="CppOperatorAssign.htm">=</a> c-&gt;CreateOffspring("F");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> g <a href="CppOperatorAssign.htm">=</a> d-&gt;CreateOffspring("G");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> h <a href="CppOperatorAssign.htm">=</a> e-&gt;CreateOffspring("H");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> expected{"((F:2,G:2):1,H:3);"};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> found{root-&gt;To<a href="CppNewick.htm">Newick</a>()};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (found <a href="CppOperatorNotEqual.htm">!=</a> expected) { <a href="CppStdCerr.htm">std::cerr</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> found <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'; }<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(found <a href="CppOperatorEqual.htm">==</a> expected);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Four branches of <b><a href="CppShort.htm">short</a></b> length with one trichomy<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">/*</a><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-C<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-A-D<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; | |<br/>
+&nbsp;&nbsp; <a href="CppOperatorDecrement.htm">--</a>X <a href="CppOperatorPlus.htm">+</a>-E<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; |<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-B-F<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">*/</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> root <a href="CppOperatorAssign.htm">=</a> Pedigree::Create("X");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> a <a href="CppOperatorAssign.htm">=</a> root-&gt;CreateOffspring("A");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> b <a href="CppOperatorAssign.htm">=</a> root-&gt;CreateOffspring("B");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> c <a href="CppOperatorAssign.htm">=</a> a-&gt;CreateOffspring("C");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> d <a href="CppOperatorAssign.htm">=</a> a-&gt;CreateOffspring("D");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> e <a href="CppOperatorAssign.htm">=</a> a-&gt;CreateOffspring("E");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> f <a href="CppOperatorAssign.htm">=</a> b-&gt;CreateOffspring("F");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> expected{"((C:1,D:1,E:1):1,F:2);"};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> found{root-&gt;To<a href="CppNewick.htm">Newick</a>()};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (found <a href="CppOperatorNotEqual.htm">!=</a> expected) { <a href="CppStdCerr.htm">std::cerr</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> found <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'; }<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(found <a href="CppOperatorEqual.htm">==</a> expected);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Four branches of <b><a href="CppShort.htm">short</a></b> length, two dichotomies<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">/*</a><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-C<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-A<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; | |<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; | <a href="CppOperatorPlus.htm">+</a>-D<br/>
+&nbsp;&nbsp; <a href="CppOperatorDecrement.htm">--</a>X<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; | <a href="CppOperatorPlus.htm">+</a>-E<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; | |<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-B<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-F<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">*/</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> root <a href="CppOperatorAssign.htm">=</a> Pedigree::Create("X");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> a <a href="CppOperatorAssign.htm">=</a> root-&gt;CreateOffspring("A");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> b <a href="CppOperatorAssign.htm">=</a> root-&gt;CreateOffspring("B");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> c <a href="CppOperatorAssign.htm">=</a> a-&gt;CreateOffspring("C");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> d <a href="CppOperatorAssign.htm">=</a> a-&gt;CreateOffspring("D");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> e <a href="CppOperatorAssign.htm">=</a> b-&gt;CreateOffspring("E");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> f <a href="CppOperatorAssign.htm">=</a> b-&gt;CreateOffspring("F");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> expected{"((C:1,D:1):1,(E:1,F:1):1);"};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> found{root-&gt;To<a href="CppNewick.htm">Newick</a>()};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (found <a href="CppOperatorNotEqual.htm">!=</a> expected) { <a href="CppStdCerr.htm">std::cerr</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> found <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'; }<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(found <a href="CppOperatorEqual.htm">==</a> expected);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Four branches of one longer length with one trichomy<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">/*</a><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-C-G<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-A-D-H<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; | |<br/>
+&nbsp;&nbsp; <a href="CppOperatorDecrement.htm">--</a>X <a href="CppOperatorPlus.htm">+</a>-E-I<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; |<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-B-F-J<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">*/</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> root <a href="CppOperatorAssign.htm">=</a> Pedigree::Create("X");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> a <a href="CppOperatorAssign.htm">=</a> root-&gt;CreateOffspring("A");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> b <a href="CppOperatorAssign.htm">=</a> root-&gt;CreateOffspring("B");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> c <a href="CppOperatorAssign.htm">=</a> a-&gt;CreateOffspring("C");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> d <a href="CppOperatorAssign.htm">=</a> a-&gt;CreateOffspring("D");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> e <a href="CppOperatorAssign.htm">=</a> a-&gt;CreateOffspring("E");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> f <a href="CppOperatorAssign.htm">=</a> b-&gt;CreateOffspring("F");<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> g <a href="CppOperatorAssign.htm">=</a> c-&gt;CreateOffspring("G");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> h <a href="CppOperatorAssign.htm">=</a> d-&gt;CreateOffspring("H");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> i <a href="CppOperatorAssign.htm">=</a> e-&gt;CreateOffspring("I");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> j <a href="CppOperatorAssign.htm">=</a> f-&gt;CreateOffspring("J");<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> expected{"((G:2,H:2,I:2):1,J:3);"};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> found{root-&gt;To<a href="CppNewick.htm">Newick</a>()};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (found <a href="CppOperatorNotEqual.htm">!=</a> expected) { <a href="CppStdCerr.htm">std::cerr</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> found <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'; }<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(found <a href="CppOperatorEqual.htm">==</a> expected);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Four branches with one longer length, two dichotomies<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">/*</a><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-C-G<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-A<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; | |<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; | <a href="CppOperatorPlus.htm">+</a>-D-H<br/>
+&nbsp;&nbsp; <a href="CppOperatorDecrement.htm">--</a>X<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; | <a href="CppOperatorPlus.htm">+</a>-E-I<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; | |<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-B<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-F-J<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">*/</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> root <a href="CppOperatorAssign.htm">=</a> Pedigree::Create("X");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> a <a href="CppOperatorAssign.htm">=</a> root-&gt;CreateOffspring("A");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> b <a href="CppOperatorAssign.htm">=</a> root-&gt;CreateOffspring("B");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> c <a href="CppOperatorAssign.htm">=</a> a-&gt;CreateOffspring("C");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> d <a href="CppOperatorAssign.htm">=</a> a-&gt;CreateOffspring("D");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> e <a href="CppOperatorAssign.htm">=</a> b-&gt;CreateOffspring("E");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> f <a href="CppOperatorAssign.htm">=</a> b-&gt;CreateOffspring("F");<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> g <a href="CppOperatorAssign.htm">=</a> c-&gt;CreateOffspring("G");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> h <a href="CppOperatorAssign.htm">=</a> d-&gt;CreateOffspring("H");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> i <a href="CppOperatorAssign.htm">=</a> e-&gt;CreateOffspring("I");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> j <a href="CppOperatorAssign.htm">=</a> f-&gt;CreateOffspring("J");<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> expected{"((G:2,H:2):1,(I:2,J:2):1);"};<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> found{root-&gt;To<a href="CppNewick.htm">Newick</a>()};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (found <a href="CppOperatorNotEqual.htm">!=</a> expected) { <a href="CppStdCerr.htm">std::cerr</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> found <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'; }<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(found <a href="CppOperatorEqual.htm">==</a> expected);<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Four branches with two dichotomies of different length<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">/*</a><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-C-F<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-A<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; | |<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; | <a href="CppOperatorPlus.htm">+</a>-D-G<br/>
+&nbsp;&nbsp; <a href="CppOperatorDecrement.htm">--</a>X<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-H<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; |<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-B-E<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-I<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">*/</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> root <a href="CppOperatorAssign.htm">=</a> Pedigree::Create("X");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> a <a href="CppOperatorAssign.htm">=</a> root-&gt;CreateOffspring("A");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> b <a href="CppOperatorAssign.htm">=</a> root-&gt;CreateOffspring("B");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> c <a href="CppOperatorAssign.htm">=</a> a-&gt;CreateOffspring("C");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> d <a href="CppOperatorAssign.htm">=</a> a-&gt;CreateOffspring("D");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> e <a href="CppOperatorAssign.htm">=</a> b-&gt;CreateOffspring("E");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> f <a href="CppOperatorAssign.htm">=</a> c-&gt;CreateOffspring("F");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> g <a href="CppOperatorAssign.htm">=</a> d-&gt;CreateOffspring("G");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> h <a href="CppOperatorAssign.htm">=</a> e-&gt;CreateOffspring("H");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> i <a href="CppOperatorAssign.htm">=</a> e-&gt;CreateOffspring("I");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> expected{"((F:2,G:2):1,(H:1,I:1):2);"};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> found{root-&gt;To<a href="CppNewick.htm">Newick</a>()};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (found <a href="CppOperatorNotEqual.htm">!=</a> expected) { <a href="CppStdCerr.htm">std::cerr</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> found <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'; }<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(found <a href="CppOperatorEqual.htm">==</a> expected);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Three branches of one longer length, killing F<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">/*</a><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-C-F&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-C<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-A&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-A<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; | |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a>&gt;&nbsp;&nbsp;&nbsp;&nbsp;| |<br/>
+&nbsp;&nbsp; <a href="CppOperatorDecrement.htm">--</a>X <a href="CppOperatorPlus.htm">+</a>-D-G&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorDecrement.htm">--</a>X <a href="CppOperatorPlus.htm">+</a>-D-G<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-B-E-H&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-B-E-H<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">*/</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> root <a href="CppOperatorAssign.htm">=</a> Pedigree::Create("X");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> a <a href="CppOperatorAssign.htm">=</a> root-&gt;CreateOffspring("A");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> b <a href="CppOperatorAssign.htm">=</a> root-&gt;CreateOffspring("B");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> c <a href="CppOperatorAssign.htm">=</a> a-&gt;CreateOffspring("C");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> d <a href="CppOperatorAssign.htm">=</a> a-&gt;CreateOffspring("D");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> e <a href="CppOperatorAssign.htm">=</a> b-&gt;CreateOffspring("E");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> f <a href="CppOperatorAssign.htm">=</a> c-&gt;CreateOffspring("F");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> g <a href="CppOperatorAssign.htm">=</a> d-&gt;CreateOffspring("G");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> h <a href="CppOperatorAssign.htm">=</a> e-&gt;CreateOffspring("H");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> expected{"((C:1,G:2):1,H:3);"};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> found{root-&gt;To<a href="CppNewick.htm">Newick</a>()};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (found <a href="CppOperatorNotEqual.htm">!=</a> expected) { <a href="CppStdCerr.htm">std::cerr</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> found <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'; }<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(found <a href="CppOperatorEqual.htm">==</a> expected);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Three branches of one longer length, killing C<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">/*</a><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-C-F<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-A&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a>-A<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; | |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a>&gt;&nbsp;&nbsp;&nbsp;&nbsp;| |<br/>
+&nbsp;&nbsp; <a href="CppOperatorDecrement.htm">--</a>X <a href="CppOperatorPlus.htm">+</a>-D-G&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorDecrement.htm">--</a>X <a href="CppOperatorPlus.htm">+</a>-D-G<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-B-E-H&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a>-B-E-H<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">*/</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> root <a href="CppOperatorAssign.htm">=</a> Pedigree::Create("X");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> a <a href="CppOperatorAssign.htm">=</a> root-&gt;CreateOffspring("A");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> b <a href="CppOperatorAssign.htm">=</a> root-&gt;CreateOffspring("B");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppAuto.htm">auto</a></b> c <a href="CppOperatorAssign.htm">=</a> a-&gt;CreateOffspring("C");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> d <a href="CppOperatorAssign.htm">=</a> a-&gt;CreateOffspring("D");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> e <a href="CppOperatorAssign.htm">=</a> b-&gt;CreateOffspring("E");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> f <a href="CppOperatorAssign.htm">=</a> c-&gt;CreateOffspring("F");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> g <a href="CppOperatorAssign.htm">=</a> d-&gt;CreateOffspring("G");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> h <a href="CppOperatorAssign.htm">=</a> e-&gt;CreateOffspring("H");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;c <a href="CppOperatorAssign.htm">=</a> <a href="CppStdShared_ptr.htm">std::shared_ptr</a>&lt;Pedigree&gt;();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> expected{"(G:3,H:3);"};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> found{root-&gt;To<a href="CppNewick.htm">Newick</a>()};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (found <a href="CppOperatorNotEqual.htm">!=</a> expected) { <a href="CppStdCerr.htm">std::cerr</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> found <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'; }<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(found <a href="CppOperatorEqual.htm">==</a> expected);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Three branches of one longer length, killing A<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">/*</a><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-C-F<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-A<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; | |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a>&gt;<br/>
+&nbsp;&nbsp; <a href="CppOperatorDecrement.htm">--</a>X <a href="CppOperatorPlus.htm">+</a>-D-G&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorDecrement.htm">--</a>X<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-B-E-H&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a>-B-E-H<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">*/</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> root <a href="CppOperatorAssign.htm">=</a> Pedigree::Create("X");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppAuto.htm">auto</a></b> a <a href="CppOperatorAssign.htm">=</a> root-&gt;CreateOffspring("A");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> b <a href="CppOperatorAssign.htm">=</a> root-&gt;CreateOffspring("B");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> c <a href="CppOperatorAssign.htm">=</a> a-&gt;CreateOffspring("C");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> d <a href="CppOperatorAssign.htm">=</a> a-&gt;CreateOffspring("D");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> e <a href="CppOperatorAssign.htm">=</a> b-&gt;CreateOffspring("E");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> f <a href="CppOperatorAssign.htm">=</a> c-&gt;CreateOffspring("F");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> g <a href="CppOperatorAssign.htm">=</a> d-&gt;CreateOffspring("G");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> h <a href="CppOperatorAssign.htm">=</a> e-&gt;CreateOffspring("H");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;a <a href="CppOperatorAssign.htm">=</a> <a href="CppStdShared_ptr.htm">std::shared_ptr</a>&lt;Pedigree&gt;();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> expected{"(H:3);"};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> found{root-&gt;To<a href="CppNewick.htm">Newick</a>()};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (found <a href="CppOperatorNotEqual.htm">!=</a> expected) { <a href="CppStdCerr.htm">std::cerr</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> found <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'; }<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(found <a href="CppOperatorEqual.htm">==</a> expected);<br/>
+&nbsp;&nbsp;}<br/>
+}<br/>
+<a href="CppEndif.htm">#endif</a><br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p>&nbsp;</p>
+<p><a href="http://validator.w3.org/check?uri=referer"><img src="valid-xhtml10.png" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a></p>
+<p>This page has been created by the <a href="Tools.htm">tool</a> <a href="ToolCodeToHtml.htm">CodeToHtml</a></p>
+</body>
+</html>

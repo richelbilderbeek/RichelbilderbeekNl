@@ -5223,7 +5223,7 @@
 <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppBoostShared_ptr.htm">boost::shared_ptr</a>&lt;<b><a href="CppConst.htm">const</a></b> T<a href="CppOperatorStreamIn.htm">&gt;&gt;</a> <a href="CppAdd.htm">Add</a>Const(<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppBoostShared_ptr.htm">boost::shared_ptr</a>&lt;T<a href="CppOperatorStreamIn.htm">&gt;&gt;</a> v)<br/>
 {<br/>
-&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppBoostShared_ptr.htm">boost::shared_ptr</a>&lt;<b><a href="CppConst.htm">const</a></b> T<a href="CppOperatorStreamIn.htm">&gt;&gt;</a>(v.begin(),v.end());<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppBoostShared_ptr.htm">boost::shared_ptr</a>&lt;<b><a href="CppConst.htm">const</a></b> T<a href="CppOperatorStreamIn.htm">&gt;&gt;</a>(<a href="CppStdBegin.htm">std::begin</a>(v),<a href="CppStdEnd.htm">std::end</a>(v));<br/>
 }<br/>
 <br/>
 <a href="CppStdString.htm">std::string</a> ToStr(<b><a href="CppConst.htm">const</a></b> <a href="CppBoost.htm">boost</a>::<a href="CppGeometry.htm">geometry</a>::model::<a href="CppPointer.htm">point</a>&lt;<b><a href="CppDouble.htm">double</a></b>,3,<a href="CppBoost.htm">boost</a>::<a href="CppGeometry.htm">geometry</a>::cs::cartesian&gt;&amp; p) <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>

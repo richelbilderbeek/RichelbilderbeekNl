@@ -57,7 +57,7 @@
 <a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
 <a href="CppComment.htm">/*</a><br/>
 CodeBreaker, code <b><a href="CppBreak.htm">break</a></b>ing <b><a href="CppClass.htm">class</a></b><br/>
-Copyright (C) 2014-2014 Richel Bilderbeek<br/>
+Copyright (C) 2014-2015 Richel Bilderbeek<br/>
 <br/>
 This program is free software: you can redistribute it and/or modify<br/>
 it under the terms of the GNU General Public License as published by<br/>
@@ -207,7 +207,7 @@ along with this program.&nbsp;&nbsp;If not, see &lt;http://www.gnu.org/licenses/
 <a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
 <a href="CppComment.htm">/*</a><br/>
 CodeBreaker, code <b><a href="CppBreak.htm">break</a></b>ing <b><a href="CppClass.htm">class</a></b><br/>
-Copyright (C) 2014-2014 Richel Bilderbeek<br/>
+Copyright (C) 2014-2015 Richel Bilderbeek<br/>
 <br/>
 This program is free software: you can redistribute it and/or modify<br/>
 it under the terms of the GNU General Public License as published by<br/>
@@ -554,7 +554,7 @@ along with this program.&nbsp;&nbsp;If not, see &lt;http://www.gnu.org/licenses/
 &nbsp;&nbsp;&nbsp;&nbsp;}<br/>
 &nbsp;&nbsp;}<br/>
 &nbsp;&nbsp;<a href="CppComment.htm">//</a>The lower the value the better<br/>
-&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <a href="CppStdDistance.htm">std::distance</a>(v.begin(),<a href="CppStdMin_element.htm">std::min_element</a>(v.begin(),v.end()));<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <a href="CppStdDistance.htm">std::distance</a>(v.begin(),<a href="CppStdMin_element.htm">std::min_element</a>(<a href="CppStdBegin.htm">std::begin</a>(v),<a href="CppStdEnd.htm">std::end</a>(v)));<br/>
 }<br/>
 <br/>
 <b><a href="CppInt.htm">int</a></b> <a href="CppRibi.htm">ribi</a>::CodeBreaker::GuessVigenereCipherKeyLength(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; secret_text) <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>

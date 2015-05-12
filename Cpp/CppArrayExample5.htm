@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <title>ArrayExample5</title>
+  <meta name="description" content="C++ ArrayExample5"/>
+  <meta name="keywords" content="C++ ArrayExample5 "/>
+  <link rel="stylesheet" href="Richelbilderbeek.css" type="text/css"/>
+</head>
+<!-- End of head, start of body -->
+<body>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<!-- Page header -->
+<h1>(<a href="Cpp.htm">C++</a>) <a href="CppArrayExample5.htm">ArrayExample5</a></h1>
+<p>&nbsp;</p>
+<!-- No CodeToHtmlInfo about this class with page name CppArrayExample5-->
+<h2>Technical facts</h2>
+<p>&nbsp;</p>
+<p><a href="CppApplication.htm">Application type(s)</a></p>
+<ul>
+  <li><img src="PicDesktop.png" alt="Desktop"/> <a href="CppDesktopApplication.htm">Desktop application</a></li>
+</ul>
+<p><a href="CppOs.htm">Operating system(s) or programming environment(s)</a></p>
+<ul>
+  <li><img src="PicLubuntu.png" alt="Lubuntu"/> <a href="CppLubuntu.htm">Lubuntu</a> 15.04 (vivid)</li>
+</ul>
+<p><a href="CppIde.htm">IDE(s)</a>:</p>
+<ul>
+  <li><img src="PicQtCreator.png" alt="Qt Creator"/> <a href="CppQtCreator.htm">Qt Creator</a> 3.1.1</li>
+</ul>
+<p><a href="CppQtProjectType.htm">Project type</a>:</p>
+<ul>
+  <li><img src="PicGui.png" alt="GUI"/> <a href="CppGuiApplication.htm">GUI application</a></li>
+</ul>
+<p><a href="CppStandard.htm">C++ standard</a>:</p>
+<ul>
+  <li><img src="PicCpp98.png" alt="C++98"/> <a href="Cpp98.htm">C++98</a></li>
+</ul>
+<p><a href="CppCompiler.htm">Compiler(s)</a>:</p>
+<ul>
+  <li><a href="CppGpp.htm">G++</a> 4.9.2</li>
+</ul>
+<p><a href="CppLibrary.htm">Libraries</a> used:</p>
+<ul>
+  <li><img src="PicQt.png" alt="Qt"/> <a href="CppQt.htm">Qt</a>: version 5.4.1 (32 bit)</li>
+  <li><img src="PicStl.png" alt="STL"/> <a href="CppStl.htm">STL</a>: GNU ISO C++ Library, version 4.9.2</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2><a href="CppQtProjectFile.htm">Qt project file</a>: ./CppArrayExample5/CppArrayExample5.pro</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppArrayExample5/CppArrayExample5.pro" border = "1"><tr><td><code>
+<a href="CppQmakeQmake_cxxflags.htm">QMAKE_CXXFLAGS</a> += -std=c++1y <a href="CppWall.htm">-Wall</a> <a href="CppWextra.htm">-Wextra</a><br/>
+QT += core<br/>
+QT += gui<br/>
+<a href="CppQmakeConfig.htm">CONFIG</a>&nbsp;&nbsp; += console<br/>
+<a href="CppQmakeConfig.htm">CONFIG</a>&nbsp;&nbsp; -= app_bundle<br/>
+<a href="CppQmakeTemplate.htm">TEMPLATE</a> = app<br/>
+<br/>
+include(../../<a href="CppLibrary.htm">Libraries</a>/<a href="CppBoost.htm">Boost</a>.pri)<br/>
+<br/>
+<a href="CppQmakeSources.htm">SOURCES</a> += <a href="CppMain.htm">main</a>.cpp<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppArrayExample5/main.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppArrayExample5/main.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppArrayH.htm">array</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCstdlibH.htm">cstdlib</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppVectorH.htm">vector</a>&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppIostreamH.htm">iostream</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppStringH.htm">string</a>&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppBoost.htm">boost</a>/date_<a href="CppTime.htm">time</a>/posix_<a href="CppTime.htm">time</a>/p<a href="CppTime.htm">time</a>.hpp&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppBoost.htm">boost</a>/date_<a href="CppTime.htm">time</a>/microsec_<a href="CppTime.htm">time</a>_clock.hpp&gt;<br/>
+<br/>
+<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> n_repeats <a href="CppOperatorAssign.htm">=</a> 100000;<br/>
+<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> sz <a href="CppOperatorAssign.htm">=</a> 10000;<br/>
+<br/>
+<b><a href="CppClass.htm">class</a></b> Test<a href="CppTime.htm">Time</a>r<br/>
+{<br/>
+<b><a href="CppPublic.htm">public</a></b>:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Test<a href="CppTime.htm">Time</a>r(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> &amp; name) : name(name),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start(<a href="CppBoost.htm">boost</a>::date_<a href="CppTime.htm">time</a>::microsec_clock&lt;<a href="CppBoost.htm">boost</a>::posix_<a href="CppTime.htm">time</a>::p<a href="CppTime.htm">time</a>&gt;::local_<a href="CppTime.htm">time</a>())<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;~Test<a href="CppTime.htm">Time</a>r()<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> <b><a href="CppNamespace.htm">namespace</a></b> <a href="CppStd.htm">std</a>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> <b><a href="CppNamespace.htm">namespace</a></b> <a href="CppBoost.htm">boost</a>;<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;posix_<a href="CppTime.htm">time</a>::p<a href="CppTime.htm">time</a> now(date_<a href="CppTime.htm">time</a>::microsec_clock&lt;posix_<a href="CppTime.htm">time</a>::p<a href="CppTime.htm">time</a>&gt;::local_<a href="CppTime.htm">time</a>());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;posix_<a href="CppTime.htm">time</a>::<a href="CppTime.htm">time</a>_duration d <a href="CppOperatorAssign.htm">=</a> now <a href="CppOperatorMinus.htm">-</a> start;<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> name <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> " <b><a href="CppCompl.htm">compl</a></b>eted in " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> d.total_milliseconds() <a href="CppOperatorDivide.htm">/</a> 1000.0 <a href="CppOperatorStreamOut.htm">&lt;&lt;</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" seconds" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> endl;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+<br/>
+<b><a href="CppPrivate.htm">private</a></b>:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdString.htm">std::string</a> name;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppBoost.htm">boost</a>::posix_<a href="CppTime.htm">time</a>::p<a href="CppTime.htm">time</a> start;<br/>
+};<br/>
+<br/>
+<b><a href="CppStruct.htm">struct</a></b> Pixel<br/>
+{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Pixel(<b><a href="CppUnsigned.htm">unsigned</a></b> <b><a href="CppChar.htm">char</a></b> r <a href="CppOperatorAssign.htm">=</a> 0, <b><a href="CppUnsigned.htm">unsigned</a></b> <b><a href="CppChar.htm">char</a></b> g <a href="CppOperatorAssign.htm">=</a> 0, <b><a href="CppUnsigned.htm">unsigned</a></b> <b><a href="CppChar.htm">char</a></b> b <a href="CppOperatorAssign.htm">=</a> 0) : r(r), g(g), b(b)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppUnsigned.htm">unsigned</a></b> <b><a href="CppChar.htm">char</a></b> r, g, b;<br/>
+};<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> UseVector()<br/>
+{<br/>
+&nbsp;&nbsp;Test<a href="CppTime.htm">Time</a>r t("UseVector");<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b>(<b><a href="CppInt.htm">int</a></b> i <a href="CppOperatorAssign.htm">=</a> 0; i &lt; n_repeats; <a href="CppOperatorIncrement.htm">++</a>i)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;Pixel&gt; pixels(sz, Pixel(255,0,0));<br/>
+&nbsp;&nbsp;}<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> UseStd<a href="CppArray.htm">Array</a>()<br/>
+{<br/>
+&nbsp;&nbsp;Test<a href="CppTime.htm">Time</a>r t("UseStdArry");<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b>(<b><a href="CppInt.htm">int</a></b> i <a href="CppOperatorAssign.htm">=</a> 0; i<a href="CppOperatorNotEqual.htm">!=</a>n_repeats; <a href="CppOperatorIncrement.htm">++</a>i)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdArray.htm">std::array</a>&lt;Pixel,sz&gt; pixels;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;pixels.fill(Pixel(255,0,0));<br/>
+&nbsp;&nbsp;}<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> Use<a href="CppArray.htm">Array</a>()<br/>
+{<br/>
+&nbsp;&nbsp;Test<a href="CppTime.htm">Time</a>r t("Use<a href="CppArray.htm">Array</a>");<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b>(<b><a href="CppInt.htm">int</a></b> i <a href="CppOperatorAssign.htm">=</a> 0; i &lt; n_repeats; <a href="CppOperatorIncrement.htm">++</a>i)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Pixel * pixels <a href="CppOperatorAssign.htm">=</a> (Pixel *)malloc(<b><a href="CppSizeof.htm">sizeof</a></b>(Pixel) * sz);<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b>(<b><a href="CppInt.htm">int</a></b> i <a href="CppOperatorAssign.htm">=</a> 0 ; i &lt; sz; <a href="CppOperatorIncrement.htm">++</a>i)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels[i].r <a href="CppOperatorAssign.htm">=</a> 255;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels[i].g <a href="CppOperatorAssign.htm">=</a>&nbsp;&nbsp; 0;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels[i].b <a href="CppOperatorAssign.htm">=</a>&nbsp;&nbsp; 0;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;free(pixels);<br/>
+&nbsp;&nbsp;}<br/>
+}<br/>
+<br/>
+<b><a href="CppInt.htm">int</a></b> <a href="CppMain.htm">main</a>()<br/>
+{<br/>
+&nbsp;&nbsp;Test<a href="CppTime.htm">Time</a>r t1("The whole thing");<br/>
+<br/>
+&nbsp;&nbsp;Use<a href="CppArray.htm">Array</a>();<br/>
+&nbsp;&nbsp;UseStd<a href="CppArray.htm">Array</a>();<br/>
+&nbsp;&nbsp;UseVector();<br/>
+}<br/>
+<br/>
+<br/>
+<a href="CppComment.htm">/*</a> When <a href="CppDefine.htm">#define</a> USE_IMPROVED in <a href="CppDebug.htm">debug</a> mode<br/>
+<br/>
+<br/>
+<a href="CppComment.htm">*/</a><br/>
+<br/>
+<a href="CppComment.htm">/*</a> When <a href="CppDefine.htm">#define</a> USE_IMPROVED in release mode<br/>
+<br/>
+<br/>
+<br/>
+<a href="CppComment.htm">*/</a><br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p>&nbsp;</p>
+<p><a href="http://validator.w3.org/check?uri=referer"><img src="valid-xhtml10.png" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a></p>
+<p>This page has been created by the <a href="Tools.htm">tool</a> <a href="ToolCodeToHtml.htm">CodeToHtml</a></p>
+</body>
+</html>

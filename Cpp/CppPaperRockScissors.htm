@@ -3,9 +3,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-  <title>Paper-Rock-Scissors simulation</title>
-  <meta name="description" content="C++ Paper-Rock-Scissors simulation"/>
-  <meta name="keywords" content="C++ Paper-Rock-Scissors simulation"/>
+  <title>PaperRockScissors</title>
+  <meta name="description" content="C++ PaperRockScissors"/>
+  <meta name="keywords" content="C++ PaperRockScissors "/>
   <link rel="stylesheet" href="Richelbilderbeek.css" type="text/css"/>
 </head>
 <!-- End of head, start of body -->
@@ -18,19 +18,117 @@
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <!-- Page header -->
-<h1>(<a href="Cpp.htm">C++</a>) <a href="CppPaperRockScissors.htm">Paper-Rock-Scissors simulation</a></h1>
+<h1>(<a href="Cpp.htm">C++</a>) <a href="CppPaperRockScissors.htm">PaperRockScissors</a></h1>
 <p>&nbsp;</p>
-<p>This simulation shows pure paper-rock-scissors players competing on a
-two-dimensional grid (a donut-shaped world). Each time step, a random pixel is
-chosen (that is, either a paper, rock or scissors player) and a random
-neighbor. If one beats the other, the winner's strategy replaces the loser's
-pixel.</p>
+<!-- No CodeToHtmlInfo about this class with page name CppPaperRockScissors-->
+<h2>Technical facts</h2>
 <p>&nbsp;</p>
-<ul>
-  <li><a href="ToolPaperRockScissors_1_0.png">View a screenshot of 'ToolPaperRockScissors' (png)</a></li>
-  <li><a href="ToolPaperRockScissorsExe.zip">Download the Windows executable of 'ToolPaperRockScissors' (zip)</a>.</p>
-  <li><a href="ToolPaperRockScissorsSource.zip">Download the 'ToolPaperRockScissors' source code (zip)</a>.</p>
-</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppPaperRockScissors/CppPaperRockScissors.pri</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppPaperRockScissors/CppPaperRockScissors.pri" border = "1"><tr><td><code>
+<a href="CppQmakeIncludepath.htm">INCLUDEPATH</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppPaperRockScissors<br/>
+<br/>
+<a href="CppQmakeSources.htm">SOURCES</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppPaperRockScissors/paper_rock_scissors.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppPaperRockScissors/paper_rock_scissors_test.cpp<br/>
+<br/>
+<a href="CppQmakeHeaders.htm">HEADERS</a>&nbsp;&nbsp;+= \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppPaperRockScissors/paper_rock_scissors.h<br/>
+<br/>
+<a href="CppQmakeOther_files.htm">OTHER_FILES</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppPaperRockScissors/Licence.txt<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppPaperRockScissors/paper_rock_scissors.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppPaperRockScissors/paper_rock_scissors.h" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> PAPER_ROCK_SCISSORS_H<br/>
+<a href="CppDefine.htm">#define</a> PAPER_ROCK_SCISSORS_H<br/>
+<br/>
+<b><a href="CppEnumClass.htm">enum class</a></b> PaperRockScissors<br/>
+{<br/>
+&nbsp;&nbsp;paper,<br/>
+&nbsp;&nbsp;rock,<br/>
+&nbsp;&nbsp;scissors<br/>
+};<br/>
+<br/>
+<b><a href="CppBool.htm">bool</a></b> DoesBeat(<b><a href="CppConst.htm">const</a></b> PaperRockScissors lhs, <b><a href="CppConst.htm">const</a></b> PaperRockScissors rhs);<br/>
+<b><a href="CppVoid.htm">void</a></b> TestPaperRockScissors() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> PAPER_ROCK_SCISSORS_H<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppPaperRockScissors/paper_rock_scissors.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppPaperRockScissors/paper_rock_scissors.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "paper_rock_scissors.h"<br/>
+<br/>
+<b><a href="CppBool.htm">bool</a></b> DoesBeat(<b><a href="CppConst.htm">const</a></b> PaperRockScissors lhs, <b><a href="CppConst.htm">const</a></b> PaperRockScissors rhs)<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> a{<b><a href="CppStatic_cast.htm">static_cast</a></b>&lt;<b><a href="CppInt.htm">int</a></b>&gt;(lhs)};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> b{<b><a href="CppStatic_cast.htm">static_cast</a></b>&lt;<b><a href="CppInt.htm">int</a></b>&gt;(rhs)};<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> (a <a href="CppOperatorPlus.htm">+</a> 1) <a href="CppOperatorModulus.htm">%</a> 3 <a href="CppOperatorEqual.htm">==</a> b;<br/>
+}<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppPaperRockScissors/paper_rock_scissors_test.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppPaperRockScissors/paper_rock_scissors_test.cpp" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+<a href="CppInclude.htm">#include</a> "paper_rock_scissors.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> TestPaperRockScissors() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppBool.htm">bool</a></b> is_tested{<b><a href="CppFalse.htm">false</a></b>};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (is_tested) <b><a href="CppReturn.htm">return</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;is_tested <a href="CppOperatorAssign.htm">=</a> <b><a href="CppTrue.htm">true</a></b>;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> PaperRockScissors paper{PaperRockScissors::paper};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> PaperRockScissors rock{PaperRockScissors::rock};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> PaperRockScissors scissors{PaperRockScissors::scissors};<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(DoesBeat(paper,rock));<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(DoesBeat(rock,scissors));<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(DoesBeat(scissors,paper));<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!DoesBeat(rock,paper));<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!DoesBeat(scissors,rock));<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!DoesBeat(paper,scissors));<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!DoesBeat(paper,paper));<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!DoesBeat(rock,rock));<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!DoesBeat(scissors,scissors));<br/>
+}<br/>
+<a href="CppEndif.htm">#endif</a><br/>
+</code></td></tr></table>
+<!-- end of the code -->
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
@@ -40,5 +138,6 @@ pixel.</p>
 <p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
 <p>&nbsp;</p>
 <p><a href="http://validator.w3.org/check?uri=referer"><img src="valid-xhtml10.png" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a></p>
+<p>This page has been created by the <a href="Tools.htm">tool</a> <a href="ToolCodeToHtml.htm">CodeToHtml</a></p>
 </body>
 </html>

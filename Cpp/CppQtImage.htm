@@ -67,6 +67,8 @@
 <a href="CppInclude.htm">#include</a> &lt;<a href="CppQImage.htm">QImage</a>&gt;<br/>
 <a href="CppPragma.htm">#pragma</a> GCC diagnostic pop<br/>
 <br/>
+<b><a href="CppStruct.htm">struct</a></b> <a href="CppQGraphicsItem.htm">QGraphicsItem</a>;<br/>
+<br/>
 <b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a> {<br/>
 <br/>
 <a href="CppComment.htm">///</a>Some handy <a href="CppFunction.htm">function</a>s on <a href="CppQImage.htm">QImage</a><br/>
@@ -76,6 +78,9 @@
 &nbsp;&nbsp;<a href="CppQImage.htm">QImage</a> Difference(<b><a href="CppConst.htm">const</a></b> <a href="CppQImage.htm">QImage</a>&amp; base, <b><a href="CppConst.htm">const</a></b> <a href="CppQImage.htm">QImage</a>&amp; to_xor) <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
 &nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <a href="CppStdString.htm">std::string</a> Get<a href="CppVersion.htm">Version</a>() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
 &nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a>&gt; Get<a href="CppVersion.htm">Version</a>History() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Render a <a href="CppQGraphicsItem.htm">QGraphicsItem</a> to a <a href="CppQImage.htm">QImage</a><br/>
+&nbsp;&nbsp;<a href="CppQImage.htm">QImage</a> <a href="CppPaint.htm">Paint</a>(<b><a href="CppConst.htm">const</a></b> <a href="CppQGraphicsItem.htm">QGraphicsItem</a>&amp; item) <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
 <br/>
 &nbsp;&nbsp;<a href="CppQImage.htm">QImage</a> Xor(<b><a href="CppConst.htm">const</a></b> <a href="CppQImage.htm">QImage</a>&amp; base, <b><a href="CppConst.htm">const</a></b> <a href="CppQImage.htm">QImage</a>&amp; to_xor) <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
 &nbsp;&nbsp;<b><a href="CppPrivate.htm">private</a></b>:<br/>
@@ -106,6 +111,8 @@
 <a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "<a href="CppWeffcpp.htm">-Weffc++</a>"<br/>
 <a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "-Wunused-local-typedefs"<br/>
 <a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "-Wunused-but-set-parameter"<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQGraphicsItem.htm">QGraphicsItem</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQGraphicsScene.htm">QGraphicsScene</a>&gt;<br/>
 <a href="CppInclude.htm">#include</a> &lt;<a href="CppQPainter.htm">QPainter</a>&gt;<br/>
 <br/>
 <a href="CppInclude.htm">#include</a> "test<a href="CppTime.htm">time</a>r.h"<br/>
@@ -142,6 +149,41 @@
 &nbsp;&nbsp;};<br/>
 }<br/>
 <br/>
+<a href="CppQImage.htm">QImage</a> <a href="CppRibi.htm">ribi</a>::<a href="CppQt.htm">Qt</a>Image::<a href="CppPaint.htm">Paint</a>(<b><a href="CppConst.htm">const</a></b> <a href="CppQGraphicsItem.htm">QGraphicsItem</a>&amp; item) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (item.scene())<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppAuto.htm">auto</a></b>&amp; scene <a href="CppOperatorAssign.htm">=</a> *item.scene();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a> Create the image with the exact size of the shrunk scene<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> QSize old_size{scene.sceneRect().size().toSize()};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Rescaled by a factor two to fix BUG_260<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><b><a href="CppConst.htm">const</a></b> QSize new_size(old_size.scaled(2,2, <a href="CppQt.htm">Qt</a>::KeepAspectRatio));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQImage.htm">QImage</a> image(old_size, <a href="CppQImage.htm">QImage</a>::Format_ARGB32);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a> Start all pixels transparent<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;image.fill(<a href="CppQt.htm">Qt</a>::transparent);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQPainter.htm">QPainter</a> painter(&amp;image);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;scene.render(&amp;painter);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> image;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppElse.htm">else</a></b><br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQGraphicsScene.htm">QGraphicsScene</a> scene;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;scene.addItem(&amp;<b><a href="CppConst_cast.htm">const_cast</a></b>&lt;<a href="CppQGraphicsItem.htm">QGraphicsItem</a>&amp;&gt;(item)); <a href="CppComment.htm">//</a>Temporarily add the item, won't modify it<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> QSize old_size{scene.sceneRect().size().toSize()};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Rescaled by a factor two to fix BUG_260<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><b><a href="CppConst.htm">const</a></b> QSize new_size(old_size.scaled(2,2, <a href="CppQt.htm">Qt</a>::KeepAspectRatio));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQImage.htm">QImage</a> image(old_size, <a href="CppQImage.htm">QImage</a>::Format_ARGB32);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a> Start all pixels transparent<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;image.fill(<a href="CppQt.htm">Qt</a>::transparent);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQPainter.htm">QPainter</a> painter(&amp;image);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;scene.render(&amp;painter);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;scene.removeItem(&amp;<b><a href="CppConst_cast.htm">const_cast</a></b>&lt;<a href="CppQGraphicsItem.htm">QGraphicsItem</a>&amp;&gt;(item)); <a href="CppComment.htm">//</a>Prevent item being deleted<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> image;<br/>
+&nbsp;&nbsp;}<br/>
+}<br/>
+<br/>
+<br/>
 <a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
 <b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::<a href="CppQt.htm">Qt</a>Image::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
@@ -161,6 +203,15 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQImage.htm">QImage</a> q(1,1,<a href="CppQImage.htm">QImage</a>::Format_RGB32);<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;q.setPixel(0,0,qRgb(1,2,3));<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(q.pixel(0,0) <a href="CppOperatorEqual.htm">==</a> qRgb(1,2,3));<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (verbose) { <a href="CppTRACE.htm">TRACE</a>("<a href="CppQGraphicsItem.htm">QGraphicsItem</a> rendering"); }<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQGraphicsSimpleTextItem.htm">QGraphicsSimpleTextItem</a> item;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;item.setText(<a href="Cpp__func__.htm">__func__</a>);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQImage.htm">QImage</a> image{<a href="CppQt.htm">Qt</a>Image().<a href="CppPaint.htm">Paint</a>(item)};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(image.width() &gt; 1);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(image.height() &gt; 1);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;image.save("tmp_<a href="CppRibi.htm">ribi</a>_<a href="CppQt.htm">Qt</a>Image_Test.png");<br/>
 &nbsp;&nbsp;}<br/>
 }<br/>
 <a href="CppEndif.htm">#endif</a><br/>

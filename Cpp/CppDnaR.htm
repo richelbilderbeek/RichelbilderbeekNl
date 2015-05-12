@@ -1,0 +1,265 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <title>DnaR</title>
+  <meta name="description" content="C++ DnaR"/>
+  <meta name="keywords" content="C++ DnaR "/>
+  <link rel="stylesheet" href="Richelbilderbeek.css" type="text/css"/>
+</head>
+<!-- End of head, start of body -->
+<body>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<!-- Page header -->
+<h1>(<a href="Cpp.htm">C++</a>) <a href="CppDnaR.htm">DnaR</a></h1>
+<p>&nbsp;</p>
+<!-- No CodeToHtmlInfo about this class with page name CppDnaR-->
+<h2>Technical facts</h2>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppDnaR/CppDnaR.pri</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppDnaR/CppDnaR.pri" border = "1"><tr><td><code>
+<a href="CppQmakeIncludepath.htm">INCLUDEPATH</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppDnaR<br/>
+<br/>
+<a href="CppQmakeSources.htm">SOURCES</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppDnaR/dna_r.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppDnaR/dna_r_test.cpp<br/>
+<br/>
+<a href="CppQmakeHeaders.htm">HEADERS</a>&nbsp;&nbsp;+= \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppDnaR/dna_r.h<br/>
+<br/>
+<a href="CppQmakeOther_files.htm">OTHER_FILES</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppDnaR/Licence.txt<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppDnaR/dna_r.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppDnaR/dna_r.h" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> RIBI_DNA_R_H<br/>
+<a href="CppDefine.htm">#define</a> RIBI_DNA_R_H<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppMemoryH.htm">memory</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppVectorH.htm">vector</a>&gt;<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a> { <b><a href="CppStruct.htm">struct</a></b> DnaSequence; }<br/>
+<br/>
+<a href="CppComment.htm">///</a>DNA stuff <b><a href="CppUsing.htm">using</a></b> R scripts<br/>
+<b><a href="CppStruct.htm">struct</a></b> DnaR<br/>
+{<br/>
+&nbsp;&nbsp;DnaR();<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> PlotSequences(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppRibi.htm">ribi</a>::DnaSequence&gt;&amp; sequences,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; filename<br/>
+&nbsp;&nbsp;) <b><a href="CppConst.htm">const</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppPrivate.htm">private</a></b>:<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppVoid.htm">void</a></b> Test() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+};<br/>
+<br/>
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> RIBI_DNA_R_H<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppDnaR/dna_r.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppDnaR/dna_r.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "dna_r.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppFstreamH.htm">fstream</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppSstreamH.htm">sstream</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppIostreamH.htm">iostream</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;future&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "dnasequence.h"<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppFileIo.htm">fileio</a>.h"<br/>
+<br/>
+DnaR::DnaR()<br/>
+{<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;Test();<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> DnaR::PlotSequences(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppRibi.htm">ribi</a>::DnaSequence&gt;&amp; sequences,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; png_filename<br/>
+) <b><a href="CppConst.htm">const</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!sequences.empty());<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>TODO: Test <b><a href="CppIf.htm">if</a></b> the user has all required packages<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> temp_r_filename{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a>().GetTempFileName(".R")<br/>
+&nbsp;&nbsp;};<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Create the R script<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdOfstream.htm">std::ofstream</a> f(temp_r_filename.c_str());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;f<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "<a href="CppLibrary.htm">library</a>(ape)" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "x &lt;<a href="CppOperatorMinus.htm">-</a> structure(c("<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdStringstream.htm">std::stringstream</a> <a href="CppContainer.htm">container</a>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> sequence: sequences)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppContainer.htm">container</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "\"" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> sequence.GetDescription() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "\",";<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> sequence: sequences)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppContainer.htm">container</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "\"" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> sequence.GetSequence() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "\",";<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdString.htm">std::string</a> <a href="CppContainer.htm">container</a>_str{<a href="CppContainer.htm">container</a>.str()};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!<a href="CppContainer.htm">container</a>_str.empty());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppContainer.htm">container</a>_str.pop_back();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="CppContainer.htm">container</a>_str;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;f<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "), .Dim <a href="CppOperatorAssign.htm">=</a> c(" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> sequences.size() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "L, 2L))" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "y &lt;<a href="CppOperatorMinus.htm">-</a> t(sapply(strsplit(x[,2],\"\"), tolower))" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "rownames(y) &lt;<a href="CppOperatorMinus.htm">-</a> x[,1]" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "alignments &lt;<a href="CppOperatorMinus.htm">-</a> as.DNAbin(y)" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "png(filename=\"" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> png_filename <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "\")" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "image(alignments)" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "dev.off()" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;;<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!<a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a>().<a href="CppIsRegularFile.htm">IsRegularFile</a>(temp_r_filename))<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdStringstream.htm">std::stringstream</a> s;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;s <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> __<a href="CppCfile.htm">FILE</a>__ <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "(" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> __LINE__ <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "): "<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "Could not create temporary R script file "<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "with filename '" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> temp_r_filename <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "'";<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppThrow.htm">throw</a></b> <a href="CppStdRuntime_error.htm">std::runtime_error</a>(s.str().c_str());<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Execute the R script<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdStringstream.htm">std::stringstream</a> cmd;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;cmd <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "Rscript " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> temp_r_filename;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> error{<a href="CppStdSystem.htm">std::system</a>(cmd.str().c_str())};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (error)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdClog.htm">std::clog</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> __<a href="CppCfile.htm">FILE</a>__ <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> ": error " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> error <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n';<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!<a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a>().<a href="CppIsRegularFile.htm">IsRegularFile</a>(png_filename))<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdStringstream.htm">std::stringstream</a> s;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;s <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> __<a href="CppCfile.htm">FILE</a>__ <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "(" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> __LINE__ <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "): "<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "Could not create temporary PNG file "<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "with filename '" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> png_filename <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "'. "<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "Perhaps not all packages (ape) needed are installed? "<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "You can <b><a href="CppTry.htm">try</a></b> to run the temporary R script file '"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> temp_r_filename<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "' yourself to see which error it gives"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppThrow.htm">throw</a></b> <a href="CppStdRuntime_error.htm">std::runtime_error</a>(s.str().c_str());<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>After detection. so user can check script<br/>
+&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a>().<a href="CppDeleteFile.htm">DeleteFile</a>(temp_r_filename);<br/>
+}<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppDnaR/dna_r_test.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppDnaR/dna_r_test.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "dna_r.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "dnasequence.h"<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppFileIo.htm">fileio</a>.h"<br/>
+<a href="CppInclude.htm">#include</a> "test<a href="CppTime.htm">time</a>r.h"<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppTrace.htm">trace</a>.h"<br/>
+<br/>
+<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+<b><a href="CppVoid.htm">void</a></b> DnaR::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppBool.htm">bool</a></b> is_tested{<b><a href="CppFalse.htm">false</a></b>};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (is_tested) <b><a href="CppReturn.htm">return</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;is_tested <a href="CppOperatorAssign.htm">=</a> <b><a href="CppTrue.htm">true</a></b>;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> <a href="CppRibi.htm">ribi</a>::DnaSequence;<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a>();<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppRibi.htm">ribi</a>::Test<a href="CppTime.htm">Time</a>r test_<a href="CppTime.htm">time</a>r(<a href="Cpp__func__.htm">__func__</a>,__<a href="CppCfile.htm">FILE</a>__,1.0);<br/>
+&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a> <a href="CppFileIo.htm">fileio</a>;<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppBool.htm">bool</a></b> verbose{<b><a href="CppFalse.htm">false</a></b>};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppBool.htm">bool</a></b> test_throughly{<b><a href="CppTrue.htm">true</a></b>};<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!test_throughly)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppTRACE.htm">TRACE</a>("DnaR not thoroughly tested");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b>;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (verbose) { <a href="CppTRACE.htm">TRACE</a>("PlotSequences"); }<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;DnaSequence&gt; v;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;v.push_back(DnaSequence("1","ACGTA"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;v.push_back(DnaSequence("2","ACGTC"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;v.push_back(DnaSequence("3","ACGTG"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;v.push_back(DnaSequence("4","ACGTT"));<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> filename{<a href="CppFileIo.htm">fileio</a>.GetTempFileName(".png")};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;DnaR().PlotSequences(v,filename);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppFileIo.htm">fileio</a>.<a href="CppIsRegularFile.htm">IsRegularFile</a>(filename));<br/>
+&nbsp;&nbsp;}<br/>
+}<br/>
+<a href="CppEndif.htm">#endif</a><br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p>&nbsp;</p>
+<p><a href="http://validator.w3.org/check?uri=referer"><img src="valid-xhtml10.png" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a></p>
+<p>This page has been created by the <a href="Tools.htm">tool</a> <a href="ToolCodeToHtml.htm">CodeToHtml</a></p>
+</body>
+</html>

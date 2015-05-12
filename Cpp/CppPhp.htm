@@ -129,7 +129,7 @@
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;T&gt;&amp; v,<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;T&gt;&amp; w) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
-&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppStdIs_sorted.htm">std::is_sorted</a>(v.begin(),v.end()));<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppStdIs_sorted.htm">std::is_sorted</a>(<a href="CppStdBegin.htm">std::begin</a>(v),<a href="CppStdEnd.htm">std::end</a>(v)));<br/>
 &nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppStdIs_sorted.htm">std::is_sorted</a>(w.begin(),w.end()));<br/>
 &nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;T&gt; x;<br/>
 &nbsp;&nbsp;<a href="CppStdSet_intersection.htm">std::set_intersection</a>(v.begin(),v.end(),w.begin(),w.end(),<a href="CppStdBack_inserter.htm">std::back_inserter</a>(x));<br/>

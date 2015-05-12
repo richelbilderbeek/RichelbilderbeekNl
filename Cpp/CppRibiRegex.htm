@@ -57,7 +57,7 @@
 <a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
 <a href="CppComment.htm">/*</a><br/>
 Ribi<a href="CppRegex.htm">Regex</a>, <b><a href="CppClass.htm">class</a></b> <b><a href="CppFor.htm">for</a></b> working with regular expressions<br/>
-Copyright (C) 2014-2014 Richel Bilderbeek<br/>
+Copyright (C) 2014-2015 Richel Bilderbeek<br/>
 <br/>
 This program is free software: you can redistribute it and/or modify<br/>
 it under the terms of the GNU General Public License as published by<br/>
@@ -111,6 +111,7 @@ along with this program. If not, see &lt;http://www.gnu.org/licenses/&gt;.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppRegex.htm">regex</a>_str<br/>
 &nbsp;&nbsp;) <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
 <br/>
+&nbsp;&nbsp;<a href="CppStdString.htm">std::string</a> Get<a href="CppRegex.htm">Regex</a>DutchFloat() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
 &nbsp;&nbsp;<a href="CppStdString.htm">std::string</a> Get<a href="CppRegex.htm">Regex</a>DutchPostalCode() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
 &nbsp;&nbsp;<a href="CppStdString.htm">std::string</a> Get<a href="CppRegex.htm">Regex</a>Polygon() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
 &nbsp;&nbsp;<a href="CppStdString.htm">std::string</a> Get<a href="CppRegex.htm">Regex</a><a href="CppShape.htm">Shape</a>s() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
@@ -145,7 +146,7 @@ along with this program. If not, see &lt;http://www.gnu.org/licenses/&gt;.<br/>
 <a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
 <a href="CppComment.htm">/*</a><br/>
 Ribi<a href="CppRegex.htm">Regex</a>, <b><a href="CppClass.htm">class</a></b> <b><a href="CppFor.htm">for</a></b> working with regular expressions<br/>
-Copyright (C) 2014-2014 Richel Bilderbeek<br/>
+Copyright (C) 2014-2015 Richel Bilderbeek<br/>
 <br/>
 This program is free software: you can redistribute it and/or modify<br/>
 it under the terms of the GNU General Public License as published by<br/>
@@ -229,6 +230,11 @@ along with this program. If not, see &lt;http://www.gnu.org/licenses/&gt;.<br/>
 &nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> v;<br/>
 }<br/>
 <br/>
+<a href="CppStdString.htm">std::string</a> <a href="CppRibi.htm">ribi</a>::<a href="CppRegex.htm">Regex</a>::Get<a href="CppRegex.htm">Regex</a>DutchFloat() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> R"((\d*,\d*))";<br/>
+}<br/>
+<br/>
 <a href="CppStdString.htm">std::string</a> <a href="CppRibi.htm">ribi</a>::<a href="CppRegex.htm">Regex</a>::Get<a href="CppRegex.htm">Regex</a>DutchPostalCode() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
 &nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> R"((\d{4})( )([A-Z]{2}))";<br/>
@@ -248,13 +254,14 @@ along with this program. If not, see &lt;http://www.gnu.org/licenses/&gt;.<br/>
 <br/>
 <a href="CppStdString.htm">std::string</a> <a href="CppRibi.htm">ribi</a>::<a href="CppRegex.htm">Regex</a>::Get<a href="CppVersion.htm">Version</a>() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
-&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> "1.0";<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> "1.1";<br/>
 }<br/>
 <br/>
 <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a>&gt; <a href="CppRibi.htm">ribi</a>::<a href="CppRegex.htm">Regex</a>::Get<a href="CppVersion.htm">Version</a>History() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
 &nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> {<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;"2014-06-19: <a href="CppVersion.htm">Version</a> 1.0: initial <a href="CppVersion.htm">version</a>"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"2014-06-19: <a href="CppVersion.htm">Version</a> 1.0: initial <a href="CppVersion.htm">version</a>",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"2014-01-02: <a href="CppVersion.htm">Version</a> 1.1: added Get<a href="CppRegex.htm">Regex</a>DutchFloat"<br/>
 &nbsp;&nbsp;};<br/>
 }<br/>
 <br/>
@@ -328,6 +335,11 @@ along with this program. If not, see &lt;http://www.gnu.org/licenses/&gt;.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> x <a href="CppOperatorAssign.htm">=</a> r.<a href="CppGetRegexMatches.htm">GetRegexMatches</a><a href="CppBoostXpressive.htm">Xpressive</a>(s,t);<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppAssert.htm">assert</a>(v <a href="CppOperatorEqual.htm">==</a> w);<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(v <a href="CppOperatorEqual.htm">==</a> x);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (verbose) { <a href="CppTRACE.htm">TRACE</a>("Get<a href="CppRegex.htm">Regex</a>DutchFloat"); }<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>( r.<a href="CppGetRegexMatches.htm">GetRegexMatches</a>("1.23",r.Get<a href="CppRegex.htm">Regex</a>DutchFloat()).empty());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!r.<a href="CppGetRegexMatches.htm">GetRegexMatches</a>("1,23",r.Get<a href="CppRegex.htm">Regex</a>DutchFloat()).empty());<br/>
 &nbsp;&nbsp;}<br/>
 }<br/>
 <a href="CppEndif.htm">#endif</a><br/>

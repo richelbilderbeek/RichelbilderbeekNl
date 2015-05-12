@@ -191,7 +191,7 @@
 &nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a><a href="CppOperatorStreamIn.htm">&gt;&gt;</a> v;<br/>
 &nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b>&amp; c: m_canvases) { v.push_back(c-&gt;ToStrings()); }<br/>
 &nbsp;&nbsp;<a href="CppComment.htm">//</a>Let the first canvas be drawn last, to give it the heighest Z order<br/>
-&nbsp;&nbsp;<a href="CppStdReverse.htm">std::reverse</a>(v.begin(),v.end());<br/>
+&nbsp;&nbsp;<a href="CppStdReverse.htm">std::reverse</a>(<a href="CppStdBegin.htm">std::begin</a>(v),<a href="CppStdEnd.htm">std::end</a>(v));<br/>
 <br/>
 &nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a>&gt; w;<br/>
 &nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppInt.htm">int</a></b> y=0; y<a href="CppOperatorNotEqual.htm">!=</a>maxy; <a href="CppOperatorIncrement.htm">++</a>y)<br/>

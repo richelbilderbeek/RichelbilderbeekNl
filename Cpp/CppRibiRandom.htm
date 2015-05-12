@@ -57,7 +57,7 @@
 <a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
 <a href="CppComment.htm">/*</a><br/>
 RibiRandom, <b><a href="CppClass.htm">class</a></b> <b><a href="CppFor.htm">for</a></b> working with <a href="CppRandomNumber.htm">random numbers</a><br/>
-Copyright (C) 2014-2014 Richel Bilderbeek<br/>
+Copyright (C) 2014-2015 Richel Bilderbeek<br/>
 <br/>
 This program is free software: you can redistribute it and/or modify<br/>
 it under the terms of the GNU General Public License as published by<br/>
@@ -81,6 +81,7 @@ along with this program. If not, see &lt;http://www.gnu.org/licenses/&gt;.<br/>
 <a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "<a href="CppWeffcpp.htm">-Weffc++</a>"<br/>
 <a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "-Wunused-local-typedefs"<br/>
 <a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "-Wunused-variable"<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppMemoryH.htm">memory</a>&gt;<br/>
 <a href="CppInclude.htm">#include</a> &lt;<a href="CppStringH.htm">string</a>&gt;<br/>
 <a href="CppInclude.htm">#include</a> &lt;<a href="CppVectorH.htm">vector</a>&gt;<br/>
 <a href="CppPragma.htm">#pragma</a> GCC diagnostic pop<br/>
@@ -94,6 +95,7 @@ along with this program. If not, see &lt;http://www.gnu.org/licenses/&gt;.<br/>
 &nbsp;&nbsp;Random();<br/>
 &nbsp;&nbsp;<a href="CppComment.htm">//</a>/Use a given seed<br/>
 &nbsp;&nbsp;Random(<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> seed);<br/>
+&nbsp;&nbsp;~Random();<br/>
 <br/>
 &nbsp;&nbsp;<a href="CppComment.htm">//</a>/Obtain a random <b><a href="CppBool.htm">bool</a></b>ean<br/>
 &nbsp;&nbsp;<b><a href="CppBool.htm">bool</a></b> GetBool() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
@@ -103,6 +105,9 @@ along with this program. If not, see &lt;http://www.gnu.org/licenses/&gt;.<br/>
 <br/>
 &nbsp;&nbsp;<a href="CppComment.htm">//</a>/Obtain a <a href="CppRandomNumber.htm">random number</a> from zero to (and not including) one<br/>
 &nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> GetFraction() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Obtain a random <a href="CppInt.htm">integer</a> in range 'min' to and including 'max'<br/>
+&nbsp;&nbsp;<b><a href="CppInt.htm">int</a></b> GetInt(<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> min, <b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> max) <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
 <br/>
 &nbsp;&nbsp;<a href="CppComment.htm">//</a>/Obtain a <a href="CppRandomNumber.htm">random number</a> from a normal distribution<br/>
 &nbsp;&nbsp;<a href="CppComment.htm">//</a>/From http://www.richelbilderbeek.nl/CppGetRandomNormal.htm<br/>
@@ -116,7 +121,7 @@ along with this program. If not, see &lt;http://www.gnu.org/licenses/&gt;.<br/>
 <br/>
 &nbsp;&nbsp;<b><a href="CppPrivate.htm">private</a></b>:<br/>
 &nbsp;&nbsp;<b><a href="CppStruct.htm">struct</a></b> RandomImpl;<br/>
-&nbsp;&nbsp;RandomImpl * <b><a href="CppConst.htm">const</a></b> m_impl;<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdUnique_ptr.htm">std::unique_ptr</a>&lt;RandomImpl&gt; m_impl;<br/>
 &nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
 &nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppVoid.htm">void</a></b> Test() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
 &nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
@@ -139,7 +144,7 @@ along with this program. If not, see &lt;http://www.gnu.org/licenses/&gt;.<br/>
 <a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
 <a href="CppComment.htm">/*</a><br/>
 RibiRandom, <b><a href="CppClass.htm">class</a></b> <b><a href="CppFor.htm">for</a></b> working with <a href="CppRandomNumber.htm">random numbers</a><br/>
-Copyright (C) 2014-2014 Richel Bilderbeek<br/>
+Copyright (C) 2014-2015 Richel Bilderbeek<br/>
 <br/>
 This program is free software: you can redistribute it and/or modify<br/>
 it under the terms of the GNU General Public License as published by<br/>
@@ -267,6 +272,11 @@ along with this program. If not, see &lt;http://www.gnu.org/licenses/&gt;.<br/>
 &nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
 }<br/>
 <br/>
+<a href="CppRibi.htm">ribi</a>::Random::~Random()<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Otherwise trouble with <a href="CppForwardDeclaration.htm">forward declaration</a>s<br/>
+}<br/>
+<br/>
 <b><a href="CppBool.htm">bool</a></b> <a href="CppRibi.htm">ribi</a>::Random::GetBool() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
 &nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> m_impl-&gt;GetBool();<br/>
@@ -280,6 +290,11 @@ along with this program. If not, see &lt;http://www.gnu.org/licenses/&gt;.<br/>
 <b><a href="CppDouble.htm">double</a></b> <a href="CppRibi.htm">ribi</a>::Random::GetFraction() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
 &nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> m_impl-&gt;GetFraction();<br/>
+}<br/>
+<br/>
+<b><a href="CppInt.htm">int</a></b> <a href="CppRibi.htm">ribi</a>::Random::GetInt(<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> min, <b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> max) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> m_impl-&gt;GetInt(min,max);<br/>
 }<br/>
 <br/>
 <b><a href="CppDouble.htm">double</a></b> <a href="CppRibi.htm">ribi</a>::Random::GetNormal(<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> mean, <b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> sigma) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
