@@ -1,0 +1,353 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <title>RinsideExample1</title>
+  <meta name="description" content="C++ RinsideExample1"/>
+  <meta name="keywords" content="C++ RinsideExample1 "/>
+  <link rel="stylesheet" href="Richelbilderbeek.css" type="text/css"/>
+</head>
+<!-- End of head, start of body -->
+<body>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<!-- Page header -->
+<h1>(<a href="Cpp.htm">C++</a>) <a href="CppRinsideExample1.htm">RinsideExample1</a></h1>
+<p>&nbsp;</p>
+<!-- No CodeToHtmlInfo about this class with page name CppRinsideExample1-->
+<h2>Technical facts</h2>
+<p>&nbsp;</p>
+<p><a href="CppOs.htm">Operating system(s) or programming environment(s)</a></p>
+<ul>
+  <li><img src="PicLubuntu.png" alt="Lubuntu"/> <a href="CppLubuntu.htm">Lubuntu</a> 15.04 (vivid)</li>
+</ul>
+<p><a href="CppIde.htm">IDE(s)</a>:</p>
+<ul>
+  <li><img src="PicQtCreator.png" alt="Qt Creator"/> <a href="CppQtCreator.htm">Qt Creator</a> 3.1.1</li>
+</ul>
+<p><a href="CppQtProjectType.htm">Project type</a>:</p>
+<ul>
+  <li><img src="PicConsole.png" alt="console"/> <a href="CppConsoleApplication.htm">Console application</a></li>
+</ul>
+<p><a href="CppStandard.htm">C++ standard</a>:</p>
+<ul>
+  <li><img src="PicCpp98.png" alt="C++98"/> <a href="Cpp98.htm">C++98</a></li>
+</ul>
+<p><a href="CppCompiler.htm">Compiler(s)</a>:</p>
+<ul>
+  <li><a href="CppGpp.htm">G++</a> 4.9.2</li>
+</ul>
+<p><a href="CppLibrary.htm">Libraries</a> used:</p>
+<ul>
+  <li><img src="PicStl.png" alt="STL"/> <a href="CppStl.htm">STL</a>: GNU ISO C++ Library, version 4.9.2</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2><a href="CppQtProjectFile.htm">Qt project file</a>: ./CppRinsideExample1/CppRinsideExample1.pro</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppRinsideExample1/CppRinsideExample1.pro" border = "1"><tr><td><code>
+include(../../<a href="CppDesktopApplication.htm">DesktopApplication</a>.pri)<br/>
+include(../../<a href="CppLibrary.htm">Libraries</a>/Rinside.pri)<br/>
+<br/>
+<a href="CppQmakeHeaders.htm">HEADERS</a> = qtdensity.h<br/>
+<a href="CppQmakeSources.htm">SOURCES</a> = \<br/>
+&nbsp;&nbsp;qtdensity.cpp \<br/>
+&nbsp;&nbsp;<a href="CppMain.htm">main</a>.cpp<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppRinsideExample1/main.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppRinsideExample1/main.cpp" border = "1"><tr><td><code>
+<a href="CppComment.htm">//</a> <a href="CppOperatorMinus.htm">-</a>*<a href="CppOperatorMinus.htm">-</a> mode: <a href="Cpp.htm">C++</a>; c-indent-level: 4; c-basic-offset: 4;&nbsp;&nbsp;tab-width: 8; <a href="CppOperatorMinus.htm">-</a>*-<br/>
+<a href="CppComment.htm">//</a><br/>
+<a href="CppComment.htm">//</a> <a href="CppQt.htm">Qt</a> usage example <b><a href="CppFor.htm">for</a></b> RInside, inspired by the standard 'density<br/>
+<a href="CppComment.htm">//</a> sliders' example <b><a href="CppFor.htm">for</a></b> other GUI <a href="Tools.htm">tool</a>kits<br/>
+<a href="CppComment.htm">//</a><br/>
+<a href="CppComment.htm">//</a> Copyright (C) 2011&nbsp;&nbsp;Dirk Eddelbuettel and Romain Francois<br/>
+<br/>
+<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic push<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "<a href="CppWeffcpp.htm">-Weffc++</a>"<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "-Wunused-local-typedefs"<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "-Wunused-but-set-parameter"<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "<a href="CppWextra.htm">-Wextra</a>"<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQApplication.htm">QApplication</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> "qtdensity.h"<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic pop<br/>
+<br/>
+<b><a href="CppInt.htm">int</a></b> <a href="CppMain.htm">main</a>(<b><a href="CppInt.htm">int</a></b> <a href="CppArgc.htm">argc</a>, <b><a href="CppChar.htm">char</a></b> *<a href="CppArgc.htm">argv</a>[])<br/>
+{<br/>
+&nbsp;&nbsp;RInside R(<a href="CppArgc.htm">argc</a>, <a href="CppArgc.htm">argv</a>);&nbsp;&nbsp;		<a href="CppComment.htm">//</a> create an embedded R <a href="CppInstance.htm">instance</a><br/>
+&nbsp;&nbsp;<a href="CppQApplication.htm">QApplication</a> app(<a href="CppArgc.htm">argc</a>, <a href="CppArgc.htm">argv</a>);<br/>
+&nbsp;&nbsp;<a href="CppQt.htm">Qt</a>Density qtdensity(R);		<a href="CppComment.htm">//</a> pass R inst. by reference<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> app.exec();<br/>
+}<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppRinsideExample1/qtdensity.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppRinsideExample1/qtdensity.h" border = "1"><tr><td><code>
+<a href="CppComment.htm">//</a> <a href="CppOperatorMinus.htm">-</a>*<a href="CppOperatorMinus.htm">-</a> mode: <a href="Cpp.htm">C++</a>; c-indent-level: 4; c-basic-offset: 4; indent-tabs-mode: nil; <a href="CppOperatorMinus.htm">-</a>*-<br/>
+<a href="CppComment.htm">//</a><br/>
+<a href="CppComment.htm">//</a> <a href="CppQt.htm">Qt</a> usage example <b><a href="CppFor.htm">for</a></b> RInside, inspired by the standard 'density<br/>
+<a href="CppComment.htm">//</a> sliders' example <b><a href="CppFor.htm">for</a></b> other GUI <a href="Tools.htm">tool</a>kits<br/>
+<a href="CppComment.htm">//</a><br/>
+<a href="CppComment.htm">//</a> Copyright (C) 2011 <a href="CppOperatorMinus.htm">-</a> 2013&nbsp;&nbsp;Dirk Eddelbuettel and Romain Francois<br/>
+<br/>
+<a href="CppIfndef.htm">#ifndef</a> QTDENSITY_H<br/>
+<a href="CppDefine.htm">#define</a> QTDENSITY_H<br/>
+<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic push<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "<a href="CppWeffcpp.htm">-Weffc++</a>"<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "-Wunused-local-typedefs"<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "-Wunused-but-set-parameter"<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "<a href="CppWextra.htm">-Wextra</a>"<br/>
+<a href="CppInclude.htm">#include</a> &lt;RInside.h&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQt.htm">Qt</a>Gui&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQWidget.htm">QWidget</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQLabel.htm">QLabel</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQLineEdit.htm">QLineEdit</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;QRadioButton&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;QGroupBox&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;QButtonGroup&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQMainWindow.htm">QMainWindow</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQHBoxLayout.htm">QHBoxLayout</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;QSlider&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;QSpinBox&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQLabel.htm">QLabel</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;QTemporaryFile&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;QSvg<a href="CppWidget.htm">Widget</a>&gt;<br/>
+<br/>
+<b><a href="CppClass.htm">class</a></b> <a href="CppQt.htm">Qt</a>Density : <b><a href="CppPublic.htm">public</a></b> <a href="CppQMainWindow.htm">QMainWindow</a><br/>
+{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQ_OBJECT.htm">Q_OBJECT</a><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppPublic.htm">public</a></b>:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQt.htm">Qt</a>Density(RInside &amp; R);<br/>
+<br/>
+<b><a href="CppPrivate.htm">private</a></b> <b><a href="CppSlots.htm">slots</a></b>:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> getBandwidth(<b><a href="CppInt.htm">int</a></b> bw);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> getKernel(<b><a href="CppInt.htm">int</a></b> kernel);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> getRandomDataCmd(<a href="CppQString.htm">QString</a> txt);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> runRandomDataCmd(<b><a href="CppVoid.htm">void</a></b>);<br/>
+<br/>
+<b><a href="CppPrivate.htm">private</a></b>:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> setupDisplay(<b><a href="CppVoid.htm">void</a></b>);&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a> standard GUI boilderplate of arranging things<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> plot(<b><a href="CppVoid.htm">void</a></b>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a> run a density plot in R and update the<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> filterFile(<b><a href="CppVoid.htm">void</a></b>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a> modify the richer SVG produced by R<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;QSvg<a href="CppWidget.htm">Widget</a> *m_svg;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a> the SVG device<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;RInside &amp; m_R;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a> reference to the R <a href="CppInstance.htm">instance</a> passed to <a href="CppConstructor.htm">constructor</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQString.htm">QString</a> m_tempfile;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppComment.htm">//</a> name of file used by R <b><a href="CppFor.htm">for</a></b> plots<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQString.htm">QString</a> m_svgfile;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a> another temp file, <b><a href="CppThis.htm">this</a></b> <a href="CppTime.htm">time</a> from <a href="CppQt.htm">Qt</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppInt.htm">int</a></b> m_bw, m_kernel;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppComment.htm">//</a> parameters used to estimate the density<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQString.htm">QString</a> m_cmd;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a> random draw command string<br/>
+};<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic pop<br/>
+<br/>
+<a href="CppEndif.htm">#endif</a><br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppRinsideExample1/qtdensity.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppRinsideExample1/qtdensity.cpp" border = "1"><tr><td><code>
+<a href="CppComment.htm">//</a> <a href="CppOperatorMinus.htm">-</a>*<a href="CppOperatorMinus.htm">-</a> mode: <a href="Cpp.htm">C++</a>; c-indent-level: 4; c-basic-offset: 4; indent-tabs-mode: nil; <a href="CppOperatorMinus.htm">-</a>*-<br/>
+<a href="CppComment.htm">//</a><br/>
+<a href="CppComment.htm">//</a> <a href="CppQt.htm">Qt</a> usage example <b><a href="CppFor.htm">for</a></b> RInside, inspired by the standard 'density<br/>
+<a href="CppComment.htm">//</a> sliders' example <b><a href="CppFor.htm">for</a></b> other GUI <a href="Tools.htm">tool</a>kits <a href="CppOperatorDecrement.htm">--</a> <b><a href="CppThis.htm">this</a></b> <a href="CppTime.htm">time</a> with SVG<br/>
+<a href="CppComment.htm">//</a><br/>
+<a href="CppComment.htm">//</a> Copyright (C) 2011 <a href="CppOperatorMinus.htm">-</a> 2013&nbsp;&nbsp;Dirk Eddelbuettel and Romain Francois<br/>
+<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic push<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "<a href="CppWeffcpp.htm">-Weffc++</a>"<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "-Wunused-local-typedefs"<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "-Wunused-but-set-parameter"<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "<a href="CppWextra.htm">-Wextra</a>"<br/>
+<a href="CppInclude.htm">#include</a> "qtdensity.h"<br/>
+<br/>
+<a href="CppQt.htm">Qt</a>Density::<a href="CppQt.htm">Qt</a>Density(RInside &amp; R) : m_R(R)<br/>
+{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_bw <a href="CppOperatorAssign.htm">=</a> 100;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppComment.htm">//</a> initial bandwidth, will be scaled by 100 so 1.0<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_kernel <a href="CppOperatorAssign.htm">=</a> 0;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppComment.htm">//</a> initial kernel: gaussian<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_cmd <a href="CppOperatorAssign.htm">=</a> "c(rnorm(100,0,1), rnorm(50,5,1))"; <a href="CppComment.htm">//</a> simple mixture<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_R["bw"] <a href="CppOperatorAssign.htm">=</a> m_bw;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppComment.htm">//</a> pass bandwidth to R, and have R compute a temp.file name<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_tempfile <a href="CppOperatorAssign.htm">=</a> <a href="CppQString.htm">QString</a>::fromStdString(Rcpp::as&lt;<a href="CppStdString.htm">std::string</a>&gt;(m_R.parseEval("tfile &lt;<a href="CppOperatorMinus.htm">-</a> tempfile()")));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_svgfile <a href="CppOperatorAssign.htm">=</a> <a href="CppQString.htm">QString</a>::fromStdString(Rcpp::as&lt;<a href="CppStdString.htm">std::string</a>&gt;(m_R.parseEval("sfile &lt;<a href="CppOperatorMinus.htm">-</a> tempfile()")));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;setupDisplay();<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppQt.htm">Qt</a>Density::setupDisplay(<b><a href="CppVoid.htm">void</a></b>)&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQWidget.htm">QWidget</a> *window <a href="CppOperatorAssign.htm">=</a> <b><a href="CppNew.htm">new</a></b> <a href="CppQWidget.htm">QWidget</a>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;window-&gt;setWindowTitle("<a href="CppQt.htm">Qt</a> and RInside demo: density estimation");<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;QSpinBox *spinBox <a href="CppOperatorAssign.htm">=</a> <b><a href="CppNew.htm">new</a></b> QSpinBox;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;QSlider *slider <a href="CppOperatorAssign.htm">=</a> <b><a href="CppNew.htm">new</a></b> QSlider(<a href="CppQt.htm">Qt</a>::Horizontal);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;spinBox-&gt;setRange(5, 200);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;slider-&gt;setRange(5, 200);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQObject.htm">QObject</a>::connect(spinBox, <a href="CppSignalMacro.htm">SIGNAL</a>(valueChanged(<b><a href="CppInt.htm">int</a></b>)), slider, <a href="CppSLOT.htm">SLOT</a>(setValue(<b><a href="CppInt.htm">int</a></b>)));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQObject.htm">QObject</a>::connect(slider, <a href="CppSignalMacro.htm">SIGNAL</a>(valueChanged(<b><a href="CppInt.htm">int</a></b>)), spinBox, <a href="CppSLOT.htm">SLOT</a>(setValue(<b><a href="CppInt.htm">int</a></b>)));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;spinBox-&gt;setValue(m_bw);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQObject.htm">QObject</a>::connect(spinBox, <a href="CppSignalMacro.htm">SIGNAL</a>(valueChanged(<b><a href="CppInt.htm">int</a></b>)), <b><a href="CppThis.htm">this</a></b>, <a href="CppSLOT.htm">SLOT</a>(getBandwidth(<b><a href="CppInt.htm">int</a></b>)));<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQLabel.htm">QLabel</a> *cmdLabel <a href="CppOperatorAssign.htm">=</a> <b><a href="CppNew.htm">new</a></b> <a href="CppQLabel.htm">QLabel</a>("R command <b><a href="CppFor.htm">for</a></b> random data creation");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQLineEdit.htm">QLineEdit</a> *cmdEntry <a href="CppOperatorAssign.htm">=</a> <b><a href="CppNew.htm">new</a></b> <a href="CppQLineEdit.htm">QLineEdit</a>(m_cmd);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQObject.htm">QObject</a>::connect(cmdEntry,&nbsp;&nbsp;<a href="CppSignalMacro.htm">SIGNAL</a>(textEdited(<a href="CppQString.htm">QString</a>)), <b><a href="CppThis.htm">this</a></b>, <a href="CppSLOT.htm">SLOT</a>(getRandomDataCmd(<a href="CppQString.htm">QString</a>)));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQObject.htm">QObject</a>::connect(cmdEntry,&nbsp;&nbsp;<a href="CppSignalMacro.htm">SIGNAL</a>(editingFinished()), <b><a href="CppThis.htm">this</a></b>, <a href="CppSLOT.htm">SLOT</a>(runRandomDataCmd()));<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;QGroupBox *kernelRadioBox <a href="CppOperatorAssign.htm">=</a> <b><a href="CppNew.htm">new</a></b> QGroupBox("Density Estimation kernel");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;QRadioButton *radio1 <a href="CppOperatorAssign.htm">=</a> <b><a href="CppNew.htm">new</a></b> QRadioButton("&amp;Gaussian");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;QRadioButton *radio2 <a href="CppOperatorAssign.htm">=</a> <b><a href="CppNew.htm">new</a></b> QRadioButton("&amp;Epanechnikov");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;QRadioButton *radio3 <a href="CppOperatorAssign.htm">=</a> <b><a href="CppNew.htm">new</a></b> QRadioButton("&amp;Rectangular");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;QRadioButton *radio4 <a href="CppOperatorAssign.htm">=</a> <b><a href="CppNew.htm">new</a></b> QRadioButton("&amp;Triangular");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;QRadioButton *radio5 <a href="CppOperatorAssign.htm">=</a> <b><a href="CppNew.htm">new</a></b> QRadioButton("&amp;Cosine");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;radio1-&gt;setChecked(<b><a href="CppTrue.htm">true</a></b>);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQVBoxLayout.htm">QVBoxLayout</a> *vbox <a href="CppOperatorAssign.htm">=</a> <b><a href="CppNew.htm">new</a></b> <a href="CppQVBoxLayout.htm">QVBoxLayout</a>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;vbox-&gt;addWidget(radio1);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;vbox-&gt;addWidget(radio2);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;vbox-&gt;addWidget(radio3);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;vbox-&gt;addWidget(radio4);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;vbox-&gt;addWidget(radio5);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;kernelRadioBox-&gt;setMinimumSize(260,140);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;kernelRadioBox-&gt;setMaximumSize(260,140);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;kernelRadioBox-&gt;setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;kernelRadioBox-&gt;setLayout(vbox);<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;QButtonGroup *kernelGroup <a href="CppOperatorAssign.htm">=</a> <b><a href="CppNew.htm">new</a></b> QButtonGroup;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;kernelGroup-&gt;addButton(radio1, 0);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;kernelGroup-&gt;addButton(radio2, 1);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;kernelGroup-&gt;addButton(radio3, 2);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;kernelGroup-&gt;addButton(radio4, 3);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;kernelGroup-&gt;addButton(radio5, 4);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQObject.htm">QObject</a>::connect(kernelGroup, <a href="CppSignalMacro.htm">SIGNAL</a>(buttonClicked(<b><a href="CppInt.htm">int</a></b>)), <b><a href="CppThis.htm">this</a></b>, <a href="CppSLOT.htm">SLOT</a>(getKernel(<b><a href="CppInt.htm">int</a></b>)));<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_svg <a href="CppOperatorAssign.htm">=</a> <b><a href="CppNew.htm">new</a></b> QSvg<a href="CppWidget.htm">Widget</a>();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;runRandomDataCmd();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppComment.htm">//</a> also calls plot()<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;QGroupBox *estimationBox <a href="CppOperatorAssign.htm">=</a> <b><a href="CppNew.htm">new</a></b> QGroupBox("Density estimation bandwidth (scaled by 100)");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQHBoxLayout.htm">QHBoxLayout</a> *spinners <a href="CppOperatorAssign.htm">=</a> <b><a href="CppNew.htm">new</a></b> <a href="CppQHBoxLayout.htm">QHBoxLayout</a>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;spinners-&gt;addWidget(spinBox);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;spinners-&gt;addWidget(slider);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQVBoxLayout.htm">QVBoxLayout</a> *topright <a href="CppOperatorAssign.htm">=</a> <b><a href="CppNew.htm">new</a></b> <a href="CppQVBoxLayout.htm">QVBoxLayout</a>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;topright-&gt;addLayout(spinners);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;topright-&gt;addWidget(cmdLabel);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;topright-&gt;addWidget(cmdEntry);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;estimationBox-&gt;setMinimumSize(360,140);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;estimationBox-&gt;setMaximumSize(360,140);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;estimationBox-&gt;setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;estimationBox-&gt;setLayout(topright);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQHBoxLayout.htm">QHBoxLayout</a> *upperlayout <a href="CppOperatorAssign.htm">=</a> <b><a href="CppNew.htm">new</a></b> <a href="CppQHBoxLayout.htm">QHBoxLayout</a>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;upperlayout-&gt;addWidget(kernelRadioBox);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;upperlayout-&gt;addWidget(estimationBox);<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQHBoxLayout.htm">QHBoxLayout</a> *lowerlayout <a href="CppOperatorAssign.htm">=</a> <b><a href="CppNew.htm">new</a></b> <a href="CppQHBoxLayout.htm">QHBoxLayout</a>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;lowerlayout-&gt;addWidget(m_svg);<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQVBoxLayout.htm">QVBoxLayout</a> *outer <a href="CppOperatorAssign.htm">=</a> <b><a href="CppNew.htm">new</a></b> <a href="CppQVBoxLayout.htm">QVBoxLayout</a>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;outer-&gt;addLayout(upperlayout);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;outer-&gt;addLayout(lowerlayout);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;window-&gt;setLayout(outer);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;window-&gt;show();<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppQt.htm">Qt</a>Density::plot(<b><a href="CppVoid.htm">void</a></b>) {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppChar.htm">char</a></b> *kernelstrings[] <a href="CppOperatorAssign.htm">=</a> { "gaussian", "epanechnikov", "rectangular", "triangular", "cosine" };<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_R["bw"] <a href="CppOperatorAssign.htm">=</a> m_bw;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_R["kernel"] <a href="CppOperatorAssign.htm">=</a> kernelstrings[m_kernel]; <a href="CppComment.htm">//</a> that passes the string to R<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdString.htm">std::string</a> cmd0 <a href="CppOperatorAssign.htm">=</a> "svg(width=6,height=6,<a href="CppPointer.htm">point</a>size=10,filename=tfile); ";<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdString.htm">std::string</a> cmd1 <a href="CppOperatorAssign.htm">=</a> "plot(density(y, bw=bw/100, kernel=kernel), xlim=range(y)+c(-2,2), <a href="CppMain.htm">main</a>=\"Kernel: ";<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdString.htm">std::string</a> cmd2 <a href="CppOperatorAssign.htm">=</a> "\"); <a href="CppPointer.htm">point</a>s(y, rep(0, length(y)), pch=16, col=rgb(0,0,0,1/4));&nbsp;&nbsp;dev.off()";<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdString.htm">std::string</a> cmd <a href="CppOperatorAssign.htm">=</a> cmd0 <a href="CppOperatorPlus.htm">+</a> cmd1 <a href="CppOperatorPlus.htm">+</a> kernelstrings[m_kernel] <a href="CppOperatorPlus.htm">+</a> cmd2; <a href="CppComment.htm">//</a> stick the selected kernel in the middle<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_R.parseEvalQ(cmd);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;filterFile();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	<a href="CppComment.htm">//</a> we need to simplify the svg file <b><a href="CppFor.htm">for</a></b> display by <a href="CppQt.htm">Qt</a> <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_svg-&gt;load(m_svgfile);<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppQt.htm">Qt</a>Density::getBandwidth(<b><a href="CppInt.htm">int</a></b> bw) {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (bw <a href="CppOperatorNotEqual.htm">!=</a> m_bw) {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_bw <a href="CppOperatorAssign.htm">=</a> bw;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plot();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppQt.htm">Qt</a>Density::getKernel(<b><a href="CppInt.htm">int</a></b> kernel) {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (kernel <a href="CppOperatorNotEqual.htm">!=</a> m_kernel) {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_kernel <a href="CppOperatorAssign.htm">=</a> kernel;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plot();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppQt.htm">Qt</a>Density::getRandomDataCmd(<a href="CppQString.htm">QString</a> txt) {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_cmd <a href="CppOperatorAssign.htm">=</a> txt;<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppQt.htm">Qt</a>Density::runRandomDataCmd(<b><a href="CppVoid.htm">void</a></b>) {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdString.htm">std::string</a> cmd <a href="CppOperatorAssign.htm">=</a> "y2 &lt;<a href="CppOperatorMinus.htm">-</a> " <a href="CppOperatorPlus.htm">+</a> m_cmd.toStdString() <a href="CppOperatorPlus.htm">+</a> "; y &lt;<a href="CppOperatorMinus.htm">-</a> y2";<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_R.parseEvalQNT(cmd);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;plot();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppComment.htm">//</a> after each random draw, update plot with estimate<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppQt.htm">Qt</a>Density::filterFile() {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a> cairoDevice creates richer SVG than <a href="CppQt.htm">Qt</a> can display<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a> but per Michaele Lawrence, a simple trick is to s/symbol/g<a href="CppOperatorDivide.htm">/</a> which we <b><a href="CppDo.htm">do</a></b> here<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQFile.htm">QFile</a> infile(m_tempfile);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;infile.open(<a href="CppQFile.htm">QFile</a>::ReadOnly);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQFile.htm">QFile</a> outfile(m_svgfile);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;outfile.open(<a href="CppQFile.htm">QFile</a>::WriteOnly | <a href="CppQFile.htm">QFile</a>::Truncate);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;QTextStream in(&amp;infile);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;QTextStream out(&amp;outfile);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQRegExp.htm">QRegExp</a> rx1("&lt;symbol"); <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQRegExp.htm">QRegExp</a> rx2("&lt;/symbol");&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppWhile.htm">while</a></b> (!in.atEnd()) {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQString.htm">QString</a> line <a href="CppOperatorAssign.htm">=</a> in.readLine();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line.replace(rx1, "&lt;g"); <a href="CppComment.htm">//</a> so '&lt;symbol' becomes '&lt;g ...'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line.replace(rx2, "&lt;/g");<a href="CppComment.htm">//</a> and '&lt;/symbol becomes '&lt;/g'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;out <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> line <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "\n";<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;infile.close();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;outfile.close();<br/>
+}<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic pop<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p>&nbsp;</p>
+<p><a href="http://validator.w3.org/check?uri=referer"><img src="valid-xhtml10.png" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a></p>
+<p>This page has been created by the <a href="Tools.htm">tool</a> <a href="ToolCodeToHtml.htm">CodeToHtml</a></p>
+</body>
+</html>

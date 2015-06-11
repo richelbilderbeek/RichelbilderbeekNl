@@ -37,7 +37,7 @@
 </ul>
 <p><a href="CppStandard.htm">C++ standard</a>:</p>
 <ul>
-  <li><img src="PicCpp11.png" alt="C++11"/> <a href="Cpp11.htm">C++11</a></li>
+  <li><img src="PicCpp98.png" alt="C++98"/> <a href="Cpp98.htm">C++98</a></li>
 </ul>
 <p><a href="CppCompiler.htm">Compiler(s)</a>:</p>
 <ul>
@@ -60,38 +60,307 @@
 #&nbsp;&nbsp;std::system("ln -s ../../<a href="CppLibrary.htm">Libraries</a>/Urho3D/bin/Data"); //RJCB<br/>
 #&nbsp;&nbsp;std::system("ln -s ../../<a href="CppLibrary.htm">Libraries</a>/Urho3D/bin/CoreData"); //RJCB<br/>
 <br/>
-# Use the line below:<br/>
-#&nbsp;&nbsp; include(../../<a href="CppLibrary.htm">Libraries</a>/Urho3D/Urho3d.pri)<br/>
-# But for completeness, its content is shown here:<br/>
-<br/>
-<a href="CppQmakeLibs.htm">LIBS</a> += ../../<a href="CppLibrary.htm">Libraries</a>/Urho3D/lib/libUrho3D.a<br/>
-<br/>
-<a href="CppQmakeIncludepath.htm">INCLUDEPATH</a> += \<br/>
-&nbsp;&nbsp;../../<a href="CppLibrary.htm">Libraries</a>/Urho3D/include \<br/>
-&nbsp;&nbsp;../../<a href="CppLibrary.htm">Libraries</a>/Urho3D/Source/Samples<br/>
-<br/>
-<a href="CppQmakeLibs.htm">LIBS</a> += \<br/>
-&nbsp;&nbsp;-lpthread \<br/>
-&nbsp;&nbsp;-lSDL -lSDL_image -lSDL_ttf \<br/>
-&nbsp;&nbsp;-ldl \<br/>
-&nbsp;&nbsp;-lGL<br/>
-<br/>
-<a href="CppQmakeDefines.htm">DEFINES</a> += URHO3D_COMPILE_QT<br/>
-# End of the content of ../../<a href="CppLibrary.htm">Libraries</a>/Urho3D/Urho3d.pri<br/>
+include(../../<a href="CppConsoleApplication.htm">ConsoleApplication</a>NoWeffcpp.pri)<br/>
+include(../../<a href="CppLibrary.htm">Libraries</a>/Urho3d.pri)<br/>
 <br/>
 <br/>
-<a href="CppQmakeQmake_cxxflags.htm">QMAKE_CXXFLAGS</a> += -std=<a href="Cpp11.htm">c++11</a><br/>
+<a href="CppQmakeSources.htm">SOURCES</a> += HelloWorld.cpp<br/>
+<a href="CppQmakeHeaders.htm">HEADERS</a> += HelloWorld.h<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppUrho3dExample1/HelloWorld.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppUrho3dExample1/HelloWorld.h" border = "1"><tr><td><code>
+<a href="CppComment.htm">//</a><br/>
+<a href="CppComment.htm">//</a> Copyright (c) 2008-2015 the Urho3D project.<br/>
+<a href="CppComment.htm">//</a><br/>
+<a href="CppComment.htm">//</a> Permission is hereby granted, free of <b><a href="CppChar.htm">char</a></b>ge, to <a href="CppAny.htm">any</a> person obtaining a copy<br/>
+<a href="CppComment.htm">//</a> of <b><a href="CppThis.htm">this</a></b> software and associated <a href="CppDocumentation.htm">documentation</a> files (the "Software"), to deal<br/>
+<a href="CppComment.htm">//</a> in the Software without restriction, including without limitation the rights<br/>
+<a href="CppComment.htm">//</a> to use, copy, modify, merge, publish, distribute, sublicense, and/or sell<br/>
+<a href="CppComment.htm">//</a> copies of the Software, and to permit persons to whom the Software is<br/>
+<a href="CppComment.htm">//</a> furnished to <b><a href="CppDo.htm">do</a></b> so, subject to the following conditions:<br/>
+<a href="CppComment.htm">//</a><br/>
+<a href="CppComment.htm">//</a> The above copyright notice and <b><a href="CppThis.htm">this</a></b> permission notice shall be included in<br/>
+<a href="CppComment.htm">//</a> all copies or substantial portions of the Software.<br/>
+<a href="CppComment.htm">//</a><br/>
+<a href="CppComment.htm">//</a> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR<br/>
+<a href="CppComment.htm">//</a> IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,<br/>
+<a href="CppComment.htm">//</a> FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE<br/>
+<a href="CppComment.htm">//</a> AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER<br/>
+<a href="CppComment.htm">//</a> LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,<br/>
+<a href="CppComment.htm">//</a> OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN<br/>
+<a href="CppComment.htm">//</a> THE SOFTWARE.<br/>
+<a href="CppComment.htm">//</a><br/>
 <br/>
-<a href="CppQmakeSources.htm">SOURCES</a> += \<br/>
-&nbsp;&nbsp;../../<a href="CppLibrary.htm">Libraries</a>/Urho3D/Source/Samples/01_HelloWorld/HelloWorld.cpp<br/>
+<a href="CppPragma.htm">#pragma</a> once<br/>
 <br/>
-<a href="CppQmakeHeaders.htm">HEADERS</a> += \<br/>
-&nbsp;&nbsp;../../<a href="CppLibrary.htm">Libraries</a>/Urho3D/Source/Samples/01_HelloWorld/HelloWorld.h<br/>
+<a href="CppInclude.htm">#include</a> "Sample.h"<br/>
 <br/>
-<a href="CppQmakeTemplate.htm">TEMPLATE</a> = app<br/>
-<a href="CppQmakeConfig.htm">CONFIG</a> += console<br/>
-<a href="CppQmakeConfig.htm">CONFIG</a> -= app_bundle<br/>
-<a href="CppQmakeConfig.htm">CONFIG</a> -= qt<br/>
+/<a href="CppComment.htm">//</a> This first example, maintaining tradition, prints a "<a href="CppHelloWorld.htm">Hello World</a>" message.<br/>
+/<a href="CppComment.htm">//</a> Furthermore it shows:<br/>
+/<a href="CppComment.htm">//</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a> Using the Sample <a href="CppOperatorDivide.htm">/</a> <a href="CppApplication.htm">Application</a> <b><a href="CppClass.htm">classes</a></b>, which <a href="CppInitialize.htm">initialize</a> the Urho3D engine and run the <a href="CppMain.htm">main</a> loop<br/>
+/<a href="CppComment.htm">//</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a> <a href="CppAdd.htm">Add</a>ing a Text element to the graphical user <a href="CppInterface.htm">interface</a><br/>
+/<a href="CppComment.htm">//</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a> Subsc<a href="CppRibi.htm">ribi</a>ng to and handling of update events<br/>
+<b><a href="CppClass.htm">class</a></b> <a href="CppHelloWorld.htm">HelloWorld</a> : <b><a href="CppPublic.htm">public</a></b> Sample<br/>
+{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;OBJECT(<a href="CppHelloWorld.htm">HelloWorld</a>);<br/>
+<br/>
+<b><a href="CppPublic.htm">public</a></b>:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> <a href="CppConstructor.htm">Construct</a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppHelloWorld.htm">HelloWorld</a>(Context* context);<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Setup after engine <a href="CppInitialize.htm">initialization</a> and before running the <a href="CppMain.htm">main</a> loop.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVirtual.htm">virtual</a></b> <b><a href="CppVoid.htm">void</a></b> Start();<br/>
+<br/>
+<b><a href="CppProtected.htm">protected</a></b>:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Return <a href="CppXml.htm">XML</a> patch instructions <b><a href="CppFor.htm">for</a></b> screen joystick layout <b><a href="CppFor.htm">for</a></b> a specific sample app, <b><a href="CppIf.htm">if</a></b> <a href="CppAny.htm">any</a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVirtual.htm">virtual</a></b> String GetScreenJoystickPatchString() <b><a href="CppConst.htm">const</a></b> { <b><a href="CppReturn.htm">return</a></b><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&lt;patch&gt;"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&nbsp;&nbsp;&nbsp;&nbsp;&lt;add sel=\"/element/element[./attribute[@name='Name' and @value='Hat0']]\"&gt;"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;attribute name=\"Is Visible\" value=\"<b><a href="CppFalse.htm">false</a></b>\" <a href="CppOperatorDivide.htm">/</a>&gt;"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&nbsp;&nbsp;&nbsp;&nbsp;&lt;/add&gt;"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&lt;/patch&gt;";<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+<br/>
+<b><a href="CppPrivate.htm">private</a></b>:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> <a href="CppConstructor.htm">Construct</a> a <b><a href="CppNew.htm">new</a></b> Text <a href="CppInstance.htm">instance</a>, containing the '<a href="CppHelloWorld.htm">Hello World</a>' String, and add it to the UI root element.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> CreateText();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Subscribe to <a href="CppApplication.htm">application</a>-wide logic update events.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> SubscribeToEvents();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Handle the logic update event.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> HandleUpdate(StringHash eventType, VariantMap&amp; eventData);<br/>
+};<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppUrho3dExample1/HelloWorld.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppUrho3dExample1/HelloWorld.cpp" border = "1"><tr><td><code>
+<a href="CppComment.htm">//</a><br/>
+<a href="CppComment.htm">//</a> Copyright (c) 2008-2015 the Urho3D project.<br/>
+<a href="CppComment.htm">//</a><br/>
+<a href="CppComment.htm">//</a> Permission is hereby granted, free of <b><a href="CppChar.htm">char</a></b>ge, to <a href="CppAny.htm">any</a> person obtaining a copy<br/>
+<a href="CppComment.htm">//</a> of <b><a href="CppThis.htm">this</a></b> software and associated <a href="CppDocumentation.htm">documentation</a> files (the "Software"), to deal<br/>
+<a href="CppComment.htm">//</a> in the Software without restriction, including without limitation the rights<br/>
+<a href="CppComment.htm">//</a> to use, copy, modify, merge, publish, distribute, sublicense, and/or sell<br/>
+<a href="CppComment.htm">//</a> copies of the Software, and to permit persons to whom the Software is<br/>
+<a href="CppComment.htm">//</a> furnished to <b><a href="CppDo.htm">do</a></b> so, subject to the following conditions:<br/>
+<a href="CppComment.htm">//</a><br/>
+<a href="CppComment.htm">//</a> The above copyright notice and <b><a href="CppThis.htm">this</a></b> permission notice shall be included in<br/>
+<a href="CppComment.htm">//</a> all copies or substantial portions of the Software.<br/>
+<a href="CppComment.htm">//</a><br/>
+<a href="CppComment.htm">//</a> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR<br/>
+<a href="CppComment.htm">//</a> IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,<br/>
+<a href="CppComment.htm">//</a> FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE<br/>
+<a href="CppComment.htm">//</a> AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER<br/>
+<a href="CppComment.htm">//</a> LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,<br/>
+<a href="CppComment.htm">//</a> OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN<br/>
+<a href="CppComment.htm">//</a> THE SOFTWARE.<br/>
+<a href="CppComment.htm">//</a><br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Urho3D.h&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Core/CoreEvents.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Engine/Engine.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/UI/Font.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Core/ProcessUtils.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/UI/Text.h&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppHelloWorld.htm">HelloWorld</a>.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/<a href="CppDebug.htm">Debug</a>New.h&gt;<br/>
+<br/>
+<a href="CppComment.htm">//</a> Expands to <b><a href="CppThis.htm">this</a></b> example's entry-<a href="CppPointer.htm">point</a><br/>
+DEFINE_APPLICATION_MAIN(<a href="CppHelloWorld.htm">HelloWorld</a>)<br/>
+<br/>
+<a href="CppHelloWorld.htm">HelloWorld</a>::<a href="CppHelloWorld.htm">HelloWorld</a>(Context* context) :<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Sample(context)<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>These lines create symbolic <a href="CppLink.htm">link</a>s to Urho3D's<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>vital Data and CoreData folders<br/>
+&nbsp;&nbsp;<a href="CppStdSystem.htm">std::system</a>("ln <a href="CppOperatorMinus.htm">-</a>s ../../<a href="CppLibrary.htm">Libraries</a>/Urho3D/bin/Data");&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppComment.htm">//</a>RJCB<br/>
+&nbsp;&nbsp;<a href="CppStdSystem.htm">std::system</a>("ln <a href="CppOperatorMinus.htm">-</a>s ../../<a href="CppLibrary.htm">Libraries</a>/Urho3D/bin/CoreData"); <a href="CppComment.htm">//</a>RJCB<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppHelloWorld.htm">HelloWorld</a>::Start()<br/>
+{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a> Execute <a href="CppBaseClass.htm">base class</a> startup<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Sample::Start();<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a> Create "<a href="CppHelloWorld.htm">Hello World</a>" Text<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;CreateText();<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a> Finally subscribe to the update event. Note that by subsc<a href="CppRibi.htm">ribi</a>ng events at <b><a href="CppThis.htm">this</a></b> <a href="CppPointer.htm">point</a> we have already missed some events<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a> like the ScreenMode event sent by the Graphics subsystem when opening the <a href="CppApplication.htm">application</a> window. To <b><a href="CppCatch.htm">catch</a></b> those as well we<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a> could subscribe in the <a href="CppConstructor.htm">constructor</a> instead.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;SubscribeToEvents();<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppHelloWorld.htm">HelloWorld</a>::CreateText()<br/>
+{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ResourceCache* cache <a href="CppOperatorAssign.htm">=</a> GetSubsystem&lt;ResourceCache&gt;();<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a> <a href="CppConstructor.htm">Construct</a> <b><a href="CppNew.htm">new</a></b> Text object<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;SharedPtr&lt;Text&gt; helloText(<b><a href="CppNew.htm">new</a></b> Text(context_));<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a> Set String to display<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;helloText-&gt;SetText("<a href="CppHelloWorld.htm">Hello World</a> from Urho3D!");<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a> Set font and text color<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;helloText-&gt;SetFont(cache-&gt;GetResource&lt;Font&gt;("Fonts/Anonymous Pro.ttf"), 30);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;helloText-&gt;SetColor(Color(0.0f, 1.0f, 0.0f));<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a> Align Text center-screen<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;helloText-&gt;SetHorizontalAlignment(HA_CENTER);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;helloText-&gt;SetVerticalAlignment(VA_CENTER);<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a> <a href="CppAdd.htm">Add</a> Text <a href="CppInstance.htm">instance</a> to the UI root element<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;GetSubsystem&lt;UI&gt;()-&gt;GetRoot()-&gt;<a href="CppAdd.htm">Add</a>Child(helloText);<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppHelloWorld.htm">HelloWorld</a>::SubscribeToEvents()<br/>
+{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a> Subscribe HandleUpdate() <a href="CppFunction.htm">function</a> <b><a href="CppFor.htm">for</a></b> processing update events<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;SubscribeToEvent(E_UPDATE, HANDLER(<a href="CppHelloWorld.htm">HelloWorld</a>, HandleUpdate));<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppHelloWorld.htm">HelloWorld</a>::HandleUpdate(StringHash <a href="CppComment.htm">/*</a> eventType <a href="CppComment.htm">*/</a>, VariantMap&amp; <a href="CppComment.htm">/*</a> eventData <a href="CppComment.htm">*/</a>)<br/>
+{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a> Do nothing <b><a href="CppFor.htm">for</a></b> now, could be extended to eg. animate the display<br/>
+}<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppUrho3dExample1/Sample.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppUrho3dExample1/Sample.h" border = "1"><tr><td><code>
+<a href="CppComment.htm">//</a><br/>
+<a href="CppComment.htm">//</a> Copyright (c) 2008-2015 the Urho3D project.<br/>
+<a href="CppComment.htm">//</a><br/>
+<a href="CppComment.htm">//</a> Permission is hereby granted, free of <b><a href="CppChar.htm">char</a></b>ge, to <a href="CppAny.htm">any</a> person obtaining a copy<br/>
+<a href="CppComment.htm">//</a> of <b><a href="CppThis.htm">this</a></b> software and associated <a href="CppDocumentation.htm">documentation</a> files (the "Software"), to deal<br/>
+<a href="CppComment.htm">//</a> in the Software without restriction, including without limitation the rights<br/>
+<a href="CppComment.htm">//</a> to use, copy, modify, merge, publish, distribute, sublicense, and/or sell<br/>
+<a href="CppComment.htm">//</a> copies of the Software, and to permit persons to whom the Software is<br/>
+<a href="CppComment.htm">//</a> furnished to <b><a href="CppDo.htm">do</a></b> so, subject to the following conditions:<br/>
+<a href="CppComment.htm">//</a><br/>
+<a href="CppComment.htm">//</a> The above copyright notice and <b><a href="CppThis.htm">this</a></b> permission notice shall be included in<br/>
+<a href="CppComment.htm">//</a> all copies or substantial portions of the Software.<br/>
+<a href="CppComment.htm">//</a><br/>
+<a href="CppComment.htm">//</a> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR<br/>
+<a href="CppComment.htm">//</a> IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,<br/>
+<a href="CppComment.htm">//</a> FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE<br/>
+<a href="CppComment.htm">//</a> AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER<br/>
+<a href="CppComment.htm">//</a> LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,<br/>
+<a href="CppComment.htm">//</a> OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN<br/>
+<a href="CppComment.htm">//</a> THE SOFTWARE.<br/>
+<a href="CppComment.htm">//</a><br/>
+<br/>
+<a href="CppPragma.htm">#pragma</a> once<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;Urho3D/Engine/<a href="CppApplication.htm">Application</a>.h&gt;<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> Urho3D<br/>
+{<br/>
+<br/>
+<b><a href="CppClass.htm">class</a></b> Node;<br/>
+<b><a href="CppClass.htm">class</a></b> Scene;<br/>
+<b><a href="CppClass.htm">class</a></b> Sprite;<br/>
+<br/>
+}<br/>
+<br/>
+<a href="CppComment.htm">//</a> All Urho3D <b><a href="CppClass.htm">classes</a></b> reside in <b><a href="CppNamespace.htm">namespace</a></b> Urho3D<br/>
+<b><a href="CppUsing.htm">using</a></b> <b><a href="CppNamespace.htm">namespace</a></b> Urho3D;<br/>
+<br/>
+<b><a href="CppConst.htm">const</a></b> <b><a href="CppFloat.htm">float</a></b> TOUCH_SENSITIVITY <a href="CppOperatorAssign.htm">=</a> 2.0f;<br/>
+<br/>
+/<a href="CppComment.htm">//</a> Sample <b><a href="CppClass.htm">class</a></b>, as framework <b><a href="CppFor.htm">for</a></b> all samples.<br/>
+/<a href="CppComment.htm">//</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a> <a href="CppInitialize.htm">Initialization</a> of the Urho3D engine (in <a href="CppApplication.htm">Application</a> <b><a href="CppClass.htm">class</a></b>)<br/>
+/<a href="CppComment.htm">//</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a> Modify engine parameters <b><a href="CppFor.htm">for</a></b> windowed mode and to show the <b><a href="CppClass.htm">class</a></b> name as title<br/>
+/<a href="CppComment.htm">//</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a> Create Urho3D logo at screen<br/>
+/<a href="CppComment.htm">//</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a> Set custom window title and icon<br/>
+/<a href="CppComment.htm">//</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a> Create Console and <a href="CppDebug.htm">Debug</a> HUD, and use F1 and F2 key to toggle them<br/>
+/<a href="CppComment.htm">//</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a> Toggle rendering options from the keys 1-8<br/>
+/<a href="CppComment.htm">//</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a> Take screenshot with key 9<br/>
+/<a href="CppComment.htm">//</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a> Handle Esc key down to hide Console or exit <a href="CppApplication.htm">application</a><br/>
+/<a href="CppComment.htm">//</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a> Init touch input on mobile platform <b><a href="CppUsing.htm">using</a></b> screen joysticks (patched <b><a href="CppFor.htm">for</a></b> each individual sample)<br/>
+<b><a href="CppClass.htm">class</a></b> Sample : <b><a href="CppPublic.htm">public</a></b> <a href="CppApplication.htm">Application</a><br/>
+{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a> Enable type information.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;OBJECT(Sample);<br/>
+<br/>
+<b><a href="CppPublic.htm">public</a></b>:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> <a href="CppConstructor.htm">Construct</a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Sample(Context* context);<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Setup before engine <a href="CppInitialize.htm">initialization</a>. Modifies the engine parameters.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVirtual.htm">virtual</a></b> <b><a href="CppVoid.htm">void</a></b> Setup();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Setup after engine <a href="CppInitialize.htm">initialization</a>. Creates the logo, console &amp; <a href="CppDebug.htm">debug</a> HUD.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVirtual.htm">virtual</a></b> <b><a href="CppVoid.htm">void</a></b> Start();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Cleanup after the <a href="CppMain.htm">main</a> loop. Called by <a href="CppApplication.htm">Application</a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVirtual.htm">virtual</a></b> <b><a href="CppVoid.htm">void</a></b> Stop();<br/>
+<br/>
+<b><a href="CppProtected.htm">protected</a></b>:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Return <a href="CppXml.htm">XML</a> patch instructions <b><a href="CppFor.htm">for</a></b> screen joystick layout <b><a href="CppFor.htm">for</a></b> a specific sample app, <b><a href="CppIf.htm">if</a></b> <a href="CppAny.htm">any</a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVirtual.htm">virtual</a></b> String GetScreenJoystickPatchString() <b><a href="CppConst.htm">const</a></b> { <b><a href="CppReturn.htm">return</a></b> String::EMPTY; }<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> <a href="CppInitialize.htm">Initialize</a> touch input on mobile platform.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> InitTouchInput();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Control logo visibility.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> SetLogoVisible(<b><a href="CppBool.htm">bool</a></b> enable);<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Logo sprite.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;SharedPtr&lt;Sprite&gt; logoSprite_;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Scene.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;SharedPtr&lt;Scene&gt; scene_;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Camera scene node.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;SharedPtr&lt;Node&gt; cameraNode_;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Camera yaw angle.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppFloat.htm">float</a></b> yaw_;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Camera pitch angle.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppFloat.htm">float</a></b> pitch_;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Flag to indicate whether touch input has been enabled.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppBool.htm">bool</a></b> touchEnabled_;<br/>
+<br/>
+<b><a href="CppPrivate.htm">private</a></b>:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Create logo.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> CreateLogo();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Set custom window Title &amp; Icon<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> SetWindowTitleAndIcon();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Create console and <a href="CppDebug.htm">debug</a> HUD.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> CreateConsoleAnd<a href="CppDebug.htm">Debug</a>Hud();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Handle key down event to process key controls common to all samples.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> HandleKeyDown(StringHash eventType, VariantMap&amp; eventData);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Handle scene update event to control camera's pitch and yaw <b><a href="CppFor.htm">for</a></b> all samples.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> HandleSceneUpdate(StringHash eventType, VariantMap&amp; eventData);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Handle touch begin event to <a href="CppInitialize.htm">initialize</a> touch input on desktop platform.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> HandleTouchBegin(StringHash eventType, VariantMap&amp; eventData);<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Screen joystick index <b><a href="CppFor.htm">for</a></b> navigational controls (mobile platforms only).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppUnsigned.htm">unsigned</a></b> screenJoystickIndex_;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Screen joystick index <b><a href="CppFor.htm">for</a></b> settings (mobile platforms only).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppUnsigned.htm">unsigned</a></b> screenJoystickSettingsIndex_;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> <a href="ToolPause.htm">Pause</a> flag.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppBool.htm">bool</a></b> <a href="ToolPause.htm">pause</a>d_;<br/>
+};<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "Sample.inl"<br/>
 </code></td></tr></table>
 <!-- end of the code -->
 <p>&nbsp;</p>

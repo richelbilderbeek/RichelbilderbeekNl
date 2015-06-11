@@ -56,26 +56,7 @@
 <p>&nbsp;</p>
 <!-- start of code -->
 <table summary="./CppStdSystem_clockExample1/CppStdSystem_clockExample1.pro" border = "1"><tr><td><code>
-include(../../<a href="CppConsoleApplication.htm">ConsoleApplication</a>.pri) #Or use the code below<br/>
-# QT += core<br/>
-# QT += gui<br/>
-# greaterThan(QT_MAJOR_VERSION, 4): QT += <a href="CppWidget.htm">widget</a>s<br/>
-# <a href="CppQmakeConfig.htm">CONFIG</a>&nbsp;&nbsp; += console<br/>
-# <a href="CppQmakeConfig.htm">CONFIG</a>&nbsp;&nbsp; -= app_bundle<br/>
-# <a href="CppQmakeTemplate.htm">TEMPLATE</a> = app<br/>
-# <a href="CppQmakeConfig.htm">CONFIG</a>(release, debug|release) {<br/>
-#&nbsp;&nbsp; <a href="CppQmakeDefines.htm">DEFINES</a> += NDEBUG N<a href="CppTRACE.htm">TRACE</a>_BILDERBIKKEL<br/>
-# }<br/>
-# <a href="CppQmakeQmake_cxxflags.htm">QMAKE_CXXFLAGS</a> += -std=<a href="Cpp11.htm">c++11</a> <a href="CppWall.htm">-Wall</a> <a href="CppWextra.htm">-Wextra</a> <a href="CppWeffcpp.htm">-Weffc++</a><br/>
-# unix {<br/>
-#&nbsp;&nbsp; <a href="CppQmakeQmake_cxxflags.htm">QMAKE_CXXFLAGS</a> += <a href="CppWerror.htm">-Werror</a><br/>
-# }<br/>
-<br/>
-include(../../<a href="CppLibrary.htm">Libraries</a>/<a href="CppBoost.htm">Boost</a>.pri) #Or use the code below<br/>
-# win32 {<br/>
-#&nbsp;&nbsp; <a href="CppQmakeIncludepath.htm">INCLUDEPATH</a> += \<br/>
-#&nbsp;&nbsp;&nbsp;&nbsp; ../../<a href="CppLibrary.htm">Libraries</a>/boost_1_54_0<br/>
-# }<br/>
+include(../../<a href="CppConsoleApplication.htm">ConsoleApplication</a>.pri)<br/>
 <br/>
 <a href="CppQmakeSources.htm">SOURCES</a> += <a href="CppMain.htm">main</a>.cpp<br/>
 </code></td></tr></table>
@@ -95,8 +76,8 @@ include(../../<a href="CppLibrary.htm">Libraries</a>/<a href="CppBoost.htm">Boos
 <br/>
 <b><a href="CppInt.htm">int</a></b> <a href="CppMain.htm">main</a>()<br/>
 {<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdSystem_clock.htm">std::chrono::system_clock</a>::<a href="CppTime.htm">time</a>_<a href="CppPointer.htm">point</a> t <a href="CppOperatorAssign.htm">=</a> <a href="CppStdSystem_clock.htm">std::chrono::system_clock</a>::now();<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdStdHigh_resolution_clock.htm">std::chrono::high_resolution_clock</a>::<a href="CppTime.htm">time</a>_<a href="CppPointer.htm">point</a> u <a href="CppOperatorAssign.htm">=</a> <a href="CppStdStdHigh_resolution_clock.htm">std::chrono::high_resolution_clock</a>::now();<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdChronoSystem_clockTime_point.htm">std::chrono::system_clock::time_point</a> t <a href="CppOperatorAssign.htm">=</a> <a href="CppStdChronoSystem_clock.htm">std::chrono::system_clock</a>::now();<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdChronoHigh_resolution_clockTime_point.htm">std::chrono::high_resolution_clock::time_point</a> u <a href="CppOperatorAssign.htm">=</a> <a href="CppStdChronoHigh_resolution_clock.htm">std::chrono::high_resolution_clock</a>::now();<br/>
 <br/>
 &nbsp;&nbsp;<a href="CppComment.htm">//</a>Burn some <a href="CppTime.htm">time</a><br/>
 &nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppInt.htm">int</a></b> i=0; i<a href="CppOperatorNotEqual.htm">!=</a>100000000; <a href="CppOperatorIncrement.htm">++</a>i)<br/>
@@ -107,12 +88,12 @@ include(../../<a href="CppLibrary.htm">Libraries</a>/<a href="CppBoost.htm">Boos
 &nbsp;&nbsp;&nbsp;&nbsp;}<br/>
 &nbsp;&nbsp;}<br/>
 <br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdSystem_clock.htm">std::chrono::system_clock</a>::duration d <a href="CppOperatorAssign.htm">=</a> <a href="CppStdSystem_clock.htm">std::chrono::system_clock</a>::now() <a href="CppOperatorMinus.htm">-</a> t;<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdSystem_clock.htm">std::chrono::system_clock</a>::duration e <a href="CppOperatorAssign.htm">=</a> <a href="CppStdStdHigh_resolution_clock.htm">std::chrono::high_resolution_clock</a>::now() <a href="CppOperatorMinus.htm">-</a> u;<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdChronoSystem_clockDuration.htm">std::chrono::system_clock::duration</a> d <a href="CppOperatorAssign.htm">=</a> <a href="CppStdChronoSystem_clock.htm">std::chrono::system_clock</a>::now() <a href="CppOperatorMinus.htm">-</a> t;<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdChronoSystem_clockDuration.htm">std::chrono::system_clock::duration</a> e <a href="CppOperatorAssign.htm">=</a> <a href="CppStdChronoHigh_resolution_clock.htm">std::chrono::high_resolution_clock</a>::now() <a href="CppOperatorMinus.htm">-</a> u;<br/>
 <br/>
 &nbsp;&nbsp;<a href="CppStdCout.htm">std::cout</a><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="CppStdChrono.htm">std::chrono</a>::duration_cast&lt;<a href="CppStdChrono.htm">std::chrono</a>::milliseconds&gt;(d).count() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> " milliseconds" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="CppStdChrono.htm">std::chrono</a>::duration_cast&lt;<a href="CppStdChrono.htm">std::chrono</a>::milliseconds&gt;(e).count() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> " milliseconds" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="CppStdChronoDuration_cast.htm">std::chrono::duration_cast</a>&lt;<a href="CppStdChronoMilliseconds.htm">std::chrono::milliseconds</a>&gt;(d).count() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> " milliseconds" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="CppStdChronoDuration_cast.htm">std::chrono::duration_cast</a>&lt;<a href="CppStdChronoMilliseconds.htm">std::chrono::milliseconds</a>&gt;(e).count() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> " milliseconds" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="CppStdEndl.htm">std::endl</a>;<br/>
 }<br/>
 <br/>

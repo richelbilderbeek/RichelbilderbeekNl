@@ -1,0 +1,1107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <title>OrnsteinUhlenbeck</title>
+  <meta name="description" content="C++ OrnsteinUhlenbeck"/>
+  <meta name="keywords" content="C++ OrnsteinUhlenbeck "/>
+  <link rel="stylesheet" href="Richelbilderbeek.css" type="text/css"/>
+</head>
+<!-- End of head, start of body -->
+<body>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<!-- Page header -->
+<h1>(<a href="Cpp.htm">C++</a>) <a href="CppOrnsteinUhlenbeck.htm">OrnsteinUhlenbeck</a></h1>
+<p>&nbsp;</p>
+<!-- No CodeToHtmlInfo about this class with page name CppOrnsteinUhlenbeck-->
+<h2>Technical facts</h2>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppOrnsteinUhlenbeck/CppOrnsteinUhlenbeck.pri</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppOrnsteinUhlenbeck/CppOrnsteinUhlenbeck.pri" border = "1"><tr><td><code>
+<a href="CppQmakeIncludepath.htm">INCLUDEPATH</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/<a href="CppOrnsteinUhlenbeck.htm">CppOrnsteinUhlenbeck</a><br/>
+<br/>
+<a href="CppQmakeSources.htm">SOURCES</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/<a href="CppOrnsteinUhlenbeck.htm">CppOrnsteinUhlenbeck</a>/ornsteinuhlenbeck.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/<a href="CppOrnsteinUhlenbeck.htm">CppOrnsteinUhlenbeck</a>/ornsteinuhlenbeckparameters.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/<a href="CppOrnsteinUhlenbeck.htm">CppOrnsteinUhlenbeck</a>/ornsteinuhlenbeckprocess.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/<a href="CppOrnsteinUhlenbeck.htm">CppOrnsteinUhlenbeck</a>/ornsteinuhlenbeckhelper.cpp<br/>
+<br/>
+<a href="CppQmakeHeaders.htm">HEADERS</a>&nbsp;&nbsp;+= \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/<a href="CppOrnsteinUhlenbeck.htm">CppOrnsteinUhlenbeck</a>/ornsteinuhlenbeck.h \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/<a href="CppOrnsteinUhlenbeck.htm">CppOrnsteinUhlenbeck</a>/ornsteinuhlenbeckparameters.h \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/<a href="CppOrnsteinUhlenbeck.htm">CppOrnsteinUhlenbeck</a>/ornsteinuhlenbeckprocess.h \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/<a href="CppOrnsteinUhlenbeck.htm">CppOrnsteinUhlenbeck</a>/ornsteinuhlenbeckhelper.h<br/>
+<br/>
+<a href="CppQmakeOther_files.htm">OTHER_FILES</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/<a href="CppOrnsteinUhlenbeck.htm">CppOrnsteinUhlenbeck</a>/Licence.txt \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/<a href="CppOrnsteinUhlenbeck.htm">CppOrnsteinUhlenbeck</a>/<a href="CppOrnsteinUhlenbeck.htm">CppOrnsteinUhlenbeck</a>.gnumeric<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppOrnsteinUhlenbeck/ornsteinuhlenbeck.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppOrnsteinUhlenbeck/ornsteinuhlenbeck.h" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> ORNSTEINUHLENBECK_H<br/>
+<a href="CppDefine.htm">#define</a> ORNSTEINUHLENBECK_H<br/>
+<br/>
+<br/>
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> ORNSTEINUHLENBECK_H<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppOrnsteinUhlenbeck/ornsteinuhlenbeck.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppOrnsteinUhlenbeck/ornsteinuhlenbeck.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "ornsteinuhlenbeck.h"<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppOrnsteinUhlenbeck/ornsteinuhlenbeckhelper.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppOrnsteinUhlenbeck/ornsteinuhlenbeckhelper.h" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> ORNSTEINUHLENBECKHELPER_H<br/>
+<a href="CppDefine.htm">#define</a> ORNSTEINUHLENBECKHELPER_H<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppRibi.htm">ribi</a>_<a href="CppTime.htm">time</a>.h"<br/>
+<a href="CppInclude.htm">#include</a> "rate.h"<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppVectorH.htm">vector</a>&gt;<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a> {<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> ou {<br/>
+<br/>
+<b><a href="CppStruct.htm">struct</a></b> Helper<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> <a href="CppTime.htm">Time</a> <a href="CppOperatorAssign.htm">=</a> <a href="CppRibi.htm">ribi</a>::units::<a href="CppTime.htm">Time</a>;<br/>
+&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> Rate <a href="CppOperatorAssign.htm">=</a> <a href="CppRibi.htm">ribi</a>::units::Rate;<br/>
+<br/>
+&nbsp;&nbsp;Helper();<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Calculate the likelihood of the candidate parameters in generating the dataset<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Even allows negative mean_<a href="GameReversi.htm">reversi</a>on_rate<br/>
+&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> CalcLogLikelihood(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;&amp; v,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppTime.htm">Time</a> dt,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Rate cand_mean_<a href="GameReversi.htm">reversi</a>on_rate,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> cand_target_mean,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Rate cand_volatility<br/>
+&nbsp;&nbsp;) <b><a href="CppConst.htm">const</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Calculate the parameters that have a maximum likelihood in generating the values v<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> CalcMaxLikelihood(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;&amp; v,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppTime.htm">Time</a> dt,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Rate&amp; mean_<a href="GameReversi.htm">reversi</a>on_rate_hat,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b>&amp; target_mean_hat,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Rate&amp; volatility_hat<br/>
+&nbsp;&nbsp;) <b><a href="CppConst.htm">const</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> CalcMaxLogLikelihood(<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;&amp; v) <b><a href="CppConst.htm">const</a></b>;<br/>
+<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppPrivate.htm">private</a></b>:<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppVoid.htm">void</a></b> Test() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+<br/>
+};<br/>
+<br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> ou<br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a><br/>
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> ORNSTEINUHLENBECKHELPER_H<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppOrnsteinUhlenbeck/ornsteinuhlenbeckhelper.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppOrnsteinUhlenbeck/ornsteinuhlenbeckhelper.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "ornsteinuhlenbeckhelper.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppAlgorithmH.htm">algorithm</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppIostreamH.htm">iostream</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppLimitsH.htm">limits</a>&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppBoost.htm">boost</a>/math/constants/constants.hpp&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "brownianmotionprocess.h"<br/>
+<a href="CppInclude.htm">#include</a> "test<a href="CppTime.htm">time</a>r.h"<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppTrace.htm">trace</a>.h"<br/>
+<br/>
+<a href="CppRibi.htm">ribi</a>::ou::Helper::Helper()<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;Test();<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+}<br/>
+<br/>
+<b><a href="CppDouble.htm">double</a></b> <a href="CppRibi.htm">ribi</a>::ou::Helper::CalcLogLikelihood(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;&amp; v,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppTime.htm">Time</a> dt,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Rate cand_mean_<a href="GameReversi.htm">reversi</a>on_rate,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> cand_target_mean,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Rate cand_volatility<br/>
+) <b><a href="CppConst.htm">const</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppBool.htm">bool</a></b> verbose{<b><a href="CppFalse.htm">false</a></b>};<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (cand_mean_<a href="GameReversi.htm">reversi</a>on_rate <a href="CppOperatorEqual.htm">==</a> 0.0 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> a{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CalcLogLikelihood(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dt,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a><a href="CppStdNumeric_limits.htm">std::numeric_limits</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;::epsilon() <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cand_target_mean,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cand_volatility<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> b{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CalcLogLikelihood(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dt,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdNumeric_limits.htm">std::numeric_limits</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;::epsilon() <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cand_target_mean,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cand_volatility<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> (a+b)/2.0;<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (dt <a href="CppOperatorLessEqual.htm">&lt;=</a> 0.0 * <a href="CppBoostUnits.htm">boost::units</a>::si::second) <b><a href="CppReturn.htm">return</a></b> <a href="CppStdNumeric_limits.htm">std::numeric_limits</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;::min();<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Any non-zero cand_mean_<a href="GameReversi.htm">reversi</a>on_rate is fine<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (v.size() &lt; 2) <b><a href="CppReturn.htm">return</a></b> <a href="CppStdNumeric_limits.htm">std::numeric_limits</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;::min();<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> n{<b><a href="CppStatic_cast.htm">static_cast</a></b>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;(v.size())};<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> sum{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdInner_product.htm">std::inner_product</a>(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdBegin.htm">std::begin</a>(v) <a href="CppOperatorPlus.htm">+</a> 1,<a href="CppStdEnd.htm">std::end</a>(v),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdBegin.htm">std::begin</a>(v),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdPlus.htm">std::plus</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;(), <a href="CppComment.htm">//</a>Sum the results<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[dt,cand_mean_<a href="GameReversi.htm">reversi</a>on_rate,cand_target_mean,verbose](<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> a, <b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> b) <a href="CppComment.htm">//</a>a: s_i, b: s_i-1<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> term1{a};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> term2{-(b * <a href="CppStdExp.htm">std::exp</a>(-cand_mean_<a href="GameReversi.htm">reversi</a>on_rate * dt))};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> term3{-(cand_target_mean * (1.0 <a href="CppOperatorMinus.htm">-</a> <a href="CppStdExp.htm">std::exp</a>(-cand_mean_<a href="GameReversi.htm">reversi</a>on_rate*dt)))};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> x {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;term1+term2+term3<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> x2{x*x};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (verbose)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdCout.htm">std::cout</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "a:" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> a <a href="CppOperatorStreamOut.htm">&lt;&lt;</a>&nbsp;&nbsp;'\t'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "b:" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> b <a href="CppOperatorStreamOut.htm">&lt;&lt;</a>&nbsp;&nbsp;'\t'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "term1:" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> term1 <a href="CppOperatorStreamOut.htm">&lt;&lt;</a>&nbsp;&nbsp;'\t'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "term2:" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> term2 <a href="CppOperatorStreamOut.htm">&lt;&lt;</a>&nbsp;&nbsp;'\t'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "term3:" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> term3 <a href="CppOperatorStreamOut.htm">&lt;&lt;</a>&nbsp;&nbsp;'\t'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "x:" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> x <a href="CppOperatorStreamOut.htm">&lt;&lt;</a>&nbsp;&nbsp;'\t'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "x2:" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> x2 <a href="CppOperatorStreamOut.htm">&lt;&lt;</a>&nbsp;&nbsp;'\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> x2;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;)<br/>
+&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> alpha2<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorAssign.htm">=</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;cand_volatility * cand_volatility * (1.0 <a href="CppOperatorMinus.htm">-</a> <a href="CppStdExp.htm">std::exp</a>(-2.0 * cand_mean_<a href="GameReversi.htm">reversi</a>on_rate * dt))<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorDivide.htm">/</a> (2.0 * cand_mean_<a href="GameReversi.htm">reversi</a>on_rate)<br/>
+&nbsp;&nbsp;;<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> alpha <a href="CppOperatorAssign.htm">=</a> <a href="CppStdSqrt.htm">std::sqrt</a>(alpha2.value());<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> term1{(-n/2.0) * <a href="CppStdLog.htm">std::log</a>(<a href="CppBoost.htm">boost</a>::math::constants::two_pi&lt;<b><a href="CppDouble.htm">double</a></b>&gt;())};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> term2{-(n * <a href="CppStdLog.htm">std::log</a>(alpha))};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> term3{-(sum <a href="CppOperatorDivide.htm">/</a> (2.0 * alpha2.value()))};<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> log_likelihood{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;term1<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> term2<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> term3<br/>
+&nbsp;&nbsp;};<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (verbose)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdCout.htm">std::cout</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "dt: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> dt <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "cand_mean_<a href="GameReversi.htm">reversi</a>on_rate: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> cand_mean_<a href="GameReversi.htm">reversi</a>on_rate <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "cand_target_mean: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> cand_target_mean <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "cand_volatility: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> cand_volatility <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "alpha: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> alpha <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "alpha2: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> alpha2 <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "term1: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> term1 <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "term2: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> term2 <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "term3: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> term3 <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "sum: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> sum <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "log_likelihood: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> log_likelihood <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;;<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> log_likelihood;<br/>
+}<br/>
+<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::ou::Helper::CalcMaxLikelihood(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;&amp; v,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppTime.htm">Time</a> dt,<br/>
+&nbsp;&nbsp;Rate&amp; mean_<a href="GameReversi.htm">reversi</a>on_rate_hat,<br/>
+&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b>&amp; target_mean_hat,<br/>
+&nbsp;&nbsp;Rate&amp; volatility_hat<br/>
+) <b><a href="CppConst.htm">const</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppBool.htm">bool</a></b> verbose{<b><a href="CppFalse.htm">false</a></b>};<br/>
+&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> <a href="CppStdBegin.htm">std::begin</a>; <b><a href="CppUsing.htm">using</a></b> <a href="CppStdEnd.htm">std::end</a>; <b><a href="CppUsing.htm">using</a></b> <a href="CppStdAccumulate.htm">std::accumulate</a>;<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> n{<b><a href="CppStatic_cast.htm">static_cast</a></b>&lt;<b><a href="CppInt.htm">int</a></b>&gt;(v.size())};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> n_d{<b><a href="CppStatic_cast.htm">static_cast</a></b>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;(n)};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> sx{<a href="CppStdAccumulate.htm">std::accumulate</a>(begin(v),end(v)-1,0.0)};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> sy{<a href="CppStdAccumulate.htm">std::accumulate</a>(begin(v)+1,end(v),0.0)};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> sxx{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdAccumulate.htm">std::accumulate</a>(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin(v),end(v)-1,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[](<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> init, <b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> x) { <b><a href="CppReturn.htm">return</a></b> init <a href="CppOperatorPlus.htm">+</a> (x*x); }<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;)<br/>
+&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> sxy{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdInner_product.htm">std::inner_product</a>(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin(v),end(v)-1,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin(v) <a href="CppOperatorPlus.htm">+</a> 1,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;)<br/>
+&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> syy{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdAccumulate.htm">std::accumulate</a>(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;begin(v)+1,end(v),0.0,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[](<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> init, <b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> x) { <b><a href="CppReturn.htm">return</a></b> init <a href="CppOperatorPlus.htm">+</a> (x*x); }<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;)<br/>
+&nbsp;&nbsp;};<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (verbose)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdClog.htm">std::clog</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "n: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> n <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "sx: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> sx <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "sy: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> sy <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "sxx: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> sxx <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "sxy: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> sxy <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "syy: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> syy <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;;<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>( ( (n_d * (sxx <a href="CppOperatorMinus.htm">-</a> sxy)) <a href="CppOperatorMinus.htm">-</a> ( (sx*sx) <a href="CppOperatorMinus.htm">-</a> (sx*sy)) ) <a href="CppOperatorNotEqual.htm">!=</a> 0.0);<br/>
+<br/>
+&nbsp;&nbsp;target_mean_hat<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorAssign.htm">=</a>&nbsp;&nbsp;((sy * sxx) <a href="CppOperatorMinus.htm">-</a> (sx * sxy))<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorDivide.htm">/</a> ( (n_d * (sxx <a href="CppOperatorMinus.htm">-</a> sxy)) <a href="CppOperatorMinus.htm">-</a> ( (sx*sx) <a href="CppOperatorMinus.htm">-</a> (sx*sy)) )<br/>
+&nbsp;&nbsp;;<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> nmu2{n_d*target_mean_hat*target_mean_hat};<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> mean_<a href="GameReversi.htm">reversi</a>on_rate_hat_numerator{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;sxy <a href="CppOperatorMinus.htm">-</a> (target_mean_hat*sx) <a href="CppOperatorMinus.htm">-</a> (target_mean_hat*sy) <a href="CppOperatorPlus.htm">+</a> nmu2<br/>
+&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> mean_<a href="GameReversi.htm">reversi</a>on_rate_hat_denominator{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;sxx <a href="CppOperatorMinus.htm">-</a> (2.0*target_mean_hat*sx) <a href="CppOperatorPlus.htm">+</a> nmu2<br/>
+&nbsp;&nbsp;};<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (verbose)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdClog.htm">std::clog</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "target_mean_hat: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> target_mean_hat <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "nmu2: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> nmu2 <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "mean_<a href="GameReversi.htm">reversi</a>on_rate_hat_numerator: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> mean_<a href="GameReversi.htm">reversi</a>on_rate_hat_numerator <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "mean_<a href="GameReversi.htm">reversi</a>on_rate_hat_denominator: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> mean_<a href="GameReversi.htm">reversi</a>on_rate_hat_denominator <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "n/d: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> (mean_<a href="GameReversi.htm">reversi</a>on_rate_hat_numerator/mean_<a href="GameReversi.htm">reversi</a>on_rate_hat_denominator) <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(mean_<a href="GameReversi.htm">reversi</a>on_rate_hat_denominator <a href="CppOperatorNotEqual.htm">!=</a> 0.0);<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mean_<a href="GameReversi.htm">reversi</a>on_rate_hat_numerator<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorDivide.htm">/</a> mean_<a href="GameReversi.htm">reversi</a>on_rate_hat_denominator<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt; 0.0<br/>
+&nbsp;&nbsp;);<br/>
+<br/>
+&nbsp;&nbsp;mean_<a href="GameReversi.htm">reversi</a>on_rate_hat<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorAssign.htm">=</a> <a href="CppOperatorMinus.htm">-</a><a href="CppStdLog.htm">std::log</a>(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mean_<a href="GameReversi.htm">reversi</a>on_rate_hat_numerator<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorDivide.htm">/</a> mean_<a href="GameReversi.htm">reversi</a>on_rate_hat_denominator<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;) <a href="CppOperatorDivide.htm">/</a> dt<br/>
+&nbsp;&nbsp;;<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> alpha{<a href="CppStdExp.htm">std::exp</a>(-mean_<a href="GameReversi.htm">reversi</a>on_rate_hat*dt)};<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> beta_term_1{syy};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> beta_term_2{2.0*alpha*sxy};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> beta_term_3{alpha*alpha*sxx};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> beta_term_4{2.0*target_mean_hat*(1.0-alpha)*(sy <a href="CppOperatorMinus.htm">-</a> (alpha*sx))};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> beta_term_5{nmu2 * (1.0-alpha)*(1.0-alpha)};<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> beta{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;beta_term_1<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a> beta_term_2<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> beta_term_3<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a> beta_term_4<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> beta_term_5<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;) <a href="CppOperatorDivide.htm">/</a> n_d<br/>
+&nbsp;&nbsp;};<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (verbose)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdClog.htm">std::clog</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "alpha: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> alpha <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "beta_term_1: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> beta_term_1 <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "beta_term_2: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> beta_term_2 <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "beta_term_3: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> beta_term_3 <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "beta_term_4: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> beta_term_4 <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "beta_term_5: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> beta_term_5 <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "beta: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> beta <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;;<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;volatility_hat<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorAssign.htm">=</a> <a href="CppStdSqrt.htm">std::sqrt</a>(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(beta * 2.0 * mean_<a href="GameReversi.htm">reversi</a>on_rate_hat.value())<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorDivide.htm">/</a> (1.0-(alpha*alpha))<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;) <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second<br/>
+&nbsp;&nbsp;;<br/>
+}<br/>
+<br/>
+<b><a href="CppDouble.htm">double</a></b> <a href="CppRibi.htm">ribi</a>::ou::Helper::CalcMaxLogLikelihood(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;&amp; v<br/>
+) <b><a href="CppConst.htm">const</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> dt <a href="CppOperatorAssign.htm">=</a> 1.0 * <a href="CppBoostUnits.htm">boost::units</a>::si::second;<br/>
+&nbsp;&nbsp;<b><a href="CppAuto.htm">auto</a></b> mean_<a href="GameReversi.htm">reversi</a>on_rate_hat <a href="CppOperatorAssign.htm">=</a> 0.0 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second;<br/>
+&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> target_mean_hat{0.0};<br/>
+&nbsp;&nbsp;<b><a href="CppAuto.htm">auto</a></b> volatility_hat <a href="CppOperatorAssign.htm">=</a> 0.0 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second;<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Find best parameters<br/>
+&nbsp;&nbsp;Helper().CalcMaxLikelihood(v,dt,mean_<a href="GameReversi.htm">reversi</a>on_rate_hat,target_mean_hat,volatility_hat);<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Use best parameters<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> Helper().CalcLogLikelihood(v,dt,mean_<a href="GameReversi.htm">reversi</a>on_rate_hat,target_mean_hat,volatility_hat);<br/>
+}<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::ou::Helper::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppBool.htm">bool</a></b> is_tested{<b><a href="CppFalse.htm">false</a></b>};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (is_tested) <b><a href="CppReturn.htm">return</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;is_tested <a href="CppOperatorAssign.htm">=</a> <b><a href="CppTrue.htm">true</a></b>;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Test<a href="CppTime.htm">Time</a>r test_<a href="CppTime.htm">time</a>r(<a href="Cpp__func__.htm">__func__</a>,__<a href="CppCfile.htm">FILE</a>__,1.0);<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Testing dataset<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Run a Ornsein-Uhlenbeck motion process <b><a href="CppFor.htm">for</a></b> dt <a href="CppOperatorAssign.htm">=</a> 1.0<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; known_noises<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorAssign.htm">=</a> {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a>1.0268,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a>0.4985,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.3825,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a>0.8102,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a>0.1206,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a>1.9604,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.2079,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.9134,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1375,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.5461,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.4335,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.4414,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a>2.2912,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.3249,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a>1.3019,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a>0.8995,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0281,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a>1.0959,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a>0.8118,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a>1.3890<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;};<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; known_xs<br/>
+&nbsp;&nbsp; <a href="CppOperatorAssign.htm">=</a> {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; 0.0,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a>9.77536,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a>13.5909,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a>8.65611,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a>15.5457,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a>15.2144,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a>32.43,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a>27.3646,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a>16.0648,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;5.81345,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;10.4592,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;23.1111,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;25.114,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;0.911395,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3.91778,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a>8.84942,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a>16.5707,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a>14.7263,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a>23.7581,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a>29.2257,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a>39.6681<br/>
+&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> known_mean_<a href="GameReversi.htm">reversi</a>on_rate <a href="CppOperatorAssign.htm">=</a> 0.1 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second;<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> known_target_mean{0.0};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> known_volatility <a href="CppOperatorAssign.htm">=</a> 10.0 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second;<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a><b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> known_init_x{0.0};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> known_dt <a href="CppOperatorAssign.htm">=</a> 1.0 * <a href="CppBoostUnits.htm">boost::units</a>::si::second;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>CalcLogLikelihood of the known parameters<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> log_likelihood{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Helper().CalcLogLikelihood(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;known_xs,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;known_dt,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;known_mean_<a href="GameReversi.htm">reversi</a>on_rate,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;known_target_mean,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;known_volatility<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> expected_log_likelihood{-79.422965153555438};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppStdAbs.htm">std::abs</a>(log_likelihood <a href="CppOperatorMinus.htm">-</a> expected_log_likelihood) &lt; 0.000001);<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>CalcMaxLikelihood<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppAuto.htm">auto</a></b> ml_mean_<a href="GameReversi.htm">reversi</a>on_rate <a href="CppOperatorAssign.htm">=</a> 0.0 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> ml_target_mean{0.0};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppAuto.htm">auto</a></b> ml_volatility <a href="CppOperatorAssign.htm">=</a> 0.0 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Helper().CalcMaxLikelihood(known_xs,known_dt,ml_mean_<a href="GameReversi.htm">reversi</a>on_rate,ml_target_mean,ml_volatility);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> expected_mean_<a href="GameReversi.htm">reversi</a>on_rate <a href="CppOperatorAssign.htm">=</a> 0.150065 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> expected_target_mean{-21.2912};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> expected_volatility <a href="CppOperatorAssign.htm">=</a> 10.9281 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppStdAbs.htm">std::abs</a>(ml_mean_<a href="GameReversi.htm">reversi</a>on_rate.value() <a href="CppOperatorMinus.htm">-</a> expected_mean_<a href="GameReversi.htm">reversi</a>on_rate.value()) &lt; 0.001);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppStdAbs.htm">std::abs</a>(ml_target_mean <a href="CppOperatorMinus.htm">-</a> expected_target_mean) &lt; 0.001);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppStdAbs.htm">std::abs</a>(ml_volatility.value() <a href="CppOperatorMinus.htm">-</a> expected_volatility.value()) &lt; 0.001);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>CalcLogLikelihood<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> max_log_likelihood{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Helper().CalcLogLikelihood(known_xs,known_dt,ml_mean_<a href="GameReversi.htm">reversi</a>on_rate,ml_target_mean,ml_volatility)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> expected_max_log_likelihood{-78.4367};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppStdAbs.htm">std::abs</a>(max_log_likelihood <a href="CppOperatorMinus.htm">-</a> expected_max_log_likelihood) &lt; 0.0001);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Incorrectly labeled as <a href="CppBug.htm">bug</a>:<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Brownian motion run <b><a href="CppFor.htm">for</a></b> RNG seed of 64 results in a MaxLogLikelihood of 0.0<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/This used to be 2,2250738585072014e-308 (the minimum <b><a href="CppDouble.htm">double</a></b> value)<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/but changes to <a href="CppOperatorMinus.htm">-</a>131.90782856283087 <b><a href="CppIf.htm">if</a></b> negative mean_<a href="GameReversi.htm">reversi</a>on_rates are allowed<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> Volatility <a href="CppOperatorAssign.htm">=</a> <a href="CppRibi.htm">ribi</a>::units::Rate;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Volatility volatility{1.0 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::bm::Parameters parameters(volatility,64);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::bm::Process sim(parameters);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> init_x{0.0};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> x <a href="CppOperatorAssign.htm">=</a> init_x;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; xs <a href="CppOperatorAssign.htm">=</a> {x};<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppInt.htm">int</a></b> i=0; i<a href="CppOperatorNotEqual.htm">!=</a>100; <a href="CppOperatorIncrement.htm">++</a>i)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x <a href="CppOperatorAssign.htm">=</a> sim.CalcNext(x);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xs.push_back(x);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> dt <a href="CppOperatorAssign.htm">=</a> 1.0 * <a href="CppBoostUnits.htm">boost::units</a>::si::second;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppAuto.htm">auto</a></b> mean_<a href="GameReversi.htm">reversi</a>on_rate_hat <a href="CppOperatorAssign.htm">=</a> 0.0 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> target_mean_hat{0.0};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppAuto.htm">auto</a></b> volatility_hat <a href="CppOperatorAssign.htm">=</a> 0.0 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Helper().CalcMaxLikelihood(xs,dt,mean_<a href="GameReversi.htm">reversi</a>on_rate_hat,target_mean_hat,volatility_hat);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> max_log_likelihood{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Helper().CalcLogLikelihood(xs,dt,mean_<a href="GameReversi.htm">reversi</a>on_rate_hat,target_mean_hat,volatility_hat)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(max_log_likelihood <a href="CppOperatorNotEqual.htm">!=</a> 0.0);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> expected_max_log_likelihood{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a>131.906<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppStdAbs.htm">std::abs</a>(max_log_likelihood <a href="CppOperatorMinus.htm">-</a> expected_max_log_likelihood) &lt; 0.001);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Allow mean_<a href="GameReversi.htm">reversi</a>on_rate of zero<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> log_likelihood_minus{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Helper().CalcLogLikelihood(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;known_xs,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;known_dt,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a><a href="CppStdNumeric_limits.htm">std::numeric_limits</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;::epsilon() <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;known_target_mean,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;known_volatility<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> log_likelihood_zero{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Helper().CalcLogLikelihood(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;known_xs,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;known_dt,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0000 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;known_target_mean,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;known_volatility<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> log_likelihood_plus{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Helper().CalcLogLikelihood(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;known_xs,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;known_dt,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdNumeric_limits.htm">std::numeric_limits</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;::epsilon() <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;known_target_mean,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;known_volatility<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(log_likelihood_minus <a href="CppOperatorGreaterEqual.htm">&gt;=</a> log_likelihood_zero);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(log_likelihood_zero <a href="CppOperatorGreaterEqual.htm">&gt;=</a> log_likelihood_plus);<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Note: resolution too low to distinguish likelihoods<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(log_likelihood_minus <a href="CppOperatorEqual.htm">==</a> log_likelihood_plus);<br/>
+&nbsp;&nbsp;}<br/>
+}<br/>
+<a href="CppEndif.htm">#endif</a><br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppOrnsteinUhlenbeck/ornsteinuhlenbeckparameters.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppOrnsteinUhlenbeck/ornsteinuhlenbeckparameters.h" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> ORNSTEINUHLENBECKPARAMETERS_H<br/>
+<a href="CppDefine.htm">#define</a> ORNSTEINUHLENBECKPARAMETERS_H<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "rate.h"<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a> {<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> ou {<br/>
+<br/>
+<a href="CppComment.htm">///</a>Parameters <b><a href="CppFor.htm">for</a></b> an Ornstein-Uhlenbeck process<br/>
+<b><a href="CppStruct.htm">struct</a></b> Parameters<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> Rate <a href="CppOperatorAssign.htm">=</a> <a href="CppRibi.htm">ribi</a>::units::Rate;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/mean <a href="GameReversi.htm">reversi</a>on rate: theta on Wikipedia, lambda by van den Berg<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/target mean: mu<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/noise: sigma<br/>
+&nbsp;&nbsp;Parameters(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Rate mean_<a href="GameReversi.htm">reversi</a>on_rate,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> target_mean,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Rate volatility,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> rng_seed <a href="CppOperatorAssign.htm">=</a> 42<br/>
+&nbsp;&nbsp;);<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppAuto.htm">auto</a></b> <a href="CppGetMean.htm">GetMean</a>Re<a href="CppVersion.htm">version</a>Rate() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> { <b><a href="CppReturn.htm">return</a></b> m_mean_<a href="GameReversi.htm">reversi</a>on_rate; }<br/>
+&nbsp;&nbsp;<b><a href="CppInt.htm">int</a></b> GetRngSeed() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> { <b><a href="CppReturn.htm">return</a></b> m_rng_seed; }<br/>
+&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> GetTargetMean() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> { <b><a href="CppReturn.htm">return</a></b> m_target_mean; }<br/>
+&nbsp;&nbsp;<b><a href="CppAuto.htm">auto</a></b> GetVolatility() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> { <b><a href="CppReturn.htm">return</a></b> m_volatility; }<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppPrivate.htm">private</a></b>:<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Rate m_mean_<a href="GameReversi.htm">reversi</a>on_rate;<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> m_rng_seed;<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> m_target_mean;<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Rate m_volatility;<br/>
+};<br/>
+<br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> ou<br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a><br/>
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> ORNSTEINUHLENBECKPARAMETERS_H<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppOrnsteinUhlenbeck/ornsteinuhlenbeckparameters.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppOrnsteinUhlenbeck/ornsteinuhlenbeckparameters.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "ornsteinuhlenbeckparameters.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppSstreamH.htm">sstream</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppStdexceptH.htm">stdexcept</a>&gt;<br/>
+<br/>
+<a href="CppRibi.htm">ribi</a>::ou::Parameters::Parameters(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Rate mean_<a href="GameReversi.htm">reversi</a>on_rate,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> target_mean,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Rate volatility,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> rng_seed<br/>
+)<br/>
+&nbsp;&nbsp;:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_mean_<a href="GameReversi.htm">reversi</a>on_rate{mean_<a href="GameReversi.htm">reversi</a>on_rate},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_rng_seed{rng_seed},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_target_mean{target_mean},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_volatility{volatility}<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>TODO: allow zero, then the process falls back to a Brownian process<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (m_mean_<a href="GameReversi.htm">reversi</a>on_rate <a href="CppOperatorLessEqual.htm">&lt;=</a> 0.0 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdStringstream.htm">std::stringstream</a> s;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;s <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="Cpp__func__.htm">__func__</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> ": mean <a href="GameReversi.htm">reversi</a>on rate must be positive and non-zero, "<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "value given is " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> m_mean_<a href="GameReversi.htm">reversi</a>on_rate<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppThrow.htm">throw</a></b> <a href="CppStdLogic_error.htm">std::logic_error</a>(s.str());<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>TODO: allow zero, then the process falls back to an <b><a href="CppAuto.htm">auto</a></b>regression<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (m_volatility <a href="CppOperatorLessEqual.htm">&lt;=</a> 0.0 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdStringstream.htm">std::stringstream</a> s;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;s <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="Cpp__func__.htm">__func__</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> ": volatility must be positive and non-zero, "<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "value given is " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> m_volatility<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppThrow.htm">throw</a></b> <a href="CppStdLogic_error.htm">std::logic_error</a>(s.str());<br/>
+&nbsp;&nbsp;}<br/>
+}<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppOrnsteinUhlenbeck/ornsteinuhlenbeckprocess.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppOrnsteinUhlenbeck/ornsteinuhlenbeckprocess.h" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> ORNSTEINUHLENBECKPROCESS_H<br/>
+<a href="CppDefine.htm">#define</a> ORNSTEINUHLENBECKPROCESS_H<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppRandomH.htm">random</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> "ornsteinuhlenbeckparameters.h"<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppRibi.htm">ribi</a>_<a href="CppTime.htm">time</a>.h"<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a> {<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> ou {<br/>
+<br/>
+<a href="CppComment.htm">///</a>Performs an Ornstein-Uhlenbeck process<br/>
+<a href="CppComment.htm">///</a>M<a href="CppAny.htm">any</a> thanks to Thijs van den Berg from sitmo.com <b><a href="CppFor.htm">for</a></b> an awesome article <a href="CppAbout.htm">about</a> it<br/>
+<b><a href="CppStruct.htm">struct</a></b> Process<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> Rate <a href="CppOperatorAssign.htm">=</a> <a href="CppRibi.htm">ribi</a>::units::Rate;<br/>
+&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> <a href="CppTime.htm">Time</a> <a href="CppOperatorAssign.htm">=</a> <a href="CppRibi.htm">ribi</a>::units::<a href="CppTime.htm">Time</a>;<br/>
+<br/>
+&nbsp;&nbsp;Process(<b><a href="CppConst.htm">const</a></b> Parameters&amp; parameters);<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Calculate the next x+dt. This <b><a href="CppClass.htm">class</a></b> will supply the <a href="CppRandomNumber.htm">random numbers</a>,<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/thus these <a href="CppMemberFunction.htm">member functions</a> are not <b><a href="CppConst.htm">const</a></b><br/>
+&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> CalcNext(<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> x, <b><a href="CppConst.htm">const</a></b> <a href="CppTime.htm">Time</a> dt <a href="CppOperatorAssign.htm">=</a> 1.0 * <a href="CppBoostUnits.htm">boost::units</a>::si::second);<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Calculate the next x+dt, supplying the <a href="CppRandomNumber.htm">random numbers</a> yourself<br/>
+&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> CalcNext(<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> x, <b><a href="CppConst.htm">const</a></b> <a href="CppTime.htm">Time</a> dt, <b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> random_normal) <b><a href="CppConst.htm">const</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppVoid.htm">void</a></b> Test() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppPrivate.htm">private</a></b>:<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppStdNormal_distribution.htm">std::normal_distribution</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; m_normal_distribution;<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Parameters m_parameters;<br/>
+&nbsp;&nbsp;<a href="CppStdMt19937.htm">std::mt19937</a> m_rng;<br/>
+<br/>
+};<br/>
+<br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> ou<br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a><br/>
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> ORNSTEINUHLENBECKPROCESS_H<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppOrnsteinUhlenbeck/ornsteinuhlenbeckprocess.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppOrnsteinUhlenbeck/ornsteinuhlenbeckprocess.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "ornsteinuhlenbeckprocess.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppLimitsH.htm">limits</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppIostreamH.htm">iostream</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppStdexceptH.htm">stdexcept</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppSstreamH.htm">sstream</a>&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppBoost.htm">boost</a>/math/constants/constants.hpp&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "brownianmotionparameters.h"<br/>
+<a href="CppInclude.htm">#include</a> "brownianmotionprocess.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "ornsteinuhlenbeckhelper.h"<br/>
+<a href="CppInclude.htm">#include</a> "test<a href="CppTime.htm">time</a>r.h"<br/>
+<br/>
+<a href="CppRibi.htm">ribi</a>::ou::Process::Process(<b><a href="CppConst.htm">const</a></b> Parameters&amp; parameters)<br/>
+&nbsp;&nbsp;: m_normal_distribution(0.0,1.0),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_parameters{parameters},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_rng(parameters.GetRngSeed())<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;Test();<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+}<br/>
+<br/>
+<br/>
+<br/>
+<b><a href="CppDouble.htm">double</a></b> <a href="CppRibi.htm">ribi</a>::ou::Process::CalcNext(<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> x, <b><a href="CppConst.htm">const</a></b> <a href="CppTime.htm">Time</a> dt)<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppTry.htm">try</a></b><br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> random_normal{m_normal_distribution(m_rng)};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> CalcNext(x,dt,random_normal);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppCatch.htm">catch</a></b> (<a href="CppStdLogic_error.htm">std::logic_error</a>&amp;)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdStringstream.htm">std::stringstream</a> s;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;s <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="Cpp__func__.htm">__func__</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> ": delta t must be non-zero and positive, delta t given: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> dt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppThrow.htm">throw</a></b> <a href="CppStdLogic_error.htm">std::logic_error</a>(s.str());<br/>
+&nbsp;&nbsp;}<br/>
+}<br/>
+<br/>
+<b><a href="CppDouble.htm">double</a></b> <a href="CppRibi.htm">ribi</a>::ou::Process::CalcNext(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> x,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppTime.htm">Time</a> dt,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> random_normal<br/>
+) <b><a href="CppConst.htm">const</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppTry.htm">try</a></b><br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> mean_<a href="GameReversi.htm">reversi</a>on_rate <a href="CppOperatorAssign.htm">=</a> m_parameters.<a href="CppGetMean.htm">GetMean</a>Re<a href="CppVersion.htm">version</a>Rate();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> target_mean{m_parameters.GetTargetMean()};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> volatility <a href="CppOperatorAssign.htm">=</a> m_parameters.GetVolatility();<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> term1{x*<a href="CppStdExp.htm">std::exp</a>(-mean_<a href="GameReversi.htm">reversi</a>on_rate*dt)};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> term2{target_mean * (1.0-<a href="CppStdExp.htm">std::exp</a>(-mean_<a href="GameReversi.htm">reversi</a>on_rate*dt))};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> term3<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorAssign.htm">=</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;volatility<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* random_normal<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* <a href="CppStdSqrt.htm">std::sqrt</a>(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1.0 <a href="CppOperatorMinus.htm">-</a> <a href="CppStdExp.htm">std::exp</a>(-2.0*mean_<a href="GameReversi.htm">reversi</a>on_rate*dt))<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorDivide.htm">/</a> (<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.0<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* mean_<a href="GameReversi.htm">reversi</a>on_rate<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* <a href="CppBoostUnits.htm">boost::units</a>::si::second <a href="CppComment.htm">//</a>To fix units<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* <a href="CppBoostUnits.htm">boost::units</a>::si::second <a href="CppComment.htm">//</a>To fix units<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> new_x{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;term1<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> term2<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> term3<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> new_x;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppCatch.htm">catch</a></b> (<a href="CppStdLogic_error.htm">std::logic_error</a>&amp;)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdStringstream.htm">std::stringstream</a> s;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;s <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="Cpp__func__.htm">__func__</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> ": delta t must be non-zero and positive, delta t given: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> dt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppThrow.htm">throw</a></b> <a href="CppStdLogic_error.htm">std::logic_error</a>(s.str());<br/>
+&nbsp;&nbsp;}<br/>
+}<br/>
+<br/>
+<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::ou::Process::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppBool.htm">bool</a></b> is_tested{<b><a href="CppFalse.htm">false</a></b>};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (is_tested) <b><a href="CppReturn.htm">return</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;is_tested <a href="CppOperatorAssign.htm">=</a> <b><a href="CppTrue.htm">true</a></b>;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Helper();<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Test<a href="CppTime.htm">Time</a>r test_<a href="CppTime.htm">time</a>r(<a href="Cpp__func__.htm">__func__</a>,__<a href="CppCfile.htm">FILE</a>__,1.0);<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppBool.htm">bool</a></b> verbose{<b><a href="CppFalse.htm">false</a></b>};<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Run Ornstein-Uhlenbeck <b><a href="CppFor.htm">for</a></b> dt=0.25 and known results<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>/M<a href="CppAny.htm">any</a> thanks to Thijs van den Berg from sitmo.com<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>/to allow <b><a href="CppFor.htm">for</a></b> <b><a href="CppThis.htm">this</a></b> detailed test<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; noises<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorAssign.htm">=</a> {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0, <a href="CppComment.htm">//</a>Does not matter: <b><a href="CppThis.htm">this</a></b> might the noise to generate the initial population?<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a>1.0268,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a>0.4985,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.3825,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a>0.8102,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a>0.1206,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a>1.9604,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.2079,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.9134,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1375,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.5461,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.4335,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.4414,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a>2.2912,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.3249,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a>1.3019,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a>0.8995,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0281,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a>1.0959,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a>0.8118,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a>1.3890<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; v<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorAssign.htm">=</a> {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.0, <a href="CppComment.htm">//</a>Initial population size<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.7600,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2693,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.1960,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.9468,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.9532,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.6252,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.8604,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.0984,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.4310,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.3019,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.4005,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2686,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.7147,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.9237,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.7297,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.7105,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.8683,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.7406,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.7314,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.6232<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(v.size() <a href="CppOperatorEqual.htm">==</a> noises.size());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> mean_<a href="GameReversi.htm">reversi</a>on_rate <a href="CppOperatorAssign.htm">=</a> 3.0 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> target_mean{1.0};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> volatility <a href="CppOperatorAssign.htm">=</a> 0.5 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> dt <a href="CppOperatorAssign.htm">=</a> 0.25 * <a href="CppBoostUnits.htm">boost::units</a>::si::second;<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>/M<a href="CppAny.htm">any</a> thanks to Thijs van den Berg from sitmo.com<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>/to allow <b><a href="CppFor.htm">for</a></b> <b><a href="CppThis.htm">this</a></b> detailed test<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> x <a href="CppOperatorAssign.htm">=</a> 3.0;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Parameters parameters(mean_<a href="GameReversi.htm">reversi</a>on_rate,target_mean,volatility);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Process p(parameters);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> n{<b><a href="CppStatic_cast.htm">static_cast</a></b>&lt;<b><a href="CppInt.htm">int</a></b>&gt;(noises.size())};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppInt.htm">int</a></b> i=1; i<a href="CppOperatorNotEqual.htm">!=</a>n; <a href="CppOperatorIncrement.htm">++</a>i)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x <a href="CppOperatorAssign.htm">=</a> p.CalcNext(x,dt,noises[i]);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppStdAbs.htm">std::abs</a>(x <a href="CppOperatorMinus.htm">-</a> v[i]) &lt; 0.01);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Run a Ornsein-Uhlenbeck motion process <b><a href="CppFor.htm">for</a></b> dt <a href="CppOperatorAssign.htm">=</a> 1.0<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; noises<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorAssign.htm">=</a> {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a>1.0268,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a>0.4985,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.3825,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a>0.8102,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a>0.1206,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a>1.9604,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.2079,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.9134,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1375,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.5461,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.4335,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.4414,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a>2.2912,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.3249,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a>1.3019,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a>0.8995,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0281,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a>1.0959,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a>0.8118,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorMinus.htm">-</a>1.3890<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; xs_expected<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorAssign.htm">=</a> {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.0,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a>9.77536,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a>13.5909,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a>8.65611,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a>15.5457,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a>15.2144,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a>32.43,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a>27.3646,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a>16.0648,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.81345,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10.4592,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;23.1111,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;25.114,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.911395,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.91778,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a>8.84942,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a>16.5707,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a>14.7263,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a>23.7581,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a>29.2257,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a>39.6681<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> mean_<a href="GameReversi.htm">reversi</a>on_rate <a href="CppOperatorAssign.htm">=</a> 0.1 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> target_mean{0.0};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> volatility <a href="CppOperatorAssign.htm">=</a> 10.0 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> init_x{0.0};<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppRibi.htm">ribi</a>::ou::Parameters parameters(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mean_<a href="GameReversi.htm">reversi</a>on_rate,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;target_mean,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;volatility<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::ou::Process sim(parameters);<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> x <a href="CppOperatorAssign.htm">=</a> init_x;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; xs <a href="CppOperatorAssign.htm">=</a> {x};<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> noise: noises)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> dt <a href="CppOperatorAssign.htm">=</a> 1.0 * <a href="CppBoostUnits.htm">boost::units</a>::si::second;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x <a href="CppOperatorAssign.htm">=</a> sim.CalcNext(x,dt,noise);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xs.push_back(x);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppStdCopy.htm">std::copy</a>(<a href="CppStdBegin.htm">std::begin</a>(xs),<a href="CppStdEnd.htm">std::end</a>(xs),<a href="CppStdOstream_iterator.htm">std::ostream_iterator</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;(<a href="CppStdCout.htm">std::cout</a>,"\n"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(xs.size() <a href="CppOperatorEqual.htm">==</a> xs_expected.size());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> sz{<b><a href="CppStatic_cast.htm">static_cast</a></b>&lt;<b><a href="CppInt.htm">int</a></b>&gt;(xs.size())};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppInt.htm">int</a></b> i=0; i<a href="CppOperatorNotEqual.htm">!=</a>sz; <a href="CppOperatorIncrement.htm">++</a>i)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppStdAbs.htm">std::abs</a>(xs[i]-xs_expected[i]) &lt; 0.0001);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Worked example<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> Volatility <a href="CppOperatorAssign.htm">=</a> <a href="CppRibi.htm">ribi</a>::units::Rate;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Volatility volatility{0.5 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> init_x{0.0};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> seed{83};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdNormal_distribution.htm">std::normal_distribution</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; normal_distribution;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdMt19937.htm">std::mt19937</a> rng(seed);<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppRibi.htm">ribi</a>::bm::Parameters parameters(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;volatility,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seed<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::bm::Process sim(parameters);<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> x <a href="CppOperatorAssign.htm">=</a> init_x;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; xs <a href="CppOperatorAssign.htm">=</a> {x};<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; random_normals(10);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdGenerate.htm">std::generate</a>(begin(random_normals),end(random_normals),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[&amp;normal_distribution,&amp;rng]() { <b><a href="CppReturn.htm">return</a></b> normal_distribution(rng); }<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!"Show randoms")<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdCopy.htm">std::copy</a>(begin(random_normals),end(random_normals),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdOstream_iterator.htm">std::ostream_iterator</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;(<a href="CppStdCout.htm">std::cout</a>,"\n")<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppInt.htm">int</a></b> i=0; i<a href="CppOperatorNotEqual.htm">!=</a>10; <a href="CppOperatorIncrement.htm">++</a>i)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> random_normal{random_normals[i]};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (verbose) { <a href="CppStdCout.htm">std::cout</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> i <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> ": " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> x <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'; }<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x <a href="CppOperatorAssign.htm">=</a> sim.CalcNext(x,random_normal);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xs.push_back(x);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (verbose) { <a href="CppStdCout.htm">std::cout</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "10: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> x <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'; }<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Rate cand_mean_<a href="GameReversi.htm">reversi</a>on_rate <a href="CppOperatorAssign.htm">=</a> 0.0 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> cand_target_mean{0.0};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Rate cand_volatility <a href="CppOperatorAssign.htm">=</a> 0.0 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppTime.htm">Time</a> dt <a href="CppOperatorAssign.htm">=</a> 1.0 * <a href="CppBoostUnits.htm">boost::units</a>::si::second;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Helper().CalcMaxLikelihood(xs,dt,cand_mean_<a href="GameReversi.htm">reversi</a>on_rate,cand_target_mean,cand_volatility);<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Rate expected_mean_<a href="GameReversi.htm">reversi</a>on_rate{1.7961954158756237021 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> expected_target_mean{0.53166356139872084086};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Rate expected_volatility{0.52252297421994908788 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppStdAbs.htm">std::abs</a>(cand_mean_<a href="GameReversi.htm">reversi</a>on_rate.value() <a href="CppOperatorMinus.htm">-</a> expected_mean_<a href="GameReversi.htm">reversi</a>on_rate.value()) &lt; 0.0001);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppStdAbs.htm">std::abs</a>(cand_target_mean <a href="CppOperatorMinus.htm">-</a> expected_target_mean) &lt; 0.0001);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppStdAbs.htm">std::abs</a>(cand_volatility.value() <a href="CppOperatorMinus.htm">-</a> expected_volatility.value()) &lt; 0.0001);<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> max_log_likelihood{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Helper().CalcLogLikelihood(xs,dt,cand_mean_<a href="GameReversi.htm">reversi</a>on_rate,cand_target_mean,cand_volatility)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> expected_max_log_likelihood{0.048970151059140938632};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppStdAbs.htm">std::abs</a>(expected_max_log_likelihood <a href="CppOperatorMinus.htm">-</a> max_log_likelihood) &lt; 0.0001);<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (verbose)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdCout.htm">std::cout</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="CppStdSetprecision.htm">std::setprecision</a>(20)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "cand_mean_<a href="GameReversi.htm">reversi</a>on_rate: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> cand_mean_<a href="GameReversi.htm">reversi</a>on_rate <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "cand_target_mean: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> cand_target_mean <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "cand_volatility: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> cand_volatility <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "max_log_likelihood: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> max_log_likelihood <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> max_log_likelihood_too{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Helper().CalcMaxLogLikelihood(xs)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppStdAbs.htm">std::abs</a>(expected_max_log_likelihood <a href="CppOperatorMinus.htm">-</a> max_log_likelihood_too) &lt; 0.000000001);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!<a href="CppStd.htm">std</a>::isnan(cand_mean_<a href="GameReversi.htm">reversi</a>on_rate.value()));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!<a href="CppStd.htm">std</a>::isnan(cand_volatility.value()));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!<a href="CppStd.htm">std</a>::isnan(max_log_likelihood));<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+}<br/>
+<a href="CppEndif.htm">#endif</a><br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p>&nbsp;</p>
+<p><a href="http://validator.w3.org/check?uri=referer"><img src="valid-xhtml10.png" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a></p>
+<p>This page has been created by the <a href="Tools.htm">tool</a> <a href="ToolCodeToHtml.htm">CodeToHtml</a></p>
+</body>
+</html>

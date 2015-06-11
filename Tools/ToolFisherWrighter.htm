@@ -58,8 +58,13 @@
 <table summary="./ToolFisherWrighter/ToolFisherWrighterConsole.pro" border = "1"><tr><td><code>
 include(../../<a href="CppConsoleApplication.htm">ConsoleApplication</a>.pri)<br/>
 include(../../<a href="CppLibrary.htm">Libraries</a>/<a href="CppBoost.htm">Boost</a>All.pri)<br/>
-include(../../<a href="CppClass.htm">Classes</a>/<a href="CppNewick.htm">CppNewick</a>Utils/<a href="CppNewick.htm">CppNewick</a>Utils.pri)<br/>
-include(../../<a href="CppClass.htm">Classes</a>/CppPedigree/CppPedigree.pri)<br/>
+include(../../<a href="CppLibrary.htm">Libraries</a>/GeneralConsole.pri)<br/>
+<br/>
+include(../../<a href="CppClass.htm">Classes</a>/<a href="CppCounter.htm">CppCounter</a>/<a href="CppCounter.htm">CppCounter</a>.pri)<br/>
+include(../../<a href="CppClass.htm">Classes</a>/<a href="CppDnaSequence.htm">CppDnaSequence</a>/<a href="CppDnaSequence.htm">CppDnaSequence</a>.pri)<br/>
+include(../../<a href="CppClass.htm">Classes</a>/<a href="CppNewickUtils.htm">CppNewickUtils</a>/<a href="CppNewickUtils.htm">CppNewickUtils</a>.pri)<br/>
+include(../../<a href="CppClass.htm">Classes</a>/<a href="CppPedigree.htm">CppPedigree</a>/<a href="CppPedigree.htm">CppPedigree</a>.pri)<br/>
+include(../../<a href="CppClass.htm">Classes</a>/<a href="CppPhylogenyR.htm">CppPhylogenyR</a>/<a href="CppPhylogenyR.htm">CppPhylogenyR</a>.pri)<br/>
 <br/>
 include(ToolFisherWrighterConsole.pri)<br/>
 <br/>
@@ -79,17 +84,20 @@ include(../../<a href="CppDesktopApplication.htm">DesktopApplication</a>NoWeffcp
 <br/>
 include(../../<a href="CppLibrary.htm">Libraries</a>/<a href="CppBoost.htm">Boost</a>All.pri)<br/>
 include(../../<a href="CppLibrary.htm">Libraries</a>/GeneralConsole.pri)<br/>
+include(../../<a href="CppLibrary.htm">Libraries</a>/GeneralDesktop.pri)<br/>
+include(../../<a href="CppLibrary.htm">Libraries</a>/Rinside.pri)<br/>
 <br/>
 #Specific<br/>
-include(../../<a href="CppClass.htm">Classes</a>/CppBeast/CppBeast.pri)<br/>
+include(../../<a href="CppClass.htm">Classes</a>/<a href="CppBeast.htm">CppBeast</a>/<a href="CppBeast.htm">CppBeast</a>.pri)<br/>
 include(../../<a href="CppClass.htm">Classes</a>/<a href="CppContainer.htm">CppContainer</a>/<a href="CppContainer.htm">CppContainer</a>.pri)<br/>
 include(../../<a href="CppClass.htm">Classes</a>/<a href="CppCounter.htm">CppCounter</a>/<a href="CppCounter.htm">CppCounter</a>.pri)<br/>
-include(../../<a href="CppClass.htm">Classes</a>/CppDnaSequence/CppDnaSequence.pri)<br/>
-include(../../<a href="CppClass.htm">Classes</a>/CppDnaR/CppDnaR.pri)<br/>
-include(../../<a href="CppClass.htm">Classes</a>/CppFastaFile/CppFastaFile.pri)<br/>
-include(../../<a href="CppClass.htm">Classes</a>/<a href="CppNewick.htm">CppNewick</a>Utils/<a href="CppNewick.htm">CppNewick</a>Utils.pri)<br/>
-include(../../<a href="CppClass.htm">Classes</a>/CppPedigree/CppPedigree.pri)<br/>
-include(../../<a href="CppClass.htm">Classes</a>/CppPhylogenyR/CppPhylogenyR.pri)<br/>
+include(../../<a href="CppClass.htm">Classes</a>/<a href="CppDnaSequence.htm">CppDnaSequence</a>/<a href="CppDnaSequence.htm">CppDnaSequence</a>.pri)<br/>
+include(../../<a href="CppClass.htm">Classes</a>/<a href="CppDnaR.htm">CppDnaR</a>/<a href="CppDnaR.htm">CppDnaR</a>.pri)<br/>
+include(../../<a href="CppClass.htm">Classes</a>/<a href="CppFastaFile.htm">CppFastaFile</a>/<a href="CppFastaFile.htm">CppFastaFile</a>.pri)<br/>
+include(../../<a href="CppClass.htm">Classes</a>/<a href="CppNewickUtils.htm">CppNewickUtils</a>/<a href="CppNewickUtils.htm">CppNewickUtils</a>.pri)<br/>
+include(../../<a href="CppClass.htm">Classes</a>/<a href="CppPedigree.htm">CppPedigree</a>/<a href="CppPedigree.htm">CppPedigree</a>.pri)<br/>
+include(../../<a href="CppClass.htm">Classes</a>/<a href="CppPhylogenyR.htm">CppPhylogenyR</a>/<a href="CppPhylogenyR.htm">CppPhylogenyR</a>.pri)<br/>
+include(../../<a href="CppClass.htm">Classes</a>/CppRibiRinside/CppRibiRinside.pri)<br/>
 include(../../<a href="CppClass.htm">Classes</a>/CppQtBeastDisplay/CppQtBeastDisplay.pri)<br/>
 include(../../<a href="CppClass.htm">Classes</a>/CppQtNewickDisplay/CppQtNewickDisplay.pri)<br/>
 include(../../<a href="CppClass.htm">Classes</a>/CppQtDnaSequencesDisplay/CppQtDnaSequencesDisplay.pri)<br/>
@@ -286,7 +294,7 @@ Dna Dna::CreateOffspring() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 <br/>
 <b><a href="CppChar.htm">char</a></b> Dna::CreateRandomBasePair(<a href="CppStdMt19937.htm">std::mt19937</a>&amp; rnd_engine) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
-&nbsp;&nbsp;<a href="CppStd.htm">std</a>::uniform_int_distribution&lt;<b><a href="CppInt.htm">int</a></b>&gt; d(0,3);<br/>
+&nbsp;&nbsp;<a href="CppStdUniform_int_distribution.htm">std::uniform_int_distribution</a>&lt;<b><a href="CppInt.htm">int</a></b>&gt; d(0,3);<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> i{d(rnd_engine)};<br/>
 &nbsp;&nbsp;<b><a href="CppSwitch.htm">switch</a></b> (i)<br/>
 &nbsp;&nbsp;{<br/>
@@ -328,7 +336,7 @@ Dna Dna::CreateOffspring() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 <b><a href="CppDouble.htm">double</a></b> Dna::GetRandomFraction() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
 &nbsp;&nbsp;<a href="CppComment.htm">//</a>Can use <b><a href="CppStatic.htm">static</a></b> here? <a href="CppAdd.htm">Add</a>ed to Dna::Test<br/>
-&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <a href="CppStd.htm">std</a>::uniform_real_distribution&lt;<b><a href="CppDouble.htm">double</a></b>&gt; d(0.0,1.0);<br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <a href="CppStdUniform_real_distribution.htm">std::uniform_real_distribution</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; d(0.0,1.0);<br/>
 &nbsp;&nbsp;<a href="CppComment.htm">//</a>The random value x gets drawn here<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> f{d(m_rnd_engine)};<br/>
 <br/>
@@ -376,8 +384,8 @@ Dna Dna::CreateOffspring() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 &nbsp;&nbsp;}<br/>
 &nbsp;&nbsp;<a href="CppComment.htm">//</a>Do distributions change when being worked on?<br/>
 &nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <a href="CppStd.htm">std</a>::uniform_real_distribution&lt;<b><a href="CppDouble.htm">double</a></b>&gt; a(0.0,1.0);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <a href="CppStd.htm">std</a>::uniform_real_distribution&lt;<b><a href="CppDouble.htm">double</a></b>&gt; b(0.0,1.0);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <a href="CppStdUniform_real_distribution.htm">std::uniform_real_distribution</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; a(0.0,1.0);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <a href="CppStdUniform_real_distribution.htm">std::uniform_real_distribution</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; b(0.0,1.0);<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(a <a href="CppOperatorEqual.htm">==</a> b);<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdMt19937.htm">std::mt19937</a> rnd_engine;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> x{a(rnd_engine)};<br/>
@@ -1734,6 +1742,7 @@ Parameters Parameters::CreateParameters(<b><a href="CppConst.htm">const</a></b> 
 <a href="CppInclude.htm">#include</a> "qtfisherwrightermaindialog.h"<br/>
 <a href="CppInclude.htm">#include</a> "<a href="CppCounter.htm">counter</a>.h"<br/>
 <a href="CppInclude.htm">#include</a> "dna_r.h"<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppRibi.htm">ribi</a>_rinside.h"<br/>
 <a href="CppInclude.htm">#include</a> "phylogeny_r.h"<br/>
 <a href="CppInclude.htm">#include</a> "<a href="CppNewick.htm">newick</a>utils.h"<br/>
 <a href="CppPragma.htm">#pragma</a> GCC diagnostic pop<br/>
@@ -1741,7 +1750,8 @@ Parameters Parameters::CreateParameters(<b><a href="CppConst.htm">const</a></b> 
 <b><a href="CppInt.htm">int</a></b> <a href="CppMain.htm">main</a>(<b><a href="CppInt.htm">int</a></b> <a href="CppArgc.htm">argc</a>, <b><a href="CppChar.htm">char</a></b> *<a href="CppArgc.htm">argv</a>[])<br/>
 {<br/>
 &nbsp;&nbsp;<a href="CppQApplication.htm">QApplication</a> a(<a href="CppArgc.htm">argc</a>, <a href="CppArgc.htm">argv</a>);<br/>
-<br/>
+&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::Rinside();<br/>
+&nbsp;&nbsp;PhylogenyR();<br/>
 &nbsp;&nbsp;<a href="CppStd.htm">std</a>::async([](){ DnaR();} );<br/>
 &nbsp;&nbsp;<a href="CppStd.htm">std</a>::async([](){ PhylogenyR();} );<br/>
 &nbsp;&nbsp;<a href="CppStd.htm">std</a>::async([](){ <a href="CppNewick.htm">Newick</a>Utils();} );<br/>
@@ -1861,7 +1871,8 @@ Simulation::Simulation(<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Parameters&amp; parameters,<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Generation&amp; first_generation<br/>
 )<br/>
-&nbsp;&nbsp;: m_generations{},<br/>
+&nbsp;&nbsp;: m_<a href="CppCounter.htm">counter</a>{},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_generations{},<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;m_parameters{parameters},<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;m_rnd_engine{<b><a href="CppStatic_cast.htm">static_cast</a></b>&lt;<b><a href="CppUnsigned.htm">unsigned</a></b> <b><a href="CppInt.htm">int</a></b>&gt;(parameters.GetSeed())}<br/>
 {<br/>
@@ -1875,7 +1886,8 @@ Simulation::Simulation(<br/>
 Simulation::Simulation(<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Parameters&amp; parameters<br/>
 )<br/>
-&nbsp;&nbsp;: m_generations{},<br/>
+&nbsp;&nbsp;: m_<a href="CppCounter.htm">counter</a>{},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_generations{},<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;m_parameters{parameters},<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;m_rnd_engine{<b><a href="CppStatic_cast.htm">static_cast</a></b>&lt;<b><a href="CppUnsigned.htm">unsigned</a></b> <b><a href="CppInt.htm">int</a></b>&gt;(parameters.GetSeed())}<br/>
 {<br/>
@@ -1916,7 +1928,7 @@ Generation Simulation::CreateNextGeneration(<br/>
 <br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> n{m_parameters.GetPopSize()};<br/>
 <br/>
-&nbsp;&nbsp;<a href="CppStd.htm">std</a>::uniform_int_distribution&lt;<b><a href="CppInt.htm">int</a></b>&gt; d(0,n-1); <a href="CppComment.htm">//</a>-1 because uniform_int_distribution uses symmetric range<br/>
+&nbsp;&nbsp;<a href="CppStdUniform_int_distribution.htm">std::uniform_int_distribution</a>&lt;<b><a href="CppInt.htm">int</a></b>&gt; d(0,n-1); <a href="CppComment.htm">//</a>-1 because uniform_int_distribution uses symmetric range<br/>
 &nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppInt.htm">int</a></b> i=0; i<a href="CppOperatorNotEqual.htm">!=</a>n; <a href="CppOperatorIncrement.htm">++</a>i)<br/>
 &nbsp;&nbsp;{&nbsp;&nbsp;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> index{d(m_rnd_engine)};<br/>

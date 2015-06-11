@@ -58,8 +58,8 @@
 <table summary="./CppFisherWrightSimulationExample2/CppFisherWrightSimulationExample2.pro" border = "1"><tr><td><code>
 include(../../<a href="CppConsoleApplication.htm">ConsoleApplication</a>.pri)<br/>
 include(../../<a href="CppLibrary.htm">Libraries</a>/<a href="CppBoost.htm">Boost</a>All.pri)<br/>
-include(../../<a href="CppClass.htm">Classes</a>/<a href="CppNewick.htm">CppNewick</a>Utils/<a href="CppNewick.htm">CppNewick</a>Utils.pri)<br/>
-include(../../<a href="CppClass.htm">Classes</a>/CppPedigree/CppPedigree.pri)<br/>
+include(../../<a href="CppClass.htm">Classes</a>/<a href="CppNewickUtils.htm">CppNewickUtils</a>/<a href="CppNewickUtils.htm">CppNewickUtils</a>.pri)<br/>
+include(../../<a href="CppClass.htm">Classes</a>/<a href="CppPedigree.htm">CppPedigree</a>/<a href="CppPedigree.htm">CppPedigree</a>.pri)<br/>
 <br/>
 <a href="CppQmakeSources.htm">SOURCES</a> += \<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="CppMain.htm">main</a>.cpp \<br/>
@@ -220,7 +220,7 @@ Dna Dna::CreateOffspring() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 <br/>
 <b><a href="CppDouble.htm">double</a></b> Dna::GetRandomFraction() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
-&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <a href="CppStd.htm">std</a>::uniform_real_distribution&lt;<b><a href="CppDouble.htm">double</a></b>&gt; d(0.0,1.0);<br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <a href="CppStdUniform_real_distribution.htm">std::uniform_real_distribution</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; d(0.0,1.0);<br/>
 &nbsp;&nbsp;<a href="CppComment.htm">//</a>The random value x gets drawn here<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> f{d(m_rnd_engine)};<br/>
 <br/>

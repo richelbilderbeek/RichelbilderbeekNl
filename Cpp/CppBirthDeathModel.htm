@@ -1,0 +1,478 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <title>BirthDeathModel</title>
+  <meta name="description" content="C++ BirthDeathModel"/>
+  <meta name="keywords" content="C++ BirthDeathModel "/>
+  <link rel="stylesheet" href="Richelbilderbeek.css" type="text/css"/>
+</head>
+<!-- End of head, start of body -->
+<body>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<!-- Page header -->
+<h1>(<a href="Cpp.htm">C++</a>) <a href="CppBirthDeathModel.htm">BirthDeathModel</a></h1>
+<p>&nbsp;</p>
+<!-- No CodeToHtmlInfo about this class with page name CppBirthDeathModel-->
+<h2>Technical facts</h2>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppBirthDeathModel/CppBirthDeathModel.pri</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppBirthDeathModel/CppBirthDeathModel.pri" border = "1"><tr><td><code>
+<a href="CppQmakeIncludepath.htm">INCLUDEPATH</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppBirthDeathModel<br/>
+<br/>
+<a href="CppQmakeSources.htm">SOURCES</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppBirthDeathModel/birthdeathmodelsimulation.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppBirthDeathModel/birthdeathmodelparameters.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppBirthDeathModel/birthdeathmodelhelper.cpp<br/>
+<br/>
+<a href="CppQmakeHeaders.htm">HEADERS</a>&nbsp;&nbsp;+= \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppBirthDeathModel/birthdeathmodelsimulation.h \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppBirthDeathModel/birthdeathmodelparameters.h \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppBirthDeathModel/birthdeathmodelhelper.h<br/>
+<br/>
+<a href="CppQmakeOther_files.htm">OTHER_FILES</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppBirthDeathModel/Licence.txt<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppBirthDeathModel/birthdeathmodelhelper.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppBirthDeathModel/birthdeathmodelhelper.h" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> BIRTHDEATHMODELHELPER_H<br/>
+<a href="CppDefine.htm">#define</a> BIRTHDEATHMODELHELPER_H<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "rate.h"<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppVectorH.htm">vector</a>&gt;<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a> {<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> bdm {<br/>
+<br/>
+<a href="CppComment.htm">///</a>Performs a Brownian motion<br/>
+<b><a href="CppStruct.htm">struct</a></b> Helper<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> Volatility <a href="CppOperatorAssign.htm">=</a> <a href="CppRibi.htm">ribi</a>::units::Rate;<br/>
+&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> VolatilitySquared <a href="CppOperatorAssign.htm">=</a> decltype(Volatility() * Volatility());<br/>
+<br/>
+&nbsp;&nbsp;Helper();<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Calculate the likelihood of the candidate parameters in generating the dataset<br/>
+&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> CalcLogLikelihood(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;&amp; v,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> VolatilitySquared cand_volatility_squared<br/>
+&nbsp;&nbsp;) <b><a href="CppConst.htm">const</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Calculate the parameters that have a maximum likelihood in generating the values v<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> CalcMaxLikelihood(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;&amp; v,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Volatility&amp; volatility_hat<br/>
+&nbsp;&nbsp;) <b><a href="CppConst.htm">const</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> CalcMaxLogLikelihood(<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;&amp; v) <b><a href="CppConst.htm">const</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppVoid.htm">void</a></b> Test() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+};<br/>
+<br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> bm<br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a><br/>
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> BIRTHDEATHMODELHELPER_H<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppBirthDeathModel/birthdeathmodelhelper.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppBirthDeathModel/birthdeathmodelhelper.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "birthdeathmodelhelper.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppIostreamH.htm">iostream</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppStdexceptH.htm">stdexcept</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppSstreamH.htm">sstream</a>&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppBoost.htm">boost</a>/math/constants/constants.hpp&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "test<a href="CppTime.htm">time</a>r.h"<br/>
+<br/>
+<a href="CppRibi.htm">ribi</a>::bdm::Helper::Helper()<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;Test();<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+}<br/>
+<br/>
+<b><a href="CppDouble.htm">double</a></b> <a href="CppRibi.htm">ribi</a>::bdm::Helper::CalcLogLikelihood(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;&amp; v,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> VolatilitySquared cand_volatility_squared<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a><b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> cand_volatility<br/>
+) <b><a href="CppConst.htm">const</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!v.empty());<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> <a href="CppBoost.htm">boost</a>::math::constants::two_pi;<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (cand_volatility_squared <a href="CppOperatorEqual.htm">==</a> 0.0 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second) <b><a href="CppReturn.htm">return</a></b> 0.0; <a href="CppComment.htm">//</a>TODO: allow <b><a href="CppThis.htm">this</a></b><br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> n{<b><a href="CppStatic_cast.htm">static_cast</a></b>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;(v.size())};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> log_likelihood{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a>((n/2.0)*<a href="CppStdLog.htm">std::log</a>(cand_volatility_squared.value() * two_pi&lt;<b><a href="CppDouble.htm">double</a></b>&gt;()))<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a> <a href="CppStdInner_product.htm">std::inner_product</a>(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdBegin.htm">std::begin</a>(v)+1,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdEnd.htm">std::end</a>(v),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdBegin.htm">std::begin</a>(v),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdPlus.htm">std::plus</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;(),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[cand_volatility_squared](<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> a, <b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> b)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <a href="CppStdPow.htm">std::pow</a>(a <a href="CppOperatorMinus.htm">-</a> b,2.0) <a href="CppOperatorDivide.htm">/</a> (2.0 * cand_volatility_squared.value());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br/>
+&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> log_likelihood;<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::bdm::Helper::CalcMaxLikelihood(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;&amp; v,<br/>
+&nbsp;&nbsp;Volatility&amp; volatility_hat<br/>
+) <b><a href="CppConst.htm">const</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppBool.htm">bool</a></b> verbose{<b><a href="CppFalse.htm">false</a></b>};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> n{<b><a href="CppStatic_cast.htm">static_cast</a></b>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;(v.size())};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> sum{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdInner_product.htm">std::inner_product</a>(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdBegin.htm">std::begin</a>(v)+1,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdEnd.htm">std::end</a>(v),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdBegin.htm">std::begin</a>(v),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdPlus.htm">std::plus</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;(),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[](<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> a, <b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> b)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <a href="CppStdPow.htm">std::pow</a>(a <a href="CppOperatorMinus.htm">-</a> b,2.0);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;)<br/>
+&nbsp;&nbsp;};<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> volatility_hat_squared{sum <a href="CppOperatorDivide.htm">/</a> n};<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (verbose)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdCout.htm">std::cout</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "sum: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> sum <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "n: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> n <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "volatility_hat_squared: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> volatility_hat_squared <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;volatility_hat <a href="CppOperatorAssign.htm">=</a> <a href="CppStdSqrt.htm">std::sqrt</a>(volatility_hat_squared) <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second;<br/>
+}<br/>
+<br/>
+<b><a href="CppDouble.htm">double</a></b> <a href="CppRibi.htm">ribi</a>::bdm::Helper::CalcMaxLogLikelihood(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;&amp; v<br/>
+) <b><a href="CppConst.htm">const</a></b><br/>
+{<br/>
+&nbsp;&nbsp;Volatility volatility_hat <a href="CppOperatorAssign.htm">=</a> 0.0 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second;<br/>
+&nbsp;&nbsp;CalcMaxLikelihood(v,volatility_hat);<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> CalcLogLikelihood(v,volatility_hat * volatility_hat);<br/>
+}<br/>
+<br/>
+<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::bdm::Helper::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppBool.htm">bool</a></b> is_tested{<b><a href="CppFalse.htm">false</a></b>};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (is_tested) <b><a href="CppReturn.htm">return</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;is_tested <a href="CppOperatorAssign.htm">=</a> <b><a href="CppTrue.htm">true</a></b>;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Test<a href="CppTime.htm">Time</a>r test_<a href="CppTime.htm">time</a>r(<a href="Cpp__func__.htm">__func__</a>,__<a href="CppCfile.htm">FILE</a>__,1.0);<br/>
+}<br/>
+<a href="CppEndif.htm">#endif</a><br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppBirthDeathModel/birthdeathmodelparameters.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppBirthDeathModel/birthdeathmodelparameters.h" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> BIRTHDEATHMODELPARAMETERS_H<br/>
+<a href="CppDefine.htm">#define</a> BIRTHDEATHMODELPARAMETERS_H<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "rate.h"<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppRibi.htm">ribi</a>_<a href="CppTime.htm">time</a>.h"<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a> {<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> bdm {<br/>
+<br/>
+<a href="CppComment.htm">///</a>Performs a Birth-Death process<br/>
+<b><a href="CppStruct.htm">struct</a></b> Parameters<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> BirthRate <a href="CppOperatorAssign.htm">=</a> <a href="CppRibi.htm">ribi</a>::units::Rate;<br/>
+&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> DeathRate <a href="CppOperatorAssign.htm">=</a> <a href="CppRibi.htm">ribi</a>::units::Rate;<br/>
+&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> <a href="CppTime.htm">Time</a> <a href="CppOperatorAssign.htm">=</a> <a href="CppRibi.htm">ribi</a>::units::<a href="CppTime.htm">Time</a>;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/volatility: the standard deviation of the noise<br/>
+&nbsp;&nbsp;Parameters(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> BirthRate birth_rate,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> DeathRate death_rate,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppTime.htm">Time</a> <a href="CppTime.htm">time</a>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> rng_seed <a href="CppOperatorAssign.htm">=</a> 42<br/>
+&nbsp;&nbsp;);<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppAuto.htm">auto</a></b> GetBirthRate() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> { <b><a href="CppReturn.htm">return</a></b> m_birth_rate; }<br/>
+&nbsp;&nbsp;<b><a href="CppAuto.htm">auto</a></b> GetDeathRate() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> { <b><a href="CppReturn.htm">return</a></b> m_death_rate; }<br/>
+&nbsp;&nbsp;<b><a href="CppAuto.htm">auto</a></b> GetRngSeed() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> { <b><a href="CppReturn.htm">return</a></b> m_rng_seed; }<br/>
+&nbsp;&nbsp;<b><a href="CppAuto.htm">auto</a></b> <a href="CppGetTime.htm">GetTime</a>() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> { <b><a href="CppReturn.htm">return</a></b> m_<a href="CppTime.htm">time</a>; }<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppPrivate.htm">private</a></b>:<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> BirthRate m_birth_rate;<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> DeathRate m_death_rate;<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> m_rng_seed;<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppTime.htm">Time</a> m_<a href="CppTime.htm">time</a>;<br/>
+};<br/>
+<br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> bm<br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a><br/>
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> BIRTHDEATHMODELPARAMETERS_H<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppBirthDeathModel/birthdeathmodelparameters.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppBirthDeathModel/birthdeathmodelparameters.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "birthdeathmodelparameters.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppSstreamH.htm">sstream</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppStdexceptH.htm">stdexcept</a>&gt;<br/>
+<br/>
+<a href="CppRibi.htm">ribi</a>::bdm::Parameters::Parameters(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> BirthRate birth_rate,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> DeathRate death_rate,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppTime.htm">Time</a> <a href="CppTime.htm">time</a>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> rng_seed<br/>
+) :<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_birth_rate{birth_rate},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_death_rate{death_rate},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_rng_seed{rng_seed},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_<a href="CppTime.htm">time</a>{<a href="CppTime.htm">time</a>}<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (m_birth_rate &lt; 0.0 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdStringstream.htm">std::stringstream</a> s;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;s <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="Cpp__func__.htm">__func__</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> ": birth_rate must be positive, "<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "value given is " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> m_birth_rate<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppThrow.htm">throw</a></b> <a href="CppStdLogic_error.htm">std::logic_error</a>(s.str());<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (m_death_rate &lt; 0.0 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdStringstream.htm">std::stringstream</a> s;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;s <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="Cpp__func__.htm">__func__</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> ": death_rate must be positive, "<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "value given is " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> m_death_rate<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppThrow.htm">throw</a></b> <a href="CppStdLogic_error.htm">std::logic_error</a>(s.str());<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (m_<a href="CppTime.htm">time</a> &lt; 0.0 * <a href="CppBoostUnits.htm">boost::units</a>::si::second)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdStringstream.htm">std::stringstream</a> s;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;s <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="Cpp__func__.htm">__func__</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> ": <a href="CppTime.htm">time</a> must be positive, "<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "value given is " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> m_<a href="CppTime.htm">time</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppThrow.htm">throw</a></b> <a href="CppStdLogic_error.htm">std::logic_error</a>(s.str());<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+}<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppBirthDeathModel/birthdeathmodelsimulation.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppBirthDeathModel/birthdeathmodelsimulation.h" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> BIRTHDEATHMODELPROCESS_H<br/>
+<a href="CppDefine.htm">#define</a> BIRTHDEATHMODELPROCESS_H<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "birthdeathmodelparameters.h"<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppRandomH.htm">random</a>&gt;<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a> {<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> bdm {<br/>
+<br/>
+<a href="CppComment.htm">///</a>Performs a Brownian motion<br/>
+<b><a href="CppStruct.htm">struct</a></b> Simulation<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> BirthRate <a href="CppOperatorAssign.htm">=</a> <a href="CppRibi.htm">ribi</a>::units::Rate;<br/>
+&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> DeathRate <a href="CppOperatorAssign.htm">=</a> <a href="CppRibi.htm">ribi</a>::units::Rate;<br/>
+&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> <a href="CppTime.htm">Time</a> <a href="CppOperatorAssign.htm">=</a> <a href="CppRibi.htm">ribi</a>::units::<a href="CppTime.htm">Time</a>;<br/>
+<br/>
+&nbsp;&nbsp;Simulation(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Parameters&amp; parameters<br/>
+&nbsp;&nbsp;);<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Calculate the next x. This <b><a href="CppClass.htm">class</a></b> will supply the <a href="CppRandomNumber.htm">random numbers</a>,<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/thus these <a href="CppMemberFunction.htm">member functions</a> are not <b><a href="CppConst.htm">const</a></b><br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> CalcNext(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> x<br/>
+&nbsp;&nbsp;);<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Calculate the next x+dt, supplying the <a href="CppRandomNumber.htm">random numbers</a> yourself<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> CalcNext(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> x,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> random_exponential<br/>
+&nbsp;&nbsp;);<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppInt.htm">int</a></b> CountExtant() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppVoid.htm">void</a></b> Test() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppPrivate.htm">private</a></b>:<br/>
+&nbsp;&nbsp;<a href="CppStdExponential_distribution.htm">std::exponential_distribution</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; m_exponential_distribution;<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Parameters m_parameters;<br/>
+&nbsp;&nbsp;<a href="CppStdMt19937.htm">std::mt19937</a> m_rng;<br/>
+&nbsp;&nbsp;<a href="CppTime.htm">Time</a> m_<a href="CppTime.htm">time</a>;<br/>
+&nbsp;&nbsp;<a href="CppStdUniform_real_distribution.htm">std::uniform_real_distribution</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; m_uniform_distribution;<br/>
+};<br/>
+<br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> bm<br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a><br/>
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> BIRTHDEATHMODELPROCESS_H<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppBirthDeathModel/birthdeathmodelsimulation.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppBirthDeathModel/birthdeathmodelsimulation.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "birthdeathmodelsimulation.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCmathH.htm">cmath</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppIostreamH.htm">iostream</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppStdexceptH.htm">stdexcept</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppSstreamH.htm">sstream</a>&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "birthdeathmodelhelper.h"<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppBoost.htm">boost</a>/math/constants/constants.hpp&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "test<a href="CppTime.htm">time</a>r.h"<br/>
+<br/>
+<a href="CppRibi.htm">ribi</a>::bdm::Simulation::Simulation(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Parameters&amp; parameters<br/>
+)<br/>
+&nbsp;&nbsp;: m_exponential_distribution(parameters.GetBirthRate().value() <a href="CppOperatorPlus.htm">+</a> parameters.GetDeathRate().value()),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_parameters{parameters},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_rng(parameters.GetRngSeed()),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_<a href="CppTime.htm">time</a>{0.0 * <a href="CppBoostUnits.htm">boost::units</a>::si::second},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_uniform_distribution(0.0,1.0)<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;Test();<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::bdm::Simulation::CalcNext(<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> x)<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> r{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;CountExtant()<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;* (m_parameters.GetBirthRate().value() <a href="CppOperatorPlus.htm">+</a> m_parameters.GetDeathRate().value())<br/>
+&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (r <a href="CppOperatorNotEqual.htm">!=</a> m_exponential_distribution.lambda())<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_exponential_distribution <a href="CppOperatorAssign.htm">=</a> <a href="CppStdExponential_distribution.htm">std::exponential_distribution</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;(r);<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> random_exponential{m_exponential_distribution(m_rng)};<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> CalcNext(x,random_exponential);<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::bdm::Simulation::CalcNext(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> <a href="CppComment.htm">/*</a> x <a href="CppComment.htm">*/</a>,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> random_exponential<br/>
+)<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> dt <a href="CppOperatorAssign.htm">=</a> random_exponential * <a href="CppBoostUnits.htm">boost::units</a>::si::second;<br/>
+&nbsp;&nbsp;m_<a href="CppTime.htm">time</a> <a href="CppOperatorPlusAssign.htm">+=</a> dt;<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Do something with a phylogeny here<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppStub.htm">Stub</a><br/>
+}<br/>
+<br/>
+<br/>
+<b><a href="CppInt.htm">int</a></b> <a href="CppRibi.htm">ribi</a>::bdm::Simulation::CountExtant() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> 0; <a href="CppComment.htm">//</a><a href="CppStub.htm">Stub</a><br/>
+}<br/>
+<br/>
+<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::bdm::Simulation::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppBool.htm">bool</a></b> is_tested{<b><a href="CppFalse.htm">false</a></b>};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (is_tested) <b><a href="CppReturn.htm">return</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;is_tested <a href="CppOperatorAssign.htm">=</a> <b><a href="CppTrue.htm">true</a></b>;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Helper();<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Test<a href="CppTime.htm">Time</a>r test_<a href="CppTime.htm">time</a>r(<a href="Cpp__func__.htm">__func__</a>,__<a href="CppCfile.htm">FILE</a>__,1.0);<br/>
+}<br/>
+<a href="CppEndif.htm">#endif</a><br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p>&nbsp;</p>
+<p><a href="http://validator.w3.org/check?uri=referer"><img src="valid-xhtml10.png" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a></p>
+<p>This page has been created by the <a href="Tools.htm">tool</a> <a href="ToolCodeToHtml.htm">CodeToHtml</a></p>
+</body>
+</html>

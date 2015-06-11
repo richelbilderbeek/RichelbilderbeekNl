@@ -1,0 +1,1430 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <title>StochasticityInspector</title>
+  <meta name="description" content="C++ StochasticityInspector"/>
+  <meta name="keywords" content="C++ StochasticityInspector "/>
+  <link rel="stylesheet" href="Richelbilderbeek.css" type="text/css"/>
+</head>
+<!-- End of head, start of body -->
+<body>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<!-- Page header -->
+<h1>(<a href="Cpp.htm">C++</a>) <a href="ToolStochasticityInspector.htm">StochasticityInspector</a></h1>
+<p>&nbsp;</p>
+<!-- No CodeToHtmlInfo about this class with page name ToolStochasticityInspector-->
+<h2>Technical facts</h2>
+<p>&nbsp;</p>
+<p><a href="CppOs.htm">Operating system(s) or programming environment(s)</a></p>
+<ul>
+  <li><img src="PicLubuntu.png" alt="Lubuntu"/> <a href="CppLubuntu.htm">Lubuntu</a> 15.04 (vivid)</li>
+</ul>
+<p><a href="CppIde.htm">IDE(s)</a>:</p>
+<ul>
+  <li><img src="PicQtCreator.png" alt="Qt Creator"/> <a href="CppQtCreator.htm">Qt Creator</a> 3.1.1</li>
+</ul>
+<p><a href="CppQtProjectType.htm">Project type</a>:</p>
+<ul>
+  <li><img src="PicConsole.png" alt="console"/> <a href="CppConsoleApplication.htm">Console application</a></li>
+</ul>
+<p><a href="CppStandard.htm">C++ standard</a>:</p>
+<ul>
+  <li><img src="PicCpp98.png" alt="C++98"/> <a href="Cpp98.htm">C++98</a></li>
+</ul>
+<p><a href="CppCompiler.htm">Compiler(s)</a>:</p>
+<ul>
+  <li><a href="CppGpp.htm">G++</a> 4.9.2</li>
+</ul>
+<p><a href="CppLibrary.htm">Libraries</a> used:</p>
+<ul>
+  <li><img src="PicStl.png" alt="STL"/> <a href="CppStl.htm">STL</a>: GNU ISO C++ Library, version 4.9.2</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2><a href="CppQtProjectFile.htm">Qt project file</a>: ./ToolStochasticityInspector/ToolStochasticityInspectorConsole.pro</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolStochasticityInspector/ToolStochasticityInspectorConsole.pro" border = "1"><tr><td><code>
+include(../../<a href="CppConsoleApplication.htm">ConsoleApplication</a>.pri)<br/>
+include(../../<a href="CppLibrary.htm">Libraries</a>/<a href="CppApfloat.htm">Apfloat</a>.pri)<br/>
+include(../../<a href="CppLibrary.htm">Libraries</a>/<a href="CppBoost.htm">Boost</a>.pri)<br/>
+include(../../<a href="CppLibrary.htm">Libraries</a>/GeneralConsole.pri)<br/>
+<br/>
+#Console<br/>
+include(../../<a href="CppClass.htm">Classes</a>/<a href="CppBrownianMotion.htm">CppBrownianMotion</a>/<a href="CppBrownianMotion.htm">CppBrownianMotion</a>.pri)<br/>
+include(../../<a href="CppClass.htm">Classes</a>/<a href="CppOrnsteinUhlenbeck.htm">CppOrnsteinUhlenbeck</a>/<a href="CppOrnsteinUhlenbeck.htm">CppOrnsteinUhlenbeck</a>.pri)<br/>
+include(../../<a href="CppClass.htm">Classes</a>/<a href="CppUnits.htm">CppUnits</a>/<a href="CppUnits.htm">CppUnits</a>.pri)<br/>
+<br/>
+#Desktop<br/>
+include(ToolStochasticityInspectorConsole.pri)<br/>
+<br/>
+<a href="CppQmakeSources.htm">SOURCES</a> += <a href="CppMain.htm">main</a>.cpp<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2><a href="CppQtProjectFile.htm">Qt project file</a>: ./ToolStochasticityInspector/ToolStochasticityInspectorDesktop.pro</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolStochasticityInspector/ToolStochasticityInspectorDesktop.pro" border = "1"><tr><td><code>
+<a href="CppQmakeQmake_cxxflags.htm">QMAKE_CXXFLAGS</a>_DEBUG += -pg<br/>
+QMAKE_LFLAGS_DEBUG += -pg<br/>
+<br/>
+include(../../<a href="CppDesktopApplication.htm">DesktopApplication</a>NoWeffcpp.pri)<br/>
+include(../../<a href="CppLibrary.htm">Libraries</a>/<a href="CppApfloat.htm">Apfloat</a>.pri)<br/>
+include(../../<a href="CppLibrary.htm">Libraries</a>/<a href="CppBoost.htm">Boost</a>.pri)<br/>
+include(../../<a href="CppLibrary.htm">Libraries</a>/<a href="CppFparser.htm">Fparser</a>.pri)<br/>
+include(../../<a href="CppLibrary.htm">Libraries</a>/GeneralConsole.pri)<br/>
+include(../../<a href="CppLibrary.htm">Libraries</a>/GeneralDesktop.pri)<br/>
+include(../../<a href="CppLibrary.htm">Libraries</a>/<a href="CppQwt.htm">Qwt</a>.pri)<br/>
+<br/>
+#Console<br/>
+include(../../<a href="CppClass.htm">Classes</a>/<a href="CppBrownianMotion.htm">CppBrownianMotion</a>/<a href="CppBrownianMotion.htm">CppBrownianMotion</a>.pri)<br/>
+include(../../<a href="CppClass.htm">Classes</a>/<a href="CppOrnsteinUhlenbeck.htm">CppOrnsteinUhlenbeck</a>/<a href="CppOrnsteinUhlenbeck.htm">CppOrnsteinUhlenbeck</a>.pri)<br/>
+include(../../<a href="CppClass.htm">Classes</a>/CppRibi<a href="CppApfloat.htm">Apfloat</a>/CppRibi<a href="CppApfloat.htm">Apfloat</a>.pri)<br/>
+include(../../<a href="CppClass.htm">Classes</a>/<a href="CppUnits.htm">CppUnits</a>/<a href="CppUnits.htm">CppUnits</a>.pri)<br/>
+<br/>
+#Desktop<br/>
+include(../../<a href="CppClass.htm">Classes</a>/CppQtBrownianMotion/CppQtBrownianMotion.pri)<br/>
+include(../../<a href="CppClass.htm">Classes</a>/CppQtOrnsteinUhlenbeck/CppQtOrnsteinUhlenbeck.pri)<br/>
+include(ToolStochasticityInspectorDesktop.pri)<br/>
+<br/>
+<a href="CppQmakeSources.htm">SOURCES</a> += qt<a href="CppMain.htm">main</a>.cpp<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolStochasticityInspector/ToolStochasticityInspectorConsole.pri</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolStochasticityInspector/ToolStochasticityInspectorConsole.pri" border = "1"><tr><td><code>
+<a href="CppQmakeIncludepath.htm">INCLUDEPATH</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolStochasticityInspector<br/>
+<br/>
+<a href="CppQmakeSources.htm">SOURCES</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolStochasticityInspector/stochasticityinspectormenudialog.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolStochasticityInspector/stochasticityinspector<a href="CppMain.htm">main</a>dialog.cpp<br/>
+<br/>
+<a href="CppQmakeHeaders.htm">HEADERS</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolStochasticityInspector/stochasticityinspectormenudialog.h \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolStochasticityInspector/stochasticityinspector<a href="CppMain.htm">main</a>dialog.h<br/>
+<br/>
+<a href="CppQmakeOther_files.htm">OTHER_FILES</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolStochasticityInspector/Licence.txt<br/>
+<br/>
+<a href="CppQmakeResources.htm">RESOURCES</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolStochasticityInspector/ToolStochasticityInspector.qrc<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolStochasticityInspector/ToolStochasticityInspectorDesktop.pri</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolStochasticityInspector/ToolStochasticityInspectorDesktop.pri" border = "1"><tr><td><code>
+include(../../<a href="Tools.htm">Tools</a>/ToolStochasticityInspector/ToolStochasticityInspectorConsole.pri)<br/>
+<br/>
+<br/>
+<a href="CppFORMS.htm">FORMS</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolStochasticityInspector/qtstochasticityinspectormenudialog.ui \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolStochasticityInspector/qtstochasticityinspector<a href="CppMain.htm">main</a>dialog.ui \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolStochasticityInspector/qtstochasticityinspectoraic<a href="CppWidget.htm">widget</a>.ui \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolStochasticityInspector/qtstochasticityinspectorhlrt<a href="CppWidget.htm">widget</a>.ui<br/>
+<br/>
+<a href="CppQmakeSources.htm">SOURCES</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolStochasticityInspector/qtstochasticityinspectormenudialog.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolStochasticityInspector/qtstochasticityinspector<a href="CppMain.htm">main</a>dialog.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolStochasticityInspector/qtstochasticityinspectoraic<a href="CppWidget.htm">widget</a>.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolStochasticityInspector/qtstochasticityinspectorhlrt<a href="CppWidget.htm">widget</a>.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolStochasticityInspector/qtstochasticityinspectormodelcolors.cpp<br/>
+<br/>
+<a href="CppQmakeHeaders.htm">HEADERS</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolStochasticityInspector/qtstochasticityinspectormenudialog.h \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolStochasticityInspector/qtstochasticityinspector<a href="CppMain.htm">main</a>dialog.h \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolStochasticityInspector/qtstochasticityinspectoraic<a href="CppWidget.htm">widget</a>.h \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolStochasticityInspector/qtstochasticityinspectorhlrt<a href="CppWidget.htm">widget</a>.h \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolStochasticityInspector/qtstochasticityinspectormodelcolors.h<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolStochasticityInspector/main.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolStochasticityInspector/main.cpp" border = "1"><tr><td><code>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic push<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "<a href="CppWeffcpp.htm">-Weffc++</a>"<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "-Wunused-local-typedefs"<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "-Wunused-but-set-parameter"<br/>
+<a href="CppInclude.htm">#include</a> "stochasticityinspectormenudialog.h"<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic pop<br/>
+<br/>
+<b><a href="CppInt.htm">int</a></b> <a href="CppMain.htm">main</a>(<b><a href="CppInt.htm">int</a></b> <a href="CppArgc.htm">argc</a>, <b><a href="CppChar.htm">char</a></b>* <a href="CppArgc.htm">argv</a>[])<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a>&gt; args { <a href="CppRibi.htm">ribi</a>::MenuDialog::<a href="CppConvert.htm">Convert</a>Arguments(<a href="CppArgc.htm">argc</a>,<a href="CppArgc.htm">argv</a>) };<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <a href="CppRibi.htm">ribi</a>::StochasticityInspectorMenuDialog().Execute(args);<br/>
+}<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolStochasticityInspector/qtmain.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolStochasticityInspector/qtmain.cpp" border = "1"><tr><td><code>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic push<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "<a href="CppWeffcpp.htm">-Weffc++</a>"<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "-Wunused-local-typedefs"<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "-Wunused-but-set-parameter"<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQApplication.htm">QApplication</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> "qtstochasticityinspectormenudialog.h"<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic pop<br/>
+<br/>
+<b><a href="CppInt.htm">int</a></b> <a href="CppMain.htm">main</a>(<b><a href="CppInt.htm">int</a></b> <a href="CppArgc.htm">argc</a>, <b><a href="CppChar.htm">char</a></b> *<a href="CppArgc.htm">argv</a>[])<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppQApplication.htm">QApplication</a> a(<a href="CppArgc.htm">argc</a>, <a href="CppArgc.htm">argv</a>);<br/>
+&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::<a href="CppQt.htm">Qt</a>StochasticityInspectorMenuDialog w;<br/>
+&nbsp;&nbsp;w.show();<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> a.exec();<br/>
+}<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolStochasticityInspector/qtstochasticityinspectoraicwidget.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolStochasticityInspector/qtstochasticityinspectoraicwidget.h" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> QTSTOCHASTICITYINSPECTORAICWIDGET_H<br/>
+<a href="CppDefine.htm">#define</a> QTSTOCHASTICITYINSPECTORAICWIDGET_H<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppApfloat.htm">apfloat</a>.h"<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQWidget.htm">QWidget</a>&gt;<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> Ui {<br/>
+<b><a href="CppClass.htm">class</a></b> <a href="CppQt.htm">Qt</a>StochasticityInspectorAic<a href="CppWidget.htm">Widget</a>;<br/>
+}<br/>
+<br/>
+<a href="CppComment.htm">///</a>Akaike Information Criterion <a href="CppWidget.htm">widget</a><br/>
+<b><a href="CppClass.htm">class</a></b> <a href="CppQt.htm">Qt</a>StochasticityInspectorAic<a href="CppWidget.htm">Widget</a> : <b><a href="CppPublic.htm">public</a></b> <a href="CppQWidget.htm">QWidget</a><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppQ_OBJECT.htm">Q_OBJECT</a><br/>
+<br/>
+<b><a href="CppPublic.htm">public</a></b>:<br/>
+&nbsp;&nbsp;<b><a href="CppExplicit.htm">explicit</a></b> <a href="CppQt.htm">Qt</a>StochasticityInspectorAic<a href="CppWidget.htm">Widget</a>(<a href="CppQWidget.htm">QWidget</a> *parent <a href="CppOperatorAssign.htm">=</a> 0);<br/>
+&nbsp;&nbsp;~<a href="CppQt.htm">Qt</a>StochasticityInspectorAic<a href="CppWidget.htm">Widget</a>();<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> ShowAic(<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> log_likelihood_bm, <b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> log_likelihood_ou);<br/>
+<br/>
+<b><a href="CppPrivate.htm">private</a></b>:<br/>
+&nbsp;&nbsp;<a href="CppUi.htm">Ui</a>::<a href="CppQt.htm">Qt</a>StochasticityInspectorAic<a href="CppWidget.htm">Widget</a> *ui;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppVoid.htm">void</a></b> Test() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+};<br/>
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> QTSTOCHASTICITYINSPECTORAICWIDGET_H<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolStochasticityInspector/qtstochasticityinspectoraicwidget.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolStochasticityInspector/qtstochasticityinspectoraicwidget.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "qtstochasticityinspectoraic<a href="CppWidget.htm">widget</a>.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCmathH.htm">cmath</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppBoost.htm">boost</a>/math/distributions/chi_squared.hpp&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppApfloat.htm">apfloat</a>.h&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppRibi.htm">ribi</a>_<a href="CppApfloat.htm">apfloat</a>.h"<br/>
+<a href="CppInclude.htm">#include</a> "test<a href="CppTime.htm">time</a>r.h"<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppTrace.htm">trace</a>.h"<br/>
+<a href="CppInclude.htm">#include</a> "qtstochasticityinspectormodelcolors.h"<br/>
+<a href="CppInclude.htm">#include</a> "ui_qtstochasticityinspectoraic<a href="CppWidget.htm">widget</a>.h"<br/>
+<br/>
+<a href="CppStdString.htm">std::string</a> ToString(<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> x, <b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> precision)<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppStdStringstream.htm">std::stringstream</a> s;<br/>
+&nbsp;&nbsp;s <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="CppStdSetprecision.htm">std::setprecision</a>(precision) <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> x;<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> s.str();<br/>
+}<br/>
+<br/>
+<a href="CppQt.htm">Qt</a>StochasticityInspectorAic<a href="CppWidget.htm">Widget</a>::<a href="CppQt.htm">Qt</a>StochasticityInspectorAic<a href="CppWidget.htm">Widget</a>(<a href="CppQWidget.htm">QWidget</a> *parent) :<br/>
+&nbsp;&nbsp;<a href="CppQWidget.htm">QWidget</a>(parent),<br/>
+&nbsp;&nbsp;ui(<b><a href="CppNew.htm">new</a></b> <a href="CppUi.htm">Ui</a>::<a href="CppQt.htm">Qt</a>StochasticityInspectorAic<a href="CppWidget.htm">Widget</a>)<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;Test();<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+<br/>
+&nbsp;&nbsp;ui-&gt;setupUi(<b><a href="CppThis.htm">this</a></b>);<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>ui-&gt;edit_aic_bm-&gt;setFont(<a href="CppQFont.htm">QFont</a>("monospace",6));<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>ui-&gt;edit_aic_ou-&gt;setFont(<a href="CppQFont.htm">QFont</a>("monospace",6));<br/>
+}<br/>
+<br/>
+<a href="CppQt.htm">Qt</a>StochasticityInspectorAic<a href="CppWidget.htm">Widget</a>::~<a href="CppQt.htm">Qt</a>StochasticityInspectorAic<a href="CppWidget.htm">Widget</a>()<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppDelete.htm">delete</a></b> ui;<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppQt.htm">Qt</a>StochasticityInspectorAic<a href="CppWidget.htm">Widget</a>::ShowAic(<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> log_likelihood_bm, <b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> log_likelihood_ou)<br/>
+{<br/>
+&nbsp;&nbsp;ui-&gt;edit_ll0-&gt;setText(ToString(log_likelihood_bm,20).c_str());<br/>
+&nbsp;&nbsp;ui-&gt;edit_ll1-&gt;setText(ToString(log_likelihood_ou,20).c_str());<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> aic_bm{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic_cast.htm">static_cast</a></b>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;(2 * ui-&gt;box_k_bm-&gt;value())<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a> (2.0 * log_likelihood_bm)<br/>
+&nbsp;&nbsp;};<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> aic_ou{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic_cast.htm">static_cast</a></b>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;(2 * ui-&gt;box_k_ou-&gt;value())<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorMinus.htm">-</a> (2.0 * log_likelihood_ou)<br/>
+&nbsp;&nbsp;};<br/>
+<br/>
+&nbsp;&nbsp;ui-&gt;edit_aic_bm-&gt;setText(ToString(aic_bm,20).c_str());<br/>
+&nbsp;&nbsp;ui-&gt;edit_aic_ou-&gt;setText(ToString(aic_ou,20).c_str());<br/>
+<br/>
+&nbsp;&nbsp;QPalette palette <a href="CppOperatorAssign.htm">=</a> ui-&gt;label_conclusion-&gt;palette();<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (aic_bm &lt; aic_ou)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;palette.setColor(ui-&gt;label_conclusion-&gt;foregroundRole(),<a href="CppRibi.htm">ribi</a>::<a href="CppQt.htm">Qt</a>StochasticityInspectorModelColors::m_bm_color);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;label_conclusion-&gt;setText("Prefer BM");<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppElse.htm">else</a></b><br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;palette.setColor(ui-&gt;label_conclusion-&gt;foregroundRole(),<a href="CppRibi.htm">ribi</a>::<a href="CppQt.htm">Qt</a>StochasticityInspectorModelColors::m_ou_color);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;label_conclusion-&gt;setText("Prefer OU");<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;ui-&gt;label_conclusion-&gt;setPalette(palette);<br/>
+}<br/>
+<br/>
+<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppQt.htm">Qt</a>StochasticityInspectorAic<a href="CppWidget.htm">Widget</a>::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppBool.htm">bool</a></b> is_tested{<b><a href="CppFalse.htm">false</a></b>};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (is_tested) <b><a href="CppReturn.htm">return</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;is_tested <a href="CppOperatorAssign.htm">=</a> <b><a href="CppTrue.htm">true</a></b>;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::<a href="CppApfloat.htm">Apfloat</a>();<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppRibi.htm">ribi</a>::Test<a href="CppTime.htm">Time</a>r test_<a href="CppTime.htm">time</a>r(<a href="Cpp__func__.htm">__func__</a>,__<a href="CppCfile.htm">FILE</a>__,1.0);<br/>
+}<br/>
+<a href="CppEndif.htm">#endif</a><br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolStochasticityInspector/qtstochasticityinspectorhlrtwidget.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolStochasticityInspector/qtstochasticityinspectorhlrtwidget.h" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> QTSTOCHASTICITYINSPECTORHLRTWIDGET_H<br/>
+<a href="CppDefine.htm">#define</a> QTSTOCHASTICITYINSPECTORHLRTWIDGET_H<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppApfloat.htm">apfloat</a>.h"<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQWidget.htm">QWidget</a>&gt;<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> Ui {<br/>
+<b><a href="CppClass.htm">class</a></b> <a href="CppQt.htm">Qt</a>StochasticityInspectorHlrt<a href="CppWidget.htm">Widget</a>;<br/>
+}<br/>
+<br/>
+<a href="CppComment.htm">///</a>Hierarchical Likelihood-Ratio Test<br/>
+<b><a href="CppClass.htm">class</a></b> <a href="CppQt.htm">Qt</a>StochasticityInspectorHlrt<a href="CppWidget.htm">Widget</a> : <b><a href="CppPublic.htm">public</a></b> <a href="CppQWidget.htm">QWidget</a><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppQ_OBJECT.htm">Q_OBJECT</a><br/>
+<br/>
+<b><a href="CppPublic.htm">public</a></b>:<br/>
+&nbsp;&nbsp;<b><a href="CppExplicit.htm">explicit</a></b> <a href="CppQt.htm">Qt</a>StochasticityInspectorHlrt<a href="CppWidget.htm">Widget</a>(<a href="CppQWidget.htm">QWidget</a> *parent <a href="CppOperatorAssign.htm">=</a> 0);<br/>
+&nbsp;&nbsp;~<a href="CppQt.htm">Qt</a>StochasticityInspectorHlrt<a href="CppWidget.htm">Widget</a>();<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> ShowHlrt(<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> log_likelihood_bm, <b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> log_likelihood_ou);<br/>
+<br/>
+<b><a href="CppPrivate.htm">private</a></b>:<br/>
+&nbsp;&nbsp;<a href="CppUi.htm">Ui</a>::<a href="CppQt.htm">Qt</a>StochasticityInspectorHlrt<a href="CppWidget.htm">Widget</a> *ui;<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> m_critical_value;<br/>
+&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> m_delta;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppVoid.htm">void</a></b> Test() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+<br/>
+<b><a href="CppPrivate.htm">private</a></b> <b><a href="CppSlots.htm">slots</a></b>:<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> OnChiChanged();<br/>
+};<br/>
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> QTSTOCHASTICITYINSPECTORHLRTWIDGET_H<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolStochasticityInspector/qtstochasticityinspectorhlrtwidget.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolStochasticityInspector/qtstochasticityinspectorhlrtwidget.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "qtstochasticityinspectorhlrt<a href="CppWidget.htm">widget</a>.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCmathH.htm">cmath</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppBoost.htm">boost</a>/math/distributions/chi_squared.hpp&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppApfloat.htm">apfloat</a>.h&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppRibi.htm">ribi</a>_<a href="CppApfloat.htm">apfloat</a>.h"<br/>
+<a href="CppInclude.htm">#include</a> "test<a href="CppTime.htm">time</a>r.h"<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppTrace.htm">trace</a>.h"<br/>
+<a href="CppInclude.htm">#include</a> "qtstochasticityinspectormodelcolors.h"<br/>
+<a href="CppInclude.htm">#include</a> "ui_qtstochasticityinspectorhlrt<a href="CppWidget.htm">widget</a>.h"<br/>
+<br/>
+<a href="CppQt.htm">Qt</a>StochasticityInspectorHlrt<a href="CppWidget.htm">Widget</a>::<a href="CppQt.htm">Qt</a>StochasticityInspectorHlrt<a href="CppWidget.htm">Widget</a>(<a href="CppQWidget.htm">QWidget</a> *parent) :<br/>
+&nbsp;&nbsp;<a href="CppQWidget.htm">QWidget</a>(parent),<br/>
+&nbsp;&nbsp;ui(<b><a href="CppNew.htm">new</a></b> <a href="CppUi.htm">Ui</a>::<a href="CppQt.htm">Qt</a>StochasticityInspectorHlrt<a href="CppWidget.htm">Widget</a>),<br/>
+&nbsp;&nbsp;m_critical_value{0.0},<br/>
+&nbsp;&nbsp;m_delta{0.0}<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;Test();<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+<br/>
+&nbsp;&nbsp;ui-&gt;setupUi(<b><a href="CppThis.htm">this</a></b>);<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppQObject.htm">QObject</a>::connect(ui-&gt;box_alpha,<a href="CppSignalMacro.htm">SIGNAL</a>(valueChanged(<b><a href="CppDouble.htm">double</a></b>)),<b><a href="CppThis.htm">this</a></b>,<a href="CppSLOT.htm">SLOT</a>(OnChiChanged()));<br/>
+&nbsp;&nbsp;<a href="CppQObject.htm">QObject</a>::connect(ui-&gt;box_dof,<a href="CppSignalMacro.htm">SIGNAL</a>(valueChanged(<b><a href="CppInt.htm">int</a></b>)),<b><a href="CppThis.htm">this</a></b>,<a href="CppSLOT.htm">SLOT</a>(OnChiChanged()));<br/>
+<br/>
+&nbsp;&nbsp;OnChiChanged();<br/>
+}<br/>
+<br/>
+<a href="CppQt.htm">Qt</a>StochasticityInspectorHlrt<a href="CppWidget.htm">Widget</a>::~<a href="CppQt.htm">Qt</a>StochasticityInspectorHlrt<a href="CppWidget.htm">Widget</a>()<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppDelete.htm">delete</a></b> ui;<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppQt.htm">Qt</a>StochasticityInspectorHlrt<a href="CppWidget.htm">Widget</a>::OnChiChanged()<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> alpha{ui-&gt;box_alpha-&gt;value()};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> dof{ui-&gt;box_dof-&gt;value()};<br/>
+&nbsp;&nbsp;<a href="CppBoost.htm">boost</a>::math::chi_squared_distribution&lt;<b><a href="CppDouble.htm">double</a></b>&gt; distribution(dof);<br/>
+&nbsp;&nbsp;m_critical_value <a href="CppOperatorAssign.htm">=</a> <a href="CppBoost.htm">boost</a>::math::quantile(<a href="CppBoost.htm">boost</a>::math::<b><a href="CppCompl.htm">compl</a></b>ement(distribution,alpha));<br/>
+&nbsp;&nbsp;ui-&gt;edit_critical_value-&gt;setText(<a href="CppStdTo_string.htm">std::to_string</a>(m_critical_value).c_str());<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppQt.htm">Qt</a>StochasticityInspectorHlrt<a href="CppWidget.htm">Widget</a>::ShowHlrt(<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> log_likelihood_bm, <b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> log_likelihood_ou)<br/>
+{<br/>
+<br/>
+&nbsp;&nbsp;ui-&gt;edit_ll0-&gt;setText(<a href="CppStdTo_string.htm">std::to_string</a>(log_likelihood_bm).c_str());<br/>
+&nbsp;&nbsp;ui-&gt;edit_ll1-&gt;setText(<a href="CppStdTo_string.htm">std::to_string</a>(log_likelihood_ou).c_str());<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>BM is H_0, OU is H_1<br/>
+&nbsp;&nbsp;m_delta <a href="CppOperatorAssign.htm">=</a> 2.0 * (log_likelihood_ou <a href="CppOperatorMinus.htm">-</a> log_likelihood_bm);<br/>
+<br/>
+<br/>
+&nbsp;&nbsp;ui-&gt;edit_delta-&gt;setText(<a href="CppStdTo_string.htm">std::to_string</a>(m_delta).c_str());<br/>
+<br/>
+&nbsp;&nbsp;QPalette palette <a href="CppOperatorAssign.htm">=</a> ui-&gt;label_conclusion-&gt;palette();<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (m_delta &lt; m_critical_value)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;palette.setColor(ui-&gt;label_conclusion-&gt;foregroundRole(),<a href="CppRibi.htm">ribi</a>::<a href="CppQt.htm">Qt</a>StochasticityInspectorModelColors::m_bm_color);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;label_conclusion-&gt;setText("Cannot reject H0: values observed are BM");<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppElse.htm">else</a></b><br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;palette.setColor(ui-&gt;label_conclusion-&gt;foregroundRole(),<a href="CppRibi.htm">ribi</a>::<a href="CppQt.htm">Qt</a>StochasticityInspectorModelColors::m_ou_color);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;label_conclusion-&gt;setText("Reject H0: values observed are not BM");<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;ui-&gt;label_conclusion-&gt;setPalette(palette);<br/>
+}<br/>
+<br/>
+<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppQt.htm">Qt</a>StochasticityInspectorHlrt<a href="CppWidget.htm">Widget</a>::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppBool.htm">bool</a></b> is_tested{<b><a href="CppFalse.htm">false</a></b>};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (is_tested) <b><a href="CppReturn.htm">return</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;is_tested <a href="CppOperatorAssign.htm">=</a> <b><a href="CppTrue.htm">true</a></b>;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::<a href="CppApfloat.htm">Apfloat</a>();<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppRibi.htm">ribi</a>::Test<a href="CppTime.htm">Time</a>r test_<a href="CppTime.htm">time</a>r(<a href="Cpp__func__.htm">__func__</a>,__<a href="CppCfile.htm">FILE</a>__,1.0);<br/>
+}<br/>
+<a href="CppEndif.htm">#endif</a><br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolStochasticityInspector/qtstochasticityinspectormaindialog.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolStochasticityInspector/qtstochasticityinspectormaindialog.h" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> QTSTOCHASTICITYINSPECTORMAINDIALOG_H<br/>
+<a href="CppDefine.htm">#define</a> QTSTOCHASTICITYINSPECTORMAINDIALOG_H<br/>
+<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic push<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "<a href="CppWeffcpp.htm">-Weffc++</a>"<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppBoost.htm">boost</a>/<a href="CppShared_ptr.htm">shared_ptr</a>.hpp&gt;<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppQtHideAndShowDialog.htm">qthideandshowdialog</a>.h"<br/>
+<a href="CppInclude.htm">#include</a> "stochasticityinspectormaindialog.h"<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic pop<br/>
+<br/>
+<b><a href="CppStruct.htm">struct</a></b> <a href="CppQwt.htm">Qwt</a>PlotCurve;<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> Ui {<br/>
+&nbsp;&nbsp;<b><a href="CppClass.htm">class</a></b> <a href="CppQt.htm">Qt</a>StochasticityInspectorMainDialog;<br/>
+}<br/>
+<br/>
+<b><a href="CppStruct.htm">struct</a></b> <a href="CppQt.htm">Qt</a>BrownianMotionLikelihoodWidget;<br/>
+<b><a href="CppStruct.htm">struct</a></b> <a href="CppQt.htm">Qt</a>BrownianMotionMaxLikelihoodWidget;<br/>
+<b><a href="CppStruct.htm">struct</a></b> <a href="CppQt.htm">Qt</a>BrownianMotionParameters<a href="CppWidget.htm">Widget</a>;<br/>
+<b><a href="CppStruct.htm">struct</a></b> <a href="CppQt.htm">Qt</a>OrnsteinUhlenbeckLikelihoodWidget;<br/>
+<b><a href="CppStruct.htm">struct</a></b> <a href="CppQt.htm">Qt</a>OrnsteinUhlenbeckMaxLikelihoodWidget;<br/>
+<b><a href="CppStruct.htm">struct</a></b> <a href="CppQt.htm">Qt</a>OrnsteinUhlenbeckParameters<a href="CppWidget.htm">Widget</a>;<br/>
+<b><a href="CppStruct.htm">struct</a></b> <a href="CppQt.htm">Qt</a>StochasticityInspectorAic<a href="CppWidget.htm">Widget</a>;<br/>
+<b><a href="CppStruct.htm">struct</a></b> <a href="CppQt.htm">Qt</a>StochasticityInspectorHlrt<a href="CppWidget.htm">Widget</a>;<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a> {<br/>
+<br/>
+<b><a href="CppClass.htm">class</a></b> <a href="CppQt.htm">Qt</a>StochasticityInspectorMainDialog : <b><a href="CppPublic.htm">public</a></b> <a href="CppQtHideAndShowDialog.htm">QtHideAndShowDialog</a><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppQ_OBJECT.htm">Q_OBJECT</a><br/>
+&nbsp;&nbsp;<br/>
+<b><a href="CppPublic.htm">public</a></b>:<br/>
+&nbsp;&nbsp;<b><a href="CppExplicit.htm">explicit</a></b> <a href="CppQt.htm">Qt</a>StochasticityInspectorMainDialog(<a href="CppQWidget.htm">QWidget</a> *parent <a href="CppOperatorAssign.htm">=</a> 0) <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppQt.htm">Qt</a>StochasticityInspectorMainDialog(<b><a href="CppConst.htm">const</a></b> <a href="CppQt.htm">Qt</a>StochasticityInspectorMainDialog&amp;) <a href="CppOperatorAssign.htm">=</a> <b><a href="CppDelete.htm">delete</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppQt.htm">Qt</a>StochasticityInspectorMainDialog&amp; <b><a href="CppOperator.htm">operator</a></b>=(<b><a href="CppConst.htm">const</a></b> <a href="CppQt.htm">Qt</a>StochasticityInspectorMainDialog&amp;) <a href="CppOperatorAssign.htm">=</a> <b><a href="CppDelete.htm">delete</a></b>;<br/>
+&nbsp;&nbsp;~<a href="CppQt.htm">Qt</a>StochasticityInspectorMainDialog() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<br/>
+<b><a href="CppPrivate.htm">private</a></b> <b><a href="CppSlots.htm">slots</a></b>:<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> OnAnyChangeBrownian() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> OnAnyChangeOrnsteinUhlenbeck() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> OnNewData() <b><a href="CppNoexcept.htm">noexcept</a></b>; <a href="CppComment.htm">//</a>New data is available to analyse<br/>
+<br/>
+<b><a href="CppPrivate.htm">private</a></b>:<br/>
+&nbsp;&nbsp;<a href="CppUi.htm">Ui</a>::<a href="CppQt.htm">Qt</a>StochasticityInspectorMainDialog *ui;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Akaike Information Criterion <a href="CppWidget.htm">widget</a><br/>
+&nbsp;&nbsp;<a href="CppQt.htm">Qt</a>StochasticityInspectorAic<a href="CppWidget.htm">Widget</a> * <b><a href="CppConst.htm">const</a></b> m_aic_<a href="CppWidget.htm">widget</a>;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppQt.htm">Qt</a>BrownianMotionLikelihoodWidget * <b><a href="CppConst.htm">const</a></b> m_bm_likelihood_<a href="CppWidget.htm">widget</a>;<br/>
+&nbsp;&nbsp;<a href="CppQt.htm">Qt</a>BrownianMotionMaxLikelihoodWidget * <b><a href="CppConst.htm">const</a></b> m_bm_max_likelihood_<a href="CppWidget.htm">widget</a>;<br/>
+&nbsp;&nbsp;<a href="CppQt.htm">Qt</a>BrownianMotionParameters<a href="CppWidget.htm">Widget</a> * <b><a href="CppConst.htm">const</a></b> m_bm_parameters_<a href="CppWidget.htm">widget</a>;<br/>
+&nbsp;&nbsp;<a href="CppQwt.htm">Qwt</a>PlotCurve * <b><a href="CppConst.htm">const</a></b> m_curve;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Hierarchical Likelihood Ratio Test <a href="CppWidget.htm">widget</a><br/>
+&nbsp;&nbsp;<a href="CppQt.htm">Qt</a>StochasticityInspectorHlrt<a href="CppWidget.htm">Widget</a> * <b><a href="CppConst.htm">const</a></b> m_hlrt_<a href="CppWidget.htm">widget</a>;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::StochasticityInspectorMainDialog m_main_dialog;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppQt.htm">Qt</a>OrnsteinUhlenbeckLikelihoodWidget * <b><a href="CppConst.htm">const</a></b> m_ou_likelihood_<a href="CppWidget.htm">widget</a>;<br/>
+&nbsp;&nbsp;<a href="CppQt.htm">Qt</a>OrnsteinUhlenbeckMaxLikelihoodWidget * <b><a href="CppConst.htm">const</a></b> m_ou_max_likelihood_<a href="CppWidget.htm">widget</a>;<br/>
+&nbsp;&nbsp;<a href="CppQt.htm">Qt</a>OrnsteinUhlenbeckParameters<a href="CppWidget.htm">Widget</a> * <b><a href="CppConst.htm">const</a></b> m_ou_parameters_<a href="CppWidget.htm">widget</a>;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/<a href="CppTime.htm">Time</a><a href="CppPointer.htm">point</a>s<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; m_ts;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Values measured in OU<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; m_xs;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppVoid.htm">void</a></b> Test() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+};<br/>
+<br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a><br/>
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> QTSTOCHASTICITYINSPECTORMAINDIALOG_H<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolStochasticityInspector/qtstochasticityinspectormaindialog.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolStochasticityInspector/qtstochasticityinspectormaindialog.cpp" border = "1"><tr><td><code>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic push<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "<a href="CppWeffcpp.htm">-Weffc++</a>"<br/>
+<a href="CppInclude.htm">#include</a> "qtstochasticityinspectormaindialog.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppStdexceptH.htm">stdexcept</a>&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQLabel.htm">QLabel</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQDesktopWidget.htm">QDesktopWidget</a>&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;qwt_plot_curve.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;qwt_plot_grid.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;qwt_<a href="CppPointer.htm">point</a>_data.h&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "brownianmotionprocess.h"<br/>
+<a href="CppInclude.htm">#include</a> "ornsteinuhlenbeckparameters.h"<br/>
+<a href="CppInclude.htm">#include</a> "ornsteinuhlenbeckprocess.h"<br/>
+<a href="CppInclude.htm">#include</a> "test<a href="CppTime.htm">time</a>r.h"<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppTrace.htm">trace</a>.h"<br/>
+<a href="CppInclude.htm">#include</a> "qtornsteinuhlenbecklikelihood<a href="CppWidget.htm">widget</a>.h"<br/>
+<a href="CppInclude.htm">#include</a> "qtornsteinuhlenbeckmaxlikelihood<a href="CppWidget.htm">widget</a>.h"<br/>
+<a href="CppInclude.htm">#include</a> "qtbrownianmotionparameters<a href="CppWidget.htm">widget</a>.h"<br/>
+<a href="CppInclude.htm">#include</a> "qtbrownianmotionmaxlikelihood<a href="CppWidget.htm">widget</a>.h"<br/>
+<a href="CppInclude.htm">#include</a> "qtbrownianmotionlikelihood<a href="CppWidget.htm">widget</a>.h"<br/>
+<a href="CppInclude.htm">#include</a> "qtornsteinuhlenbeckparameters<a href="CppWidget.htm">widget</a>.h"<br/>
+<a href="CppInclude.htm">#include</a> "ui_qtstochasticityinspectormaindialog.h"<br/>
+<a href="CppInclude.htm">#include</a> "qtstochasticityinspectoraic<a href="CppWidget.htm">widget</a>.h"<br/>
+<a href="CppInclude.htm">#include</a> "qtstochasticityinspectorhlrt<a href="CppWidget.htm">widget</a>.h"<br/>
+<a href="CppInclude.htm">#include</a> "qtstochasticityinspectormodelcolors.h"<br/>
+<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic pop<br/>
+<br/>
+<br/>
+<br/>
+<a href="CppRibi.htm">ribi</a>::<a href="CppQt.htm">Qt</a>StochasticityInspectorMainDialog::<a href="CppQt.htm">Qt</a>StochasticityInspectorMainDialog(<br/>
+&nbsp;&nbsp;<a href="CppQWidget.htm">QWidget</a> *parent) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+&nbsp;&nbsp;: <a href="CppQtHideAndShowDialog.htm">QtHideAndShowDialog</a>(parent),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ui(<b><a href="CppNew.htm">new</a></b> <a href="CppUi.htm">Ui</a>::<a href="CppQt.htm">Qt</a>StochasticityInspectorMainDialog),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_aic_<a href="CppWidget.htm">widget</a>{<b><a href="CppNew.htm">new</a></b> <a href="CppQt.htm">Qt</a>StochasticityInspectorAic<a href="CppWidget.htm">Widget</a>},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_bm_likelihood_<a href="CppWidget.htm">widget</a>{<b><a href="CppNew.htm">new</a></b> <a href="CppQt.htm">Qt</a>BrownianMotionLikelihoodWidget},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_bm_max_likelihood_<a href="CppWidget.htm">widget</a>{<b><a href="CppNew.htm">new</a></b> <a href="CppQt.htm">Qt</a>BrownianMotionMaxLikelihoodWidget},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_bm_parameters_<a href="CppWidget.htm">widget</a>{<b><a href="CppNew.htm">new</a></b> <a href="CppQt.htm">Qt</a>BrownianMotionParameters<a href="CppWidget.htm">Widget</a>},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_curve(<b><a href="CppNew.htm">new</a></b> <a href="CppQwt.htm">Qwt</a>PlotCurve),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_hlrt_<a href="CppWidget.htm">widget</a>{<b><a href="CppNew.htm">new</a></b> <a href="CppQt.htm">Qt</a>StochasticityInspectorHlrt<a href="CppWidget.htm">Widget</a>},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_main_dialog{},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_ou_likelihood_<a href="CppWidget.htm">widget</a>{<b><a href="CppNew.htm">new</a></b> <a href="CppQt.htm">Qt</a>OrnsteinUhlenbeckLikelihoodWidget},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_ou_max_likelihood_<a href="CppWidget.htm">widget</a>{<b><a href="CppNew.htm">new</a></b> <a href="CppQt.htm">Qt</a>OrnsteinUhlenbeckMaxLikelihoodWidget},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_ou_parameters_<a href="CppWidget.htm">widget</a>{<b><a href="CppNew.htm">new</a></b> <a href="CppQt.htm">Qt</a>OrnsteinUhlenbeckParameters<a href="CppWidget.htm">Widget</a>}<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;Test();<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+&nbsp;&nbsp;ui-&gt;setupUi(<b><a href="CppThis.htm">this</a></b>);<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppIfdef.htm">#ifdef</a> _WIN32<br/>
+&nbsp;&nbsp;ui-&gt;plot-&gt;set<a href="CppCanvas.htm">Canvas</a>Background(<a href="CppQBrush.htm">QBrush</a>(<a href="CppQColor.htm">QColor</a>(255,255,255)));<br/>
+&nbsp;&nbsp;<a href="CppPreElse.htm">#else</a><br/>
+&nbsp;&nbsp;ui-&gt;plot-&gt;set<a href="CppCanvas.htm">Canvas</a>Background(<a href="CppQColor.htm">QColor</a>(255,255,255));<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+&nbsp;&nbsp;ui-&gt;plot-&gt;setAxisAutoScale(<a href="CppQwt.htm">Qwt</a>Plot::xBottom);<br/>
+&nbsp;&nbsp;ui-&gt;plot-&gt;setAxisAutoScale(<a href="CppQwt.htm">Qwt</a>Plot::yLeft);<br/>
+<br/>
+&nbsp;&nbsp;m_curve-&gt;attach(ui-&gt;plot);<br/>
+&nbsp;&nbsp;m_curve-&gt;setStyle(<a href="CppQwt.htm">Qwt</a>PlotCurve::Lines);<br/>
+&nbsp;&nbsp;m_curve-&gt;setPen(<a href="CppQPen.htm">QPen</a>(<a href="CppQColor.htm">QColor</a>(0,0,0)));<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Brownian motion <a href="CppWidget.htm">widget</a><br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!ui-&gt;page_bm_input-&gt;layout());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;QGridLayout * <b><a href="CppConst.htm">const</a></b> my_layout{<b><a href="CppNew.htm">new</a></b> QGridLayout};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;page_bm_input-&gt;setLayout(my_layout);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;my_layout-&gt;addWidget(m_bm_parameters_<a href="CppWidget.htm">widget</a>);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Ornstein-Uhlenbeck <a href="CppWidget.htm">widget</a><br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!ui-&gt;page_ou_input-&gt;layout());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;QGridLayout * <b><a href="CppConst.htm">const</a></b> my_layout{<b><a href="CppNew.htm">new</a></b> QGridLayout};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;page_ou_input-&gt;setLayout(my_layout);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;my_layout-&gt;addWidget(m_ou_parameters_<a href="CppWidget.htm">widget</a>);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Brownian motion analysis <a href="CppWidget.htm">widget</a><br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!ui-&gt;page_bm_analysis-&gt;layout());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQVBoxLayout.htm">QVBoxLayout</a> * <b><a href="CppConst.htm">const</a></b> my_layout{<b><a href="CppNew.htm">new</a></b> <a href="CppQVBoxLayout.htm">QVBoxLayout</a>};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;page_bm_analysis-&gt;setLayout(my_layout);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;my_layout-&gt;addWidget(<b><a href="CppNew.htm">new</a></b> <a href="CppQLabel.htm">QLabel</a>("Likelihood"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;my_layout-&gt;addWidget(m_bm_likelihood_<a href="CppWidget.htm">widget</a>);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;my_layout-&gt;addWidget(<b><a href="CppNew.htm">new</a></b> <a href="CppQLabel.htm">QLabel</a>("Max likelihood"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;my_layout-&gt;addWidget(m_bm_max_likelihood_<a href="CppWidget.htm">widget</a>);<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>OU analysis <a href="CppWidget.htm">widget</a><br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!ui-&gt;page_ou_analysis-&gt;layout());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQVBoxLayout.htm">QVBoxLayout</a> * <b><a href="CppConst.htm">const</a></b> my_layout{<b><a href="CppNew.htm">new</a></b> <a href="CppQVBoxLayout.htm">QVBoxLayout</a>};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;page_ou_analysis-&gt;setLayout(my_layout);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;my_layout-&gt;addWidget(<b><a href="CppNew.htm">new</a></b> <a href="CppQLabel.htm">QLabel</a>("Likelihood"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;my_layout-&gt;addWidget(m_ou_likelihood_<a href="CppWidget.htm">widget</a>);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;my_layout-&gt;addWidget(<b><a href="CppNew.htm">new</a></b> <a href="CppQLabel.htm">QLabel</a>("Max likelihood"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;my_layout-&gt;addWidget(m_ou_max_likelihood_<a href="CppWidget.htm">widget</a>);<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Hierarchical Likelihood Ratio Test <a href="CppWidget.htm">widget</a><br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!ui-&gt;page_hlrt-&gt;layout());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQVBoxLayout.htm">QVBoxLayout</a> * <b><a href="CppConst.htm">const</a></b> my_layout{<b><a href="CppNew.htm">new</a></b> <a href="CppQVBoxLayout.htm">QVBoxLayout</a>};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;page_hlrt-&gt;setLayout(my_layout);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;my_layout-&gt;addWidget(m_hlrt_<a href="CppWidget.htm">widget</a>);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Hierarchical Likelihood Ratio Test <a href="CppWidget.htm">widget</a><br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!ui-&gt;page_aic-&gt;layout());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQVBoxLayout.htm">QVBoxLayout</a> * <b><a href="CppConst.htm">const</a></b> my_layout{<b><a href="CppNew.htm">new</a></b> <a href="CppQVBoxLayout.htm">QVBoxLayout</a>};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;page_aic-&gt;setLayout(my_layout);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;my_layout-&gt;addWidget(m_aic_<a href="CppWidget.htm">widget</a>);<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppAdd.htm">Add</a> grid<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQwt.htm">Qwt</a>PlotGrid * <b><a href="CppConst.htm">const</a></b> grid <a href="CppOperatorAssign.htm">=</a> <b><a href="CppNew.htm">new</a></b> <a href="CppQwt.htm">Qwt</a>PlotGrid;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;grid-&gt;setPen(<a href="CppQPen.htm">QPen</a>(<a href="CppQColor.htm">QColor</a>(0,0,0)));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;grid-&gt;attach(ui-&gt;plot);<br/>
+<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppQObject.htm">QObject</a>::connect(m_bm_likelihood_<a href="CppWidget.htm">widget</a>,<a href="CppSignalMacro.htm">SIGNAL</a>(signal_parameters_changed()),<b><a href="CppThis.htm">this</a></b>,<a href="CppSLOT.htm">SLOT</a>(OnNewData()));<br/>
+&nbsp;&nbsp;<a href="CppQObject.htm">QObject</a>::connect(m_bm_parameters_<a href="CppWidget.htm">widget</a>,<a href="CppSignalMacro.htm">SIGNAL</a>(signal_parameters_changed()),<b><a href="CppThis.htm">this</a></b>,<a href="CppSLOT.htm">SLOT</a>(OnAnyChangeBrownian()));<br/>
+&nbsp;&nbsp;<a href="CppQObject.htm">QObject</a>::connect(m_ou_likelihood_<a href="CppWidget.htm">widget</a>,<a href="CppSignalMacro.htm">SIGNAL</a>(signal_parameters_changed()),<b><a href="CppThis.htm">this</a></b>,<a href="CppSLOT.htm">SLOT</a>(OnNewData()));<br/>
+&nbsp;&nbsp;<a href="CppQObject.htm">QObject</a>::connect(m_ou_parameters_<a href="CppWidget.htm">widget</a>,<a href="CppSignalMacro.htm">SIGNAL</a>(signal_parameters_changed()),<b><a href="CppThis.htm">this</a></b>,<a href="CppSLOT.htm">SLOT</a>(OnAnyChangeOrnsteinUhlenbeck()));<br/>
+<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Put the dialog in the screen center<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppQRect.htm">QRect</a> screen <a href="CppOperatorAssign.htm">=</a> <a href="CppQApplication.htm">QApplication</a>::desktop()-&gt;screenGeometry();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppThis.htm">this</a></b>-&gt;setGeometry(0,0,screen.width() * 9 <a href="CppOperatorDivide.htm">/</a> 10, screen.height() * 9 <a href="CppOperatorDivide.htm">/</a> 10);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppThis.htm">this</a></b>-&gt;move( screen.center() <a href="CppOperatorMinus.htm">-</a> <b><a href="CppThis.htm">this</a></b>-&gt;rect().center() );<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;OnAnyChangeBrownian();<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>OnAnyChangeOrnsteinUhlenbeck();<br/>
+}<br/>
+<br/>
+<a href="CppRibi.htm">ribi</a>::<a href="CppQt.htm">Qt</a>StochasticityInspectorMainDialog::~<a href="CppQt.htm">Qt</a>StochasticityInspectorMainDialog() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppDelete.htm">delete</a></b> ui;<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::<a href="CppQt.htm">Qt</a>StochasticityInspectorMainDialog::OnAnyChangeBrownian() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;m_curve-&gt;setData(<b><a href="CppNew.htm">new</a></b> <a href="CppQwt.htm">Qwt</a><a href="CppPoint.htm">Point</a><a href="CppArray.htm">Array</a>Data(0,0,0));<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> init_x{m_bm_parameters_<a href="CppWidget.htm">widget</a>-&gt;GetInitValue()};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> t_end{m_bm_parameters_<a href="CppWidget.htm">widget</a>-&gt;GetEnd<a href="CppTime.htm">Time</a>()};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> volatility<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorAssign.htm">=</a> m_bm_parameters_<a href="CppWidget.htm">widget</a>-&gt;GetVolatility() <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second;<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> seed{m_bm_parameters_<a href="CppWidget.htm">widget</a>-&gt;GetSeed()};<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (volatility &lt; 0.0 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second) <b><a href="CppReturn.htm">return</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::bm::Parameters parameters(volatility,seed);<br/>
+<br/>
+&nbsp;&nbsp;m_main_dialog <a href="CppOperatorAssign.htm">=</a> <a href="CppRibi.htm">ribi</a>::StochasticityInspectorMainDialog(init_x,t_end,parameters);<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Plot<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> ts_with_unit <a href="CppOperatorAssign.htm">=</a> m_main_dialog.<a href="CppGetTime.htm">GetTime</a><a href="CppPoint.htm">Point</a>s();<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> xs <a href="CppOperatorAssign.htm">=</a> m_main_dialog.GetValues();<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Strip units<br/>
+&nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; ts;<br/>
+&nbsp;&nbsp;<a href="CppStdTransform.htm">std::transform</a>(begin(ts_with_unit),end(ts_with_unit),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdBack_inserter.htm">std::back_inserter</a>(ts),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;[](<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> t) { <b><a href="CppReturn.htm">return</a></b> t.value();}<br/>
+&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(ts.size() <a href="CppOperatorEqual.htm">==</a> ts_with_unit.size());<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(ts.size() <a href="CppOperatorEqual.htm">==</a> xs.size());<br/>
+<br/>
+&nbsp;&nbsp;m_curve-&gt;setPen(<a href="CppRibi.htm">ribi</a>::<a href="CppQt.htm">Qt</a>StochasticityInspectorModelColors::m_bm_color);<br/>
+&nbsp;&nbsp;m_curve-&gt;setData(<b><a href="CppNew.htm">new</a></b> <a href="CppQwt.htm">Qwt</a><a href="CppPoint.htm">Point</a><a href="CppArray.htm">Array</a>Data(&amp;ts[0],&amp;xs[0],xs.size()));<br/>
+&nbsp;&nbsp;ui-&gt;plot-&gt;replot();<br/>
+<br/>
+&nbsp;&nbsp;OnNewData();<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::<a href="CppQt.htm">Qt</a>StochasticityInspectorMainDialog::OnAnyChangeOrnsteinUhlenbeck() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;m_curve-&gt;setData(<b><a href="CppNew.htm">new</a></b> <a href="CppQwt.htm">Qwt</a><a href="CppPoint.htm">Point</a><a href="CppArray.htm">Array</a>Data(0,0,0));<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> init_x{m_ou_parameters_<a href="CppWidget.htm">widget</a>-&gt;GetInitValue()};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> dt <a href="CppOperatorAssign.htm">=</a> m_ou_parameters_<a href="CppWidget.htm">widget</a>-&gt;<a href="CppGetTime.htm">GetTime</a>step();<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> t_end <a href="CppOperatorAssign.htm">=</a> m_ou_parameters_<a href="CppWidget.htm">widget</a>-&gt;GetEnd<a href="CppTime.htm">Time</a>() <a href="CppOperatorPlus.htm">+</a> dt;<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> mean_<a href="GameReversi.htm">reversi</a>on_rate <a href="CppOperatorAssign.htm">=</a> m_ou_parameters_<a href="CppWidget.htm">widget</a>-&gt;<a href="CppGetMean.htm">GetMean</a>Re<a href="CppVersion.htm">version</a>Rate();<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> mu{m_ou_parameters_<a href="CppWidget.htm">widget</a>-&gt;GetTargetMean()};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> sigma <a href="CppOperatorAssign.htm">=</a> m_ou_parameters_<a href="CppWidget.htm">widget</a>-&gt;GetVolatility();<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> seed{m_ou_parameters_<a href="CppWidget.htm">widget</a>-&gt;GetSeed()};<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (dt <a href="CppOperatorLessEqual.htm">&lt;=</a> 0.0 * <a href="CppBoostUnits.htm">boost::units</a>::si::second) <b><a href="CppReturn.htm">return</a></b>;<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (mean_<a href="GameReversi.htm">reversi</a>on_rate <a href="CppOperatorLessEqual.htm">&lt;=</a> 0.0 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second) <b><a href="CppReturn.htm">return</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::ou::Parameters parameters(mean_<a href="GameReversi.htm">reversi</a>on_rate,mu,sigma,seed);<br/>
+<br/>
+&nbsp;&nbsp;m_main_dialog <a href="CppOperatorAssign.htm">=</a> <a href="CppRibi.htm">ribi</a>::StochasticityInspectorMainDialog(init_x,dt,t_end,parameters);<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Plot<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> ts_with_unit <a href="CppOperatorAssign.htm">=</a> m_main_dialog.<a href="CppGetTime.htm">GetTime</a><a href="CppPoint.htm">Point</a>s();<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> xs <a href="CppOperatorAssign.htm">=</a> m_main_dialog.GetValues();<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Strip units<br/>
+&nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; ts;<br/>
+&nbsp;&nbsp;<a href="CppStdTransform.htm">std::transform</a>(begin(ts_with_unit),end(ts_with_unit),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdBack_inserter.htm">std::back_inserter</a>(ts),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;[](<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> t) { <b><a href="CppReturn.htm">return</a></b> t.value();}<br/>
+&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(ts.size() <a href="CppOperatorEqual.htm">==</a> ts_with_unit.size());<br/>
+<br/>
+&nbsp;&nbsp;m_curve-&gt;setPen(<a href="CppRibi.htm">ribi</a>::<a href="CppQt.htm">Qt</a>StochasticityInspectorModelColors::m_ou_color);<br/>
+&nbsp;&nbsp;m_curve-&gt;setData(<b><a href="CppNew.htm">new</a></b> <a href="CppQwt.htm">Qwt</a><a href="CppPoint.htm">Point</a><a href="CppArray.htm">Array</a>Data(&amp;ts[0],&amp;xs[0],xs.size()));<br/>
+&nbsp;&nbsp;ui-&gt;plot-&gt;replot();<br/>
+<br/>
+&nbsp;&nbsp;OnNewData();<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::<a href="CppQt.htm">Qt</a>StochasticityInspectorMainDialog::OnNewData() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> xs <a href="CppOperatorAssign.htm">=</a> m_main_dialog.GetValues();<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> dt <a href="CppOperatorAssign.htm">=</a> m_ou_parameters_<a href="CppWidget.htm">widget</a>-&gt;<a href="CppGetTime.htm">GetTime</a>step();<br/>
+&nbsp;&nbsp;m_bm_likelihood_<a href="CppWidget.htm">widget</a>-&gt;CalcLikelihood(xs);<br/>
+&nbsp;&nbsp;m_ou_likelihood_<a href="CppWidget.htm">widget</a>-&gt;CalcLikelihood(xs,dt);<br/>
+<br/>
+&nbsp;&nbsp;m_bm_max_likelihood_<a href="CppWidget.htm">widget</a>-&gt;SetData(xs);<br/>
+&nbsp;&nbsp;m_ou_max_likelihood_<a href="CppWidget.htm">widget</a>-&gt;SetData(xs,dt);<br/>
+<br/>
+&nbsp;&nbsp;m_hlrt_<a href="CppWidget.htm">widget</a>-&gt;ShowHlrt(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_bm_max_likelihood_<a href="CppWidget.htm">widget</a>-&gt;GetMaxLogLikelihood(),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_ou_max_likelihood_<a href="CppWidget.htm">widget</a>-&gt;GetMaxLogLikelihood()<br/>
+&nbsp;&nbsp;);<br/>
+<br/>
+&nbsp;&nbsp;m_aic_<a href="CppWidget.htm">widget</a>-&gt;ShowAic(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_bm_max_likelihood_<a href="CppWidget.htm">widget</a>-&gt;GetMaxLogLikelihood(),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_ou_max_likelihood_<a href="CppWidget.htm">widget</a>-&gt;GetMaxLogLikelihood()<br/>
+&nbsp;&nbsp;);<br/>
+}<br/>
+<br/>
+<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::<a href="CppQt.htm">Qt</a>StochasticityInspectorMainDialog::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppBool.htm">bool</a></b> is_tested{<b><a href="CppFalse.htm">false</a></b>};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (is_tested) <b><a href="CppReturn.htm">return</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;is_tested <a href="CppOperatorAssign.htm">=</a> <b><a href="CppTrue.htm">true</a></b>;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Test<a href="CppTime.htm">Time</a>r test_<a href="CppTime.htm">time</a>r(<a href="Cpp__func__.htm">__func__</a>,__<a href="CppCfile.htm">FILE</a>__,1.0);<br/>
+}<br/>
+<a href="CppEndif.htm">#endif</a><br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolStochasticityInspector/qtstochasticityinspectormenudialog.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolStochasticityInspector/qtstochasticityinspectormenudialog.h" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> QTSTOCHASTICITYINSPECTORMENUDIALOG_H<br/>
+<a href="CppDefine.htm">#define</a> QTSTOCHASTICITYINSPECTORMENUDIALOG_H<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppQtHideAndShowDialog.htm">qthideandshowdialog</a>.h"<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> Ui {<br/>
+<b><a href="CppClass.htm">class</a></b> <a href="CppQt.htm">Qt</a>StochasticityInspectorMenuDialog;<br/>
+}<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a> {<br/>
+<br/>
+<b><a href="CppClass.htm">class</a></b> <a href="CppQt.htm">Qt</a>StochasticityInspectorMenuDialog : <b><a href="CppPublic.htm">public</a></b> <a href="CppQtHideAndShowDialog.htm">QtHideAndShowDialog</a><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppQ_OBJECT.htm">Q_OBJECT</a><br/>
+<br/>
+<b><a href="CppPublic.htm">public</a></b>:<br/>
+&nbsp;&nbsp;<b><a href="CppExplicit.htm">explicit</a></b> <a href="CppQt.htm">Qt</a>StochasticityInspectorMenuDialog(<a href="CppQWidget.htm">QWidget</a> *parent <a href="CppOperatorAssign.htm">=</a> 0) <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppQt.htm">Qt</a>StochasticityInspectorMenuDialog(<b><a href="CppConst.htm">const</a></b> <a href="CppQt.htm">Qt</a>StochasticityInspectorMenuDialog&amp;) <a href="CppOperatorAssign.htm">=</a> <b><a href="CppDelete.htm">delete</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppQt.htm">Qt</a>StochasticityInspectorMenuDialog&amp; <b><a href="CppOperator.htm">operator</a></b>=(<b><a href="CppConst.htm">const</a></b> <a href="CppQt.htm">Qt</a>StochasticityInspectorMenuDialog&amp;) <a href="CppOperatorAssign.htm">=</a> <b><a href="CppDelete.htm">delete</a></b>;<br/>
+&nbsp;&nbsp;~<a href="CppQt.htm">Qt</a>StochasticityInspectorMenuDialog() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+<b><a href="CppPrivate.htm">private</a></b> <b><a href="CppSlots.htm">slots</a></b>:<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> on_button_start_clicked() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> on_button_about_clicked() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> on_button_quit_clicked() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+<b><a href="CppPrivate.htm">private</a></b>:<br/>
+&nbsp;&nbsp;<a href="CppUi.htm">Ui</a>::<a href="CppQt.htm">Qt</a>StochasticityInspectorMenuDialog *ui;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppVoid.htm">void</a></b> Test() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+};<br/>
+<br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a><br/>
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> QTSTOCHASTICITYINSPECTORMENUDIALOG_H<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolStochasticityInspector/qtstochasticityinspectormenudialog.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolStochasticityInspector/qtstochasticityinspectormenudialog.cpp" border = "1"><tr><td><code>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic push<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "<a href="CppWeffcpp.htm">-Weffc++</a>"<br/>
+<a href="CppInclude.htm">#include</a> "qtstochasticityinspectormenudialog.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppQtAboutDialog.htm">qtaboutdialog</a>.h"<br/>
+<a href="CppInclude.htm">#include</a> "qtstochasticityinspectormaindialog.h"<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppQtHideAndShowDialog.htm">qthideandshowdialog</a>.h"<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppRibi.htm">ribi</a>_<a href="CppApfloat.htm">apfloat</a>.h"<br/>
+<a href="CppInclude.htm">#include</a> "stochasticityinspectormenudialog.h"<br/>
+<a href="CppInclude.htm">#include</a> "test<a href="CppTime.htm">time</a>r.h"<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppTrace.htm">trace</a>.h"<br/>
+<a href="CppInclude.htm">#include</a> "ui_qtstochasticityinspectormenudialog.h"<br/>
+<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic pop<br/>
+<br/>
+<a href="CppRibi.htm">ribi</a>::<a href="CppQt.htm">Qt</a>StochasticityInspectorMenuDialog::<a href="CppQt.htm">Qt</a>StochasticityInspectorMenuDialog(<a href="CppQWidget.htm">QWidget</a> *parent) <b><a href="CppNoexcept.htm">noexcept</a></b> :<br/>
+&nbsp;&nbsp;<a href="CppQtHideAndShowDialog.htm">QtHideAndShowDialog</a>(parent),<br/>
+&nbsp;&nbsp;ui(<b><a href="CppNew.htm">new</a></b> <a href="CppUi.htm">Ui</a>::<a href="CppQt.htm">Qt</a>StochasticityInspectorMenuDialog)<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;Test();<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+&nbsp;&nbsp;ui-&gt;setupUi(<b><a href="CppThis.htm">this</a></b>);<br/>
+}<br/>
+<br/>
+<a href="CppRibi.htm">ribi</a>::<a href="CppQt.htm">Qt</a>StochasticityInspectorMenuDialog::~<a href="CppQt.htm">Qt</a>StochasticityInspectorMenuDialog() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppDelete.htm">delete</a></b> ui;<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::<a href="CppQt.htm">Qt</a>StochasticityInspectorMenuDialog::on_button_start_clicked() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppQt.htm">Qt</a>StochasticityInspectorMainDialog d;<br/>
+&nbsp;&nbsp;d.setStyleSheet(<b><a href="CppThis.htm">this</a></b>-&gt;styleSheet());<br/>
+&nbsp;&nbsp;d.setWindowIcon(<b><a href="CppThis.htm">this</a></b>-&gt;windowIcon());<br/>
+&nbsp;&nbsp;<b><a href="CppThis.htm">this</a></b>-&gt;ShowChild(&amp;d);<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::<a href="CppQt.htm">Qt</a>StochasticityInspectorMenuDialog::on_button_about_clicked() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppAbout.htm">About</a> a <a href="CppOperatorAssign.htm">=</a> StochasticityInspectorMenuDialog().GetAbout();<br/>
+&nbsp;&nbsp;a.<a href="CppAdd.htm">Add</a><a href="CppLibrary.htm">Library</a>("<a href="CppQtHideAndShowDialog.htm">QtHideAndShowDialog</a> <a href="CppVersion.htm">version</a>: " <a href="CppOperatorPlus.htm">+</a> <a href="CppQtHideAndShowDialog.htm">QtHideAndShowDialog</a>::Get<a href="CppVersion.htm">Version</a>());<br/>
+&nbsp;&nbsp;<a href="CppQtAboutDialog.htm">QtAboutDialog</a> d(a);<br/>
+&nbsp;&nbsp;d.setStyleSheet(<b><a href="CppThis.htm">this</a></b>-&gt;styleSheet());<br/>
+&nbsp;&nbsp;d.setWindowIcon(<b><a href="CppThis.htm">this</a></b>-&gt;windowIcon());<br/>
+&nbsp;&nbsp;<b><a href="CppThis.htm">this</a></b>-&gt;ShowChild(&amp;d);<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::<a href="CppQt.htm">Qt</a>StochasticityInspectorMenuDialog::on_button_quit_clicked() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;close();<br/>
+}<br/>
+<br/>
+<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::<a href="CppQt.htm">Qt</a>StochasticityInspectorMenuDialog::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppBool.htm">bool</a></b> is_tested{<b><a href="CppFalse.htm">false</a></b>};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (is_tested) <b><a href="CppReturn.htm">return</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;is_tested <a href="CppOperatorAssign.htm">=</a> <b><a href="CppTrue.htm">true</a></b>;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::<a href="CppApfloat.htm">Apfloat</a>();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQt.htm">Qt</a>StochasticityInspectorMainDialog();<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Test<a href="CppTime.htm">Time</a>r test_<a href="CppTime.htm">time</a>r(<a href="Cpp__func__.htm">__func__</a>,__<a href="CppCfile.htm">FILE</a>__,1.0);<br/>
+}<br/>
+<a href="CppEndif.htm">#endif</a><br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolStochasticityInspector/qtstochasticityinspectormodelcolors.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolStochasticityInspector/qtstochasticityinspectormodelcolors.h" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> QTSTOCHASTICITYINSPECTORMODELCOLORS_H<br/>
+<a href="CppDefine.htm">#define</a> QTSTOCHASTICITYINSPECTORMODELCOLORS_H<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQColor.htm">QColor</a>&gt;<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a> {<br/>
+<br/>
+<b><a href="CppStruct.htm">struct</a></b> <a href="CppQt.htm">Qt</a>StochasticityInspectorModelColors<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppConst.htm">const</a></b> <a href="CppQColor.htm">QColor</a> m_bm_color;<br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppConst.htm">const</a></b> <a href="CppQColor.htm">QColor</a> m_ou_color;<br/>
+};<br/>
+<br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a><br/>
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> QTSTOCHASTICITYINSPECTORMODELCOLORS_H<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolStochasticityInspector/qtstochasticityinspectormodelcolors.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolStochasticityInspector/qtstochasticityinspectormodelcolors.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "qtstochasticityinspectormodelcolors.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQColor.htm">QColor</a>&gt;<br/>
+<br/>
+<b><a href="CppConst.htm">const</a></b> <a href="CppQColor.htm">QColor</a> <a href="CppRibi.htm">ribi</a>::<a href="CppQt.htm">Qt</a>StochasticityInspectorModelColors::m_bm_color <a href="CppOperatorAssign.htm">=</a> <a href="CppQt.htm">Qt</a>::red;<br/>
+<b><a href="CppConst.htm">const</a></b> <a href="CppQColor.htm">QColor</a> <a href="CppRibi.htm">ribi</a>::<a href="CppQt.htm">Qt</a>StochasticityInspectorModelColors::m_ou_color <a href="CppOperatorAssign.htm">=</a> <a href="CppQt.htm">Qt</a>::blue;<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolStochasticityInspector/stochasticityinspectormaindialog.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolStochasticityInspector/stochasticityinspectormaindialog.h" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> STOCHASTICITYINSPECTORMAINDIALOG_H<br/>
+<a href="CppDefine.htm">#define</a> STOCHASTICITYINSPECTORMAINDIALOG_H<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppVectorH.htm">vector</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppRibi.htm">ribi</a>_<a href="CppTime.htm">time</a>.h"<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a> { <b><a href="CppNamespace.htm">namespace</a></b> ou { <b><a href="CppStruct.htm">struct</a></b> Parameters; } }<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a> { <b><a href="CppNamespace.htm">namespace</a></b> bm { <b><a href="CppStruct.htm">struct</a></b> Parameters; } }<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a> {<br/>
+<br/>
+<b><a href="CppStruct.htm">struct</a></b> StochasticityInspectorMainDialog<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> <a href="CppTime.htm">Time</a> <a href="CppOperatorAssign.htm">=</a> <a href="CppRibi.htm">ribi</a>::units::<a href="CppTime.htm">Time</a>;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/H_0: data is created by a Brownian process<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/H_1: data is created by an Ornstein Uhlenbeck process<br/>
+&nbsp;&nbsp;<b><a href="CppEnumClass.htm">enum class</a></b> HlrtResult { null_hypothesis_cannot_be_rejected, reject_null_hypothesis };<br/>
+<br/>
+&nbsp;&nbsp;StochasticityInspectorMainDialog();<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Start with an Brownian Motion<br/>
+&nbsp;&nbsp;StochasticityInspectorMainDialog(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> init_x,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> t_end,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppRibi.htm">ribi</a>::bm::Parameters&amp; parameters<br/>
+&nbsp;&nbsp;);<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Start with an Ornstein-Uhlenbeck process<br/>
+&nbsp;&nbsp;StochasticityInspectorMainDialog(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> init_x,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppTime.htm">Time</a> dt,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppTime.htm">Time</a> t_end,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppRibi.htm">ribi</a>::ou::Parameters&amp; parameters<br/>
+&nbsp;&nbsp;);<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> CalcBrownianMotionMaxLogLikelihood() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> CalcOrnsteinUhlenbeckMaxLogLikelihood() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;HlrtResult DoHierarchicalLikelihoodRatioTest() <b><a href="CppConst.htm">const</a></b>;<br/>
+<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b>&amp; <a href="CppGetTime.htm">GetTime</a><a href="CppPoint.htm">Point</a>s() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> { <b><a href="CppReturn.htm">return</a></b>&nbsp;&nbsp;m_ts; }<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;&amp; GetValues() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> { <b><a href="CppReturn.htm">return</a></b> m_xs; }<br/>
+<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppPrivate.htm">private</a></b>:<br/>
+&nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppTime.htm">Time</a>&gt; m_ts;<br/>
+&nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; m_xs;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppVoid.htm">void</a></b> Test() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+};<br/>
+<br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a><br/>
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> STOCHASTICITYINSPECTORMAINDIALOG_H<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolStochasticityInspector/stochasticityinspectormaindialog.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolStochasticityInspector/stochasticityinspectormaindialog.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "stochasticityinspectormaindialog.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppBoost.htm">boost</a>/math/distributions/chi_squared.hpp&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppApfloat.htm">apfloat</a>.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "brownianmotionprocess.h"<br/>
+<a href="CppInclude.htm">#include</a> "brownianmotionhelper.h"<br/>
+<a href="CppInclude.htm">#include</a> "ornsteinuhlenbeckprocess.h"<br/>
+<a href="CppInclude.htm">#include</a> "ornsteinuhlenbeckhelper.h"<br/>
+<a href="CppInclude.htm">#include</a> "test<a href="CppTime.htm">time</a>r.h"<br/>
+<br/>
+<a href="CppRibi.htm">ribi</a>::StochasticityInspectorMainDialog::StochasticityInspectorMainDialog()<br/>
+&nbsp;&nbsp;: m_ts{}, m_xs{}<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;Test();<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+}<br/>
+<br/>
+<a href="CppRibi.htm">ribi</a>::StochasticityInspectorMainDialog::StochasticityInspectorMainDialog(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> init_x,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> t_end,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppRibi.htm">ribi</a>::bm::Parameters&amp; parameters<br/>
+) : m_ts{}, m_xs{}<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (t_end <a href="CppOperatorLessEqual.htm">&lt;=</a> 0) <b><a href="CppReturn.htm">return</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::bm::Process sim(parameters);<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> x <a href="CppOperatorAssign.htm">=</a> init_x;<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppInt.htm">int</a></b> i=0; i <a href="CppOperatorLessEqual.htm">&lt;=</a> t_end; <a href="CppOperatorIncrement.htm">++</a>i) <a href="CppComment.htm">//</a>Also include t_end<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_xs.push_back(x);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_ts.push_back(<b><a href="CppStatic_cast.htm">static_cast</a></b>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;(i) * <a href="CppBoostUnits.htm">boost::units</a>::si::second);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;x <a href="CppOperatorAssign.htm">=</a> sim.CalcNext(x);<br/>
+&nbsp;&nbsp;}<br/>
+}<br/>
+<br/>
+<a href="CppRibi.htm">ribi</a>::StochasticityInspectorMainDialog::StochasticityInspectorMainDialog(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> init_x,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppTime.htm">Time</a> dt,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppTime.htm">Time</a> t_end,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppRibi.htm">ribi</a>::ou::Parameters&amp; parameters<br/>
+) : m_ts{}, m_xs{}<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (dt <a href="CppOperatorLessEqual.htm">&lt;=</a> 0.0 * <a href="CppBoostUnits.htm">boost::units</a>::si::second) <b><a href="CppReturn.htm">return</a></b>;<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (t_end <a href="CppOperatorLessEqual.htm">&lt;=</a> 0.0 * <a href="CppBoostUnits.htm">boost::units</a>::si::second) <b><a href="CppReturn.htm">return</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::ou::Process sim(parameters);<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> x <a href="CppOperatorAssign.htm">=</a> init_x;<br/>
+&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<a href="CppTime.htm">Time</a> t=0.0 * <a href="CppBoostUnits.htm">boost::units</a>::si::second; t&lt;t_end; t<a href="CppOperatorPlusAssign.htm">+=</a>dt)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_xs.push_back(x);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_ts.push_back(t);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;x <a href="CppOperatorAssign.htm">=</a> sim.CalcNext(x,dt);<br/>
+&nbsp;&nbsp;}<br/>
+}<br/>
+<br/>
+<b><a href="CppDouble.htm">double</a></b> <a href="CppRibi.htm">ribi</a>::StochasticityInspectorMainDialog::CalcBrownianMotionMaxLogLikelihood() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <a href="CppRibi.htm">ribi</a>::bm::Helper().CalcMaxLogLikelihood(m_xs);<br/>
+}<br/>
+<br/>
+<b><a href="CppDouble.htm">double</a></b> <a href="CppRibi.htm">ribi</a>::StochasticityInspectorMainDialog::CalcOrnsteinUhlenbeckMaxLogLikelihood() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <a href="CppRibi.htm">ribi</a>::ou::Helper().CalcMaxLogLikelihood(m_xs);<br/>
+}<br/>
+<br/>
+<a href="CppRibi.htm">ribi</a>::StochasticityInspectorMainDialog::HlrtResult<br/>
+&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::StochasticityInspectorMainDialog::DoHierarchicalLikelihoodRatioTest() <b><a href="CppConst.htm">const</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppBool.htm">bool</a></b> verbose{<b><a href="CppTrue.htm">true</a></b>};<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> log_likelihood_bm <a href="CppOperatorAssign.htm">=</a> <a href="CppRibi.htm">ribi</a>::bm::Helper().CalcMaxLogLikelihood(m_xs);<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> log_likelihood_ou <a href="CppOperatorAssign.htm">=</a> <a href="CppRibi.htm">ribi</a>::ou::Helper().CalcMaxLogLikelihood(m_xs);<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> alpha{0.05};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> dof{2};<br/>
+&nbsp;&nbsp;<a href="CppBoost.htm">boost</a>::math::chi_squared_distribution&lt;<b><a href="CppDouble.htm">double</a></b>&gt; distribution(dof);<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> critical_value{<a href="CppBoost.htm">boost</a>::math::quantile(<a href="CppBoost.htm">boost</a>::math::<b><a href="CppCompl.htm">compl</a></b>ement(distribution,alpha))};<br/>
+<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>BM is H_0, OU is H_1<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> delta{2.0 * (log_likelihood_ou <a href="CppOperatorMinus.htm">-</a> log_likelihood_bm)};<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (verbose)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdCout.htm">std::cout</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "log_likelihood_bm: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> log_likelihood_bm <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "log_likelihood_ou: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> log_likelihood_ou <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "alpha: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> alpha <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "dof: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> dof <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "critical_value: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> critical_value <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "delta: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> delta <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;;<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (delta &lt; critical_value)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> HlrtResult::null_hypothesis_cannot_be_rejected;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppElse.htm">else</a></b><br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> HlrtResult::reject_null_hypothesis;<br/>
+&nbsp;&nbsp;}<br/>
+}<br/>
+<br/>
+<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::StochasticityInspectorMainDialog::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppBool.htm">bool</a></b> is_tested{<b><a href="CppFalse.htm">false</a></b>};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (is_tested) <b><a href="CppReturn.htm">return</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;is_tested <a href="CppOperatorAssign.htm">=</a> <b><a href="CppTrue.htm">true</a></b>;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::bm::Process::Test();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::ou::Process::Test();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;StochasticityInspectorMainDialog();<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Test<a href="CppTime.htm">Time</a>r test_<a href="CppTime.htm">time</a>r(<a href="Cpp__func__.htm">__func__</a>,__<a href="CppCfile.htm">FILE</a>__,1.0);<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppBool.htm">bool</a></b> verbose{<b><a href="CppTrue.htm">true</a></b>};<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Brownian motion<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;StochasticityInspectorMainDialog d(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0, <a href="CppComment.htm">//</a>init_x<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10,&nbsp;&nbsp;<a href="CppComment.htm">//</a>t_end<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::bm::Parameters(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.5 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;83<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(d.<a href="CppGetTime.htm">GetTime</a><a href="CppPoint.htm">Point</a>s().size() <a href="CppOperatorEqual.htm">==</a> d.GetValues().size());<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Worked example<br/>
+&nbsp;&nbsp;<a href="CppStdCout.htm">std::cout</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "HERE:" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="CppStdEndl.htm">std::endl</a>;<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Start with an Brownian Motion<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;StochasticityInspectorMainDialog d(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0, <a href="CppComment.htm">//</a>init_x<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10,&nbsp;&nbsp;<a href="CppComment.htm">//</a>t_end<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::bm::Parameters(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.5 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;83<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;);<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (verbose)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdCopy.htm">std::copy</a>(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdBegin.htm">std::begin</a>(d.GetValues()),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdEnd.htm">std::end</a>(d.GetValues()),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdOstream_iterator.htm">std::ostream_iterator</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;(<a href="CppStdCout.htm">std::cout</a>,"\n")<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(d.<a href="CppGetTime.htm">GetTime</a><a href="CppPoint.htm">Point</a>s().size() <a href="CppOperatorEqual.htm">==</a> 11);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> expected_bm_log_likelihood{-4.9811847};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> expected_ou_log_likelihood{0.0489702};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> found_bm_log_likelihood{d.CalcBrownianMotionMaxLogLikelihood()};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> found_ou_log_likelihood{d.CalcOrnsteinUhlenbeckMaxLogLikelihood()};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdCout.htm">std::cout</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "found_bm_log_likelihood: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> found_bm_log_likelihood <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "found_ou_log_likelihood: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> found_ou_log_likelihood <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;;<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppStdAbs.htm">std::abs</a>(found_bm_log_likelihood <a href="CppOperatorMinus.htm">-</a> expected_bm_log_likelihood) &lt; 0.0001);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppStdAbs.htm">std::abs</a>(found_ou_log_likelihood <a href="CppOperatorMinus.htm">-</a> expected_ou_log_likelihood) &lt; 0.0001);<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> HlrtResult result{d.DoHierarchicalLikelihoodRatioTest()};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(result <a href="CppOperatorEqual.htm">==</a> HlrtResult::reject_null_hypothesis);<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+}<br/>
+<a href="CppEndif.htm">#endif</a><br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolStochasticityInspector/stochasticityinspectormenudialog.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolStochasticityInspector/stochasticityinspectormenudialog.h" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> STOCHASTICITYINSPECTORMENUDIALOG_H<br/>
+<a href="CppDefine.htm">#define</a> STOCHASTICITYINSPECTORMENUDIALOG_H<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "menudialog.h"<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a> {<br/>
+<br/>
+<b><a href="CppStruct.htm">struct</a></b> StochasticityInspectorMenuDialog <b><a href="CppFinal.htm">final</a></b> : <b><a href="CppPublic.htm">public</a></b> MenuDialog<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppAbout.htm">About</a> GetAbout() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> <b><a href="CppOverride.htm">override</a></b>;<br/>
+&nbsp;&nbsp;Help GetHelp() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> <b><a href="CppOverride.htm">override</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppBoostShared_ptr.htm">boost::shared_ptr</a>&lt;<b><a href="CppConst.htm">const</a></b> Program&gt; GetProgram() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> <b><a href="CppOverride.htm">override</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppStdString.htm">std::string</a> Get<a href="CppVersion.htm">Version</a>() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> <b><a href="CppOverride.htm">override</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a>&gt; Get<a href="CppVersion.htm">Version</a>History() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> <b><a href="CppOverride.htm">override</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppPrivate.htm">private</a></b>:<br/>
+&nbsp;&nbsp;<b><a href="CppInt.htm">int</a></b> ExecuteSpecific(<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a>&gt;&amp; <a href="CppArgc.htm">argv</a>) <b><a href="CppNoexcept.htm">noexcept</a></b> <b><a href="CppOverride.htm">override</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppVoid.htm">void</a></b> Test() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+};<br/>
+<br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a><br/>
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> STOCHASTICITYINSPECTORMENUDIALOG_H<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolStochasticityInspector/stochasticityinspectormenudialog.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolStochasticityInspector/stochasticityinspectormenudialog.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "stochasticityinspectormenudialog.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppIostreamH.htm">iostream</a>&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "brownianmotionprocess.h"<br/>
+<a href="CppInclude.htm">#include</a> "ornsteinuhlenbeckprocess.h"<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppRichelBilderbeekProgram.htm">richelbilderbeekprogram</a>.h"<br/>
+<a href="CppInclude.htm">#include</a> "stochasticityinspectormaindialog.h"<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppTrace.htm">trace</a>.h"<br/>
+<a href="CppInclude.htm">#include</a> "test<a href="CppTime.htm">time</a>r.h"<br/>
+<br/>
+<b><a href="CppInt.htm">int</a></b> <a href="CppRibi.htm">ribi</a>::StochasticityInspectorMenuDialog::ExecuteSpecific(<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a>&gt;&amp; <a href="CppArgc.htm">argv</a>) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;Test();<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> <a href="CppArgc.htm">argc</a> <a href="CppOperatorAssign.htm">=</a> <b><a href="CppStatic_cast.htm">static_cast</a></b>&lt;<b><a href="CppInt.htm">int</a></b>&gt;(<a href="CppArgc.htm">argv</a>.size());<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (<a href="CppArgc.htm">argc</a> <a href="CppOperatorEqual.htm">==</a> 1)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdCout.htm">std::cout</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> GetHelp() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n';<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> 1;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!"TODO");<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> 1;<br/>
+}<br/>
+<br/>
+<a href="CppRibi.htm">ribi</a>::<a href="CppAbout.htm">About</a> <a href="CppRibi.htm">ribi</a>::StochasticityInspectorMenuDialog::GetAbout() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppAbout.htm">About</a> a(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"Richel Bilderbeek",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"StochasticityInspector",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"<a href="Tools.htm">tool</a> to inspect stochasticity",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"the 26th of May 2015",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"2015-2015",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"http://www.richelbilderbeek.nl/<a href="Tools.htm">Tool</a>StochasticityInspector.htm",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Get<a href="CppVersion.htm">Version</a>(),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Get<a href="CppVersion.htm">Version</a>History());<br/>
+&nbsp;&nbsp;a.<a href="CppAdd.htm">Add</a><a href="CppLibrary.htm">Library</a>("<a href="CppTrace.htm">Trace</a> <a href="CppVersion.htm">version</a>: " <a href="CppOperatorPlus.htm">+</a> <a href="CppTrace.htm">Trace</a>::Get<a href="CppVersion.htm">Version</a>());<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> a;<br/>
+}<br/>
+<br/>
+<a href="CppRibi.htm">ribi</a>::Help <a href="CppRibi.htm">ribi</a>::StochasticityInspectorMenuDialog::GetHelp() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> Help(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppThis.htm">this</a></b>-&gt;GetAbout().GetFileTitle(),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppThis.htm">this</a></b>-&gt;GetAbout().GetFileDescription(),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;);<br/>
+}<br/>
+<br/>
+<a href="CppBoostShared_ptr.htm">boost::shared_ptr</a>&lt;<b><a href="CppConst.htm">const</a></b> <a href="CppRibi.htm">ribi</a>::Program&gt; <a href="CppRibi.htm">ribi</a>::StochasticityInspectorMenuDialog::GetProgram() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppBoostShared_ptr.htm">boost::shared_ptr</a>&lt;<b><a href="CppConst.htm">const</a></b> Program&gt; p {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppNew.htm">new</a></b> ProgramStochasticityInspector<br/>
+&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(p);<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> p;<br/>
+}<br/>
+<br/>
+<a href="CppStdString.htm">std::string</a> <a href="CppRibi.htm">ribi</a>::StochasticityInspectorMenuDialog::Get<a href="CppVersion.htm">Version</a>() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> "1.0";<br/>
+}<br/>
+<br/>
+<a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a>&gt; <a href="CppRibi.htm">ribi</a>::StochasticityInspectorMenuDialog::Get<a href="CppVersion.htm">Version</a>History() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"2015-05-26: <a href="CppVersion.htm">version</a> 1.0: initial <a href="CppVersion.htm">version</a>",<br/>
+&nbsp;&nbsp;};<br/>
+}<br/>
+<br/>
+<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::StochasticityInspectorMenuDialog::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppBool.htm">bool</a></b> is_tested{<b><a href="CppFalse.htm">false</a></b>};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (is_tested) <b><a href="CppReturn.htm">return</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;is_tested <a href="CppOperatorAssign.htm">=</a> <b><a href="CppTrue.htm">true</a></b>;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::bm::Process::Test();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::ou::Process::Test();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;StochasticityInspectorMainDialog();<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Test<a href="CppTime.htm">Time</a>r test_<a href="CppTime.htm">time</a>r(<a href="Cpp__func__.htm">__func__</a>,__<a href="CppCfile.htm">FILE</a>__,1.0);<br/>
+}<br/>
+<a href="CppEndif.htm">#endif</a><br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p>&nbsp;</p>
+<p><a href="http://validator.w3.org/check?uri=referer"><img src="valid-xhtml10.png" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a></p>
+<p>This page has been created by the <a href="Tools.htm">tool</a> <a href="ToolCodeToHtml.htm">CodeToHtml</a></p>
+</body>
+</html>

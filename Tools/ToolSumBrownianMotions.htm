@@ -63,7 +63,7 @@ include(../../<a href="CppLibrary.htm">Libraries</a>/GeneralDesktop.pri)<br/>
 include(../../<a href="CppLibrary.htm">Libraries</a>/<a href="CppQwt.htm">Qwt</a>.pri)<br/>
 <br/>
 #Specific, console<br/>
-include(../../<a href="CppClass.htm">Classes</a>/CppHistogram/CppHistogram.pri)<br/>
+include(../../<a href="CppClass.htm">Classes</a>/<a href="CppHistogram.htm">CppHistogram</a>/<a href="CppHistogram.htm">CppHistogram</a>.pri)<br/>
 include(ToolSumBrownianMotionsDesktop.pri)<br/>
 <br/>
 <a href="CppQmakeSources.htm">SOURCES</a> += qt<a href="CppMain.htm">main</a>.cpp<br/>
@@ -742,8 +742,8 @@ Simulation::Simulation(<b><a href="CppConst.htm">const</a></b> Parameters&amp; p
 <b><a href="CppVoid.htm">void</a></b> Simulation::Run() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
 &nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <a href="CppStdMt19937.htm">std::mt19937</a> mt(42);<br/>
-&nbsp;&nbsp;<a href="CppStd.htm">std</a>::normal_distribution&lt;<b><a href="CppDouble.htm">double</a></b>&gt; da(m_parameters.mean_a,m_parameters.stddev_a);<br/>
-&nbsp;&nbsp;<a href="CppStd.htm">std</a>::normal_distribution&lt;<b><a href="CppDouble.htm">double</a></b>&gt; db(m_parameters.mean_b,m_parameters.stddev_b);<br/>
+&nbsp;&nbsp;<a href="CppStdNormal_distribution.htm">std::normal_distribution</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; da(m_parameters.mean_a,m_parameters.stddev_a);<br/>
+&nbsp;&nbsp;<a href="CppStdNormal_distribution.htm">std::normal_distribution</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; db(m_parameters.mean_b,m_parameters.stddev_b);<br/>
 <br/>
 &nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; as;<br/>
 &nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; bs;<br/>

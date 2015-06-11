@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <title>RibiRinside</title>
+  <meta name="description" content="C++ RibiRinside"/>
+  <meta name="keywords" content="C++ RibiRinside "/>
+  <link rel="stylesheet" href="Richelbilderbeek.css" type="text/css"/>
+</head>
+<!-- End of head, start of body -->
+<body>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<!-- Page header -->
+<h1>(<a href="Cpp.htm">C++</a>) <a href="CppRibiRinside.htm">RibiRinside</a></h1>
+<p>&nbsp;</p>
+<!-- No CodeToHtmlInfo about this class with page name CppRibiRinside-->
+<h2>Technical facts</h2>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppRibiRinside/CppRibiRinside.pri</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppRibiRinside/CppRibiRinside.pri" border = "1"><tr><td><code>
+<a href="CppQmakeIncludepath.htm">INCLUDEPATH</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppRibiRinside<br/>
+<br/>
+<a href="CppQmakeSources.htm">SOURCES</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppRibiRinside/ribi_rinside.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppRibiRinside/ribi_rinside_test.cpp<br/>
+<br/>
+<a href="CppQmakeHeaders.htm">HEADERS</a>&nbsp;&nbsp;+= \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppRibiRinside/ribi_rinside.h<br/>
+<br/>
+<br/>
+<a href="CppQmakeOther_files.htm">OTHER_FILES</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppRibiRinside/Licence.txt<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppRibiRinside/ribi_rinside.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppRibiRinside/ribi_rinside.h" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> RIBI_INSIDE_R_H<br/>
+<a href="CppDefine.htm">#define</a> RIBI_INSIDE_R_H<br/>
+<br/>
+<b><a href="CppStruct.htm">struct</a></b> RInside;<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a> {<br/>
+<br/>
+<a href="CppComment.htm">//</a><a href="CppDesignPatternSingleton.htm">Singleton</a> <b><a href="CppFor.htm">for</a></b> an InsideR <a href="CppInstance.htm">instance</a><br/>
+<b><a href="CppStruct.htm">struct</a></b> Rinside<br/>
+{<br/>
+&nbsp;&nbsp;Rinside();<br/>
+&nbsp;&nbsp;RInside&amp; Get();<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppVoid.htm">void</a></b> Test() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+};<br/>
+<br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a><br/>
+<br/>
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> RIBI_INSIDE_R_H<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppRibiRinside/ribi_rinside.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppRibiRinside/ribi_rinside.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "<a href="CppRibi.htm">ribi</a>_rinside.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> "RInside.h"<br/>
+<br/>
+<a href="CppRibi.htm">ribi</a>::Rinside::Rinside()<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;Test();<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+}<br/>
+<br/>
+RInside&amp; <a href="CppRibi.htm">ribi</a>::Rinside::Get()<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> RInside * p{<b><a href="CppNew.htm">new</a></b> RInside};<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(p);<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> *p;<br/>
+}<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppRibiRinside/ribi_rinside_test.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppRibiRinside/ribi_rinside_test.cpp" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppRibi.htm">ribi</a>_rinside.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "RInside.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppFileIo.htm">fileio</a>.h"<br/>
+<br/>
+<b><a href="CppBool.htm">bool</a></b> <b><a href="CppOperatorEqual.htm">operator==</a></b>(<b><a href="CppConst.htm">const</a></b> Rcpp::NumericVector&amp; lhs, <b><a href="CppConst.htm">const</a></b> Rcpp::NumericVector&amp; rhs)<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <a href="CppStdEqual.htm">std::equal</a>(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdBegin.htm">std::begin</a>(lhs),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdEnd.htm">std::end</a>(lhs),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdBegin.htm">std::begin</a>(rhs)<br/>
+&nbsp;&nbsp;);<br/>
+}<br/>
+<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::Rinside::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppBool.htm">bool</a></b> is_tested{<b><a href="CppFalse.htm">false</a></b>};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (is_tested) <b><a href="CppReturn.htm">return</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;is_tested <a href="CppOperatorAssign.htm">=</a> <b><a href="CppTrue.htm">true</a></b>;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a>();<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppAuto.htm">auto</a></b>&amp; r <a href="CppOperatorAssign.htm">=</a> Rinside().Get();<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> f <a href="CppOperatorAssign.htm">=</a> <a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a>();<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Read/write of <a href="CppInt.htm">integer</a><br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;r["x"] <a href="CppOperatorAssign.htm">=</a> 42;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Rcpp::NumericVector v <a href="CppOperatorAssign.htm">=</a> r.parseEval("x");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(v.size() <a href="CppOperatorEqual.htm">==</a> 1);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(v[0] <a href="CppOperatorEqual.htm">==</a> 42);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Read/write of <a href="CppInt.htm">integer</a> vector<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Rcpp::NumericVector v <a href="CppOperatorAssign.htm">=</a> {1,2,3};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;r["v"] <a href="CppOperatorAssign.htm">=</a> v;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Rcpp::NumericVector w <a href="CppOperatorAssign.htm">=</a> r.parseEval("v");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(v <a href="CppOperatorEqual.htm">==</a> w);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Read/write of plot with known name<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b>(f.<a href="CppIsRegularFile.htm">IsRegularFile</a>("tmp.png")) { f.<a href="CppDeleteFile.htm">DeleteFile</a>("tmp.png"); }<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!f.<a href="CppIsRegularFile.htm">IsRegularFile</a>("tmp.png"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;r.parseEval("png(filename=\"tmp.png\")");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;r.parseEval("plot(sin)");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;r.parseEval("dev.off()");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(f.<a href="CppIsRegularFile.htm">IsRegularFile</a>("tmp.png"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;f.<a href="CppDeleteFile.htm">DeleteFile</a>("tmp.png");<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> <a href="CppNewick.htm">newick</a>{"((F:2,G:2):1,H:3);"};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b>(f.<a href="CppIsRegularFile.htm">IsRegularFile</a>("tmp.png")) { f.<a href="CppDeleteFile.htm">DeleteFile</a>("tmp.png"); }<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!f.<a href="CppIsRegularFile.htm">IsRegularFile</a>("tmp.png"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;r.parseEvalQ("<a href="CppLibrary.htm">library</a>(ape)");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;r.parseEvalQ("<a href="CppLibrary.htm">library</a>(geiger)");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;r["<a href="CppNewick.htm">newick</a>"] <a href="CppOperatorAssign.htm">=</a> <a href="CppNewick.htm">newick</a>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;r.parseEvalQ("phylogeny &lt;<a href="CppOperatorMinus.htm">-</a> read.tree(text <a href="CppOperatorAssign.htm">=</a> <a href="CppNewick.htm">newick</a>)");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;r.parseEvalQ("png(filename=\"tmp.png\")");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;r.parseEvalQ("plot(phylogeny)");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;r.parseEvalQ("dev.off()");<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(f.<a href="CppIsRegularFile.htm">IsRegularFile</a>("tmp.png"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;f.<a href="CppDeleteFile.htm">DeleteFile</a>("tmp.png");<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Use <a href="CppAny.htm">any</a> filename<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> filename <a href="CppOperatorAssign.htm">=</a> f.GetTempFileName(".png");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!f.<a href="CppIsRegularFile.htm">IsRegularFile</a>(filename));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;r.parseEval("png(filename=\""+filename+"\")");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;r.parseEval("plot(sin)");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;r.parseEval("dev.off()");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(f.<a href="CppIsRegularFile.htm">IsRegularFile</a>(filename));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;f.<a href="CppDeleteFile.htm">DeleteFile</a>(filename);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Use <a href="CppAny.htm">any</a> filename with a name in the R script<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> filename <a href="CppOperatorAssign.htm">=</a> f.GetTempFileName(".png");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!f.<a href="CppIsRegularFile.htm">IsRegularFile</a>(filename));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;r["png_filename"] <a href="CppOperatorAssign.htm">=</a> filename;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;r.parseEval("png(filename=png_filename)");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;r.parseEval("plot(sin)");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;r.parseEval("dev.off()");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(f.<a href="CppIsRegularFile.htm">IsRegularFile</a>(filename));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;f.<a href="CppDeleteFile.htm">DeleteFile</a>(filename);<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppAssert.htm">assert</a>(1<a href="CppOperatorEqual.htm">==</a>2);<br/>
+}<br/>
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p>&nbsp;</p>
+<p><a href="http://validator.w3.org/check?uri=referer"><img src="valid-xhtml10.png" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a></p>
+<p>This page has been created by the <a href="Tools.htm">tool</a> <a href="ToolCodeToHtml.htm">CodeToHtml</a></p>
+</body>
+</html>

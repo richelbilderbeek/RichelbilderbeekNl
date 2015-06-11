@@ -2134,7 +2134,7 @@ Rng::Rng(<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a>
 &nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppCase.htm">case</a></b> Type::rosindell: <b><a href="CppReturn.htm">return</a></b> m_nrrand.GetRandomInt(max);<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppCase.htm">case</a></b> Type::bilderbeek:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStd.htm">std</a>::uniform_int_distribution&lt;<b><a href="CppInt.htm">int</a></b>&gt; d(0,max);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdUniform_int_distribution.htm">std::uniform_int_distribution</a>&lt;<b><a href="CppInt.htm">int</a></b>&gt; d(0,max);<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> x{d(m_mt)};<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> x;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;}<br/>
@@ -2151,7 +2151,7 @@ Rng::Rng(<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a>
 &nbsp;&nbsp;&nbsp;&nbsp;{<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> mean{0.0};<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> sigma{1.0};<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <a href="CppStd.htm">std</a>::normal_distribution&lt;<b><a href="CppDouble.htm">double</a></b>&gt; d(mean,sigma);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <a href="CppStdNormal_distribution.htm">std::normal_distribution</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; d(mean,sigma);<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> x{d(m_mt)};<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> x;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;}<br/>
