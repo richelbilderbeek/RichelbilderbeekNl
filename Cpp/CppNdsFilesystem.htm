@@ -3,9 +3,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-  <title>NDS FAQ</title>
-  <meta name="description" content="C++ NDS FAQ"/>
-  <meta name="keywords" content="C++ NDS FAQ code snippet"/>
+  <title>NDS filesystem</title>
+  <meta name="description" content="C++ NDS filesystem"/>
+  <meta name="keywords" content="C++ NDS filesystem"/>
   <link rel="stylesheet" href="Richelbilderbeek.css" type="text/css"/>
 </head>
 <!-- End of head, start of body -->
@@ -18,19 +18,17 @@
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <!-- Page header -->
-<h1>(<a href="Cpp.htm">C++</a>) <img src="PicNds.png" alt="NDS"/> <a href="CppNdsFaq.htm">NDS FAQ</a></h1>
+<h1>(<a href="Cpp.htm">C++</a>) <img src="PicNds.png" alt="NDS"/> <a href="CppNdsFilesystem.htm">Can I use the NDS filesystem?</a></h1>
 <p>&nbsp;</p>
 <p><a href="CppFaq.htm">FAQ</a> page about <a href="CppNds.htm">NDS</a> development.</p>
 <p>&nbsp;</p>
-<ol>
-  <li><a href="CppHelloWorldQtCreatorUbuntuNds.htm">How to create a 'Hello World' program using Qt Creator under Ubuntu for NDS?</a></li>
-  <li><a href="CppCrossCompile.htm">How to cross compile using Qt Creator under Ubuntu to NDS?</a></li>
-  <li><a href="CppNdsGraphicMode.htm">Which graphic modes does the NDS have?</a></li>
-  <li><a href="CppNdsLibraries.htm">Which libraries can be used for (C++) NDS development?</a></li>
-  <li><a href="CppNdsFilesystem.htm">Can I use the NDS filesystem?</a> (spoiler: no)</li>
-  <li><a href="CppNdsStdCout.htm">Can I use std::cout?</a> (spoiler: no, 50% sure)</li>
-  <li><a href="CppNdsStdChronoHigh_resolution_clock.htm">Can I use std::chrono::high_resolution_clock?</a> (spoiler: no, 90% sure)</li>
-</ol>
+<p>
+  Short answer: No
+</p>
+<p>&nbsp;</p>
+<p>
+  Longer answer: Yes, if you only run it in the emulator. On real hardware, the function nitroFSInit will cause a freeze.
+</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
