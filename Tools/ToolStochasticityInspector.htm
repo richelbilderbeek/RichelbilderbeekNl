@@ -1169,7 +1169,7 @@ include(../../<a href="Tools.htm">Tools</a>/ToolStochasticityInspector/ToolStoch
 <a href="CppRibi.htm">ribi</a>::StochasticityInspectorMainDialog::HlrtResult<br/>
 &nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::StochasticityInspectorMainDialog::DoHierarchicalLikelihoodRatioTest() <b><a href="CppConst.htm">const</a></b><br/>
 {<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppBool.htm">bool</a></b> verbose{<b><a href="CppTrue.htm">true</a></b>};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppBool.htm">bool</a></b> verbose{<b><a href="CppFalse.htm">false</a></b>};<br/>
 <br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> log_likelihood_bm <a href="CppOperatorAssign.htm">=</a> <a href="CppRibi.htm">ribi</a>::bm::Helper().CalcMaxLogLikelihood(m_xs);<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> log_likelihood_ou <a href="CppOperatorAssign.htm">=</a> <a href="CppRibi.htm">ribi</a>::ou::Helper().CalcMaxLogLikelihood(m_xs);<br/>
@@ -1220,7 +1220,7 @@ include(../../<a href="Tools.htm">Tools</a>/ToolStochasticityInspector/ToolStoch
 &nbsp;&nbsp;}<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Test<a href="CppTime.htm">Time</a>r test_<a href="CppTime.htm">time</a>r(<a href="Cpp__func__.htm">__func__</a>,__<a href="CppCfile.htm">FILE</a>__,1.0);<br/>
 <br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppBool.htm">bool</a></b> verbose{<b><a href="CppTrue.htm">true</a></b>};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppBool.htm">bool</a></b> verbose{<b><a href="CppFalse.htm">false</a></b>};<br/>
 &nbsp;&nbsp;<a href="CppComment.htm">//</a>Brownian motion<br/>
 &nbsp;&nbsp;{<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;StochasticityInspectorMainDialog d(<br/>

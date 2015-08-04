@@ -59,11 +59,14 @@
 <a href="CppDefine.htm">#define</a> RIBI_PHYLOGENY_R_H<br/>
 <br/>
 <a href="CppInclude.htm">#include</a> &lt;<a href="CppMemoryH.htm">memory</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppStringH.htm">string</a>&gt;<br/>
 <a href="CppInclude.htm">#include</a> &lt;<a href="CppVectorH.htm">vector</a>&gt;<br/>
 <br/>
 <a href="CppInclude.htm">#include</a> "RInside.h"<br/>
 <br/>
 <b><a href="CppStruct.htm">struct</a></b> RInside;<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a> {<br/>
 <br/>
 <b><a href="CppStruct.htm">struct</a></b> PhylogenyR<br/>
 {<br/>
@@ -76,6 +79,9 @@
 &nbsp;&nbsp;<a href="CppStdString.htm">std::string</a> DropExtinct(<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a><br/>
 &nbsp;&nbsp;) <b><a href="CppConst.htm">const</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppStdString.htm">std::string</a> Get<a href="CppVersion.htm">Version</a>() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a>&gt; Get<a href="CppVersion.htm">Version</a>History() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
 <br/>
 &nbsp;&nbsp;<a href="CppComment.htm">//</a>/Make a histogram of the branching <a href="CppTime.htm">time</a>s<br/>
 &nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> <a href="CppNewick.htm">Newick</a>ToBranching<a href="CppTime.htm">Time</a>s(<br/>
@@ -95,8 +101,7 @@
 &nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> <a href="CppNewick.htm">Newick</a>ToLttPlot(<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; filename,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> GraphicsFormat graphics_format,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppBool.htm">bool</a></b> plot_fossils <a href="CppOperatorAssign.htm">=</a> <b><a href="CppTrue.htm">true</a></b><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> GraphicsFormat graphics_format<br/>
 &nbsp;&nbsp;) <b><a href="CppConst.htm">const</a></b>;<br/>
 <br/>
 &nbsp;&nbsp;<a href="CppComment.htm">//</a>/Plot <a href="CppNewick.htm">Newick</a> as a phylogeny in a graphics format<br/>
@@ -104,45 +109,54 @@
 &nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> <a href="CppNewick.htm">Newick</a>ToPhylogeny(<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; filename,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> GraphicsFormat graphics_format,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppBool.htm">bool</a></b> plot_fossils <a href="CppOperatorAssign.htm">=</a> <b><a href="CppTrue.htm">true</a></b><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> GraphicsFormat graphics_format<br/>
 &nbsp;&nbsp;) <b><a href="CppConst.htm">const</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/<a href="CppConvert.htm">Converts</a> a phylogeny, with the<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/name 'phylogeny_name' known<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/inside RInside to <a href="CppStdString.htm">std::string</a><br/>
+&nbsp;&nbsp;<a href="CppStdString.htm">std::string</a> PhylogenyTo<a href="CppNewick.htm">Newick</a>(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; phylogeny_name<br/>
+&nbsp;&nbsp;);<br/>
+<br/>
 <br/>
 &nbsp;&nbsp;<b><a href="CppPrivate.htm">private</a></b>:<br/>
 <br/>
-&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> <a href="CppNewick.htm">Newick</a>ToLttPlotRscript(<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Make a histogram of the branching <a href="CppTime.htm">time</a>s<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> <a href="CppNewick.htm">Newick</a>ToBranching<a href="CppTime.htm">Time</a>sRinside(<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; filename,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> GraphicsFormat graphics_format,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppBool.htm">bool</a></b> plot_fossils <a href="CppOperatorAssign.htm">=</a> <b><a href="CppTrue.htm">true</a></b><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> GraphicsFormat graphics_format<br/>
 &nbsp;&nbsp;) <b><a href="CppConst.htm">const</a></b>;<br/>
 <br/>
-&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> <a href="CppNewick.htm">Newick</a>ToLttPlotRinside(<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Make a histogram of the branching <a href="CppTime.htm">time</a>s<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> <a href="CppNewick.htm">Newick</a>ToBranching<a href="CppTime.htm">Time</a>sRscript(<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; filename,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> GraphicsFormat graphics_format,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppBool.htm">bool</a></b> plot_fossils <a href="CppOperatorAssign.htm">=</a> <b><a href="CppTrue.htm">true</a></b><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> GraphicsFormat graphics_format<br/>
 &nbsp;&nbsp;) <b><a href="CppConst.htm">const</a></b>;<br/>
 <br/>
-&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> <a href="CppNewick.htm">Newick</a>ToPhylogenyRscript(<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Make a histogram of the branch length<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> <a href="CppNewick.htm">Newick</a>ToBranchLengthsRinside(<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; filename,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> GraphicsFormat graphics_format,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppBool.htm">bool</a></b> plot_fossils <a href="CppOperatorAssign.htm">=</a> <b><a href="CppTrue.htm">true</a></b><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> GraphicsFormat graphics_format<br/>
 &nbsp;&nbsp;) <b><a href="CppConst.htm">const</a></b>;<br/>
 <br/>
-&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> <a href="CppNewick.htm">Newick</a>ToPhylogenyRinside(<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Make a histogram of the branch length<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> <a href="CppNewick.htm">Newick</a>ToBranchLengthsRscript(<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; filename,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> GraphicsFormat graphics_format,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppBool.htm">bool</a></b> plot_fossils <a href="CppOperatorAssign.htm">=</a> <b><a href="CppTrue.htm">true</a></b><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> GraphicsFormat graphics_format<br/>
 &nbsp;&nbsp;) <b><a href="CppConst.htm">const</a></b>;<br/>
+<br/>
 <br/>
 &nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
 &nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppVoid.htm">void</a></b> Test() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
 &nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
 };<br/>
 <br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a><br/>
 <br/>
 <a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> RIBI_PHYLOGENY_R_H<br/>
 </code></td></tr></table>
@@ -167,89 +181,61 @@
 <a href="CppInclude.htm">#include</a> "<a href="CppRibi.htm">ribi</a>_rinside.h"<br/>
 <a href="CppInclude.htm">#include</a> "<a href="CppFileIo.htm">fileio</a>.h"<br/>
 <br/>
-PhylogenyR::PhylogenyR()<br/>
+<a href="CppRibi.htm">ribi</a>::PhylogenyR::PhylogenyR()<br/>
 {<br/>
 &nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
 &nbsp;&nbsp;Test();<br/>
 &nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
 }<br/>
 <br/>
-<br/>
-<a href="CppStdString.htm">std::string</a> PhylogenyR::DropExtinct(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>) <b><a href="CppConst.htm">const</a></b><br/>
+<a href="CppStdString.htm">std::string</a> <a href="CppRibi.htm">ribi</a>::PhylogenyR::DropExtinct(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>) <b><a href="CppConst.htm">const</a></b><br/>
 {<br/>
 &nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!<a href="CppNewick.htm">newick</a>.empty());<br/>
 <br/>
-&nbsp;&nbsp;<a href="CppComment.htm">//</a>TODO: Test <b><a href="CppIf.htm">if</a></b> the user has all required packages<br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> temp_r_filename{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a>().GetTempFileName(".R")<br/>
-&nbsp;&nbsp;};<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> temp_<a href="CppNewick.htm">newick</a>_filename{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a>().GetTempFileName(".<b><a href="CppNew.htm">new</a></b>")<br/>
-&nbsp;&nbsp;};<br/>
-<br/>
-&nbsp;&nbsp;<a href="CppComment.htm">//</a>Create the R script<br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdOfstream.htm">std::ofstream</a> f(temp_r_filename.c_str());<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;f<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "<a href="CppLibrary.htm">library</a>(ape)" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "<a href="CppLibrary.htm">library</a>(geiger)" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "<a href="CppNewick.htm">newick</a> &lt;<a href="CppOperatorMinus.htm">-</a> \"" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="CppNewick.htm">newick</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "\"" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "phylogeny &lt;<a href="CppOperatorMinus.htm">-</a> read.tree(text <a href="CppOperatorAssign.htm">=</a> <a href="CppNewick.htm">newick</a>)" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "phylogeny &lt;<a href="CppOperatorMinus.htm">-</a> drop.extinct(phylogeny)" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "write.tree(phylogeny,file=\"" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> temp_<a href="CppNewick.htm">newick</a>_filename <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "\")" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;;<br/>
-&nbsp;&nbsp;}<br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!<a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a>().<a href="CppIsRegularFile.htm">IsRegularFile</a>(temp_r_filename))<br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdStringstream.htm">std::stringstream</a> s;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;s <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> __<a href="CppCfile.htm">FILE</a>__ <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "(" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> __LINE__ <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "): "<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "Could not create temporary R script file "<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "with filename '" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> temp_r_filename <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "'";<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppThrow.htm">throw</a></b> <a href="CppStdRuntime_error.htm">std::runtime_error</a>(s.str().c_str());<br/>
-&nbsp;&nbsp;}<br/>
-<br/>
-&nbsp;&nbsp;<a href="CppComment.htm">//</a>Execute the R script<br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdStringstream.htm">std::stringstream</a> cmd;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;cmd <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "Rscript " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> temp_r_filename;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> error{<a href="CppStdSystem.htm">std::system</a>(cmd.str().c_str())};<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (error)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdClog.htm">std::clog</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> __<a href="CppCfile.htm">FILE</a>__ <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> ": error " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> error <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n';<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
-&nbsp;&nbsp;}<br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!<a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a>().<a href="CppIsRegularFile.htm">IsRegularFile</a>(temp_<a href="CppNewick.htm">newick</a>_filename))<br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdStringstream.htm">std::stringstream</a> s;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;s <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> __<a href="CppCfile.htm">FILE</a>__ <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "(" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> __LINE__ <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "): "<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "Could not create temporary <a href="CppNewick.htm">Newick</a> file "<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "with filename '" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> temp_<a href="CppNewick.htm">newick</a>_filename <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "'. "<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "Perhaps not all packages (ape, geiger) needed are installed? "<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "You can <b><a href="CppTry.htm">try</a></b> to run the temporary R script file '"<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> temp_r_filename<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "' yourself to see which error it gives"<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppThrow.htm">throw</a></b> <a href="CppStdRuntime_error.htm">std::runtime_error</a>(s.str().c_str());<br/>
-&nbsp;&nbsp;}<br/>
-&nbsp;&nbsp;<a href="CppComment.htm">//</a>After detection. so user can check script<br/>
-&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a>().<a href="CppDeleteFile.htm">DeleteFile</a>(temp_r_filename);<br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> <a href="CppNewick.htm">newick</a>_extant{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a>().FileToStr(temp_<a href="CppNewick.htm">newick</a>_filename)<br/>
-&nbsp;&nbsp;};<br/>
-<br/>
-&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a>().<a href="CppDeleteFile.htm">DeleteFile</a>(temp_<a href="CppNewick.htm">newick</a>_filename);<br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <a href="CppNewick.htm">newick</a>_extant;<br/>
+&nbsp;&nbsp;<b><a href="CppAuto.htm">auto</a></b>&amp; r <a href="CppOperatorAssign.htm">=</a> <a href="CppRibi.htm">ribi</a>::Rinside().Get();<br/>
+&nbsp;&nbsp;r.parseEval("<a href="CppLibrary.htm">library</a>(ape)");<br/>
+&nbsp;&nbsp;r.parseEval("<a href="CppLibrary.htm">library</a>(geiger)");<br/>
+&nbsp;&nbsp;r["<a href="CppNewick.htm">newick</a>"] <a href="CppOperatorAssign.htm">=</a> <a href="CppNewick.htm">newick</a>;<br/>
+&nbsp;&nbsp;r.parseEval("phylogeny &lt;<a href="CppOperatorMinus.htm">-</a> read.tree(text <a href="CppOperatorAssign.htm">=</a> <a href="CppNewick.htm">newick</a>)");<br/>
+&nbsp;&nbsp;r.parseEval("phylogeny &lt;<a href="CppOperatorMinus.htm">-</a> drop.extinct(phylogeny)");<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Rcpp::String s <a href="CppOperatorAssign.htm">=</a> r.parseEval("write.tree(phylogeny)");<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <a href="CppStdString.htm">std::string</a>(s);<br/>
 }<br/>
 <br/>
-<b><a href="CppVoid.htm">void</a></b> PhylogenyR::<a href="CppNewick.htm">Newick</a>ToBranching<a href="CppTime.htm">Time</a>s(<br/>
+<a href="CppStdString.htm">std::string</a> <a href="CppRibi.htm">ribi</a>::PhylogenyR::Get<a href="CppVersion.htm">Version</a>() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> "1.0";<br/>
+}<br/>
+<br/>
+<a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a>&gt; <a href="CppRibi.htm">ribi</a>::PhylogenyR::Get<a href="CppVersion.htm">Version</a>History() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"2015-06-13: <a href="CppVersion.htm">Version</a> 1.0: started <a href="CppVersion.htm">version</a>ing"<br/>
+&nbsp;&nbsp;};<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::PhylogenyR::<a href="CppNewick.htm">Newick</a>ToBranching<a href="CppTime.htm">Time</a>s(<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>,<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; filename,<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> PhylogenyR::GraphicsFormat graphics_format<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppRibi.htm">ribi</a>::PhylogenyR::GraphicsFormat graphics_format<br/>
+) <b><a href="CppConst.htm">const</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppNewick.htm">Newick</a>ToBranching<a href="CppTime.htm">Time</a>sRinside(<a href="CppNewick.htm">newick</a>,filename,graphics_format);<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::PhylogenyR::<a href="CppNewick.htm">Newick</a>ToBranching<a href="CppTime.htm">Time</a>sRinside(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; filename,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppRibi.htm">ribi</a>::PhylogenyR::GraphicsFormat graphics_format<br/>
+) <b><a href="CppConst.htm">const</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppNewick.htm">Newick</a>ToBranching<a href="CppTime.htm">Time</a>sRscript(<a href="CppNewick.htm">newick</a>,filename,graphics_format);<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::PhylogenyR::<a href="CppNewick.htm">Newick</a>ToBranching<a href="CppTime.htm">Time</a>sRscript(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; filename,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppRibi.htm">ribi</a>::PhylogenyR::GraphicsFormat graphics_format<br/>
 ) <b><a href="CppConst.htm">const</a></b><br/>
 {<br/>
 &nbsp;&nbsp;<a href="CppComment.htm">//</a>TODO: Test <b><a href="CppIf.htm">if</a></b> the user has all required packages<br/>
@@ -322,10 +308,28 @@ PhylogenyR::PhylogenyR()<br/>
 &nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a>().<a href="CppDeleteFile.htm">DeleteFile</a>(temp_r_filename);<br/>
 }<br/>
 <br/>
-<b><a href="CppVoid.htm">void</a></b> PhylogenyR::<a href="CppNewick.htm">Newick</a>ToBranchLengths(<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::PhylogenyR::<a href="CppNewick.htm">Newick</a>ToBranchLengths(<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>,<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; filename,<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> PhylogenyR::GraphicsFormat graphics_format<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppRibi.htm">ribi</a>::PhylogenyR::GraphicsFormat graphics_format<br/>
+) <b><a href="CppConst.htm">const</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppNewick.htm">Newick</a>ToBranchLengthsRinside(<a href="CppNewick.htm">newick</a>,filename,graphics_format);<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::PhylogenyR::<a href="CppNewick.htm">Newick</a>ToBranchLengthsRinside(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; filename,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppRibi.htm">ribi</a>::PhylogenyR::GraphicsFormat graphics_format<br/>
+) <b><a href="CppConst.htm">const</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppNewick.htm">Newick</a>ToBranchLengthsRscript(<a href="CppNewick.htm">newick</a>,filename,graphics_format);<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::PhylogenyR::<a href="CppNewick.htm">Newick</a>ToBranchLengthsRscript(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; filename,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppRibi.htm">ribi</a>::PhylogenyR::GraphicsFormat graphics_format<br/>
 ) <b><a href="CppConst.htm">const</a></b><br/>
 {<br/>
 &nbsp;&nbsp;<a href="CppComment.htm">//</a>TODO: Test <b><a href="CppIf.htm">if</a></b> the user has all required packages<br/>
@@ -398,103 +402,10 @@ PhylogenyR::PhylogenyR()<br/>
 &nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a>().<a href="CppDeleteFile.htm">DeleteFile</a>(temp_r_filename);<br/>
 }<br/>
 <br/>
-<b><a href="CppVoid.htm">void</a></b> PhylogenyR::<a href="CppNewick.htm">Newick</a>ToLttPlot(<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::PhylogenyR::<a href="CppNewick.htm">Newick</a>ToLttPlot(<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>,<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; filename,<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> PhylogenyR::GraphicsFormat graphics_format,<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppBool.htm">bool</a></b> plot_fossils<br/>
-) <b><a href="CppConst.htm">const</a></b><br/>
-{<br/>
-&nbsp;&nbsp;<a href="CppNewick.htm">Newick</a>ToLttPlotRinside(<a href="CppNewick.htm">newick</a>,filename,graphics_format,plot_fossils);<br/>
-}<br/>
-<br/>
-<b><a href="CppVoid.htm">void</a></b> PhylogenyR::<a href="CppNewick.htm">Newick</a>ToLttPlotRscript(<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>,<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; filename,<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> PhylogenyR::GraphicsFormat graphics_format,<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppBool.htm">bool</a></b> plot_fossils<br/>
-) <b><a href="CppConst.htm">const</a></b><br/>
-{<br/>
-&nbsp;&nbsp;<a href="CppComment.htm">//</a>TODO: Test <b><a href="CppIf.htm">if</a></b> the user has all required packages<br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> temp_r_filename{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a>().GetTempFileName(".R")<br/>
-&nbsp;&nbsp;};<br/>
-<br/>
-&nbsp;&nbsp;<a href="CppComment.htm">//</a>Create the R script<br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdOfstream.htm">std::ofstream</a> f(temp_r_filename.c_str());<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;f<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "<a href="CppLibrary.htm">library</a>(ape)" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "<a href="CppLibrary.htm">library</a>(geiger)" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppSwitch.htm">switch</a></b> (graphics_format)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppCase.htm">case</a></b> GraphicsFormat::png:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "png(filename=\"" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> filename <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "\")" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n';<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppBreak.htm">break</a></b>;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppCase.htm">case</a></b> GraphicsFormat::svg:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "svg(filename=\"" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> filename <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "\")" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n';<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppBreak.htm">break</a></b>;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
-<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;f<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "<a href="CppNewick.htm">newick</a> &lt;<a href="CppOperatorMinus.htm">-</a> \"" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="CppNewick.htm">newick</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "\"" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "phylogeny &lt;<a href="CppOperatorMinus.htm">-</a> read.tree(text <a href="CppOperatorAssign.htm">=</a> <a href="CppNewick.htm">newick</a>)" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!plot_fossils)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "phylogeny &lt;<a href="CppOperatorMinus.htm">-</a> drop.extinct(phylogeny)" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n';<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;f<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "ltt.plot(phylogeny)" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "dev.off()" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n';<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;;<br/>
-&nbsp;&nbsp;}<br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!<a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a>().<a href="CppIsRegularFile.htm">IsRegularFile</a>(temp_r_filename))<br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdStringstream.htm">std::stringstream</a> s;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;s <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> __<a href="CppCfile.htm">FILE</a>__ <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "(" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> __LINE__ <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "): "<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "Could not create temporary R script file "<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "with filename '" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> temp_r_filename <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "'";<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppThrow.htm">throw</a></b> <a href="CppStdRuntime_error.htm">std::runtime_error</a>(s.str().c_str());<br/>
-&nbsp;&nbsp;}<br/>
-<br/>
-&nbsp;&nbsp;<a href="CppComment.htm">//</a>Execute the R script<br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdStringstream.htm">std::stringstream</a> cmd;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;cmd <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "Rscript " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> temp_r_filename;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> error{<a href="CppStdSystem.htm">std::system</a>(cmd.str().c_str())};<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (error)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdClog.htm">std::clog</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> __<a href="CppCfile.htm">FILE</a>__ <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> ": error " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> error <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n';<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
-&nbsp;&nbsp;}<br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!<a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a>().<a href="CppIsRegularFile.htm">IsRegularFile</a>(filename))<br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdStringstream.htm">std::stringstream</a> s;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;s <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> __<a href="CppCfile.htm">FILE</a>__ <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "(" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> __LINE__ <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "): "<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "Could not create SVG "<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "with filename '" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> filename <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "'. "<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "Perhaps not all packages (ape, geiger) needed are installed? "<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "You can <b><a href="CppTry.htm">try</a></b> to run the temporary R script file '"<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> temp_r_filename<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "' yourself to see which error it gives"<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppThrow.htm">throw</a></b> <a href="CppStdRuntime_error.htm">std::runtime_error</a>(s.str().c_str());<br/>
-&nbsp;&nbsp;}<br/>
-<br/>
-&nbsp;&nbsp;<a href="CppComment.htm">//</a>Delete the temporary R file<br/>
-&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a>().<a href="CppDeleteFile.htm">DeleteFile</a>(temp_r_filename);<br/>
-}<br/>
-<br/>
-<b><a href="CppVoid.htm">void</a></b> PhylogenyR::<a href="CppNewick.htm">Newick</a>ToLttPlotRinside(<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>,<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; filename,<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> PhylogenyR::GraphicsFormat graphics_format,<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppBool.htm">bool</a></b> plot_fossils<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppRibi.htm">ribi</a>::PhylogenyR::GraphicsFormat graphics_format<br/>
 ) <b><a href="CppConst.htm">const</a></b><br/>
 {<br/>
 &nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!<a href="CppNewick.htm">newick</a>.empty());<br/>
@@ -508,11 +419,6 @@ PhylogenyR::PhylogenyR()<br/>
 &nbsp;&nbsp;r["temp_filename"] <a href="CppOperatorAssign.htm">=</a> filename;<br/>
 &nbsp;&nbsp;r["<a href="CppNewick.htm">newick</a>"] <a href="CppOperatorAssign.htm">=</a> <a href="CppNewick.htm">newick</a>;<br/>
 &nbsp;&nbsp;r.parseEvalQ("phylogeny &lt;<a href="CppOperatorMinus.htm">-</a> read.tree(text <a href="CppOperatorAssign.htm">=</a> <a href="CppNewick.htm">newick</a>)");<br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!plot_fossils)<br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;r.parseEvalQ("phylogeny &lt;<a href="CppOperatorMinus.htm">-</a> drop.extinct(phylogeny)");<br/>
-&nbsp;&nbsp;}<br/>
 <br/>
 &nbsp;&nbsp;<b><a href="CppSwitch.htm">switch</a></b> (graphics_format)<br/>
 &nbsp;&nbsp;{<br/>
@@ -538,107 +444,10 @@ PhylogenyR::PhylogenyR()<br/>
 &nbsp;&nbsp;}<br/>
 }<br/>
 <br/>
-<b><a href="CppVoid.htm">void</a></b> PhylogenyR::<a href="CppNewick.htm">Newick</a>ToPhylogeny(<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::PhylogenyR::<a href="CppNewick.htm">Newick</a>ToPhylogeny(<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>,<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; filename,<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> GraphicsFormat graphics_format,<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppBool.htm">bool</a></b> plot_fossils<br/>
-) <b><a href="CppConst.htm">const</a></b><br/>
-{<br/>
-&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <a href="CppNewick.htm">Newick</a>ToPhylogenyRinside(<a href="CppNewick.htm">newick</a>,filename,graphics_format,plot_fossils);<br/>
-}<br/>
-<br/>
-<b><a href="CppVoid.htm">void</a></b> PhylogenyR::<a href="CppNewick.htm">Newick</a>ToPhylogenyRscript(<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>,<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; filename,<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> PhylogenyR::GraphicsFormat graphics_format,<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppBool.htm">bool</a></b> plot_fossils<br/>
-) <b><a href="CppConst.htm">const</a></b><br/>
-{<br/>
-&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!<a href="CppNewick.htm">newick</a>.empty());<br/>
-&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!filename.empty());<br/>
-<br/>
-&nbsp;&nbsp;<a href="CppComment.htm">//</a>TODO: Test <b><a href="CppIf.htm">if</a></b> the user has all required packages<br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> temp_r_filename{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a>().GetTempFileName(".R")<br/>
-&nbsp;&nbsp;};<br/>
-<br/>
-&nbsp;&nbsp;<a href="CppComment.htm">//</a>Create the R script<br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdOfstream.htm">std::ofstream</a> f(temp_r_filename.c_str());<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;f<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "<a href="CppLibrary.htm">library</a>(ape)" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "<a href="CppLibrary.htm">library</a>(geiger)" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppSwitch.htm">switch</a></b> (graphics_format)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppCase.htm">case</a></b> GraphicsFormat::png:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "png(filename=\"" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> filename <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "\")" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n';<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppBreak.htm">break</a></b>;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppCase.htm">case</a></b> GraphicsFormat::svg:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "svg(filename=\"" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> filename <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "\")" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n';<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppBreak.htm">break</a></b>;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
-<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;f<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "<a href="CppNewick.htm">newick</a> &lt;<a href="CppOperatorMinus.htm">-</a> \"" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="CppNewick.htm">newick</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "\"" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "phylogeny &lt;<a href="CppOperatorMinus.htm">-</a> read.tree(text <a href="CppOperatorAssign.htm">=</a> <a href="CppNewick.htm">newick</a>)" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!plot_fossils)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "phylogeny &lt;<a href="CppOperatorMinus.htm">-</a> drop.extinct(phylogeny)" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n';<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;f<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "plot(phylogeny)" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "dev.off()" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n';<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;;<br/>
-&nbsp;&nbsp;}<br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!<a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a>().<a href="CppIsRegularFile.htm">IsRegularFile</a>(temp_r_filename))<br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdStringstream.htm">std::stringstream</a> s;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;s <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> __<a href="CppCfile.htm">FILE</a>__ <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "(" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> __LINE__ <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "): "<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "Could not create temporary R script file "<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "with filename '" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> temp_r_filename <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "'";<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppThrow.htm">throw</a></b> <a href="CppStdRuntime_error.htm">std::runtime_error</a>(s.str().c_str());<br/>
-&nbsp;&nbsp;}<br/>
-<br/>
-&nbsp;&nbsp;<a href="CppComment.htm">//</a>Execute the R script<br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdStringstream.htm">std::stringstream</a> cmd;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;cmd <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "Rscript " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> temp_r_filename;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> error{<a href="CppStdSystem.htm">std::system</a>(cmd.str().c_str())};<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (error)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdClog.htm">std::clog</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> __<a href="CppCfile.htm">FILE</a>__ <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> ": error " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> error <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n';<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
-&nbsp;&nbsp;}<br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!<a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a>().<a href="CppIsRegularFile.htm">IsRegularFile</a>(filename))<br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdStringstream.htm">std::stringstream</a> s;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;s <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> __<a href="CppCfile.htm">FILE</a>__ <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "(" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> __LINE__ <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "): "<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "Could not create SVG "<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "with filename '" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> filename <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "'. "<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "Perhaps not all packages (ape, geiger) needed are installed? "<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "You can <b><a href="CppTry.htm">try</a></b> to run the temporary R script file '"<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> temp_r_filename<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "' yourself to see which error it gives"<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppThrow.htm">throw</a></b> <a href="CppStdRuntime_error.htm">std::runtime_error</a>(s.str().c_str());<br/>
-&nbsp;&nbsp;}<br/>
-<br/>
-&nbsp;&nbsp;<a href="CppComment.htm">//</a>Delete the temporary R file<br/>
-&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a>().<a href="CppDeleteFile.htm">DeleteFile</a>(temp_r_filename);<br/>
-<br/>
-}<br/>
-<br/>
-<b><a href="CppVoid.htm">void</a></b> PhylogenyR::<a href="CppNewick.htm">Newick</a>ToPhylogenyRinside(<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>,<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; filename,<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> PhylogenyR::GraphicsFormat graphics_format,<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppBool.htm">bool</a></b> plot_fossils<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppRibi.htm">ribi</a>::PhylogenyR::GraphicsFormat graphics_format<br/>
 ) <b><a href="CppConst.htm">const</a></b><br/>
 {<br/>
 &nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!<a href="CppNewick.htm">newick</a>.empty());<br/>
@@ -652,11 +461,6 @@ PhylogenyR::PhylogenyR()<br/>
 &nbsp;&nbsp;r["temp_filename"] <a href="CppOperatorAssign.htm">=</a> filename;<br/>
 &nbsp;&nbsp;r["<a href="CppNewick.htm">newick</a>"] <a href="CppOperatorAssign.htm">=</a> <a href="CppNewick.htm">newick</a>;<br/>
 &nbsp;&nbsp;r.parseEvalQ("phylogeny &lt;<a href="CppOperatorMinus.htm">-</a> read.tree(text <a href="CppOperatorAssign.htm">=</a> <a href="CppNewick.htm">newick</a>)");<br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!plot_fossils)<br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;r.parseEvalQ("phylogeny &lt;<a href="CppOperatorMinus.htm">-</a> drop.extinct(phylogeny)");<br/>
-&nbsp;&nbsp;}<br/>
 <br/>
 &nbsp;&nbsp;<b><a href="CppSwitch.htm">switch</a></b> (graphics_format)<br/>
 &nbsp;&nbsp;{<br/>
@@ -682,6 +486,16 @@ PhylogenyR::PhylogenyR()<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppThrow.htm">throw</a></b> <a href="CppStdRuntime_error.htm">std::runtime_error</a>(s.str().c_str());<br/>
 &nbsp;&nbsp;}<br/>
 }<br/>
+<br/>
+<a href="CppStdString.htm">std::string</a> <a href="CppRibi.htm">ribi</a>::PhylogenyR::PhylogenyTo<a href="CppNewick.htm">Newick</a>(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; phylogeny_name<br/>
+)<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppAuto.htm">auto</a></b>&amp; r <a href="CppOperatorAssign.htm">=</a> <a href="CppRibi.htm">ribi</a>::Rinside().Get();<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Rcpp::String s <a href="CppOperatorAssign.htm">=</a> r.parseEval("write.tree("<a href="CppOperatorPlus.htm">+</a> phylogeny_name <a href="CppOperatorPlus.htm">+</a> ")");<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> t <a href="CppOperatorAssign.htm">=</a> s;<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> t;<br/>
+}<br/>
 </code></td></tr></table>
 <!-- end of the code -->
 <p>&nbsp;</p>
@@ -701,9 +515,11 @@ PhylogenyR::PhylogenyR()<br/>
 <a href="CppInclude.htm">#include</a> "<a href="CppFileIo.htm">fileio</a>.h"<br/>
 <a href="CppInclude.htm">#include</a> "test<a href="CppTime.htm">time</a>r.h"<br/>
 <a href="CppInclude.htm">#include</a> "<a href="CppTrace.htm">trace</a>.h"<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppRibi.htm">ribi</a>_rinside.h"<br/>
+<a href="CppInclude.htm">#include</a> "RInside.h"<br/>
 <br/>
 <a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
-<b><a href="CppVoid.htm">void</a></b> PhylogenyR::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::PhylogenyR::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
 &nbsp;&nbsp;{<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppBool.htm">bool</a></b> is_tested{<b><a href="CppFalse.htm">false</a></b>};<br/>
@@ -712,101 +528,46 @@ PhylogenyR::PhylogenyR()<br/>
 &nbsp;&nbsp;}<br/>
 &nbsp;&nbsp;{<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a>();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppAuto.htm">auto</a></b>&amp; r <a href="CppOperatorAssign.htm">=</a> <a href="CppRibi.htm">ribi</a>::Rinside().Get();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;r.parseEvalQ("<a href="CppLibrary.htm">library</a>(ape)");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;r.parseEvalQ("<a href="CppLibrary.htm">library</a>(geiger)");<br/>
 &nbsp;&nbsp;}<br/>
-&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> Clock <a href="CppOperatorAssign.htm">=</a> <a href="CppStdChronoSystem_clock.htm">std::chrono::system_clock</a>;<br/>
-&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> Duration <a href="CppOperatorAssign.htm">=</a> <a href="CppStdChronoSystem_clockDuration.htm">std::chrono::system_clock::duration</a>;<br/>
-&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> <a href="CppTime.htm">Time</a><a href="CppPoint.htm">Point</a> <a href="CppOperatorAssign.htm">=</a> <a href="CppStdChronoSystem_clockTime_point.htm">std::chrono::system_clock::time_point</a>;<br/>
-&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> Msec <a href="CppOperatorAssign.htm">=</a> <a href="CppStdChronoMilliseconds.htm">std::chrono::milliseconds</a>;<br/>
-<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppRibi.htm">ribi</a>::Test<a href="CppTime.htm">Time</a>r test_<a href="CppTime.htm">time</a>r(<a href="Cpp__func__.htm">__func__</a>,__<a href="CppCfile.htm">FILE</a>__,1.0);<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppBool.htm">bool</a></b> verbose{<b><a href="CppFalse.htm">false</a></b>};<br/>
 <br/>
 &nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a> f;<br/>
-&nbsp;&nbsp;<a href="CppDefine.htm">#define</a> FIX_ISSUE_278<br/>
-&nbsp;&nbsp;<a href="CppIfdef.htm">#ifdef</a> FIX_ISSUE_278<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppBool.htm">bool</a></b> test_throughly{<b><a href="CppTrue.htm">true</a></b>};<br/>
-&nbsp;&nbsp;<a href="CppPreElse.htm">#else</a>&nbsp;&nbsp;<a href="CppComment.htm">//</a> FIX_ISSUE_277<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppBool.htm">bool</a></b> test_throughly{<b><a href="CppFalse.htm">false</a></b>};<br/>
-&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> FIX_ISSUE_277<br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppTime.htm">Time</a><a href="CppPoint.htm">Point</a> t_test{Clock::now()};<br/>
 <br/>
 &nbsp;&nbsp;PhylogenyR p;<br/>
 <br/>
-&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!test_throughly)<br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppTRACE.htm">TRACE</a>("PhylogenyR not thoroughly tested");<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b>;<br/>
-&nbsp;&nbsp;}<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
 &nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (verbose) { <a href="CppTRACE.htm">TRACE</a>("<a href="CppNewick.htm">Newick</a>ToPhylogeny as SVG of extinct and extant species"); }<br/>
 &nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppTime.htm">Time</a><a href="CppPoint.htm">Point</a> t{Clock::now()};<br/>
-<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> temp_svg_filename{<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f.GetTempFileName(".svg")<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;};<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppBool.htm">bool</a></b> plot_fossils{<b><a href="CppTrue.htm">true</a></b>};<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> <a href="CppNewick.htm">newick</a>{"((F:2,G:2):1,H:3);"};<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;p.<a href="CppNewick.htm">Newick</a>ToPhylogeny(<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppNewick.htm">newick</a>,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;temp_svg_filename,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PhylogenyR::GraphicsFormat::svg,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plot_fossils<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::PhylogenyR::GraphicsFormat::svg<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;);<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(f.<a href="CppIsRegularFile.htm">IsRegularFile</a>(temp_svg_filename));<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Clean up<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;f.<a href="CppDeleteFile.htm">DeleteFile</a>(temp_svg_filename);<br/>
-<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdCout.htm">std::cout</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "1: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="CppStdChronoDuration_cast.htm">std::chrono::duration_cast</a>&lt;Msec&gt;(Clock::now() <a href="CppOperatorMinus.htm">-</a> t).count() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> " milliseconds" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n';<br/>
-&nbsp;&nbsp;}<br/>
-&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (verbose) { <a href="CppTRACE.htm">TRACE</a>("<a href="CppNewick.htm">Newick</a>ToPhylogeny as PNG of extinct and extant species"); }<br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppTime.htm">Time</a><a href="CppPoint.htm">Point</a> t{Clock::now()};<br/>
-<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> temp_png_filename{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f.GetTempFileName(".png")<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;};<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppBool.htm">bool</a></b> plot_fossils{<b><a href="CppFalse.htm">false</a></b>};<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> <a href="CppNewick.htm">newick</a>{"((F:2,G:2):1,H:3);"};<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;p.<a href="CppNewick.htm">Newick</a>ToPhylogeny(<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppNewick.htm">newick</a>,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;temp_png_filename,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PhylogenyR::GraphicsFormat::png,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plot_fossils<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(f.<a href="CppIsRegularFile.htm">IsRegularFile</a>(temp_png_filename));<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Clean up<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;f.<a href="CppDeleteFile.htm">DeleteFile</a>(temp_png_filename.c_str());<br/>
-<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdCout.htm">std::cout</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "2: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="CppStdChronoDuration_cast.htm">std::chrono::duration_cast</a>&lt;Msec&gt;(Clock::now() <a href="CppOperatorMinus.htm">-</a> t).count() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> " milliseconds" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n';<br/>
 &nbsp;&nbsp;}<br/>
 &nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (verbose) { <a href="CppTRACE.htm">TRACE</a>("<a href="CppNewick.htm">Newick</a>ToPhylogeny as PNG of extant species"); }<br/>
 &nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppTime.htm">Time</a><a href="CppPoint.htm">Point</a> t{Clock::now()};<br/>
-<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> temp_png_filename{<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f.GetTempFileName(".png")<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;};<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppBool.htm">bool</a></b> plot_fossils{<b><a href="CppTrue.htm">true</a></b>};<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> <a href="CppNewick.htm">newick</a>{"((F:2,G:2):1,H:3);"};<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;p.<a href="CppNewick.htm">Newick</a>ToPhylogeny(<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppNewick.htm">newick</a>,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;temp_png_filename,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PhylogenyR::GraphicsFormat::png,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plot_fossils<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::PhylogenyR::GraphicsFormat::png<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;);<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(f.<a href="CppIsRegularFile.htm">IsRegularFile</a>(temp_png_filename));<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Clean up<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;f.<a href="CppDeleteFile.htm">DeleteFile</a>(temp_png_filename.c_str());<br/>
-<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdCout.htm">std::cout</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "3: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="CppStdChronoDuration_cast.htm">std::chrono::duration_cast</a>&lt;Msec&gt;(Clock::now() <a href="CppOperatorMinus.htm">-</a> t).count() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> " milliseconds" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n';<br/>
 &nbsp;&nbsp;}<br/>
 &nbsp;&nbsp;<a href="CppIfdef.htm">#ifdef</a> FIX_ISSUE_267<br/>
 &nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (verbose) { <a href="CppTRACE.htm">TRACE</a>("<a href="CppNewick.htm">Newick</a>ToPhylogenyPng on hard phylogeny"); }<br/>
@@ -828,8 +589,6 @@ PhylogenyR::PhylogenyR()<br/>
 &nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
 &nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (verbose) { <a href="CppTRACE.htm">TRACE</a>("<a href="CppNewick.htm">Newick</a>ToLttPlot"); }<br/>
 &nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppTime.htm">Time</a><a href="CppPoint.htm">Point</a> t{Clock::now()};<br/>
-<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> temp_png_filename{<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f.GetTempFileName(".png")<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;};<br/>
@@ -838,99 +597,24 @@ PhylogenyR::PhylogenyR()<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(f.<a href="CppIsRegularFile.htm">IsRegularFile</a>(temp_png_filename));<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Clean up<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;f.<a href="CppDeleteFile.htm">DeleteFile</a>(temp_png_filename.c_str());<br/>
-<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdCout.htm">std::cout</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "5: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="CppStdChronoDuration_cast.htm">std::chrono::duration_cast</a>&lt;Msec&gt;(Clock::now() <a href="CppOperatorMinus.htm">-</a> t).count() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> " milliseconds" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n';<br/>
 &nbsp;&nbsp;}<br/>
 &nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (verbose) { <a href="CppTRACE.htm">TRACE</a>("DropExtinct"); }<br/>
 &nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppTime.htm">Time</a><a href="CppPoint.htm">Point</a> t{Clock::now()};<br/>
-<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p.DropExtinct(<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"(L:1,(((((XD:1,ZD:1):1,CE:2):1,(FE:2,EE:2):1):1,(GD:1,ID:1):1,BD:1):3,(AC:1,EC:1):1,(((TC:1,FD:2):1,QC:1,RC:1):1,((((AE:1,BE:1):1,(WD:1,YD:1):1):1,HD:1):2,MC:1):1):1):3);"<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;) <a href="CppOperatorEqual.htm">==</a> "((((XD:1,ZD:1):1,CE:2):1,(FE:2,EE:2):1):4,((AE:1,BE:1):1,(WD:1,YD:1):1):5);"<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;);<br/>
-<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdCout.htm">std::cout</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "6: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="CppStdChronoDuration_cast.htm">std::chrono::duration_cast</a>&lt;Msec&gt;(Clock::now() <a href="CppOperatorMinus.htm">-</a> t).count() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> " milliseconds" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n';<br/>
 &nbsp;&nbsp;}<br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> ("Test <a href="CppNewick.htm">Newick</a>ToPhylogenyRinside faster than <a href="CppNewick.htm">Newick</a>ToPhylogenyRscript")<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (verbose) { <a href="CppTRACE.htm">TRACE</a>("PhylogenyTo<a href="CppNewick.htm">Newick</a>"); }<br/>
 &nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppTime.htm">Time</a><a href="CppPoint.htm">Point</a> t{Clock::now()};<br/>
-<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> temp_svg_filename1{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f.GetTempFileName(".svg")<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;};<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> temp_svg_filename2{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f.GetTempFileName(".svg")<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;};<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppBool.htm">bool</a></b> plot_fossils{<b><a href="CppTrue.htm">true</a></b>};<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> <a href="CppNewick.htm">newick</a>{"((F:2,G:2):1,H:3);"};<br/>
-<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppTime.htm">Time</a><a href="CppPoint.htm">Point</a> t1{Clock::now()};<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;p.<a href="CppNewick.htm">Newick</a>ToPhylogenyRscript(<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppNewick.htm">newick</a>,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;temp_svg_filename1,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PhylogenyR::GraphicsFormat::svg,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plot_fossils<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Duration d1{Clock::now() <a href="CppOperatorMinus.htm">-</a> t1};<br/>
-<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppTime.htm">Time</a><a href="CppPoint.htm">Point</a> t2{Clock::now()};<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;p.<a href="CppNewick.htm">Newick</a>ToPhylogenyRinside(<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppNewick.htm">newick</a>,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;temp_svg_filename2,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PhylogenyR::GraphicsFormat::svg,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plot_fossils<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Duration d2{Clock::now() <a href="CppOperatorMinus.htm">-</a> t2};<br/>
-<br/>
-<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(f.<a href="CppIsRegularFile.htm">IsRegularFile</a>(temp_svg_filename1));<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(f.<a href="CppIsRegularFile.htm">IsRegularFile</a>(temp_svg_filename2));<br/>
-<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(d2 &lt; d1 <a href="CppOperatorDivide.htm">/</a> 10);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Clean up<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;f.<a href="CppDeleteFile.htm">DeleteFile</a>(temp_svg_filename1);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;f.<a href="CppDeleteFile.htm">DeleteFile</a>(temp_svg_filename2);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a> Before (<b><a href="CppUsing.htm">using</a></b> R script): 976<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a> After (<b><a href="CppUsing.htm">using</a></b> RInside): 5<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdCout.htm">std::cout</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "Before (<b><a href="CppUsing.htm">using</a></b> R script): " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="CppStdChronoDuration_cast.htm">std::chrono::duration_cast</a>&lt;Msec&gt;(d1).count() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n';<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdCout.htm">std::cout</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "After (<b><a href="CppUsing.htm">using</a></b> RInside): "&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="CppStdChronoDuration_cast.htm">std::chrono::duration_cast</a>&lt;Msec&gt;(d2).count() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n';<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> s{"((F:2,G:2):1,H:3);"};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppAuto.htm">auto</a></b>&amp; r <a href="CppOperatorAssign.htm">=</a> <a href="CppRibi.htm">ribi</a>::Rinside().Get();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;r["<a href="CppNewick.htm">newick</a>"] <a href="CppOperatorAssign.htm">=</a> s;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;r.parseEval("phylogeny &lt;<a href="CppOperatorMinus.htm">-</a> read.tree(text <a href="CppOperatorAssign.htm">=</a> <a href="CppNewick.htm">newick</a>)");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> t{p.PhylogenyTo<a href="CppNewick.htm">Newick</a>("phylogeny")};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(s <a href="CppOperatorEqual.htm">==</a> t);<br/>
 &nbsp;&nbsp;}<br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> ("Speed compare <a href="CppNewick.htm">Newick</a>ToLttPlotRscript versus <a href="CppNewick.htm">Newick</a>ToLttPlotRinside")<br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppTime.htm">Time</a><a href="CppPoint.htm">Point</a> t{Clock::now()};<br/>
-<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> temp_png_filename1{f.GetTempFileName(".png") };<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> temp_png_filename2{f.GetTempFileName(".png") };<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> <a href="CppNewick.htm">newick</a>{"((F:2,G:2):1,H:3);"};<br/>
-<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppTime.htm">Time</a><a href="CppPoint.htm">Point</a> t1{Clock::now()};<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;p.<a href="CppNewick.htm">Newick</a>ToLttPlotRscript(<a href="CppNewick.htm">newick</a>,temp_png_filename1,GraphicsFormat::png);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Duration d1{Clock::now() <a href="CppOperatorMinus.htm">-</a> t1};<br/>
-<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppTime.htm">Time</a><a href="CppPoint.htm">Point</a> t2{Clock::now()};<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;p.<a href="CppNewick.htm">Newick</a>ToLttPlotRinside(<a href="CppNewick.htm">newick</a>,temp_png_filename2,GraphicsFormat::png);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Duration d2{Clock::now() <a href="CppOperatorMinus.htm">-</a> t2};<br/>
-<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(f.<a href="CppIsRegularFile.htm">IsRegularFile</a>(temp_png_filename1));<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(f.<a href="CppIsRegularFile.htm">IsRegularFile</a>(temp_png_filename2));<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(d2 &lt; d1 <a href="CppOperatorDivide.htm">/</a> 10);<br/>
-<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Clean up<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;f.<a href="CppDeleteFile.htm">DeleteFile</a>(temp_png_filename1.c_str());<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;f.<a href="CppDeleteFile.htm">DeleteFile</a>(temp_png_filename2.c_str());<br/>
-<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a> Before (<b><a href="CppUsing.htm">using</a></b> R script): 941<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a> After (<b><a href="CppUsing.htm">using</a></b> RInside): 24<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdCout.htm">std::cout</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "Before (<b><a href="CppUsing.htm">using</a></b> R script): " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="CppStdChronoDuration_cast.htm">std::chrono::duration_cast</a>&lt;Msec&gt;(d1).count() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n';<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdCout.htm">std::cout</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "After (<b><a href="CppUsing.htm">using</a></b> RInside): "&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="CppStdChronoDuration_cast.htm">std::chrono::duration_cast</a>&lt;Msec&gt;(d2).count() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n';<br/>
-&nbsp;&nbsp;}<br/>
-<br/>
-<br/>
-&nbsp;&nbsp;<a href="CppStdCout.htm">std::cout</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="CppStdChronoDuration_cast.htm">std::chrono::duration_cast</a>&lt;Msec&gt;(Clock::now() <a href="CppOperatorMinus.htm">-</a> t_test).count() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> " milliseconds" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n';<br/>
 }<br/>
 <a href="CppEndif.htm">#endif</a><br/>
 </code></td></tr></table>

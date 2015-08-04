@@ -1,0 +1,760 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <title>CoalescentTreeModel</title>
+  <meta name="description" content="C++ CoalescentTreeModel"/>
+  <meta name="keywords" content="C++ CoalescentTreeModel "/>
+  <link rel="stylesheet" href="Richelbilderbeek.css" type="text/css"/>
+</head>
+<!-- End of head, start of body -->
+<body>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<!-- Page header -->
+<h1>(<a href="Cpp.htm">C++</a>) <a href="CppCoalescentTreeModel.htm">CoalescentTreeModel</a></h1>
+<p>&nbsp;</p>
+<!-- No CodeToHtmlInfo about this class with page name CppCoalescentTreeModel-->
+<h2>Technical facts</h2>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppCoalescentTreeModel/CppCoalescentTreeModel.pri</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppCoalescentTreeModel/CppCoalescentTreeModel.pri" border = "1"><tr><td><code>
+<a href="CppQmakeIncludepath.htm">INCLUDEPATH</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppCoalescentTreeModel<br/>
+<br/>
+<a href="CppQmakeSources.htm">SOURCES</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppCoalescentTreeModel/coalescenttreemodelsimulation.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppCoalescentTreeModel/coalescenttreemodelparameters.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppCoalescentTreeModel/coalescenttreemodelhelper.cpp<br/>
+<br/>
+<a href="CppQmakeHeaders.htm">HEADERS</a>&nbsp;&nbsp;+= \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppCoalescentTreeModel/coalescenttreemodelsimulation.h \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppCoalescentTreeModel/coalescenttreemodelparameters.h \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppCoalescentTreeModel/coalescenttreemodelhelper.h<br/>
+<br/>
+<a href="CppQmakeOther_files.htm">OTHER_FILES</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppCoalescentTreeModel/Licence.txt<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppCoalescentTreeModel/coalescenttreemodelhelper.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppCoalescentTreeModel/coalescenttreemodelhelper.h" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> COALESCENTTREEMODELHELPER_H<br/>
+<a href="CppDefine.htm">#define</a> COALESCENTTREEMODELHELPER_H<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "rate.h"<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppVectorH.htm">vector</a>&gt;<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a> {<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> ctm {<br/>
+<br/>
+<b><a href="CppStruct.htm">struct</a></b> Parameters;<br/>
+<br/>
+<b><a href="CppStruct.htm">struct</a></b> Helper<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> Rate <a href="CppOperatorAssign.htm">=</a> <a href="CppRibi.htm">ribi</a>::units::Rate;<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppEnumClass.htm">enum class</a></b> Part { phylogeny, branch_lengths };<br/>
+<br/>
+&nbsp;&nbsp;Helper();<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Calculate the likelihood of the candidate parameters in generating the dataset<br/>
+&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> CalcLogLikelihood(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Rate&amp; birth_rate,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Rate&amp; death_rate<br/>
+&nbsp;&nbsp;) <b><a href="CppConst.htm">const</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Uses DDD package<br/>
+&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> CalcLogLikelihoodDdd(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Rate&amp; birth_rate,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Rate&amp; death_rate,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Part part<br/>
+&nbsp;&nbsp;) <b><a href="CppConst.htm">const</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Uses laser package<br/>
+&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> CalcLogLikelihoodLaser(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Rate&amp; birth_rate,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Rate&amp; death_rate<br/>
+&nbsp;&nbsp;) <b><a href="CppConst.htm">const</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Uses DDD package<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> CalcMaxLikelihood(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Rate&amp; birth_rate,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Rate&amp; death_rate,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Part part <a href="CppOperatorAssign.htm">=</a> Part::phylogeny<br/>
+&nbsp;&nbsp;) <b><a href="CppConst.htm">const</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppStdString.htm">std::string</a> CreateSimulatedPhylogeny(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Parameters&amp; parameters<br/>
+&nbsp;&nbsp;) <b><a href="CppConst.htm">const</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppPrivate.htm">private</a></b>:<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppVoid.htm">void</a></b> Test() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+};<br/>
+<br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> ctm<br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a><br/>
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> COALESCENTTREEMODELHELPER_H<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppCoalescentTreeModel/coalescenttreemodelhelper.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppCoalescentTreeModel/coalescenttreemodelhelper.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "coalescenttreemodelhelper.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppIostreamH.htm">iostream</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppStdexceptH.htm">stdexcept</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppSstreamH.htm">sstream</a>&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppBoost.htm">boost</a>/math/constants/constants.hpp&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "RInside.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppFileIo.htm">fileio</a>.h"<br/>
+<a href="CppInclude.htm">#include</a> "test<a href="CppTime.htm">time</a>r.h"<br/>
+<a href="CppInclude.htm">#include</a> "coalescenttreemodelparameters.h"<br/>
+<a href="CppInclude.htm">#include</a> "phylogeny_r.h"<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppTrace.htm">trace</a>.h"<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppRibi.htm">ribi</a>_rinside.h"<br/>
+<br/>
+<a href="CppRibi.htm">ribi</a>::ctm::Helper::Helper()<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;Test();<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+}<br/>
+<br/>
+<b><a href="CppDouble.htm">double</a></b> <a href="CppRibi.htm">ribi</a>::ctm::Helper::CalcLogLikelihood(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Rate&amp; birth_rate,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Rate&amp; death_rate<br/>
+) <b><a href="CppConst.htm">const</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> CalcLogLikelihoodLaser(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppNewick.htm">newick</a>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;birth_rate,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;death_rate<br/>
+&nbsp;&nbsp;);<br/>
+}<br/>
+<br/>
+<b><a href="CppDouble.htm">double</a></b> <a href="CppRibi.htm">ribi</a>::ctm::Helper::CalcLogLikelihoodDdd(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Rate&amp; birth_rate,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Rate&amp; death_rate,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Part part<br/>
+) <b><a href="CppConst.htm">const</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!<a href="CppNewick.htm">newick</a>.empty());<br/>
+&nbsp;&nbsp;<b><a href="CppAuto.htm">auto</a></b>&amp; r <a href="CppOperatorAssign.htm">=</a> <a href="CppRibi.htm">ribi</a>::Rinside().Get();<br/>
+<br/>
+&nbsp;&nbsp;r.parseEval("<a href="CppLibrary.htm">library</a>(ape)");<br/>
+&nbsp;&nbsp;r.parseEval("<a href="CppLibrary.htm">library</a>(DDD)");<br/>
+&nbsp;&nbsp;r["<a href="CppNewick.htm">newick</a>"] <a href="CppOperatorAssign.htm">=</a> <a href="CppNewick.htm">newick</a>;<br/>
+&nbsp;&nbsp;r.parseEval("phylogeny &lt;<a href="CppOperatorMinus.htm">-</a> read.tree(text <a href="CppOperatorAssign.htm">=</a> <a href="CppNewick.htm">newick</a>)");<br/>
+&nbsp;&nbsp;r.parseEval("branch_lengths &lt;<a href="CppOperatorMinus.htm">-</a> phylogeny$edge.length");<br/>
+&nbsp;&nbsp;r["lambda"] <a href="CppOperatorAssign.htm">=</a> birth_rate.value();<br/>
+&nbsp;&nbsp;r["mu"] <a href="CppOperatorAssign.htm">=</a> death_rate.value();<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a> model of <a href="CppTime.htm">time</a>-dependence:<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a> <a href="CppOperatorMinus.htm">-</a> 0: no <a href="CppTime.htm">time</a> dependence<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a> <a href="CppOperatorMinus.htm">-</a> 1: speciation and/or extinction rate is exponentially declining with <a href="CppTime.htm">time</a><br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a> <a href="CppOperatorMinus.htm">-</a> 2: stepwise decline in speciation rate as in diversity-dependence without extinction<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a> <a href="CppOperatorMinus.htm">-</a> 3: decline in speciation rate following deterministic logistic equation <b><a href="CppFor.htm">for</a></b> ddmodel <a href="CppOperatorAssign.htm">=</a> 1<br/>
+&nbsp;&nbsp;r["model_of_<a href="CppTime.htm">time</a>_dependence"] <a href="CppOperatorAssign.htm">=</a> 0;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a> conditioning:<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a> <a href="CppOperatorMinus.htm">-</a> 0: conditioning on stem or crown age<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a> <a href="CppOperatorMinus.htm">-</a> 1: conditioning on stem or crown age and non-extinction of the phylogeny<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a> <a href="CppOperatorMinus.htm">-</a> 2: conditioning on stem or crown age and on the total number of extant taxa (including missing species)<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a> <a href="CppOperatorMinus.htm">-</a> 3: conditioning on the total number of extant taxa (including missing species)<br/>
+&nbsp;&nbsp;r["conditioning"] <a href="CppOperatorAssign.htm">=</a> 1;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a> Likelihood of what:<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a> <a href="CppOperatorMinus.htm">-</a> 0: branching <a href="CppTime.htm">time</a>s<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a> <a href="CppOperatorMinus.htm">-</a> 1: the phylogeny<br/>
+&nbsp;&nbsp;<b><a href="CppSwitch.htm">switch</a></b> (part)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppCase.htm">case</a></b> Part::branch_lengths: r["likelihood_of_what"] <a href="CppOperatorAssign.htm">=</a> 0; <b><a href="CppBreak.htm">break</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppCase.htm">case</a></b> Part::phylogeny&nbsp;&nbsp;&nbsp;&nbsp; : r["likelihood_of_what"] <a href="CppOperatorAssign.htm">=</a> 1; <b><a href="CppBreak.htm">break</a></b>;<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a> Show parameters and likelihood on screen:<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a> <a href="CppOperatorMinus.htm">-</a> 0: no<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a> <a href="CppOperatorMinus.htm">-</a> 1: yes<br/>
+&nbsp;&nbsp;r["show_parameters_and_likelihood_on_screen"] <a href="CppOperatorAssign.htm">=</a> 0;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a> first data <a href="CppPointer.htm">point</a> is:<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a> <a href="CppOperatorMinus.htm">-</a> 1: stem age<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a> <a href="CppOperatorMinus.htm">-</a> 2: crown age<br/>
+&nbsp;&nbsp;r["first_data_<a href="CppPointer.htm">point</a>_is"] <a href="CppOperatorAssign.htm">=</a> 2;<br/>
+<br/>
+&nbsp;&nbsp;r.parseEval(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"log_likelihood_ddd &lt;<a href="CppOperatorMinus.htm">-</a> bd_loglik("<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"&nbsp;&nbsp;pars1 <a href="CppOperatorAssign.htm">=</a> c(lambda,mu),"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"&nbsp;&nbsp;pars2 <a href="CppOperatorAssign.htm">=</a> c("<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"&nbsp;&nbsp;&nbsp;&nbsp;model_of_<a href="CppTime.htm">time</a>_dependence,"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"&nbsp;&nbsp;&nbsp;&nbsp;conditioning,"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"&nbsp;&nbsp;&nbsp;&nbsp;likelihood_of_what,"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"&nbsp;&nbsp;&nbsp;&nbsp;show_parameters_and_likelihood_on_screen,"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"&nbsp;&nbsp;&nbsp;&nbsp;first_data_<a href="CppPointer.htm">point</a>_is"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"&nbsp;&nbsp;),"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"&nbsp;&nbsp;brts=branch_lengths,"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"&nbsp;&nbsp;missnumspec <a href="CppOperatorAssign.htm">=</a> 0"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;")"<br/>
+&nbsp;&nbsp;);<br/>
+<br/>
+&nbsp;&nbsp;Rcpp::<a href="CppDouble.htm">Double</a>Vector v <a href="CppOperatorAssign.htm">=</a> r["log_likelihood_ddd"];<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(v.size() <a href="CppOperatorEqual.htm">==</a> 1);<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> v[0];<br/>
+}<br/>
+<br/>
+<b><a href="CppDouble.htm">double</a></b> <a href="CppRibi.htm">ribi</a>::ctm::Helper::CalcLogLikelihoodLaser(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Rate&amp; birth_rate,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Rate&amp; death_rate<br/>
+) <b><a href="CppConst.htm">const</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!<a href="CppNewick.htm">newick</a>.empty());<br/>
+&nbsp;&nbsp;<b><a href="CppAuto.htm">auto</a></b>&amp; r <a href="CppOperatorAssign.htm">=</a> <a href="CppRibi.htm">ribi</a>::Rinside().Get();<br/>
+<br/>
+&nbsp;&nbsp;r.parseEval("<a href="CppLibrary.htm">library</a>(ape)");<br/>
+&nbsp;&nbsp;r.parseEval("<a href="CppLibrary.htm">library</a>(laser)");<br/>
+&nbsp;&nbsp;r["<a href="CppNewick.htm">newick</a>"] <a href="CppOperatorAssign.htm">=</a> <a href="CppNewick.htm">newick</a>;<br/>
+&nbsp;&nbsp;r.parseEval("phylogeny &lt;<a href="CppOperatorMinus.htm">-</a> read.tree(text <a href="CppOperatorAssign.htm">=</a> <a href="CppNewick.htm">newick</a>)");<br/>
+&nbsp;&nbsp;r.parseEval("branch_lengths &lt;<a href="CppOperatorMinus.htm">-</a> phylogeny$edge.length");<br/>
+&nbsp;&nbsp;r["lambda"] <a href="CppOperatorAssign.htm">=</a> birth_rate.value();<br/>
+&nbsp;&nbsp;r["mu"] <a href="CppOperatorAssign.htm">=</a> death_rate.value();<br/>
+&nbsp;&nbsp;Rcpp::<a href="CppDouble.htm">Double</a>Vector v<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorAssign.htm">=</a> r.parseEval("calcLHbd(x <a href="CppOperatorAssign.htm">=</a> branch_lengths, r <a href="CppOperatorAssign.htm">=</a> lambda <a href="CppOperatorMinus.htm">-</a> mu, a <a href="CppOperatorAssign.htm">=</a> mu <a href="CppOperatorDivide.htm">/</a> lambda)"<br/>
+&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(v.size() <a href="CppOperatorEqual.htm">==</a> 1);<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> v[0];<br/>
+}<br/>
+<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::ctm::Helper::CalcMaxLikelihood(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>,<br/>
+&nbsp;&nbsp;Rate&amp; birth_rate,<br/>
+&nbsp;&nbsp;Rate&amp; death_rate,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Part part<br/>
+) <b><a href="CppConst.htm">const</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!<a href="CppNewick.htm">newick</a>.empty());<br/>
+&nbsp;&nbsp;<b><a href="CppAuto.htm">auto</a></b>&amp; r <a href="CppOperatorAssign.htm">=</a> <a href="CppRibi.htm">ribi</a>::Rinside().Get();<br/>
+<br/>
+&nbsp;&nbsp;r.parseEval("<a href="CppLibrary.htm">library</a>(ape)");<br/>
+&nbsp;&nbsp;r.parseEval("<a href="CppLibrary.htm">library</a>(DDD)");<br/>
+&nbsp;&nbsp;r["<a href="CppNewick.htm">newick</a>"] <a href="CppOperatorAssign.htm">=</a> <a href="CppNewick.htm">newick</a>;<br/>
+&nbsp;&nbsp;r.parseEval("phylogeny &lt;<a href="CppOperatorMinus.htm">-</a> read.tree(text <a href="CppOperatorAssign.htm">=</a> <a href="CppNewick.htm">newick</a>)");<br/>
+&nbsp;&nbsp;r.parseEval("branch_lengths &lt;<a href="CppOperatorMinus.htm">-</a> phylogeny$edge.length");<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppSwitch.htm">switch</a></b> (part)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppCase.htm">case</a></b> Part::branch_lengths: r["part"] <a href="CppOperatorAssign.htm">=</a> 0; <b><a href="CppBreak.htm">break</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppCase.htm">case</a></b> Part::phylogeny&nbsp;&nbsp;&nbsp;&nbsp; : r["part"] <a href="CppOperatorAssign.htm">=</a> 1; <b><a href="CppBreak.htm">break</a></b>;<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;r.parseEval(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"max_likelihood &lt;<a href="CppOperatorMinus.htm">-</a> bd_ML("<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"&nbsp;&nbsp;brts <a href="CppOperatorAssign.htm">=</a> branch_lengths,"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"&nbsp;&nbsp;cond <a href="CppOperatorAssign.htm">=</a> 1," <a href="CppComment.htm">//</a> # cond <a href="CppOperatorEqual.htm">==</a> 1 : conditioning on stem or crown age and non-extinction of the phylogeny<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"&nbsp;&nbsp;btorph <a href="CppOperatorAssign.htm">=</a> part"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;")"<br/>
+&nbsp;&nbsp;);<br/>
+<br/>
+&nbsp;&nbsp;r.parseEval("lambda0 &lt;<a href="CppOperatorMinus.htm">-</a> max_likelihood$lambda0");<br/>
+&nbsp;&nbsp;r.parseEval("mu0 &lt;<a href="CppOperatorMinus.htm">-</a> max_likelihood$mu0");<br/>
+&nbsp;&nbsp;r.parseEval("conv &lt;<a href="CppOperatorMinus.htm">-</a> max_likelihood$conv");<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Rcpp::<a href="CppDouble.htm">Double</a>Vector lambda0 <a href="CppOperatorAssign.htm">=</a> r["lambda0"];<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Rcpp::<a href="CppDouble.htm">Double</a>Vector mu0 <a href="CppOperatorAssign.htm">=</a> r["mu0"];<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Rcpp::<a href="CppInt.htm">Integer</a>Vector conv <a href="CppOperatorAssign.htm">=</a> r["conv"];<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(lambda0.size() <a href="CppOperatorEqual.htm">==</a> 1);<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(mu0.size() <a href="CppOperatorEqual.htm">==</a> 1);<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(conv.size() <a href="CppOperatorEqual.htm">==</a> 1);<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppBool.htm">bool</a></b> has_converged <a href="CppOperatorAssign.htm">=</a> conv[0] <a href="CppOperatorEqual.htm">==</a> 0;<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!has_converged)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdStringstream.htm">std::stringstream</a> s;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;s <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="Cpp__func__.htm">__func__</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> ": has not converged" ;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppThrow.htm">throw</a></b> <a href="CppStdRuntime_error.htm">std::runtime_error</a>(s.str());<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;birth_rate <a href="CppOperatorAssign.htm">=</a> lambda0[0] <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second;<br/>
+&nbsp;&nbsp;death_rate <a href="CppOperatorAssign.htm">=</a> mu0[0] <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second;<br/>
+}<br/>
+<br/>
+<a href="CppStdString.htm">std::string</a> <a href="CppRibi.htm">ribi</a>::ctm::Helper::CreateSimulatedPhylogeny(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Parameters&amp; parameters<br/>
+) <b><a href="CppConst.htm">const</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a> f;<br/>
+&nbsp;&nbsp;<b><a href="CppAuto.htm">auto</a></b>&amp; r <a href="CppOperatorAssign.htm">=</a> <a href="CppRibi.htm">ribi</a>::Rinside().Get();<br/>
+<br/>
+&nbsp;&nbsp;r.parseEvalQ("<a href="CppLibrary.htm">library</a>(ape)");<br/>
+&nbsp;&nbsp;r.parseEvalQ("<a href="CppLibrary.htm">library</a>(geiger)");<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> birth_rate{parameters.GetBirthRate().value()};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> death_rate{parameters.GetDeathRate().value()};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> n_taxa{parameters.GetNumberOfTaxa()};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> rng_seed{parameters.GetRngSeed()};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> t_end{parameters.<a href="CppGetTime.htm">GetTime</a>().value()};<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(t_end <a href="CppOperatorEqual.htm">==</a> 0 <a href="CppOperatorLogicalAnd.htm">&amp;&amp;</a> "Not yet implemented running to a certain <a href="CppTime.htm">time</a>");<br/>
+<br/>
+&nbsp;&nbsp;r["birth_rate"] <a href="CppOperatorAssign.htm">=</a> birth_rate;<br/>
+&nbsp;&nbsp;r["death_rate"] <a href="CppOperatorAssign.htm">=</a> death_rate;<br/>
+&nbsp;&nbsp;r["n_taxa"] <a href="CppOperatorAssign.htm">=</a> n_taxa;<br/>
+&nbsp;&nbsp;r["rng_seed"] <a href="CppOperatorAssign.htm">=</a> rng_seed;<br/>
+&nbsp;&nbsp;r["t_end"] <a href="CppOperatorAssign.htm">=</a> t_end;<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a> <a href="CppOperatorDivide.htm">/</a>home/richel/R/i686-pc-linux-gnu-<a href="CppLibrary.htm">library</a>/3.1/Rcpp/include/Rcpp/vector/Vector.h<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(Rcpp::<a href="CppDouble.htm">Double</a>Vector(r["birth_rate"])[0] <a href="CppOperatorEqual.htm">==</a> birth_rate);<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(Rcpp::<a href="CppDouble.htm">Double</a>Vector(r["death_rate"])[0] <a href="CppOperatorEqual.htm">==</a> death_rate);<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(Rcpp::<a href="CppInt.htm">Integer</a>Vector(r["n_taxa"])[0] <a href="CppOperatorEqual.htm">==</a> n_taxa);<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(Rcpp::<a href="CppInt.htm">Integer</a>Vector(r["rng_seed"])[0] <a href="CppOperatorEqual.htm">==</a> rng_seed);<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(Rcpp::<a href="CppDouble.htm">Double</a>Vector(r["t_end"])[0] <a href="CppOperatorEqual.htm">==</a> t_end);<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Vital! If forgotten, the branch lengths will become N/A or 0<br/>
+&nbsp;&nbsp;<a href="CppStdSetlocale.htm">std::setlocale</a>(LC_ALL,"en_US.UTF-8");<br/>
+<br/>
+&nbsp;&nbsp;r.parseEvalQ("tree_full &lt;<a href="CppOperatorMinus.htm">-</a> sim.bdtree(b=birth_rate,d=death_rate,stop=\"taxa\",n=n_taxa,extinct=FALSE,seed=rng_seed)");<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Rcpp::String s <a href="CppOperatorAssign.htm">=</a> r.parseEval("write.tree(tree_full)");<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <a href="CppStdString.htm">std::string</a>(s);<br/>
+}<br/>
+<br/>
+<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::ctm::Helper::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppBool.htm">bool</a></b> is_tested{<b><a href="CppFalse.htm">false</a></b>};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (is_tested) <b><a href="CppReturn.htm">return</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;is_tested <a href="CppOperatorAssign.htm">=</a> <b><a href="CppTrue.htm">true</a></b>;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a>();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppAuto.htm">auto</a></b>&amp; r <a href="CppOperatorAssign.htm">=</a> <a href="CppRibi.htm">ribi</a>::Rinside().Get();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;r.parseEval("<a href="CppLibrary.htm">library</a>(ape)");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;r.parseEval("<a href="CppLibrary.htm">library</a>(DDD)");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;r.parseEval("<a href="CppLibrary.htm">library</a>(geiger)");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;r.parseEval("<a href="CppLibrary.htm">library</a>(laser)");<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Test<a href="CppTime.htm">Time</a>r test_<a href="CppTime.htm">time</a>r(<a href="Cpp__func__.htm">__func__</a>,__<a href="CppCfile.htm">FILE</a>__,1.0);<br/>
+<br/>
+&nbsp;&nbsp;Helper h;<br/>
+&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a> f;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>CreateSimulatedPhylogeny must create a <a href="CppNewick.htm">newick</a><br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Parameters parameters(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.1 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;42<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!h.CreateSimulatedPhylogeny(parameters).empty());<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>CalcLogLikelihood<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> <a href="CppNewick.htm">newick</a>{"((F:2,G:2):1,H:3);"};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Rate&amp; birth_rate{0.20 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Rate&amp; death_rate{0.01 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> log_likelihood{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;h.CalcLogLikelihood(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppNewick.htm">newick</a>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;birth_rate,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;death_rate<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(log_likelihood <a href="CppOperatorLessEqual.htm">&lt;=</a> 0.0);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>CalcLogLikelihoodDdd and CalcLogLikelihoodLaser should give same results<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> <a href="CppNewick.htm">newick</a>{"((F:2,G:2):1,H:3);"};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Rate&amp; birth_rate{0.20 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Rate&amp; death_rate{0.01 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> log_likelihood_ddd{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;h.CalcLogLikelihoodDdd(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppNewick.htm">newick</a>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;birth_rate,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;death_rate,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Part::branch_lengths<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> log_likelihood_laser{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;h.CalcLogLikelihoodLaser(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppNewick.htm">newick</a>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;birth_rate,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;death_rate<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdCout.htm">std::cout</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "log_likelihood_laser: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> log_likelihood_laser <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "log_likelihood_ddd: " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> log_likelihood_ddd <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;;<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(abs(log_likelihood_laser <a href="CppOperatorMinus.htm">-</a> log_likelihood_ddd) &lt; 0.0001);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>CalcMaxLikelihood<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> <a href="CppNewick.htm">newick</a>{"((F:2,G:2):1,H:3);"};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Rate birth_rate{0.0 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Rate death_rate{0.0 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;h.CalcMaxLikelihood(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppNewick.htm">newick</a>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;birth_rate,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;death_rate,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Part::phylogeny<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(birth_rate &gt; 0.0 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(death_rate &gt; 0.0 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second);<br/>
+&nbsp;&nbsp;}<br/>
+}<br/>
+<a href="CppEndif.htm">#endif</a><br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppCoalescentTreeModel/coalescenttreemodelparameters.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppCoalescentTreeModel/coalescenttreemodelparameters.h" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> COALESCENTTREEMODELPARAMETERS_H<br/>
+<a href="CppDefine.htm">#define</a> COALESCENTTREEMODELPARAMETERS_H<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "rate.h"<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppRibi.htm">ribi</a>_<a href="CppTime.htm">time</a>.h"<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a> {<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> ctm {<br/>
+<br/>
+<a href="CppComment.htm">///</a>Performs a Birth-Death process<br/>
+<b><a href="CppStruct.htm">struct</a></b> Parameters<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> BirthRate <a href="CppOperatorAssign.htm">=</a> <a href="CppRibi.htm">ribi</a>::units::Rate;<br/>
+&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> DeathRate <a href="CppOperatorAssign.htm">=</a> <a href="CppRibi.htm">ribi</a>::units::Rate;<br/>
+&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> <a href="CppTime.htm">Time</a> <a href="CppOperatorAssign.htm">=</a> <a href="CppRibi.htm">ribi</a>::units::<a href="CppTime.htm">Time</a>;<br/>
+<br/>
+&nbsp;&nbsp;Parameters(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> BirthRate birth_rate,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> DeathRate death_rate,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppTime.htm">Time</a> <a href="CppTime.htm">time</a>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> rng_seed <a href="CppOperatorAssign.htm">=</a> 42<br/>
+&nbsp;&nbsp;);<br/>
+<br/>
+&nbsp;&nbsp;Parameters(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> BirthRate birth_rate,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> DeathRate death_rate,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> n_taxa,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> rng_seed <a href="CppOperatorAssign.htm">=</a> 42<br/>
+&nbsp;&nbsp;);<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppAuto.htm">auto</a></b> GetBirthRate() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> { <b><a href="CppReturn.htm">return</a></b> m_birth_rate; }<br/>
+&nbsp;&nbsp;<b><a href="CppAuto.htm">auto</a></b> GetDeathRate() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> { <b><a href="CppReturn.htm">return</a></b> m_death_rate; }<br/>
+&nbsp;&nbsp;<b><a href="CppAuto.htm">auto</a></b> GetNumberOfTaxa() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> { <b><a href="CppReturn.htm">return</a></b> m_n_taxa; }<br/>
+&nbsp;&nbsp;<b><a href="CppAuto.htm">auto</a></b> GetRngSeed() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> { <b><a href="CppReturn.htm">return</a></b> m_rng_seed; }<br/>
+&nbsp;&nbsp;<b><a href="CppAuto.htm">auto</a></b> <a href="CppGetTime.htm">GetTime</a>() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> { <b><a href="CppReturn.htm">return</a></b> m_<a href="CppTime.htm">time</a>; }<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppPrivate.htm">private</a></b>:<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> BirthRate m_birth_rate;<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> DeathRate m_death_rate;<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> m_rng_seed;<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppTime.htm">Time</a> m_<a href="CppTime.htm">time</a>;<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> m_n_taxa;<br/>
+};<br/>
+<br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> ctm<br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a><br/>
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> COALESCENTTREEMODELPARAMETERS_H<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppCoalescentTreeModel/coalescenttreemodelparameters.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppCoalescentTreeModel/coalescenttreemodelparameters.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "coalescenttreemodelparameters.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppSstreamH.htm">sstream</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppStdexceptH.htm">stdexcept</a>&gt;<br/>
+<br/>
+<a href="CppRibi.htm">ribi</a>::ctm::Parameters::Parameters(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> BirthRate birth_rate,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> DeathRate death_rate,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppTime.htm">Time</a> <a href="CppTime.htm">time</a>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> rng_seed<br/>
+) :<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_birth_rate{birth_rate},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_death_rate{death_rate},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_rng_seed{rng_seed},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_<a href="CppTime.htm">time</a>{<a href="CppTime.htm">time</a>},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_n_taxa{0}<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (m_birth_rate &lt; 0.0 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdStringstream.htm">std::stringstream</a> s;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;s <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="Cpp__func__.htm">__func__</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> ": birth_rate must be positive, "<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "value given is " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> m_birth_rate<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppThrow.htm">throw</a></b> <a href="CppStdLogic_error.htm">std::logic_error</a>(s.str());<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (m_death_rate &lt; 0.0 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdStringstream.htm">std::stringstream</a> s;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;s <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="Cpp__func__.htm">__func__</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> ": death_rate must be positive, "<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "value given is " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> m_death_rate<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppThrow.htm">throw</a></b> <a href="CppStdLogic_error.htm">std::logic_error</a>(s.str());<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (m_<a href="CppTime.htm">time</a> &lt; 0.0 * <a href="CppBoostUnits.htm">boost::units</a>::si::second)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdStringstream.htm">std::stringstream</a> s;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;s <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="Cpp__func__.htm">__func__</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> ": <a href="CppTime.htm">time</a> must be positive, "<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "value given is " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> m_<a href="CppTime.htm">time</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppThrow.htm">throw</a></b> <a href="CppStdLogic_error.htm">std::logic_error</a>(s.str());<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+}<br/>
+<br/>
+<a href="CppRibi.htm">ribi</a>::ctm::Parameters::Parameters(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> BirthRate birth_rate,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> DeathRate death_rate,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> n_taxa,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> rng_seed<br/>
+) :<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_birth_rate{birth_rate},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_death_rate{death_rate},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_rng_seed{rng_seed},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_<a href="CppTime.htm">time</a>{0.0 * <a href="CppBoostUnits.htm">boost::units</a>::si::second},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_n_taxa{n_taxa}<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (m_birth_rate &lt; 0.0 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdStringstream.htm">std::stringstream</a> s;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;s <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="Cpp__func__.htm">__func__</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> ": birth_rate must be positive, "<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "value given is " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> m_birth_rate<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppThrow.htm">throw</a></b> <a href="CppStdLogic_error.htm">std::logic_error</a>(s.str());<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (m_death_rate &lt; 0.0 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdStringstream.htm">std::stringstream</a> s;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;s <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="Cpp__func__.htm">__func__</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> ": death_rate must be positive, "<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "value given is " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> m_death_rate<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppThrow.htm">throw</a></b> <a href="CppStdLogic_error.htm">std::logic_error</a>(s.str());<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (m_n_taxa &lt; 2)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdStringstream.htm">std::stringstream</a> s;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;s <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="Cpp__func__.htm">__func__</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> ": n_taxa must be 2 at least, "<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "value given is " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> m_n_taxa<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppThrow.htm">throw</a></b> <a href="CppStdLogic_error.htm">std::logic_error</a>(s.str());<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+}<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppCoalescentTreeModel/coalescenttreemodelsimulation.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppCoalescentTreeModel/coalescenttreemodelsimulation.h" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> COALESCENTTREEMODELPROCESS_H<br/>
+<a href="CppDefine.htm">#define</a> COALESCENTTREEMODELPROCESS_H<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "coalescenttreemodelparameters.h"<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppRandomH.htm">random</a>&gt;<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a> {<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> ctm {<br/>
+<br/>
+<a href="CppComment.htm">///</a>Performs a Brownian motion<br/>
+<b><a href="CppStruct.htm">struct</a></b> Simulation<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> BirthRate <a href="CppOperatorAssign.htm">=</a> <a href="CppRibi.htm">ribi</a>::units::Rate;<br/>
+&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> DeathRate <a href="CppOperatorAssign.htm">=</a> <a href="CppRibi.htm">ribi</a>::units::Rate;<br/>
+&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> <a href="CppTime.htm">Time</a> <a href="CppOperatorAssign.htm">=</a> <a href="CppRibi.htm">ribi</a>::units::<a href="CppTime.htm">Time</a>;<br/>
+<br/>
+&nbsp;&nbsp;Simulation(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Parameters&amp; parameters<br/>
+&nbsp;&nbsp;);<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Calculate the next x. This <b><a href="CppClass.htm">class</a></b> will supply the <a href="CppRandomNumber.htm">random numbers</a>,<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/thus these <a href="CppMemberFunction.htm">member functions</a> are not <b><a href="CppConst.htm">const</a></b><br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> CalcNext(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> x<br/>
+&nbsp;&nbsp;);<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Calculate the next x+dt, supplying the <a href="CppRandomNumber.htm">random numbers</a> yourself<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> CalcNext(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> x,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> random_exponential<br/>
+&nbsp;&nbsp;);<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppInt.htm">int</a></b> CountExtant() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppVoid.htm">void</a></b> Test() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppPrivate.htm">private</a></b>:<br/>
+&nbsp;&nbsp;<a href="CppStdExponential_distribution.htm">std::exponential_distribution</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; m_exponential_distribution;<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Parameters m_parameters;<br/>
+&nbsp;&nbsp;<a href="CppStdMt19937.htm">std::mt19937</a> m_rng;<br/>
+&nbsp;&nbsp;<a href="CppTime.htm">Time</a> m_<a href="CppTime.htm">time</a>;<br/>
+&nbsp;&nbsp;<a href="CppStdUniform_real_distribution.htm">std::uniform_real_distribution</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; m_uniform_distribution;<br/>
+};<br/>
+<br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> ctm<br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a><br/>
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> COALESCENTTREEMODELPROCESS_H<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppCoalescentTreeModel/coalescenttreemodelsimulation.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppCoalescentTreeModel/coalescenttreemodelsimulation.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "coalescenttreemodelsimulation.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCmathH.htm">cmath</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppIostreamH.htm">iostream</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppStdexceptH.htm">stdexcept</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppSstreamH.htm">sstream</a>&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "coalescenttreemodelhelper.h"<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppBoost.htm">boost</a>/math/constants/constants.hpp&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "test<a href="CppTime.htm">time</a>r.h"<br/>
+<br/>
+<a href="CppRibi.htm">ribi</a>::ctm::Simulation::Simulation(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Parameters&amp; parameters<br/>
+)<br/>
+&nbsp;&nbsp;: m_exponential_distribution(parameters.GetBirthRate().value() <a href="CppOperatorPlus.htm">+</a> parameters.GetDeathRate().value()),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_parameters{parameters},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_rng(parameters.GetRngSeed()),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_<a href="CppTime.htm">time</a>{0.0 * <a href="CppBoostUnits.htm">boost::units</a>::si::second},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_uniform_distribution(0.0,1.0)<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;Test();<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::ctm::Simulation::CalcNext(<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> x)<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> r{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;CountExtant()<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;* (m_parameters.GetBirthRate().value() <a href="CppOperatorPlus.htm">+</a> m_parameters.GetDeathRate().value())<br/>
+&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (r <a href="CppOperatorNotEqual.htm">!=</a> m_exponential_distribution.lambda())<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_exponential_distribution <a href="CppOperatorAssign.htm">=</a> <a href="CppStdExponential_distribution.htm">std::exponential_distribution</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;(r);<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> random_exponential{m_exponential_distribution(m_rng)};<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> CalcNext(x,random_exponential);<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::ctm::Simulation::CalcNext(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> <a href="CppComment.htm">/*</a> x <a href="CppComment.htm">*/</a>,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> random_exponential<br/>
+)<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> dt <a href="CppOperatorAssign.htm">=</a> random_exponential * <a href="CppBoostUnits.htm">boost::units</a>::si::second;<br/>
+&nbsp;&nbsp;m_<a href="CppTime.htm">time</a> <a href="CppOperatorPlusAssign.htm">+=</a> dt;<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Do something with a phylogeny here<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppStub.htm">Stub</a><br/>
+}<br/>
+<br/>
+<br/>
+<b><a href="CppInt.htm">int</a></b> <a href="CppRibi.htm">ribi</a>::ctm::Simulation::CountExtant() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> 0; <a href="CppComment.htm">//</a><a href="CppStub.htm">Stub</a><br/>
+}<br/>
+<br/>
+<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::ctm::Simulation::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppBool.htm">bool</a></b> is_tested{<b><a href="CppFalse.htm">false</a></b>};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (is_tested) <b><a href="CppReturn.htm">return</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;is_tested <a href="CppOperatorAssign.htm">=</a> <b><a href="CppTrue.htm">true</a></b>;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Helper();<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Test<a href="CppTime.htm">Time</a>r test_<a href="CppTime.htm">time</a>r(<a href="Cpp__func__.htm">__func__</a>,__<a href="CppCfile.htm">FILE</a>__,1.0);<br/>
+}<br/>
+<a href="CppEndif.htm">#endif</a><br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p>&nbsp;</p>
+<p><a href="http://validator.w3.org/check?uri=referer"><img src="valid-xhtml10.png" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a></p>
+<p>This page has been created by the <a href="Tools.htm">tool</a> <a href="ToolCodeToHtml.htm">CodeToHtml</a></p>
+</body>
+</html>

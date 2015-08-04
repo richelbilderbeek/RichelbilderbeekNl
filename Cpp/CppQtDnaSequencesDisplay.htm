@@ -128,7 +128,7 @@
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> temp_filename{<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="CppFileIo.htm">fileio</a>.GetTempFileName(".png")<br/>
 &nbsp;&nbsp;};<br/>
-&nbsp;&nbsp;DnaR().PlotSequences(sequences,temp_filename);<br/>
+&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::DnaR().PlotSequences(sequences,temp_filename);<br/>
 &nbsp;&nbsp;ui-&gt;image_dna_sequences-&gt;setPixmap(<a href="CppQPixmap.htm">QPixmap</a>(temp_filename.c_str()));<br/>
 &nbsp;&nbsp;<a href="CppFileIo.htm">fileio</a>.<a href="CppDeleteFile.htm">DeleteFile</a>(temp_filename);<br/>
 }<br/>

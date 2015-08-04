@@ -61,6 +61,8 @@
 <a href="CppInclude.htm">#include</a> &lt;<a href="CppStringH.htm">string</a>&gt;<br/>
 <a href="CppInclude.htm">#include</a> &lt;<a href="CppVectorH.htm">vector</a>&gt;<br/>
 <br/>
+<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a> {<br/>
+<br/>
 <a href="CppComment.htm">///</a>Wrapper to call <a href="CppNewick.htm">newick</a>_utils<br/>
 <b><a href="CppStruct.htm">struct</a></b> <a href="CppNewick.htm">Newick</a>Utils<br/>
 {<br/>
@@ -78,6 +80,9 @@
 &nbsp;&nbsp;<a href="CppComment.htm">//</a>/GetPhylogeny <a href="CppReturn.htm">returns</a> the <a href="CppNewick.htm">Newick</a> as a phylogeny in text<br/>
 &nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a>&gt; GetPhylogeny(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>);<br/>
 <br/>
+&nbsp;&nbsp;<a href="CppStdString.htm">std::string</a> Get<a href="CppVersion.htm">Version</a>() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a>&gt; Get<a href="CppVersion.htm">Version</a>History() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
 &nbsp;&nbsp;<a href="CppComment.htm">//</a>/Plot <a href="CppNewick.htm">Newick</a> as a phylogeny in a graphics format,<br/>
 &nbsp;&nbsp;<a href="CppComment.htm">//</a>/folloing the same <a href="CppInterface.htm">interface</a> as PhylogenyR<br/>
 &nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> <a href="CppNewick.htm">Newick</a>ToPhylogeny(<br/>
@@ -94,6 +99,8 @@
 &nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppVoid.htm">void</a></b> Test() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
 &nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
 };<br/>
+<br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a><br/>
 <br/>
 <a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a>RIBI_NEWICKUTILS_H<br/>
 </code></td></tr></table>
@@ -119,9 +126,9 @@
 <a href="CppInclude.htm">#include</a> "<a href="CppTrace.htm">trace</a>.h"<br/>
 <a href="CppInclude.htm">#include</a> "phylogeny_r.h"<br/>
 <br/>
-<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> <a href="CppNewick.htm">Newick</a>Utils::sm_<a href="CppNewick.htm">newick</a>_utils_path{"../../<a href="CppLibrary.htm">Libraries</a>/<a href="CppNewick.htm">newick</a>_utils/src"};<br/>
+<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> <a href="CppRibi.htm">ribi</a>::<a href="CppNewick.htm">Newick</a>Utils::sm_<a href="CppNewick.htm">newick</a>_utils_path{"../../<a href="CppLibrary.htm">Libraries</a>/<a href="CppNewick.htm">newick</a>_utils/src"};<br/>
 <br/>
-<a href="CppNewick.htm">Newick</a>Utils::<a href="CppNewick.htm">Newick</a>Utils()<br/>
+<a href="CppRibi.htm">ribi</a>::<a href="CppNewick.htm">Newick</a>Utils::<a href="CppNewick.htm">Newick</a>Utils()<br/>
 {<br/>
 &nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
 &nbsp;&nbsp;Test();<br/>
@@ -139,7 +146,7 @@
 <br/>
 }<br/>
 <br/>
-<b><a href="CppVoid.htm">void</a></b> <a href="CppNewick.htm">Newick</a>Utils::Display(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>)<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::<a href="CppNewick.htm">Newick</a>Utils::Display(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>)<br/>
 {<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> executable{sm_<a href="CppNewick.htm">newick</a>_utils_path <a href="CppOperatorPlus.htm">+</a> "/nw_display"};<br/>
 &nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a>().<a href="CppIsRegularFile.htm">IsRegularFile</a>(executable) <a href="CppOperatorLogicalAnd.htm">&amp;&amp;</a> "Checked in <a href="CppConstructor.htm">constructor</a>");<br/>
@@ -151,12 +158,12 @@
 &nbsp;&nbsp;}<br/>
 }<br/>
 <br/>
-<a href="CppStdString.htm">std::string</a> <a href="CppNewick.htm">Newick</a>Utils::DropExtinct(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>) <b><a href="CppConst.htm">const</a></b><br/>
+<a href="CppStdString.htm">std::string</a> <a href="CppRibi.htm">ribi</a>::<a href="CppNewick.htm">Newick</a>Utils::DropExtinct(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>) <b><a href="CppConst.htm">const</a></b><br/>
 {<br/>
 &nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> PhylogenyR().DropExtinct(<a href="CppNewick.htm">newick</a>);<br/>
 }<br/>
 <br/>
-<a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a>&gt; <a href="CppNewick.htm">Newick</a>Utils::GetPhylogeny(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>)<br/>
+<a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a>&gt; <a href="CppRibi.htm">ribi</a>::<a href="CppNewick.htm">Newick</a>Utils::GetPhylogeny(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>)<br/>
 {<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> executable{sm_<a href="CppNewick.htm">newick</a>_utils_path <a href="CppOperatorPlus.htm">+</a> "/nw_display"};<br/>
 &nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a>().<a href="CppIsRegularFile.htm">IsRegularFile</a>(executable) <a href="CppOperatorLogicalAnd.htm">&amp;&amp;</a> "Checked in <a href="CppConstructor.htm">constructor</a>");<br/>
@@ -182,7 +189,19 @@
 &nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> v;<br/>
 }<br/>
 <br/>
-<b><a href="CppVoid.htm">void</a></b> <a href="CppNewick.htm">Newick</a>Utils::<a href="CppNewick.htm">Newick</a>ToPhylogeny(<br/>
+<a href="CppStdString.htm">std::string</a> <a href="CppRibi.htm">ribi</a>::<a href="CppNewick.htm">Newick</a>Utils::Get<a href="CppVersion.htm">Version</a>() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> "1.0";<br/>
+}<br/>
+<br/>
+<a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a>&gt; <a href="CppRibi.htm">ribi</a>::<a href="CppNewick.htm">Newick</a>Utils::Get<a href="CppVersion.htm">Version</a>History() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"2015-06-13: <a href="CppVersion.htm">Version</a> 1.0: started <a href="CppVersion.htm">version</a>ing"<br/>
+&nbsp;&nbsp;};<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::<a href="CppNewick.htm">Newick</a>Utils::<a href="CppNewick.htm">Newick</a>ToPhylogeny(<br/>
 &nbsp;&nbsp;<a href="CppStdString.htm">std::string</a> <a href="CppNewick.htm">newick</a>,<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; filename,<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> GraphicsFormat graphics_format,<br/>
@@ -229,7 +248,7 @@
 <a href="CppInclude.htm">#include</a> "<a href="CppTrace.htm">trace</a>.h"<br/>
 <br/>
 <a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
-<b><a href="CppVoid.htm">void</a></b> <a href="CppNewick.htm">Newick</a>Utils::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::<a href="CppNewick.htm">Newick</a>Utils::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
 &nbsp;&nbsp;{<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppBool.htm">bool</a></b> is_tested{<b><a href="CppFalse.htm">false</a></b>};<br/>

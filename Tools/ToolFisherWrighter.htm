@@ -94,6 +94,7 @@ include(../../<a href="CppClass.htm">Classes</a>/<a href="CppCounter.htm">CppCou
 include(../../<a href="CppClass.htm">Classes</a>/<a href="CppDnaSequence.htm">CppDnaSequence</a>/<a href="CppDnaSequence.htm">CppDnaSequence</a>.pri)<br/>
 include(../../<a href="CppClass.htm">Classes</a>/<a href="CppDnaR.htm">CppDnaR</a>/<a href="CppDnaR.htm">CppDnaR</a>.pri)<br/>
 include(../../<a href="CppClass.htm">Classes</a>/<a href="CppFastaFile.htm">CppFastaFile</a>/<a href="CppFastaFile.htm">CppFastaFile</a>.pri)<br/>
+include(../../<a href="CppClass.htm">Classes</a>/<a href="CppFuzzy_equal_to.htm">CppFuzzy_equal_to</a>/<a href="CppFuzzy_equal_to.htm">CppFuzzy_equal_to</a>.pri)<br/>
 include(../../<a href="CppClass.htm">Classes</a>/<a href="CppNewickUtils.htm">CppNewickUtils</a>/<a href="CppNewickUtils.htm">CppNewickUtils</a>.pri)<br/>
 include(../../<a href="CppClass.htm">Classes</a>/<a href="CppPedigree.htm">CppPedigree</a>/<a href="CppPedigree.htm">CppPedigree</a>.pri)<br/>
 include(../../<a href="CppClass.htm">Classes</a>/<a href="CppPhylogenyR.htm">CppPhylogenyR</a>/<a href="CppPhylogenyR.htm">CppPhylogenyR</a>.pri)<br/>
@@ -119,26 +120,28 @@ include(ToolFisherWrighterDesktop.pri)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter<br/>
 <br/>
 <a href="CppQmakeSources.htm">SOURCES</a> += \<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/dna.cpp \<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/dna_test.cpp \<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/generation.cpp \<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/generation_test.cpp \<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/helper.cpp \<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/individual.cpp \<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/individual_test.cpp \<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/parameters.cpp \<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/parameters_test.cpp \<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/simulation.cpp \<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/simulation_test.cpp<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/fisherwrighterdna.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/fisherwrighterdna_test.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/fisherwrightergeneration.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/fisherwrightergeneration_test.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/fisherwrighterhelper.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/fisherwrighterindividual.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/fisherwrighterindividual_test.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/fisherwrighterparameters.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/fisherwrighterparameters_test.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/fisherwrightersimulation.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/fisherwrightersimulation_test.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/fisherwrightermenudialog.cpp<br/>
 <br/>
 <br/>
 <a href="CppQmakeHeaders.htm">HEADERS</a> += \<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/dna.h \<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/generation.h \<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/helper.h \<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/individual.h \<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/parameters.h \<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/simulation.h<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/fisherwrighterdna.h \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/fisherwrightergeneration.h \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/fisherwrighterhelper.h \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/fisherwrighterindividual.h \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/fisherwrighterparameters.h \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/fisherwrightersimulation.h \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/fisherwrightermenudialog.h<br/>
 <br/>
 <a href="CppQmakeOther_files.htm">OTHER_FILES</a> += \<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/Licence.txt<br/>
@@ -156,13 +159,13 @@ include(ToolFisherWrighterDesktop.pri)<br/>
 include(../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/ToolFisherWrighterConsole.pri)<br/>
 <br/>
 <a href="CppFORMS.htm">FORMS</a> += \<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;qtfisherwrighter<a href="CppMain.htm">main</a>dialog.ui<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/qtfisherwrighter<a href="CppMain.htm">main</a>dialog.ui<br/>
 <br/>
 <a href="CppQmakeSources.htm">SOURCES</a> += \<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;qtfisherwrighter<a href="CppMain.htm">main</a>dialog.cpp<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/qtfisherwrighter<a href="CppMain.htm">main</a>dialog.cpp<br/>
 <br/>
 <a href="CppQmakeHeaders.htm">HEADERS</a> += \<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;qtfisherwrighter<a href="CppMain.htm">main</a>dialog.h<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/qtfisherwrighter<a href="CppMain.htm">main</a>dialog.h<br/>
 </code></td></tr></table>
 <!-- end of the code -->
 <p>&nbsp;</p>
@@ -170,15 +173,18 @@ include(../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/ToolFisherWrighte
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<h2>./ToolFisherWrighter/dna.h</h2>
+<h2>./ToolFisherWrighter/fisherwrighterdna.h</h2>
 <p>&nbsp;</p>
 <!-- start of code -->
-<table summary="./ToolFisherWrighter/dna.h" border = "1"><tr><td><code>
+<table summary="./ToolFisherWrighter/fisherwrighterdna.h" border = "1"><tr><td><code>
 <a href="CppIfndef.htm">#ifndef</a> DNA_H<br/>
 <a href="CppDefine.htm">#define</a> DNA_H<br/>
 <br/>
 <a href="CppInclude.htm">#include</a> &lt;<a href="CppRandomH.htm">random</a>&gt;<br/>
 <a href="CppInclude.htm">#include</a> &lt;<a href="CppStringH.htm">string</a>&gt;<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a> {<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> fw {<br/>
 <br/>
 <b><a href="CppStruct.htm">struct</a></b> Dna<br/>
 {<br/>
@@ -231,6 +237,9 @@ include(../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/ToolFisherWrighte
 <b><a href="CppBool.htm">bool</a></b> <b><a href="CppOperatorEqual.htm">operator==</a></b>(<b><a href="CppConst.htm">const</a></b> Dna&amp; lhs, <b><a href="CppConst.htm">const</a></b> Dna&amp; rhs) <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
 <b><a href="CppBool.htm">bool</a></b> <b><a href="CppOperatorNotEqual.htm">operator!=</a></b>(<b><a href="CppConst.htm">const</a></b> Dna&amp; lhs, <b><a href="CppConst.htm">const</a></b> Dna&amp; rhs) <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
 <br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> fw<br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a><br/>
+<br/>
 <a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> DNA_H<br/>
 </code></td></tr></table>
 <!-- end of the code -->
@@ -239,11 +248,11 @@ include(../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/ToolFisherWrighte
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<h2>./ToolFisherWrighter/dna.cpp</h2>
+<h2>./ToolFisherWrighter/fisherwrighterdna.cpp</h2>
 <p>&nbsp;</p>
 <!-- start of code -->
-<table summary="./ToolFisherWrighter/dna.cpp" border = "1"><tr><td><code>
-<a href="CppInclude.htm">#include</a> "dna.h"<br/>
+<table summary="./ToolFisherWrighter/fisherwrighterdna.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "fisherwrighterdna.h"<br/>
 <br/>
 <a href="CppInclude.htm">#include</a> &lt;<a href="CppAlgorithmH.htm">algorithm</a>&gt;<br/>
 <a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
@@ -251,7 +260,7 @@ include(../../<a href="Tools.htm">Tools</a>/ToolFisherWrighter/ToolFisherWrighte
 <br/>
 <a href="CppInclude.htm">#include</a> "<a href="CppTrace.htm">trace</a>.h"<br/>
 <br/>
-Dna::Dna(<br/>
+<a href="CppRibi.htm">ribi</a>::fw::Dna::Dna(<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> mutation_rate,<br/>
 &nbsp;&nbsp;<a href="CppStdMt19937.htm">std::mt19937</a>&amp; rnd_engine,<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; sequence<br/>
@@ -265,7 +274,7 @@ Dna::Dna(<br/>
 &nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
 }<br/>
 <br/>
-Dna Dna::CreateOffspring() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+<a href="CppRibi.htm">ribi</a>::fw::Dna <a href="CppRibi.htm">ribi</a>::fw::Dna::CreateOffspring() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
 &nbsp;&nbsp;<a href="CppComment.htm">//</a>Go through all nucleotides,<br/>
 &nbsp;&nbsp;<a href="CppComment.htm">//</a>overwrite with a random base pair by chance<br/>
@@ -292,7 +301,7 @@ Dna Dna::CreateOffspring() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 }<br/>
 <br/>
 <br/>
-<b><a href="CppChar.htm">char</a></b> Dna::CreateRandomBasePair(<a href="CppStdMt19937.htm">std::mt19937</a>&amp; rnd_engine) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+<b><a href="CppChar.htm">char</a></b> <a href="CppRibi.htm">ribi</a>::fw::Dna::CreateRandomBasePair(<a href="CppStdMt19937.htm">std::mt19937</a>&amp; rnd_engine) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
 &nbsp;&nbsp;<a href="CppStdUniform_int_distribution.htm">std::uniform_int_distribution</a>&lt;<b><a href="CppInt.htm">int</a></b>&gt; d(0,3);<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> i{d(rnd_engine)};<br/>
@@ -307,13 +316,13 @@ Dna Dna::CreateOffspring() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 &nbsp;&nbsp;<b><a href="CppThrow.htm">throw</a></b> <a href="CppStdLogic_error.htm">std::logic_error</a>("Dna::CreateRandomBasePair: should not get here");<br/>
 }<br/>
 <br/>
-<b><a href="CppChar.htm">char</a></b> Dna::CreateRandomBasePair() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+<b><a href="CppChar.htm">char</a></b> <a href="CppRibi.htm">ribi</a>::fw::Dna::CreateRandomBasePair() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
 &nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> CreateRandomBasePair(m_rnd_engine);<br/>
 }<br/>
 <br/>
 <br/>
-<a href="CppStdString.htm">std::string</a> Dna::CreateRandomDna(<br/>
+<a href="CppStdString.htm">std::string</a> <a href="CppRibi.htm">ribi</a>::fw::Dna::CreateRandomDna(<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> dna_length,<br/>
 &nbsp;&nbsp;<a href="CppStdMt19937.htm">std::mt19937</a>&amp; rnd_engine<br/>
 ) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
@@ -326,14 +335,14 @@ Dna Dna::CreateOffspring() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 &nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> s;<br/>
 }<br/>
 <br/>
-<a href="CppStdString.htm">std::string</a> Dna::CreateRandomDna(<br/>
+<a href="CppStdString.htm">std::string</a> <a href="CppRibi.htm">ribi</a>::fw::Dna::CreateRandomDna(<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> dna_length<br/>
 ) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
 &nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> CreateRandomDna(dna_length,m_rnd_engine);<br/>
 }<br/>
 <br/>
-<b><a href="CppDouble.htm">double</a></b> Dna::GetRandomFraction() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+<b><a href="CppDouble.htm">double</a></b> <a href="CppRibi.htm">ribi</a>::fw::Dna::GetRandomFraction() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
 &nbsp;&nbsp;<a href="CppComment.htm">//</a>Can use <b><a href="CppStatic.htm">static</a></b> here? <a href="CppAdd.htm">Add</a>ed to Dna::Test<br/>
 &nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <a href="CppStdUniform_real_distribution.htm">std::uniform_real_distribution</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; d(0.0,1.0);<br/>
@@ -347,7 +356,7 @@ Dna Dna::CreateOffspring() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 <br/>
 <br/>
 <br/>
-<b><a href="CppBool.htm">bool</a></b> <b><a href="CppOperatorEqual.htm">operator==</a></b>(<b><a href="CppConst.htm">const</a></b> Dna&amp; lhs, <b><a href="CppConst.htm">const</a></b> Dna&amp; rhs) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+<b><a href="CppBool.htm">bool</a></b> <a href="CppRibi.htm">ribi</a>::fw::<b><a href="CppOperatorEqual.htm">operator==</a></b>(<b><a href="CppConst.htm">const</a></b> Dna&amp; lhs, <b><a href="CppConst.htm">const</a></b> Dna&amp; rhs) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
 &nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lhs.GetSequence() <a href="CppOperatorEqual.htm">==</a> rhs.GetSequence() <a href="CppComment.htm">//</a>Sequence first, because that is expected to vary more<br/>
@@ -355,7 +364,7 @@ Dna Dna::CreateOffspring() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 &nbsp;&nbsp;;<br/>
 }<br/>
 <br/>
-<b><a href="CppBool.htm">bool</a></b> <b><a href="CppOperatorNotEqual.htm">operator!=</a></b>(<b><a href="CppConst.htm">const</a></b> Dna&amp; lhs, <b><a href="CppConst.htm">const</a></b> Dna&amp; rhs) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+<b><a href="CppBool.htm">bool</a></b> <a href="CppRibi.htm">ribi</a>::fw::<b><a href="CppOperatorNotEqual.htm">operator!=</a></b>(<b><a href="CppConst.htm">const</a></b> Dna&amp; lhs, <b><a href="CppConst.htm">const</a></b> Dna&amp; rhs) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
 &nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> !(lhs <a href="CppOperatorEqual.htm">==</a> rhs);<br/>
 }<br/>
@@ -366,16 +375,16 @@ Dna Dna::CreateOffspring() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<h2>./ToolFisherWrighter/dna_test.cpp</h2>
+<h2>./ToolFisherWrighter/fisherwrighterdna_test.cpp</h2>
 <p>&nbsp;</p>
 <!-- start of code -->
-<table summary="./ToolFisherWrighter/dna_test.cpp" border = "1"><tr><td><code>
-<a href="CppInclude.htm">#include</a> "dna.h"<br/>
+<table summary="./ToolFisherWrighter/fisherwrighterdna_test.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "fisherwrighterdna.h"<br/>
 <br/>
 <a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
 <br/>
 <a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
-<b><a href="CppVoid.htm">void</a></b> Dna::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::fw::Dna::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
 &nbsp;&nbsp;{<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppBool.htm">bool</a></b> is_tested <a href="CppOperatorAssign.htm">=</a> <b><a href="CppFalse.htm">false</a></b>;<br/>
@@ -500,17 +509,20 @@ Dna Dna::CreateOffspring() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<h2>./ToolFisherWrighter/generation.h</h2>
+<h2>./ToolFisherWrighter/fisherwrightergeneration.h</h2>
 <p>&nbsp;</p>
 <!-- start of code -->
-<table summary="./ToolFisherWrighter/generation.h" border = "1"><tr><td><code>
+<table summary="./ToolFisherWrighter/fisherwrightergeneration.h" border = "1"><tr><td><code>
 <a href="CppIfndef.htm">#ifndef</a> GENERATION_H<br/>
 <a href="CppDefine.htm">#define</a> GENERATION_H<br/>
 <br/>
 <a href="CppInclude.htm">#include</a> &lt;<a href="CppVectorH.htm">vector</a>&gt;<br/>
 <br/>
-<a href="CppInclude.htm">#include</a> "individual.h"<br/>
+<a href="CppInclude.htm">#include</a> "fisherwrighterindividual.h"<br/>
 <a href="CppInclude.htm">#include</a> "dnasequence.h"<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a> {<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> fw {<br/>
 <br/>
 <a href="CppComment.htm">//</a>Just a collection of Individuals<br/>
 <b><a href="CppStruct.htm">struct</a></b> Generation<br/>
@@ -537,6 +549,9 @@ Dna Dna::CreateOffspring() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 <br/>
 <b><a href="CppBool.htm">bool</a></b> <b><a href="CppOperatorEqual.htm">operator==</a></b>(<b><a href="CppConst.htm">const</a></b> Generation&amp; lhs, <b><a href="CppConst.htm">const</a></b> Generation&amp; rhs) <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
 <br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> fw<br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a><br/>
+<br/>
 <a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> GENERATION_H<br/>
 </code></td></tr></table>
 <!-- end of the code -->
@@ -545,16 +560,16 @@ Dna Dna::CreateOffspring() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<h2>./ToolFisherWrighter/generation.cpp</h2>
+<h2>./ToolFisherWrighter/fisherwrightergeneration.cpp</h2>
 <p>&nbsp;</p>
 <!-- start of code -->
-<table summary="./ToolFisherWrighter/generation.cpp" border = "1"><tr><td><code>
-<a href="CppInclude.htm">#include</a> "generation.h"<br/>
+<table summary="./ToolFisherWrighter/fisherwrightergeneration.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "fisherwrightergeneration.h"<br/>
 <br/>
 <a href="CppInclude.htm">#include</a> &lt;<a href="CppAlgorithmH.htm">algorithm</a>&gt;<br/>
 <a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
 <br/>
-Generation::Generation(<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;Individual&gt;&amp; individuals)<br/>
+<a href="CppRibi.htm">ribi</a>::fw::Generation::Generation(<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;Individual&gt;&amp; individuals)<br/>
 &nbsp;&nbsp;: m_individuals{individuals}<br/>
 {<br/>
 &nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
@@ -563,7 +578,7 @@ Generation::Generation(<b><a href="CppConst.htm">const</a></b> <a href="CppStdVe
 }<br/>
 <br/>
 <br/>
-<a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppRibi.htm">ribi</a>::DnaSequence&gt; Generation::GetSequences() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+<a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppRibi.htm">ribi</a>::DnaSequence&gt; <a href="CppRibi.htm">ribi</a>::fw::Generation::GetSequences() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
 &nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppRibi.htm">ribi</a>::DnaSequence&gt; alignments;<br/>
 &nbsp;&nbsp;<a href="CppStdTransform.htm">std::transform</a>(<br/>
@@ -581,21 +596,21 @@ Generation::Generation(<b><a href="CppConst.htm">const</a></b> <a href="CppStdVe
 &nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> alignments;<br/>
 }<br/>
 <br/>
-<b><a href="CppConst.htm">const</a></b> Individual&amp; Generation::<b><a href="CppOperator.htm">operator</a></b>[](<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> index) <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+<b><a href="CppConst.htm">const</a></b> <a href="CppRibi.htm">ribi</a>::fw::Individual&amp; <a href="CppRibi.htm">ribi</a>::fw::Generation::<b><a href="CppOperator.htm">operator</a></b>[](<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> index) <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
 &nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(index <a href="CppOperatorGreaterEqual.htm">&gt;=</a> 0);<br/>
 &nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(index &lt; <b><a href="CppStatic_cast.htm">static_cast</a></b>&lt;<b><a href="CppInt.htm">int</a></b>&gt;(m_individuals.size()));<br/>
 &nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> m_individuals[index];<br/>
 }<br/>
 <br/>
-Individual&amp; Generation::<b><a href="CppOperator.htm">operator</a></b>[](<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> index) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+<a href="CppRibi.htm">ribi</a>::fw::Individual&amp; <a href="CppRibi.htm">ribi</a>::fw::Generation::<b><a href="CppOperator.htm">operator</a></b>[](<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> index) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
 &nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(index <a href="CppOperatorGreaterEqual.htm">&gt;=</a> 0);<br/>
 &nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(index &lt; <b><a href="CppStatic_cast.htm">static_cast</a></b>&lt;<b><a href="CppInt.htm">int</a></b>&gt;(m_individuals.size()));<br/>
 &nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> m_individuals[index];<br/>
 }<br/>
 <br/>
-<b><a href="CppBool.htm">bool</a></b> <b><a href="CppOperatorEqual.htm">operator==</a></b>(<b><a href="CppConst.htm">const</a></b> Generation&amp; lhs, <b><a href="CppConst.htm">const</a></b> Generation&amp; rhs) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+<b><a href="CppBool.htm">bool</a></b> <a href="CppRibi.htm">ribi</a>::fw::<b><a href="CppOperatorEqual.htm">operator==</a></b>(<b><a href="CppConst.htm">const</a></b> Generation&amp; lhs, <b><a href="CppConst.htm">const</a></b> Generation&amp; rhs) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
 &nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;lhs.GetIndividuals() <a href="CppOperatorEqual.htm">==</a> rhs.GetIndividuals()<br/>
@@ -608,17 +623,17 @@ Individual&amp; Generation::<b><a href="CppOperator.htm">operator</a></b>[](<b><
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<h2>./ToolFisherWrighter/generation_test.cpp</h2>
+<h2>./ToolFisherWrighter/fisherwrightergeneration_test.cpp</h2>
 <p>&nbsp;</p>
 <!-- start of code -->
-<table summary="./ToolFisherWrighter/generation_test.cpp" border = "1"><tr><td><code>
-<a href="CppInclude.htm">#include</a> "generation.h"<br/>
+<table summary="./ToolFisherWrighter/fisherwrightergeneration_test.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "fisherwrightergeneration.h"<br/>
 <br/>
 <a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
 <a href="CppInclude.htm">#include</a> &lt;<a href="CppFstreamH.htm">fstream</a>&gt;<br/>
 <br/>
 <a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
-<b><a href="CppVoid.htm">void</a></b> Generation::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::fw::Generation::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
 &nbsp;&nbsp;{<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppBool.htm">bool</a></b> is_tested {<b><a href="CppFalse.htm">false</a></b>};<br/>
@@ -642,16 +657,19 @@ Individual&amp; Generation::<b><a href="CppOperator.htm">operator</a></b>[](<b><
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<h2>./ToolFisherWrighter/helper.h</h2>
+<h2>./ToolFisherWrighter/fisherwrighterhelper.h</h2>
 <p>&nbsp;</p>
 <!-- start of code -->
-<table summary="./ToolFisherWrighter/helper.h" border = "1"><tr><td><code>
+<table summary="./ToolFisherWrighter/fisherwrighterhelper.h" border = "1"><tr><td><code>
 <a href="CppIfndef.htm">#ifndef</a> HELPER_H<br/>
 <a href="CppDefine.htm">#define</a> HELPER_H<br/>
 <br/>
 <a href="CppInclude.htm">#include</a> &lt;<a href="CppMapH.htm">map</a>&gt;<br/>
 <a href="CppInclude.htm">#include</a> &lt;<a href="CppStringH.htm">string</a>&gt;<br/>
 <a href="CppInclude.htm">#include</a> &lt;<a href="CppVectorH.htm">vector</a>&gt;<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a> {<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> fw {<br/>
 <br/>
 <b><a href="CppStruct.htm">struct</a></b> Helper<br/>
 {<br/>
@@ -672,6 +690,9 @@ Individual&amp; Generation::<b><a href="CppOperator.htm">operator</a></b>[](<b><
 &nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
 };<br/>
 <br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> fw<br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a><br/>
+<br/>
 <a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> HELPER_H<br/>
 </code></td></tr></table>
 <!-- end of the code -->
@@ -680,11 +701,11 @@ Individual&amp; Generation::<b><a href="CppOperator.htm">operator</a></b>[](<b><
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<h2>./ToolFisherWrighter/helper.cpp</h2>
+<h2>./ToolFisherWrighter/fisherwrighterhelper.cpp</h2>
 <p>&nbsp;</p>
 <!-- start of code -->
-<table summary="./ToolFisherWrighter/helper.cpp" border = "1"><tr><td><code>
-<a href="CppInclude.htm">#include</a> "helper.h"<br/>
+<table summary="./ToolFisherWrighter/fisherwrighterhelper.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "fisherwrighterhelper.h"<br/>
 <br/>
 <a href="CppInclude.htm">#include</a> &lt;<a href="CppAlgorithmH.htm">algorithm</a>&gt;<br/>
 <a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
@@ -704,14 +725,14 @@ Individual&amp; Generation::<b><a href="CppOperator.htm">operator</a></b>[](<b><
 &nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> s.str();<br/>
 }<br/>
 <br/>
-Helper::Helper() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+<a href="CppRibi.htm">ribi</a>::fw::Helper::Helper() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
 &nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
 &nbsp;&nbsp;Test();<br/>
 &nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
 }<br/>
 <br/>
-<a href="CppStdString.htm">std::string</a> Helper::<a href="CppContainer.htm">Container</a>ToStr(<br/>
+<a href="CppStdString.htm">std::string</a> <a href="CppRibi.htm">ribi</a>::fw::Helper::<a href="CppContainer.htm">Container</a>ToStr(<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a>&gt;&amp; s,<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; seperator<br/>
 ) <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
@@ -720,7 +741,7 @@ Helper::Helper() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 }<br/>
 <br/>
 <br/>
-<a href="CppStdMap.htm">std::map</a>&lt;<a href="CppStdString.htm">std::string</a>,<b><a href="CppInt.htm">int</a></b>&gt; Helper::CreateSortedTally(<br/>
+<a href="CppStdMap.htm">std::map</a>&lt;<a href="CppStdString.htm">std::string</a>,<b><a href="CppInt.htm">int</a></b>&gt; <a href="CppRibi.htm">ribi</a>::fw::Helper::CreateSortedTally(<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a>&gt;&amp; v<br/>
 ) <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
@@ -739,7 +760,7 @@ Helper::Helper() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 &nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> m;<br/>
 }<br/>
 <br/>
-<a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdPair.htm">std::pair</a>&lt;<a href="CppStdString.htm">std::string</a>,<b><a href="CppInt.htm">int</a></b><a href="CppOperatorStreamIn.htm">&gt;&gt;</a> Helper::CreateTally(<br/>
+<a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdPair.htm">std::pair</a>&lt;<a href="CppStdString.htm">std::string</a>,<b><a href="CppInt.htm">int</a></b><a href="CppOperatorStreamIn.htm">&gt;&gt;</a> <a href="CppRibi.htm">ribi</a>::fw::Helper::CreateTally(<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a>&gt;&amp; v<br/>
 ) <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
@@ -762,12 +783,12 @@ Helper::Helper() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 &nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> w;<br/>
 }<br/>
 <br/>
-<a href="CppStdString.htm">std::string</a> Helper::<a href="CppGetFileBasename.htm">GetFileBasename</a><a href="CppBoost.htm">Boost</a>Filesystem(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; filename) <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+<a href="CppStdString.htm">std::string</a> <a href="CppRibi.htm">ribi</a>::fw::Helper::<a href="CppGetFileBasename.htm">GetFileBasename</a><a href="CppBoost.htm">Boost</a>Filesystem(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; filename) <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
 &nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <a href="CppBoostFilesystem.htm">boost::filesystem</a>::basename(filename);<br/>
 }<br/>
 <br/>
-<a href="CppStdString.htm">std::string</a> Helper::<a href="CppGetFileBasename.htm">GetFileBasename</a><a href="CppBoost.htm">Boost</a><a href="CppBoostXpressive.htm">Xpressive</a>(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; filename) <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+<a href="CppStdString.htm">std::string</a> <a href="CppRibi.htm">ribi</a>::fw::Helper::<a href="CppGetFileBasename.htm">GetFileBasename</a><a href="CppBoost.htm">Boost</a><a href="CppBoostXpressive.htm">Xpressive</a>(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; filename) <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppBoostXpressive.htm">boost::xpressive</a>::s<a href="CppRegex.htm">regex</a> rex<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorAssign.htm">=</a> <a href="CppBoostXpressive.htm">boost::xpressive</a>::s<a href="CppRegex.htm">regex</a>::<a href="CppCompile.htm">compile</a>(<br/>
@@ -784,7 +805,7 @@ Helper::Helper() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 <br/>
 <br/>
 <a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
-<b><a href="CppVoid.htm">void</a></b> Helper::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::fw::Helper::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
 &nbsp;&nbsp;{<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppBool.htm">bool</a></b> is_tested {<b><a href="CppFalse.htm">false</a></b>};<br/>
@@ -862,20 +883,23 @@ Helper::Helper() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<h2>./ToolFisherWrighter/individual.h</h2>
+<h2>./ToolFisherWrighter/fisherwrighterindividual.h</h2>
 <p>&nbsp;</p>
 <!-- start of code -->
-<table summary="./ToolFisherWrighter/individual.h" border = "1"><tr><td><code>
+<table summary="./ToolFisherWrighter/fisherwrighterindividual.h" border = "1"><tr><td><code>
 <a href="CppIfndef.htm">#ifndef</a> INDIVIDUAL_H<br/>
 <a href="CppDefine.htm">#define</a> INDIVIDUAL_H<br/>
 <br/>
 <a href="CppInclude.htm">#include</a> &lt;<a href="CppStringH.htm">string</a>&gt;<br/>
 <a href="CppInclude.htm">#include</a> &lt;<a href="CppRandomH.htm">random</a>&gt;<br/>
 <br/>
-<a href="CppInclude.htm">#include</a> "dna.h"<br/>
+<a href="CppInclude.htm">#include</a> "fisherwrighterdna.h"<br/>
 <a href="CppInclude.htm">#include</a> "pedigree.h"<br/>
 <br/>
 <b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a> { <b><a href="CppStruct.htm">struct</a></b> <a href="CppCounter.htm">Counter</a>; }<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a> {<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> fw {<br/>
 <br/>
 <b><a href="CppStruct.htm">struct</a></b> Individual<br/>
 {<br/>
@@ -918,6 +942,9 @@ Helper::Helper() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 <b><a href="CppBool.htm">bool</a></b> <b><a href="CppOperatorEqual.htm">operator==</a></b>(<b><a href="CppConst.htm">const</a></b> Individual&amp; lhs, <b><a href="CppConst.htm">const</a></b> Individual&amp; rhs) <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
 <b><a href="CppBool.htm">bool</a></b> <b><a href="CppOperatorNotEqual.htm">operator!=</a></b>(<b><a href="CppConst.htm">const</a></b> Individual&amp; lhs, <b><a href="CppConst.htm">const</a></b> Individual&amp; rhs) <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
 <br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> fw<br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a><br/>
+<br/>
 <a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> INDIVIDUAL_H<br/>
 </code></td></tr></table>
 <!-- end of the code -->
@@ -926,19 +953,19 @@ Helper::Helper() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<h2>./ToolFisherWrighter/individual.cpp</h2>
+<h2>./ToolFisherWrighter/fisherwrighterindividual.cpp</h2>
 <p>&nbsp;</p>
 <!-- start of code -->
-<table summary="./ToolFisherWrighter/individual.cpp" border = "1"><tr><td><code>
-<a href="CppInclude.htm">#include</a> "individual.h"<br/>
+<table summary="./ToolFisherWrighter/fisherwrighterindividual.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "fisherwrighterindividual.h"<br/>
 <br/>
 <a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
 <br/>
 <a href="CppInclude.htm">#include</a> "<a href="CppCounter.htm">counter</a>.h"<br/>
-<a href="CppInclude.htm">#include</a> "dna.h"<br/>
-<a href="CppInclude.htm">#include</a> "parameters.h"<br/>
+<a href="CppInclude.htm">#include</a> "fisherwrighterdna.h"<br/>
+<a href="CppInclude.htm">#include</a> "fisherwrighterparameters.h"<br/>
 <br/>
-Individual::Individual(<br/>
+<a href="CppRibi.htm">ribi</a>::fw::Individual::Individual(<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Dna&amp; dna,<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdShared_ptr.htm">std::shared_ptr</a>&lt;Pedigree&gt;&amp; pedigree,<br/>
 &nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::<a href="CppCounter.htm">Counter</a>&amp; <a href="CppCounter.htm">counter</a><br/>
@@ -956,7 +983,7 @@ Individual::Individual(<br/>
 &nbsp;&nbsp;<a href="CppOperatorIncrement.htm">++</a><a href="CppCounter.htm">counter</a>;<br/>
 }<br/>
 <br/>
-Individual Individual::CreateOffspring(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; name) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+<a href="CppRibi.htm">ribi</a>::fw::Individual <a href="CppRibi.htm">ribi</a>::fw::Individual::CreateOffspring(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; name) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
 &nbsp;&nbsp;Individual kid(<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;m_dna.CreateOffspring(),<br/>
@@ -978,17 +1005,17 @@ Individual Individual::CreateOffspring(<b><a href="CppConst.htm">const</a></b> <
 &nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> kid;<br/>
 }<br/>
 <br/>
-<b><a href="CppVoid.htm">void</a></b> Individual::SetName(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; name) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::fw::Individual::SetName(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; name) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
 &nbsp;&nbsp;m_pedigree-&gt;SetName(name);<br/>
 }<br/>
 <br/>
-<b><a href="CppBool.htm">bool</a></b> <b><a href="CppOperatorEqual.htm">operator==</a></b>(<b><a href="CppConst.htm">const</a></b> Individual&amp; lhs, <b><a href="CppConst.htm">const</a></b> Individual&amp; rhs) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+<b><a href="CppBool.htm">bool</a></b> <a href="CppRibi.htm">ribi</a>::fw::<b><a href="CppOperatorEqual.htm">operator==</a></b>(<b><a href="CppConst.htm">const</a></b> Individual&amp; lhs, <b><a href="CppConst.htm">const</a></b> Individual&amp; rhs) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
 &nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> lhs.GetDna() <a href="CppOperatorEqual.htm">==</a> rhs.GetDna();<br/>
 }<br/>
 <br/>
-<b><a href="CppBool.htm">bool</a></b> <b><a href="CppOperatorNotEqual.htm">operator!=</a></b>(<b><a href="CppConst.htm">const</a></b> Individual&amp; lhs, <b><a href="CppConst.htm">const</a></b> Individual&amp; rhs) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+<b><a href="CppBool.htm">bool</a></b> <a href="CppRibi.htm">ribi</a>::fw::<b><a href="CppOperatorNotEqual.htm">operator!=</a></b>(<b><a href="CppConst.htm">const</a></b> Individual&amp; lhs, <b><a href="CppConst.htm">const</a></b> Individual&amp; rhs) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
 &nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> !(lhs <a href="CppOperatorEqual.htm">==</a> rhs);<br/>
 }<br/>
@@ -999,22 +1026,22 @@ Individual Individual::CreateOffspring(<b><a href="CppConst.htm">const</a></b> <
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<h2>./ToolFisherWrighter/individual_test.cpp</h2>
+<h2>./ToolFisherWrighter/fisherwrighterindividual_test.cpp</h2>
 <p>&nbsp;</p>
 <!-- start of code -->
-<table summary="./ToolFisherWrighter/individual_test.cpp" border = "1"><tr><td><code>
-<a href="CppInclude.htm">#include</a> "individual.h"<br/>
+<table summary="./ToolFisherWrighter/fisherwrighterindividual_test.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "fisherwrighterindividual.h"<br/>
 <br/>
 <a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
 <a href="CppInclude.htm">#include</a> &lt;<a href="CppIostreamH.htm">iostream</a>&gt;<br/>
 <br/>
 <a href="CppInclude.htm">#include</a> "<a href="CppCounter.htm">counter</a>.h"<br/>
 <a href="CppInclude.htm">#include</a> "dnasequence.h"<br/>
-<a href="CppInclude.htm">#include</a> "dna.h"<br/>
-<a href="CppInclude.htm">#include</a> "parameters.h"<br/>
+<a href="CppInclude.htm">#include</a> "fisherwrighterdna.h"<br/>
+<a href="CppInclude.htm">#include</a> "fisherwrighterparameters.h"<br/>
 <br/>
 <a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
-<b><a href="CppVoid.htm">void</a></b> Individual::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::fw::Individual::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
 &nbsp;&nbsp;{<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppBool.htm">bool</a></b> is_tested {<b><a href="CppFalse.htm">false</a></b>};<br/>
@@ -1196,59 +1223,40 @@ Individual Individual::CreateOffspring(<b><a href="CppConst.htm">const</a></b> <
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<h2>./ToolFisherWrighter/main.cpp</h2>
+<h2>./ToolFisherWrighter/fisherwrightermenudialog.h</h2>
 <p>&nbsp;</p>
 <!-- start of code -->
-<table summary="./ToolFisherWrighter/main.cpp" border = "1"><tr><td><code>
-<a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
-<a href="CppInclude.htm">#include</a> &lt;<a href="CppFstreamH.htm">fstream</a>&gt;<br/>
-<a href="CppInclude.htm">#include</a> &lt;<a href="CppIostreamH.htm">iostream</a>&gt;<br/>
+<table summary="./ToolFisherWrighter/fisherwrightermenudialog.h" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> FISHERWRIGHTERMENUDIALOG_H<br/>
+<a href="CppDefine.htm">#define</a> FISHERWRIGHTERMENUDIALOG_H<br/>
 <br/>
-<a href="CppInclude.htm">#include</a> &lt;<a href="CppQFile.htm">QFile</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> "menudialog.h"<br/>
 <br/>
-<a href="CppInclude.htm">#include</a> "helper.h"<br/>
-<a href="CppInclude.htm">#include</a> "parameters.h"<br/>
-<a href="CppInclude.htm">#include</a> "simulation.h"<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a> {<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> fw {<br/>
 <br/>
-<a href="CppInclude.htm">#include</a> "<a href="CppNewick.htm">newick</a>utils.h"<br/>
-<br/>
-<b><a href="CppInt.htm">int</a></b> <a href="CppMain.htm">main</a>()<br/>
+<a href="CppComment.htm">///</a>GUI independent FisherWrighter menu dialog<br/>
+<b><a href="CppStruct.htm">struct</a></b> MenuDialog <b><a href="CppFinal.htm">final</a></b> : <b><a href="CppPublic.htm">public</a></b> ::<a href="CppRibi.htm">ribi</a>::MenuDialog<br/>
 {<br/>
-&nbsp;&nbsp;<a href="CppComment.htm">//</a>1) Read parameters from file<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> dna_length{10};<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> mutation_rate{0.01};<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> n_generations{10};<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> pop_size{1000};<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> seed{42};<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Parameters parameters(<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;dna_length,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;mutation_rate,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;n_generations,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;pop_size,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;seed<br/>
-&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;MenuDialog();<br/>
+&nbsp;&nbsp;<a href="CppAbout.htm">About</a> GetAbout() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> <b><a href="CppOverride.htm">override</a></b>;<br/>
+&nbsp;&nbsp;Help GetHelp() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> <b><a href="CppOverride.htm">override</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppBoostShared_ptr.htm">boost::shared_ptr</a>&lt;<b><a href="CppConst.htm">const</a></b> Program&gt; GetProgram() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> <b><a href="CppOverride.htm">override</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppStdString.htm">std::string</a> Get<a href="CppVersion.htm">Version</a>() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> <b><a href="CppOverride.htm">override</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a>&gt; Get<a href="CppVersion.htm">Version</a>History() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> <b><a href="CppOverride.htm">override</a></b>;<br/>
 <br/>
-&nbsp;&nbsp;<a href="CppComment.htm">//</a>2) Run simulation<br/>
-&nbsp;&nbsp;Simulation simulation(parameters);<br/>
-&nbsp;&nbsp;<a href="CppComment.htm">//</a>Loop n_generations<br/>
-&nbsp;&nbsp;<a href="CppComment.htm">//</a><b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> n_generations{parameters.GetNumberOfGenerations()};<br/>
-&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppInt.htm">int</a></b> i=0; i<a href="CppOperatorNotEqual.htm">!=</a>n_generations; <a href="CppOperatorIncrement.htm">++</a>i)<br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;simulation.NextGeneration();<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!simulation.GetCurrentSequences().empty())<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Only show the sequence of the first individual<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppStdCout.htm">std::cout</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> i <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> ": " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> simulation.GetCurrentSequences()[0].GetSequence() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n';<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
-&nbsp;&nbsp;}<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> pedigree{simulation.GetPedigree()};<br/>
+&nbsp;&nbsp;<b><a href="CppPrivate.htm">private</a></b>:<br/>
+&nbsp;&nbsp;<b><a href="CppInt.htm">int</a></b> ExecuteSpecific(<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a>&gt;&amp; <a href="CppArgc.htm">argv</a>) <b><a href="CppNoexcept.htm">noexcept</a></b> <b><a href="CppOverride.htm">override</a></b>;<br/>
 <br/>
-&nbsp;&nbsp;<a href="CppComment.htm">//</a>Display as <a href="CppNewick.htm">newick</a><br/>
-&nbsp;&nbsp;<a href="CppStdCout.htm">std::cout</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> pedigree <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="CppStdEndl.htm">std::endl</a>;<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppVoid.htm">void</a></b> Test() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+};<br/>
 <br/>
-&nbsp;&nbsp;<a href="CppComment.htm">//</a>Display as phylogeny<br/>
-&nbsp;&nbsp;<a href="CppNewick.htm">Newick</a>Utils().Display(pedigree);<br/>
-}<br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> fw<br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a><br/>
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> FISHERWRIGHTERMENUDIALOG_H<br/>
 </code></td></tr></table>
 <!-- end of the code -->
 <p>&nbsp;</p>
@@ -1256,14 +1264,143 @@ Individual Individual::CreateOffspring(<b><a href="CppConst.htm">const</a></b> <
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<h2>./ToolFisherWrighter/parameters.h</h2>
+<h2>./ToolFisherWrighter/fisherwrightermenudialog.cpp</h2>
 <p>&nbsp;</p>
 <!-- start of code -->
-<table summary="./ToolFisherWrighter/parameters.h" border = "1"><tr><td><code>
+<table summary="./ToolFisherWrighter/fisherwrightermenudialog.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "fisherwrightermenudialog.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppIostreamH.htm">iostream</a>&gt;<br/>
+<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppContainer.htm">container</a>.h"<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppFileIo.htm">fileio</a>.h"<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppRichelBilderbeekProgram.htm">richelbilderbeekprogram</a>.h"<br/>
+<a href="CppInclude.htm">#include</a> "test<a href="CppTime.htm">time</a>r.h"<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppTrace.htm">trace</a>.h"<br/>
+<a href="CppInclude.htm">#include</a> "beast.h"<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppCounter.htm">counter</a>.h"<br/>
+<a href="CppInclude.htm">#include</a> "dna_r.h"<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppRibi.htm">ribi</a>_rinside.h"<br/>
+<a href="CppInclude.htm">#include</a> "phylogeny_r.h"<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppNewick.htm">newick</a>utils.h"<br/>
+<br/>
+<a href="CppRibi.htm">ribi</a>::fw::MenuDialog::MenuDialog()<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;Test();<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+}<br/>
+<br/>
+<b><a href="CppInt.htm">int</a></b> <a href="CppRibi.htm">ribi</a>::fw::MenuDialog::ExecuteSpecific(<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a>&gt;&amp; <a href="CppArgc.htm">argv</a>) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;Test();<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> <a href="CppArgc.htm">argc</a> <a href="CppOperatorAssign.htm">=</a> <b><a href="CppStatic_cast.htm">static_cast</a></b>&lt;<b><a href="CppInt.htm">int</a></b>&gt;(<a href="CppArgc.htm">argv</a>.size());<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (<a href="CppArgc.htm">argc</a> <a href="CppOperatorEqual.htm">==</a> 1)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdCout.htm">std::cout</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> GetHelp() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n';<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> 1;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!"TODO");<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> 1;<br/>
+}<br/>
+<br/>
+<a href="CppRibi.htm">ribi</a>::<a href="CppAbout.htm">About</a> <a href="CppRibi.htm">ribi</a>::fw::MenuDialog::GetAbout() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppAbout.htm">About</a> a(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"Richel Bilderbeek",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"FisherWrighter",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"does a Fisher-Wright simulation",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"on the 13th of June 2015",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"2015-2015",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"http://www.richelbilderbeek.nl/<a href="Tools.htm">Tool</a>FisherWrighter.htm",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Get<a href="CppVersion.htm">Version</a>(),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Get<a href="CppVersion.htm">Version</a>History()<br/>
+&nbsp;&nbsp;);<br/>
+<br/>
+&nbsp;&nbsp;a.<a href="CppAdd.htm">Add</a><a href="CppLibrary.htm">Library</a>("BeastR <a href="CppVersion.htm">version</a>: " <a href="CppOperatorPlus.htm">+</a> <a href="CppRibi.htm">ribi</a>::Beast().Get<a href="CppVersion.htm">Version</a>());<br/>
+&nbsp;&nbsp;a.<a href="CppAdd.htm">Add</a><a href="CppLibrary.htm">Library</a>("<a href="CppContainer.htm">Container</a> <a href="CppVersion.htm">version</a>: " <a href="CppOperatorPlus.htm">+</a> <a href="CppRibi.htm">ribi</a>::<a href="CppContainer.htm">Container</a>().Get<a href="CppVersion.htm">Version</a>());<br/>
+&nbsp;&nbsp;a.<a href="CppAdd.htm">Add</a><a href="CppLibrary.htm">Library</a>("<a href="CppCounter.htm">Counter</a> <a href="CppVersion.htm">version</a>: " <a href="CppOperatorPlus.htm">+</a> <a href="CppRibi.htm">ribi</a>::<a href="CppCounter.htm">Counter</a>().Get<a href="CppVersion.htm">Version</a>());<br/>
+&nbsp;&nbsp;a.<a href="CppAdd.htm">Add</a><a href="CppLibrary.htm">Library</a>("DnaR <a href="CppVersion.htm">version</a>: " <a href="CppOperatorPlus.htm">+</a> <a href="CppRibi.htm">ribi</a>::DnaR().Get<a href="CppVersion.htm">Version</a>());<br/>
+&nbsp;&nbsp;a.<a href="CppAdd.htm">Add</a><a href="CppLibrary.htm">Library</a>("<a href="CppFileIo.htm">FileIo</a> <a href="CppVersion.htm">version</a>: " <a href="CppOperatorPlus.htm">+</a> <a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a>().Get<a href="CppVersion.htm">Version</a>());<br/>
+&nbsp;&nbsp;a.<a href="CppAdd.htm">Add</a><a href="CppLibrary.htm">Library</a>("<a href="CppNewick.htm">Newick</a>Utils <a href="CppVersion.htm">version</a>: " <a href="CppOperatorPlus.htm">+</a> <a href="CppRibi.htm">ribi</a>::<a href="CppNewick.htm">Newick</a>Utils().Get<a href="CppVersion.htm">Version</a>());<br/>
+&nbsp;&nbsp;a.<a href="CppAdd.htm">Add</a><a href="CppLibrary.htm">Library</a>("PhylogenyR <a href="CppVersion.htm">version</a>: " <a href="CppOperatorPlus.htm">+</a> <a href="CppRibi.htm">ribi</a>::PhylogenyR().Get<a href="CppVersion.htm">Version</a>());<br/>
+&nbsp;&nbsp;a.<a href="CppAdd.htm">Add</a><a href="CppLibrary.htm">Library</a>("Rinside <a href="CppVersion.htm">version</a>: " <a href="CppOperatorPlus.htm">+</a> <a href="CppRibi.htm">ribi</a>::Rinside().Get<a href="CppVersion.htm">Version</a>());<br/>
+&nbsp;&nbsp;a.<a href="CppAdd.htm">Add</a><a href="CppLibrary.htm">Library</a>("<a href="CppTrace.htm">Trace</a> <a href="CppVersion.htm">version</a>: " <a href="CppOperatorPlus.htm">+</a> <a href="CppTrace.htm">Trace</a>::Get<a href="CppVersion.htm">Version</a>());<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> a;<br/>
+}<br/>
+<br/>
+<a href="CppRibi.htm">ribi</a>::Help <a href="CppRibi.htm">ribi</a>::fw::MenuDialog::GetHelp() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <a href="CppRibi.htm">ribi</a>::Help(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppThis.htm">this</a></b>-&gt;GetAbout().GetFileTitle(),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppThis.htm">this</a></b>-&gt;GetAbout().GetFileDescription(),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;);<br/>
+}<br/>
+<br/>
+<a href="CppBoostShared_ptr.htm">boost::shared_ptr</a>&lt;<b><a href="CppConst.htm">const</a></b> <a href="CppRibi.htm">ribi</a>::Program&gt; <a href="CppRibi.htm">ribi</a>::fw::MenuDialog::GetProgram() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppBoostShared_ptr.htm">boost::shared_ptr</a>&lt;<b><a href="CppConst.htm">const</a></b> <a href="CppRibi.htm">ribi</a>::Program&gt; p {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppNew.htm">new</a></b> <a href="CppRibi.htm">ribi</a>::ProgramFisherWrighter<br/>
+&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(p);<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> p;<br/>
+}<br/>
+<br/>
+<a href="CppStdString.htm">std::string</a> <a href="CppRibi.htm">ribi</a>::fw::MenuDialog::Get<a href="CppVersion.htm">Version</a>() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> "1.0";<br/>
+}<br/>
+<br/>
+<a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a>&gt; <a href="CppRibi.htm">ribi</a>::fw::MenuDialog::Get<a href="CppVersion.htm">Version</a>History() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"2015-06-13: <a href="CppVersion.htm">version</a> 1.0: started <a href="CppVersion.htm">version</a>ing",<br/>
+&nbsp;&nbsp;};<br/>
+}<br/>
+<br/>
+<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::fw::MenuDialog::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppBool.htm">bool</a></b> is_tested{<b><a href="CppFalse.htm">false</a></b>};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (is_tested) <b><a href="CppReturn.htm">return</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;is_tested <a href="CppOperatorAssign.htm">=</a> <b><a href="CppTrue.htm">true</a></b>;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;MenuDialog().GetAbout();<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Test<a href="CppTime.htm">Time</a>r test_<a href="CppTime.htm">time</a>r(<a href="Cpp__func__.htm">__func__</a>,__<a href="CppCfile.htm">FILE</a>__,1.0);<br/>
+<br/>
+}<br/>
+<a href="CppEndif.htm">#endif</a><br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolFisherWrighter/fisherwrighterparameters.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolFisherWrighter/fisherwrighterparameters.h" border = "1"><tr><td><code>
 <a href="CppIfndef.htm">#ifndef</a> PARAMETERS_H<br/>
 <a href="CppDefine.htm">#define</a> PARAMETERS_H<br/>
 <br/>
 <a href="CppInclude.htm">#include</a> &lt;<a href="CppStringH.htm">string</a>&gt;<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a> {<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> fw {<br/>
 <br/>
 <b><a href="CppStruct.htm">struct</a></b> Parameters<br/>
 {<br/>
@@ -1302,6 +1439,8 @@ Individual Individual::CreateOffspring(<b><a href="CppConst.htm">const</a></b> <
 <b><a href="CppBool.htm">bool</a></b> <b><a href="CppOperatorEqual.htm">operator==</a></b>(<b><a href="CppConst.htm">const</a></b> Parameters&amp; lhs, <b><a href="CppConst.htm">const</a></b> Parameters&amp; rhs) <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
 <b><a href="CppBool.htm">bool</a></b> <b><a href="CppOperatorNotEqual.htm">operator!=</a></b>(<b><a href="CppConst.htm">const</a></b> Parameters&amp; lhs, <b><a href="CppConst.htm">const</a></b> Parameters&amp; rhs) <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
 <br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> fw<br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a><br/>
 <br/>
 <a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> PARAMETERS_H<br/>
 </code></td></tr></table>
@@ -1311,18 +1450,18 @@ Individual Individual::CreateOffspring(<b><a href="CppConst.htm">const</a></b> <
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<h2>./ToolFisherWrighter/parameters.cpp</h2>
+<h2>./ToolFisherWrighter/fisherwrighterparameters.cpp</h2>
 <p>&nbsp;</p>
 <!-- start of code -->
-<table summary="./ToolFisherWrighter/parameters.cpp" border = "1"><tr><td><code>
-<a href="CppInclude.htm">#include</a> "parameters.h"<br/>
+<table summary="./ToolFisherWrighter/fisherwrighterparameters.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "fisherwrighterparameters.h"<br/>
 <br/>
 <a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
 <a href="CppInclude.htm">#include</a> &lt;<a href="CppFstreamH.htm">fstream</a>&gt;<br/>
 <a href="CppInclude.htm">#include</a> &lt;<a href="CppStdexceptH.htm">stdexcept</a>&gt;<br/>
 <a href="CppInclude.htm">#include</a> &lt;<a href="CppSstreamH.htm">sstream</a>&gt;<br/>
 <br/>
-Parameters::Parameters(<br/>
+<a href="CppRibi.htm">ribi</a>::fw::Parameters::Parameters(<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> dna_length,<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> mutation_rate,<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> n_generations,<br/>
@@ -1377,7 +1516,7 @@ Parameters::Parameters(<br/>
 <br/>
 }<br/>
 <br/>
-Parameters Parameters::CreateParameters(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; filename)<br/>
+<a href="CppRibi.htm">ribi</a>::fw::Parameters <a href="CppRibi.htm">ribi</a>::fw::Parameters::CreateParameters(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; filename)<br/>
 {<br/>
 &nbsp;&nbsp;<a href="CppStdString.htm">std::string</a> dna_length_str{""};<br/>
 &nbsp;&nbsp;<b><a href="CppInt.htm">int</a></b> dna_length{0};<br/>
@@ -1410,7 +1549,7 @@ Parameters Parameters::CreateParameters(<b><a href="CppConst.htm">const</a></b> 
 }<br/>
 <br/>
 <br/>
-<a href="CppStdOstream.htm">std::ostream</a>&amp; <b><a href="CppOperatorStreamOut.htm">operator&lt;&lt;</a></b>(<a href="CppStdOstream.htm">std::ostream</a>&amp; os, <b><a href="CppConst.htm">const</a></b> Parameters&amp; parameters)<br/>
+<a href="CppStdOstream.htm">std::ostream</a>&amp; <a href="CppRibi.htm">ribi</a>::fw::<b><a href="CppOperatorStreamOut.htm">operator&lt;&lt;</a></b>(<a href="CppStdOstream.htm">std::ostream</a>&amp; os, <b><a href="CppConst.htm">const</a></b> Parameters&amp; parameters)<br/>
 {<br/>
 &nbsp;&nbsp;os<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "dna_length " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> parameters.GetDnaLength() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
@@ -1422,7 +1561,7 @@ Parameters Parameters::CreateParameters(<b><a href="CppConst.htm">const</a></b> 
 &nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> os;<br/>
 }<br/>
 <br/>
-<b><a href="CppBool.htm">bool</a></b> <b><a href="CppOperatorEqual.htm">operator==</a></b>(<b><a href="CppConst.htm">const</a></b> Parameters&amp; lhs, <b><a href="CppConst.htm">const</a></b> Parameters&amp; rhs) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+<b><a href="CppBool.htm">bool</a></b> <a href="CppRibi.htm">ribi</a>::fw::<b><a href="CppOperatorEqual.htm">operator==</a></b>(<b><a href="CppConst.htm">const</a></b> Parameters&amp; lhs, <b><a href="CppConst.htm">const</a></b> Parameters&amp; rhs) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
 &nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lhs.GetDnaLength() <a href="CppOperatorEqual.htm">==</a> rhs.GetDnaLength()<br/>
@@ -1433,7 +1572,7 @@ Parameters Parameters::CreateParameters(<b><a href="CppConst.htm">const</a></b> 
 &nbsp;&nbsp;;<br/>
 }<br/>
 <br/>
-<b><a href="CppBool.htm">bool</a></b> <b><a href="CppOperatorNotEqual.htm">operator!=</a></b>(<b><a href="CppConst.htm">const</a></b> Parameters&amp; lhs, <b><a href="CppConst.htm">const</a></b> Parameters&amp; rhs) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+<b><a href="CppBool.htm">bool</a></b> <a href="CppRibi.htm">ribi</a>::fw::<b><a href="CppOperatorNotEqual.htm">operator!=</a></b>(<b><a href="CppConst.htm">const</a></b> Parameters&amp; lhs, <b><a href="CppConst.htm">const</a></b> Parameters&amp; rhs) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
 &nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> !(lhs <a href="CppOperatorEqual.htm">==</a> rhs);<br/>
 }<br/>
@@ -1444,17 +1583,17 @@ Parameters Parameters::CreateParameters(<b><a href="CppConst.htm">const</a></b> 
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<h2>./ToolFisherWrighter/parameters_test.cpp</h2>
+<h2>./ToolFisherWrighter/fisherwrighterparameters_test.cpp</h2>
 <p>&nbsp;</p>
 <!-- start of code -->
-<table summary="./ToolFisherWrighter/parameters_test.cpp" border = "1"><tr><td><code>
-<a href="CppInclude.htm">#include</a> "parameters.h"<br/>
+<table summary="./ToolFisherWrighter/fisherwrighterparameters_test.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "fisherwrighterparameters.h"<br/>
 <br/>
 <a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
 <a href="CppInclude.htm">#include</a> &lt;<a href="CppFstreamH.htm">fstream</a>&gt;<br/>
 <br/>
 <a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
-<b><a href="CppVoid.htm">void</a></b> Parameters::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::fw::Parameters::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
 &nbsp;&nbsp;{<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppBool.htm">bool</a></b> is_tested {<b><a href="CppFalse.htm">false</a></b>};<br/>
@@ -1558,224 +1697,10 @@ Parameters Parameters::CreateParameters(<b><a href="CppConst.htm">const</a></b> 
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<h2>./ToolFisherWrighter/qtfisherwrightermaindialog.h</h2>
+<h2>./ToolFisherWrighter/fisherwrightersimulation.h</h2>
 <p>&nbsp;</p>
 <!-- start of code -->
-<table summary="./ToolFisherWrighter/qtfisherwrightermaindialog.h" border = "1"><tr><td><code>
-<a href="CppIfndef.htm">#ifndef</a> QTFISHERWRIGHTERMAINDIALOG_H<br/>
-<a href="CppDefine.htm">#define</a> QTFISHERWRIGHTERMAINDIALOG_H<br/>
-<br/>
-<a href="CppInclude.htm">#include</a> &lt;<a href="CppVectorH.htm">vector</a>&gt;<br/>
-<a href="CppInclude.htm">#include</a> &lt;<a href="CppQDialog.htm">QDialog</a>&gt;<br/>
-<a href="CppInclude.htm">#include</a> "parameters.h"<br/>
-<br/>
-<b><a href="CppNamespace.htm">namespace</a></b> Ui {<br/>
-&nbsp;&nbsp;<b><a href="CppClass.htm">class</a></b> <a href="CppQt.htm">Qt</a>FisherWrighterMainDialog;<br/>
-}<br/>
-<br/>
-<b><a href="CppStruct.htm">struct</a></b> <a href="CppQt.htm">Qt</a><a href="CppNewick.htm">Newick</a>Display;<br/>
-<b><a href="CppStruct.htm">struct</a></b> <a href="CppQt.htm">Qt</a>DnaSequencesDisplay;<br/>
-<b><a href="CppStruct.htm">struct</a></b> <a href="CppQt.htm">Qt</a>BeastDisplay;<br/>
-<br/>
-<b><a href="CppClass.htm">class</a></b> <a href="CppQt.htm">Qt</a>FisherWrighterMainDialog : <b><a href="CppPublic.htm">public</a></b> <a href="CppQDialog.htm">QDialog</a><br/>
-{<br/>
-&nbsp;&nbsp;<a href="CppQ_OBJECT.htm">Q_OBJECT</a><br/>
-<br/>
-<b><a href="CppPublic.htm">public</a></b>:<br/>
-&nbsp;&nbsp;<b><a href="CppExplicit.htm">explicit</a></b> <a href="CppQt.htm">Qt</a>FisherWrighterMainDialog(<a href="CppQWidget.htm">QWidget</a> *parent <a href="CppOperatorAssign.htm">=</a> 0);<br/>
-&nbsp;&nbsp;~<a href="CppQt.htm">Qt</a>FisherWrighterMainDialog();<br/>
-<br/>
-<b><a href="CppPrivate.htm">private</a></b> <b><a href="CppSlots.htm">slots</a></b>:<br/>
-&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> on_button_run_clicked();<br/>
-&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> on_button_run_next_clicked();<br/>
-<br/>
-<b><a href="CppPrivate.htm">private</a></b>:<br/>
-&nbsp;&nbsp;<a href="CppUi.htm">Ui</a>::<a href="CppQt.htm">Qt</a>FisherWrighterMainDialog *ui;<br/>
-<br/>
-&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Displays the result of the BEAST analysis<br/>
-&nbsp;&nbsp;<a href="CppQt.htm">Qt</a>BeastDisplay * <b><a href="CppConst.htm">const</a></b> m_beast_display;<br/>
-<br/>
-&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Displays the resulting DnaSequences<br/>
-&nbsp;&nbsp;<a href="CppQt.htm">Qt</a>DnaSequencesDisplay * <b><a href="CppConst.htm">const</a></b> m_dna_sequences_display;<br/>
-<br/>
-&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Displays the resulting <a href="CppNewick.htm">Newick</a><br/>
-&nbsp;&nbsp;<a href="CppQt.htm">Qt</a><a href="CppNewick.htm">Newick</a>Display * <b><a href="CppConst.htm">const</a></b> m_<a href="CppNewick.htm">newick</a>_display;<br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppInt.htm">int</a></b> ReadNumberOfGenerations() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
-};<br/>
-<br/>
-<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> QTFISHERWRIGHTERMAINDIALOG_H<br/>
-</code></td></tr></table>
-<!-- end of the code -->
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<h2>./ToolFisherWrighter/qtfisherwrightermaindialog.cpp</h2>
-<p>&nbsp;</p>
-<!-- start of code -->
-<table summary="./ToolFisherWrighter/qtfisherwrightermaindialog.cpp" border = "1"><tr><td><code>
-<a href="CppInclude.htm">#include</a> "qtfisherwrightermaindialog.h"<br/>
-<br/>
-<a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
-<a href="CppInclude.htm">#include</a> &lt;<a href="CppIostreamH.htm">iostream</a>&gt;<br/>
-<a href="CppInclude.htm">#include</a> &lt;<a href="CppSstreamH.htm">sstream</a>&gt;<br/>
-<br/>
-<a href="CppInclude.htm">#include</a> &lt;<a href="CppQDesktopWidget.htm">QDesktopWidget</a>&gt;<br/>
-<a href="CppInclude.htm">#include</a> &lt;<a href="CppQTimer.htm">QTimer</a>&gt;<br/>
-<br/>
-<a href="CppInclude.htm">#include</a> "<a href="CppFileIo.htm">fileio</a>.h"<br/>
-<a href="CppInclude.htm">#include</a> "<a href="CppNewick.htm">newick</a>utils.h"<br/>
-<a href="CppInclude.htm">#include</a> "ui_qtfisherwrightermaindialog.h"<br/>
-<a href="CppInclude.htm">#include</a> "simulation.h"<br/>
-<a href="CppInclude.htm">#include</a> "phylogeny_r.h"<br/>
-<a href="CppInclude.htm">#include</a> "qtdnasequencesdisplay.h"<br/>
-<a href="CppInclude.htm">#include</a> "qtbea<a href="CppStd.htm">std</a>isplay.h"<br/>
-<a href="CppInclude.htm">#include</a> "qt<a href="CppNewick.htm">newick</a>display.h"<br/>
-<br/>
-<a href="CppQt.htm">Qt</a>FisherWrighterMainDialog::<a href="CppQt.htm">Qt</a>FisherWrighterMainDialog(<a href="CppQWidget.htm">QWidget</a> *parent) :<br/>
-&nbsp;&nbsp;<a href="CppQDialog.htm">QDialog</a>(parent),<br/>
-&nbsp;&nbsp;ui(<b><a href="CppNew.htm">new</a></b> <a href="CppUi.htm">Ui</a>::<a href="CppQt.htm">Qt</a>FisherWrighterMainDialog),<br/>
-&nbsp;&nbsp;m_beast_display{<b><a href="CppNew.htm">new</a></b> <a href="CppQt.htm">Qt</a>BeastDisplay(<b><a href="CppThis.htm">this</a></b>)},<br/>
-&nbsp;&nbsp;m_dna_sequences_display{<b><a href="CppNew.htm">new</a></b> <a href="CppQt.htm">Qt</a>DnaSequencesDisplay(<b><a href="CppThis.htm">this</a></b>)},<br/>
-&nbsp;&nbsp;m_<a href="CppNewick.htm">newick</a>_display{<b><a href="CppNew.htm">new</a></b> <a href="CppQt.htm">Qt</a><a href="CppNewick.htm">Newick</a>Display(<b><a href="CppThis.htm">this</a></b>)}<br/>
-{<br/>
-&nbsp;&nbsp;ui-&gt;setupUi(<b><a href="CppThis.htm">this</a></b>);<br/>
-<br/>
-&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!ui-&gt;area_results-&gt;layout());<br/>
-&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(ui-&gt;results-&gt;layout());<br/>
-&nbsp;&nbsp;ui-&gt;results-&gt;layout()-&gt;addWidget(m_dna_sequences_display);<br/>
-&nbsp;&nbsp;ui-&gt;results-&gt;layout()-&gt;addWidget(m_beast_display);<br/>
-&nbsp;&nbsp;ui-&gt;results-&gt;layout()-&gt;addWidget(m_<a href="CppNewick.htm">newick</a>_display);<br/>
-<br/>
-&nbsp;&nbsp;<a href="CppComment.htm">//</a>Put the dialog in the screen center<br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppQRect.htm">QRect</a> screen <a href="CppOperatorAssign.htm">=</a> <a href="CppQApplication.htm">QApplication</a>::desktop()-&gt;screenGeometry();<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppThis.htm">this</a></b>-&gt;setGeometry(0,0,screen.width() * 8 <a href="CppOperatorDivide.htm">/</a> 10, screen.height() * 8 <a href="CppOperatorDivide.htm">/</a> 10);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppThis.htm">this</a></b>-&gt;move( screen.center() <a href="CppOperatorMinus.htm">-</a> <b><a href="CppThis.htm">this</a></b>-&gt;rect().center() );<br/>
-&nbsp;&nbsp;}<br/>
-<br/>
-&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppQTimer.htm">QTimer</a>::singleShot(1000,<b><a href="CppThis.htm">this</a></b>,<a href="CppSLOT.htm">SLOT</a>(on_button_run_clicked()));<br/>
-}<br/>
-<br/>
-<a href="CppQt.htm">Qt</a>FisherWrighterMainDialog::~<a href="CppQt.htm">Qt</a>FisherWrighterMainDialog()<br/>
-{<br/>
-&nbsp;&nbsp;<b><a href="CppDelete.htm">delete</a></b> ui;<br/>
-}<br/>
-<br/>
-<b><a href="CppVoid.htm">void</a></b> <a href="CppQt.htm">Qt</a>FisherWrighterMainDialog::on_button_run_clicked()<br/>
-{<br/>
-&nbsp;&nbsp;<a href="CppComment.htm">//</a>1) Read parameters from file<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> dna_length{<b><a href="CppThis.htm">this</a></b>-&gt;ui-&gt;box_dna_length-&gt;value()};<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> mutation_rate{ui-&gt;box_mutation_rate-&gt;value()};<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> n_generations{ReadNumberOfGenerations()};<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> pop_size{ui-&gt;box_pop_size-&gt;value()};<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> seed{ui-&gt;box_seed-&gt;value()};<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Parameters parameters(<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;dna_length,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;mutation_rate,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;n_generations,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;pop_size,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;seed<br/>
-&nbsp;&nbsp;);<br/>
-<br/>
-&nbsp;&nbsp;<a href="CppComment.htm">//</a>2) Run simulation<br/>
-&nbsp;&nbsp;Simulation simulation(parameters);<br/>
-&nbsp;&nbsp;<a href="CppComment.htm">//</a>Loop n_generations<br/>
-&nbsp;&nbsp;<a href="CppComment.htm">//</a><b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> n_generations{ReadNumberOfGenerations()};<br/>
-&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppInt.htm">int</a></b> i=0; i<a href="CppOperatorNotEqual.htm">!=</a>n_generations; <a href="CppOperatorIncrement.htm">++</a>i)<br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;simulation.NextGeneration();<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!simulation.GetCurrentSequences().empty())<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Only show the sequence of the first individual<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppStdCout.htm">std::cout</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> i <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> ": " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> simulation.GetCurrentSequences()[0].GetSequence() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n';<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
-&nbsp;&nbsp;}<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> <a href="CppNewick.htm">newick</a>{simulation.GetPedigree()};<br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppThis.htm">this</a></b>-&gt;m_beast_display-&gt;Analyze(<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;simulation.GetCurrentSequences(),<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;box_mcmc_chainlength-&gt;value()<br/>
-&nbsp;&nbsp;);<br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppThis.htm">this</a></b>-&gt;repaint();<br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppThis.htm">this</a></b>-&gt;m_dna_sequences_display-&gt;SetDnaSequences(simulation.GetCurrentSequences());<br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppThis.htm">this</a></b>-&gt;repaint();<br/>
-<br/>
-&nbsp;&nbsp;<a href="CppComment.htm">//</a>Display <a href="CppNewick.htm">newick</a><br/>
-&nbsp;&nbsp;<b><a href="CppThis.htm">this</a></b>-&gt;m_<a href="CppNewick.htm">newick</a>_display-&gt;Set<a href="CppNewick.htm">Newick</a>(<a href="CppNewick.htm">newick</a>);<br/>
-<br/>
-}<br/>
-<br/>
-<b><a href="CppInt.htm">int</a></b> <a href="CppQt.htm">Qt</a>FisherWrighterMainDialog::ReadNumberOfGenerations() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
-{<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> n_generations{ui-&gt;box_n_generation-&gt;value()};<br/>
-&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> n_generations;<br/>
-}<br/>
-<br/>
-<b><a href="CppVoid.htm">void</a></b> <a href="CppQt.htm">Qt</a>FisherWrighterMainDialog::on_button_run_next_clicked()<br/>
-{<br/>
-&nbsp;&nbsp;ui-&gt;box_seed-&gt;setValue(ui-&gt;box_seed-&gt;value() <a href="CppOperatorPlus.htm">+</a> 1);<br/>
-&nbsp;&nbsp;ui-&gt;button_run-&gt;click();<br/>
-}<br/>
-</code></td></tr></table>
-<!-- end of the code -->
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<h2>./ToolFisherWrighter/qtmain.cpp</h2>
-<p>&nbsp;</p>
-<!-- start of code -->
-<table summary="./ToolFisherWrighter/qtmain.cpp" border = "1"><tr><td><code>
-<a href="CppPragma.htm">#pragma</a> GCC diagnostic push<br/>
-<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "<a href="CppWeffcpp.htm">-Weffc++</a>"<br/>
-<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "-Wunused-local-typedefs"<br/>
-<a href="CppInclude.htm">#include</a> &lt;<a href="CppQApplication.htm">QApplication</a>&gt;<br/>
-<br/>
-<a href="CppInclude.htm">#include</a> &lt;future&gt;<br/>
-<a href="CppInclude.htm">#include</a> "qtfisherwrightermaindialog.h"<br/>
-<a href="CppInclude.htm">#include</a> "<a href="CppCounter.htm">counter</a>.h"<br/>
-<a href="CppInclude.htm">#include</a> "dna_r.h"<br/>
-<a href="CppInclude.htm">#include</a> "<a href="CppRibi.htm">ribi</a>_rinside.h"<br/>
-<a href="CppInclude.htm">#include</a> "phylogeny_r.h"<br/>
-<a href="CppInclude.htm">#include</a> "<a href="CppNewick.htm">newick</a>utils.h"<br/>
-<a href="CppPragma.htm">#pragma</a> GCC diagnostic pop<br/>
-<br/>
-<b><a href="CppInt.htm">int</a></b> <a href="CppMain.htm">main</a>(<b><a href="CppInt.htm">int</a></b> <a href="CppArgc.htm">argc</a>, <b><a href="CppChar.htm">char</a></b> *<a href="CppArgc.htm">argv</a>[])<br/>
-{<br/>
-&nbsp;&nbsp;<a href="CppQApplication.htm">QApplication</a> a(<a href="CppArgc.htm">argc</a>, <a href="CppArgc.htm">argv</a>);<br/>
-&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::Rinside();<br/>
-&nbsp;&nbsp;PhylogenyR();<br/>
-&nbsp;&nbsp;<a href="CppStd.htm">std</a>::async([](){ DnaR();} );<br/>
-&nbsp;&nbsp;<a href="CppStd.htm">std</a>::async([](){ PhylogenyR();} );<br/>
-&nbsp;&nbsp;<a href="CppStd.htm">std</a>::async([](){ <a href="CppNewick.htm">Newick</a>Utils();} );<br/>
-&nbsp;&nbsp;<a href="CppStd.htm">std</a>::async([](){ <a href="CppRibi.htm">ribi</a>::<a href="CppCounter.htm">Counter</a>();} );<br/>
-&nbsp;&nbsp;<a href="CppComment.htm">/*</a><br/>
-&nbsp;&nbsp;<a href="CppStd.htm">std</a>::async( <a href="CppStd.htm">std</a>::launch::async, []() { PhylogenyR();} );<br/>
-&nbsp;&nbsp;<a href="CppStd.htm">std</a>::async( <a href="CppStd.htm">std</a>::launch::async, []() { <a href="CppNewick.htm">Newick</a>Utils();} );<br/>
-&nbsp;&nbsp;<a href="CppStd.htm">std</a>::async( <a href="CppStd.htm">std</a>::launch::async, []() { <a href="CppRibi.htm">ribi</a>::<a href="CppCounter.htm">Counter</a>();} );<br/>
-&nbsp;&nbsp;<a href="CppComment.htm">*/</a><br/>
-&nbsp;&nbsp;<a href="CppQt.htm">Qt</a>FisherWrighterMainDialog w;<br/>
-&nbsp;&nbsp;w.show();<br/>
-&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> a.exec();<br/>
-}<br/>
-</code></td></tr></table>
-<!-- end of the code -->
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<h2>./ToolFisherWrighter/simulation.h</h2>
-<p>&nbsp;</p>
-<!-- start of code -->
-<table summary="./ToolFisherWrighter/simulation.h" border = "1"><tr><td><code>
+<table summary="./ToolFisherWrighter/fisherwrightersimulation.h" border = "1"><tr><td><code>
 <a href="CppIfndef.htm">#ifndef</a> SIMULATION_H<br/>
 <a href="CppDefine.htm">#define</a> SIMULATION_H<br/>
 <br/>
@@ -1783,10 +1708,13 @@ Parameters Parameters::CreateParameters(<b><a href="CppConst.htm">const</a></b> 
 <a href="CppInclude.htm">#include</a> &lt;<a href="CppVectorH.htm">vector</a>&gt;<br/>
 <br/>
 <a href="CppInclude.htm">#include</a> "<a href="CppCounter.htm">counter</a>.h"<br/>
-<a href="CppInclude.htm">#include</a> "generation.h"<br/>
-<a href="CppInclude.htm">#include</a> "individual.h"<br/>
-<a href="CppInclude.htm">#include</a> "parameters.h"<br/>
+<a href="CppInclude.htm">#include</a> "fisherwrightergeneration.h"<br/>
+<a href="CppInclude.htm">#include</a> "fisherwrighterindividual.h"<br/>
+<a href="CppInclude.htm">#include</a> "fisherwrighterparameters.h"<br/>
 <a href="CppInclude.htm">#include</a> "dnasequence.h"<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a> {<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> fw {<br/>
 <br/>
 <a href="CppComment.htm">///</a>Fisher-Wright simulation<br/>
 <a href="CppComment.htm">///</a>with individuals that only have DNA<br/>
@@ -1841,6 +1769,9 @@ Parameters Parameters::CreateParameters(<b><a href="CppConst.htm">const</a></b> 
 <b><a href="CppBool.htm">bool</a></b> <b><a href="CppOperatorEqual.htm">operator==</a></b>(<b><a href="CppConst.htm">const</a></b> Simulation&amp; lhs, <b><a href="CppConst.htm">const</a></b> Simulation&amp; rhs) <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
 <b><a href="CppBool.htm">bool</a></b> <b><a href="CppOperatorNotEqual.htm">operator!=</a></b>(<b><a href="CppConst.htm">const</a></b> Simulation&amp; lhs, <b><a href="CppConst.htm">const</a></b> Simulation&amp; rhs) <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
 <br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> fw<br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a><br/>
+<br/>
 <a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> SIMULATION_H<br/>
 </code></td></tr></table>
 <!-- end of the code -->
@@ -1849,11 +1780,11 @@ Parameters Parameters::CreateParameters(<b><a href="CppConst.htm">const</a></b> 
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<h2>./ToolFisherWrighter/simulation.cpp</h2>
+<h2>./ToolFisherWrighter/fisherwrightersimulation.cpp</h2>
 <p>&nbsp;</p>
 <!-- start of code -->
-<table summary="./ToolFisherWrighter/simulation.cpp" border = "1"><tr><td><code>
-<a href="CppInclude.htm">#include</a> "simulation.h"<br/>
+<table summary="./ToolFisherWrighter/fisherwrightersimulation.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "fisherwrightersimulation.h"<br/>
 <br/>
 <a href="CppInclude.htm">#include</a> &lt;<a href="CppAlgorithmH.htm">algorithm</a>&gt;<br/>
 <a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
@@ -1863,11 +1794,11 @@ Parameters Parameters::CreateParameters(<b><a href="CppConst.htm">const</a></b> 
 <br/>
 <a href="CppInclude.htm">#include</a> &lt;<a href="CppBoost.htm">boost</a>/numeric/conversion/cast.hpp&gt;<br/>
 <br/>
-<a href="CppInclude.htm">#include</a> "dna.h"<br/>
-<a href="CppInclude.htm">#include</a> "individual.h"<br/>
+<a href="CppInclude.htm">#include</a> "fisherwrighterdna.h"<br/>
+<a href="CppInclude.htm">#include</a> "fisherwrighterindividual.h"<br/>
 <a href="CppInclude.htm">#include</a> "<a href="CppTrace.htm">trace</a>.h"<br/>
 <br/>
-Simulation::Simulation(<br/>
+<a href="CppRibi.htm">ribi</a>::fw::Simulation::Simulation(<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Parameters&amp; parameters,<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Generation&amp; first_generation<br/>
 )<br/>
@@ -1883,7 +1814,7 @@ Simulation::Simulation(<br/>
 &nbsp;&nbsp;m_generations.push_back(first_generation);<br/>
 }<br/>
 <br/>
-Simulation::Simulation(<br/>
+<a href="CppRibi.htm">ribi</a>::fw::Simulation::Simulation(<br/>
 &nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Parameters&amp; parameters<br/>
 )<br/>
 &nbsp;&nbsp;: m_<a href="CppCounter.htm">counter</a>{},<br/>
@@ -1920,7 +1851,7 @@ Simulation::Simulation(<br/>
 }<br/>
 <br/>
 <br/>
-Generation Simulation::CreateNextGeneration(<br/>
+<a href="CppRibi.htm">ribi</a>::fw::Generation <a href="CppRibi.htm">ribi</a>::fw::Simulation::CreateNextGeneration(<br/>
 &nbsp;&nbsp;Generation&amp; current_generation<br/>
 &nbsp;&nbsp;) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
@@ -1943,7 +1874,7 @@ Generation Simulation::CreateNextGeneration(<br/>
 }<br/>
 <br/>
 <br/>
-<a href="CppStdVector.htm">std::vector</a>&lt;Parameters&gt; Simulation::CreateTestParameters() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+<a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppRibi.htm">ribi</a>::fw::Parameters&gt; <a href="CppRibi.htm">ribi</a>::fw::Simulation::CreateTestParameters() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
 &nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;Parameters&gt; v;<br/>
 &nbsp;&nbsp;<a href="CppComment.htm">//</a>0: shortest interesting simulation<br/>
@@ -1972,12 +1903,12 @@ Generation Simulation::CreateNextGeneration(<br/>
 &nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> v;<br/>
 }<br/>
 <br/>
-<a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppRibi.htm">ribi</a>::DnaSequence&gt; Simulation::GetCurrentSequences() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+<a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppRibi.htm">ribi</a>::DnaSequence&gt; <a href="CppRibi.htm">ribi</a>::fw::Simulation::GetCurrentSequences() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
 &nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> GetGenerations().back().GetSequences();<br/>
 }<br/>
 <br/>
-<a href="CppStdString.htm">std::string</a> Simulation::GetPedigree() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+<a href="CppStdString.htm">std::string</a> <a href="CppRibi.htm">ribi</a>::fw::Simulation::GetPedigree() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
 &nbsp;&nbsp;<a href="CppComment.htm">//</a>Take the first individual from the first generation<br/>
 &nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (<b><a href="CppThis.htm">this</a></b>-&gt;m_generations.empty()) <b><a href="CppReturn.htm">return</a></b> "";<br/>
@@ -1993,7 +1924,7 @@ Generation Simulation::CreateNextGeneration(<br/>
 &nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> pedigree-&gt;To<a href="CppNewick.htm">Newick</a>();<br/>
 }<br/>
 <br/>
-<b><a href="CppVoid.htm">void</a></b> Simulation::NextGeneration() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::fw::Simulation::NextGeneration() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
 &nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!m_generations.empty());<br/>
 &nbsp;&nbsp;m_generations.push_back(<br/>
@@ -2001,7 +1932,7 @@ Generation Simulation::CreateNextGeneration(<br/>
 &nbsp;&nbsp;);<br/>
 }<br/>
 <br/>
-<b><a href="CppBool.htm">bool</a></b> <b><a href="CppOperatorEqual.htm">operator==</a></b>(<b><a href="CppConst.htm">const</a></b> Simulation&amp; lhs, <b><a href="CppConst.htm">const</a></b> Simulation&amp; rhs) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+<b><a href="CppBool.htm">bool</a></b> <a href="CppRibi.htm">ribi</a>::fw::<b><a href="CppOperatorEqual.htm">operator==</a></b>(<b><a href="CppConst.htm">const</a></b> Simulation&amp; lhs, <b><a href="CppConst.htm">const</a></b> Simulation&amp; rhs) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
 &nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lhs.GetParameters() <a href="CppOperatorEqual.htm">==</a> rhs.GetParameters()<br/>
@@ -2009,7 +1940,7 @@ Generation Simulation::CreateNextGeneration(<br/>
 &nbsp;&nbsp;;<br/>
 }<br/>
 <br/>
-<b><a href="CppBool.htm">bool</a></b> <b><a href="CppOperatorNotEqual.htm">operator!=</a></b>(<b><a href="CppConst.htm">const</a></b> Simulation&amp; lhs, <b><a href="CppConst.htm">const</a></b> Simulation&amp; rhs) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+<b><a href="CppBool.htm">bool</a></b> <a href="CppRibi.htm">ribi</a>::fw::<b><a href="CppOperatorNotEqual.htm">operator!=</a></b>(<b><a href="CppConst.htm">const</a></b> Simulation&amp; lhs, <b><a href="CppConst.htm">const</a></b> Simulation&amp; rhs) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
 &nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> !(lhs <a href="CppOperatorEqual.htm">==</a> rhs);<br/>
 }<br/>
@@ -2020,18 +1951,18 @@ Generation Simulation::CreateNextGeneration(<br/>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<h2>./ToolFisherWrighter/simulation_test.cpp</h2>
+<h2>./ToolFisherWrighter/fisherwrightersimulation_test.cpp</h2>
 <p>&nbsp;</p>
 <!-- start of code -->
-<table summary="./ToolFisherWrighter/simulation_test.cpp" border = "1"><tr><td><code>
-<a href="CppInclude.htm">#include</a> "simulation.h"<br/>
+<table summary="./ToolFisherWrighter/fisherwrightersimulation_test.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "fisherwrightersimulation.h"<br/>
 <br/>
 <a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
 <br/>
 <a href="CppInclude.htm">#include</a> "<a href="CppTrace.htm">trace</a>.h"<br/>
 <br/>
 <a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
-<b><a href="CppVoid.htm">void</a></b> Simulation::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::fw::Simulation::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
 {<br/>
 &nbsp;&nbsp;{<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppBool.htm">bool</a></b> is_tested <a href="CppOperatorAssign.htm">=</a> <b><a href="CppFalse.htm">false</a></b>;<br/>
@@ -2138,6 +2069,296 @@ Generation Simulation::CreateNextGeneration(<br/>
 &nbsp;&nbsp;}<br/>
 }<br/>
 <a href="CppEndif.htm">#endif</a><br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolFisherWrighter/main.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolFisherWrighter/main.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppFstreamH.htm">fstream</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppIostreamH.htm">iostream</a>&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQFile.htm">QFile</a>&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "helper.h"<br/>
+<a href="CppInclude.htm">#include</a> "parameters.h"<br/>
+<a href="CppInclude.htm">#include</a> "simulation.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppNewick.htm">newick</a>utils.h"<br/>
+<br/>
+<b><a href="CppInt.htm">int</a></b> <a href="CppMain.htm">main</a>()<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>1) Read parameters from file<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> dna_length{10};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> mutation_rate{0.01};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> n_generations{10};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> pop_size{1000};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> seed{42};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Parameters parameters(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;dna_length,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;mutation_rate,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;n_generations,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;pop_size,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;seed<br/>
+&nbsp;&nbsp;);<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>2) Run simulation<br/>
+&nbsp;&nbsp;Simulation simulation(parameters);<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Loop n_generations<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a><b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> n_generations{parameters.GetNumberOfGenerations()};<br/>
+&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppInt.htm">int</a></b> i=0; i<a href="CppOperatorNotEqual.htm">!=</a>n_generations; <a href="CppOperatorIncrement.htm">++</a>i)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;simulation.NextGeneration();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!simulation.GetCurrentSequences().empty())<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Only show the sequence of the first individual<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppStdCout.htm">std::cout</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> i <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> ": " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> simulation.GetCurrentSequences()[0].GetSequence() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n';<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> pedigree{simulation.GetPedigree()};<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Display as <a href="CppNewick.htm">newick</a><br/>
+&nbsp;&nbsp;<a href="CppStdCout.htm">std::cout</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> pedigree <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="CppStdEndl.htm">std::endl</a>;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Display as phylogeny<br/>
+&nbsp;&nbsp;<a href="CppNewick.htm">Newick</a>Utils().Display(pedigree);<br/>
+}<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolFisherWrighter/qtfisherwrightermaindialog.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolFisherWrighter/qtfisherwrightermaindialog.h" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> QTFISHERWRIGHTERMAINDIALOG_H<br/>
+<a href="CppDefine.htm">#define</a> QTFISHERWRIGHTERMAINDIALOG_H<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppVectorH.htm">vector</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQDialog.htm">QDialog</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> "fisherwrighterparameters.h"<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> Ui {<br/>
+&nbsp;&nbsp;<b><a href="CppClass.htm">class</a></b> <a href="CppQt.htm">Qt</a>FisherWrighterMainDialog;<br/>
+}<br/>
+<br/>
+<b><a href="CppStruct.htm">struct</a></b> <a href="CppQt.htm">Qt</a><a href="CppNewick.htm">Newick</a>Display;<br/>
+<b><a href="CppStruct.htm">struct</a></b> <a href="CppQt.htm">Qt</a>DnaSequencesDisplay;<br/>
+<b><a href="CppStruct.htm">struct</a></b> <a href="CppQt.htm">Qt</a>BeastDisplay;<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a> {<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> fw {<br/>
+<br/>
+<b><a href="CppClass.htm">class</a></b> <a href="CppQt.htm">Qt</a>FisherWrighterMainDialog : <b><a href="CppPublic.htm">public</a></b> <a href="CppQDialog.htm">QDialog</a><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppQ_OBJECT.htm">Q_OBJECT</a><br/>
+<br/>
+<b><a href="CppPublic.htm">public</a></b>:<br/>
+&nbsp;&nbsp;<b><a href="CppExplicit.htm">explicit</a></b> <a href="CppQt.htm">Qt</a>FisherWrighterMainDialog(<a href="CppQWidget.htm">QWidget</a> *parent <a href="CppOperatorAssign.htm">=</a> 0);<br/>
+&nbsp;&nbsp;~<a href="CppQt.htm">Qt</a>FisherWrighterMainDialog();<br/>
+<br/>
+<b><a href="CppPrivate.htm">private</a></b> <b><a href="CppSlots.htm">slots</a></b>:<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> on_button_run_clicked();<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> on_button_run_next_clicked();<br/>
+<br/>
+<b><a href="CppPrivate.htm">private</a></b>:<br/>
+&nbsp;&nbsp;<a href="CppUi.htm">Ui</a>::<a href="CppQt.htm">Qt</a>FisherWrighterMainDialog *ui;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Displays the result of the BEAST analysis<br/>
+&nbsp;&nbsp;<a href="CppQt.htm">Qt</a>BeastDisplay * <b><a href="CppConst.htm">const</a></b> m_beast_display;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Displays the resulting DnaSequences<br/>
+&nbsp;&nbsp;<a href="CppQt.htm">Qt</a>DnaSequencesDisplay * <b><a href="CppConst.htm">const</a></b> m_dna_sequences_display;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Displays the resulting <a href="CppNewick.htm">Newick</a><br/>
+&nbsp;&nbsp;<a href="CppQt.htm">Qt</a><a href="CppNewick.htm">Newick</a>Display * <b><a href="CppConst.htm">const</a></b> m_<a href="CppNewick.htm">newick</a>_display;<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppInt.htm">int</a></b> ReadNumberOfGenerations() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppVoid.htm">void</a></b> Test() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+};<br/>
+<br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> fw<br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a><br/>
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> QTFISHERWRIGHTERMAINDIALOG_H<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolFisherWrighter/qtfisherwrightermaindialog.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolFisherWrighter/qtfisherwrightermaindialog.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "qtfisherwrightermaindialog.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppIostreamH.htm">iostream</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppSstreamH.htm">sstream</a>&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQDesktopWidget.htm">QDesktopWidget</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQTimer.htm">QTimer</a>&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppFileIo.htm">fileio</a>.h"<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppNewick.htm">newick</a>utils.h"<br/>
+<a href="CppInclude.htm">#include</a> "ui_qtfisherwrightermaindialog.h"<br/>
+<a href="CppInclude.htm">#include</a> "fisherwrightermenudialog.h"<br/>
+<a href="CppInclude.htm">#include</a> "fisherwrightersimulation.h"<br/>
+<a href="CppInclude.htm">#include</a> "phylogeny_r.h"<br/>
+<a href="CppInclude.htm">#include</a> "qtdnasequencesdisplay.h"<br/>
+<a href="CppInclude.htm">#include</a> "qtbea<a href="CppStd.htm">std</a>isplay.h"<br/>
+<a href="CppInclude.htm">#include</a> "qt<a href="CppNewick.htm">newick</a>display.h"<br/>
+<br/>
+<a href="CppRibi.htm">ribi</a>::fw::<a href="CppQt.htm">Qt</a>FisherWrighterMainDialog::<a href="CppQt.htm">Qt</a>FisherWrighterMainDialog(<a href="CppQWidget.htm">QWidget</a> *parent) :<br/>
+&nbsp;&nbsp;<a href="CppQDialog.htm">QDialog</a>(parent),<br/>
+&nbsp;&nbsp;ui(<b><a href="CppNew.htm">new</a></b> <a href="CppUi.htm">Ui</a>::<a href="CppQt.htm">Qt</a>FisherWrighterMainDialog),<br/>
+&nbsp;&nbsp;m_beast_display{<b><a href="CppNew.htm">new</a></b> <a href="CppQt.htm">Qt</a>BeastDisplay(<b><a href="CppThis.htm">this</a></b>)},<br/>
+&nbsp;&nbsp;m_dna_sequences_display{<b><a href="CppNew.htm">new</a></b> <a href="CppQt.htm">Qt</a>DnaSequencesDisplay(<b><a href="CppThis.htm">this</a></b>)},<br/>
+&nbsp;&nbsp;m_<a href="CppNewick.htm">newick</a>_display{<b><a href="CppNew.htm">new</a></b> <a href="CppQt.htm">Qt</a><a href="CppNewick.htm">Newick</a>Display(<b><a href="CppThis.htm">this</a></b>)}<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;Test();<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+&nbsp;&nbsp;ui-&gt;setupUi(<b><a href="CppThis.htm">this</a></b>);<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!ui-&gt;area_results-&gt;layout());<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(ui-&gt;results-&gt;layout());<br/>
+&nbsp;&nbsp;ui-&gt;results-&gt;layout()-&gt;addWidget(m_dna_sequences_display);<br/>
+&nbsp;&nbsp;ui-&gt;results-&gt;layout()-&gt;addWidget(m_beast_display);<br/>
+&nbsp;&nbsp;ui-&gt;results-&gt;layout()-&gt;addWidget(m_<a href="CppNewick.htm">newick</a>_display);<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Put the dialog in the screen center<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppQRect.htm">QRect</a> screen <a href="CppOperatorAssign.htm">=</a> <a href="CppQApplication.htm">QApplication</a>::desktop()-&gt;screenGeometry();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppThis.htm">this</a></b>-&gt;setGeometry(0,0,screen.width() * 8 <a href="CppOperatorDivide.htm">/</a> 10, screen.height() * 8 <a href="CppOperatorDivide.htm">/</a> 10);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppThis.htm">this</a></b>-&gt;move( screen.center() <a href="CppOperatorMinus.htm">-</a> <b><a href="CppThis.htm">this</a></b>-&gt;rect().center() );<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppQTimer.htm">QTimer</a>::singleShot(1000,<b><a href="CppThis.htm">this</a></b>,<a href="CppSLOT.htm">SLOT</a>(on_button_run_clicked()));<br/>
+}<br/>
+<br/>
+<a href="CppRibi.htm">ribi</a>::fw::<a href="CppQt.htm">Qt</a>FisherWrighterMainDialog::~<a href="CppQt.htm">Qt</a>FisherWrighterMainDialog()<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppDelete.htm">delete</a></b> ui;<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::fw::<a href="CppQt.htm">Qt</a>FisherWrighterMainDialog::on_button_run_clicked()<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>1) Read parameters from file<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> dna_length{<b><a href="CppThis.htm">this</a></b>-&gt;ui-&gt;box_dna_length-&gt;value()};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> mutation_rate{ui-&gt;box_mutation_rate-&gt;value()};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> n_generations{ReadNumberOfGenerations()};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> pop_size{ui-&gt;box_pop_size-&gt;value()};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> seed{ui-&gt;box_seed-&gt;value()};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppRibi.htm">ribi</a>::fw::Parameters parameters(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;dna_length,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;mutation_rate,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;n_generations,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;pop_size,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;seed<br/>
+&nbsp;&nbsp;);<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>2) Run simulation<br/>
+&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::fw::Simulation simulation(parameters);<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Loop n_generations<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a><b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> n_generations{ReadNumberOfGenerations()};<br/>
+&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppInt.htm">int</a></b> i=0; i<a href="CppOperatorNotEqual.htm">!=</a>n_generations; <a href="CppOperatorIncrement.htm">++</a>i)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;simulation.NextGeneration();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!simulation.GetCurrentSequences().empty())<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Only show the sequence of the first individual<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppStdCout.htm">std::cout</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> i <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> ": " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> simulation.GetCurrentSequences()[0].GetSequence() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n';<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> <a href="CppNewick.htm">newick</a>{simulation.GetPedigree()};<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppThis.htm">this</a></b>-&gt;m_beast_display-&gt;Analyze(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;simulation.GetCurrentSequences(),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;box_mcmc_chainlength-&gt;value()<br/>
+&nbsp;&nbsp;);<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppThis.htm">this</a></b>-&gt;repaint();<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppThis.htm">this</a></b>-&gt;m_dna_sequences_display-&gt;SetDnaSequences(simulation.GetCurrentSequences());<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppThis.htm">this</a></b>-&gt;repaint();<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Display <a href="CppNewick.htm">newick</a><br/>
+&nbsp;&nbsp;<b><a href="CppThis.htm">this</a></b>-&gt;m_<a href="CppNewick.htm">newick</a>_display-&gt;Set<a href="CppNewick.htm">Newick</a>(<a href="CppNewick.htm">newick</a>);<br/>
+<br/>
+}<br/>
+<br/>
+<b><a href="CppInt.htm">int</a></b> <a href="CppRibi.htm">ribi</a>::fw::<a href="CppQt.htm">Qt</a>FisherWrighterMainDialog::ReadNumberOfGenerations() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> n_generations{ui-&gt;box_n_generation-&gt;value()};<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> n_generations;<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::fw::<a href="CppQt.htm">Qt</a>FisherWrighterMainDialog::on_button_run_next_clicked()<br/>
+{<br/>
+&nbsp;&nbsp;ui-&gt;box_seed-&gt;setValue(ui-&gt;box_seed-&gt;value() <a href="CppOperatorPlus.htm">+</a> 1);<br/>
+&nbsp;&nbsp;ui-&gt;button_run-&gt;click();<br/>
+}<br/>
+<br/>
+<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::fw::<a href="CppQt.htm">Qt</a>FisherWrighterMainDialog::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppBool.htm">bool</a></b> is_tested{<b><a href="CppFalse.htm">false</a></b>};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (is_tested) <b><a href="CppReturn.htm">return</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;is_tested <a href="CppOperatorAssign.htm">=</a> <b><a href="CppTrue.htm">true</a></b>;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::fw::MenuDialog();<br/>
+}<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolFisherWrighter/qtmain.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolFisherWrighter/qtmain.cpp" border = "1"><tr><td><code>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic push<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "<a href="CppWeffcpp.htm">-Weffc++</a>"<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "-Wunused-local-typedefs"<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQApplication.htm">QApplication</a>&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;future&gt;<br/>
+<a href="CppInclude.htm">#include</a> "qtfisherwrightermaindialog.h"<br/>
+<a href="CppInclude.htm">#include</a> "beast.h"<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppCounter.htm">counter</a>.h"<br/>
+<a href="CppInclude.htm">#include</a> "dna_r.h"<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppRibi.htm">ribi</a>_rinside.h"<br/>
+<a href="CppInclude.htm">#include</a> "phylogeny_r.h"<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppNewick.htm">newick</a>utils.h"<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic pop<br/>
+<br/>
+<b><a href="CppInt.htm">int</a></b> <a href="CppMain.htm">main</a>(<b><a href="CppInt.htm">int</a></b> <a href="CppArgc.htm">argc</a>, <b><a href="CppChar.htm">char</a></b> *<a href="CppArgc.htm">argv</a>[])<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppQApplication.htm">QApplication</a> a(<a href="CppArgc.htm">argc</a>, <a href="CppArgc.htm">argv</a>);<br/>
+&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::fw::<a href="CppQt.htm">Qt</a>FisherWrighterMainDialog w;<br/>
+&nbsp;&nbsp;w.show();<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> a.exec();<br/>
+}<br/>
 </code></td></tr></table>
 <!-- end of the code -->
 <p>&nbsp;</p>

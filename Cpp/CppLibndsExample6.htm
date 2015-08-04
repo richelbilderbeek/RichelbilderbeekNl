@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <title>LibndsExample6</title>
+  <meta name="description" content="C++ LibndsExample6"/>
+  <meta name="keywords" content="C++ LibndsExample6 "/>
+  <link rel="stylesheet" href="Richelbilderbeek.css" type="text/css"/>
+</head>
+<!-- End of head, start of body -->
+<body>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<!-- Page header -->
+<h1>(<a href="Cpp.htm">C++</a>) <a href="CppLibndsExample6.htm">LibndsExample6</a></h1>
+<p>&nbsp;</p>
+<h2>./CppLibndsExample6/source/CppLibndsExample6.pro</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppLibndsExample6/source/CppLibndsExample6.pro" border = "1"><tr><td><code>
+message("Compiling this will fail, use the Makefile instead")<br/>
+<br/>
+INCLUDEPATH += /home/richel/devkitPro/libnds/include<br/>
+INCLUDEPATH += /home/richel/devkitPro/devkitARM/arm-none-eabi/include<br/>
+LIBS += -L/home/richel/devkitPro/devkitARM/arm-none-eabi/lib -lstdc++<br/>
+LIBS += -L/home/richel/devkitPro/libnds/lib -lnds9 -lmm9 -lfat -lfilesystem -ldswifi9<br/>
+DEFINES += ARM9<br/>
+CONFIG&nbsp;&nbsp; += console<br/>
+CONFIG -= qt<br/>
+CONFIG&nbsp;&nbsp; -= app_bundle<br/>
+TEMPLATE = app<br/>
+SOURCES += main.cpp<br/>
+QMAKE_CC&nbsp;&nbsp;= /home/richel/devkitPro/devkitARM/bin/arm-none-eabi-gcc<br/>
+QMAKE_CXX = /home/richel/devkitPro/devkitARM/bin/arm-none-eabi-g++<br/>
+QMAKE_CXXFLAGS = -MMD -MP -MF -mm -g -mthumb -mthumb-interwork<br/>
+QMAKE_LINK = /home/richel/devkitPro/devkitARM/bin/arm-none-eabi-g++<br/>
+QMAKE_LFLAGS = -T/home/richel/devkitPro/devkitARM/arm-none-eabi/lib/ds_arm9.ld<br/>
+QMAKE_LINK = /home/richel/devkitPro/devkitARM/bin/arm-none-eabi-gcc<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppLibndsExample6/source/main.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppLibndsExample6/source/main.cpp" border = "1"><tr><td><code>
+<br/>
+#include &lt;nds.h&gt;<br/>
+#include &lt;iostream&gt;<br/>
+<br/>
+<br/>
+int main()<br/>
+{<br/>
+	PrintConsole topScreen;<br/>
+	PrintConsole bottomScreen;<br/>
+	<br/>
+	videoSetMode(MODE_0_2D);<br/>
+	videoSetModeSub(MODE_0_2D);<br/>
+<br/>
+	vramSetBankA(VRAM_A_MAIN_BG);<br/>
+	vramSetBankC(VRAM_C_SUB_BG);<br/>
+<br/>
+&nbsp;&nbsp;consoleInit(&amp;topScreen,&nbsp;&nbsp;&nbsp;&nbsp;3,BgType_Text4bpp, BgSize_T_256x256, 31, 0, true, true);<br/>
+	consoleInit(&amp;bottomScreen, 3,BgType_Text4bpp, BgSize_T_256x256, 31, 0, false, true);<br/>
+<br/>
+<br/>
+	consoleSelect(&amp;topScreen);<br/>
+&nbsp;&nbsp;std::cout<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;&lt; "You are in the pub\n"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;&lt; "What will you do?"<br/>
+&nbsp;&nbsp;;<br/>
+<br/>
+	consoleSelect(&amp;bottomScreen);<br/>
+<br/>
+&nbsp;&nbsp;int charx = 1;<br/>
+&nbsp;&nbsp;int chary = 0;<br/>
+<br/>
+&nbsp;&nbsp;while(1)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;consoleClear();<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;std::cout<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;&lt; "[" &lt;&lt; (charx == 1 &amp;&amp; chary == 0 ? std::string("*") : std::string(" ")) &lt;&lt; "] Sit at the bar\n"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;&lt; "[" &lt;&lt; (charx == 1 &amp;&amp; chary == 1 ? std::string("*") : std::string(" ")) &lt;&lt; "] Sit at a table\n"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;&lt; "[" &lt;&lt; (charx == 1 &amp;&amp; chary == 2 ? std::string("*") : std::string(" ")) &lt;&lt; "] Leave the pub\n"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;;<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;touchPosition touch;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;touchRead(&amp;touch);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;if (touch.rawx != 0 &amp;&amp; touch.rawy != 0)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;charx = touch.px / 8; //A character is 8 pixels wide<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chary = touch.py / 8; //A character is 8 pixels wide<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;swiWaitForVBlank();<br/>
+	}<br/>
+}<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p>&nbsp;</p>
+<p><a href="http://validator.w3.org/check?uri=referer"><img src="valid-xhtml10.png" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a></p>
+<p>This page has been created by the <a href="Tools.htm">tool</a> <a href="ToolCodeToHtml.htm">CodeToHtml</a></p>
+</body>
+</html>
