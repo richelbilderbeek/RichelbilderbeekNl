@@ -1,2 +1,0 @@
-# RichelbilderbeekNl
-My HTML website
