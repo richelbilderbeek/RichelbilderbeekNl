@@ -1,2 +1,7 @@
+addons:
+  apt:
+    packages:
+    - tiny
+
 script: 
   - ./check.sh
