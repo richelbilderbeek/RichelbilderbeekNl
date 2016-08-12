@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <title>QtDnaSequencesDisplay</title>
+  <meta name="description" content="C++ QtDnaSequencesDisplay"/>
+  <meta name="keywords" content="C++ QtDnaSequencesDisplay "/>
+  <link rel="stylesheet" href="Richelbilderbeek.css" type="text/css"/>
+</head>
+<!-- End of head, start of body -->
+<body>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<!-- Page header -->
+<h1>(<a href="Cpp.htm">C++</a>) <a href="CppQtDnaSequencesDisplay.htm">QtDnaSequencesDisplay</a></h1>
+<p>&nbsp;</p>
+<!-- No CodeToHtmlInfo about this class with page name CppQtDnaSequencesDisplay-->
+<h2>Technical facts</h2>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppQtDnaSequencesDisplay/CppQtDnaSequencesDisplay.pri</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppQtDnaSequencesDisplay/CppQtDnaSequencesDisplay.pri" border = "1"><tr><td><code>
+<a href="CppQmakeIncludepath.htm">INCLUDEPATH</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppQtDnaSequencesDisplay<br/>
+<br/>
+<a href="CppQmakeSources.htm">SOURCES</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppQtDnaSequencesDisplay/qtdnasequencesdisplay.cpp<br/>
+<br/>
+<a href="CppQmakeHeaders.htm">HEADERS</a>&nbsp;&nbsp;+= \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppQtDnaSequencesDisplay/qtdnasequencesdisplay.h<br/>
+<br/>
+<a href="CppFORMS.htm">FORMS</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppQtDnaSequencesDisplay/qtdnasequencesdisplay.ui<br/>
+<br/>
+<a href="CppQmakeOther_files.htm">OTHER_FILES</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppQtDnaSequencesDisplay/Licence.txt<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppQtDnaSequencesDisplay/qtdnasequencesdisplay.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppQtDnaSequencesDisplay/qtdnasequencesdisplay.h" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> QTDNADISPLAY_H<br/>
+<a href="CppDefine.htm">#define</a> QTDNADISPLAY_H<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQWidget.htm">QWidget</a>&gt;<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a> { <b><a href="CppStruct.htm">struct</a></b> DnaSequence; }<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> Ui { <b><a href="CppClass.htm">class</a></b> <a href="CppQt.htm">Qt</a>DnaSequencesDisplay; }<br/>
+<br/>
+<b><a href="CppClass.htm">class</a></b> <a href="CppQt.htm">Qt</a>DnaSequencesDisplay : <b><a href="CppPublic.htm">public</a></b> <a href="CppQWidget.htm">QWidget</a><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppQ_OBJECT.htm">Q_OBJECT</a><br/>
+<br/>
+<b><a href="CppPublic.htm">public</a></b>:<br/>
+&nbsp;&nbsp;<b><a href="CppExplicit.htm">explicit</a></b> <a href="CppQt.htm">Qt</a>DnaSequencesDisplay(<a href="CppQWidget.htm">QWidget</a> *parent <a href="CppOperatorAssign.htm">=</a> 0);<br/>
+&nbsp;&nbsp;<a href="CppQt.htm">Qt</a>DnaSequencesDisplay(<b><a href="CppConst.htm">const</a></b> <a href="CppQt.htm">Qt</a>DnaSequencesDisplay&amp;) <a href="CppOperatorAssign.htm">=</a> <b><a href="CppDelete.htm">delete</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppQt.htm">Qt</a>DnaSequencesDisplay&amp; <b><a href="CppOperator.htm">operator</a></b>=(<b><a href="CppConst.htm">const</a></b> <a href="CppQt.htm">Qt</a>DnaSequencesDisplay&amp;) <a href="CppOperatorAssign.htm">=</a> <b><a href="CppDelete.htm">delete</a></b>;<br/>
+&nbsp;&nbsp;~<a href="CppQt.htm">Qt</a>DnaSequencesDisplay();<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> SetDnaSequences(<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppRibi.htm">ribi</a>::DnaSequence&gt;&amp; sequences) <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+<b><a href="CppPrivate.htm">private</a></b>:<br/>
+&nbsp;&nbsp;<a href="CppUi.htm">Ui</a>::<a href="CppQt.htm">Qt</a>DnaSequencesDisplay *ui;<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> sm_fail;<br/>
+};<br/>
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> QTDNADISPLAY_H<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppQtDnaSequencesDisplay/qtdnasequencesdisplay.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppQtDnaSequencesDisplay/qtdnasequencesdisplay.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "qtdnasequencesdisplay.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppFunctionalH.htm">functional</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQLabel.htm">QLabel</a>&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "dnasequence.h"<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppFileIo.htm">fileio</a>.h"<br/>
+<a href="CppInclude.htm">#include</a> "ui_qtdnasequencesdisplay.h"<br/>
+<a href="CppInclude.htm">#include</a> "dna_r.h"<br/>
+<br/>
+<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> <a href="CppQt.htm">Qt</a>DnaSequencesDisplay::sm_fail{":-("};<br/>
+<br/>
+<a href="CppQt.htm">Qt</a>DnaSequencesDisplay::<a href="CppQt.htm">Qt</a>DnaSequencesDisplay(<a href="CppQWidget.htm">QWidget</a> *parent) :<br/>
+&nbsp;&nbsp;<a href="CppQWidget.htm">QWidget</a>(parent),<br/>
+&nbsp;&nbsp;ui(<b><a href="CppNew.htm">new</a></b> <a href="CppUi.htm">Ui</a>::<a href="CppQt.htm">Qt</a>DnaSequencesDisplay)<br/>
+{<br/>
+&nbsp;&nbsp;ui-&gt;setupUi(<b><a href="CppThis.htm">this</a></b>);<br/>
+}<br/>
+<br/>
+<a href="CppQt.htm">Qt</a>DnaSequencesDisplay::~<a href="CppQt.htm">Qt</a>DnaSequencesDisplay()<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppDelete.htm">delete</a></b> ui;<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppQt.htm">Qt</a>DnaSequencesDisplay::SetDnaSequences(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppRibi.htm">ribi</a>::DnaSequence&gt;&amp; sequences<br/>
+) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a> <a href="CppFileIo.htm">fileio</a>;<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> temp_filename{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppFileIo.htm">fileio</a>.GetTempFileName(".png")<br/>
+&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::DnaR().PlotSequences(sequences,temp_filename);<br/>
+&nbsp;&nbsp;ui-&gt;image_dna_sequences-&gt;setPixmap(<a href="CppQPixmap.htm">QPixmap</a>(temp_filename.c_str()));<br/>
+&nbsp;&nbsp;<a href="CppFileIo.htm">fileio</a>.<a href="CppDeleteFile.htm">DeleteFile</a>(temp_filename);<br/>
+}<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p>&nbsp;</p>
+<p><a href="http://validator.w3.org/check?uri=referer"><img src="valid-xhtml10.png" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a></p>
+<p>This page has been created by the <a href="Tools.htm">tool</a> <a href="ToolCodeToHtml.htm">CodeToHtml</a></p>
+</body>
+</html>

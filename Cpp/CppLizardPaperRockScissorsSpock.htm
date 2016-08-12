@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <title>LizardPaperRockScissorsSpock</title>
+  <meta name="description" content="C++ LizardPaperRockScissorsSpock"/>
+  <meta name="keywords" content="C++ LizardPaperRockScissorsSpock "/>
+  <link rel="stylesheet" href="Richelbilderbeek.css" type="text/css"/>
+</head>
+<!-- End of head, start of body -->
+<body>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<!-- Page header -->
+<h1>(<a href="Cpp.htm">C++</a>) <a href="CppLizardPaperRockScissorsSpock.htm">LizardPaperRockScissorsSpock</a></h1>
+<p>&nbsp;</p>
+<!-- No CodeToHtmlInfo about this class with page name CppLizardPaperRockScissorsSpock-->
+<h2>Technical facts</h2>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppLizardPaperRockScissorsSpock/CppLizardPaperRockScissorsSpock.pri</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppLizardPaperRockScissorsSpock/CppLizardPaperRockScissorsSpock.pri" border = "1"><tr><td><code>
+<a href="CppQmakeIncludepath.htm">INCLUDEPATH</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/<a href="CppLizardPaperRockScissorsSpock.htm">CppLizardPaperRockScissorsSpock</a><br/>
+<br/>
+<a href="CppQmakeSources.htm">SOURCES</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/<a href="CppLizardPaperRockScissorsSpock.htm">CppLizardPaperRockScissorsSpock</a>/lizardpaperrockscissorsspock_test.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/<a href="CppLizardPaperRockScissorsSpock.htm">CppLizardPaperRockScissorsSpock</a>/lizardpaperrockscissorsspock.cpp<br/>
+<br/>
+<a href="CppQmakeHeaders.htm">HEADERS</a>&nbsp;&nbsp;+= \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/<a href="CppLizardPaperRockScissorsSpock.htm">CppLizardPaperRockScissorsSpock</a>/lizardpaperrockscissorsspock.h<br/>
+<br/>
+<a href="CppQmakeOther_files.htm">OTHER_FILES</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/<a href="CppLizardPaperRockScissorsSpock.htm">CppLizardPaperRockScissorsSpock</a>/Licence.txt<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppLizardPaperRockScissorsSpock/lizardpaperrockscissorsspock.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppLizardPaperRockScissorsSpock/lizardpaperrockscissorsspock.h" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> LIZARD_PAPER_ROCK_SCISSORS_SPOCK_H<br/>
+<a href="CppDefine.htm">#define</a> LIZARD_PAPER_ROCK_SCISSORS_SPOCK_H<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a> {<br/>
+<br/>
+<b><a href="CppEnumClass.htm">enum class</a></b> LizardPaperRockScissorsSpock<br/>
+{<br/>
+&nbsp;&nbsp;paper <a href="CppOperatorAssign.htm">=</a> 0,<br/>
+&nbsp;&nbsp;scissors <a href="CppOperatorAssign.htm">=</a> 1,<br/>
+&nbsp;&nbsp;rock <a href="CppOperatorAssign.htm">=</a> 2,<br/>
+&nbsp;&nbsp;spock <a href="CppOperatorAssign.htm">=</a> 3,<br/>
+&nbsp;&nbsp;lizard <a href="CppOperatorAssign.htm">=</a> 4<br/>
+};<br/>
+<br/>
+<b><a href="CppBool.htm">bool</a></b> DoesBeat(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> LizardPaperRockScissorsSpock lhs,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> LizardPaperRockScissorsSpock rhs<br/>
+);<br/>
+<br/>
+<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+<b><a href="CppVoid.htm">void</a></b> TestLizardPaperRockScissorsSpock() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+<br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a><br/>
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> LIZARD_PAPER_ROCK_SCISSORS_SPOCK_H<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppLizardPaperRockScissorsSpock/lizardpaperrockscissorsspock.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppLizardPaperRockScissorsSpock/lizardpaperrockscissorsspock.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "lizardpaperrockscissorsspock.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
+<br/>
+<b><a href="CppBool.htm">bool</a></b> <a href="CppRibi.htm">ribi</a>::DoesBeat(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> LizardPaperRockScissorsSpock lhs,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> LizardPaperRockScissorsSpock rhs<br/>
+)<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> Lprss <a href="CppOperatorAssign.htm">=</a> LizardPaperRockScissorsSpock;<br/>
+&nbsp;&nbsp;<b><a href="CppSwitch.htm">switch</a></b> (lhs)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppCase.htm">case</a></b> Lprss::lizard: <b><a href="CppReturn.htm">return</a></b> rhs <a href="CppOperatorEqual.htm">==</a> Lprss::paper <a href="CppOperatorLogicalOr.htm">||</a> rhs <a href="CppOperatorEqual.htm">==</a> Lprss::spock;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppCase.htm">case</a></b> Lprss::paper: <b><a href="CppReturn.htm">return</a></b> rhs <a href="CppOperatorEqual.htm">==</a> Lprss::spock <a href="CppOperatorLogicalOr.htm">||</a> rhs <a href="CppOperatorEqual.htm">==</a> Lprss::rock;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppCase.htm">case</a></b> Lprss::rock: <b><a href="CppReturn.htm">return</a></b> rhs <a href="CppOperatorEqual.htm">==</a> Lprss::scissors <a href="CppOperatorLogicalOr.htm">||</a> rhs <a href="CppOperatorEqual.htm">==</a> Lprss::lizard;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppCase.htm">case</a></b> Lprss::scissors: <b><a href="CppReturn.htm">return</a></b> rhs <a href="CppOperatorEqual.htm">==</a> Lprss::paper <a href="CppOperatorLogicalOr.htm">||</a> rhs <a href="CppOperatorEqual.htm">==</a> Lprss::lizard;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppCase.htm">case</a></b> Lprss::spock: <b><a href="CppReturn.htm">return</a></b> rhs <a href="CppOperatorEqual.htm">==</a> Lprss::rock <a href="CppOperatorLogicalOr.htm">||</a> rhs <a href="CppOperatorEqual.htm">==</a> Lprss::scissors;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">/*</a><br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> a{<b><a href="CppStatic_cast.htm">static_cast</a></b>&lt;<b><a href="CppInt.htm">int</a></b>&gt;(lhs)};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> b{<b><a href="CppStatic_cast.htm">static_cast</a></b>&lt;<b><a href="CppInt.htm">int</a></b>&gt;(rhs)};<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> (a <a href="CppOperatorPlus.htm">+</a> 4) <a href="CppOperatorModulus.htm">%</a> 5 <a href="CppOperatorEqual.htm">==</a> b<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorLogicalOr.htm">||</a> (a <a href="CppOperatorPlus.htm">+</a> 2) <a href="CppOperatorModulus.htm">%</a> 5 <a href="CppOperatorEqual.htm">==</a> b;<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">*/</a><br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!"Should not get here");<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <b><a href="CppFalse.htm">false</a></b>;<br/>
+}<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppLizardPaperRockScissorsSpock/lizardpaperrockscissorsspock_test.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppLizardPaperRockScissorsSpock/lizardpaperrockscissorsspock_test.cpp" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+<a href="CppInclude.htm">#include</a> "lizardpaperrockscissorsspock.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::TestLizardPaperRockScissorsSpock() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppBool.htm">bool</a></b> is_tested{<b><a href="CppFalse.htm">false</a></b>};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (is_tested) <b><a href="CppReturn.htm">return</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;is_tested <a href="CppOperatorAssign.htm">=</a> <b><a href="CppTrue.htm">true</a></b>;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> Lprss <a href="CppOperatorAssign.htm">=</a> LizardPaperRockScissorsSpock;<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Lprss paper{Lprss::paper};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Lprss rock{Lprss::rock};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Lprss scissors{Lprss::scissors};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Lprss lizard{Lprss::lizard};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Lprss spock{Lprss::spock};<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a> Rock crushes Scissors or crushes Lizard<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(DoesBeat(rock,scissors));<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(DoesBeat(rock,lizard));<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!DoesBeat(rock,paper));<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!DoesBeat(rock,rock));<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!DoesBeat(rock,spock));<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Scissors cuts Paper or decapitates Lizard<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(DoesBeat(scissors,paper));<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(DoesBeat(scissors,lizard));<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!DoesBeat(scissors,scissors));<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!DoesBeat(scissors,rock));<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!DoesBeat(scissors,spock));<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a> Paper covers Rock or disproves Spock<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(DoesBeat(paper,rock));<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(DoesBeat(paper,spock));<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!DoesBeat(paper,paper));<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!DoesBeat(paper,lizard));<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!DoesBeat(paper,scissors));<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a> Lizard eats Paper or poisons Spock<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(DoesBeat(lizard,paper));<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(DoesBeat(lizard,spock));<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!DoesBeat(lizard,rock));<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!DoesBeat(lizard,lizard));<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!DoesBeat(lizard,scissors));<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a> Spock vaporizes Rock or smashes Scissors<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(DoesBeat(spock,rock));<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(DoesBeat(spock,scissors));<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!DoesBeat(spock,paper));<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!DoesBeat(spock,lizard));<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!DoesBeat(spock,spock));<br/>
+<br/>
+}<br/>
+<a href="CppEndif.htm">#endif</a><br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p>&nbsp;</p>
+<p><a href="http://validator.w3.org/check?uri=referer"><img src="valid-xhtml10.png" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a></p>
+<p>This page has been created by the <a href="Tools.htm">tool</a> <a href="ToolCodeToHtml.htm">CodeToHtml</a></p>
+</body>
+</html>

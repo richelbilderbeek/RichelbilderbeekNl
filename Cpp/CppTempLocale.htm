@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <title>TempLocale</title>
+  <meta name="description" content="C++ TempLocale"/>
+  <meta name="keywords" content="C++ TempLocale "/>
+  <link rel="stylesheet" href="Richelbilderbeek.css" type="text/css"/>
+</head>
+<!-- End of head, start of body -->
+<body>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<!-- Page header -->
+<h1>(<a href="Cpp.htm">C++</a>) <a href="CppTempLocale.htm">TempLocale</a></h1>
+<p>&nbsp;</p>
+<!-- No CodeToHtmlInfo about this class with page name CppTempLocale-->
+<h2>Technical facts</h2>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppTempLocale/CppTempLocale.pri</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppTempLocale/CppTempLocale.pri" border = "1"><tr><td><code>
+<a href="CppQmakeIncludepath.htm">INCLUDEPATH</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/<a href="CppTempLocale.htm">CppTempLocale</a><br/>
+<br/>
+<a href="CppQmakeSources.htm">SOURCES</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/<a href="CppTempLocale.htm">CppTempLocale</a>/templocale.cpp<br/>
+<br/>
+<a href="CppQmakeHeaders.htm">HEADERS</a>&nbsp;&nbsp;+= \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/<a href="CppTempLocale.htm">CppTempLocale</a>/templocale.h<br/>
+<br/>
+<a href="CppQmakeOther_files.htm">OTHER_FILES</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/<a href="CppTempLocale.htm">CppTempLocale</a>/Licence.txt<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppTempLocale/templocale.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppTempLocale/templocale.h" border = "1"><tr><td><code>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
+<a href="CppComment.htm">/*</a><br/>
+TempLocale, <b><a href="CppClass.htm">class</a></b> <b><a href="CppFor.htm">for</a></b> a temporary <a href="CppStd.htm">std</a>::locale<br/>
+Copyright (C) 2015-2015 Richel Bilderbeek<br/>
+<br/>
+This program is free software: you can redistribute it and/or modify<br/>
+it under the terms of the GNU General Public License as published by<br/>
+the Free Software Foundation, either version 3 of the License, or<br/>
+(at your option) any later version.<br/>
+<br/>
+This program is distributed in the hope that it will be useful,<br/>
+but WITHOUT ANY WARRANTY; without even the implied warranty of<br/>
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.See the<br/>
+GNU General Public License for more details.<br/>
+You should have received a copy of the GNU General Public License<br/>
+along with this program.If not, see &lt;http://www.gnu.org/licenses/&gt;.<br/>
+<a href="CppComment.htm">*/</a><br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
+<a href="CppComment.htm">//</a>From http://www.richelbilderbeek.nl/<a href="CppTempLocale.htm">CppTempLocale</a>.htm<br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
+<a href="CppIfndef.htm">#ifndef</a> RIBI_TEMPLOCALE_H<br/>
+<a href="CppDefine.htm">#define</a> RIBI_TEMPLOCALE_H<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppStringH.htm">string</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppVectorH.htm">vector</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppMemoryH.htm">memory</a>&gt;<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a> {<br/>
+<br/>
+<b><a href="CppStruct.htm">struct</a></b> TempLocale<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppExplicit.htm">explicit</a></b> TempLocale(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; temp_locale_name<br/>
+&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;TempLocale(<b><a href="CppConst.htm">const</a></b> TempLocale&amp;) <a href="CppOperatorAssign.htm">=</a> <b><a href="CppDelete.htm">delete</a></b>;<br/>
+&nbsp;&nbsp;TempLocale&amp; <b><a href="CppOperator.htm">operator</a></b>=(<b><a href="CppConst.htm">const</a></b> TempLocale&amp;) <a href="CppOperatorAssign.htm">=</a> <b><a href="CppDelete.htm">delete</a></b>;<br/>
+&nbsp;&nbsp;~TempLocale() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <a href="CppStdString.htm">std::string</a> Get<a href="CppVersion.htm">Version</a>() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a>&gt; Get<a href="CppVersion.htm">Version</a>History() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppPrivate.htm">private</a></b>:<br/>
+&nbsp;&nbsp;<b><a href="CppStruct.htm">struct</a></b> TempLocaleImpl;<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdUnique_ptr.htm">std::unique_ptr</a>&lt;TempLocaleImpl&gt; m_impl;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppVoid.htm">void</a></b> Test() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+};<br/>
+<br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a><br/>
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> STOPWATCH_H<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppTempLocale/templocale.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppTempLocale/templocale.cpp" border = "1"><tr><td><code>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
+<a href="CppComment.htm">/*</a><br/>
+TempLocale, <b><a href="CppClass.htm">class</a></b> <b><a href="CppFor.htm">for</a></b> a temporary <a href="CppStd.htm">std</a>::locale<br/>
+Copyright (C) 2015-2015 Richel Bilderbeek<br/>
+<br/>
+This program is free software: you can redistribute it and/or modify<br/>
+it under the terms of the GNU General Public License as published by<br/>
+the Free Software Foundation, either version 3 of the License, or<br/>
+(at your option) any later version.<br/>
+<br/>
+This program is distributed in the hope that it will be useful,<br/>
+but WITHOUT ANY WARRANTY; without even the implied warranty of<br/>
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.See the<br/>
+GNU General Public License for more details.<br/>
+You should have received a copy of the GNU General Public License<br/>
+along with this program.If not, see &lt;http://www.gnu.org/licenses/&gt;.<br/>
+<a href="CppComment.htm">*/</a><br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
+<a href="CppComment.htm">//</a>From http://www.richelbilderbeek.nl/<a href="CppTempLocale.htm">CppTempLocale</a>.htm<br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
+<a href="CppInclude.htm">#include</a> "templocale.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppLocaleH.htm">locale</a>&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "test<a href="CppTime.htm">time</a>r.h"<br/>
+<br/>
+<b><a href="CppStruct.htm">struct</a></b> <a href="CppRibi.htm">ribi</a>::TempLocale::TempLocaleImpl<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppExplicit.htm">explicit</a></b> TempLocaleImpl(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; temp_locale_name<br/>
+&nbsp;&nbsp;)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;: m_prev_locale_name{<a href="CppStd.htm">std</a>::locale().name()},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_temp_locale_name{temp_locale_name}<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Set the <b><a href="CppNew.htm">new</a></b> locale<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStd.htm">std</a>::locale::global(<a href="CppStd.htm">std</a>::locale(m_temp_locale_name.c_str()));<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;~TempLocaleImpl() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Restore the old locale<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStd.htm">std</a>::locale::global(<a href="CppStd.htm">std</a>::locale(m_prev_locale_name.c_str()));<br/>
+<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/The previous <a href="CppStd.htm">std</a>::locale its name (before TempLocale became active)<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> m_prev_locale_name;<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/The current/temporary <a href="CppStd.htm">std</a>::locale its name<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> m_temp_locale_name;<br/>
+};<br/>
+<br/>
+<a href="CppRibi.htm">ribi</a>::TempLocale::TempLocale(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; temp_locale_name<br/>
+) : m_impl(<a href="CppStd.htm">std</a>::make_unique&lt;TempLocaleImpl&gt;(temp_locale_name))<br/>
+{<br/>
+<br/>
+}<br/>
+<br/>
+<a href="CppRibi.htm">ribi</a>::TempLocale::~TempLocale() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+<br/>
+}<br/>
+<br/>
+<a href="CppStdString.htm">std::string</a> <a href="CppRibi.htm">ribi</a>::TempLocale::Get<a href="CppVersion.htm">Version</a>() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> "1.0";<br/>
+}<br/>
+<br/>
+<a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a>&gt; <a href="CppRibi.htm">ribi</a>::TempLocale::Get<a href="CppVersion.htm">Version</a>History() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"2015-01-04: <a href="CppVersion.htm">version</a> 1.0: initial <a href="CppVersion.htm">version</a>"<br/>
+&nbsp;&nbsp;};<br/>
+}<br/>
+<br/>
+<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::TempLocale::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppBool.htm">bool</a></b> is_tested { <b><a href="CppFalse.htm">false</a></b> };<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (is_tested) <b><a href="CppReturn.htm">return</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;is_tested <a href="CppOperatorAssign.htm">=</a> <b><a href="CppTrue.htm">true</a></b>;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Test<a href="CppTime.htm">Time</a>r test_<a href="CppTime.htm">time</a>r(<a href="Cpp__func__.htm">__func__</a>,__<a href="CppCfile.htm">FILE</a>__,1.0);<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> x <a href="CppOperatorAssign.htm">=</a> 1.5;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> TempLocale temp_dutch_locale("nl_NL.UTF-8");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppStdTo_string.htm">std::to_string</a>(x)[1] <a href="CppOperatorEqual.htm">==</a> ',' <a href="CppOperatorLogicalAnd.htm">&amp;&amp;</a> "Dutch");<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> x <a href="CppOperatorAssign.htm">=</a> 1.5;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> TempLocale temp_english_locale("en_US.UTF-8");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppStdTo_string.htm">std::to_string</a>(x)[1] <a href="CppOperatorEqual.htm">==</a> '.' <a href="CppOperatorLogicalAnd.htm">&amp;&amp;</a> "English");<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> x <a href="CppOperatorAssign.htm">=</a> 1.5;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> TempLocale temp_dutch_locale("nl_NL.UTF-8");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppStdTo_string.htm">std::to_string</a>(x)[1] <a href="CppOperatorEqual.htm">==</a> ',' <a href="CppOperatorLogicalAnd.htm">&amp;&amp;</a> "Dutch");<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> x <a href="CppOperatorAssign.htm">=</a> 1.5;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> TempLocale temp_english_locale("en_US.UTF-8");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppStdTo_string.htm">std::to_string</a>(x)[1] <a href="CppOperatorEqual.htm">==</a> '.' <a href="CppOperatorLogicalAnd.htm">&amp;&amp;</a> "English");<br/>
+&nbsp;&nbsp;}<br/>
+}<br/>
+<a href="CppEndif.htm">#endif</a><br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p>&nbsp;</p>
+<p><a href="http://validator.w3.org/check?uri=referer"><img src="valid-xhtml10.png" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a></p>
+<p>This page has been created by the <a href="Tools.htm">tool</a> <a href="ToolCodeToHtml.htm">CodeToHtml</a></p>
+</body>
+</html>

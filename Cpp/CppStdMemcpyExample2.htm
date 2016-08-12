@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <title>StdMemcpyExample2</title>
+  <meta name="description" content="C++ StdMemcpyExample2"/>
+  <meta name="keywords" content="C++ StdMemcpyExample2 "/>
+  <link rel="stylesheet" href="Richelbilderbeek.css" type="text/css"/>
+</head>
+<!-- End of head, start of body -->
+<body>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<!-- Page header -->
+<h1>(<a href="Cpp.htm">C++</a>) <a href="CppStdMemcpyExample2.htm">StdMemcpyExample2</a></h1>
+<p>&nbsp;</p>
+<!-- No CodeToHtmlInfo about this class with page name CppStdMemcpyExample2-->
+<h2>Technical facts</h2>
+<p>&nbsp;</p>
+<p><a href="CppOs.htm">Operating system(s) or programming environment(s)</a></p>
+<ul>
+  <li><img src="PicLubuntu.png" alt="Lubuntu"/> <a href="CppLubuntu.htm">Lubuntu</a> 15.04 (vivid)</li>
+</ul>
+<p><a href="CppIde.htm">IDE(s)</a>:</p>
+<ul>
+  <li><img src="PicQtCreator.png" alt="Qt Creator"/> <a href="CppQtCreator.htm">Qt Creator</a> 3.1.1</li>
+</ul>
+<p><a href="CppQtProjectType.htm">Project type</a>:</p>
+<ul>
+  <li><img src="PicConsole.png" alt="console"/> <a href="CppConsoleApplication.htm">Console application</a></li>
+</ul>
+<p><a href="CppStandard.htm">C++ standard</a>:</p>
+<ul>
+  <li><img src="PicCpp98.png" alt="C++98"/> <a href="Cpp98.htm">C++98</a></li>
+</ul>
+<p><a href="CppCompiler.htm">Compiler(s)</a>:</p>
+<ul>
+  <li><a href="CppGpp.htm">G++</a> 4.9.2</li>
+</ul>
+<p><a href="CppLibrary.htm">Libraries</a> used:</p>
+<ul>
+  <li><img src="PicStl.png" alt="STL"/> <a href="CppStl.htm">STL</a>: GNU ISO C++ Library, version 4.9.2</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2><a href="CppQtProjectFile.htm">Qt project file</a>: ./CppStdMemcpyExample2/CppStdMemcpyExample2.pro</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppStdMemcpyExample2/CppStdMemcpyExample2.pro" border = "1"><tr><td><code>
+include(../../<a href="CppConsoleApplication.htm">ConsoleApplication</a>.pri)<br/>
+<br/>
+<a href="CppQmakeSources.htm">SOURCES</a> += <a href="CppMain.htm">main</a>.cpp<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppStdMemcpyExample2/main.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppStdMemcpyExample2/main.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppIostreamH.htm">iostream</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppStringH.htm">cstring</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppChronoH.htm">chrono</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppVectorH.htm">vector</a>&gt;<br/>
+<br/>
+<br/>
+<b><a href="CppTemplate.htm">template</a></b>&lt;<b><a href="CppClass.htm">class</a></b> T&gt;<br/>
+<b><a href="CppVoid.htm">void</a></b> CopyStl(<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;T&gt;&amp; from, <a href="CppStdVector.htm">std::vector</a>&lt;T&gt;&amp; to)<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(from.size() <a href="CppOperatorEqual.htm">==</a> to.size());<br/>
+&nbsp;&nbsp;<a href="CppStdCopy.htm">std::copy</a>(<a href="CppStdBegin.htm">std::begin</a>(from),<a href="CppStdEnd.htm">std::end</a>(from),<a href="CppStdBegin.htm">std::begin</a>(to));<br/>
+}<br/>
+<br/>
+<b><a href="CppTemplate.htm">template</a></b>&lt;<b><a href="CppClass.htm">class</a></b> T&gt;<br/>
+<b><a href="CppVoid.htm">void</a></b> CopyMemcpy(<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;T&gt;&amp; from, <a href="CppStdVector.htm">std::vector</a>&lt;T&gt;&amp; to)<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(from.size() <a href="CppOperatorEqual.htm">==</a> to.size());<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(from.size() * <b><a href="CppSizeof.htm">sizeof</a></b>(<b><a href="CppInt.htm">int</a></b>) &gt; 0);<br/>
+&nbsp;&nbsp;<a href="CppStdMemcpy.htm">std::memcpy</a>(&amp;to[0],&amp;from[0],from.size() * <b><a href="CppSizeof.htm">sizeof</a></b>(<b><a href="CppInt.htm">int</a></b>));<br/>
+}<br/>
+<br/>
+<b><a href="CppInt.htm">int</a></b> <a href="CppMain.htm">main</a>()<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> Clock <a href="CppOperatorAssign.htm">=</a> <a href="CppStdChronoHigh_resolution_clock.htm">std::chrono::high_resolution_clock</a>;<br/>
+&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> Duration <a href="CppOperatorAssign.htm">=</a> <a href="CppStdChronoSystem_clockDuration.htm">std::chrono::system_clock::duration</a>;<br/>
+&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> <a href="CppTime.htm">Time</a><a href="CppPoint.htm">Point</a> <a href="CppOperatorAssign.htm">=</a> <a href="CppStdChronoHigh_resolution_clockTime_point.htm">std::chrono::high_resolution_clock::time_point</a>;<br/>
+&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> Msecs <a href="CppOperatorAssign.htm">=</a> <a href="CppStdChronoMilliseconds.htm">std::chrono::milliseconds</a>;<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> sz{100000000};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> n{100};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppInt.htm">int</a></b>&gt; from(sz);<br/>
+&nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppInt.htm">int</a></b>&gt; to(from.size());<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppTime.htm">Time</a><a href="CppPoint.htm">Point</a> t_stl_begin{Clock::now()};<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppInt.htm">int</a></b> i=0; i<a href="CppOperatorNotEqual.htm">!=</a>n; <a href="CppOperatorIncrement.htm">++</a>i) { CopyStl(from,to); }<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Duration t_stl_<a href="CppTime.htm">time</a>{Clock::now() <a href="CppOperatorMinus.htm">-</a> t_stl_begin};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppTime.htm">Time</a><a href="CppPoint.htm">Point</a> t_<a href="CppMemcpy.htm">memcpy</a>_begin{Clock::now()};<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppInt.htm">int</a></b> i=0; i<a href="CppOperatorNotEqual.htm">!=</a>n; <a href="CppOperatorIncrement.htm">++</a>i) { CopyMemcpy(from,to); }<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Duration t_<a href="CppMemcpy.htm">memcpy</a>_<a href="CppTime.htm">time</a>{Clock::now() <a href="CppOperatorMinus.htm">-</a> t_<a href="CppMemcpy.htm">memcpy</a>_begin};<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;<a href="CppStdCout.htm">std::cout</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "Don't <b><a href="CppDo.htm">do</a></b> profing in <a href="CppDebug.htm">debug</a> mode!" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="CppStdEndl.htm">std::endl</a>;<br/>
+&nbsp;&nbsp;<a href="CppPreElse.htm">#else</a><br/>
+&nbsp;&nbsp;<a href="CppStdCout.htm">std::cout</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="CppStdChronoDuration_cast.htm">std::chrono::duration_cast</a>&lt;Msecs&gt;(t_stl_<a href="CppTime.htm">time</a>).count() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> " milliseconds" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="CppStdChronoDuration_cast.htm">std::chrono::duration_cast</a>&lt;Msecs&gt;(t_<a href="CppMemcpy.htm">memcpy</a>_<a href="CppTime.htm">time</a>).count() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> " milliseconds" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="CppStdEndl.htm">std::endl</a>;<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+}<br/>
+<br/>
+<a href="CppComment.htm">/*</a> Screen output:<br/>
+<br/>
+9222 milliseconds<br/>
+9140 milliseconds<br/>
+<br/>
+Press &lt;RETURN&gt; to close <b><a href="CppThis.htm">this</a></b> window...<br/>
+<br/>
+<a href="CppComment.htm">*/</a><br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p>&nbsp;</p>
+<p><a href="http://validator.w3.org/check?uri=referer"><img src="valid-xhtml10.png" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a></p>
+<p>This page has been created by the <a href="Tools.htm">tool</a> <a href="ToolCodeToHtml.htm">CodeToHtml</a></p>
+</body>
+</html>

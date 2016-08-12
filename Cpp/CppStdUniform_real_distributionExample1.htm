@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <title>StdUniform_real_distributionExample1</title>
+  <meta name="description" content="C++ StdUniform_real_distributionExample1"/>
+  <meta name="keywords" content="C++ StdUniform_real_distributionExample1 "/>
+  <link rel="stylesheet" href="Richelbilderbeek.css" type="text/css"/>
+</head>
+<!-- End of head, start of body -->
+<body>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<!-- Page header -->
+<h1>(<a href="Cpp.htm">C++</a>) <a href="CppStdUniform_real_distributionExample1.htm">StdUniform_real_distributionExample1</a></h1>
+<p>&nbsp;</p>
+<!-- No CodeToHtmlInfo about this class with page name CppStdUniform_real_distributionExample1-->
+<h2>Technical facts</h2>
+<p>&nbsp;</p>
+<p><a href="CppOs.htm">Operating system(s) or programming environment(s)</a></p>
+<ul>
+  <li><img src="PicLubuntu.png" alt="Lubuntu"/> <a href="CppLubuntu.htm">Lubuntu</a> 15.04 (vivid)</li>
+</ul>
+<p><a href="CppIde.htm">IDE(s)</a>:</p>
+<ul>
+  <li><img src="PicQtCreator.png" alt="Qt Creator"/> <a href="CppQtCreator.htm">Qt Creator</a> 3.1.1</li>
+</ul>
+<p><a href="CppQtProjectType.htm">Project type</a>:</p>
+<ul>
+  <li><img src="PicConsole.png" alt="console"/> <a href="CppConsoleApplication.htm">Console application</a></li>
+</ul>
+<p><a href="CppStandard.htm">C++ standard</a>:</p>
+<ul>
+  <li><img src="PicCpp98.png" alt="C++98"/> <a href="Cpp98.htm">C++98</a></li>
+</ul>
+<p><a href="CppCompiler.htm">Compiler(s)</a>:</p>
+<ul>
+  <li><a href="CppGpp.htm">G++</a> 4.9.2</li>
+</ul>
+<p><a href="CppLibrary.htm">Libraries</a> used:</p>
+<ul>
+  <li><img src="PicStl.png" alt="STL"/> <a href="CppStl.htm">STL</a>: GNU ISO C++ Library, version 4.9.2</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2><a href="CppQtProjectFile.htm">Qt project file</a>: ./CppStdUniform_real_distributionExample1/CppStdUniform_real_distributionExample1.pro</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppStdUniform_real_distributionExample1/CppStdUniform_real_distributionExample1.pro" border = "1"><tr><td><code>
+include(../../<a href="CppConsoleApplication.htm">ConsoleApplication</a>.pri)<br/>
+<br/>
+<a href="CppQmakeSources.htm">SOURCES</a> += <a href="CppMain.htm">main</a>.cpp<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppStdUniform_real_distributionExample1/main.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppStdUniform_real_distributionExample1/main.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppIostreamH.htm">iostream</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppRandomH.htm">random</a>&gt;<br/>
+<br/>
+<b><a href="CppInt.htm">int</a></b> <a href="CppMain.htm">main</a>()<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> min{0.0};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> max{1.0}; <a href="CppComment.htm">//</a>Exclusive, 1.0 will never be drawn<br/>
+&nbsp;&nbsp;<a href="CppStdUniform_real_distribution.htm">std::uniform_real_distribution</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; d(min,max);<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(d.min() <a href="CppOperatorEqual.htm">==</a> min);<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(d.max() <a href="CppOperatorEqual.htm">==</a> max);<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> rng_seed{42};<br/>
+&nbsp;&nbsp;<a href="CppStdMt19937.htm">std::mt19937</a> rng(rng_seed);<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppInt.htm">int</a></b> i=0; i<a href="CppOperatorNotEqual.htm">!=</a>20; <a href="CppOperatorIncrement.htm">++</a>i)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdCout.htm">std::cout</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> d(rng) <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n';<br/>
+&nbsp;&nbsp;}<br/>
+}<br/>
+<br/>
+<a href="CppComment.htm">/*</a><br/>
+<br/>
+0.796543<br/>
+0.183435<br/>
+0.779691<br/>
+0.59685<br/>
+0.445833<br/>
+0.0999749<br/>
+0.459249<br/>
+0.333709<br/>
+0.142867<br/>
+0.650888<br/>
+0.0564116<br/>
+0.721999<br/>
+0.938553<br/>
+0.000778765<br/>
+0.992212<br/>
+0.617482<br/>
+0.611653<br/>
+0.00706631<br/>
+0.0230624<br/>
+0.524775<br/>
+Press &lt;RETURN&gt; to close <b><a href="CppThis.htm">this</a></b> window...<br/>
+<br/>
+<a href="CppComment.htm">*/</a><br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p>&nbsp;</p>
+<p><a href="http://validator.w3.org/check?uri=referer"><img src="valid-xhtml10.png" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a></p>
+<p>This page has been created by the <a href="Tools.htm">tool</a> <a href="ToolCodeToHtml.htm">CodeToHtml</a></p>
+</body>
+</html>

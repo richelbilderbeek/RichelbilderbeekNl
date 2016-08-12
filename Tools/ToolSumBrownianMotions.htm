@@ -1,0 +1,1043 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <title>SumBrownianMotions</title>
+  <meta name="description" content="C++ SumBrownianMotions"/>
+  <meta name="keywords" content="C++ SumBrownianMotions "/>
+  <link rel="stylesheet" href="Richelbilderbeek.css" type="text/css"/>
+</head>
+<!-- End of head, start of body -->
+<body>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<!-- Page header -->
+<h1>(<a href="Cpp.htm">C++</a>) <a href="ToolSumBrownianMotions.htm">SumBrownianMotions</a></h1>
+<p>&nbsp;</p>
+<!-- No CodeToHtmlInfo about this class with page name ToolSumBrownianMotions-->
+<h2>Technical facts</h2>
+<p>&nbsp;</p>
+<p><a href="CppOs.htm">Operating system(s) or programming environment(s)</a></p>
+<ul>
+  <li><img src="PicLubuntu.png" alt="Lubuntu"/> <a href="CppLubuntu.htm">Lubuntu</a> 15.04 (vivid)</li>
+</ul>
+<p><a href="CppIde.htm">IDE(s)</a>:</p>
+<ul>
+  <li><img src="PicQtCreator.png" alt="Qt Creator"/> <a href="CppQtCreator.htm">Qt Creator</a> 3.1.1</li>
+</ul>
+<p><a href="CppQtProjectType.htm">Project type</a>:</p>
+<ul>
+  <li><img src="PicConsole.png" alt="console"/> <a href="CppConsoleApplication.htm">Console application</a></li>
+</ul>
+<p><a href="CppStandard.htm">C++ standard</a>:</p>
+<ul>
+  <li><img src="PicCpp98.png" alt="C++98"/> <a href="Cpp98.htm">C++98</a></li>
+</ul>
+<p><a href="CppCompiler.htm">Compiler(s)</a>:</p>
+<ul>
+  <li><a href="CppGpp.htm">G++</a> 4.9.2</li>
+</ul>
+<p><a href="CppLibrary.htm">Libraries</a> used:</p>
+<ul>
+  <li><img src="PicStl.png" alt="STL"/> <a href="CppStl.htm">STL</a>: GNU ISO C++ Library, version 4.9.2</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2><a href="CppQtProjectFile.htm">Qt project file</a>: ./ToolSumBrownianMotions/ToolSumBrownianMotionsDesktop.pro</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolSumBrownianMotions/ToolSumBrownianMotionsDesktop.pro" border = "1"><tr><td><code>
+include(../../<a href="CppDesktopApplication.htm">DesktopApplication</a>NoWeffcpp.pri)<br/>
+include(../../<a href="CppLibrary.htm">Libraries</a>/<a href="CppBoost.htm">Boost</a>.pri)<br/>
+include(../../<a href="CppLibrary.htm">Libraries</a>/GeneralConsole.pri)<br/>
+include(../../<a href="CppLibrary.htm">Libraries</a>/GeneralDesktop.pri)<br/>
+include(../../<a href="CppLibrary.htm">Libraries</a>/<a href="CppQwt.htm">Qwt</a>.pri)<br/>
+<br/>
+#Specific, console<br/>
+include(../../<a href="CppClass.htm">Classes</a>/<a href="CppHistogram.htm">CppHistogram</a>/<a href="CppHistogram.htm">CppHistogram</a>.pri)<br/>
+include(ToolSumBrownianMotionsDesktop.pri)<br/>
+<br/>
+<a href="CppQmakeSources.htm">SOURCES</a> += qt<a href="CppMain.htm">main</a>.cpp<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolSumBrownianMotions/ToolSumBrownianMotionsConsole.pri</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolSumBrownianMotions/ToolSumBrownianMotionsConsole.pri" border = "1"><tr><td><code>
+<a href="CppQmakeIncludepath.htm">INCLUDEPATH</a> += ../../<a href="Tools.htm">Tools</a>/ToolSumBrownianMotions<br/>
+<br/>
+<a href="CppQmakeSources.htm">SOURCES</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolSumBrownianMotions/simulation.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolSumBrownianMotions/simulation_test.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolSumBrownianMotions/parameters.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolSumBrownianMotions/parameters_test.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolSumBrownianMotions/sumbrownianmotionsmenudialog.cpp<br/>
+<br/>
+<a href="CppQmakeHeaders.htm">HEADERS</a>&nbsp;&nbsp;+= \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolSumBrownianMotions/simulation.h \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolSumBrownianMotions/parameters.h \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolSumBrownianMotions/sumbrownianmotionsmenudialog.h<br/>
+<br/>
+<a href="CppQmakeResources.htm">RESOURCES</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ToolSumBrownianMotions.qrc<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolSumBrownianMotions/ToolSumBrownianMotionsDesktop.pri</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolSumBrownianMotions/ToolSumBrownianMotionsDesktop.pri" border = "1"><tr><td><code>
+include(../../<a href="Tools.htm">Tools</a>/ToolSumBrownianMotions/ToolSumBrownianMotionsConsole.pri)<br/>
+<br/>
+<a href="CppQmakeSources.htm">SOURCES</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolSumBrownianMotions/qtsumbrownianmotions<a href="CppMain.htm">main</a>dialog.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolSumBrownianMotions/qtsumbrownianmotions<a href="CppMain.htm">main</a>dialog_test.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolSumBrownianMotions/qtsumbrownianmotionsmenudialog.cpp<br/>
+<br/>
+<br/>
+<a href="CppQmakeHeaders.htm">HEADERS</a>&nbsp;&nbsp;+= \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolSumBrownianMotions/qtsumbrownianmotions<a href="CppMain.htm">main</a>dialog.h \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolSumBrownianMotions/qtsumbrownianmotionsmenudialog.h<br/>
+<br/>
+<a href="CppFORMS.htm">FORMS</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolSumBrownianMotions/qtsumbrownianmotions<a href="CppMain.htm">main</a>dialog.ui \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="Tools.htm">Tools</a>/ToolSumBrownianMotions/qtsumbrownianmotionsmenudialog.ui<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolSumBrownianMotions/parameters.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolSumBrownianMotions/parameters.h" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> PARAMETERS_H<br/>
+<a href="CppDefine.htm">#define</a> PARAMETERS_H<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppIosfwdH.htm">iosfwd</a>&gt;<br/>
+<br/>
+<b><a href="CppStruct.htm">struct</a></b> Parameters<br/>
+{<br/>
+&nbsp;&nbsp;Parameters()<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n{0},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mean_a{0.0},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stddev_a{0.0},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mean_b{0.0},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stddev_b{0.0}<br/>
+&nbsp;&nbsp;{<br/>
+<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;Parameters(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> <a href="CppAny.htm">any</a>_n,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> <a href="CppAny.htm">any</a>_mean_a,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> <a href="CppAny.htm">any</a>_stddev_a,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> <a href="CppAny.htm">any</a>_mean_b,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> <a href="CppAny.htm">any</a>_stddev_b<br/>
+&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;<b><a href="CppInt.htm">int</a></b> n;<br/>
+&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> mean_a;<br/>
+&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> stddev_a;<br/>
+&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> mean_b;<br/>
+&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> stddev_b;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppVoid.htm">void</a></b> Test() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+};<br/>
+<br/>
+<b><a href="CppBool.htm">bool</a></b> <b><a href="CppOperatorEqual.htm">operator==</a></b>(<b><a href="CppConst.htm">const</a></b> Parameters&amp; lhs, <b><a href="CppConst.htm">const</a></b> Parameters&amp; rhs) <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<b><a href="CppBool.htm">bool</a></b> <b><a href="CppOperatorNotEqual.htm">operator!=</a></b>(<b><a href="CppConst.htm">const</a></b> Parameters&amp; lhs, <b><a href="CppConst.htm">const</a></b> Parameters&amp; rhs) <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+<a href="CppStdOstream.htm">std::ostream</a>&amp; <b><a href="CppOperatorStreamOut.htm">operator&lt;&lt;</a></b>(<a href="CppStdOstream.htm">std::ostream</a>&amp; os, <b><a href="CppConst.htm">const</a></b> Parameters&amp; parameter) <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<a href="CppStdIstream.htm">std::istream</a>&amp; <b><a href="CppOperator.htm">operator</a></b><a href="CppOperatorStreamIn.htm">&gt;&gt;</a>(<a href="CppStdIstream.htm">std::istream</a>&amp; is, Parameters&amp; parameter) <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> PARAMETERS_H<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolSumBrownianMotions/parameters.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolSumBrownianMotions/parameters.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "parameters.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppIostreamH.htm">iostream</a>&gt;<br/>
+<br/>
+Parameters::Parameters(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> <a href="CppAny.htm">any</a>_n,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> <a href="CppAny.htm">any</a>_mean_a,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> <a href="CppAny.htm">any</a>_stddev_a,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> <a href="CppAny.htm">any</a>_mean_b,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> <a href="CppAny.htm">any</a>_stddev_b<br/>
+) :<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;n{<a href="CppAny.htm">any</a>_n},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;mean_a{<a href="CppAny.htm">any</a>_mean_a},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;stddev_a{<a href="CppAny.htm">any</a>_stddev_a},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;mean_b{<a href="CppAny.htm">any</a>_mean_b},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;stddev_b{<a href="CppAny.htm">any</a>_stddev_b}<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;Test();<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(n &gt; 0);<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(stddev_a <a href="CppOperatorGreaterEqual.htm">&gt;=</a> 0.0);<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(stddev_b <a href="CppOperatorGreaterEqual.htm">&gt;=</a> 0.0);<br/>
+}<br/>
+<br/>
+<a href="CppStdOstream.htm">std::ostream</a>&amp; <b><a href="CppOperatorStreamOut.htm">operator&lt;&lt;</a></b>(<a href="CppStdOstream.htm">std::ostream</a>&amp; os, <b><a href="CppConst.htm">const</a></b> Parameters&amp; parameter) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;os<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> parameter.n <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> " "<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> parameter.mean_a <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> " "<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> parameter.stddev_a <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> " "<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> parameter.mean_b <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> " "<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> parameter.stddev_b <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;;<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> os;<br/>
+}<br/>
+<br/>
+<a href="CppStdIstream.htm">std::istream</a>&amp; <b><a href="CppOperator.htm">operator</a></b><a href="CppOperatorStreamIn.htm">&gt;&gt;</a>(<a href="CppStdIstream.htm">std::istream</a>&amp; is, Parameters&amp; parameter) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;is<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamIn.htm">&gt;&gt;</a> parameter.n<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamIn.htm">&gt;&gt;</a> parameter.mean_a<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamIn.htm">&gt;&gt;</a> parameter.stddev_a<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamIn.htm">&gt;&gt;</a> parameter.mean_b<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamIn.htm">&gt;&gt;</a> parameter.stddev_b<br/>
+&nbsp;&nbsp;;<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> is;<br/>
+}<br/>
+<br/>
+<b><a href="CppBool.htm">bool</a></b> <b><a href="CppOperatorEqual.htm">operator==</a></b>(<b><a href="CppConst.htm">const</a></b> Parameters&amp; lhs, <b><a href="CppConst.htm">const</a></b> Parameters&amp; rhs) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lhs.n <a href="CppOperatorEqual.htm">==</a> rhs.n<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorLogicalAnd.htm">&amp;&amp;</a> lhs.mean_a <a href="CppOperatorEqual.htm">==</a> rhs.mean_a<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorLogicalAnd.htm">&amp;&amp;</a> lhs.stddev_a <a href="CppOperatorEqual.htm">==</a> rhs.stddev_a<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorLogicalAnd.htm">&amp;&amp;</a> lhs.mean_b <a href="CppOperatorEqual.htm">==</a> rhs.mean_b<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorLogicalAnd.htm">&amp;&amp;</a> lhs.stddev_b <a href="CppOperatorEqual.htm">==</a> rhs.stddev_b<br/>
+&nbsp;&nbsp;;<br/>
+<br/>
+}<br/>
+<br/>
+<b><a href="CppBool.htm">bool</a></b> <b><a href="CppOperatorNotEqual.htm">operator!=</a></b>(<b><a href="CppConst.htm">const</a></b> Parameters&amp; lhs, <b><a href="CppConst.htm">const</a></b> Parameters&amp; rhs) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> !(lhs <a href="CppOperatorEqual.htm">==</a> rhs);<br/>
+}<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolSumBrownianMotions/parameters_test.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolSumBrownianMotions/parameters_test.cpp" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+<a href="CppInclude.htm">#include</a> "parameters.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppFstreamH.htm">fstream</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppFileIo.htm">fileio</a>.h"<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> Parameters::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppBool.htm">bool</a></b> is_tested{<b><a href="CppFalse.htm">false</a></b>};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (is_tested) <b><a href="CppReturn.htm">return</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;is_tested <a href="CppOperatorAssign.htm">=</a> <b><a href="CppTrue.htm">true</a></b>;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> <a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a>;<br/>
+}<br/>
+<a href="CppEndif.htm">#endif</a><br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolSumBrownianMotions/qtmain.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolSumBrownianMotions/qtmain.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQApplication.htm">QApplication</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> "qtsumbrownianmotionsmenudialog.h"<br/>
+<br/>
+<b><a href="CppInt.htm">int</a></b> <a href="CppMain.htm">main</a>(<b><a href="CppInt.htm">int</a></b> <a href="CppArgc.htm">argc</a>, <b><a href="CppChar.htm">char</a></b> *<a href="CppArgc.htm">argv</a>[])<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppQApplication.htm">QApplication</a> a(<a href="CppArgc.htm">argc</a>, <a href="CppArgc.htm">argv</a>);<br/>
+&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::<a href="CppQt.htm">Qt</a>SumBrownianMotionsMenuDialog w;<br/>
+&nbsp;&nbsp;w.show();<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> a.exec();<br/>
+}<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolSumBrownianMotions/qtsumbrownianmotionsmaindialog.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolSumBrownianMotions/qtsumbrownianmotionsmaindialog.h" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> QTMUTUALISMBREAKDOWNERMAINDIALOG_H_H<br/>
+<a href="CppDefine.htm">#define</a> QTMUTUALISMBREAKDOWNERMAINDIALOG_H_H<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "parameters.h"<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppQtHideAndShowDialog.htm">qthideandshowdialog</a>.h"<br/>
+<br/>
+<b><a href="CppStruct.htm">struct</a></b> <a href="CppQwt.htm">Qwt</a>PlotCurve;<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> Ui {<br/>
+&nbsp;&nbsp;<b><a href="CppClass.htm">class</a></b> <a href="CppQt.htm">Qt</a>SumBrownianMotionsMainDialog;<br/>
+}<br/>
+<br/>
+<b><a href="CppClass.htm">class</a></b> <a href="CppQt.htm">Qt</a>SumBrownianMotionsMainDialog : <b><a href="CppPublic.htm">public</a></b> <a href="CppRibi.htm">ribi</a>::<a href="CppQtHideAndShowDialog.htm">QtHideAndShowDialog</a><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppQ_OBJECT.htm">Q_OBJECT</a><br/>
+&nbsp;&nbsp;<br/>
+<b><a href="CppPublic.htm">public</a></b>:<br/>
+&nbsp;&nbsp;<b><a href="CppExplicit.htm">explicit</a></b> <a href="CppQt.htm">Qt</a>SumBrownianMotionsMainDialog(<a href="CppQWidget.htm">QWidget</a> *parent <a href="CppOperatorAssign.htm">=</a> 0);<br/>
+&nbsp;&nbsp;~<a href="CppQt.htm">Qt</a>SumBrownianMotionsMainDialog();<br/>
+&nbsp;&nbsp;Parameters GetParameters() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> SetParameters(<b><a href="CppConst.htm">const</a></b> Parameters&amp; parameters) <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+<b><a href="CppPrivate.htm">private</a></b> <b><a href="CppSlots.htm">slots</a></b>:<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> Run();<br/>
+<br/>
+<b><a href="CppPrivate.htm">private</a></b>:<br/>
+&nbsp;&nbsp;<a href="CppUi.htm">Ui</a>::<a href="CppQt.htm">Qt</a>SumBrownianMotionsMainDialog *ui;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppQwt.htm">Qwt</a>PlotCurve * <b><a href="CppConst.htm">const</a></b> m_curve_a;<br/>
+&nbsp;&nbsp;<a href="CppQwt.htm">Qwt</a>PlotCurve * <b><a href="CppConst.htm">const</a></b> m_curve_b;<br/>
+&nbsp;&nbsp;<a href="CppQwt.htm">Qwt</a>PlotCurve * <b><a href="CppConst.htm">const</a></b> m_curve_sum;<br/>
+<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppVoid.htm">void</a></b> Test() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+};<br/>
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> QTMUTUALISMBREAKDOWNERMAINDIALOG_H_H<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolSumBrownianMotions/qtsumbrownianmotionsmaindialog.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolSumBrownianMotions/qtsumbrownianmotionsmaindialog.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "qtsumbrownianmotionsmaindialog.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppFstreamH.htm">fstream</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQDesktopWidget.htm">QDesktopWidget</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQFile.htm">QFile</a>Dialog&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;qwt_plot_zoomer.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;qwt_plot_grid.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;qwt_plot.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;qwt_plot_bar<b><a href="CppChar.htm">char</a></b>t.h&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;qwt_plot_curve.h&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "simulation.h"<br/>
+<a href="CppInclude.htm">#include</a> "ui_qtsumbrownianmotionsmaindialog.h"<br/>
+<br/>
+<a href="CppPreIf.htm">#if</a> QWT_VERSION <a href="CppOperatorGreaterEqual.htm">&gt;=</a> 0x060100 <a href="CppOperatorLogicalOr.htm">||</a> !WIN32<br/>
+<a href="CppInclude.htm">#include</a> "qwt_<a href="CppPointer.htm">point</a>_data.h"<br/>
+<a href="CppEndif.htm">#endif</a><br/>
+<br/>
+<a href="CppQt.htm">Qt</a>SumBrownianMotionsMainDialog::<a href="CppQt.htm">Qt</a>SumBrownianMotionsMainDialog(<a href="CppQWidget.htm">QWidget</a> *parent) :<br/>
+&nbsp;&nbsp;<a href="CppQtHideAndShowDialog.htm">QtHideAndShowDialog</a>(parent),<br/>
+&nbsp;&nbsp;ui(<b><a href="CppNew.htm">new</a></b> <a href="CppUi.htm">Ui</a>::<a href="CppQt.htm">Qt</a>SumBrownianMotionsMainDialog),<br/>
+&nbsp;&nbsp;m_curve_a(<b><a href="CppNew.htm">new</a></b> <a href="CppQwt.htm">Qwt</a>PlotCurve),<br/>
+&nbsp;&nbsp;m_curve_b(<b><a href="CppNew.htm">new</a></b> <a href="CppQwt.htm">Qwt</a>PlotCurve),<br/>
+&nbsp;&nbsp;m_curve_sum(<b><a href="CppNew.htm">new</a></b> <a href="CppQwt.htm">Qwt</a>PlotCurve)<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;Test();<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+<br/>
+&nbsp;&nbsp;ui-&gt;setupUi(<b><a href="CppThis.htm">this</a></b>);<br/>
+<br/>
+&nbsp;&nbsp;ui-&gt;plot_a-&gt;setTitle("A");<br/>
+&nbsp;&nbsp;ui-&gt;plot_b-&gt;setTitle("B");<br/>
+&nbsp;&nbsp;ui-&gt;plot_sum-&gt;setTitle("Sum");<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppAdd.htm">Add</a> grid<br/>
+&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> plot:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;plot_a,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;plot_b,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;plot_sum<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQwt.htm">Qwt</a>PlotGrid * <b><a href="CppConst.htm">const</a></b> grid <a href="CppOperatorAssign.htm">=</a> <b><a href="CppNew.htm">new</a></b> <a href="CppQwt.htm">Qwt</a>PlotGrid;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;grid-&gt;setPen(<a href="CppQPen.htm">QPen</a>(<a href="CppQColor.htm">QColor</a>(128,128,128)));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;grid-&gt;attach(plot);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppNew.htm">new</a></b> <a href="CppQwt.htm">Qwt</a>PlotZoomer(plot-&gt;canvas());<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;ui-&gt;plot_a-&gt;set<a href="CppCanvas.htm">Canvas</a>Background(<a href="CppQColor.htm">QColor</a>(226,226,255));<br/>
+&nbsp;&nbsp;ui-&gt;plot_b-&gt;set<a href="CppCanvas.htm">Canvas</a>Background(<a href="CppQColor.htm">QColor</a>(226,255,226));<br/>
+&nbsp;&nbsp;ui-&gt;plot_sum-&gt;set<a href="CppCanvas.htm">Canvas</a>Background(<a href="CppQColor.htm">QColor</a>(255,226,226));<br/>
+<br/>
+&nbsp;&nbsp;m_curve_a-&gt;attach(ui-&gt;plot_a);<br/>
+&nbsp;&nbsp;m_curve_a-&gt;setStyle(<a href="CppQwt.htm">Qwt</a>PlotCurve::Lines);<br/>
+&nbsp;&nbsp;m_curve_a-&gt;setPen(<a href="CppQPen.htm">QPen</a>(<a href="CppQColor.htm">QColor</a>(0,0,255)));<br/>
+<br/>
+&nbsp;&nbsp;m_curve_b-&gt;attach(ui-&gt;plot_b);<br/>
+&nbsp;&nbsp;m_curve_b-&gt;setStyle(<a href="CppQwt.htm">Qwt</a>PlotCurve::Lines);<br/>
+&nbsp;&nbsp;m_curve_b-&gt;setPen(<a href="CppQPen.htm">QPen</a>(<a href="CppQColor.htm">QColor</a>(0,255,0)));<br/>
+<br/>
+&nbsp;&nbsp;m_curve_sum-&gt;attach(ui-&gt;plot_sum);<br/>
+&nbsp;&nbsp;m_curve_sum-&gt;setStyle(<a href="CppQwt.htm">Qwt</a>PlotCurve::Lines);<br/>
+&nbsp;&nbsp;m_curve_sum-&gt;setPen(<a href="CppQPen.htm">QPen</a>(<a href="CppQColor.htm">QColor</a>(255,0,0)));<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppQObject.htm">QObject</a>::connect(ui-&gt;box_n,<a href="CppSignalMacro.htm">SIGNAL</a>(valueChanged(<b><a href="CppInt.htm">int</a></b>)),<b><a href="CppThis.htm">this</a></b>,<a href="CppSLOT.htm">SLOT</a>(Run()));<br/>
+&nbsp;&nbsp;<a href="CppQObject.htm">QObject</a>::connect(ui-&gt;box_mean_a,<a href="CppSignalMacro.htm">SIGNAL</a>(valueChanged(<b><a href="CppDouble.htm">double</a></b>)),<b><a href="CppThis.htm">this</a></b>,<a href="CppSLOT.htm">SLOT</a>(Run()));<br/>
+&nbsp;&nbsp;<a href="CppQObject.htm">QObject</a>::connect(ui-&gt;box_stddev_a,<a href="CppSignalMacro.htm">SIGNAL</a>(valueChanged(<b><a href="CppDouble.htm">double</a></b>)),<b><a href="CppThis.htm">this</a></b>,<a href="CppSLOT.htm">SLOT</a>(Run()));<br/>
+&nbsp;&nbsp;<a href="CppQObject.htm">QObject</a>::connect(ui-&gt;box_mean_b&nbsp;&nbsp;,<a href="CppSignalMacro.htm">SIGNAL</a>(valueChanged(<b><a href="CppDouble.htm">double</a></b>)),<b><a href="CppThis.htm">this</a></b>,<a href="CppSLOT.htm">SLOT</a>(Run()));<br/>
+&nbsp;&nbsp;<a href="CppQObject.htm">QObject</a>::connect(ui-&gt;box_stddev_b,<a href="CppSignalMacro.htm">SIGNAL</a>(valueChanged(<b><a href="CppDouble.htm">double</a></b>)),<b><a href="CppThis.htm">this</a></b>,<a href="CppSLOT.htm">SLOT</a>(Run()));<br/>
+<br/>
+&nbsp;&nbsp;Run();<br/>
+<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Put the dialog in the screen center<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppQRect.htm">QRect</a> screen <a href="CppOperatorAssign.htm">=</a> <a href="CppQApplication.htm">QApplication</a>::desktop()-&gt;screenGeometry();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppThis.htm">this</a></b>-&gt;setGeometry(0,0,screen.width() * 8 <a href="CppOperatorDivide.htm">/</a> 10,screen.height() * 8 <a href="CppOperatorDivide.htm">/</a> 10);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppThis.htm">this</a></b>-&gt;move( screen.center() <a href="CppOperatorMinus.htm">-</a> <b><a href="CppThis.htm">this</a></b>-&gt;rect().center() );<br/>
+&nbsp;&nbsp;}<br/>
+}<br/>
+<br/>
+<a href="CppQt.htm">Qt</a>SumBrownianMotionsMainDialog::~<a href="CppQt.htm">Qt</a>SumBrownianMotionsMainDialog()<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppDelete.htm">delete</a></b> ui;<br/>
+}<br/>
+<br/>
+<br/>
+Parameters <a href="CppQt.htm">Qt</a>SumBrownianMotionsMainDialog::GetParameters() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;Parameters p(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;box_n-&gt;value(),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;box_mean_a-&gt;value(),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;box_stddev_a-&gt;value(),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;box_mean_b-&gt;value(),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;box_stddev_b-&gt;value()<br/>
+&nbsp;&nbsp;);<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> p;<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppQt.htm">Qt</a>SumBrownianMotionsMainDialog::SetParameters(<b><a href="CppConst.htm">const</a></b> Parameters&amp; parameters) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;ui-&gt;box_mean_a-&gt;setValue(parameters.mean_a);<br/>
+&nbsp;&nbsp;ui-&gt;box_stddev_a-&gt;setValue(parameters.stddev_a);<br/>
+&nbsp;&nbsp;ui-&gt;box_mean_b-&gt;setValue(parameters.mean_b);<br/>
+&nbsp;&nbsp;ui-&gt;box_stddev_b-&gt;setValue(parameters.stddev_b);<br/>
+&nbsp;&nbsp;ui-&gt;box_n-&gt;setValue(parameters.n);<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppQt.htm">Qt</a>SumBrownianMotionsMainDialog::Run()<br/>
+{<br/>
+&nbsp;&nbsp;Simulation simulation(GetParameters());<br/>
+&nbsp;&nbsp;simulation.Run();<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;&amp; axs{simulation.GetAxs()};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;&amp; ays{simulation.GetAys()};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;&amp; bxs{simulation.GetBxs()};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;&amp; bys{simulation.GetBys()};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;&amp; sumxs{simulation.<a href="CppGetSum.htm">GetSum</a>xs()};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;&amp; sumys{simulation.<a href="CppGetSum.htm">GetSum</a>ys()};<br/>
+<br/>
+&nbsp;&nbsp;m_curve_a-&gt;setData(<b><a href="CppNew.htm">new</a></b> <a href="CppQwt.htm">Qwt</a><a href="CppPoint.htm">Point</a><a href="CppArray.htm">Array</a>Data(&amp;axs[0],&amp;ays[0],ays.size()));<br/>
+&nbsp;&nbsp;m_curve_b-&gt;setData(<b><a href="CppNew.htm">new</a></b> <a href="CppQwt.htm">Qwt</a><a href="CppPoint.htm">Point</a><a href="CppArray.htm">Array</a>Data(&amp;bxs[0],&amp;bys[0],bys.size()));<br/>
+&nbsp;&nbsp;m_curve_sum-&gt;setData(<b><a href="CppNew.htm">new</a></b> <a href="CppQwt.htm">Qwt</a><a href="CppPoint.htm">Point</a><a href="CppArray.htm">Array</a>Data(&amp;sumxs[0],&amp;sumys[0],sumys.size()));<br/>
+<br/>
+<br/>
+&nbsp;&nbsp;ui-&gt;plot_a-&gt;replot();<br/>
+&nbsp;&nbsp;ui-&gt;plot_b-&gt;replot();<br/>
+&nbsp;&nbsp;ui-&gt;plot_sum-&gt;replot();<br/>
+}<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolSumBrownianMotions/qtsumbrownianmotionsmaindialog_test.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolSumBrownianMotions/qtsumbrownianmotionsmaindialog_test.cpp" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+<a href="CppInclude.htm">#include</a> "qtsumbrownianmotionsmaindialog.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppFstreamH.htm">fstream</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppFileIo.htm">fileio</a>.h"<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppQt.htm">Qt</a>SumBrownianMotionsMainDialog::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppBool.htm">bool</a></b> is_tested{<b><a href="CppFalse.htm">false</a></b>};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (is_tested) <b><a href="CppReturn.htm">return</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;is_tested <a href="CppOperatorAssign.htm">=</a> <b><a href="CppTrue.htm">true</a></b>;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppUsing.htm">using</a></b> <a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a>;<br/>
+}<br/>
+<a href="CppEndif.htm">#endif</a><br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolSumBrownianMotions/qtsumbrownianmotionsmenudialog.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolSumBrownianMotions/qtsumbrownianmotionsmenudialog.h" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> QTMUTUALISMBREAKDOWNERMENUDIALOG_H<br/>
+<a href="CppDefine.htm">#define</a> QTMUTUALISMBREAKDOWNERMENUDIALOG_H<br/>
+<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic push<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "<a href="CppWeffcpp.htm">-Weffc++</a>"<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppQtHideAndShowDialog.htm">qthideandshowdialog</a>.h"<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic pop<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> Ui {<br/>
+<b><a href="CppClass.htm">class</a></b> <a href="CppQt.htm">Qt</a>SumBrownianMotionsMenuDialog;<br/>
+}<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a> {<br/>
+<br/>
+<b><a href="CppClass.htm">class</a></b> <a href="CppQt.htm">Qt</a>SumBrownianMotionsMenuDialog : <b><a href="CppPublic.htm">public</a></b> <a href="CppQtHideAndShowDialog.htm">QtHideAndShowDialog</a><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppQ_OBJECT.htm">Q_OBJECT</a><br/>
+<br/>
+<b><a href="CppPublic.htm">public</a></b>:<br/>
+&nbsp;&nbsp;<b><a href="CppExplicit.htm">explicit</a></b> <a href="CppQt.htm">Qt</a>SumBrownianMotionsMenuDialog(<a href="CppQWidget.htm">QWidget</a> *parent <a href="CppOperatorAssign.htm">=</a> 0);<br/>
+&nbsp;&nbsp;<a href="CppQt.htm">Qt</a>SumBrownianMotionsMenuDialog(<b><a href="CppConst.htm">const</a></b> <a href="CppQt.htm">Qt</a>SumBrownianMotionsMenuDialog&amp;) <a href="CppOperatorAssign.htm">=</a> <b><a href="CppDelete.htm">delete</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppQt.htm">Qt</a>SumBrownianMotionsMenuDialog&amp; <b><a href="CppOperator.htm">operator</a></b>=(<b><a href="CppConst.htm">const</a></b> <a href="CppQt.htm">Qt</a>SumBrownianMotionsMenuDialog&amp;) <a href="CppOperatorAssign.htm">=</a> <b><a href="CppDelete.htm">delete</a></b>;<br/>
+&nbsp;&nbsp;~<a href="CppQt.htm">Qt</a>SumBrownianMotionsMenuDialog() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+<b><a href="CppProtected.htm">protected</a></b>:<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> keyPressEvent(<a href="CppQKeyEvent.htm">QKeyEvent</a> *);<br/>
+<br/>
+<b><a href="CppPrivate.htm">private</a></b> <b><a href="CppSlots.htm">slots</a></b>:<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> on_button_start_clicked();<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> on_button_about_clicked();<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> on_button_quit_clicked();<br/>
+<br/>
+<b><a href="CppPrivate.htm">private</a></b>:<br/>
+&nbsp;&nbsp;<a href="CppUi.htm">Ui</a>::<a href="CppQt.htm">Qt</a>SumBrownianMotionsMenuDialog *ui;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppVoid.htm">void</a></b> Test() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+};<br/>
+<br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a><br/>
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> QTMUTUALISMBREAKDOWNERMENUDIALOG_H<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolSumBrownianMotions/qtsumbrownianmotionsmenudialog.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolSumBrownianMotions/qtsumbrownianmotionsmenudialog.cpp" border = "1"><tr><td><code>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic push<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "<a href="CppWeffcpp.htm">-Weffc++</a>"<br/>
+<a href="CppInclude.htm">#include</a> "qtsumbrownianmotionsmenudialog.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQKeyEvent.htm">QKeyEvent</a>&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppQtAboutDialog.htm">qtaboutdialog</a>.h"<br/>
+<a href="CppInclude.htm">#include</a> "sumbrownianmotionsmenudialog.h"<br/>
+<a href="CppInclude.htm">#include</a> "qtsumbrownianmotionsmaindialog.h"<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppTrace.htm">trace</a>.h"<br/>
+<a href="CppInclude.htm">#include</a> "test<a href="CppTime.htm">time</a>r.h"<br/>
+<a href="CppInclude.htm">#include</a> "ui_qtsumbrownianmotionsmenudialog.h"<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic pop<br/>
+<br/>
+<br/>
+<a href="CppRibi.htm">ribi</a>::<a href="CppQt.htm">Qt</a>SumBrownianMotionsMenuDialog::<a href="CppQt.htm">Qt</a>SumBrownianMotionsMenuDialog(<a href="CppQWidget.htm">QWidget</a> *parent) :<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQtHideAndShowDialog.htm">QtHideAndShowDialog</a>(parent),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ui(<b><a href="CppNew.htm">new</a></b> <a href="CppUi.htm">Ui</a>::<a href="CppQt.htm">Qt</a>SumBrownianMotionsMenuDialog)<br/>
+{<br/>
+&nbsp;&nbsp;ui-&gt;setupUi(<b><a href="CppThis.htm">this</a></b>);<br/>
+}<br/>
+<br/>
+<a href="CppRibi.htm">ribi</a>::<a href="CppQt.htm">Qt</a>SumBrownianMotionsMenuDialog::~<a href="CppQt.htm">Qt</a>SumBrownianMotionsMenuDialog() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppDelete.htm">delete</a></b> ui;<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::<a href="CppQt.htm">Qt</a>SumBrownianMotionsMenuDialog::keyPressEvent(<a href="CppQKeyEvent.htm">QKeyEvent</a> * event)<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (event-&gt;key() <a href="CppOperatorEqual.htm">==</a> <a href="CppQt.htm">Qt</a>::Key_Escape) close();<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::<a href="CppQt.htm">Qt</a>SumBrownianMotionsMenuDialog::on_button_start_clicked()<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppQt.htm">Qt</a>SumBrownianMotionsMainDialog d;<br/>
+&nbsp;&nbsp;ShowChild(&amp;d);<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::<a href="CppQt.htm">Qt</a>SumBrownianMotionsMenuDialog::on_button_about_clicked()<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppAbout.htm">About</a> a <a href="CppOperatorAssign.htm">=</a> SumBrownianMotionsMenuDialog().GetAbout();<br/>
+&nbsp;&nbsp;a.<a href="CppAdd.htm">Add</a><a href="CppLibrary.htm">Library</a>("<a href="CppQtHideAndShowDialog.htm">QtHideAndShowDialog</a> <a href="CppVersion.htm">version</a>: " <a href="CppOperatorPlus.htm">+</a> <a href="CppQtHideAndShowDialog.htm">QtHideAndShowDialog</a>::Get<a href="CppVersion.htm">Version</a>());<br/>
+&nbsp;&nbsp;<a href="CppQtAboutDialog.htm">QtAboutDialog</a> d(a);<br/>
+&nbsp;&nbsp;d.setStyleSheet(<b><a href="CppThis.htm">this</a></b>-&gt;styleSheet());<br/>
+&nbsp;&nbsp;d.setWindowIcon(<b><a href="CppThis.htm">this</a></b>-&gt;windowIcon());<br/>
+&nbsp;&nbsp;<b><a href="CppThis.htm">this</a></b>-&gt;hide();<br/>
+&nbsp;&nbsp;d.exec();<br/>
+&nbsp;&nbsp;<b><a href="CppThis.htm">this</a></b>-&gt;show();<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::<a href="CppQt.htm">Qt</a>SumBrownianMotionsMenuDialog::on_button_quit_clicked()<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppThis.htm">this</a></b>-&gt;close();<br/>
+}<br/>
+<br/>
+<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::<a href="CppQt.htm">Qt</a>SumBrownianMotionsMenuDialog::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppBool.htm">bool</a></b> is_tested{<b><a href="CppFalse.htm">false</a></b>};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (is_tested) <b><a href="CppReturn.htm">return</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;is_tested <a href="CppOperatorAssign.htm">=</a> <b><a href="CppTrue.htm">true</a></b>;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Test<a href="CppTime.htm">Time</a>r test_<a href="CppTime.htm">time</a>r(<a href="Cpp__func__.htm">__func__</a>,__<a href="CppCfile.htm">FILE</a>__,1.0);<br/>
+&nbsp;&nbsp;<a href="CppQt.htm">Qt</a>SumBrownianMotionsMenuDialog();<br/>
+}<br/>
+<a href="CppEndif.htm">#endif</a><br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolSumBrownianMotions/simulation.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolSumBrownianMotions/simulation.h" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> SIMULATION_H<br/>
+<a href="CppDefine.htm">#define</a> SIMULATION_H<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppVectorH.htm">vector</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> "histogram.h"<br/>
+<a href="CppInclude.htm">#include</a> "parameters.h"<br/>
+<br/>
+<b><a href="CppStruct.htm">struct</a></b> Simulation<br/>
+{<br/>
+&nbsp;&nbsp;Simulation(<b><a href="CppConst.htm">const</a></b> Parameters&amp; parameters);<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Histogram&amp; GetA() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> { <b><a href="CppReturn.htm">return</a></b> m_a; }<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Histogram&amp; GetB() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> { <b><a href="CppReturn.htm">return</a></b> m_b; }<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Histogram&amp; <a href="CppGetSum.htm">GetSum</a>() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> { <b><a href="CppReturn.htm">return</a></b> m_sum; }<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;&amp; GetAxs() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> { <b><a href="CppReturn.htm">return</a></b> m_axs; }<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;&amp; GetAys() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> { <b><a href="CppReturn.htm">return</a></b> m_ays; }<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;&amp; GetBxs() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> { <b><a href="CppReturn.htm">return</a></b> m_bxs; }<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;&amp; GetBys() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> { <b><a href="CppReturn.htm">return</a></b> m_bys; }<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;&amp; <a href="CppGetSum.htm">GetSum</a>xs() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> { <b><a href="CppReturn.htm">return</a></b> m_sumxs; }<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;&amp; <a href="CppGetSum.htm">GetSum</a>ys() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> { <b><a href="CppReturn.htm">return</a></b> m_sumys; }<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> Run() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppPrivate.htm">private</a></b>:<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Parameters m_parameters;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppVoid.htm">void</a></b> Test() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+<br/>
+&nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; m_axs;<br/>
+&nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; m_ays;<br/>
+&nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; m_bxs;<br/>
+&nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; m_bys;<br/>
+&nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; m_sumxs;<br/>
+&nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; m_sumys;<br/>
+&nbsp;&nbsp;Histogram m_a;<br/>
+&nbsp;&nbsp;Histogram m_b;<br/>
+&nbsp;&nbsp;Histogram m_sum;<br/>
+};<br/>
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> SIMULATION_H<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolSumBrownianMotions/simulation.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolSumBrownianMotions/simulation.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "simulation.h"<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppAlgorithmH.htm">algorithm</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCmathH.htm">cmath</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppRandomH.htm">random</a>&gt;<br/>
+Simulation::Simulation(<b><a href="CppConst.htm">const</a></b> Parameters&amp; parameters)<br/>
+&nbsp;&nbsp;: m_parameters{parameters},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_axs{},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_ays{},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_bxs{},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_bys{},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_sumxs{},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_sumys{},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_a({},0.0,0.0,0),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_b({},0.0,0.0,0),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_sum({},0.0,0.0,0)<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;Test();<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> Simulation::Run() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <a href="CppStdMt19937.htm">std::mt19937</a> mt(42);<br/>
+&nbsp;&nbsp;<a href="CppStdNormal_distribution.htm">std::normal_distribution</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; da(m_parameters.mean_a,m_parameters.stddev_a);<br/>
+&nbsp;&nbsp;<a href="CppStdNormal_distribution.htm">std::normal_distribution</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; db(m_parameters.mean_b,m_parameters.stddev_b);<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; as;<br/>
+&nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; bs;<br/>
+&nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; sums;<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> n{m_parameters.n};<br/>
+&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppInt.htm">int</a></b> i=0; i<a href="CppOperatorNotEqual.htm">!=</a>n; <a href="CppOperatorIncrement.htm">++</a>i)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> a{da(mt)};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> b{db(mt)};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> sum{a+b};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;as.push_back(a);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;bs.push_back(b);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;sums.push_back(sum);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;m_a <a href="CppOperatorAssign.htm">=</a> Histogram(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;as,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*<a href="CppStdMin_element.htm">std::min_element</a>(<a href="CppStdBegin.htm">std::begin</a>(as),<a href="CppStdEnd.htm">std::end</a>(as)) <a href="CppOperatorMinus.htm">-</a> 1.0,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*<a href="CppStdMax_element.htm">std::max_element</a>(<a href="CppStdBegin.htm">std::begin</a>(as),<a href="CppStdEnd.htm">std::end</a>(as)) <a href="CppOperatorPlus.htm">+</a> 1.0,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdSqrt.htm">std::sqrt</a>(n)<br/>
+&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;m_b <a href="CppOperatorAssign.htm">=</a> Histogram(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;bs,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*<a href="CppStdMin_element.htm">std::min_element</a>(<a href="CppStdBegin.htm">std::begin</a>(bs),<a href="CppStdEnd.htm">std::end</a>(bs)) <a href="CppOperatorMinus.htm">-</a> 1.0,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*<a href="CppStdMax_element.htm">std::max_element</a>(<a href="CppStdBegin.htm">std::begin</a>(bs),<a href="CppStdEnd.htm">std::end</a>(bs)) <a href="CppOperatorPlus.htm">+</a> 1.0,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdSqrt.htm">std::sqrt</a>(n)<br/>
+&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;m_sum <a href="CppOperatorAssign.htm">=</a> Histogram(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;sums,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*<a href="CppStdMin_element.htm">std::min_element</a>(<a href="CppStdBegin.htm">std::begin</a>(sums),<a href="CppStdEnd.htm">std::end</a>(sums)) <a href="CppOperatorMinus.htm">-</a> 1.0,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*<a href="CppStdMax_element.htm">std::max_element</a>(<a href="CppStdBegin.htm">std::begin</a>(sums),<a href="CppStdEnd.htm">std::end</a>(sums)) <a href="CppOperatorPlus.htm">+</a> 1.0,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdSqrt.htm">std::sqrt</a>(n)<br/>
+&nbsp;&nbsp;);<br/>
+<br/>
+&nbsp;&nbsp;m_axs.clear();<br/>
+&nbsp;&nbsp;m_ays.clear();<br/>
+&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b>&amp; h: m_a.GetHistogram())<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_axs.push_back(h.GetMid());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_ays.push_back(<b><a href="CppStatic_cast.htm">static_cast</a></b>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;(h.GetCnt()));<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;m_bxs.clear();<br/>
+&nbsp;&nbsp;m_bys.clear();<br/>
+&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b>&amp; h: m_b.GetHistogram())<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_bxs.push_back(h.GetMid());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_bys.push_back(<b><a href="CppStatic_cast.htm">static_cast</a></b>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;(h.GetCnt()));<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+<br/>
+&nbsp;&nbsp;m_sumxs.clear();<br/>
+&nbsp;&nbsp;m_sumys.clear();<br/>
+&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b>&amp; h: m_sum.GetHistogram())<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_sumxs.push_back(h.GetMid());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_sumys.push_back(<b><a href="CppStatic_cast.htm">static_cast</a></b>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;(h.GetCnt()));<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+<br/>
+}<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolSumBrownianMotions/simulation_test.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolSumBrownianMotions/simulation_test.cpp" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+<a href="CppInclude.htm">#include</a> "simulation.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> Simulation::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppBool.htm">bool</a></b> is_tested{<b><a href="CppFalse.htm">false</a></b>};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (is_tested) <b><a href="CppReturn.htm">return</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;is_tested <a href="CppOperatorAssign.htm">=</a> <b><a href="CppTrue.htm">true</a></b>;<br/>
+&nbsp;&nbsp;}<br/>
+}<br/>
+<br/>
+<a href="CppEndif.htm">#endif</a><br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolSumBrownianMotions/sumbrownianmotionsmenudialog.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolSumBrownianMotions/sumbrownianmotionsmenudialog.h" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> MUTUALISMBREAKDOWNERMENUDIALOG_H<br/>
+<a href="CppDefine.htm">#define</a> MUTUALISMBREAKDOWNERMENUDIALOG_H<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppStringH.htm">string</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppVectorH.htm">vector</a>&gt;<br/>
+<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic push<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "<a href="CppWeffcpp.htm">-Weffc++</a>"<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppBoost.htm">boost</a>/<a href="CppScoped_ptr.htm">scoped_ptr</a>.hpp&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppAbout.htm">about</a>.h"<br/>
+<a href="CppInclude.htm">#include</a> "menudialog.h"<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic pop<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a> {<br/>
+<br/>
+<b><a href="CppStruct.htm">struct</a></b> SumBrownianMotions;<br/>
+<br/>
+<b><a href="CppStruct.htm">struct</a></b> SumBrownianMotionsMenuDialog <b><a href="CppFinal.htm">final</a></b> : <b><a href="CppPublic.htm">public</a></b> MenuDialog<br/>
+{<br/>
+&nbsp;&nbsp;SumBrownianMotionsMenuDialog();<br/>
+&nbsp;&nbsp;~SumBrownianMotionsMenuDialog() <b><a href="CppNoexcept.htm">noexcept</a></b> {}<br/>
+&nbsp;&nbsp;<b><a href="CppInt.htm">int</a></b> ExecuteSpecific(<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a>&gt;&amp; <a href="CppArgc.htm">argv</a>) <b><a href="CppNoexcept.htm">noexcept</a></b> <b><a href="CppOverride.htm">override</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppAbout.htm">About</a> GetAbout() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> <b><a href="CppOverride.htm">override</a></b>;<br/>
+&nbsp;&nbsp;Help GetHelp() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> <b><a href="CppOverride.htm">override</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppBoostShared_ptr.htm">boost::shared_ptr</a>&lt;<b><a href="CppConst.htm">const</a></b> Program&gt; GetProgram() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> <b><a href="CppOverride.htm">override</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppStdString.htm">std::string</a> Get<a href="CppVersion.htm">Version</a>() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> <b><a href="CppOverride.htm">override</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a>&gt; Get<a href="CppVersion.htm">Version</a>History() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> <b><a href="CppOverride.htm">override</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppPrivate.htm">private</a></b>:<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppVoid.htm">void</a></b> Test() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+};<br/>
+<br/>
+} <a href="CppComment.htm">//</a>~<b><a href="CppNamespace.htm">namespace</a></b> <a href="CppRibi.htm">ribi</a><br/>
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> MUTUALISMBREAKDOWNERMENUDIALOG_H<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolSumBrownianMotions/sumbrownianmotionsmenudialog.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolSumBrownianMotions/sumbrownianmotionsmenudialog.cpp" border = "1"><tr><td><code>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic push<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "<a href="CppWeffcpp.htm">-Weffc++</a>"<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic ignored "-Wunused-local-typedefs"<br/>
+<a href="CppInclude.htm">#include</a> "sumbrownianmotionsmenudialog.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppAlgorithmH.htm">algorithm</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppFstreamH.htm">fstream</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppIostreamH.htm">iostream</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppIteratorH.htm">iterator</a>&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppBoost.htm">boost</a>/<a href="CppLexical_cast.htm">lexical_cast</a>.hpp&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQFile.htm">QFile</a>&gt;<br/>
+<br/>
+<a href="CppComment.htm">//</a><a href="CppInclude.htm">#include</a> "<a href="CppAsciiArter.htm">asciiarter</a>.h"<br/>
+<a href="CppInclude.htm">#include</a> "sumbrownianmotionsmenudialog.h"<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppFileIo.htm">fileio</a>.h"<br/>
+<a href="CppComment.htm">//</a><a href="CppInclude.htm">#include</a> "imagecanvas.h"<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppRichelBilderbeekProgram.htm">richelbilderbeekprogram</a>.h"<br/>
+<a href="CppInclude.htm">#include</a> "test<a href="CppTime.htm">time</a>r.h"<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppTrace.htm">trace</a>.h"<br/>
+<a href="CppPragma.htm">#pragma</a> GCC diagnostic pop<br/>
+<br/>
+<a href="CppRibi.htm">ribi</a>::SumBrownianMotionsMenuDialog::SumBrownianMotionsMenuDialog()<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;Test();<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+}<br/>
+<br/>
+<b><a href="CppInt.htm">int</a></b> <a href="CppRibi.htm">ribi</a>::SumBrownianMotionsMenuDialog::ExecuteSpecific(<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a>&gt;&amp; <a href="CppArgc.htm">argv</a>) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> <a href="CppArgc.htm">argc</a> <a href="CppOperatorAssign.htm">=</a> <b><a href="CppStatic_cast.htm">static_cast</a></b>&lt;<b><a href="CppInt.htm">int</a></b>&gt;(<a href="CppArgc.htm">argv</a>.size());<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (<a href="CppArgc.htm">argc</a> <a href="CppOperatorEqual.htm">==</a> 1 <a href="CppOperatorLogicalOr.htm">||</a> <a href="CppArgc.htm">argc</a> &gt; 4)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdCout.htm">std::cout</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> GetHelp() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n';<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> 1;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> 0;<br/>
+}<br/>
+<br/>
+<a href="CppRibi.htm">ribi</a>::<a href="CppAbout.htm">About</a> <a href="CppRibi.htm">ribi</a>::SumBrownianMotionsMenuDialog::GetAbout() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppAbout.htm">About</a> a(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"Richel Bilderbeek",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"SumBrownianMotions",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"simulation",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"the 3rd of May 2015",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"2015-2015",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"http://www.richelbilderbeek.nl/<a href="Tools.htm">Tool</a>SumBrownianMotions.htm",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Get<a href="CppVersion.htm">Version</a>(),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Get<a href="CppVersion.htm">Version</a>History()<br/>
+&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;a.<a href="CppAdd.htm">Add</a><a href="CppLibrary.htm">Library</a>("Test<a href="CppTime.htm">Time</a>r <a href="CppVersion.htm">version</a>: " <a href="CppOperatorPlus.htm">+</a> Test<a href="CppTime.htm">Time</a>r::Get<a href="CppVersion.htm">Version</a>());<br/>
+&nbsp;&nbsp;a.<a href="CppAdd.htm">Add</a><a href="CppLibrary.htm">Library</a>("<a href="CppTrace.htm">Trace</a> <a href="CppVersion.htm">version</a>: " <a href="CppOperatorPlus.htm">+</a> <a href="CppTrace.htm">Trace</a>::Get<a href="CppVersion.htm">Version</a>());<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> a;<br/>
+}<br/>
+<br/>
+<a href="CppBoostShared_ptr.htm">boost::shared_ptr</a>&lt;<b><a href="CppConst.htm">const</a></b> <a href="CppRibi.htm">ribi</a>::Program&gt; <a href="CppRibi.htm">ribi</a>::SumBrownianMotionsMenuDialog::GetProgram() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppBoostShared_ptr.htm">boost::shared_ptr</a>&lt;<b><a href="CppConst.htm">const</a></b> <a href="CppRibi.htm">ribi</a>::Program&gt; p; <a href="CppComment.htm">//</a>(<b><a href="CppNew.htm">new</a></b> ProgramSumBrownianMotions);<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(p);<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> p;<br/>
+}<br/>
+<br/>
+<a href="CppStdString.htm">std::string</a> <a href="CppRibi.htm">ribi</a>::SumBrownianMotionsMenuDialog::Get<a href="CppVersion.htm">Version</a>() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> "1.0";<br/>
+}<br/>
+<br/>
+<a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a>&gt; <a href="CppRibi.htm">ribi</a>::SumBrownianMotionsMenuDialog::Get<a href="CppVersion.htm">Version</a>History() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"2015-05-08: <a href="CppVersion.htm">Version</a> 1.0: initial <a href="CppVersion.htm">version</a>",<br/>
+&nbsp;&nbsp;};<br/>
+}<br/>
+<br/>
+<a href="CppRibi.htm">ribi</a>::Help <a href="CppRibi.htm">ribi</a>::SumBrownianMotionsMenuDialog::GetHelp() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <a href="CppRibi.htm">ribi</a>::Help(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"SumBrownianMotions",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"<a href="Tools.htm">Tool</a> to create ASCII art images from images",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>No additional options<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"SumBrownianMotions [option]\n",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"SumBrownianMotions <a href="CppOperatorDecrement.htm">--</a><a href="CppAbout.htm">about</a>",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"SumBrownianMotions [picture input filename] [text output filename] [columns <a href="CppOperatorAssign.htm">=</a> 78]\n",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"SumBrownianMotions source.png target.txt",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"SumBrownianMotions source.png target.txt 254"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;);<br/>
+}<br/>
+<br/>
+<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppRibi.htm">ribi</a>::SumBrownianMotionsMenuDialog::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppBool.htm">bool</a></b> is_tested{<b><a href="CppFalse.htm">false</a></b>};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (is_tested) <b><a href="CppReturn.htm">return</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;is_tested <a href="CppOperatorAssign.htm">=</a> <b><a href="CppTrue.htm">true</a></b>;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a>();<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Test<a href="CppTime.htm">Time</a>r test_<a href="CppTime.htm">time</a>r(<a href="Cpp__func__.htm">__func__</a>,__<a href="CppCfile.htm">FILE</a>__,1.0);<br/>
+}<br/>
+<a href="CppEndif.htm">#endif</a><br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./ToolSumBrownianMotions/crosscompiletowindows.sh</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./ToolSumBrownianMotions/crosscompiletowindows.sh" border = "1"><tr><td><code>
+#!/bin/sh<br/>
+#From http://richelbilderbeek.nl/CppQtCrosscompileToWindowsExample15.htm<br/>
+<br/>
+echo "Cross compiling to Windows"<br/>
+<br/>
+echo "1/2: Creating Windows makefile"<br/>
+i686-w64-mingw32.static-qmake-qt5 ToolMutualismBreakdowner.pro<br/>
+<br/>
+<br/>
+echo "2/2: making makefile"<br/>
+<br/>
+make<br/>
+<br/>
+echo "Done"<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p>&nbsp;</p>
+<p><a href="http://validator.w3.org/check?uri=referer"><img src="valid-xhtml10.png" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a></p>
+<p>This page has been created by the <a href="Tools.htm">tool</a> <a href="ToolCodeToHtml.htm">CodeToHtml</a></p>
+</body>
+</html>

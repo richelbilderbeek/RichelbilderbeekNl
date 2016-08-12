@@ -1,0 +1,511 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <title>QtNewickDisplay</title>
+  <meta name="description" content="C++ QtNewickDisplay"/>
+  <meta name="keywords" content="C++ QtNewickDisplay "/>
+  <link rel="stylesheet" href="Richelbilderbeek.css" type="text/css"/>
+</head>
+<!-- End of head, start of body -->
+<body>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<!-- Page header -->
+<h1>(<a href="Cpp.htm">C++</a>) <a href="CppQtNewickDisplay.htm">QtNewickDisplay</a></h1>
+<p>&nbsp;</p>
+<!-- No CodeToHtmlInfo about this class with page name CppQtNewickDisplay-->
+<h2>Technical facts</h2>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppQtNewickDisplay/CppQtNewickDisplay.pri</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppQtNewickDisplay/CppQtNewickDisplay.pri" border = "1"><tr><td><code>
+<a href="CppQmakeIncludepath.htm">INCLUDEPATH</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppQtNewickDisplay<br/>
+<br/>
+<a href="CppQmakeSources.htm">SOURCES</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppQtNewickDisplay/qt<a href="CppNewick.htm">newick</a>display.cpp<br/>
+<br/>
+<a href="CppQmakeHeaders.htm">HEADERS</a>&nbsp;&nbsp;+= \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppQtNewickDisplay/qt<a href="CppNewick.htm">newick</a>display.h<br/>
+<br/>
+<a href="CppFORMS.htm">FORMS</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppQtNewickDisplay/qt<a href="CppNewick.htm">newick</a>display.ui<br/>
+<br/>
+<a href="CppQmakeOther_files.htm">OTHER_FILES</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppQtNewickDisplay/Licence.txt<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppQtNewickDisplay/qtnewickdisplay.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppQtNewickDisplay/qtnewickdisplay.h" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> QTNEWICKDISPLAY_H<br/>
+<a href="CppDefine.htm">#define</a> QTNEWICKDISPLAY_H<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQWidget.htm">QWidget</a>&gt;<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> Ui { <b><a href="CppClass.htm">class</a></b> <a href="CppQt.htm">Qt</a><a href="CppNewick.htm">Newick</a>Display; }<br/>
+<br/>
+<b><a href="CppStruct.htm">struct</a></b> <a href="CppQLabel.htm">QLabel</a>;<br/>
+<br/>
+<b><a href="CppClass.htm">class</a></b> <a href="CppQt.htm">Qt</a><a href="CppNewick.htm">Newick</a>Display : <b><a href="CppPublic.htm">public</a></b> <a href="CppQWidget.htm">QWidget</a><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppQ_OBJECT.htm">Q_OBJECT</a><br/>
+<br/>
+<b><a href="CppPublic.htm">public</a></b>:<br/>
+&nbsp;&nbsp;<b><a href="CppExplicit.htm">explicit</a></b> <a href="CppQt.htm">Qt</a><a href="CppNewick.htm">Newick</a>Display(<a href="CppQWidget.htm">QWidget</a> *parent <a href="CppOperatorAssign.htm">=</a> 0);<br/>
+&nbsp;&nbsp;<a href="CppQt.htm">Qt</a><a href="CppNewick.htm">Newick</a>Display(<b><a href="CppConst.htm">const</a></b> <a href="CppQt.htm">Qt</a><a href="CppNewick.htm">Newick</a>Display&amp;) <a href="CppOperatorAssign.htm">=</a> <b><a href="CppDelete.htm">delete</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppQt.htm">Qt</a><a href="CppNewick.htm">Newick</a>Display&amp; <b><a href="CppOperator.htm">operator</a></b>=(<b><a href="CppConst.htm">const</a></b> <a href="CppQt.htm">Qt</a><a href="CppNewick.htm">Newick</a>Display&amp;) <a href="CppOperatorAssign.htm">=</a> <b><a href="CppDelete.htm">delete</a></b>;<br/>
+&nbsp;&nbsp;~<a href="CppQt.htm">Qt</a><a href="CppNewick.htm">Newick</a>Display();<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> Set<a href="CppNewick.htm">Newick</a>(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>) <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+<b><a href="CppPrivate.htm">private</a></b> <b><a href="CppSlots.htm">slots</a></b>:<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> OnBoxClicked();<br/>
+<br/>
+<b><a href="CppPrivate.htm">private</a></b>:<br/>
+&nbsp;&nbsp;<a href="CppUi.htm">Ui</a>::<a href="CppQt.htm">Qt</a><a href="CppNewick.htm">Newick</a>Display *ui;<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppEnumClass.htm">enum class</a></b> Lineages { all, extant };<br/>
+&nbsp;&nbsp;<b><a href="CppEnumClass.htm">enum class</a></b> <a href="Tools.htm">Tool</a> { <a href="CppNewick.htm">Newick</a>Utils, PhylogenyR };<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> DisplayBranching<a href="CppTime.htm">Time</a>s(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdString.htm">std::string</a> <a href="CppNewick.htm">newick</a>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Lineages lineages<br/>
+&nbsp;&nbsp;) <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> DisplayBranchLengths(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdString.htm">std::string</a> <a href="CppNewick.htm">newick</a>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Lineages lineages<br/>
+&nbsp;&nbsp;) <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> Display<a href="CppNewick.htm">Newick</a>(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Lineages lineages<br/>
+&nbsp;&nbsp;) <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> Display<a href="CppNewick.htm">Newick</a>ToLttPlot(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Lineages lineages<br/>
+&nbsp;&nbsp;) <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> DisplayPhylogeny(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Lineages lineages,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="Tools.htm">Tool</a> <a href="Tools.htm">tool</a><br/>
+&nbsp;&nbsp;) <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppQLabel.htm">QLabel</a>*&gt; CollectExtinctAndExtantImages();<br/>
+&nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppQLabel.htm">QLabel</a>*&gt; CollectExtantImages();<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> sm_fail;<br/>
+};<br/>
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> QTNEWICKDISPLAY_H<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppQtNewickDisplay/qtnewickdisplay.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppQtNewickDisplay/qtnewickdisplay.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "qt<a href="CppNewick.htm">newick</a>display.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppFunctionalH.htm">functional</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQLabel.htm">QLabel</a>&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppFileIo.htm">fileio</a>.h"<br/>
+<a href="CppInclude.htm">#include</a> "ui_qt<a href="CppNewick.htm">newick</a>display.h"<br/>
+<a href="CppInclude.htm">#include</a> "phylogeny_r.h"<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppNewick.htm">newick</a>utils.h"<br/>
+<br/>
+<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> <a href="CppQt.htm">Qt</a><a href="CppNewick.htm">Newick</a>Display::sm_fail{":-("};<br/>
+<br/>
+<a href="CppQt.htm">Qt</a><a href="CppNewick.htm">Newick</a>Display::<a href="CppQt.htm">Qt</a><a href="CppNewick.htm">Newick</a>Display(<a href="CppQWidget.htm">QWidget</a> *parent) :<br/>
+&nbsp;&nbsp;<a href="CppQWidget.htm">QWidget</a>(parent),<br/>
+&nbsp;&nbsp;ui(<b><a href="CppNew.htm">new</a></b> <a href="CppUi.htm">Ui</a>::<a href="CppQt.htm">Qt</a><a href="CppNewick.htm">Newick</a>Display)<br/>
+{<br/>
+&nbsp;&nbsp;ui-&gt;setupUi(<b><a href="CppThis.htm">this</a></b>);<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b>&amp; box:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;box_display_all,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;box_display_branch_lengths,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;box_display_branching_<a href="CppTime.htm">time</a>s,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;box_display_extant,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;box_display_lttplots,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;box_display_phylogeny_<a href="CppNewick.htm">newick</a>utils,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;box_display_phylogeny_phylogenyr<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQObject.htm">QObject</a>::connect(box,<a href="CppSignalMacro.htm">SIGNAL</a>(clicked()),<b><a href="CppThis.htm">this</a></b>,<a href="CppSLOT.htm">SLOT</a>(OnBoxClicked()));<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;OnBoxClicked();<br/>
+}<br/>
+<br/>
+<a href="CppQt.htm">Qt</a><a href="CppNewick.htm">Newick</a>Display::~<a href="CppQt.htm">Qt</a><a href="CppNewick.htm">Newick</a>Display()<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppDelete.htm">delete</a></b> ui;<br/>
+}<br/>
+<br/>
+<a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppQLabel.htm">QLabel</a>*&gt; <a href="CppQt.htm">Qt</a><a href="CppNewick.htm">Newick</a>Display::CollectExtinctAndExtantImages()<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;image_branching_<a href="CppTime.htm">time</a>s_all,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;image_branch_lengths_all,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;image_lttPlot_all,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;image_phylogeny_<a href="CppNewick.htm">newick</a>utils_all,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;image_phylogeny_phylogenyr_all<br/>
+&nbsp;&nbsp;};<br/>
+}<br/>
+<br/>
+<a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppQLabel.htm">QLabel</a>*&gt; <a href="CppQt.htm">Qt</a><a href="CppNewick.htm">Newick</a>Display::CollectExtantImages()<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;image_branching_<a href="CppTime.htm">time</a>s_extant,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;image_branch_lengths_extant,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;image_lttPlot_extant,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;image_phylogeny_<a href="CppNewick.htm">newick</a>utils_extant,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;image_phylogeny_phylogenyr_extant<br/>
+&nbsp;&nbsp;};<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppQt.htm">Qt</a><a href="CppNewick.htm">Newick</a>Display::DisplayBranching<a href="CppTime.htm">Time</a>s(<br/>
+&nbsp;&nbsp;<a href="CppStdString.htm">std::string</a> <a href="CppNewick.htm">newick</a>,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppQt.htm">Qt</a><a href="CppNewick.htm">Newick</a>Display::Lineages lineages<br/>
+) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppQLabel.htm">QLabel</a> * label{<b><a href="CppNullptr.htm">nullptr</a></b>};<br/>
+&nbsp;&nbsp;<b><a href="CppSwitch.htm">switch</a></b> (lineages)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppCase.htm">case</a></b> Lineages::all: label <a href="CppOperatorAssign.htm">=</a> ui-&gt;image_branching_<a href="CppTime.htm">time</a>s_all; <b><a href="CppBreak.htm">break</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppCase.htm">case</a></b> Lineages::extant: label <a href="CppOperatorAssign.htm">=</a> ui-&gt;image_branching_<a href="CppTime.htm">time</a>s_extant; <b><a href="CppBreak.htm">break</a></b>;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(label);<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!label-&gt;isVisible()) <b><a href="CppReturn.htm">return</a></b>;<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> temp_png_filename{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a>().GetTempFileName(".png")<br/>
+&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;<b><a href="CppTry.htm">try</a></b><br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (lineages <a href="CppOperatorEqual.htm">==</a> Lineages::extant)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppNewick.htm">newick</a> <a href="CppOperatorAssign.htm">=</a> <a href="CppRibi.htm">ribi</a>::PhylogenyR().DropExtinct(<a href="CppNewick.htm">newick</a>);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::PhylogenyR().<a href="CppNewick.htm">Newick</a>ToBranching<a href="CppTime.htm">Time</a>s(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppNewick.htm">newick</a>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;temp_png_filename,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::PhylogenyR::GraphicsFormat::png<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;label-&gt;setPixmap(<a href="CppQPixmap.htm">QPixmap</a>(temp_png_filename.c_str()));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a>().<a href="CppDeleteFile.htm">DeleteFile</a>(temp_png_filename);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppCatch.htm">catch</a></b> (<a href="CppStdRuntime_error.htm">std::runtime_error</a>&amp; e)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;label-&gt;setText(sm_fail.c_str());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>label-&gt;setText(e.what());<br/>
+&nbsp;&nbsp;}<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppQt.htm">Qt</a><a href="CppNewick.htm">Newick</a>Display::DisplayBranchLengths(<br/>
+&nbsp;&nbsp;<a href="CppStdString.htm">std::string</a> <a href="CppNewick.htm">newick</a>,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppQt.htm">Qt</a><a href="CppNewick.htm">Newick</a>Display::Lineages lineages<br/>
+) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppQLabel.htm">QLabel</a> * label{<b><a href="CppNullptr.htm">nullptr</a></b>};<br/>
+&nbsp;&nbsp;<b><a href="CppSwitch.htm">switch</a></b> (lineages)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppCase.htm">case</a></b> <a href="CppQt.htm">Qt</a><a href="CppNewick.htm">Newick</a>Display::Lineages::all: label <a href="CppOperatorAssign.htm">=</a> ui-&gt;image_branch_lengths_all; <b><a href="CppBreak.htm">break</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppCase.htm">case</a></b> <a href="CppQt.htm">Qt</a><a href="CppNewick.htm">Newick</a>Display::Lineages::extant: label <a href="CppOperatorAssign.htm">=</a> ui-&gt;image_branch_lengths_extant; <b><a href="CppBreak.htm">break</a></b>;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(label);<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!label-&gt;isVisible()) <b><a href="CppReturn.htm">return</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> temp_png_filename{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a>().GetTempFileName(".png")<br/>
+&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;<b><a href="CppTry.htm">try</a></b><br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (lineages <a href="CppOperatorEqual.htm">==</a> Lineages::extant)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppNewick.htm">newick</a> <a href="CppOperatorAssign.htm">=</a> <a href="CppRibi.htm">ribi</a>::PhylogenyR().DropExtinct(<a href="CppNewick.htm">newick</a>);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::PhylogenyR().<a href="CppNewick.htm">Newick</a>ToBranchLengths(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppNewick.htm">newick</a>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;temp_png_filename,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::PhylogenyR::GraphicsFormat::png<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;label-&gt;setPixmap(<a href="CppQPixmap.htm">QPixmap</a>(temp_png_filename.c_str()));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a>().<a href="CppDeleteFile.htm">DeleteFile</a>(temp_png_filename);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppCatch.htm">catch</a></b> (<a href="CppStdRuntime_error.htm">std::runtime_error</a>&amp; e)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;label-&gt;setText(sm_fail.c_str());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>label-&gt;setText(e.what());<br/>
+&nbsp;&nbsp;}<br/>
+}<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppQt.htm">Qt</a><a href="CppNewick.htm">Newick</a>Display::Display<a href="CppNewick.htm">Newick</a>(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppQt.htm">Qt</a><a href="CppNewick.htm">Newick</a>Display::Lineages lineages<br/>
+) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppSwitch.htm">switch</a></b> (lineages)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppCase.htm">case</a></b> Lineages::all:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!ui-&gt;line_<a href="CppNewick.htm">newick</a>-&gt;isVisible()) <b><a href="CppReturn.htm">return</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;line_<a href="CppNewick.htm">newick</a>-&gt;setText(<a href="CppNewick.htm">newick</a>.c_str());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppBreak.htm">break</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppCase.htm">case</a></b> Lineages::extant:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!ui-&gt;line_<a href="CppNewick.htm">newick</a>_extant-&gt;isVisible()) <b><a href="CppReturn.htm">return</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppTry.htm">try</a></b><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> <a href="CppNewick.htm">newick</a>_extant{<a href="CppRibi.htm">ribi</a>::PhylogenyR().DropExtinct(<a href="CppNewick.htm">newick</a>)};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;line_<a href="CppNewick.htm">newick</a>_extant-&gt;setText(<a href="CppNewick.htm">newick</a>_extant.c_str());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppCatch.htm">catch</a></b> (<a href="CppStdRuntime_error.htm">std::runtime_error</a>&amp; e)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;line_<a href="CppNewick.htm">newick</a>_extant-&gt;setText(sm_fail.c_str());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppBreak.htm">break</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppDefault.htm">default</a></b>:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!"Should not get here");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppBreak.htm">break</a></b>;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!"Should not get here");<br/>
+}<br/>
+<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppQt.htm">Qt</a><a href="CppNewick.htm">Newick</a>Display::Display<a href="CppNewick.htm">Newick</a>ToLttPlot(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppQt.htm">Qt</a><a href="CppNewick.htm">Newick</a>Display::Lineages lineages<br/>
+) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppQLabel.htm">QLabel</a> * label{<b><a href="CppNullptr.htm">nullptr</a></b>};<br/>
+&nbsp;&nbsp;<b><a href="CppBool.htm">bool</a></b> show_fossils{<b><a href="CppTrue.htm">true</a></b>};<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (lineages <a href="CppOperatorEqual.htm">==</a> <a href="CppQt.htm">Qt</a><a href="CppNewick.htm">Newick</a>Display::Lineages::all)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;label <a href="CppOperatorAssign.htm">=</a> ui-&gt;image_lttPlot_all;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;show_fossils <a href="CppOperatorAssign.htm">=</a> <b><a href="CppTrue.htm">true</a></b>; <a href="CppComment.htm">//</a>Remains the same<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (lineages <a href="CppOperatorEqual.htm">==</a> <a href="CppQt.htm">Qt</a><a href="CppNewick.htm">Newick</a>Display::Lineages::extant)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;label <a href="CppOperatorAssign.htm">=</a> ui-&gt;image_lttPlot_extant;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;show_fossils <a href="CppOperatorAssign.htm">=</a> <b><a href="CppFalse.htm">false</a></b>; <a href="CppComment.htm">//</a>Changes<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(label);<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!label-&gt;isVisible()) <b><a href="CppReturn.htm">return</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> temp_png_filename{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a>().GetTempFileName(".png")<br/>
+&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;<b><a href="CppTry.htm">try</a></b><br/>
+&nbsp;&nbsp;{<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::PhylogenyR().<a href="CppNewick.htm">Newick</a>ToLttPlot(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;show_fossils ? <a href="CppNewick.htm">newick</a> : <a href="CppRibi.htm">ribi</a>::PhylogenyR().DropExtinct(<a href="CppNewick.htm">newick</a>),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;temp_png_filename,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::PhylogenyR::GraphicsFormat::png<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;label-&gt;setPixmap(<a href="CppQPixmap.htm">QPixmap</a>(temp_png_filename.c_str()));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a>().<a href="CppDeleteFile.htm">DeleteFile</a>(temp_png_filename);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppCatch.htm">catch</a></b> (<a href="CppStdRuntime_error.htm">std::runtime_error</a>&amp; e)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;label-&gt;setText(sm_fail.c_str());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>label-&gt;setText(e.what());<br/>
+&nbsp;&nbsp;}<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppQt.htm">Qt</a><a href="CppNewick.htm">Newick</a>Display::DisplayPhylogeny(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Lineages lineages,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="Tools.htm">Tool</a> <a href="Tools.htm">tool</a><br/>
+) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppQLabel.htm">QLabel</a> * label{<b><a href="CppNullptr.htm">nullptr</a></b>};<br/>
+&nbsp;&nbsp;<a href="CppStdFunction.htm">std::function</a>&lt;<b><a href="CppVoid.htm">void</a></b>(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp;, <b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp;)&gt; f;<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (lineages <a href="CppOperatorEqual.htm">==</a> Lineages::all <a href="CppOperatorLogicalAnd.htm">&amp;&amp;</a> <a href="Tools.htm">tool</a> <a href="CppOperatorEqual.htm">==</a> <a href="Tools.htm">Tool</a>::<a href="CppNewick.htm">Newick</a>Utils)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;label <a href="CppOperatorAssign.htm">=</a> ui-&gt;image_phylogeny_<a href="CppNewick.htm">newick</a>utils_all;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;f <a href="CppOperatorAssign.htm">=</a> [](<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>, <b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; filename)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::<a href="CppNewick.htm">Newick</a>Utils().<a href="CppNewick.htm">Newick</a>ToPhylogeny(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppNewick.htm">newick</a>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;filename,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::<a href="CppNewick.htm">Newick</a>Utils::GraphicsFormat::svg,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppTrue.htm">true</a></b> <a href="CppComment.htm">//</a>plot_fossils<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (lineages <a href="CppOperatorEqual.htm">==</a> Lineages::extant <a href="CppOperatorLogicalAnd.htm">&amp;&amp;</a> <a href="Tools.htm">tool</a> <a href="CppOperatorEqual.htm">==</a> <a href="Tools.htm">Tool</a>::<a href="CppNewick.htm">Newick</a>Utils)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;label <a href="CppOperatorAssign.htm">=</a> ui-&gt;image_phylogeny_<a href="CppNewick.htm">newick</a>utils_extant;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;f <a href="CppOperatorAssign.htm">=</a> [](<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>, <b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; filename)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::<a href="CppNewick.htm">Newick</a>Utils().<a href="CppNewick.htm">Newick</a>ToPhylogeny(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppNewick.htm">newick</a>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;filename,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::<a href="CppNewick.htm">Newick</a>Utils::GraphicsFormat::svg,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppFalse.htm">false</a></b> <a href="CppComment.htm">//</a>plot_fossils<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (lineages <a href="CppOperatorEqual.htm">==</a> Lineages::all <a href="CppOperatorLogicalAnd.htm">&amp;&amp;</a> <a href="Tools.htm">tool</a> <a href="CppOperatorEqual.htm">==</a> <a href="Tools.htm">Tool</a>::PhylogenyR)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;label <a href="CppOperatorAssign.htm">=</a> ui-&gt;image_phylogeny_phylogenyr_all;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;f <a href="CppOperatorAssign.htm">=</a> [](<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>, <b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; filename)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::PhylogenyR().<a href="CppNewick.htm">Newick</a>ToPhylogeny(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppNewick.htm">newick</a>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;filename,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::PhylogenyR::GraphicsFormat::png<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (lineages <a href="CppOperatorEqual.htm">==</a> Lineages::extant <a href="CppOperatorLogicalAnd.htm">&amp;&amp;</a> <a href="Tools.htm">tool</a> <a href="CppOperatorEqual.htm">==</a> <a href="Tools.htm">Tool</a>::PhylogenyR)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;label <a href="CppOperatorAssign.htm">=</a> ui-&gt;image_phylogeny_phylogenyr_extant;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;f <a href="CppOperatorAssign.htm">=</a> [](<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>, <b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; filename)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::PhylogenyR().<a href="CppNewick.htm">Newick</a>ToPhylogeny(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::PhylogenyR().DropExtinct(<a href="CppNewick.htm">newick</a>),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;filename,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::PhylogenyR::GraphicsFormat::png<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(label);<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!label-&gt;isVisible()) <b><a href="CppReturn.htm">return</a></b>;<br/>
+&nbsp;&nbsp;<b><a href="CppTry.htm">try</a></b><br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> temp_filename{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a>().GetTempFileName("") <a href="CppComment.htm">//</a>Cannot put .svg or .png here, as images won't display then<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!<a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a>().<a href="CppIsRegularFile.htm">IsRegularFile</a>(temp_filename));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;f(<a href="CppNewick.htm">newick</a>,temp_filename);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;label-&gt;setPixmap(<a href="CppQPixmap.htm">QPixmap</a>(temp_filename.c_str()));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Delete the temporary file<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::<a href="CppFileIo.htm">fileio</a>::<a href="CppFileIo.htm">FileIo</a>().<a href="CppDeleteFile.htm">DeleteFile</a>(temp_filename);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppCatch.htm">catch</a></b> (<a href="CppStdRuntime_error.htm">std::runtime_error</a>&amp; e)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppStdClog.htm">std::clog</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> e.what() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n';<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;label-&gt;setText(sm_fail.c_str());<br/>
+&nbsp;&nbsp;}<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppQt.htm">Qt</a><a href="CppNewick.htm">Newick</a>Display::OnBoxClicked()<br/>
+{<br/>
+&nbsp;&nbsp;ui-&gt;line_<a href="CppNewick.htm">newick</a>-&gt;setVisible(ui-&gt;box_display_all-&gt;isChecked());<br/>
+&nbsp;&nbsp;ui-&gt;line_<a href="CppNewick.htm">newick</a>_extant-&gt;setVisible(ui-&gt;box_display_extant-&gt;isChecked());<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppAuto.htm">auto</a></b> image: CollectExtinctAndExtantImages())<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;image-&gt;setVisible(ui-&gt;box_display_all-&gt;isChecked());<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppAuto.htm">auto</a></b> image: CollectExtantImages())<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;image-&gt;setVisible(ui-&gt;box_display_extant-&gt;isChecked());<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppAuto.htm">auto</a></b> image: { ui-&gt;image_branching_<a href="CppTime.htm">time</a>s_all, ui-&gt;image_branching_<a href="CppTime.htm">time</a>s_extant } )<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!ui-&gt;box_display_branching_<a href="CppTime.htm">time</a>s-&gt;isChecked()) image-&gt;setVisible(<b><a href="CppFalse.htm">false</a></b>);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppAuto.htm">auto</a></b> image: { ui-&gt;image_branch_lengths_all, ui-&gt;image_branch_lengths_extant } )<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!ui-&gt;box_display_branch_lengths-&gt;isChecked()) image-&gt;setVisible(<b><a href="CppFalse.htm">false</a></b>);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppAuto.htm">auto</a></b> image: { ui-&gt;image_lttPlot_all, ui-&gt;image_lttPlot_extant } )<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!ui-&gt;box_display_lttplots-&gt;isChecked()) image-&gt;setVisible(<b><a href="CppFalse.htm">false</a></b>);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppAuto.htm">auto</a></b> image: { ui-&gt;image_phylogeny_<a href="CppNewick.htm">newick</a>utils_all, ui-&gt;image_phylogeny_<a href="CppNewick.htm">newick</a>utils_extant } )<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!ui-&gt;box_display_phylogeny_<a href="CppNewick.htm">newick</a>utils-&gt;isChecked()) image-&gt;setVisible(<b><a href="CppFalse.htm">false</a></b>);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppAuto.htm">auto</a></b> image: { ui-&gt;image_phylogeny_phylogenyr_all, ui-&gt;image_phylogeny_phylogenyr_extant } )<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!ui-&gt;box_display_phylogeny_phylogenyr-&gt;isChecked()) image-&gt;setVisible(<b><a href="CppFalse.htm">false</a></b>);<br/>
+&nbsp;&nbsp;}<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppQt.htm">Qt</a><a href="CppNewick.htm">Newick</a>Display::Set<a href="CppNewick.htm">Newick</a>(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdFunction.htm">std::function</a>&lt;<b><a href="CppVoid.htm">void</a></b>()<a href="CppOperatorStreamIn.htm">&gt;&gt;</a> fs <a href="CppOperatorAssign.htm">=</a> {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<b><a href="CppThis.htm">this</a></b>,<a href="CppNewick.htm">newick</a>]() { Display<a href="CppNewick.htm">Newick</a>(<a href="CppNewick.htm">newick</a>,Lineages::all); },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<b><a href="CppThis.htm">this</a></b>,<a href="CppNewick.htm">newick</a>]() { DisplayPhylogeny(<a href="CppNewick.htm">newick</a>,Lineages::all,<a href="Tools.htm">Tool</a>::PhylogenyR); },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<b><a href="CppThis.htm">this</a></b>,<a href="CppNewick.htm">newick</a>]() { Display<a href="CppNewick.htm">Newick</a>(<a href="CppNewick.htm">newick</a>,Lineages::extant); },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<b><a href="CppThis.htm">this</a></b>,<a href="CppNewick.htm">newick</a>]() { DisplayBranching<a href="CppTime.htm">Time</a>s(<a href="CppNewick.htm">newick</a>,Lineages::all); },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<b><a href="CppThis.htm">this</a></b>,<a href="CppNewick.htm">newick</a>]() { DisplayBranching<a href="CppTime.htm">Time</a>s(<a href="CppNewick.htm">newick</a>,Lineages::extant); },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<b><a href="CppThis.htm">this</a></b>,<a href="CppNewick.htm">newick</a>]() { DisplayBranchLengths(<a href="CppNewick.htm">newick</a>,Lineages::all); },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<b><a href="CppThis.htm">this</a></b>,<a href="CppNewick.htm">newick</a>]() { DisplayBranchLengths(<a href="CppNewick.htm">newick</a>,Lineages::extant); }<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> f: fs) { f(); <b><a href="CppThis.htm">this</a></b>-&gt;repaint();}<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Take a shortcut <b><a href="CppIf.htm">if</a></b> extant species cannot be calculated by the R ape package<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (ui-&gt;line_<a href="CppNewick.htm">newick</a>_extant-&gt;text().toStdString() <a href="CppOperatorEqual.htm">==</a> sm_fail)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;image_lttPlot_all-&gt;setText(sm_fail.c_str());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;image_lttPlot_extant-&gt;setText(sm_fail.c_str());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;image_phylogeny_<a href="CppNewick.htm">newick</a>utils_extant-&gt;setText(sm_fail.c_str());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;image_phylogeny_phylogenyr_all-&gt;setText(sm_fail.c_str());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ui-&gt;image_phylogeny_phylogenyr_extant-&gt;setText(sm_fail.c_str());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b>;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Do all <a href="CppFunction.htm">function</a>s that <b><a href="CppDo.htm">do</a></b> work<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdFunction.htm">std::function</a>&lt;<b><a href="CppVoid.htm">void</a></b>()<a href="CppOperatorStreamIn.htm">&gt;&gt;</a> fs <a href="CppOperatorAssign.htm">=</a> {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<b><a href="CppThis.htm">this</a></b>,<a href="CppNewick.htm">newick</a>]() { DisplayPhylogeny(<a href="CppNewick.htm">newick</a>,Lineages::extant,<a href="Tools.htm">Tool</a>::PhylogenyR); },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<b><a href="CppThis.htm">this</a></b>,<a href="CppNewick.htm">newick</a>]() { DisplayPhylogeny(<a href="CppNewick.htm">newick</a>,Lineages::all,<a href="Tools.htm">Tool</a>::PhylogenyR); },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<b><a href="CppThis.htm">this</a></b>,<a href="CppNewick.htm">newick</a>]() { DisplayPhylogeny(<a href="CppNewick.htm">newick</a>,Lineages::extant,<a href="Tools.htm">Tool</a>::PhylogenyR); },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<b><a href="CppThis.htm">this</a></b>,<a href="CppNewick.htm">newick</a>]() { Display<a href="CppNewick.htm">Newick</a>ToLttPlot(<a href="CppNewick.htm">newick</a>,Lineages::all); },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<b><a href="CppThis.htm">this</a></b>,<a href="CppNewick.htm">newick</a>]() { Display<a href="CppNewick.htm">Newick</a>ToLttPlot(<a href="CppNewick.htm">newick</a>,Lineages::extant); }<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> f: fs) { f(); <b><a href="CppThis.htm">this</a></b>-&gt;repaint();}<br/>
+&nbsp;&nbsp;}<br/>
+}<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p>&nbsp;</p>
+<p><a href="http://validator.w3.org/check?uri=referer"><img src="valid-xhtml10.png" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a></p>
+<p>This page has been created by the <a href="Tools.htm">tool</a> <a href="ToolCodeToHtml.htm">CodeToHtml</a></p>
+</body>
+</html>

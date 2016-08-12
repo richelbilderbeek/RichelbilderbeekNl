@@ -1,0 +1,1137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <title>FisherWrightSimulationExample1</title>
+  <meta name="description" content="C++ FisherWrightSimulationExample1"/>
+  <meta name="keywords" content="C++ FisherWrightSimulationExample1 "/>
+  <link rel="stylesheet" href="Richelbilderbeek.css" type="text/css"/>
+</head>
+<!-- End of head, start of body -->
+<body>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<!-- Page header -->
+<h1>(<a href="Cpp.htm">C++</a>) <a href="CppFisherWrightSimulationExample1.htm">FisherWrightSimulationExample1</a></h1>
+<p>&nbsp;</p>
+<!-- No CodeToHtmlInfo about this class with page name CppFisherWrightSimulationExample1-->
+<h2>Technical facts</h2>
+<p>&nbsp;</p>
+<p><a href="CppOs.htm">Operating system(s) or programming environment(s)</a></p>
+<ul>
+  <li><img src="PicLubuntu.png" alt="Lubuntu"/> <a href="CppLubuntu.htm">Lubuntu</a> 15.04 (vivid)</li>
+</ul>
+<p><a href="CppIde.htm">IDE(s)</a>:</p>
+<ul>
+  <li><img src="PicQtCreator.png" alt="Qt Creator"/> <a href="CppQtCreator.htm">Qt Creator</a> 3.1.1</li>
+</ul>
+<p><a href="CppQtProjectType.htm">Project type</a>:</p>
+<ul>
+  <li><img src="PicConsole.png" alt="console"/> <a href="CppConsoleApplication.htm">Console application</a></li>
+</ul>
+<p><a href="CppStandard.htm">C++ standard</a>:</p>
+<ul>
+  <li><img src="PicCpp98.png" alt="C++98"/> <a href="Cpp98.htm">C++98</a></li>
+</ul>
+<p><a href="CppCompiler.htm">Compiler(s)</a>:</p>
+<ul>
+  <li><a href="CppGpp.htm">G++</a> 4.9.2</li>
+</ul>
+<p><a href="CppLibrary.htm">Libraries</a> used:</p>
+<ul>
+  <li><img src="PicStl.png" alt="STL"/> <a href="CppStl.htm">STL</a>: GNU ISO C++ Library, version 4.9.2</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2><a href="CppQtProjectFile.htm">Qt project file</a>: ./CppFisherWrightSimulationExample1/CppFisherWrightSimulationExample1.pro</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppFisherWrightSimulationExample1/CppFisherWrightSimulationExample1.pro" border = "1"><tr><td><code>
+include(../../<a href="CppConsoleApplication.htm">ConsoleApplication</a>.pri)<br/>
+include(../../<a href="CppLibrary.htm">Libraries</a>/<a href="CppBoost.htm">Boost</a>All.pri)<br/>
+<br/>
+<a href="CppQmakeSources.htm">SOURCES</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppMain.htm">main</a>.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;parameters.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;simulation.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;individual.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;helper.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;sequence.cpp<br/>
+<br/>
+<br/>
+<br/>
+<a href="CppQmakeHeaders.htm">HEADERS</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;parameters.h \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;simulation.h \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;individual.h \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;helper.h \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;sequence.h<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppFisherWrightSimulationExample1/helper.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppFisherWrightSimulationExample1/helper.h" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> HELPER_H<br/>
+<a href="CppDefine.htm">#define</a> HELPER_H<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppMapH.htm">map</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppStringH.htm">string</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppVectorH.htm">vector</a>&gt;<br/>
+<br/>
+<b><a href="CppStruct.htm">struct</a></b> Helper<br/>
+{<br/>
+&nbsp;&nbsp;Helper() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppStdString.htm">std::string</a> <a href="CppContainer.htm">Container</a>ToStr(<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a>&gt;&amp; s, <b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; seperator <a href="CppOperatorAssign.htm">=</a> " ") <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppStdMap.htm">std::map</a>&lt;<a href="CppStdString.htm">std::string</a>,<b><a href="CppInt.htm">int</a></b>&gt; CreateSortedTally(<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a>&gt;&amp; v) <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdPair.htm">std::pair</a>&lt;<a href="CppStdString.htm">std::string</a>,<b><a href="CppInt.htm">int</a></b><a href="CppOperatorStreamIn.htm">&gt;&gt;</a> CreateTally(<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a>&gt;&amp; v) <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a>&gt; <a href="CppFileToVector.htm">FileToVector</a>(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; filename) <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppStdString.htm">std::string</a> <a href="CppGetFileBasename.htm">GetFileBasename</a>(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; filename) <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> { <b><a href="CppReturn.htm">return</a></b> <a href="CppGetFileBasename.htm">GetFileBasename</a><a href="CppBoost.htm">Boost</a><a href="CppBoostXpressive.htm">Xpressive</a>(filename); }<br/>
+&nbsp;&nbsp;<b><a href="CppBool.htm">bool</a></b> <a href="CppIsRegularFile.htm">IsRegularFile</a>Stl(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; filename) <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppPrivate.htm">private</a></b>:<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Most concise<br/>
+&nbsp;&nbsp;<a href="CppStdString.htm">std::string</a> <a href="CppGetFileBasename.htm">GetFileBasename</a><a href="CppBoost.htm">Boost</a>Filesystem(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; filename) <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Can deal with <a href="CppWindows.htm">Windows</a> filenames as well<br/>
+&nbsp;&nbsp;<a href="CppStdString.htm">std::string</a> <a href="CppGetFileBasename.htm">GetFileBasename</a><a href="CppBoost.htm">Boost</a><a href="CppBoostXpressive.htm">Xpressive</a>(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; filename) <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppVoid.htm">void</a></b> Test() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+};<br/>
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> HELPER_H<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppFisherWrightSimulationExample1/helper.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppFisherWrightSimulationExample1/helper.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "helper.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppAlgorithmH.htm">algorithm</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppFstreamH.htm">fstream</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppIteratorH.htm">iterator</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppSstreamH.htm">sstream</a>&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppBoost.htm">boost</a>/filesystem.hpp&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppBoost.htm">boost</a>/<a href="CppBoostXpressive.htm">xpressive</a>/<a href="CppBoostXpressive.htm">xpressive</a>.hpp&gt;<br/>
+<br/>
+<b><a href="CppTemplate.htm">template</a></b> &lt;<b><a href="CppClass.htm">class</a></b> <a href="CppContainer.htm">Container</a>&gt;<br/>
+<a href="CppStdString.htm">std::string</a> <a href="CppContainer.htm">Container</a>ToStrImpl(<b><a href="CppConst.htm">const</a></b> <a href="CppContainer.htm">Container</a>&amp; c, <b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; seperator)<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppStdStringstream.htm">std::stringstream</a> s;<br/>
+&nbsp;&nbsp;<a href="CppStdCopy.htm">std::copy</a>(c.begin(),c.end(),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdOstream_iterator.htm">std::ostream_iterator</a>&lt;<b><a href="CppTypename.htm">typename</a></b> <a href="CppContainer.htm">Container</a>::value_type&gt;(s,seperator.c_str()));<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> s.str();<br/>
+}<br/>
+<br/>
+Helper::Helper() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;Test();<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+}<br/>
+<br/>
+<a href="CppStdString.htm">std::string</a> Helper::<a href="CppContainer.htm">Container</a>ToStr(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a>&gt;&amp; s,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; seperator<br/>
+) <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <a href="CppContainer.htm">Container</a>ToStrImpl(s,seperator);<br/>
+}<br/>
+<br/>
+<br/>
+<a href="CppStdMap.htm">std::map</a>&lt;<a href="CppStdString.htm">std::string</a>,<b><a href="CppInt.htm">int</a></b>&gt; Helper::CreateSortedTally(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a>&gt;&amp; v<br/>
+) <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppStdMap.htm">std::map</a>&lt;<a href="CppStdString.htm">std::string</a>,<b><a href="CppInt.htm">int</a></b>&gt; m;<br/>
+&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; s: v)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (m.find(s) <a href="CppOperatorEqual.htm">==</a> m.end())<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m[s] <a href="CppOperatorAssign.htm">=</a> 1;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppElse.htm">else</a></b><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorIncrement.htm">++</a>m[s];<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> m;<br/>
+}<br/>
+<br/>
+<a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdPair.htm">std::pair</a>&lt;<a href="CppStdString.htm">std::string</a>,<b><a href="CppInt.htm">int</a></b><a href="CppOperatorStreamIn.htm">&gt;&gt;</a> Helper::CreateTally(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a>&gt;&amp; v<br/>
+) <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdPair.htm">std::pair</a>&lt;<a href="CppStdString.htm">std::string</a>,<b><a href="CppInt.htm">int</a></b><a href="CppOperatorStreamIn.htm">&gt;&gt;</a> w;<br/>
+&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; s: v)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> iter <a href="CppOperatorAssign.htm">=</a> <a href="CppStdFind_if.htm">std::find_if</a>(<a href="CppStdBegin.htm">std::begin</a>(w),<a href="CppStdEnd.htm">std::end</a>(w),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[s](<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b>&amp; p) { <b><a href="CppReturn.htm">return</a></b> p.first <a href="CppOperatorEqual.htm">==</a> s; }<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;);<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (iter <a href="CppOperatorEqual.htm">==</a> <a href="CppStdEnd.htm">std::end</a>(w))<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;w.push_back(<a href="CppStdMake_pair.htm">std::make_pair</a>(s,1));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppElse.htm">else</a></b><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorIncrement.htm">++</a>((*iter).second);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> w;<br/>
+}<br/>
+<br/>
+<a href="CppComment.htm">///</a><a href="CppFileToVector.htm">FileToVector</a> reads a file and <a href="CppConvert.htm">converts</a> it to a <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a>&gt;<br/>
+<a href="CppComment.htm">///</a>From http://www.richelbilderbeek.nl/Cpp<a href="CppFileToVector.htm">FileToVector</a>.htm<br/>
+<a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a>&gt; Helper::<a href="CppFileToVector.htm">FileToVector</a>(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; filename<br/>
+) <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppIsRegularFile.htm">IsRegularFile</a>Stl(filename));<br/>
+&nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a>&gt; v;<br/>
+&nbsp;&nbsp;<a href="CppStdIfstream.htm">std::ifstream</a> in(filename.c_str());<br/>
+&nbsp;&nbsp;<a href="CppStdString.htm">std::string</a> s;<br/>
+&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppInt.htm">int</a></b> i=0; !in.eof(); <a href="CppOperatorIncrement.htm">++</a>i)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdGetline.htm">std::getline</a>(in,s);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;v.push_back(s);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> v;<br/>
+}<br/>
+<br/>
+<br/>
+<a href="CppStdString.htm">std::string</a> Helper::<a href="CppGetFileBasename.htm">GetFileBasename</a><a href="CppBoost.htm">Boost</a>Filesystem(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; filename) <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <a href="CppBoostFilesystem.htm">boost::filesystem</a>::basename(filename);<br/>
+}<br/>
+<br/>
+<a href="CppStdString.htm">std::string</a> Helper::<a href="CppGetFileBasename.htm">GetFileBasename</a><a href="CppBoost.htm">Boost</a><a href="CppBoostXpressive.htm">Xpressive</a>(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; filename) <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppBoostXpressive.htm">boost::xpressive</a>::s<a href="CppRegex.htm">regex</a> rex<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorAssign.htm">=</a> <a href="CppBoostXpressive.htm">boost::xpressive</a>::s<a href="CppRegex.htm">regex</a>::<a href="CppCompile.htm">compile</a>(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"((.*)(/|\\\\))?([0-9A-Za-z_]*)((\\.)([A-Za-z]*))?" );<br/>
+&nbsp;&nbsp;<a href="CppBoostXpressive.htm">boost::xpressive</a>::smatch what;<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b>( <a href="CppBoostXpressive.htm">boost::xpressive</a>::<a href="CppRegex.htm">regex</a>_match( filename, what, rex ) )<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> what[4];<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> "";<br/>
+}<br/>
+<br/>
+<br/>
+<a href="CppComment.htm">///</a>Determines <b><a href="CppIf.htm">if</a></b> a filename is a regular file<br/>
+<a href="CppComment.htm">///</a>From http://www.richelbilderbeek.nl/Cpp<a href="CppIsRegularFile.htm">IsRegularFile</a>.htm<br/>
+<b><a href="CppBool.htm">bool</a></b> Helper::<a href="CppIsRegularFile.htm">IsRegularFile</a>Stl(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; filename<br/>
+) <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppStdFstream.htm">std::fstream</a> f;<br/>
+&nbsp;&nbsp;f.open(filename.c_str(),<a href="CppStd.htm">std</a>::ios::in);<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> f.is_open();<br/>
+}<br/>
+<br/>
+<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+<b><a href="CppVoid.htm">void</a></b> Helper::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppBool.htm">bool</a></b> is_tested {<b><a href="CppFalse.htm">false</a></b>};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (is_tested) <b><a href="CppReturn.htm">return</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;is_tested <a href="CppOperatorAssign.htm">=</a> <b><a href="CppTrue.htm">true</a></b>;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>CreateTally<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a>&gt; v <a href="CppOperatorAssign.htm">=</a> { "A"};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdPair.htm">std::pair</a>&lt;<a href="CppStdString.htm">std::string</a>,<b><a href="CppInt.htm">int</a></b><a href="CppOperatorStreamIn.htm">&gt;&gt;</a> m{Helper().CreateTally(v)};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(m.size() <a href="CppOperatorEqual.htm">==</a> 1);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(m[0].first <a href="CppOperatorEqual.htm">==</a> "A");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(m[0].second <a href="CppOperatorEqual.htm">==</a> 1);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a>&gt; v <a href="CppOperatorAssign.htm">=</a> { "A", "A" };<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdPair.htm">std::pair</a>&lt;<a href="CppStdString.htm">std::string</a>,<b><a href="CppInt.htm">int</a></b><a href="CppOperatorStreamIn.htm">&gt;&gt;</a> m{Helper().CreateTally(v)};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(m.size() <a href="CppOperatorEqual.htm">==</a> 1);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(m[0].first <a href="CppOperatorEqual.htm">==</a> "A");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(m[0].second <a href="CppOperatorEqual.htm">==</a> 2);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a>&gt; v <a href="CppOperatorAssign.htm">=</a> { "A", "B" };<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdPair.htm">std::pair</a>&lt;<a href="CppStdString.htm">std::string</a>,<b><a href="CppInt.htm">int</a></b><a href="CppOperatorStreamIn.htm">&gt;&gt;</a> m{Helper().CreateTally(v)};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(m.size() <a href="CppOperatorEqual.htm">==</a> 2);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(m[0].first <a href="CppOperatorEqual.htm">==</a> "A");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(m[0].second <a href="CppOperatorEqual.htm">==</a> 1);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(m[1].first <a href="CppOperatorEqual.htm">==</a> "B");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(m[1].second <a href="CppOperatorEqual.htm">==</a> 1);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a>&gt; v <a href="CppOperatorAssign.htm">=</a> { "B", "A", "B" };<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdPair.htm">std::pair</a>&lt;<a href="CppStdString.htm">std::string</a>,<b><a href="CppInt.htm">int</a></b><a href="CppOperatorStreamIn.htm">&gt;&gt;</a> m{Helper().CreateTally(v)};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(m.size() <a href="CppOperatorEqual.htm">==</a> 2);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(m[0].first <a href="CppOperatorEqual.htm">==</a> "B");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(m[0].second <a href="CppOperatorEqual.htm">==</a> 2);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(m[1].first <a href="CppOperatorEqual.htm">==</a> "A");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(m[1].second <a href="CppOperatorEqual.htm">==</a> 1);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(Helper().<a href="CppGetFileBasename.htm">GetFileBasename</a><a href="CppBoost.htm">Boost</a>Filesystem("") <a href="CppOperatorEqual.htm">==</a> <a href="CppStdString.htm">std::string</a>(""));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(Helper().<a href="CppGetFileBasename.htm">GetFileBasename</a><a href="CppBoost.htm">Boost</a>Filesystem("tmp.txt") <a href="CppOperatorEqual.htm">==</a> <a href="CppStdString.htm">std::string</a>("tmp"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(Helper().<a href="CppGetFileBasename.htm">GetFileBasename</a><a href="CppBoost.htm">Boost</a>Filesystem("test_output.fas") <a href="CppOperatorEqual.htm">==</a> <a href="CppStdString.htm">std::string</a>("test_output"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(Helper().<a href="CppGetFileBasename.htm">GetFileBasename</a><a href="CppBoost.htm">Boost</a>Filesystem("test_output_0.fas") <a href="CppOperatorEqual.htm">==</a> <a href="CppStdString.htm">std::string</a>("test_output_0"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(Helper().<a href="CppGetFileBasename.htm">GetFileBasename</a><a href="CppBoost.htm">Boost</a>Filesystem("tmp") <a href="CppOperatorEqual.htm">==</a> <a href="CppStdString.htm">std::string</a>("tmp"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(Helper().<a href="CppGetFileBasename.htm">GetFileBasename</a><a href="CppBoost.htm">Boost</a>Filesystem("MyFolder/tmp") <a href="CppOperatorEqual.htm">==</a> <a href="CppStdString.htm">std::string</a>("tmp"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(Helper().<a href="CppGetFileBasename.htm">GetFileBasename</a><a href="CppBoost.htm">Boost</a>Filesystem("MyFolder/tmp.txt") <a href="CppOperatorEqual.htm">==</a> <a href="CppStdString.htm">std::string</a>("tmp"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppAssert.htm">assert</a>(Helper().<a href="CppGetFileBasename.htm">GetFileBasename</a><a href="CppBoost.htm">Boost</a>Filesystem("MyFolder\\tmp.txt") <a href="CppOperatorEqual.htm">==</a> <a href="CppStdString.htm">std::string</a>("tmp"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(Helper().<a href="CppGetFileBasename.htm">GetFileBasename</a><a href="CppBoost.htm">Boost</a>Filesystem("MyFolder/MyFolder/tmp") <a href="CppOperatorEqual.htm">==</a> <a href="CppStdString.htm">std::string</a>("tmp"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(Helper().<a href="CppGetFileBasename.htm">GetFileBasename</a><a href="CppBoost.htm">Boost</a>Filesystem("MyFolder/MyFolder/tmp.txt") <a href="CppOperatorEqual.htm">==</a> <a href="CppStdString.htm">std::string</a>("tmp"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppAssert.htm">assert</a>(Helper().<a href="CppGetFileBasename.htm">GetFileBasename</a><a href="CppBoost.htm">Boost</a>Filesystem("MyFolder/MyFolder\\tmp.txt") <a href="CppOperatorEqual.htm">==</a> <a href="CppStdString.htm">std::string</a>("tmp"));<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(Helper().<a href="CppGetFileBasename.htm">GetFileBasename</a><a href="CppBoost.htm">Boost</a><a href="CppBoostXpressive.htm">Xpressive</a>("") <a href="CppOperatorEqual.htm">==</a> <a href="CppStdString.htm">std::string</a>(""));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(Helper().<a href="CppGetFileBasename.htm">GetFileBasename</a><a href="CppBoost.htm">Boost</a><a href="CppBoostXpressive.htm">Xpressive</a>("tmp.txt") <a href="CppOperatorEqual.htm">==</a> <a href="CppStdString.htm">std::string</a>("tmp"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(Helper().<a href="CppGetFileBasename.htm">GetFileBasename</a><a href="CppBoost.htm">Boost</a><a href="CppBoostXpressive.htm">Xpressive</a>("test_output.fas") <a href="CppOperatorEqual.htm">==</a> <a href="CppStdString.htm">std::string</a>("test_output"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(Helper().<a href="CppGetFileBasename.htm">GetFileBasename</a><a href="CppBoost.htm">Boost</a><a href="CppBoostXpressive.htm">Xpressive</a>("test_output_0.fas") <a href="CppOperatorEqual.htm">==</a> <a href="CppStdString.htm">std::string</a>("test_output_0"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(Helper().<a href="CppGetFileBasename.htm">GetFileBasename</a><a href="CppBoost.htm">Boost</a><a href="CppBoostXpressive.htm">Xpressive</a>("tmp") <a href="CppOperatorEqual.htm">==</a> <a href="CppStdString.htm">std::string</a>("tmp"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(Helper().<a href="CppGetFileBasename.htm">GetFileBasename</a><a href="CppBoost.htm">Boost</a><a href="CppBoostXpressive.htm">Xpressive</a>("MyFolder/tmp") <a href="CppOperatorEqual.htm">==</a> <a href="CppStdString.htm">std::string</a>("tmp"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(Helper().<a href="CppGetFileBasename.htm">GetFileBasename</a><a href="CppBoost.htm">Boost</a><a href="CppBoostXpressive.htm">Xpressive</a>("MyFolder/tmp.txt") <a href="CppOperatorEqual.htm">==</a> <a href="CppStdString.htm">std::string</a>("tmp"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(Helper().<a href="CppGetFileBasename.htm">GetFileBasename</a><a href="CppBoost.htm">Boost</a><a href="CppBoostXpressive.htm">Xpressive</a>("MyFolder\\tmp.txt") <a href="CppOperatorEqual.htm">==</a> <a href="CppStdString.htm">std::string</a>("tmp"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(Helper().<a href="CppGetFileBasename.htm">GetFileBasename</a><a href="CppBoost.htm">Boost</a><a href="CppBoostXpressive.htm">Xpressive</a>("MyFolder/MyFolder/tmp") <a href="CppOperatorEqual.htm">==</a> <a href="CppStdString.htm">std::string</a>("tmp"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(Helper().<a href="CppGetFileBasename.htm">GetFileBasename</a><a href="CppBoost.htm">Boost</a><a href="CppBoostXpressive.htm">Xpressive</a>("MyFolder/MyFolder/tmp.txt") <a href="CppOperatorEqual.htm">==</a> <a href="CppStdString.htm">std::string</a>("tmp"));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(Helper().<a href="CppGetFileBasename.htm">GetFileBasename</a><a href="CppBoost.htm">Boost</a><a href="CppBoostXpressive.htm">Xpressive</a>("MyFolder/MyFolder\\tmp.txt") <a href="CppOperatorEqual.htm">==</a> <a href="CppStdString.htm">std::string</a>("tmp"));<br/>
+&nbsp;&nbsp;}<br/>
+}<br/>
+<a href="CppEndif.htm">#endif</a><br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppFisherWrightSimulationExample1/individual.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppFisherWrightSimulationExample1/individual.h" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> INDIVIDUAL_H<br/>
+<a href="CppDefine.htm">#define</a> INDIVIDUAL_H<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppStringH.htm">string</a>&gt;<br/>
+<br/>
+<b><a href="CppStruct.htm">struct</a></b> Individual<br/>
+{<br/>
+&nbsp;&nbsp;Individual(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; dna);<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppStdString.htm">std::string</a> GetDna() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> { <b><a href="CppReturn.htm">return</a></b> m_dna; }<br/>
+&nbsp;&nbsp;<b><a href="CppInt.htm">int</a></b> GetIndex() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> { <b><a href="CppReturn.htm">return</a></b> m_index; }<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppPrivate.htm">private</a></b>:<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> m_dna;<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> Unique index as <b><a href="CppLong.htm">long</a></b> as there are less than (2^32)/2 Individuals<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> m_index;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppOperatorDivide.htm">/</a> <a href="CppCounter.htm">Counter</a> that increases when an Individual is <a href="CppConstructor.htm">construct</a>ed<br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppInt.htm">int</a></b> sm_index;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppVoid.htm">void</a></b> Test() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+};<br/>
+<br/>
+<br/>
+<a href="CppComment.htm">///</a>Checks <b><a href="CppIf.htm">if</a></b> different individuals have the same attributes (e.g. DNA)<br/>
+<a href="CppComment.htm">///</a>This does not take the index of the Individuals into account, as<br/>
+<a href="CppComment.htm">///</a>these are all (semi)unique<br/>
+<b><a href="CppBool.htm">bool</a></b> <b><a href="CppOperatorEqual.htm">operator==</a></b>(<b><a href="CppConst.htm">const</a></b> Individual&amp; lhs, <b><a href="CppConst.htm">const</a></b> Individual&amp; rhs) <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> INDIVIDUAL_H<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppFisherWrightSimulationExample1/individual.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppFisherWrightSimulationExample1/individual.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "individual.h"<br/>
+<br/>
+<b><a href="CppInt.htm">int</a></b> Individual::sm_index <a href="CppOperatorAssign.htm">=</a> 0;<br/>
+<br/>
+Individual::Individual(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; dna)<br/>
+&nbsp;&nbsp;: m_dna{dna},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_index{sm_index<a href="CppOperatorIncrement.htm">++</a>} <a href="CppComment.htm">//</a>Use the previous value<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;Test();<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+}<br/>
+<br/>
+<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+<b><a href="CppVoid.htm">void</a></b> Individual::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppBool.htm">bool</a></b> is_tested {<b><a href="CppFalse.htm">false</a></b>};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (is_tested) <b><a href="CppReturn.htm">return</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;is_tested <a href="CppOperatorAssign.htm">=</a> <b><a href="CppTrue.htm">true</a></b>;<br/>
+&nbsp;&nbsp;}<br/>
+}<br/>
+<a href="CppEndif.htm">#endif</a><br/>
+<br/>
+<b><a href="CppBool.htm">bool</a></b> <b><a href="CppOperatorEqual.htm">operator==</a></b>(<b><a href="CppConst.htm">const</a></b> Individual&amp; lhs, <b><a href="CppConst.htm">const</a></b> Individual&amp; rhs) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> lhs.GetDna() <a href="CppOperatorEqual.htm">==</a> rhs.GetDna();<br/>
+}<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppFisherWrightSimulationExample1/main.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppFisherWrightSimulationExample1/main.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppFstreamH.htm">fstream</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppIostreamH.htm">iostream</a>&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQFile.htm">QFile</a>&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "helper.h"<br/>
+<a href="CppInclude.htm">#include</a> "parameters.h"<br/>
+<a href="CppInclude.htm">#include</a> "simulation.h"<br/>
+<br/>
+<b><a href="CppInt.htm">int</a></b> <a href="CppMain.htm">main</a>()<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>1) Read parameters from file<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> dna_length{10};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> mutation_rate{0.01};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> n_generations{100};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> pop_size{100};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> seed{42};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Parameters parameters(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;dna_length,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;mutation_rate,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;n_generations,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;pop_size,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;seed<br/>
+&nbsp;&nbsp;);<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>2) Run simulation<br/>
+&nbsp;&nbsp;Simulation simulation(parameters);<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Loop n_generations<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a><b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> n_generations{parameters.GetNumberOfGenerations()};<br/>
+&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppInt.htm">int</a></b> i=0; i<a href="CppOperatorNotEqual.htm">!=</a>n_generations; <a href="CppOperatorIncrement.htm">++</a>i)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;simulation.NextGeneration();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!simulation.GetSequences().empty())<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Only show the sequence of the first individual<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdCout.htm">std::cout</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> i <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> ": " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> simulation.GetSequences()[0].GetSequence() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n';<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;}<br/>
+}<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppFisherWrightSimulationExample1/parameters.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppFisherWrightSimulationExample1/parameters.h" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> PARAMETERS_H<br/>
+<a href="CppDefine.htm">#define</a> PARAMETERS_H<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppStringH.htm">string</a>&gt;<br/>
+<br/>
+<b><a href="CppStruct.htm">struct</a></b> Parameters<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Factory <a href="CppMemberFunction.htm">member function</a><br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> Parameters CreateParameters(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; filename);<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Create parameters from scratch<br/>
+&nbsp;&nbsp;<b><a href="CppExplicit.htm">explicit</a></b> Parameters(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> dna_length,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> mutation_rate,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> n_generations,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> pop_size,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> seed<br/>
+&nbsp;&nbsp;);<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppInt.htm">int</a></b> GetDnaLength() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> { <b><a href="CppReturn.htm">return</a></b> m_dna_length; }<br/>
+&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> GetMutationRate() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> { <b><a href="CppReturn.htm">return</a></b> m_mutation_rate; }<br/>
+&nbsp;&nbsp;<b><a href="CppInt.htm">int</a></b> GetNumberOfGenerations() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> { <b><a href="CppReturn.htm">return</a></b> m_n_generations; }<br/>
+&nbsp;&nbsp;<b><a href="CppInt.htm">int</a></b> GetPopSize() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> { <b><a href="CppReturn.htm">return</a></b> m_pop_size; }<br/>
+&nbsp;&nbsp;<b><a href="CppInt.htm">int</a></b> GetSeed() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> { <b><a href="CppReturn.htm">return</a></b> m_seed; }<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a><b><a href="CppVoid.htm">void</a></b> Save(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; filename) <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppPrivate.htm">private</a></b>:<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> m_dna_length;<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> m_mutation_rate;<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> m_n_generations;<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> m_pop_size;<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> m_seed;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppVoid.htm">void</a></b> Test() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+};<br/>
+<br/>
+<a href="CppStdOstream.htm">std::ostream</a>&amp; <b><a href="CppOperatorStreamOut.htm">operator&lt;&lt;</a></b>(<a href="CppStdOstream.htm">std::ostream</a>&amp; os, <b><a href="CppConst.htm">const</a></b> Parameters&amp; parameters);<br/>
+<br/>
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> PARAMETERS_H<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppFisherWrightSimulationExample1/parameters.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppFisherWrightSimulationExample1/parameters.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "parameters.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppFstreamH.htm">fstream</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppStdexceptH.htm">stdexcept</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppSstreamH.htm">sstream</a>&gt;<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+Parameters::Parameters(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> dna_length,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> mutation_rate,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> n_generations,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> pop_size,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> seed<br/>
+)<br/>
+&nbsp;&nbsp;:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_dna_length{dna_length},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_mutation_rate{mutation_rate},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_n_generations{n_generations},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_pop_size{pop_size},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_seed{seed}<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;Test();<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (m_dna_length &lt; 0)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdStringstream.htm">std::stringstream</a> s;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;s <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "Parameters::Parameters: DNA length must be positive, DNA length given: "<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> m_dna_length<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppThrow.htm">throw</a></b> <a href="CppStdLogic_error.htm">std::logic_error</a>(s.str().c_str());<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (m_n_generations &lt; 0)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdStringstream.htm">std::stringstream</a> s;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;s <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "Parameters::Parameters: "<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "number of generations must be positive, "<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "number of generations supplied: "<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> m_n_generations<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppThrow.htm">throw</a></b> <a href="CppStdLogic_error.htm">std::logic_error</a>(s.str().c_str());<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (m_pop_size &lt; 0)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdStringstream.htm">std::stringstream</a> s;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;s <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "Parameters::Parameters: "<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "population size must be positive, "<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "population size supplied: "<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> m_pop_size<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppThrow.htm">throw</a></b> <a href="CppStdLogic_error.htm">std::logic_error</a>(s.str().c_str());<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (m_seed &lt; 0)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdStringstream.htm">std::stringstream</a> s;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;s <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "Parameters::Parameters: cannot create Parameters with seed &lt; 0";<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppThrow.htm">throw</a></b> <a href="CppStdLogic_error.htm">std::logic_error</a>(s.str().c_str());<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+}<br/>
+<br/>
+Parameters Parameters::CreateParameters(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; filename)<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppStdString.htm">std::string</a> dna_length_str{""};<br/>
+&nbsp;&nbsp;<b><a href="CppInt.htm">int</a></b> dna_length{0};<br/>
+&nbsp;&nbsp;<a href="CppStdString.htm">std::string</a> mutation_rate_str{""};<br/>
+&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> mutation_rate{0.0};<br/>
+&nbsp;&nbsp;<a href="CppStdString.htm">std::string</a> n_generations_str{""};<br/>
+&nbsp;&nbsp;<b><a href="CppInt.htm">int</a></b> n_generations{0};<br/>
+&nbsp;&nbsp;<a href="CppStdString.htm">std::string</a> pop_size_str{""};<br/>
+&nbsp;&nbsp;<b><a href="CppInt.htm">int</a></b> pop_size{0};<br/>
+&nbsp;&nbsp;<a href="CppStdString.htm">std::string</a> seed_str{""};<br/>
+&nbsp;&nbsp;<b><a href="CppInt.htm">int</a></b> seed{0};<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppStdIfstream.htm">std::ifstream</a> f(filename.c_str());<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>TODO: <a href="CppAdd.htm">Add</a> safety is file has wrong format<br/>
+&nbsp;&nbsp;f<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamIn.htm">&gt;&gt;</a> dna_length_str <a href="CppOperatorStreamIn.htm">&gt;&gt;</a> dna_length<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamIn.htm">&gt;&gt;</a> mutation_rate_str <a href="CppOperatorStreamIn.htm">&gt;&gt;</a> mutation_rate<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamIn.htm">&gt;&gt;</a> n_generations_str <a href="CppOperatorStreamIn.htm">&gt;&gt;</a> n_generations<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamIn.htm">&gt;&gt;</a> pop_size_str <a href="CppOperatorStreamIn.htm">&gt;&gt;</a> pop_size<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamIn.htm">&gt;&gt;</a> seed_str <a href="CppOperatorStreamIn.htm">&gt;&gt;</a> seed<br/>
+&nbsp;&nbsp;;<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Parameters parameters(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;dna_length,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;mutation_rate,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;n_generations,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;pop_size,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;seed<br/>
+&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> parameters;<br/>
+}<br/>
+<br/>
+<br/>
+<br/>
+<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+<b><a href="CppVoid.htm">void</a></b> Parameters::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppBool.htm">bool</a></b> is_tested {<b><a href="CppFalse.htm">false</a></b>};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (is_tested) <b><a href="CppReturn.htm">return</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;is_tested <a href="CppOperatorAssign.htm">=</a> <b><a href="CppTrue.htm">true</a></b>;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Test recovery of parameters<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> dna_length{3495};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> mutation_rate{0.34758};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> n_generations{63223};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> pop_size{2376};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> seed{234};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Parameters p(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dna_length,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mutation_rate,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n_generations,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pop_size,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seed<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(p.GetDnaLength() <a href="CppOperatorEqual.htm">==</a> dna_length);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(p.GetMutationRate() <a href="CppOperatorEqual.htm">==</a> mutation_rate);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(p.GetNumberOfGenerations() <a href="CppOperatorEqual.htm">==</a> n_generations);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(p.GetPopSize() <a href="CppOperatorEqual.htm">==</a> pop_size);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(p.GetSeed() <a href="CppOperatorEqual.htm">==</a> seed);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> dna_length{345};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> mutation_rate{0.34758};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> n_generations{63223};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> pop_size{2376};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> seed{43};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Parameters original(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dna_length,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mutation_rate,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n_generations,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pop_size,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seed<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> filename{"tmp.txt"};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{ <a href="CppStdOfstream.htm">std::ofstream</a> f(filename.c_str()); f <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> original; }<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Parameters p(Parameters::CreateParameters(filename));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(p.GetDnaLength() <a href="CppOperatorEqual.htm">==</a> dna_length);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(p.GetMutationRate() <a href="CppOperatorEqual.htm">==</a> mutation_rate);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(p.GetNumberOfGenerations() <a href="CppOperatorEqual.htm">==</a> n_generations);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(p.GetPopSize() <a href="CppOperatorEqual.htm">==</a> pop_size);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(p.GetSeed() <a href="CppOperatorEqual.htm">==</a> seed);<br/>
+&nbsp;&nbsp;}<br/>
+}<br/>
+<a href="CppEndif.htm">#endif</a><br/>
+<br/>
+<a href="CppStdOstream.htm">std::ostream</a>&amp; <b><a href="CppOperatorStreamOut.htm">operator&lt;&lt;</a></b>(<a href="CppStdOstream.htm">std::ostream</a>&amp; os, <b><a href="CppConst.htm">const</a></b> Parameters&amp; parameters)<br/>
+{<br/>
+&nbsp;&nbsp;os<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "dna_length " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> parameters.GetDnaLength() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "mutation_rate " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> parameters.GetMutationRate() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "n_generations " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> parameters.GetNumberOfGenerations() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "pop_size " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> parameters.GetPopSize() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "seed " <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> parameters.GetSeed() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'<br/>
+&nbsp;&nbsp;;<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> os;<br/>
+}<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppFisherWrightSimulationExample1/sequence.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppFisherWrightSimulationExample1/sequence.h" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> SEQUENCE_H<br/>
+<a href="CppDefine.htm">#define</a> SEQUENCE_H<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppStringH.htm">string</a>&gt;<br/>
+<br/>
+<b><a href="CppStruct.htm">struct</a></b> Sequence<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppExplicit.htm">explicit</a></b> Sequence(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; description, <b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; sequence);<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; GetDescription() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> { <b><a href="CppReturn.htm">return</a></b> m_description; }<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; GetSequence() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> { <b><a href="CppReturn.htm">return</a></b> m_sequence; }<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppPrivate.htm">private</a></b>:<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> m_description;<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> m_sequence;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppVoid.htm">void</a></b> Test() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+};<br/>
+<br/>
+<b><a href="CppBool.htm">bool</a></b> <b><a href="CppOperatorEqual.htm">operator==</a></b>(<b><a href="CppConst.htm">const</a></b> Sequence&amp; lhs, <b><a href="CppConst.htm">const</a></b> Sequence&amp; rhs) <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> SEQUENCE_H<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppFisherWrightSimulationExample1/sequence.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppFisherWrightSimulationExample1/sequence.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "sequence.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppAlgorithmH.htm">algorithm</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppSstreamH.htm">sstream</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppStdexceptH.htm">stdexcept</a>&gt;<br/>
+<br/>
+Sequence::Sequence(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; description, <b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; sequence)<br/>
+&nbsp;&nbsp;: m_description{description},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_sequence{sequence}<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;Test();<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> iter <a href="CppOperatorAssign.htm">=</a> <a href="CppStdFind_if_not.htm">std::find_if_not</a>(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdBegin.htm">std::begin</a>(m_sequence),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdEnd.htm">std::end</a>(m_sequence),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;[](<b><a href="CppConst.htm">const</a></b> <b><a href="CppChar.htm">char</a></b> c) { <b><a href="CppReturn.htm">return</a></b> c <a href="CppOperatorEqual.htm">==</a> 'A' <a href="CppOperatorLogicalOr.htm">||</a> c <a href="CppOperatorEqual.htm">==</a> 'C' <a href="CppOperatorLogicalOr.htm">||</a>&nbsp;&nbsp;c <a href="CppOperatorEqual.htm">==</a> 'G' <a href="CppOperatorLogicalOr.htm">||</a>&nbsp;&nbsp;c <a href="CppOperatorEqual.htm">==</a> 'T'; }<br/>
+&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (iter <a href="CppOperatorNotEqual.htm">!=</a> <a href="CppStdEnd.htm">std::end</a>(m_sequence))<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdStringstream.htm">std::stringstream</a> s;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;s <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "Sequence::Sequence: sequence can only contain the <a href="CppChar.htm">character</a>s 'A','C','G','T'";<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppThrow.htm">throw</a></b> <a href="CppStdLogic_error.htm">std::logic_error</a>(s.str().c_str());<br/>
+&nbsp;&nbsp;}<br/>
+}<br/>
+<br/>
+<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+<b><a href="CppVoid.htm">void</a></b> Sequence::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppBool.htm">bool</a></b> is_tested {<b><a href="CppFalse.htm">false</a></b>};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (is_tested) <b><a href="CppReturn.htm">return</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;is_tested <a href="CppOperatorAssign.htm">=</a> <b><a href="CppTrue.htm">true</a></b>;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> description{"description"};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> sequence{"ACGT"};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Sequence s(description,sequence);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(s.GetDescription() <a href="CppOperatorEqual.htm">==</a> description);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(s.GetSequence() <a href="CppOperatorEqual.htm">==</a> sequence);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppTry.htm">try</a></b><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sequence s("description","incorrect_sequence");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!"Should not get here");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppCatch.htm">catch</a></b> (<a href="CppStdLogic_error.htm">std::logic_error</a>&amp;)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Well detected!<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;}<br/>
+}<br/>
+<a href="CppEndif.htm">#endif</a><br/>
+<br/>
+<b><a href="CppBool.htm">bool</a></b> <b><a href="CppOperatorEqual.htm">operator==</a></b>(<b><a href="CppConst.htm">const</a></b> Sequence&amp; lhs, <b><a href="CppConst.htm">const</a></b> Sequence&amp; rhs) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;lhs.GetDescription() <a href="CppOperatorEqual.htm">==</a> rhs.GetDescription()<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorLogicalAnd.htm">&amp;&amp;</a> lhs.GetSequence() <a href="CppOperatorEqual.htm">==</a> rhs.GetSequence()<br/>
+&nbsp;&nbsp;;<br/>
+}<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppFisherWrightSimulationExample1/simulation.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppFisherWrightSimulationExample1/simulation.h" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> SIMULATION_H<br/>
+<a href="CppDefine.htm">#define</a> SIMULATION_H<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppRandomH.htm">random</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppVectorH.htm">vector</a>&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "individual.h"<br/>
+<a href="CppInclude.htm">#include</a> "parameters.h"<br/>
+<a href="CppInclude.htm">#include</a> "sequence.h"<br/>
+<br/>
+<a href="CppComment.htm">///</a>Fisher-Wright simulation<br/>
+<a href="CppComment.htm">///</a>with individuals that only have DNA<br/>
+<b><a href="CppStruct.htm">struct</a></b> Simulation<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Use randomly created individuals<br/>
+&nbsp;&nbsp;Simulation(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Parameters&amp; parameters<br/>
+&nbsp;&nbsp;) : Simulation(parameters,CreateIndividuals(parameters)) {}<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Put in your own individuals<br/>
+&nbsp;&nbsp;Simulation(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Parameters&amp; parameters,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;Individual&gt;&amp; individuals<br/>
+&nbsp;&nbsp;);<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;Individual&gt; GetCurrentGeneration() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> { <b><a href="CppReturn.htm">return</a></b> m_current_generation; }<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;Sequence&gt; GetSequences() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Go to the next generation<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> NextGeneration() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppPrivate.htm">private</a></b>:<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/The alignments created at the end of Run<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a><a href="CppStdVector.htm">std::vector</a>&lt;<a href="CppStdString.htm">std::string</a>&gt; m_alignments;<br/>
+&nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;Individual&gt; m_current_generation;<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Parameters m_parameters;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/<a href="CppRandomNumber.htm">Random number</a> generator engine<br/>
+&nbsp;&nbsp;<a href="CppStdMt19937.htm">std::mt19937</a> m_rnd_engine;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Create initial population of individuals with random DNA sequences<br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;Individual&gt; CreateIndividuals(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Parameters&amp; parameters<br/>
+&nbsp;&nbsp;) <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Create initial population of individuals with random DNA sequences<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/Non-<b><a href="CppConst.htm">const</a></b>, because <a href="CppRandomNumber.htm">random numbers</a> are used<br/>
+&nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;Individual&gt; CreateNextGeneration(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;Individual&gt;&amp; current_generation<br/>
+&nbsp;&nbsp;) <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppStdString.htm">std::string</a> CreateMutatedDna(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; dna,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> mutation_rate_per_base_pair<br/>
+&nbsp;&nbsp;) <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppChar.htm">char</a></b> CreateRandomBasePair() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <a href="CppStdString.htm">std::string</a> CreateRandomDna(<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> dna_length) <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;Parameters&gt; CreateTestParameters() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> GetRandomFraction() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppVoid.htm">void</a></b> Test() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+};<br/>
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> SIMULATION_H<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppFisherWrightSimulationExample1/simulation.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppFisherWrightSimulationExample1/simulation.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "simulation.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppAlgorithmH.htm">algorithm</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppFstreamH.htm">fstream</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppIteratorH.htm">iterator</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppSstreamH.htm">sstream</a>&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppBoost.htm">boost</a>/numeric/conversion/cast.hpp&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "individual.h"<br/>
+<br/>
+Simulation::Simulation(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Parameters&amp; parameters,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;Individual&gt;&amp; individuals<br/>
+)<br/>
+&nbsp;&nbsp;: m_current_generation{individuals},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_parameters{parameters},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_rnd_engine{<b><a href="CppStatic_cast.htm">static_cast</a></b>&lt;<b><a href="CppUnsigned.htm">unsigned</a></b> <b><a href="CppInt.htm">int</a></b>&gt;(parameters.GetSeed())}<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+&nbsp;&nbsp;Test();<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
+<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(m_parameters.GetPopSize()<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorEqual.htm">==</a> <b><a href="CppStatic_cast.htm">static_cast</a></b>&lt;<b><a href="CppInt.htm">int</a></b>&gt;(m_current_generation.size())<br/>
+&nbsp;&nbsp;);<br/>
+}<br/>
+<br/>
+<a href="CppStdVector.htm">std::vector</a>&lt;Individual&gt; Simulation::CreateIndividuals(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Parameters&amp; parameters<br/>
+) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Create parameters.GetPopSize() individuals<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a> with DNA length of parameters.GetDnaLength()<br/>
+&nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;Individual&gt; v;<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> dna_length{parameters.GetDnaLength()};<br/>
+&nbsp;&nbsp;<a href="CppStdGenerate_n.htm">std::generate_n</a>(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdBack_inserter.htm">std::back_inserter</a>(v),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;parameters.GetPopSize(),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;[dna_length]() { <b><a href="CppReturn.htm">return</a></b> CreateRandomDna(dna_length); }<br/>
+&nbsp;&nbsp;);<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(v.empty()<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorLogicalOr.htm">||</a> parameters.GetDnaLength() <a href="CppOperatorEqual.htm">==</a> <b><a href="CppStatic_cast.htm">static_cast</a></b>&lt;<b><a href="CppInt.htm">int</a></b>&gt;(v[0].GetDna().size())<br/>
+&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(parameters.GetPopSize()<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorEqual.htm">==</a> <b><a href="CppStatic_cast.htm">static_cast</a></b>&lt;<b><a href="CppInt.htm">int</a></b>&gt;(v.size())<br/>
+&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> v;<br/>
+}<br/>
+<br/>
+<br/>
+<a href="CppStdVector.htm">std::vector</a>&lt;Individual&gt; Simulation::CreateNextGeneration(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;Individual&gt;&amp; current_generation<br/>
+&nbsp;&nbsp;) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;Individual&gt; next_generation;<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> n{m_parameters.GetPopSize()};<br/>
+&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppInt.htm">int</a></b> i=0; i<a href="CppOperatorNotEqual.htm">!=</a>n; <a href="CppOperatorIncrement.htm">++</a>i)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> index <a href="CppOperatorAssign.htm">=</a> <a href="CppStdRand.htm">std::rand</a>() <a href="CppOperatorModulus.htm">%</a> n;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(index <a href="CppOperatorGreaterEqual.htm">&gt;=</a> 0);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(index &lt; <b><a href="CppStatic_cast.htm">static_cast</a></b>&lt;<b><a href="CppInt.htm">int</a></b>&gt;(current_generation.size()));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Individual&amp; parent{current_generation[index]};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Individual kid(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CreateMutatedDna(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parent.GetDna(),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_parameters.GetMutationRate()<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;next_generation.push_back(kid);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> next_generation;<br/>
+}<br/>
+<br/>
+<a href="CppStdString.htm">std::string</a> Simulation::CreateMutatedDna(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; dna,<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> mutation_rate_per_base_pair<br/>
+) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Go through all nucleotides,<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>overwrite with a random base pair by chance<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>(note: the might result in an A being overwritten by an A)<br/>
+&nbsp;&nbsp;<a href="CppStdString.htm">std::string</a> next_dna{dna};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> sz{<b><a href="CppStatic_cast.htm">static_cast</a></b>&lt;<b><a href="CppInt.htm">int</a></b>&gt;(dna.size())};<br/>
+&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppInt.htm">int</a></b> i=0; i<a href="CppOperatorNotEqual.htm">!=</a>sz; <a href="CppOperatorIncrement.htm">++</a>i)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> p{GetRandomFraction()};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (p &lt; mutation_rate_per_base_pair)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(i <a href="CppOperatorGreaterEqual.htm">&gt;=</a> 0);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(i &lt; <b><a href="CppStatic_cast.htm">static_cast</a></b>&lt;<b><a href="CppInt.htm">int</a></b>&gt;(next_dna.size()));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;next_dna[i] <a href="CppOperatorAssign.htm">=</a> CreateRandomBasePair();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> next_dna;<br/>
+}<br/>
+<br/>
+<b><a href="CppChar.htm">char</a></b> Simulation::CreateRandomBasePair() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppSwitch.htm">switch</a></b> (<a href="CppStdRand.htm">std::rand</a>() <a href="CppOperatorModulus.htm">%</a> 4)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppCase.htm">case</a></b> 0: <b><a href="CppReturn.htm">return</a></b> 'A';<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppCase.htm">case</a></b> 1: <b><a href="CppReturn.htm">return</a></b> 'C';<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppCase.htm">case</a></b> 2: <b><a href="CppReturn.htm">return</a></b> 'G';<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppCase.htm">case</a></b> 3: <b><a href="CppReturn.htm">return</a></b> 'T';<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!"Should not get here");<br/>
+}<br/>
+<br/>
+<a href="CppStdString.htm">std::string</a> Simulation::CreateRandomDna(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> dna_length<br/>
+) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppStdString.htm">std::string</a> s(dna_length,0);<br/>
+&nbsp;&nbsp;<a href="CppStdGenerate.htm">std::generate</a>(<a href="CppStdBegin.htm">std::begin</a>(s),<a href="CppStdEnd.htm">std::end</a>(s),CreateRandomBasePair);<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> s;<br/>
+}<br/>
+<br/>
+<a href="CppStdVector.htm">std::vector</a>&lt;Parameters&gt; Simulation::CreateTestParameters() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;Parameters&gt; v;<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>0: shortest interesting simulation<br/>
+&nbsp;&nbsp;v.push_back(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Parameters(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1,&nbsp;&nbsp; <a href="CppComment.htm">//</a>dna_length<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0, <a href="CppComment.htm">//</a>mutation_rate<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1,&nbsp;&nbsp; <a href="CppComment.htm">//</a>n_generations<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1,&nbsp;&nbsp; <a href="CppComment.htm">//</a>pop_size<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;42&nbsp;&nbsp; <a href="CppComment.htm">//</a>seed<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;)<br/>
+&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Bash at simulation by adding zero-length parameters<br/>
+&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppInt.htm">int</a></b> i=0; i<a href="CppOperatorNotEqual.htm">!=</a>8; <a href="CppOperatorIncrement.htm">++</a>i)<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;v.push_back(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameters(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i &amp; 1, <a href="CppComment.htm">//</a>dna_length<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0,&nbsp;&nbsp; <a href="CppComment.htm">//</a>mutation_rate<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i &amp; 2, <a href="CppComment.htm">//</a>n_generations<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i &amp; 4, <a href="CppComment.htm">//</a>pop_size<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;42&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppComment.htm">//</a>seed<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;);<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> v;<br/>
+}<br/>
+<br/>
+<a href="CppStdVector.htm">std::vector</a>&lt;Sequence&gt; Simulation::GetSequences() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;Sequence&gt; alignments;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppStdTransform.htm">std::transform</a>(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdBegin.htm">std::begin</a>(m_current_generation),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdEnd.htm">std::end</a>(m_current_generation),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdBack_inserter.htm">std::back_inserter</a>(alignments),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;[](<b><a href="CppConst.htm">const</a></b> Individual&amp; i)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> description <a href="CppOperatorAssign.htm">=</a> <a href="CppStdTo_string.htm">std::to_string</a>(i.GetIndex());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppStdStoi.htm">std::stoi</a>(description) <a href="CppOperatorEqual.htm">==</a> i.GetIndex());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> Sequence(description,i.GetDna());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;);<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> alignments;<br/>
+}<br/>
+<br/>
+<b><a href="CppDouble.htm">double</a></b> Simulation::GetRandomFraction() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <a href="CppStdUniform_real_distribution.htm">std::uniform_real_distribution</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt; d(0.0,1.0);<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>The random value x gets drawn here<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> f{d(m_rnd_engine)};<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(f <a href="CppOperatorGreaterEqual.htm">&gt;=</a> 0.0);<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(f <a href="CppOperatorLessEqual.htm">&lt;=</a> 1.0);<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> f;<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> Simulation::NextGeneration() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;m_current_generation <a href="CppOperatorAssign.htm">=</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;CreateNextGeneration(m_current_generation)<br/>
+&nbsp;&nbsp;;<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(m_parameters.GetPopSize()<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorEqual.htm">==</a> <b><a href="CppStatic_cast.htm">static_cast</a></b>&lt;<b><a href="CppInt.htm">int</a></b>&gt;(m_current_generation.size())<br/>
+&nbsp;&nbsp;);<br/>
+}<br/>
+<br/>
+<a href="CppIfndef.htm">#ifndef</a> <a href="CppNDEBUG.htm">NDEBUG</a><br/>
+<b><a href="CppVoid.htm">void</a></b> Simulation::Test() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppBool.htm">bool</a></b> is_tested <a href="CppOperatorAssign.htm">=</a> <b><a href="CppFalse.htm">false</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (is_tested) <b><a href="CppReturn.htm">return</a></b>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;is_tested <a href="CppOperatorAssign.htm">=</a> <b><a href="CppTrue.htm">true</a></b>;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Create random DNA<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> dna_length{3};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> dna{CreateRandomDna(dna_length)};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(dna_length <a href="CppOperatorEqual.htm">==</a> <b><a href="CppStatic_cast.htm">static_cast</a></b>&lt;<b><a href="CppInt.htm">int</a></b>&gt;(dna.size()));<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> parameters: CreateTestParameters())<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Run simulation<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Simulation simulation(parameters);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> n_generations{parameters.GetNumberOfGenerations()};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppInt.htm">int</a></b> i=0; i<a href="CppOperatorNotEqual.htm">!=</a>n_generations; <a href="CppOperatorIncrement.htm">++</a>i)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;simulation.NextGeneration();<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Sample the alignments<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;Sequence&gt; alignments{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;simulation.GetSequences()<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(parameters.GetPopSize() <a href="CppOperatorEqual.htm">==</a> <b><a href="CppStatic_cast.htm">static_cast</a></b>&lt;<b><a href="CppInt.htm">int</a></b>&gt;(alignments.size()));<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>If mutation rate is zero, a population of one individuals remains the same<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> dna_length{10000};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> n_generations{100};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Parameters p(dna_length,0.0,n_generations,1,42);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> Individual i(CreateRandomDna(dna_length));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdVector.htm">std::vector</a>&lt;Individual&gt; is;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;is.push_back(i);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Simulation s(p,is);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppInt.htm">int</a></b> i=0; i<a href="CppOperatorNotEqual.htm">!=</a>n_generations; <a href="CppOperatorIncrement.htm">++</a>i) { s.NextGeneration(); }<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(s.GetCurrentGeneration() <a href="CppOperatorEqual.htm">==</a> is);<br/>
+&nbsp;&nbsp;}<br/>
+}<br/>
+<a href="CppEndif.htm">#endif</a><br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p>&nbsp;</p>
+<p><a href="http://validator.w3.org/check?uri=referer"><img src="valid-xhtml10.png" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a></p>
+<p>This page has been created by the <a href="Tools.htm">tool</a> <a href="ToolCodeToHtml.htm">CodeToHtml</a></p>
+</body>
+</html>

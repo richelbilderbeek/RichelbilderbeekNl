@@ -1,0 +1,344 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <title>QtBrownianMotion</title>
+  <meta name="description" content="C++ QtBrownianMotion"/>
+  <meta name="keywords" content="C++ QtBrownianMotion "/>
+  <link rel="stylesheet" href="Richelbilderbeek.css" type="text/css"/>
+</head>
+<!-- End of head, start of body -->
+<body>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<!-- Page header -->
+<h1>(<a href="Cpp.htm">C++</a>) <a href="CppQtBrownianMotion.htm">QtBrownianMotion</a></h1>
+<p>&nbsp;</p>
+<!-- No CodeToHtmlInfo about this class with page name CppQtBrownianMotion-->
+<h2>Technical facts</h2>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppQtBrownianMotion/CppQtBrownianMotion.pri</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppQtBrownianMotion/CppQtBrownianMotion.pri" border = "1"><tr><td><code>
+<a href="CppQmakeIncludepath.htm">INCLUDEPATH</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppQtBrownianMotion<br/>
+<br/>
+<a href="CppQmakeHeaders.htm">HEADERS</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppQtBrownianMotion/qtbrownianmotionparameters<a href="CppWidget.htm">widget</a>.h \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppQtBrownianMotion/qtbrownianmotionmaxlikelihood<a href="CppWidget.htm">widget</a>.h \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppQtBrownianMotion/qtbrownianmotionlikelihood<a href="CppWidget.htm">widget</a>.h<br/>
+<br/>
+<a href="CppQmakeSources.htm">SOURCES</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppQtBrownianMotion/qtbrownianmotionparameters<a href="CppWidget.htm">widget</a>.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppQtBrownianMotion/qtbrownianmotionmaxlikelihood<a href="CppWidget.htm">widget</a>.cpp \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppQtBrownianMotion/qtbrownianmotionlikelihood<a href="CppWidget.htm">widget</a>.cpp<br/>
+<br/>
+<a href="CppFORMS.htm">FORMS</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppQtBrownianMotion/qtbrownianmotionparameters<a href="CppWidget.htm">widget</a>.ui \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppQtBrownianMotion/qtbrownianmotionmaxlikelihood<a href="CppWidget.htm">widget</a>.ui \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppQtBrownianMotion/qtbrownianmotionlikelihood<a href="CppWidget.htm">widget</a>.ui<br/>
+<br/>
+<a href="CppQmakeOther_files.htm">OTHER_FILES</a> += \<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;../../<a href="CppClass.htm">Classes</a>/CppQtBrownianMotion/Licence.txt<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppQtBrownianMotion/qtbrownianmotionlikelihoodwidget.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppQtBrownianMotion/qtbrownianmotionlikelihoodwidget.h" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> QTBROWNIANMOTIONLIKELIHOODWIDGET_H<br/>
+<a href="CppDefine.htm">#define</a> QTBROWNIANMOTIONLIKELIHOODWIDGET_H<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQWidget.htm">QWidget</a>&gt;<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> Ui {<br/>
+<b><a href="CppClass.htm">class</a></b> <a href="CppQt.htm">Qt</a>BrownianMotionLikelihoodWidget;<br/>
+}<br/>
+<br/>
+<b><a href="CppClass.htm">class</a></b> <a href="CppQt.htm">Qt</a>BrownianMotionLikelihoodWidget : <b><a href="CppPublic.htm">public</a></b> <a href="CppQWidget.htm">QWidget</a><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppQ_OBJECT.htm">Q_OBJECT</a><br/>
+<br/>
+<b><a href="CppPublic.htm">public</a></b>:<br/>
+&nbsp;&nbsp;<b><a href="CppExplicit.htm">explicit</a></b> <a href="CppQt.htm">Qt</a>BrownianMotionLikelihoodWidget(<a href="CppQWidget.htm">QWidget</a> *parent <a href="CppOperatorAssign.htm">=</a> 0);<br/>
+&nbsp;&nbsp;~<a href="CppQt.htm">Qt</a>BrownianMotionLikelihoodWidget();<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> CalcLikelihood(<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;&amp; v) <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+<b><a href="CppQtSignals.htm">signals</a></b>:<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> signal_parameters_changed();<br/>
+<br/>
+<b><a href="CppPrivate.htm">private</a></b>:<br/>
+&nbsp;&nbsp;<a href="CppUi.htm">Ui</a>::<a href="CppQt.htm">Qt</a>BrownianMotionLikelihoodWidget *ui;<br/>
+<br/>
+<b><a href="CppPrivate.htm">private</a></b> <b><a href="CppSlots.htm">slots</a></b>:<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> OnAnyChange() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+};<br/>
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> QTBROWNIANMOTIONLIKELIHOODWIDGET_H<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppQtBrownianMotion/qtbrownianmotionlikelihoodwidget.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppQtBrownianMotion/qtbrownianmotionlikelihoodwidget.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "qtbrownianmotionlikelihood<a href="CppWidget.htm">widget</a>.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "brownianmotionhelper.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "ui_qtbrownianmotionlikelihood<a href="CppWidget.htm">widget</a>.h"<br/>
+<br/>
+<a href="CppQt.htm">Qt</a>BrownianMotionLikelihoodWidget::<a href="CppQt.htm">Qt</a>BrownianMotionLikelihoodWidget(<a href="CppQWidget.htm">QWidget</a> *parent) :<br/>
+&nbsp;&nbsp;<a href="CppQWidget.htm">QWidget</a>(parent),<br/>
+&nbsp;&nbsp;ui(<b><a href="CppNew.htm">new</a></b> <a href="CppUi.htm">Ui</a>::<a href="CppQt.htm">Qt</a>BrownianMotionLikelihoodWidget)<br/>
+{<br/>
+&nbsp;&nbsp;ui-&gt;setupUi(<b><a href="CppThis.htm">this</a></b>);<br/>
+&nbsp;&nbsp;<a href="CppQObject.htm">QObject</a>::connect(ui-&gt;box_cand_volatility,<a href="CppSignalMacro.htm">SIGNAL</a>(valueChanged(<b><a href="CppDouble.htm">double</a></b>)),<b><a href="CppThis.htm">this</a></b>,<a href="CppSLOT.htm">SLOT</a>(OnAnyChange()));<br/>
+}<br/>
+<br/>
+<a href="CppQt.htm">Qt</a>BrownianMotionLikelihoodWidget::~<a href="CppQt.htm">Qt</a>BrownianMotionLikelihoodWidget()<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppDelete.htm">delete</a></b> ui;<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppQt.htm">Qt</a>BrownianMotionLikelihoodWidget::CalcLikelihood(<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;&amp; v<br/>
+) <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> cand_volatility<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorAssign.htm">=</a> ui-&gt;box_cand_volatility-&gt;value() <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second;<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (v.size() <a href="CppOperatorLessEqual.htm">&lt;=</a> 2) <b><a href="CppReturn.htm">return</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> log_likelihood{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::bm::Helper().CalcLogLikelihood(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cand_volatility * cand_volatility<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;)<br/>
+&nbsp;&nbsp;};<br/>
+&nbsp;&nbsp;ui-&gt;edit_log_likelihood-&gt;setText(<a href="CppStdTo_string.htm">std::to_string</a>(log_likelihood).c_str());<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppQt.htm">Qt</a>BrownianMotionLikelihoodWidget::OnAnyChange() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppEmit.htm">emit</a></b> signal_parameters_changed();<br/>
+}<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppQtBrownianMotion/qtbrownianmotionmaxlikelihoodwidget.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppQtBrownianMotion/qtbrownianmotionmaxlikelihoodwidget.h" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> QTBROWNIANMOTIONMAXLIKELIHOODWIDGET_H<br/>
+<a href="CppDefine.htm">#define</a> QTBROWNIANMOTIONMAXLIKELIHOODWIDGET_H<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQWidget.htm">QWidget</a>&gt;<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> Ui {<br/>
+<b><a href="CppClass.htm">class</a></b> <a href="CppQt.htm">Qt</a>BrownianMotionMaxLikelihoodWidget;<br/>
+}<br/>
+<br/>
+<b><a href="CppClass.htm">class</a></b> <a href="CppQt.htm">Qt</a>BrownianMotionMaxLikelihoodWidget : <b><a href="CppPublic.htm">public</a></b> <a href="CppQWidget.htm">QWidget</a><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppQ_OBJECT.htm">Q_OBJECT</a><br/>
+<br/>
+<b><a href="CppPublic.htm">public</a></b>:<br/>
+&nbsp;&nbsp;<b><a href="CppExplicit.htm">explicit</a></b> <a href="CppQt.htm">Qt</a>BrownianMotionMaxLikelihoodWidget(<a href="CppQWidget.htm">QWidget</a> *parent <a href="CppOperatorAssign.htm">=</a> 0);<br/>
+&nbsp;&nbsp;~<a href="CppQt.htm">Qt</a>BrownianMotionMaxLikelihoodWidget();<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> GetMaxLogLikelihood() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b> { <b><a href="CppReturn.htm">return</a></b> m_max_log_likelihood; }<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> SetData(<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;&amp; v);<br/>
+<br/>
+<b><a href="CppPrivate.htm">private</a></b>:<br/>
+&nbsp;&nbsp;<a href="CppUi.htm">Ui</a>::<a href="CppQt.htm">Qt</a>BrownianMotionMaxLikelihoodWidget *ui;<br/>
+&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> m_max_log_likelihood;<br/>
+};<br/>
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> QTBROWNIANMOTIONMAXLIKELIHOODWIDGET_H<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppQtBrownianMotion/qtbrownianmotionmaxlikelihoodwidget.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppQtBrownianMotion/qtbrownianmotionmaxlikelihoodwidget.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "qtbrownianmotionmaxlikelihood<a href="CppWidget.htm">widget</a>.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "brownianmotionhelper.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "ui_qtbrownianmotionmaxlikelihood<a href="CppWidget.htm">widget</a>.h"<br/>
+<br/>
+<a href="CppQt.htm">Qt</a>BrownianMotionMaxLikelihoodWidget::<a href="CppQt.htm">Qt</a>BrownianMotionMaxLikelihoodWidget(<a href="CppQWidget.htm">QWidget</a> *parent) :<br/>
+&nbsp;&nbsp;<a href="CppQWidget.htm">QWidget</a>(parent),<br/>
+&nbsp;&nbsp;ui(<b><a href="CppNew.htm">new</a></b> <a href="CppUi.htm">Ui</a>::<a href="CppQt.htm">Qt</a>BrownianMotionMaxLikelihoodWidget)<br/>
+{<br/>
+&nbsp;&nbsp;ui-&gt;setupUi(<b><a href="CppThis.htm">this</a></b>);<br/>
+}<br/>
+<br/>
+<a href="CppQt.htm">Qt</a>BrownianMotionMaxLikelihoodWidget::~<a href="CppQt.htm">Qt</a>BrownianMotionMaxLikelihoodWidget()<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppDelete.htm">delete</a></b> ui;<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppQt.htm">Qt</a>BrownianMotionMaxLikelihoodWidget::SetData(<b><a href="CppConst.htm">const</a></b> <a href="CppStdVector.htm">std::vector</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;&amp; v)<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppAuto.htm">auto</a></b> volatility_hat <a href="CppOperatorAssign.htm">=</a> 0.0 <a href="CppOperatorDivide.htm">/</a> <a href="CppBoostUnits.htm">boost::units</a>::si::second;<br/>
+&nbsp;&nbsp;<a href="CppRibi.htm">ribi</a>::bm::Helper().CalcMaxLikelihood(v,volatility_hat);<br/>
+&nbsp;&nbsp;ui-&gt;edit_sigma_hat-&gt;setText(<a href="CppStdTo_string.htm">std::to_string</a>(volatility_hat.value()).c_str());<br/>
+&nbsp;&nbsp;m_max_log_likelihood<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorAssign.htm">=</a> <a href="CppRibi.htm">ribi</a>::bm::Helper().CalcLogLikelihood(v,volatility_hat * volatility_hat)<br/>
+&nbsp;&nbsp;;<br/>
+&nbsp;&nbsp;ui-&gt;edit_max_log_likelihood-&gt;setText(<a href="CppStdTo_string.htm">std::to_string</a>(m_max_log_likelihood).c_str());<br/>
+}<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppQtBrownianMotion/qtbrownianmotionparameterswidget.h</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppQtBrownianMotion/qtbrownianmotionparameterswidget.h" border = "1"><tr><td><code>
+<a href="CppIfndef.htm">#ifndef</a> QTBROWNIANMOTIONPARAMETERSWIDGET_H<br/>
+<a href="CppDefine.htm">#define</a> QTBROWNIANMOTIONPARAMETERSWIDGET_H<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQWidget.htm">QWidget</a>&gt;<br/>
+<br/>
+<b><a href="CppNamespace.htm">namespace</a></b> Ui {<br/>
+<b><a href="CppClass.htm">class</a></b> <a href="CppQt.htm">Qt</a>BrownianMotionParameters<a href="CppWidget.htm">Widget</a>;<br/>
+}<br/>
+<br/>
+<b><a href="CppClass.htm">class</a></b> <a href="CppQt.htm">Qt</a>BrownianMotionParameters<a href="CppWidget.htm">Widget</a> : <b><a href="CppPublic.htm">public</a></b> <a href="CppQWidget.htm">QWidget</a><br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppQ_OBJECT.htm">Q_OBJECT</a><br/>
+<br/>
+<b><a href="CppPublic.htm">public</a></b>:<br/>
+&nbsp;&nbsp;<b><a href="CppExplicit.htm">explicit</a></b> <a href="CppQt.htm">Qt</a>BrownianMotionParameters<a href="CppWidget.htm">Widget</a>(<a href="CppQWidget.htm">QWidget</a> *parent <a href="CppOperatorAssign.htm">=</a> 0);<br/>
+&nbsp;&nbsp;~<a href="CppQt.htm">Qt</a>BrownianMotionParameters<a href="CppWidget.htm">Widget</a>();<br/>
+<br/>
+<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> GetInitValue() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+&nbsp;&nbsp;<b><a href="CppInt.htm">int</a></b> GetEnd<a href="CppTime.htm">Time</a>() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>/noise: sigma<br/>
+&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> GetVolatility() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppInt.htm">int</a></b> GetSeed() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+<br/>
+<b><a href="CppQtSignals.htm">signals</a></b>:<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> signal_parameters_changed();<br/>
+<br/>
+<b><a href="CppPrivate.htm">private</a></b>:<br/>
+&nbsp;&nbsp;<a href="CppUi.htm">Ui</a>::<a href="CppQt.htm">Qt</a>BrownianMotionParameters<a href="CppWidget.htm">Widget</a> *ui;<br/>
+<br/>
+<b><a href="CppPrivate.htm">private</a></b> <b><a href="CppSlots.htm">slots</a></b>:<br/>
+&nbsp;&nbsp;<b><a href="CppVoid.htm">void</a></b> OnAnyChange() <b><a href="CppNoexcept.htm">noexcept</a></b>;<br/>
+};<br/>
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> QTBROWNIANMOTIONPARAMETERSWIDGET_H<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppQtBrownianMotion/qtbrownianmotionparameterswidget.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppQtBrownianMotion/qtbrownianmotionparameterswidget.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> "qtbrownianmotionparameters<a href="CppWidget.htm">widget</a>.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "brownianmotion.h"<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "ui_qtbrownianmotionparameters<a href="CppWidget.htm">widget</a>.h"<br/>
+<br/>
+<a href="CppQt.htm">Qt</a>BrownianMotionParameters<a href="CppWidget.htm">Widget</a>::<a href="CppQt.htm">Qt</a>BrownianMotionParameters<a href="CppWidget.htm">Widget</a>(<a href="CppQWidget.htm">QWidget</a> *parent) :<br/>
+&nbsp;&nbsp;<a href="CppQWidget.htm">QWidget</a>(parent),<br/>
+&nbsp;&nbsp;ui(<b><a href="CppNew.htm">new</a></b> <a href="CppUi.htm">Ui</a>::<a href="CppQt.htm">Qt</a>BrownianMotionParameters<a href="CppWidget.htm">Widget</a>)<br/>
+{<br/>
+&nbsp;&nbsp;ui-&gt;setupUi(<b><a href="CppThis.htm">this</a></b>);<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppQObject.htm">QObject</a>::connect(ui-&gt;box_init_x,<a href="CppSignalMacro.htm">SIGNAL</a>(valueChanged(<b><a href="CppDouble.htm">double</a></b>)),<b><a href="CppThis.htm">this</a></b>,<a href="CppSLOT.htm">SLOT</a>(OnAnyChange()));<br/>
+&nbsp;&nbsp;<a href="CppQObject.htm">QObject</a>::connect(ui-&gt;box_t_end,<a href="CppSignalMacro.htm">SIGNAL</a>(valueChanged(<b><a href="CppInt.htm">int</a></b>)),<b><a href="CppThis.htm">this</a></b>,<a href="CppSLOT.htm">SLOT</a>(OnAnyChange()));<br/>
+&nbsp;&nbsp;<a href="CppQObject.htm">QObject</a>::connect(ui-&gt;box_volatility,<a href="CppSignalMacro.htm">SIGNAL</a>(valueChanged(<b><a href="CppDouble.htm">double</a></b>)),<b><a href="CppThis.htm">this</a></b>,<a href="CppSLOT.htm">SLOT</a>(OnAnyChange()));<br/>
+&nbsp;&nbsp;<a href="CppQObject.htm">QObject</a>::connect(ui-&gt;box_seed,<a href="CppSignalMacro.htm">SIGNAL</a>(valueChanged(<b><a href="CppInt.htm">int</a></b>)),<b><a href="CppThis.htm">this</a></b>,<a href="CppSLOT.htm">SLOT</a>(OnAnyChange()));<br/>
+}<br/>
+<br/>
+<a href="CppQt.htm">Qt</a>BrownianMotionParameters<a href="CppWidget.htm">Widget</a>::~<a href="CppQt.htm">Qt</a>BrownianMotionParameters<a href="CppWidget.htm">Widget</a>()<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppDelete.htm">delete</a></b> ui;<br/>
+}<br/>
+<br/>
+<b><a href="CppDouble.htm">double</a></b> <a href="CppQt.htm">Qt</a>BrownianMotionParameters<a href="CppWidget.htm">Widget</a>::GetInitValue() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> ui-&gt;box_init_x-&gt;value();<br/>
+}<br/>
+<br/>
+<b><a href="CppInt.htm">int</a></b> <a href="CppQt.htm">Qt</a>BrownianMotionParameters<a href="CppWidget.htm">Widget</a>::GetEnd<a href="CppTime.htm">Time</a>() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> ui-&gt;box_t_end-&gt;value();<br/>
+}<br/>
+<br/>
+<b><a href="CppDouble.htm">double</a></b> <a href="CppQt.htm">Qt</a>BrownianMotionParameters<a href="CppWidget.htm">Widget</a>::GetVolatility() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> ui-&gt;box_volatility-&gt;value();<br/>
+}<br/>
+<br/>
+<b><a href="CppInt.htm">int</a></b> <a href="CppQt.htm">Qt</a>BrownianMotionParameters<a href="CppWidget.htm">Widget</a>::GetSeed() <b><a href="CppConst.htm">const</a></b> <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> ui-&gt;box_seed-&gt;value();<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> <a href="CppQt.htm">Qt</a>BrownianMotionParameters<a href="CppWidget.htm">Widget</a>::OnAnyChange() <b><a href="CppNoexcept.htm">noexcept</a></b><br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppEmit.htm">emit</a></b> signal_parameters_changed();<br/>
+}<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p>&nbsp;</p>
+<p><a href="http://validator.w3.org/check?uri=referer"><img src="valid-xhtml10.png" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a></p>
+<p>This page has been created by the <a href="Tools.htm">tool</a> <a href="ToolCodeToHtml.htm">CodeToHtml</a></p>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <title>QGraphicsRectItemExample6</title>
+  <meta name="description" content="C++ QGraphicsRectItemExample6"/>
+  <meta name="keywords" content="C++ QGraphicsRectItemExample6 "/>
+  <link rel="stylesheet" href="Richelbilderbeek.css" type="text/css"/>
+</head>
+<!-- End of head, start of body -->
+<body>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<!-- Page header -->
+<h1>(<a href="Cpp.htm">C++</a>) <a href="CppQGraphicsRectItemExample6.htm">QGraphicsRectItemExample6</a></h1>
+<p>&nbsp;</p>
+<!-- No CodeToHtmlInfo about this class with page name CppQGraphicsRectItemExample6-->
+<h2>Technical facts</h2>
+<p>&nbsp;</p>
+<p><a href="CppOs.htm">Operating system(s) or programming environment(s)</a></p>
+<ul>
+  <li><img src="PicLubuntu.png" alt="Lubuntu"/> <a href="CppLubuntu.htm">Lubuntu</a> 15.04 (vivid)</li>
+</ul>
+<p><a href="CppIde.htm">IDE(s)</a>:</p>
+<ul>
+  <li><img src="PicQtCreator.png" alt="Qt Creator"/> <a href="CppQtCreator.htm">Qt Creator</a> 3.1.1</li>
+</ul>
+<p><a href="CppQtProjectType.htm">Project type</a>:</p>
+<ul>
+  <li><img src="PicConsole.png" alt="console"/> <a href="CppConsoleApplication.htm">Console application</a></li>
+</ul>
+<p><a href="CppStandard.htm">C++ standard</a>:</p>
+<ul>
+  <li><img src="PicCpp98.png" alt="C++98"/> <a href="Cpp98.htm">C++98</a></li>
+</ul>
+<p><a href="CppCompiler.htm">Compiler(s)</a>:</p>
+<ul>
+  <li><a href="CppGpp.htm">G++</a> 4.9.2</li>
+</ul>
+<p><a href="CppLibrary.htm">Libraries</a> used:</p>
+<ul>
+  <li><img src="PicStl.png" alt="STL"/> <a href="CppStl.htm">STL</a>: GNU ISO C++ Library, version 4.9.2</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2><a href="CppQtProjectFile.htm">Qt project file</a>: ./CppQGraphicsRectItemExample6/CppQGraphicsRectItemExample6.pro</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppQGraphicsRectItemExample6/CppQGraphicsRectItemExample6.pro" border = "1"><tr><td><code>
+include(../../<a href="CppDesktopApplication.htm">DesktopApplication</a>.pri)<br/>
+<br/>
+<a href="CppQmakeSources.htm">SOURCES</a> += qt<a href="CppMain.htm">main</a>.cpp<br/>
+<br/>
+<a href="CppQmakeHeaders.htm">HEADERS</a> +=<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppQGraphicsRectItemExample6/qtmain.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppQGraphicsRectItemExample6/qtmain.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQApplication.htm">QApplication</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQGraphicsRectItem.htm">QGraphicsRectItem</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQGraphicsScene.htm">QGraphicsScene</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppQGraphicsView.htm">QGraphicsView</a>&gt;<br/>
+<br/>
+<b><a href="CppInt.htm">int</a></b> <a href="CppMain.htm">main</a>(<b><a href="CppInt.htm">int</a></b> <a href="CppArgc.htm">argc</a>, <b><a href="CppChar.htm">char</a></b> *<a href="CppArgc.htm">argv</a>[])<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppQApplication.htm">QApplication</a> a(<a href="CppArgc.htm">argc</a>, <a href="CppArgc.htm">argv</a>);<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppQGraphicsScene.htm">QGraphicsScene</a> scene;<br/>
+&nbsp;&nbsp;<a href="CppQGraphicsView.htm">QGraphicsView</a> view(&amp;scene);<br/>
+&nbsp;&nbsp;view.setGeometry(100,100,400,100);<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppQGraphicsRectItem.htm">QGraphicsRectItem</a> item;<br/>
+&nbsp;&nbsp;item.setFlags(<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQGraphicsItem.htm">QGraphicsItem</a>::ItemIsSelectable<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;| <a href="CppQGraphicsItem.htm">QGraphicsItem</a>::ItemIsFocusable<br/>
+&nbsp;&nbsp;);<br/>
+<br/>
+&nbsp;&nbsp;item.setRect(-20,-10,40,20);<br/>
+<br/>
+&nbsp;&nbsp;scene.addItem(&amp;item);<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(item.flags() <a href="CppOperatorLogicalAnd.htm">&amp;&amp;</a> <a href="CppQGraphicsItem.htm">QGraphicsItem</a>::ItemIsSelectable);<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(item.flags() <a href="CppOperatorLogicalAnd.htm">&amp;&amp;</a> <a href="CppQGraphicsItem.htm">QGraphicsItem</a>::ItemIsFocusable);<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(item.scene());<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(item.isVisible());<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(!item.hasFocus()); <a href="CppComment.htm">//</a>No focus yet<br/>
+<br/>
+&nbsp;&nbsp;item.setFocus();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Set focus<br/>
+<br/>
+&nbsp;&nbsp;view.show();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Show it<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Force paint of item<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQImage.htm">QImage</a> image(scene.sceneRect().size().toSize(), <a href="CppQImage.htm">QImage</a>::Format_ARGB32);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;image.fill(<a href="CppQt.htm">Qt</a>::transparent);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppQPainter.htm">QPainter</a> painter(&amp;image);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;scene.render(&amp;painter);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;image.save("tmp.png");<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(item.hasFocus());&nbsp;&nbsp;<a href="CppComment.htm">//</a>Why does <b><a href="CppThis.htm">this</a></b> fail?<br/>
+<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> a.exec();<br/>
+}<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p>&nbsp;</p>
+<p><a href="http://validator.w3.org/check?uri=referer"><img src="valid-xhtml10.png" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a></p>
+<p>This page has been created by the <a href="Tools.htm">tool</a> <a href="ToolCodeToHtml.htm">CodeToHtml</a></p>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <title>PedigreeExample1</title>
+  <meta name="description" content="C++ PedigreeExample1"/>
+  <meta name="keywords" content="C++ PedigreeExample1 "/>
+  <link rel="stylesheet" href="Richelbilderbeek.css" type="text/css"/>
+</head>
+<!-- End of head, start of body -->
+<body>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<!-- Page header -->
+<h1>(<a href="Cpp.htm">C++</a>) <a href="CppPedigreeExample1.htm">PedigreeExample1</a></h1>
+<p>&nbsp;</p>
+<!-- No CodeToHtmlInfo about this class with page name CppPedigreeExample1-->
+<h2>Technical facts</h2>
+<p>&nbsp;</p>
+<p><a href="CppOs.htm">Operating system(s) or programming environment(s)</a></p>
+<ul>
+  <li><img src="PicLubuntu.png" alt="Lubuntu"/> <a href="CppLubuntu.htm">Lubuntu</a> 15.04 (vivid)</li>
+</ul>
+<p><a href="CppIde.htm">IDE(s)</a>:</p>
+<ul>
+  <li><img src="PicQtCreator.png" alt="Qt Creator"/> <a href="CppQtCreator.htm">Qt Creator</a> 3.1.1</li>
+</ul>
+<p><a href="CppQtProjectType.htm">Project type</a>:</p>
+<ul>
+  <li><img src="PicConsole.png" alt="console"/> <a href="CppConsoleApplication.htm">Console application</a></li>
+</ul>
+<p><a href="CppStandard.htm">C++ standard</a>:</p>
+<ul>
+  <li><img src="PicCpp98.png" alt="C++98"/> <a href="Cpp98.htm">C++98</a></li>
+</ul>
+<p><a href="CppCompiler.htm">Compiler(s)</a>:</p>
+<ul>
+  <li><a href="CppGpp.htm">G++</a> 4.9.2</li>
+</ul>
+<p><a href="CppLibrary.htm">Libraries</a> used:</p>
+<ul>
+  <li><img src="PicStl.png" alt="STL"/> <a href="CppStl.htm">STL</a>: GNU ISO C++ Library, version 4.9.2</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2><a href="CppQtProjectFile.htm">Qt project file</a>: ./CppPedigreeExample1/CppPedigreeExample1.pro</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppPedigreeExample1/CppPedigreeExample1.pro" border = "1"><tr><td><code>
+include(../../<a href="CppConsoleApplication.htm">ConsoleApplication</a>.pri)<br/>
+include(../../<a href="CppClass.htm">Classes</a>/<a href="CppPedigree.htm">CppPedigree</a>/<a href="CppPedigree.htm">CppPedigree</a>.pri)<br/>
+<br/>
+<a href="CppQmakeSources.htm">SOURCES</a> += <a href="CppMain.htm">main</a>.cpp<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>./CppPedigreeExample1/main.cpp</h2>
+<p>&nbsp;</p>
+<!-- start of code -->
+<table summary="./CppPedigreeExample1/main.cpp" border = "1"><tr><td><code>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppFstreamH.htm">fstream</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppIostreamH.htm">iostream</a>&gt;<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppStringH.htm">string</a>&gt;<br/>
+<br/>
+<a href="CppInclude.htm">#include</a> "pedigree.h"<br/>
+<br/>
+<a href="CppComment.htm">///</a>Determines <b><a href="CppIf.htm">if</a></b> a filename is a regular file<br/>
+<a href="CppComment.htm">///</a>From http://www.richelbilderbeek.nl/Cpp<a href="CppIsRegularFile.htm">IsRegularFile</a>.htm<br/>
+<b><a href="CppBool.htm">bool</a></b> <a href="CppIsRegularFile.htm">IsRegularFile</a>Stl(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; filename)<br/>
+{<br/>
+&nbsp;&nbsp;<a href="CppStdFstream.htm">std::fstream</a> f;<br/>
+&nbsp;&nbsp;f.open(filename.c_str(),<a href="CppStd.htm">std</a>::ios::in);<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> f.is_open();<br/>
+}<br/>
+<br/>
+<b><a href="CppVoid.htm">void</a></b> Cout<a href="CppNewick.htm">Newick</a>(<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>)<br/>
+{<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> <a href="CppNewick.htm">newick</a>_utils_path{"/home/richel/GitHubs/<a href="ProjectRichelBilderbeek.htm">ProjectRichelBilderbeek</a>/<a href="CppLibrary.htm">Libraries</a>/<a href="CppNewick.htm">newick</a>_utils/src"};<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> nw_display_executable{<a href="CppNewick.htm">newick</a>_utils_path+"/nw_display"};<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!<a href="CppIsRegularFile.htm">IsRegularFile</a>Stl(nw_display_executable))<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppStdCerr.htm">std::cerr</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "Error: nw_display executable '" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> nw_display_executable <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "' not found\n"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "Please change the path\n"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b>;<br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> cmd{"echo \""<a href="CppOperatorPlus.htm">+</a> <a href="CppNewick.htm">newick</a> <a href="CppOperatorPlus.htm">+</a> "\" | " <a href="CppOperatorPlus.htm">+</a> nw_display_executable <a href="CppOperatorPlus.htm">+</a> " <a href="CppOperatorMinus.htm">-</a>"};<br/>
+&nbsp;&nbsp;<a href="CppStdSystem.htm">std::system</a>(cmd.c_str());<br/>
+}<br/>
+<br/>
+<b><a href="CppInt.htm">int</a></b> <a href="CppMain.htm">main</a>()<br/>
+{<br/>
+<br/>
+<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Four branches of <b><a href="CppShort.htm">short</a></b> length with one trichomy<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">/*</a><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-C<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-A-D<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; | |<br/>
+&nbsp;&nbsp; <a href="CppOperatorDecrement.htm">--</a>X <a href="CppOperatorPlus.htm">+</a>-E<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; |<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-B-F<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">*/</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> root <a href="CppOperatorAssign.htm">=</a> Pedigree::Create("X");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> a <a href="CppOperatorAssign.htm">=</a> root-&gt;CreateOffspring("A");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> b <a href="CppOperatorAssign.htm">=</a> root-&gt;CreateOffspring("B");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> c <a href="CppOperatorAssign.htm">=</a> a-&gt;CreateOffspring("C");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> d <a href="CppOperatorAssign.htm">=</a> a-&gt;CreateOffspring("D");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> e <a href="CppOperatorAssign.htm">=</a> a-&gt;CreateOffspring("E");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> f <a href="CppOperatorAssign.htm">=</a> b-&gt;CreateOffspring("F");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> expected{"((C:1,D:1,E:1):1,F:2);"};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (root-&gt;To<a href="CppNewick.htm">Newick</a>() <a href="CppOperatorNotEqual.htm">!=</a> expected) { <a href="CppStdClog.htm">std::clog</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> root-&gt;To<a href="CppNewick.htm">Newick</a>() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'; }<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(root-&gt;To<a href="CppNewick.htm">Newick</a>() <a href="CppOperatorEqual.htm">==</a> expected);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Cout<a href="CppNewick.htm">Newick</a>(root-&gt;To<a href="CppNewick.htm">Newick</a>());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">/*</a> nw_display creates:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorDivide.htm">/</a>-------------------------------------<a href="CppOperatorPlus.htm">+</a> C<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorDivide.htm">/</a>-------------------------------------+-------------------------------------<a href="CppOperatorPlus.htm">+</a> D<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorAssign.htm">=</a><a href="CppOperatorPlus.htm">+</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \-------------------------------------<a href="CppOperatorPlus.htm">+</a> E<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; |<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; \---------------------------------------------------------------------------<a href="CppOperatorPlus.htm">+</a> F<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; |------------------|------------------|------------------|------------------|<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; substitutions/site<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">*/</a><br/>
+&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Four branches of <b><a href="CppShort.htm">short</a></b> length, two dichotomies<br/>
+&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">/*</a><br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-C<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-A<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; | |<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; | <a href="CppOperatorPlus.htm">+</a>-D<br/>
+&nbsp;&nbsp; <a href="CppOperatorDecrement.htm">--</a>X<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; | <a href="CppOperatorPlus.htm">+</a>-E<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; | |<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-B<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorPlus.htm">+</a>-F<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">*/</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> root <a href="CppOperatorAssign.htm">=</a> Pedigree::Create("X");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> a <a href="CppOperatorAssign.htm">=</a> root-&gt;CreateOffspring("A");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> b <a href="CppOperatorAssign.htm">=</a> root-&gt;CreateOffspring("B");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> c <a href="CppOperatorAssign.htm">=</a> a-&gt;CreateOffspring("C");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> d <a href="CppOperatorAssign.htm">=</a> a-&gt;CreateOffspring("D");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> e <a href="CppOperatorAssign.htm">=</a> b-&gt;CreateOffspring("E");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppAuto.htm">auto</a></b> f <a href="CppOperatorAssign.htm">=</a> b-&gt;CreateOffspring("F");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStdString.htm">std::string</a> expected{"((C:1,D:1):1,(E:1,F:1):1);"};<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (root-&gt;To<a href="CppNewick.htm">Newick</a>() <a href="CppOperatorNotEqual.htm">!=</a> expected) { <a href="CppStdClog.htm">std::clog</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> root-&gt;To<a href="CppNewick.htm">Newick</a>() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> '\n'; }<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(root-&gt;To<a href="CppNewick.htm">Newick</a>() <a href="CppOperatorEqual.htm">==</a> expected);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Cout<a href="CppNewick.htm">Newick</a>(root-&gt;To<a href="CppNewick.htm">Newick</a>());<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">/*</a> nw_display creates:<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorDivide.htm">/</a>-------------------------------------<a href="CppOperatorPlus.htm">+</a> C<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorDivide.htm">/</a>-------------------------------------+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \-------------------------------------<a href="CppOperatorPlus.htm">+</a> D<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorAssign.htm">=</a>+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppOperatorDivide.htm">/</a>-------------------------------------<a href="CppOperatorPlus.htm">+</a> E<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; \-------------------------------------+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \-------------------------------------<a href="CppOperatorPlus.htm">+</a> F<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; |------------------|------------------|------------------|------------------|<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; substitutions/site<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">*/</a><br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;<a href="CppStdCout.htm">std::cout</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "DONE" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="CppStdEndl.htm">std::endl</a>;<br/>
+}<br/>
+</code></td></tr></table>
+<!-- end of the code -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
+<p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
+<p>&nbsp;</p>
+<p><a href="http://validator.w3.org/check?uri=referer"><img src="valid-xhtml10.png" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a></p>
+<p>This page has been created by the <a href="Tools.htm">tool</a> <a href="ToolCodeToHtml.htm">CodeToHtml</a></p>
+</body>
+</html>
