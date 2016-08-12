@@ -1,7 +1,7 @@
-addons:
-  apt:
-    packages:
-    - tiny
+sudo: required
+
+install:
+  - sudo apt-get install tidy
 
 script: 
   - ./check.sh
