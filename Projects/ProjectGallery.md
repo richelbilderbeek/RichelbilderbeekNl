@@ -8,7 +8,7 @@ Bochum
  
 ![Bochum](ProjectBochumGaborFiltersResults.png)
  
-Brainweaver
+BrainWeaver
 -----------
  
 Bristol
