@@ -1,12 +1,9 @@
-language: generic
-dist: bionic
-sudo: required
-
-install:
-  - sudo apt-get install tidy
+#install:
+#  - sudo apt-get install tidy
 
 script: 
-  - ./check.sh
+  - echo "Nothing for now"
+  #- ./check.sh
 
 after_failure:
   # Download thesis
