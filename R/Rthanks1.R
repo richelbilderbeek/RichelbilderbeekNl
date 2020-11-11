@@ -7,7 +7,7 @@ f <- function()
 
 g <- function() 
 {
-	if (x == 0) { print("Thanks R") }
+	if (x == 0) { message("Thanks R") }
 }
 
 f()
