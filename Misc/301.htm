@@ -175,50 +175,94 @@ unix:<a href="CppQmakeLibs.htm">LIBS</a> += <a href="CppFilesystem.htm">-lboost_
 <p>&nbsp;</p>
 <!-- start of code -->
 <table summary="MyTrace.h" border = "1"><tr><td><code>
-<a href="CppIfndef.htm">#ifndef</a> BILDERBIKKEL_<a href="CppTRACE.htm">TRACE</a>_H<br/>
-<a href="CppDefine.htm">#define</a> BILDERBIKKEL_<a href="CppTRACE.htm">TRACE</a>_H<br/>
-<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
-<a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;<br/>
-<br/>
-<a href="CppComment.htm">//</a>From http://www.richelbilderbeek.nl/<a href="CppAssert.htm">CppAssert</a>.htm<br/>
-<a href="CppIfdef.htm">#ifdef</a> N<a href="CppTRACE.htm">TRACE</a>_BILDERBIKKEL<br/>
-&nbsp;&nbsp;<a href="CppDefine.htm">#define</a> <a href="CppTrace.htm">Trace</a>(x) ((<b><a href="CppVoid.htm">void</a></b>)0)<br/>
-<a href="CppPreElse.htm">#else</a><br/>
-&nbsp;&nbsp;<a href="CppInclude.htm">#include</a> &lt;<a href="CppFstreamH.htm">fstream</a>&gt;<br/>
-&nbsp;&nbsp;<a href="CppInclude.htm">#include</a> &lt;<a href="CppIostreamH.htm">iostream</a>&gt;<br/>
-&nbsp;&nbsp;<a href="CppInclude.htm">#include</a> &lt;<a href="CppStdexceptH.htm">stdexcept</a>&gt;<br/>
-<br/>
-&nbsp;&nbsp;<a href="CppDefine.htm">#define</a> <a href="CppTrace.htm">Trace</a>(x)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<br/>
-&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOfstream.htm">std::ofstream</a> f("<a href="CppTrace.htm">trace</a>_out.txt"); \<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;f&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "<a href="CppTRACE.htm">TRACE</a> \'"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a>&nbsp;&nbsp;<a href="CppString.htm">std::string</a> (#x)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a>&nbsp;&nbsp;"\' line "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a>&nbsp;&nbsp;(__LINE__)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a>&nbsp;&nbsp;" in file '"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a>&nbsp;&nbsp;__<a href="CppCfile.htm">FILE</a>__&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a>&nbsp;&nbsp;"': "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a>&nbsp;&nbsp;<a href="CppString.htm">std::string</a> (x)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a>&nbsp;&nbsp;"'"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="CppEndl.htm">std::endl</a>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;f.close();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;\<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppCout.htm">std::cout</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "<a href="CppTRACE.htm">TRACE</a> \'"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a>&nbsp;&nbsp;<a href="CppString.htm">std::string</a> (#x)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a>&nbsp;&nbsp;"\' line "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a>&nbsp;&nbsp;(__LINE__)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a>&nbsp;&nbsp;" in file '"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a>&nbsp;&nbsp;__<a href="CppCfile.htm">FILE</a>__&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a>&nbsp;&nbsp;"': "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a>&nbsp;&nbsp;<a href="CppString.htm">std::string</a> (x)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a>&nbsp;&nbsp;"'"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="CppEndl.htm">std::endl</a>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<br/>
-<br/>
-<a href="CppEndif.htm">#endif</a><br/>
-<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
-<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> BILDERBIKKEL_<a href="CppTRACE.htm">TRACE</a>_H<br/>
+<a href="CppIfndef.htm">#ifndef</a> BILDERBIKKEL_<a href="CppTRACE.htm">TRACE</a>_H
+<br/>
+<a href="CppDefine.htm">#define</a> BILDERBIKKEL_<a href="CppTRACE.htm">TRACE</a>_H
+<br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppCassertH.htm">cassert</a>&gt;
+<br/>
+
+<br/>
+<a href="CppComment.htm">//</a>From http://www.richelbilderbeek.nl/<a href="CppAssert.htm">CppAssert</a>.htm
+<br/>
+<a href="CppIfdef.htm">#ifdef</a> N<a href="CppTRACE.htm">TRACE</a>_BILDERBIKKEL
+<br/>
+&nbsp;&nbsp;<a href="CppDefine.htm">#define</a> <a href="CppTrace.htm">Trace</a>(x) ((<b><a href="CppVoid.htm">void</a></b>)0)
+<br/>
+<a href="CppPreElse.htm">#else</a>
+<br/>
+&nbsp;&nbsp;<a href="CppInclude.htm">#include</a> &lt;<a href="CppFstreamH.htm">fstream</a>&gt;
+<br/>
+&nbsp;&nbsp;<a href="CppInclude.htm">#include</a> &lt;<a href="CppIostreamH.htm">iostream</a>&gt;
+<br/>
+&nbsp;&nbsp;<a href="CppInclude.htm">#include</a> &lt;<a href="CppStdexceptH.htm">stdexcept</a>&gt;
+<br/>
+
+<br/>
+&nbsp;&nbsp;<a href="CppDefine.htm">#define</a> <a href="CppTrace.htm">Trace</a>(x)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
+<br/>
+&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOfstream.htm">std::ofstream</a> f("<a href="CppTrace.htm">trace</a>_out.txt"); \
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;f&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "<a href="CppTRACE.htm">TRACE</a> \'"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a>&nbsp;&nbsp;<a href="CppString.htm">std::string</a> (#x)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a>&nbsp;&nbsp;"\' line "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a>&nbsp;&nbsp;(__LINE__)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a>&nbsp;&nbsp;" in file '"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a>&nbsp;&nbsp;__<a href="CppCfile.htm">FILE</a>__&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a>&nbsp;&nbsp;"': "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a>&nbsp;&nbsp;<a href="CppString.htm">std::string</a> (x)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a>&nbsp;&nbsp;"'"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="CppEndl.htm">std::endl</a>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;f.close();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;\
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppCout.htm">std::cout</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "<a href="CppTRACE.htm">TRACE</a> \'"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a>&nbsp;&nbsp;<a href="CppString.htm">std::string</a> (#x)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a>&nbsp;&nbsp;"\' line "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a>&nbsp;&nbsp;(__LINE__)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a>&nbsp;&nbsp;" in file '"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a>&nbsp;&nbsp;__<a href="CppCfile.htm">FILE</a>__&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a>&nbsp;&nbsp;"': "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a>&nbsp;&nbsp;<a href="CppString.htm">std::string</a> (x)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a>&nbsp;&nbsp;"'"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <a href="CppEndl.htm">std::endl</a>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
+<br/>
+
+<br/>
+<a href="CppEndif.htm">#endif</a>
+<br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------
+<br/>
+<a href="CppEndif.htm">#endif</a> <a href="CppComment.htm">//</a> BILDERBIKKEL_<a href="CppTRACE.htm">TRACE</a>_H
+<br/>
 </code></td></tr></table>
 <!-- end of the code -->
 <p>&nbsp;</p>
@@ -230,40 +274,74 @@ unix:<a href="CppQmakeLibs.htm">LIBS</a> += <a href="CppFilesystem.htm">-lboost_
 <p>&nbsp;</p>
 <!-- start of code -->
 <table summary="ProjectRampalGui.cpp" border = "1"><tr><td><code>
-<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
-<br/>
-<a href="CppInclude.htm">#include</a> &lt;vcl.h&gt;<br/>
-<a href="CppPragma.htm">#pragma</a> hdrstop<br/>
-<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
-USEFORM("UnitFormAnalyse<a href="CppImplementationFile.htm">.cpp</a>", FormAnalyse);<br/>
-<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
-WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, <b><a href="CppInt.htm">int</a></b>)<br/>
-{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppTry.htm">try</a></b><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppApplication.htm">Application</a>-&gt;<a href="CppInitialize.htm">Initialize</a>();<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppApplication.htm">Application</a>-&gt;Title <a href="CppOperatorAssign.htm">=</a> "The Rampal Etienne Project multi-run GUI";<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppApplication.htm">Application</a>-&gt;CreateForm(__classid(TFormAnalyse), &amp;FormAnalyse);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppApplication.htm">Application</a>-&gt;Run();<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppCatch.htm">catch</a></b> (<a href="CppException.htm">Exception</a> &amp;<a href="CppException.htm">exception</a>)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppApplication.htm">Application</a>-&gt;Show<a href="CppException.htm">Exception</a>(&amp;<a href="CppException.htm">exception</a>);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppCatch.htm">catch</a></b> (...)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b><a href="CppTry.htm">try</a></b><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b><a href="CppThrow.htm">throw</a></b> <a href="CppException.htm">Exception</a>("");<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b><a href="CppCatch.htm">catch</a></b> (<a href="CppException.htm">Exception</a> &amp;<a href="CppException.htm">exception</a>)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppApplication.htm">Application</a>-&gt;Show<a href="CppException.htm">Exception</a>(&amp;<a href="CppException.htm">exception</a>);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> 0;<br/>
-}<br/>
-<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------
+<br/>
+
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;vcl.h&gt;
+<br/>
+<a href="CppPragma.htm">#pragma</a> hdrstop
+<br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------
+<br/>
+USEFORM("UnitFormAnalyse<a href="CppImplementationFile.htm">.cpp</a>", FormAnalyse);
+<br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------
+<br/>
+WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, <b><a href="CppInt.htm">int</a></b>)
+<br/>
+{
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppTry.htm">try</a></b>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppApplication.htm">Application</a>-&gt;<a href="CppInitialize.htm">Initialize</a>();
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppApplication.htm">Application</a>-&gt;Title <a href="CppOperatorAssign.htm">=</a> "The Rampal Etienne Project multi-run GUI";
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppApplication.htm">Application</a>-&gt;CreateForm(__classid(TFormAnalyse), &amp;FormAnalyse);
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppApplication.htm">Application</a>-&gt;Run();
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppCatch.htm">catch</a></b> (<a href="CppException.htm">Exception</a> &amp;<a href="CppException.htm">exception</a>)
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppApplication.htm">Application</a>-&gt;Show<a href="CppException.htm">Exception</a>(&amp;<a href="CppException.htm">exception</a>);
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppCatch.htm">catch</a></b> (...)
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b><a href="CppTry.htm">try</a></b>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b><a href="CppThrow.htm">throw</a></b> <a href="CppException.htm">Exception</a>("");
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b><a href="CppCatch.htm">catch</a></b> (<a href="CppException.htm">Exception</a> &amp;<a href="CppException.htm">exception</a>)
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="CppApplication.htm">Application</a>-&gt;Show<a href="CppException.htm">Exception</a>(&amp;<a href="CppException.htm">exception</a>);
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> 0;
+<br/>
+}
+<br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------
+<br/>
 </code></td></tr></table>
 <!-- end of the code -->
 <p>&nbsp;</p>
@@ -1569,124 +1647,242 @@ DialogRampalTest::~DialogRampalTest()<br/>
 <p>&nbsp;</p>
 <!-- start of code -->
 <table summary="test.h" border = "1"><tr><td><code>
-<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
-<a href="CppComment.htm">/*</a><br/>
-&nbsp;&nbsp;The Rampal Etienne Project, calculates the probability of a phylogeny<br/>
-&nbsp;&nbsp;(C) 2009 Richel Bilderbeek<br/>
-<br/>
-&nbsp;&nbsp;This program is free software: you can redistribute it and/or modify<br/>
-&nbsp;&nbsp;it under the terms of the GNU General Public License as published by<br/>
-&nbsp;&nbsp;the Free Software Foundation, either version 3 of the License, or<br/>
-&nbsp;&nbsp;(at your option) any later version.<br/>
-<br/>
-&nbsp;&nbsp;This program is distributed in the hope that it will be useful,<br/>
-&nbsp;&nbsp;but WITHOUT ANY WARRANTY; without even the implied warranty of<br/>
-&nbsp;&nbsp;MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.&nbsp;&nbsp;See the<br/>
-&nbsp;&nbsp;GNU General Public License for more details.<br/>
-&nbsp;&nbsp;You should have received a copy of the GNU General Public License<br/>
-&nbsp;&nbsp;along with this program.&nbsp;&nbsp;If not, see &lt;http://www.gnu.org/licenses/&gt;.<br/>
-<a href="CppComment.htm">*/</a><br/>
-<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
-<a href="CppComment.htm">//</a> From http://www.richelbilderbeek.nl<br/>
-<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
-<a href="CppIfndef.htm">#ifndef</a> UnitTestH<br/>
-<a href="CppDefine.htm">#define</a> UnitTestH<br/>
-<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
-<a href="CppInclude.htm">#include</a> &lt;<a href="CppStringH.htm">string</a>&gt;<br/>
-<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
-<a href="CppInclude.htm">#include</a> &lt;<a href="CppBoost.htm">boost</a>/<a href="CppShared_ptr.htm">shared_ptr</a>.hpp&gt;<br/>
-<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
-<a href="CppInclude.htm">#include</a> "<a href="CppBigInt.htm">BigIntegerLibrary</a>.hh"<br/>
-<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
-<b><a href="CppStruct.htm">struct</a></b> Test<br/>
-{<br/>
-&nbsp;&nbsp;Test(<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a>&amp; <a href="CppAny.htm">any</a>_<a href="CppNewick.htm">newick</a>, <b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> <a href="CppAny.htm">any</a>_theta)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;: m_<a href="CppNewick.htm">newick</a>_str(<a href="CppAny.htm">any</a>_<a href="CppNewick.htm">newick</a>),<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_theta(<a href="CppAny.htm">any</a>_theta),<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_<a href="CppTime.htm">time</a>(0.0),<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_probability(0.0)<br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Do nothing<br/>
-&nbsp;&nbsp;}<br/>
-&nbsp;&nbsp;<b><a href="CppVirtual.htm">virtual</a></b> ~Test() {};<br/>
-&nbsp;&nbsp;<b><a href="CppVirtual.htm">virtual</a></b> <b><a href="CppBool.htm">bool</a></b> Execute() <a href="CppOperatorAssign.htm">=</a> 0;<br/>
-&nbsp;&nbsp;<b><a href="CppVirtual.htm">virtual</a></b> <b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> GetTestName() <b><a href="CppConst.htm">const</a></b> <a href="CppOperatorAssign.htm">=</a> 0;<br/>
-&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> GetProbability() <b><a href="CppConst.htm">const</a></b> { <b><a href="CppReturn.htm">return</a></b> m_probability; }<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> GetEwensProbability() <b><a href="CppConst.htm">const</a></b>; <a href="CppComment.htm">//</a>Ewensprobability <a href="CppOperatorAssign.htm">=</a> probability * num_of_combinations<br/>
-&nbsp;&nbsp;<b><a href="CppInt.htm">int</a></b> <a href="CppGetTime.htm">GetTime</a>() <b><a href="CppConst.htm">const</a></b> { <b><a href="CppReturn.htm">return</a></b> m_<a href="CppTime.htm">time</a>; }<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppBigInt.htm">BigInteger</a> GetComplexity() <b><a href="CppConst.htm">const</a></b>;<br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a>&amp; Get<a href="CppNewick.htm">Newick</a>() <b><a href="CppConst.htm">const</a></b> { <b><a href="CppReturn.htm">return</a></b> m_<a href="CppNewick.htm">newick</a>_str; }<br/>
-&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> GetTheta() <b><a href="CppConst.htm">const</a></b> { <b><a href="CppReturn.htm">return</a></b> m_theta; }<br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppBool.htm">bool</a></b> Execute(<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a>&amp; exe_filename,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a>&amp; full_command,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a>&amp; output_filename);<br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppPrivate.htm">private</a></b>:<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> m_<a href="CppNewick.htm">newick</a>_str;<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> m_theta;<br/>
-&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> m_<a href="CppTime.htm">time</a>;<br/>
-&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> m_probability;<br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppPublic.htm">public</a></b>:<br/>
-&nbsp;&nbsp;<a href="CppComment.htm">//</a>helper <a href="CppFunction.htm">function</a>s<br/>
-&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <a href="CppVector.htm">std::vector</a>&lt;<a href="CppBoostShared_ptr.htm">boost::shared_ptr</a>&lt;Test&gt; &gt; CreateTests(<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> theta,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> flags);<br/>
-&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppBool.htm">bool</a></b> <a href="CppFileExists.htm">FileExists</a>(<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a>&amp; filename);<br/>
-&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppConst.htm">const</a></b> <a href="CppVector.htm">std::vector</a>&lt;<a href="CppString.htm">std::string</a>&gt; <a href="CppFileToVector.htm">FileToVector</a>(<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a>&amp; fileName);<br/>
-&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppDouble.htm">double</a></b> <a href="CppReadDoubleFromFile.htm">ReadDoubleFromFile</a>(<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a>&amp; fileName);<br/>
-};<br/>
-<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
-<b><a href="CppStruct.htm">struct</a></b> TestRavindran : <b><a href="CppPublic.htm">public</a></b> Test<br/>
-{<br/>
-&nbsp;&nbsp;TestRavindran(<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a>&amp; <a href="CppAny.htm">any</a>_<a href="CppNewick.htm">newick</a>, <b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> <a href="CppAny.htm">any</a>_theta)<br/>
-&nbsp;&nbsp;: Test(<a href="CppAny.htm">any</a>_<a href="CppNewick.htm">newick</a>,<a href="CppAny.htm">any</a>_theta) {}<br/>
-&nbsp;&nbsp;~TestRavindran() {}<br/>
-&nbsp;&nbsp;<b><a href="CppBool.htm">bool</a></b> Execute();<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> GetTestName() <b><a href="CppConst.htm">const</a></b> { <b><a href="CppReturn.htm">return</a></b> "Ravindran&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"; }<br/>
-};<br/>
-<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
-<b><a href="CppStruct.htm">struct</a></b> TestEnd<a href="CppVersion.htm">version</a>2: <b><a href="CppPublic.htm">public</a></b> Test<br/>
-{<br/>
-&nbsp;&nbsp;TestEnd<a href="CppVersion.htm">version</a>2(<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a>&amp; <a href="CppAny.htm">any</a>_<a href="CppNewick.htm">newick</a>, <b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> <a href="CppAny.htm">any</a>_theta)<br/>
-&nbsp;&nbsp;: Test(<a href="CppAny.htm">any</a>_<a href="CppNewick.htm">newick</a>,<a href="CppAny.htm">any</a>_theta) {}<br/>
-&nbsp;&nbsp;~TestEnd<a href="CppVersion.htm">version</a>2() {}<br/>
-&nbsp;&nbsp;<b><a href="CppBool.htm">bool</a></b> Execute();<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> GetTestName() <b><a href="CppConst.htm">const</a></b> { <b><a href="CppReturn.htm">return</a></b> "TestProjectRampal_End<a href="CppVersion.htm">version</a>2"; }<br/>
-};<br/>
-<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
-<b><a href="CppStruct.htm">struct</a></b> <a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a><a href="CppDebug.htm">Debug</a>: <b><a href="CppPublic.htm">public</a></b> Test<br/>
-{<br/>
-&nbsp;&nbsp;<a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a><a href="CppDebug.htm">Debug</a>(<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a>&amp; <a href="CppAny.htm">any</a>_<a href="CppNewick.htm">newick</a>, <b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> <a href="CppAny.htm">any</a>_theta)<br/>
-&nbsp;&nbsp;: Test(<a href="CppAny.htm">any</a>_<a href="CppNewick.htm">newick</a>,<a href="CppAny.htm">any</a>_theta) {}<br/>
-&nbsp;&nbsp;~<a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a><a href="CppDebug.htm">Debug</a>() {}<br/>
-&nbsp;&nbsp;<b><a href="CppBool.htm">bool</a></b> Execute();<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> GetTestName() <b><a href="CppConst.htm">const</a></b> { <b><a href="CppReturn.htm">return</a></b> "<a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a><a href="CppDebug.htm">Debug</a>"; }<br/>
-};<br/>
-<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
-<b><a href="CppStruct.htm">struct</a></b> <a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a>Release: <b><a href="CppPublic.htm">public</a></b> Test<br/>
-{<br/>
-&nbsp;&nbsp;<a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a>Release(<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a>&amp; <a href="CppAny.htm">any</a>_<a href="CppNewick.htm">newick</a>, <b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> <a href="CppAny.htm">any</a>_theta)<br/>
-&nbsp;&nbsp;: Test(<a href="CppAny.htm">any</a>_<a href="CppNewick.htm">newick</a>,<a href="CppAny.htm">any</a>_theta) {}<br/>
-&nbsp;&nbsp;~<a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a>Release() {}<br/>
-&nbsp;&nbsp;<b><a href="CppBool.htm">bool</a></b> Execute();<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> GetTestName() <b><a href="CppConst.htm">const</a></b> { <b><a href="CppReturn.htm">return</a></b> "<a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a>Release"; }<br/>
-};<br/>
-<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
-<b><a href="CppStruct.htm">struct</a></b> Test<a href="CppManyDigitNewick.htm">ManyDigitNewick</a><a href="CppDebug.htm">Debug</a>: <b><a href="CppPublic.htm">public</a></b> Test<br/>
-{<br/>
-&nbsp;&nbsp;Test<a href="CppManyDigitNewick.htm">ManyDigitNewick</a><a href="CppDebug.htm">Debug</a>(<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a>&amp; <a href="CppAny.htm">any</a>_<a href="CppNewick.htm">newick</a>, <b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> <a href="CppAny.htm">any</a>_theta)<br/>
-&nbsp;&nbsp;: Test(<a href="CppAny.htm">any</a>_<a href="CppNewick.htm">newick</a>,<a href="CppAny.htm">any</a>_theta) {}<br/>
-&nbsp;&nbsp;~Test<a href="CppManyDigitNewick.htm">ManyDigitNewick</a><a href="CppDebug.htm">Debug</a>() {}<br/>
-&nbsp;&nbsp;<b><a href="CppBool.htm">bool</a></b> Execute();<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> GetTestName() <b><a href="CppConst.htm">const</a></b> { <b><a href="CppReturn.htm">return</a></b> "Test<a href="CppManyDigitNewick.htm">ManyDigitNewick</a>Release"; }<br/>
-};<br/>
-<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
-<a href="CppEndif.htm">#endif</a><br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------
+<br/>
+<a href="CppComment.htm">/*</a>
+<br/>
+&nbsp;&nbsp;The Rampal Etienne Project, calculates the probability of a phylogeny
+<br/>
+&nbsp;&nbsp;(C) 2009 Richel Bilderbeek
+<br/>
+
+<br/>
+&nbsp;&nbsp;This program is free software: you can redistribute it and/or modify
+<br/>
+&nbsp;&nbsp;it under the terms of the GNU General Public License as published by
+<br/>
+&nbsp;&nbsp;the Free Software Foundation, either version 3 of the License, or
+<br/>
+&nbsp;&nbsp;(at your option) any later version.
+<br/>
+
+<br/>
+&nbsp;&nbsp;This program is distributed in the hope that it will be useful,
+<br/>
+&nbsp;&nbsp;but WITHOUT ANY WARRANTY; without even the implied warranty of
+<br/>
+&nbsp;&nbsp;MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.&nbsp;&nbsp;See the
+<br/>
+&nbsp;&nbsp;GNU General Public License for more details.
+<br/>
+&nbsp;&nbsp;You should have received a copy of the GNU General Public License
+<br/>
+&nbsp;&nbsp;along with this program.&nbsp;&nbsp;If not, see &lt;http://www.gnu.org/licenses/&gt;.
+<br/>
+<a href="CppComment.htm">*/</a>
+<br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------
+<br/>
+<a href="CppComment.htm">//</a> From http://www.richelbilderbeek.nl
+<br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------
+<br/>
+<a href="CppIfndef.htm">#ifndef</a> UnitTestH
+<br/>
+<a href="CppDefine.htm">#define</a> UnitTestH
+<br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppStringH.htm">string</a>&gt;
+<br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppBoost.htm">boost</a>/<a href="CppShared_ptr.htm">shared_ptr</a>.hpp&gt;
+<br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------
+<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppBigInt.htm">BigIntegerLibrary</a>.hh"
+<br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------
+<br/>
+<b><a href="CppStruct.htm">struct</a></b> Test
+<br/>
+{
+<br/>
+&nbsp;&nbsp;Test(<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a>&amp; <a href="CppAny.htm">any</a>_<a href="CppNewick.htm">newick</a>, <b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> <a href="CppAny.htm">any</a>_theta)
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;: m_<a href="CppNewick.htm">newick</a>_str(<a href="CppAny.htm">any</a>_<a href="CppNewick.htm">newick</a>),
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_theta(<a href="CppAny.htm">any</a>_theta),
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_<a href="CppTime.htm">time</a>(0.0),
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_probability(0.0)
+<br/>
+&nbsp;&nbsp;{
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Do nothing
+<br/>
+&nbsp;&nbsp;}
+<br/>
+&nbsp;&nbsp;<b><a href="CppVirtual.htm">virtual</a></b> ~Test() {};
+<br/>
+&nbsp;&nbsp;<b><a href="CppVirtual.htm">virtual</a></b> <b><a href="CppBool.htm">bool</a></b> Execute() <a href="CppOperatorAssign.htm">=</a> 0;
+<br/>
+&nbsp;&nbsp;<b><a href="CppVirtual.htm">virtual</a></b> <b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> GetTestName() <b><a href="CppConst.htm">const</a></b> <a href="CppOperatorAssign.htm">=</a> 0;
+<br/>
+&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> GetProbability() <b><a href="CppConst.htm">const</a></b> { <b><a href="CppReturn.htm">return</a></b> m_probability; }
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> GetEwensProbability() <b><a href="CppConst.htm">const</a></b>; <a href="CppComment.htm">//</a>Ewensprobability <a href="CppOperatorAssign.htm">=</a> probability * num_of_combinations
+<br/>
+&nbsp;&nbsp;<b><a href="CppInt.htm">int</a></b> <a href="CppGetTime.htm">GetTime</a>() <b><a href="CppConst.htm">const</a></b> { <b><a href="CppReturn.htm">return</a></b> m_<a href="CppTime.htm">time</a>; }
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppBigInt.htm">BigInteger</a> GetComplexity() <b><a href="CppConst.htm">const</a></b>;
+<br/>
+
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a>&amp; Get<a href="CppNewick.htm">Newick</a>() <b><a href="CppConst.htm">const</a></b> { <b><a href="CppReturn.htm">return</a></b> m_<a href="CppNewick.htm">newick</a>_str; }
+<br/>
+&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> GetTheta() <b><a href="CppConst.htm">const</a></b> { <b><a href="CppReturn.htm">return</a></b> m_theta; }
+<br/>
+
+<br/>
+&nbsp;&nbsp;<b><a href="CppBool.htm">bool</a></b> Execute(
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a>&amp; exe_filename,
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a>&amp; full_command,
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a>&amp; output_filename);
+<br/>
+
+<br/>
+&nbsp;&nbsp;<b><a href="CppPrivate.htm">private</a></b>:
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> m_<a href="CppNewick.htm">newick</a>_str;
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> m_theta;
+<br/>
+&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> m_<a href="CppTime.htm">time</a>;
+<br/>
+&nbsp;&nbsp;<b><a href="CppDouble.htm">double</a></b> m_probability;
+<br/>
+
+<br/>
+&nbsp;&nbsp;<b><a href="CppPublic.htm">public</a></b>:
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>helper <a href="CppFunction.htm">function</a>s
+<br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <a href="CppVector.htm">std::vector</a>&lt;<a href="CppBoostShared_ptr.htm">boost::shared_ptr</a>&lt;Test&gt; &gt; CreateTests(
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>,
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> theta,
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> flags);
+<br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppBool.htm">bool</a></b> <a href="CppFileExists.htm">FileExists</a>(<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a>&amp; filename);
+<br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppConst.htm">const</a></b> <a href="CppVector.htm">std::vector</a>&lt;<a href="CppString.htm">std::string</a>&gt; <a href="CppFileToVector.htm">FileToVector</a>(<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a>&amp; fileName);
+<br/>
+&nbsp;&nbsp;<b><a href="CppStatic.htm">static</a></b> <b><a href="CppDouble.htm">double</a></b> <a href="CppReadDoubleFromFile.htm">ReadDoubleFromFile</a>(<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a>&amp; fileName);
+<br/>
+};
+<br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------
+<br/>
+<b><a href="CppStruct.htm">struct</a></b> TestRavindran : <b><a href="CppPublic.htm">public</a></b> Test
+<br/>
+{
+<br/>
+&nbsp;&nbsp;TestRavindran(<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a>&amp; <a href="CppAny.htm">any</a>_<a href="CppNewick.htm">newick</a>, <b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> <a href="CppAny.htm">any</a>_theta)
+<br/>
+&nbsp;&nbsp;: Test(<a href="CppAny.htm">any</a>_<a href="CppNewick.htm">newick</a>,<a href="CppAny.htm">any</a>_theta) {}
+<br/>
+&nbsp;&nbsp;~TestRavindran() {}
+<br/>
+&nbsp;&nbsp;<b><a href="CppBool.htm">bool</a></b> Execute();
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> GetTestName() <b><a href="CppConst.htm">const</a></b> { <b><a href="CppReturn.htm">return</a></b> "Ravindran&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"; }
+<br/>
+};
+<br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------
+<br/>
+<b><a href="CppStruct.htm">struct</a></b> TestEnd<a href="CppVersion.htm">version</a>2: <b><a href="CppPublic.htm">public</a></b> Test
+<br/>
+{
+<br/>
+&nbsp;&nbsp;TestEnd<a href="CppVersion.htm">version</a>2(<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a>&amp; <a href="CppAny.htm">any</a>_<a href="CppNewick.htm">newick</a>, <b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> <a href="CppAny.htm">any</a>_theta)
+<br/>
+&nbsp;&nbsp;: Test(<a href="CppAny.htm">any</a>_<a href="CppNewick.htm">newick</a>,<a href="CppAny.htm">any</a>_theta) {}
+<br/>
+&nbsp;&nbsp;~TestEnd<a href="CppVersion.htm">version</a>2() {}
+<br/>
+&nbsp;&nbsp;<b><a href="CppBool.htm">bool</a></b> Execute();
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> GetTestName() <b><a href="CppConst.htm">const</a></b> { <b><a href="CppReturn.htm">return</a></b> "TestProjectRampal_End<a href="CppVersion.htm">version</a>2"; }
+<br/>
+};
+<br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------
+<br/>
+<b><a href="CppStruct.htm">struct</a></b> <a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a><a href="CppDebug.htm">Debug</a>: <b><a href="CppPublic.htm">public</a></b> Test
+<br/>
+{
+<br/>
+&nbsp;&nbsp;<a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a><a href="CppDebug.htm">Debug</a>(<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a>&amp; <a href="CppAny.htm">any</a>_<a href="CppNewick.htm">newick</a>, <b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> <a href="CppAny.htm">any</a>_theta)
+<br/>
+&nbsp;&nbsp;: Test(<a href="CppAny.htm">any</a>_<a href="CppNewick.htm">newick</a>,<a href="CppAny.htm">any</a>_theta) {}
+<br/>
+&nbsp;&nbsp;~<a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a><a href="CppDebug.htm">Debug</a>() {}
+<br/>
+&nbsp;&nbsp;<b><a href="CppBool.htm">bool</a></b> Execute();
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> GetTestName() <b><a href="CppConst.htm">const</a></b> { <b><a href="CppReturn.htm">return</a></b> "<a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a><a href="CppDebug.htm">Debug</a>"; }
+<br/>
+};
+<br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------
+<br/>
+<b><a href="CppStruct.htm">struct</a></b> <a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a>Release: <b><a href="CppPublic.htm">public</a></b> Test
+<br/>
+{
+<br/>
+&nbsp;&nbsp;<a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a>Release(<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a>&amp; <a href="CppAny.htm">any</a>_<a href="CppNewick.htm">newick</a>, <b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> <a href="CppAny.htm">any</a>_theta)
+<br/>
+&nbsp;&nbsp;: Test(<a href="CppAny.htm">any</a>_<a href="CppNewick.htm">newick</a>,<a href="CppAny.htm">any</a>_theta) {}
+<br/>
+&nbsp;&nbsp;~<a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a>Release() {}
+<br/>
+&nbsp;&nbsp;<b><a href="CppBool.htm">bool</a></b> Execute();
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> GetTestName() <b><a href="CppConst.htm">const</a></b> { <b><a href="CppReturn.htm">return</a></b> "<a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a>Release"; }
+<br/>
+};
+<br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------
+<br/>
+<b><a href="CppStruct.htm">struct</a></b> Test<a href="CppManyDigitNewick.htm">ManyDigitNewick</a><a href="CppDebug.htm">Debug</a>: <b><a href="CppPublic.htm">public</a></b> Test
+<br/>
+{
+<br/>
+&nbsp;&nbsp;Test<a href="CppManyDigitNewick.htm">ManyDigitNewick</a><a href="CppDebug.htm">Debug</a>(<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a>&amp; <a href="CppAny.htm">any</a>_<a href="CppNewick.htm">newick</a>, <b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> <a href="CppAny.htm">any</a>_theta)
+<br/>
+&nbsp;&nbsp;: Test(<a href="CppAny.htm">any</a>_<a href="CppNewick.htm">newick</a>,<a href="CppAny.htm">any</a>_theta) {}
+<br/>
+&nbsp;&nbsp;~Test<a href="CppManyDigitNewick.htm">ManyDigitNewick</a><a href="CppDebug.htm">Debug</a>() {}
+<br/>
+&nbsp;&nbsp;<b><a href="CppBool.htm">bool</a></b> Execute();
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> GetTestName() <b><a href="CppConst.htm">const</a></b> { <b><a href="CppReturn.htm">return</a></b> "Test<a href="CppManyDigitNewick.htm">ManyDigitNewick</a>Release"; }
+<br/>
+};
+<br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------
+<br/>
+<a href="CppEndif.htm">#endif</a>
+<br/>
 </code></td></tr></table>
 <!-- end of the code -->
 <p>&nbsp;</p>
@@ -1698,397 +1894,788 @@ DialogRampalTest::~DialogRampalTest()<br/>
 <p>&nbsp;</p>
 <!-- start of code -->
 <table summary="test.cpp" border = "1"><tr><td><code>
-<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
-<a href="CppComment.htm">/*</a><br/>
-&nbsp;&nbsp;The Rampal Etienne Project, calculates the probability of a phylogeny<br/>
-&nbsp;&nbsp;(C) 2009 Richel Bilderbeek<br/>
-<br/>
-&nbsp;&nbsp;This program is free software: you can redistribute it and/or modify<br/>
-&nbsp;&nbsp;it under the terms of the GNU General Public License as published by<br/>
-&nbsp;&nbsp;the Free Software Foundation, either version 3 of the License, or<br/>
-&nbsp;&nbsp;(at your option) any later version.<br/>
-<br/>
-&nbsp;&nbsp;This program is distributed in the hope that it will be useful,<br/>
-&nbsp;&nbsp;but WITHOUT ANY WARRANTY; without even the implied warranty of<br/>
-&nbsp;&nbsp;MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.&nbsp;&nbsp;See the<br/>
-&nbsp;&nbsp;GNU General Public License for more details.<br/>
-&nbsp;&nbsp;You should have received a copy of the GNU General Public License<br/>
-&nbsp;&nbsp;along with this program.&nbsp;&nbsp;If not, see &lt;http://www.gnu.org/licenses/&gt;.<br/>
-<a href="CppComment.htm">*/</a><br/>
-<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
-<a href="CppComment.htm">//</a> From http://www.richelbilderbeek.nl<br/>
-<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
-<a href="CppInclude.htm">#include</a> &lt;<a href="CppFstreamH.htm">fstream</a>&gt;<br/>
-<a href="CppInclude.htm">#include</a> &lt;<a href="CppVectorH.htm">vector</a>&gt;<br/>
-<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
-<a href="CppInclude.htm">#include</a> &lt;<a href="CppBoost.htm">boost</a>/numeric/con<a href="CppVersion.htm">version</a>/cast.hpp&gt;<br/>
-<a href="CppInclude.htm">#include</a> &lt;<a href="CppBoost.htm">boost</a>/<a href="CppTime.htm">time</a>r.hpp&gt;<br/>
-<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
-<a href="CppInclude.htm">#include</a> "<a href="CppBinaryNewickVector.htm">binarynewickvector</a>.h"<br/>
-<a href="CppInclude.htm">#include</a> "<a href="CppNewick.htm">newick</a>.h"<br/>
-<a href="CppInclude.htm">#include</a> "<a href="CppStopwatch.htm">stopwatch</a>.h"<br/>
-<a href="CppInclude.htm">#include</a> "test.h"<br/>
-<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
-<a href="CppComment.htm">///</a>Create all tests according to the flags given.<br/>
-<a href="CppComment.htm">///</a>Test parameters:\n<br/>
-<a href="CppComment.htm">///</a>i &amp;&nbsp;&nbsp;1: use Ravindran\n<br/>
-<a href="CppComment.htm">///</a>i &amp;&nbsp;&nbsp;2: use Sorted<a href="CppNewick.htm">Newick</a>\n<br/>
-<a href="CppComment.htm">///</a>i &amp;&nbsp;&nbsp;4: use SmartSorted<a href="CppNewick.htm">Newick</a>\n<br/>
-<a href="CppComment.htm">///</a>i &amp;&nbsp;&nbsp;8: use RampalMain_End<a href="CppVersion.htm">version</a>2\n<br/>
-<a href="CppComment.htm">///</a>i &amp; 16: use <a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a><a href="CppDebug.htm">Debug</a>\n<br/>
-<a href="CppComment.htm">///</a>i &amp; 32: use <a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a>Release\n<br/>
-<a href="CppComment.htm">///</a>63: use all\n<br/>
-<a href="CppVector.htm">std::vector</a>&lt;<a href="CppBoostShared_ptr.htm">boost::shared_ptr</a>&lt;Test&gt; &gt; Test::CreateTests(<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>,<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> theta,<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> flags)<br/>
-{<br/>
-&nbsp;&nbsp;<a href="CppVector.htm">std::vector</a>&lt;<a href="CppBoostShared_ptr.htm">boost::shared_ptr</a>&lt;Test&gt; &gt; v;<br/>
-&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (flags &amp; 1)<br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppBoostShared_ptr.htm">boost::shared_ptr</a>&lt;Test&gt; t(<b><a href="CppNew.htm">new</a></b> TestRavindran(<a href="CppNewick.htm">newick</a>,theta));<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;v.push_back(t);<br/>
-&nbsp;&nbsp;}<br/>
-&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (flags &amp; 2)<br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppBoostShared_ptr.htm">boost::shared_ptr</a>&lt;Test&gt; t(<b><a href="CppNew.htm">new</a></b> TestEnd<a href="CppVersion.htm">version</a>2(<a href="CppNewick.htm">newick</a>,theta));<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(t);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;v.push_back(t);<br/>
-&nbsp;&nbsp;}<br/>
-&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (flags &amp; 4)<br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppBoostShared_ptr.htm">boost::shared_ptr</a>&lt;Test&gt; t(<b><a href="CppNew.htm">new</a></b> <a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a><a href="CppDebug.htm">Debug</a>(<a href="CppNewick.htm">newick</a>,theta));<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(t);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;v.push_back(t);<br/>
-&nbsp;&nbsp;}<br/>
-&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (flags &amp; 8)<br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppBoostShared_ptr.htm">boost::shared_ptr</a>&lt;Test&gt; t(<b><a href="CppNew.htm">new</a></b> <a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a>Release(<a href="CppNewick.htm">newick</a>,theta));<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(t);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;v.push_back(t);<br/>
-&nbsp;&nbsp;}<br/>
-&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> v;<br/>
-}<br/>
-<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
-<a href="CppComment.htm">///</a><a href="CppFileExists.htm">FileExists</a> checks <b><a href="CppIf.htm">if</a></b> a certain file exists<br/>
-<a href="CppComment.htm">///</a>From http://www.richelbilderbeek.nl/Cpp<a href="CppFileExists.htm">FileExists</a>.htm<br/>
-<b><a href="CppBool.htm">bool</a></b> Test::<a href="CppFileExists.htm">FileExists</a>(<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a>&amp; filename)<br/>
-{<br/>
-&nbsp;&nbsp;<a href="CppFstream.htm">std::fstream</a> f;<br/>
-&nbsp;&nbsp;f.open(filename.c_str(),<a href="CppStd.htm">std</a>::ios::in);<br/>
-&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> f.is_open();<br/>
-}<br/>
-<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
-<a href="CppComment.htm">//</a>From http://www.richelbilderbeek.nl/Cpp<a href="CppFileToVector.htm">FileToVector</a>.htm<br/>
-<b><a href="CppConst.htm">const</a></b> <a href="CppVector.htm">std::vector</a>&lt;<a href="CppString.htm">std::string</a>&gt; Test::<a href="CppFileToVector.htm">FileToVector</a>(<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a>&amp; fileName)<br/>
-{<br/>
-&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppFileExists.htm">FileExists</a>(fileName)<a href="CppOperatorEqual.htm">==</a><b><a href="CppTrue.htm">true</a></b>);<br/>
-&nbsp;&nbsp;<a href="CppVector.htm">std::vector</a>&lt;<a href="CppString.htm">std::string</a>&gt; myVector;<br/>
-&nbsp;&nbsp;<a href="CppIfstream.htm">std::ifstream</a> in(fileName.c_str());<br/>
-&nbsp;&nbsp;<a href="CppString.htm">std::string</a> myString;<br/>
-&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppInt.htm">int</a></b> i=0; !in.eof(); <a href="CppOperatorIncrement.htm">++</a>i)<br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppGetline.htm">std::getline</a>(in,myString);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;myVector.push_back(myString);<br/>
-&nbsp;&nbsp;}<br/>
-&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> myVector;<br/>
-}<br/>
-<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
-<b><a href="CppConst.htm">const</a></b> <a href="CppBigInt.htm">BigInteger</a> Test::GetComplexity() <b><a href="CppConst.htm">const</a></b><br/>
-{<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppBinaryNewickVector.htm">BinaryNewickVector</a> n(Get<a href="CppNewick.htm">Newick</a>());<br/>
-&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <a href="CppNewick.htm">Newick</a>::<a href="CppCalcComplexity.htm">CalcComplexity</a>(n.Get());<br/>
-}<br/>
-<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
-<a href="CppComment.htm">//</a>Ewensprobability <a href="CppOperatorAssign.htm">=</a> probability * num_of_combinations<br/>
-<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> Test::GetEwensProbability() <b><a href="CppConst.htm">const</a></b><br/>
-{<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppBigInt.htm">BigInteger</a> n_combinations<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorAssign.htm">=</a> <a href="CppNewick.htm">Newick</a>::<a href="CppCalcNumOfCombinations.htm">CalcNumOfCombinations</a>(<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppBinaryNewickVector.htm">BinaryNewickVector</a>(Get<a href="CppNewick.htm">Newick</a>()).Get());<br/>
-&nbsp;&nbsp;<b><a href="CppTry.htm">try</a></b><br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> i <a href="CppOperatorAssign.htm">=</a> n_combinations.toInt();<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> d <a href="CppOperatorAssign.htm">=</a> <a href="CppNumeric_cast.htm">boost::numeric_cast</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;(i);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> ewens_probability <a href="CppOperatorAssign.htm">=</a> d * GetProbability();<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <a href="CppLexical_cast.htm">boost::lexical_cast</a>&lt;<a href="CppString.htm">std::string</a>&gt;(ewens_probability);<br/>
-&nbsp;&nbsp;}<br/>
-&nbsp;&nbsp;<b><a href="CppCatch.htm">catch</a></b> (...)<br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> s<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorAssign.htm">=</a> big<a href="CppInt.htm">Integer</a>ToString(n_combinations)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> <a href="CppString.htm">std::string</a>(" * ")<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> <a href="CppLexical_cast.htm">boost::lexical_cast</a>&lt;<a href="CppString.htm">std::string</a>&gt;(GetProbability());<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> s;<br/>
-&nbsp;&nbsp;}<br/>
-}<br/>
-<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
-<b><a href="CppBool.htm">bool</a></b> Test::Execute(<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a>&amp; exe_filename,<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a>&amp; full_command,<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a>&amp; output_filename)<br/>
-{<br/>
-&nbsp;&nbsp;<a href="CppClog.htm">std::clog</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "Starting '" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> GetTestName() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "' <b><a href="CppFor.htm">for</a></b> '"<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <b><a href="CppThis.htm">this</a></b>-&gt;Get<a href="CppNewick.htm">Newick</a>() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "'\n";<br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!<a href="CppFileExists.htm">FileExists</a>(exe_filename))<br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppCerr.htm">std::cerr</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "Executable file '" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> exe_filename <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "' not found\n";<br/>
-&nbsp;&nbsp;}<br/>
-&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppFileExists.htm">FileExists</a>(exe_filename));<br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStopwatch.htm">Stopwatch</a> s;<br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> sys_error <a href="CppOperatorAssign.htm">=</a> <a href="CppSystem.htm">std::system</a>(full_command.c_str());<br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (sys_error <a href="CppOperatorEqual.htm">==</a> 0)<br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;m_<a href="CppTime.htm">time</a> <a href="CppOperatorAssign.htm">=</a> s.elapsed();<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppFileExists.htm">FileExists</a>(result_filename));<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;m_probability <a href="CppOperatorAssign.htm">=</a> <a href="CppReadDoubleFromFile.htm">ReadDoubleFromFile</a>(output_filename);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <b><a href="CppTrue.htm">true</a></b>;<br/>
-&nbsp;&nbsp;}<br/>
-&nbsp;&nbsp;<b><a href="CppElse.htm">else</a></b><br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;m_<a href="CppTime.htm">time</a> <a href="CppOperatorAssign.htm">=</a> 0;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;m_probability <a href="CppOperatorAssign.htm">=</a> 0.0;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <b><a href="CppFalse.htm">false</a></b>;<br/>
-&nbsp;&nbsp;}<br/>
-}<br/>
-<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
-<a href="CppComment.htm">///</a><a href="CppReadDoubleFromFile.htm">ReadDoubleFromFile</a> reads the first line of a file<br/>
-<a href="CppComment.htm">///</a>and <a href="CppConvert.htm">converts</a> it to a <b><a href="CppDouble.htm">double</a></b>.<br/>
-<a href="CppComment.htm">///</a>From http://www.richelbilderbeek.nl/Cpp<a href="CppReadDoubleFromFile.htm">ReadDoubleFromFile</a>.htm<br/>
-<b><a href="CppDouble.htm">double</a></b> Test::<a href="CppReadDoubleFromFile.htm">ReadDoubleFromFile</a>(<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a>&amp; fileName)<br/>
-{<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppVector.htm">std::vector</a>&lt;<a href="CppString.htm">std::string</a>&gt; v <a href="CppOperatorAssign.htm">=</a> <a href="CppFileToVector.htm">FileToVector</a>(fileName);<br/>
-&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(v.empty()<a href="CppOperatorEqual.htm">==</a><b><a href="CppFalse.htm">false</a></b>);<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> d <a href="CppOperatorAssign.htm">=</a> <a href="CppAtof.htm">std::atof</a>(v[0].c_str());<br/>
-&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> d;<br/>
-}<br/>
-<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
-<a href="CppComment.htm">//</a>Returns <b><a href="CppIf.htm">if</a></b> the test was successful<br/>
-<b><a href="CppBool.htm">bool</a></b> TestRavindran::Execute()<br/>
-{<br/>
-&nbsp;&nbsp;<a href="CppClog.htm">std::clog</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "Starting TestRavindran<a href="CppLinux.htm">Linux</a> <b><a href="CppFor.htm">for</a></b> '"<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <b><a href="CppThis.htm">this</a></b>-&gt;Get<a href="CppNewick.htm">Newick</a>() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "'\n";<br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (GetComplexity() &gt; 1000000) <b><a href="CppReturn.htm">return</a></b> <b><a href="CppFalse.htm">false</a></b>;<br/>
-<br/>
-&nbsp;&nbsp;<a href="CppComment.htm">//</a>Write parameters to file<br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOfstream.htm">std::ofstream</a> file("theta.txt");<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;file <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> GetTheta();<br/>
-&nbsp;&nbsp;}<br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Older <a href="CppVersion.htm">version</a> expects a <a href="CppOperatorDivide.htm">/</a>n at end<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOfstream.htm">std::ofstream</a> file("phylogeny.txt");<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;file <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> Get<a href="CppNewick.htm">Newick</a>() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "\n\n";<br/>
-&nbsp;&nbsp;}<br/>
-<br/>
-&nbsp;&nbsp;<a href="CppIfdef.htm">#ifdef</a> WIN32<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> exe_filename <a href="CppOperatorAssign.htm">=</a> "../Exes/phy_prob_12.exe";<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> full_command <a href="CppOperatorAssign.htm">=</a> "../Exes/phy_prob_12.exe";<br/>
-&nbsp;&nbsp;<a href="CppPreElse.htm">#else</a><br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> exe_filename <a href="CppOperatorAssign.htm">=</a> "../Exes/phy_prob_linux";<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> full_command <a href="CppOperatorAssign.htm">=</a> "./../Exes/phy_prob_linux";<br/>
-&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> Test::Execute(<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;exe_filename,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;full_command,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;"expected_probability.txt");<br/>
-}<br/>
-<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
-<a href="CppComment.htm">///</a>Just call the executable ProjectRampalMain_End<a href="CppVersion.htm">version</a>2<br/>
-<a href="CppComment.htm">///</a>with the parameters<br/>
-<b><a href="CppBool.htm">bool</a></b> TestEnd<a href="CppVersion.htm">version</a>2::Execute()<br/>
-{<br/>
-&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> WIN32<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> exe_filename <a href="CppOperatorAssign.htm">=</a> "../Exes/ProjectRampalMain_End<a href="CppVersion.htm">version</a>2";<br/>
-&nbsp;&nbsp;<a href="CppPreElse.htm">#else</a><br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> exe_filename <a href="CppOperatorAssign.htm">=</a> "../Exes/ProjectRampal.exe";<br/>
-&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> command_full <a href="CppOperatorAssign.htm">=</a><br/>
-&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> WIN32<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppString.htm">std::string</a>("./") <a href="CppOperatorPlus.htm">+</a><br/>
-&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;exe_filename<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> " "<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> <a href="CppLexical_cast.htm">boost::lexical_cast</a>&lt;<a href="CppString.htm">std::string</a>&gt;(GetTheta())<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> " \""<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> Get<a href="CppNewick.htm">Newick</a>()<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> "\"";<br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> output_filename <a href="CppOperatorAssign.htm">=</a> "Result_probability.txt";<br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> Test::Execute(exe_filename,command_full,output_filename);<br/>
-}<br/>
-<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
-<a href="CppComment.htm">///</a>Just call the executable <a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a><a href="CppDebug.htm">Debug</a><br/>
-<a href="CppComment.htm">///</a>with the parameters<br/>
-<b><a href="CppBool.htm">bool</a></b> <a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a><a href="CppDebug.htm">Debug</a>::Execute()<br/>
-{<br/>
-&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> WIN32<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> exe_filename <a href="CppOperatorAssign.htm">=</a> "../Exes/<a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a><a href="CppUbuntu.htm">Ubuntu</a><a href="CppDebug.htm">Debug</a>";<br/>
-&nbsp;&nbsp;<a href="CppPreElse.htm">#else</a><br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> exe_filename <a href="CppOperatorAssign.htm">=</a> "../Exes/<a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a>Win<a href="CppDebug.htm">Debug</a>.exe";<br/>
-&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> command_full <a href="CppOperatorAssign.htm">=</a><br/>
-&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> WIN32<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppString.htm">std::string</a>("./") <a href="CppOperatorPlus.htm">+</a><br/>
-&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;exe_filename<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> " "<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> <a href="CppLexical_cast.htm">boost::lexical_cast</a>&lt;<a href="CppString.htm">std::string</a>&gt;(GetTheta())<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> " \""<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> Get<a href="CppNewick.htm">Newick</a>()<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> "\"";<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> output_filename <a href="CppOperatorAssign.htm">=</a> "Result_probability.txt";<br/>
-&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> Test::Execute(exe_filename,command_full,output_filename);<br/>
-<br/>
-&nbsp;&nbsp;<a href="CppComment.htm">/*</a><br/>
-&nbsp;&nbsp;<a href="CppClog.htm">std::clog</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "Starting <a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a><a href="CppDebug.htm">Debug</a> <b><a href="CppFor.htm">for</a></b> '"<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <b><a href="CppThis.htm">this</a></b>-&gt;Get<a href="CppNewick.htm">Newick</a>() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "'\n";<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> filename<br/>
-&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> WIN32<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorAssign.htm">=</a> "../../../<a href="Tools.htm">Tools</a>/<a href="ToolTestTwoDigitNewick.htm">ToolTestTwoDigitNewick</a>-build-desktop/<a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a><a href="CppUbuntu.htm">Ubuntu</a><a href="CppDebug.htm">Debug</a>";<br/>
-&nbsp;&nbsp;<a href="CppPreElse.htm">#else</a><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorAssign.htm">=</a> "../../../<a href="Tools.htm">Tools</a>/<a href="ToolTestTwoDigitNewick.htm">ToolTestTwoDigitNewick</a>/<a href="CppDebug.htm">debug</a>/<a href="ToolTestNewickVector.htm">TestNewickVector</a>Win<a href="CppDebug.htm">Debug</a>.exe";<br/>
-&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
-&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!<a href="CppFileExists.htm">FileExists</a>(filename))<br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppCerr.htm">std::cerr</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "File '" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> filename <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "' not found\n";<br/>
-&nbsp;&nbsp;}<br/>
-&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppFileExists.htm">FileExists</a>(filename));<br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> command <a href="CppOperatorAssign.htm">=</a><br/>
-&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> WIN32<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppString.htm">std::string</a>("./") <a href="CppOperatorPlus.htm">+</a><br/>
-&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;filename<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> " "<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> <a href="CppLexical_cast.htm">boost::lexical_cast</a>&lt;<a href="CppString.htm">std::string</a>&gt;(GetTheta())<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> " \""<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> Get<a href="CppNewick.htm">Newick</a>()<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> "\"";<br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStopwatch.htm">Stopwatch</a> s;<br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> sys_error <a href="CppOperatorAssign.htm">=</a> <a href="CppSystem.htm">std::system</a>(command.c_str());<br/>
-&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (sys_error <a href="CppOperatorEqual.htm">==</a> 0)<br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppTime.htm">time</a> <a href="CppOperatorAssign.htm">=</a> s.elapsed();<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> result_filename <a href="CppOperatorAssign.htm">=</a> "Result_probability.txt";<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppFileExists.htm">FileExists</a>(result_filename));<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;probability <a href="CppOperatorAssign.htm">=</a> <a href="CppReadDoubleFromFile.htm">ReadDoubleFromFile</a>(result_filename);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <b><a href="CppTrue.htm">true</a></b>;<br/>
-&nbsp;&nbsp;}<br/>
-&nbsp;&nbsp;<b><a href="CppElse.htm">else</a></b><br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppTime.htm">time</a> <a href="CppOperatorAssign.htm">=</a> 0;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;probability <a href="CppOperatorAssign.htm">=</a> 0.0;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <b><a href="CppFalse.htm">false</a></b>;<br/>
-&nbsp;&nbsp;}<br/>
-&nbsp;&nbsp;<a href="CppComment.htm">*/</a><br/>
-}<br/>
-<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
-<a href="CppComment.htm">///</a>Just call the executable <a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a>Release<br/>
-<a href="CppComment.htm">///</a>with the parameters<br/>
-<b><a href="CppBool.htm">bool</a></b> <a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a>Release::Execute()<br/>
-{<br/>
-&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> WIN32<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> exe_filename <a href="CppOperatorAssign.htm">=</a> "../Exes/<a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a><a href="CppUbuntu.htm">Ubuntu</a>Release";<br/>
-&nbsp;&nbsp;<a href="CppPreElse.htm">#else</a><br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> exe_filename <a href="CppOperatorAssign.htm">=</a> "../Exes/<a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a>WinRelease.exe";<br/>
-&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> command_full <a href="CppOperatorAssign.htm">=</a><br/>
-&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> WIN32<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppString.htm">std::string</a>("./") <a href="CppOperatorPlus.htm">+</a><br/>
-&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;exe_filename<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> " "<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> <a href="CppLexical_cast.htm">boost::lexical_cast</a>&lt;<a href="CppString.htm">std::string</a>&gt;(GetTheta())<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> " \""<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> Get<a href="CppNewick.htm">Newick</a>()<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> "\"";<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> output_filename <a href="CppOperatorAssign.htm">=</a> "Result_probability.txt";<br/>
-&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> Test::Execute(exe_filename,command_full,output_filename);<br/>
-&nbsp;&nbsp;<a href="CppComment.htm">/*</a><br/>
-&nbsp;&nbsp;<a href="CppClog.htm">std::clog</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "Starting <a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a>Release <b><a href="CppFor.htm">for</a></b> '"<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <b><a href="CppThis.htm">this</a></b>-&gt;Get<a href="CppNewick.htm">Newick</a>() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "'\n";<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> filename<br/>
-&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> WIN32<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorAssign.htm">=</a> "../../../<a href="Tools.htm">Tools</a>/<a href="ToolTestTwoDigitNewick.htm">ToolTestTwoDigitNewick</a>-build-desktop/<a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a><a href="CppUbuntu.htm">Ubuntu</a>Release";<br/>
-&nbsp;&nbsp;<a href="CppPreElse.htm">#else</a><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorAssign.htm">=</a> "../../../<a href="Tools.htm">Tools</a>/<a href="ToolTestTwoDigitNewick.htm">ToolTestTwoDigitNewick</a>/release/<a href="ToolTestNewickVector.htm">TestNewickVector</a>WinRelease.exe";<br/>
-&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
-&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppFileExists.htm">FileExists</a>(filename));<br/>
-&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!<a href="CppFileExists.htm">FileExists</a>(filename))<br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppCerr.htm">std::cerr</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "File '" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> filename <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "' not found\n";<br/>
-&nbsp;&nbsp;}<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> command <a href="CppOperatorAssign.htm">=</a><br/>
-&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> WIN32<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppString.htm">std::string</a>("./") <a href="CppOperatorPlus.htm">+</a><br/>
-&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;filename<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> " "<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> <a href="CppLexical_cast.htm">boost::lexical_cast</a>&lt;<a href="CppString.htm">std::string</a>&gt;(GetTheta())<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> " \""<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> Get<a href="CppNewick.htm">Newick</a>()<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> "\"";<br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStopwatch.htm">Stopwatch</a> s;<br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> sys_error <a href="CppOperatorAssign.htm">=</a> <a href="CppSystem.htm">std::system</a>(command.c_str());<br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (sys_error <a href="CppOperatorEqual.htm">==</a> 0)<br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;m_<a href="CppTime.htm">time</a> <a href="CppOperatorAssign.htm">=</a> s.elapsed();<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> result_filename <a href="CppOperatorAssign.htm">=</a> "Result_probability.txt";<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppFileExists.htm">FileExists</a>(result_filename));<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;m_probability <a href="CppOperatorAssign.htm">=</a> <a href="CppReadDoubleFromFile.htm">ReadDoubleFromFile</a>(result_filename);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <b><a href="CppTrue.htm">true</a></b>;<br/>
-&nbsp;&nbsp;}<br/>
-&nbsp;&nbsp;<b><a href="CppElse.htm">else</a></b><br/>
-&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;m_<a href="CppTime.htm">time</a> <a href="CppOperatorAssign.htm">=</a> 0;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;m_probability <a href="CppOperatorAssign.htm">=</a> 0.0;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <b><a href="CppFalse.htm">false</a></b>;<br/>
-&nbsp;&nbsp;}<br/>
-&nbsp;&nbsp;<a href="CppComment.htm">*/</a><br/>
-}<br/>
-<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
-<a href="CppComment.htm">///</a>Just call the executable <a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a><a href="CppDebug.htm">Debug</a><br/>
-<a href="CppComment.htm">///</a>with the parameters<br/>
-<b><a href="CppBool.htm">bool</a></b> Test<a href="CppManyDigitNewick.htm">ManyDigitNewick</a><a href="CppDebug.htm">Debug</a>::Execute()<br/>
-{<br/>
-&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> WIN32<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> exe_filename <a href="CppOperatorAssign.htm">=</a> "../Exes/Test<a href="CppManyDigitNewick.htm">ManyDigitNewick</a><a href="CppUbuntu.htm">Ubuntu</a><a href="CppDebug.htm">Debug</a>";<br/>
-&nbsp;&nbsp;<a href="CppPreElse.htm">#else</a><br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> exe_filename <a href="CppOperatorAssign.htm">=</a> "../Exes/Test<a href="CppManyDigitNewick.htm">ManyDigitNewick</a>Win<a href="CppDebug.htm">Debug</a>.exe";<br/>
-&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> command_full <a href="CppOperatorAssign.htm">=</a><br/>
-&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> WIN32<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppString.htm">std::string</a>("./") <a href="CppOperatorPlus.htm">+</a><br/>
-&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;exe_filename<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> " "<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> <a href="CppLexical_cast.htm">boost::lexical_cast</a>&lt;<a href="CppString.htm">std::string</a>&gt;(GetTheta())<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> " \""<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> Get<a href="CppNewick.htm">Newick</a>()<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> "\"";<br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> output_filename <a href="CppOperatorAssign.htm">=</a> "Result_probability.txt";<br/>
-<br/>
-&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> Test::Execute(exe_filename,command_full,output_filename);<br/>
-}<br/>
-<a href="CppComment.htm">//</a>---------------------------------------------------------------------------<br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------
+<br/>
+<a href="CppComment.htm">/*</a>
+<br/>
+&nbsp;&nbsp;The Rampal Etienne Project, calculates the probability of a phylogeny
+<br/>
+&nbsp;&nbsp;(C) 2009 Richel Bilderbeek
+<br/>
+
+<br/>
+&nbsp;&nbsp;This program is free software: you can redistribute it and/or modify
+<br/>
+&nbsp;&nbsp;it under the terms of the GNU General Public License as published by
+<br/>
+&nbsp;&nbsp;the Free Software Foundation, either version 3 of the License, or
+<br/>
+&nbsp;&nbsp;(at your option) any later version.
+<br/>
+
+<br/>
+&nbsp;&nbsp;This program is distributed in the hope that it will be useful,
+<br/>
+&nbsp;&nbsp;but WITHOUT ANY WARRANTY; without even the implied warranty of
+<br/>
+&nbsp;&nbsp;MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.&nbsp;&nbsp;See the
+<br/>
+&nbsp;&nbsp;GNU General Public License for more details.
+<br/>
+&nbsp;&nbsp;You should have received a copy of the GNU General Public License
+<br/>
+&nbsp;&nbsp;along with this program.&nbsp;&nbsp;If not, see &lt;http://www.gnu.org/licenses/&gt;.
+<br/>
+<a href="CppComment.htm">*/</a>
+<br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------
+<br/>
+<a href="CppComment.htm">//</a> From http://www.richelbilderbeek.nl
+<br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppFstreamH.htm">fstream</a>&gt;
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppVectorH.htm">vector</a>&gt;
+<br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppBoost.htm">boost</a>/numeric/con<a href="CppVersion.htm">version</a>/cast.hpp&gt;
+<br/>
+<a href="CppInclude.htm">#include</a> &lt;<a href="CppBoost.htm">boost</a>/<a href="CppTime.htm">time</a>r.hpp&gt;
+<br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------
+<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppBinaryNewickVector.htm">binarynewickvector</a>.h"
+<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppNewick.htm">newick</a>.h"
+<br/>
+<a href="CppInclude.htm">#include</a> "<a href="CppStopwatch.htm">stopwatch</a>.h"
+<br/>
+<a href="CppInclude.htm">#include</a> "test.h"
+<br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------
+<br/>
+<a href="CppComment.htm">///</a>Create all tests according to the flags given.
+<br/>
+<a href="CppComment.htm">///</a>Test parameters:\n
+<br/>
+<a href="CppComment.htm">///</a>i &amp;&nbsp;&nbsp;1: use Ravindran\n
+<br/>
+<a href="CppComment.htm">///</a>i &amp;&nbsp;&nbsp;2: use Sorted<a href="CppNewick.htm">Newick</a>\n
+<br/>
+<a href="CppComment.htm">///</a>i &amp;&nbsp;&nbsp;4: use SmartSorted<a href="CppNewick.htm">Newick</a>\n
+<br/>
+<a href="CppComment.htm">///</a>i &amp;&nbsp;&nbsp;8: use RampalMain_End<a href="CppVersion.htm">version</a>2\n
+<br/>
+<a href="CppComment.htm">///</a>i &amp; 16: use <a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a><a href="CppDebug.htm">Debug</a>\n
+<br/>
+<a href="CppComment.htm">///</a>i &amp; 32: use <a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a>Release\n
+<br/>
+<a href="CppComment.htm">///</a>63: use all\n
+<br/>
+<a href="CppVector.htm">std::vector</a>&lt;<a href="CppBoostShared_ptr.htm">boost::shared_ptr</a>&lt;Test&gt; &gt; Test::CreateTests(
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a>&amp; <a href="CppNewick.htm">newick</a>,
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> theta,
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> flags)
+<br/>
+{
+<br/>
+&nbsp;&nbsp;<a href="CppVector.htm">std::vector</a>&lt;<a href="CppBoostShared_ptr.htm">boost::shared_ptr</a>&lt;Test&gt; &gt; v;
+<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (flags &amp; 1)
+<br/>
+&nbsp;&nbsp;{
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppBoostShared_ptr.htm">boost::shared_ptr</a>&lt;Test&gt; t(<b><a href="CppNew.htm">new</a></b> TestRavindran(<a href="CppNewick.htm">newick</a>,theta));
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;v.push_back(t);
+<br/>
+&nbsp;&nbsp;}
+<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (flags &amp; 2)
+<br/>
+&nbsp;&nbsp;{
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppBoostShared_ptr.htm">boost::shared_ptr</a>&lt;Test&gt; t(<b><a href="CppNew.htm">new</a></b> TestEnd<a href="CppVersion.htm">version</a>2(<a href="CppNewick.htm">newick</a>,theta));
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(t);
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;v.push_back(t);
+<br/>
+&nbsp;&nbsp;}
+<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (flags &amp; 4)
+<br/>
+&nbsp;&nbsp;{
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppBoostShared_ptr.htm">boost::shared_ptr</a>&lt;Test&gt; t(<b><a href="CppNew.htm">new</a></b> <a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a><a href="CppDebug.htm">Debug</a>(<a href="CppNewick.htm">newick</a>,theta));
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(t);
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;v.push_back(t);
+<br/>
+&nbsp;&nbsp;}
+<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (flags &amp; 8)
+<br/>
+&nbsp;&nbsp;{
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppBoostShared_ptr.htm">boost::shared_ptr</a>&lt;Test&gt; t(<b><a href="CppNew.htm">new</a></b> <a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a>Release(<a href="CppNewick.htm">newick</a>,theta));
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(t);
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;v.push_back(t);
+<br/>
+&nbsp;&nbsp;}
+<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> v;
+<br/>
+}
+<br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------
+<br/>
+<a href="CppComment.htm">///</a><a href="CppFileExists.htm">FileExists</a> checks <b><a href="CppIf.htm">if</a></b> a certain file exists
+<br/>
+<a href="CppComment.htm">///</a>From http://www.richelbilderbeek.nl/Cpp<a href="CppFileExists.htm">FileExists</a>.htm
+<br/>
+<b><a href="CppBool.htm">bool</a></b> Test::<a href="CppFileExists.htm">FileExists</a>(<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a>&amp; filename)
+<br/>
+{
+<br/>
+&nbsp;&nbsp;<a href="CppFstream.htm">std::fstream</a> f;
+<br/>
+&nbsp;&nbsp;f.open(filename.c_str(),<a href="CppStd.htm">std</a>::ios::in);
+<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> f.is_open();
+<br/>
+}
+<br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------
+<br/>
+<a href="CppComment.htm">//</a>From http://www.richelbilderbeek.nl/Cpp<a href="CppFileToVector.htm">FileToVector</a>.htm
+<br/>
+<b><a href="CppConst.htm">const</a></b> <a href="CppVector.htm">std::vector</a>&lt;<a href="CppString.htm">std::string</a>&gt; Test::<a href="CppFileToVector.htm">FileToVector</a>(<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a>&amp; fileName)
+<br/>
+{
+<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppFileExists.htm">FileExists</a>(fileName)<a href="CppOperatorEqual.htm">==</a><b><a href="CppTrue.htm">true</a></b>);
+<br/>
+&nbsp;&nbsp;<a href="CppVector.htm">std::vector</a>&lt;<a href="CppString.htm">std::string</a>&gt; myVector;
+<br/>
+&nbsp;&nbsp;<a href="CppIfstream.htm">std::ifstream</a> in(fileName.c_str());
+<br/>
+&nbsp;&nbsp;<a href="CppString.htm">std::string</a> myString;
+<br/>
+&nbsp;&nbsp;<b><a href="CppFor.htm">for</a></b> (<b><a href="CppInt.htm">int</a></b> i=0; !in.eof(); <a href="CppOperatorIncrement.htm">++</a>i)
+<br/>
+&nbsp;&nbsp;{
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppGetline.htm">std::getline</a>(in,myString);
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;myVector.push_back(myString);
+<br/>
+&nbsp;&nbsp;}
+<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> myVector;
+<br/>
+}
+<br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------
+<br/>
+<b><a href="CppConst.htm">const</a></b> <a href="CppBigInt.htm">BigInteger</a> Test::GetComplexity() <b><a href="CppConst.htm">const</a></b>
+<br/>
+{
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppBinaryNewickVector.htm">BinaryNewickVector</a> n(Get<a href="CppNewick.htm">Newick</a>());
+<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <a href="CppNewick.htm">Newick</a>::<a href="CppCalcComplexity.htm">CalcComplexity</a>(n.Get());
+<br/>
+}
+<br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------
+<br/>
+<a href="CppComment.htm">//</a>Ewensprobability <a href="CppOperatorAssign.htm">=</a> probability * num_of_combinations
+<br/>
+<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> Test::GetEwensProbability() <b><a href="CppConst.htm">const</a></b>
+<br/>
+{
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppBigInt.htm">BigInteger</a> n_combinations
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorAssign.htm">=</a> <a href="CppNewick.htm">Newick</a>::<a href="CppCalcNumOfCombinations.htm">CalcNumOfCombinations</a>(
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppBinaryNewickVector.htm">BinaryNewickVector</a>(Get<a href="CppNewick.htm">Newick</a>()).Get());
+<br/>
+&nbsp;&nbsp;<b><a href="CppTry.htm">try</a></b>
+<br/>
+&nbsp;&nbsp;{
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> i <a href="CppOperatorAssign.htm">=</a> n_combinations.toInt();
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> d <a href="CppOperatorAssign.htm">=</a> <a href="CppNumeric_cast.htm">boost::numeric_cast</a>&lt;<b><a href="CppDouble.htm">double</a></b>&gt;(i);
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> ewens_probability <a href="CppOperatorAssign.htm">=</a> d * GetProbability();
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <a href="CppLexical_cast.htm">boost::lexical_cast</a>&lt;<a href="CppString.htm">std::string</a>&gt;(ewens_probability);
+<br/>
+&nbsp;&nbsp;}
+<br/>
+&nbsp;&nbsp;<b><a href="CppCatch.htm">catch</a></b> (...)
+<br/>
+&nbsp;&nbsp;{
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> s
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorAssign.htm">=</a> big<a href="CppInt.htm">Integer</a>ToString(n_combinations)
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> <a href="CppString.htm">std::string</a>(" * ")
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> <a href="CppLexical_cast.htm">boost::lexical_cast</a>&lt;<a href="CppString.htm">std::string</a>&gt;(GetProbability());
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> s;
+<br/>
+&nbsp;&nbsp;}
+<br/>
+}
+<br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------
+<br/>
+<b><a href="CppBool.htm">bool</a></b> Test::Execute(
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a>&amp; exe_filename,
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a>&amp; full_command,
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a>&amp; output_filename)
+<br/>
+{
+<br/>
+&nbsp;&nbsp;<a href="CppClog.htm">std::clog</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "Starting '" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> GetTestName() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "' <b><a href="CppFor.htm">for</a></b> '"
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <b><a href="CppThis.htm">this</a></b>-&gt;Get<a href="CppNewick.htm">Newick</a>() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "'\n";
+<br/>
+
+<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!<a href="CppFileExists.htm">FileExists</a>(exe_filename))
+<br/>
+&nbsp;&nbsp;{
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppCerr.htm">std::cerr</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "Executable file '" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> exe_filename <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "' not found\n";
+<br/>
+&nbsp;&nbsp;}
+<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppFileExists.htm">FileExists</a>(exe_filename));
+<br/>
+
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStopwatch.htm">Stopwatch</a> s;
+<br/>
+
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> sys_error <a href="CppOperatorAssign.htm">=</a> <a href="CppSystem.htm">std::system</a>(full_command.c_str());
+<br/>
+
+<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (sys_error <a href="CppOperatorEqual.htm">==</a> 0)
+<br/>
+&nbsp;&nbsp;{
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_<a href="CppTime.htm">time</a> <a href="CppOperatorAssign.htm">=</a> s.elapsed();
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppFileExists.htm">FileExists</a>(result_filename));
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_probability <a href="CppOperatorAssign.htm">=</a> <a href="CppReadDoubleFromFile.htm">ReadDoubleFromFile</a>(output_filename);
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <b><a href="CppTrue.htm">true</a></b>;
+<br/>
+&nbsp;&nbsp;}
+<br/>
+&nbsp;&nbsp;<b><a href="CppElse.htm">else</a></b>
+<br/>
+&nbsp;&nbsp;{
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_<a href="CppTime.htm">time</a> <a href="CppOperatorAssign.htm">=</a> 0;
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_probability <a href="CppOperatorAssign.htm">=</a> 0.0;
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <b><a href="CppFalse.htm">false</a></b>;
+<br/>
+&nbsp;&nbsp;}
+<br/>
+}
+<br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------
+<br/>
+<a href="CppComment.htm">///</a><a href="CppReadDoubleFromFile.htm">ReadDoubleFromFile</a> reads the first line of a file
+<br/>
+<a href="CppComment.htm">///</a>and <a href="CppConvert.htm">converts</a> it to a <b><a href="CppDouble.htm">double</a></b>.
+<br/>
+<a href="CppComment.htm">///</a>From http://www.richelbilderbeek.nl/Cpp<a href="CppReadDoubleFromFile.htm">ReadDoubleFromFile</a>.htm
+<br/>
+<b><a href="CppDouble.htm">double</a></b> Test::<a href="CppReadDoubleFromFile.htm">ReadDoubleFromFile</a>(<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a>&amp; fileName)
+<br/>
+{
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppVector.htm">std::vector</a>&lt;<a href="CppString.htm">std::string</a>&gt; v <a href="CppOperatorAssign.htm">=</a> <a href="CppFileToVector.htm">FileToVector</a>(fileName);
+<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(v.empty()<a href="CppOperatorEqual.htm">==</a><b><a href="CppFalse.htm">false</a></b>);
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppDouble.htm">double</a></b> d <a href="CppOperatorAssign.htm">=</a> <a href="CppAtof.htm">std::atof</a>(v[0].c_str());
+<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> d;
+<br/>
+}
+<br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------
+<br/>
+<a href="CppComment.htm">//</a>Returns <b><a href="CppIf.htm">if</a></b> the test was successful
+<br/>
+<b><a href="CppBool.htm">bool</a></b> TestRavindran::Execute()
+<br/>
+{
+<br/>
+&nbsp;&nbsp;<a href="CppClog.htm">std::clog</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "Starting TestRavindran<a href="CppLinux.htm">Linux</a> <b><a href="CppFor.htm">for</a></b> '"
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <b><a href="CppThis.htm">this</a></b>-&gt;Get<a href="CppNewick.htm">Newick</a>() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "'\n";
+<br/>
+
+<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (GetComplexity() &gt; 1000000) <b><a href="CppReturn.htm">return</a></b> <b><a href="CppFalse.htm">false</a></b>;
+<br/>
+
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">//</a>Write parameters to file
+<br/>
+&nbsp;&nbsp;{
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOfstream.htm">std::ofstream</a> file("theta.txt");
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;file <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> GetTheta();
+<br/>
+&nbsp;&nbsp;}
+<br/>
+&nbsp;&nbsp;{
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppComment.htm">//</a>Older <a href="CppVersion.htm">version</a> expects a <a href="CppOperatorDivide.htm">/</a>n at end
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOfstream.htm">std::ofstream</a> file("phylogeny.txt");
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;file <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> Get<a href="CppNewick.htm">Newick</a>() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "\n\n";
+<br/>
+&nbsp;&nbsp;}
+<br/>
+
+<br/>
+&nbsp;&nbsp;<a href="CppIfdef.htm">#ifdef</a> WIN32
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> exe_filename <a href="CppOperatorAssign.htm">=</a> "../Exes/phy_prob_12.exe";
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> full_command <a href="CppOperatorAssign.htm">=</a> "../Exes/phy_prob_12.exe";
+<br/>
+&nbsp;&nbsp;<a href="CppPreElse.htm">#else</a>
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> exe_filename <a href="CppOperatorAssign.htm">=</a> "../Exes/phy_prob_linux";
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> full_command <a href="CppOperatorAssign.htm">=</a> "./../Exes/phy_prob_linux";
+<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a>
+<br/>
+
+<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> Test::Execute(
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;exe_filename,
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;full_command,
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"expected_probability.txt");
+<br/>
+}
+<br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------
+<br/>
+<a href="CppComment.htm">///</a>Just call the executable ProjectRampalMain_End<a href="CppVersion.htm">version</a>2
+<br/>
+<a href="CppComment.htm">///</a>with the parameters
+<br/>
+<b><a href="CppBool.htm">bool</a></b> TestEnd<a href="CppVersion.htm">version</a>2::Execute()
+<br/>
+{
+<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> WIN32
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> exe_filename <a href="CppOperatorAssign.htm">=</a> "../Exes/ProjectRampalMain_End<a href="CppVersion.htm">version</a>2";
+<br/>
+&nbsp;&nbsp;<a href="CppPreElse.htm">#else</a>
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> exe_filename <a href="CppOperatorAssign.htm">=</a> "../Exes/ProjectRampal.exe";
+<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a>
+<br/>
+
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> command_full <a href="CppOperatorAssign.htm">=</a>
+<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> WIN32
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppString.htm">std::string</a>("./") <a href="CppOperatorPlus.htm">+</a>
+<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;exe_filename
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> " "
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> <a href="CppLexical_cast.htm">boost::lexical_cast</a>&lt;<a href="CppString.htm">std::string</a>&gt;(GetTheta())
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> " \""
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> Get<a href="CppNewick.htm">Newick</a>()
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> "\"";
+<br/>
+
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> output_filename <a href="CppOperatorAssign.htm">=</a> "Result_probability.txt";
+<br/>
+
+<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> Test::Execute(exe_filename,command_full,output_filename);
+<br/>
+}
+<br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------
+<br/>
+<a href="CppComment.htm">///</a>Just call the executable <a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a><a href="CppDebug.htm">Debug</a>
+<br/>
+<a href="CppComment.htm">///</a>with the parameters
+<br/>
+<b><a href="CppBool.htm">bool</a></b> <a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a><a href="CppDebug.htm">Debug</a>::Execute()
+<br/>
+{
+<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> WIN32
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> exe_filename <a href="CppOperatorAssign.htm">=</a> "../Exes/<a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a><a href="CppUbuntu.htm">Ubuntu</a><a href="CppDebug.htm">Debug</a>";
+<br/>
+&nbsp;&nbsp;<a href="CppPreElse.htm">#else</a>
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> exe_filename <a href="CppOperatorAssign.htm">=</a> "../Exes/<a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a>Win<a href="CppDebug.htm">Debug</a>.exe";
+<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a>
+<br/>
+
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> command_full <a href="CppOperatorAssign.htm">=</a>
+<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> WIN32
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppString.htm">std::string</a>("./") <a href="CppOperatorPlus.htm">+</a>
+<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;exe_filename
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> " "
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> <a href="CppLexical_cast.htm">boost::lexical_cast</a>&lt;<a href="CppString.htm">std::string</a>&gt;(GetTheta())
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> " \""
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> Get<a href="CppNewick.htm">Newick</a>()
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> "\"";
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> output_filename <a href="CppOperatorAssign.htm">=</a> "Result_probability.txt";
+<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> Test::Execute(exe_filename,command_full,output_filename);
+<br/>
+
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">/*</a>
+<br/>
+&nbsp;&nbsp;<a href="CppClog.htm">std::clog</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "Starting <a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a><a href="CppDebug.htm">Debug</a> <b><a href="CppFor.htm">for</a></b> '"
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <b><a href="CppThis.htm">this</a></b>-&gt;Get<a href="CppNewick.htm">Newick</a>() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "'\n";
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> filename
+<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> WIN32
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorAssign.htm">=</a> "../../../<a href="Tools.htm">Tools</a>/<a href="ToolTestTwoDigitNewick.htm">ToolTestTwoDigitNewick</a>-build-desktop/<a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a><a href="CppUbuntu.htm">Ubuntu</a><a href="CppDebug.htm">Debug</a>";
+<br/>
+&nbsp;&nbsp;<a href="CppPreElse.htm">#else</a>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorAssign.htm">=</a> "../../../<a href="Tools.htm">Tools</a>/<a href="ToolTestTwoDigitNewick.htm">ToolTestTwoDigitNewick</a>/<a href="CppDebug.htm">debug</a>/<a href="ToolTestNewickVector.htm">TestNewickVector</a>Win<a href="CppDebug.htm">Debug</a>.exe";
+<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a>
+<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!<a href="CppFileExists.htm">FileExists</a>(filename))
+<br/>
+&nbsp;&nbsp;{
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppCerr.htm">std::cerr</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "File '" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> filename <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "' not found\n";
+<br/>
+&nbsp;&nbsp;}
+<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppFileExists.htm">FileExists</a>(filename));
+<br/>
+
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> command <a href="CppOperatorAssign.htm">=</a>
+<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> WIN32
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppString.htm">std::string</a>("./") <a href="CppOperatorPlus.htm">+</a>
+<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;filename
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> " "
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> <a href="CppLexical_cast.htm">boost::lexical_cast</a>&lt;<a href="CppString.htm">std::string</a>&gt;(GetTheta())
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> " \""
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> Get<a href="CppNewick.htm">Newick</a>()
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> "\"";
+<br/>
+
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStopwatch.htm">Stopwatch</a> s;
+<br/>
+
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> sys_error <a href="CppOperatorAssign.htm">=</a> <a href="CppSystem.htm">std::system</a>(command.c_str());
+<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (sys_error <a href="CppOperatorEqual.htm">==</a> 0)
+<br/>
+&nbsp;&nbsp;{
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppTime.htm">time</a> <a href="CppOperatorAssign.htm">=</a> s.elapsed();
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> result_filename <a href="CppOperatorAssign.htm">=</a> "Result_probability.txt";
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppFileExists.htm">FileExists</a>(result_filename));
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;probability <a href="CppOperatorAssign.htm">=</a> <a href="CppReadDoubleFromFile.htm">ReadDoubleFromFile</a>(result_filename);
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <b><a href="CppTrue.htm">true</a></b>;
+<br/>
+&nbsp;&nbsp;}
+<br/>
+&nbsp;&nbsp;<b><a href="CppElse.htm">else</a></b>
+<br/>
+&nbsp;&nbsp;{
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppTime.htm">time</a> <a href="CppOperatorAssign.htm">=</a> 0;
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;probability <a href="CppOperatorAssign.htm">=</a> 0.0;
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <b><a href="CppFalse.htm">false</a></b>;
+<br/>
+&nbsp;&nbsp;}
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">*/</a>
+<br/>
+}
+<br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------
+<br/>
+<a href="CppComment.htm">///</a>Just call the executable <a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a>Release
+<br/>
+<a href="CppComment.htm">///</a>with the parameters
+<br/>
+<b><a href="CppBool.htm">bool</a></b> <a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a>Release::Execute()
+<br/>
+{
+<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> WIN32
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> exe_filename <a href="CppOperatorAssign.htm">=</a> "../Exes/<a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a><a href="CppUbuntu.htm">Ubuntu</a>Release";
+<br/>
+&nbsp;&nbsp;<a href="CppPreElse.htm">#else</a>
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> exe_filename <a href="CppOperatorAssign.htm">=</a> "../Exes/<a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a>WinRelease.exe";
+<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a>
+<br/>
+
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> command_full <a href="CppOperatorAssign.htm">=</a>
+<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> WIN32
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppString.htm">std::string</a>("./") <a href="CppOperatorPlus.htm">+</a>
+<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;exe_filename
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> " "
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> <a href="CppLexical_cast.htm">boost::lexical_cast</a>&lt;<a href="CppString.htm">std::string</a>&gt;(GetTheta())
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> " \""
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> Get<a href="CppNewick.htm">Newick</a>()
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> "\"";
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> output_filename <a href="CppOperatorAssign.htm">=</a> "Result_probability.txt";
+<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> Test::Execute(exe_filename,command_full,output_filename);
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">/*</a>
+<br/>
+&nbsp;&nbsp;<a href="CppClog.htm">std::clog</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "Starting <a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a>Release <b><a href="CppFor.htm">for</a></b> '"
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorStreamOut.htm">&lt;&lt;</a> <b><a href="CppThis.htm">this</a></b>-&gt;Get<a href="CppNewick.htm">Newick</a>() <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "'\n";
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> filename
+<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> WIN32
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorAssign.htm">=</a> "../../../<a href="Tools.htm">Tools</a>/<a href="ToolTestTwoDigitNewick.htm">ToolTestTwoDigitNewick</a>-build-desktop/<a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a><a href="CppUbuntu.htm">Ubuntu</a>Release";
+<br/>
+&nbsp;&nbsp;<a href="CppPreElse.htm">#else</a>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorAssign.htm">=</a> "../../../<a href="Tools.htm">Tools</a>/<a href="ToolTestTwoDigitNewick.htm">ToolTestTwoDigitNewick</a>/release/<a href="ToolTestNewickVector.htm">TestNewickVector</a>WinRelease.exe";
+<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a>
+<br/>
+&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppFileExists.htm">FileExists</a>(filename));
+<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (!<a href="CppFileExists.htm">FileExists</a>(filename))
+<br/>
+&nbsp;&nbsp;{
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppCerr.htm">std::cerr</a> <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "File '" <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> filename <a href="CppOperatorStreamOut.htm">&lt;&lt;</a> "' not found\n";
+<br/>
+&nbsp;&nbsp;}
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> command <a href="CppOperatorAssign.htm">=</a>
+<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> WIN32
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppString.htm">std::string</a>("./") <a href="CppOperatorPlus.htm">+</a>
+<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;filename
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> " "
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> <a href="CppLexical_cast.htm">boost::lexical_cast</a>&lt;<a href="CppString.htm">std::string</a>&gt;(GetTheta())
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> " \""
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> Get<a href="CppNewick.htm">Newick</a>()
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> "\"";
+<br/>
+
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppStopwatch.htm">Stopwatch</a> s;
+<br/>
+
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <b><a href="CppInt.htm">int</a></b> sys_error <a href="CppOperatorAssign.htm">=</a> <a href="CppSystem.htm">std::system</a>(command.c_str());
+<br/>
+
+<br/>
+&nbsp;&nbsp;<b><a href="CppIf.htm">if</a></b> (sys_error <a href="CppOperatorEqual.htm">==</a> 0)
+<br/>
+&nbsp;&nbsp;{
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_<a href="CppTime.htm">time</a> <a href="CppOperatorAssign.htm">=</a> s.elapsed();
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> result_filename <a href="CppOperatorAssign.htm">=</a> "Result_probability.txt";
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppAssert.htm">assert</a>(<a href="CppFileExists.htm">FileExists</a>(result_filename));
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_probability <a href="CppOperatorAssign.htm">=</a> <a href="CppReadDoubleFromFile.htm">ReadDoubleFromFile</a>(result_filename);
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <b><a href="CppTrue.htm">true</a></b>;
+<br/>
+&nbsp;&nbsp;}
+<br/>
+&nbsp;&nbsp;<b><a href="CppElse.htm">else</a></b>
+<br/>
+&nbsp;&nbsp;{
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_<a href="CppTime.htm">time</a> <a href="CppOperatorAssign.htm">=</a> 0;
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;m_probability <a href="CppOperatorAssign.htm">=</a> 0.0;
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> <b><a href="CppFalse.htm">false</a></b>;
+<br/>
+&nbsp;&nbsp;}
+<br/>
+&nbsp;&nbsp;<a href="CppComment.htm">*/</a>
+<br/>
+}
+<br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------
+<br/>
+<a href="CppComment.htm">///</a>Just call the executable <a href="ToolTestTwoDigitNewick.htm">TestTwoDigitNewick</a><a href="CppDebug.htm">Debug</a>
+<br/>
+<a href="CppComment.htm">///</a>with the parameters
+<br/>
+<b><a href="CppBool.htm">bool</a></b> Test<a href="CppManyDigitNewick.htm">ManyDigitNewick</a><a href="CppDebug.htm">Debug</a>::Execute()
+<br/>
+{
+<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> WIN32
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> exe_filename <a href="CppOperatorAssign.htm">=</a> "../Exes/Test<a href="CppManyDigitNewick.htm">ManyDigitNewick</a><a href="CppUbuntu.htm">Ubuntu</a><a href="CppDebug.htm">Debug</a>";
+<br/>
+&nbsp;&nbsp;<a href="CppPreElse.htm">#else</a>
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> exe_filename <a href="CppOperatorAssign.htm">=</a> "../Exes/Test<a href="CppManyDigitNewick.htm">ManyDigitNewick</a>Win<a href="CppDebug.htm">Debug</a>.exe";
+<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a>
+<br/>
+
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> command_full <a href="CppOperatorAssign.htm">=</a>
+<br/>
+&nbsp;&nbsp;<a href="CppIfndef.htm">#ifndef</a> WIN32
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppString.htm">std::string</a>("./") <a href="CppOperatorPlus.htm">+</a>
+<br/>
+&nbsp;&nbsp;<a href="CppEndif.htm">#endif</a>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;exe_filename
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> " "
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> <a href="CppLexical_cast.htm">boost::lexical_cast</a>&lt;<a href="CppString.htm">std::string</a>&gt;(GetTheta())
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> " \""
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> Get<a href="CppNewick.htm">Newick</a>()
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="CppOperatorPlus.htm">+</a> "\"";
+<br/>
+
+<br/>
+&nbsp;&nbsp;<b><a href="CppConst.htm">const</a></b> <a href="CppString.htm">std::string</a> output_filename <a href="CppOperatorAssign.htm">=</a> "Result_probability.txt";
+<br/>
+
+<br/>
+&nbsp;&nbsp;<b><a href="CppReturn.htm">return</a></b> Test::Execute(exe_filename,command_full,output_filename);
+<br/>
+}
+<br/>
+<a href="CppComment.htm">//</a>---------------------------------------------------------------------------
+<br/>
 </code></td></tr></table>
 <!-- end of the code -->
 <p>&nbsp;</p>
@@ -2184,7 +2771,6 @@ echo "Done"<br/>
 <p><a href="Cpp.htm">Go back to Richel Bilderbeek's C++ page</a>.</p>
 <p><a href="index.htm">Go back to Richel Bilderbeek's homepage</a>.</p>
 <p>&nbsp;</p>
-<p><a href="http://validator.w3.org/check?uri=referer"><img src="valid-xhtml10.png" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a></p>
 <p>This page has been created by the <a href="Tools.htm">tool</a> <a href="ToolCodeToHtml.htm">CodeToHtml</a></p>
 </body>
 </html>
