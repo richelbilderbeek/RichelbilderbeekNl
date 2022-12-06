@@ -1,0 +1,19 @@
+on:
+  push:
+  pull_request:
+  schedule:
+  - cron: "0 0 2 * *"
+
+name: check-html
+
+jobs:
+  check-html:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: anishathalye/proof-html@v2
+        with:
+          directory: ./
