@@ -14,10 +14,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - |
-        cd contents
-        rename "s/htm$/html/" *.htm
-        cd ..
+      - name: Rename HTM files to HTML files
+        run: |
+          cd contents
+          rename "s/htm$/html/" *.htm
+          git checkout *.htm
+          cd ..
       
       - uses: anishathalye/proof-html@v2
         with:
