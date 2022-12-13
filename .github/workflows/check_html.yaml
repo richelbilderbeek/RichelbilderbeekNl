@@ -14,7 +14,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - |
+        cd contents
+        rename "s/htm$/html/" *.htm
+        cd ..
+      
       - uses: anishathalye/proof-html@v2
         with:
           directory: ./contents
-          assume_extension: .htm
