@@ -17,8 +17,7 @@ jobs:
       - name: Rename HTM files to HTML files
         run: |
           cd contents
-          rename "s/htm$/html/" *.htm
-          git checkout *.htm
+          for $filename in *.html; do cp $filename $(basename "$filename").html; done; 
           cd ..
       
       - uses: anishathalye/proof-html@v2
